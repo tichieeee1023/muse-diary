@@ -1,37 +1,41 @@
 {
   "id": "char_012_casual_05",
   "kind": "casual",
-  "title": "놓친 버스",
-  "minAffection": 40,
-  "maxAffection": 100,
+  "title": "멈춘 손목시계",
+  "minAffection": 30,
+  "maxAffection": 79,
   "defaultPortrait": "troubled",
-  "completionAffection": 5,
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "이현이 버스를 눈앞에서 놓쳤다."
+          "text": "이현이 늘 차고 다니는 오래된 손목시계는 멈춰 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "진이현",
-          "text": "…이건 예상 못 했습니다.",
-          "portrait": "troubled"
+          "text": "수리하지 않습니다.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "시간을 다루는 사람처럼 보이는 남자가 허탈하게 정류장에 섰다."
+          "text": "시계 수리공이 고장 난 시계를 그대로 찬다는 게 이상했다."
         },
         {
           "type": "dialogue",
           "speaker": "진이현",
-          "text": "다음 거 타죠. 같이.",
-          "portrait": "troubled"
+          "text": "고장 난 게 아니라… 끝난 시간이라서요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "그는 곧 소매로 시계를 가렸다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 진이현이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "멈춘 시계는 다른 어떤 물건보다 조심스럽게 다뤄졌다."
 }

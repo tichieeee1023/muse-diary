@@ -11,6 +11,7 @@ export function GameShell({ children }: PropsWithChildren) {
         aria-label="게임 화면"
         data-font={settings.fontFamily}
         data-text-size={settings.textSize}
+        data-text-speed={settings.textSpeed}
       >
         {children}
       </section>

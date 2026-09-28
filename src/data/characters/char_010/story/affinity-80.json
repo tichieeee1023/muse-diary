@@ -1,37 +1,47 @@
 {
   "id": "char_010_affinity_80",
   "kind": "story",
-  "title": "부탁의 형태",
+  "title": "버린 명령",
   "threshold": 80,
-  "purpose": "재하가 처음으로 명령 대신 부탁한다",
-  "defaultPortrait": "smile",
+  "purpose": "보호 대상이던 어린 비일상 존재를 놓아준 과거와 조직을 떠난 이유를 공개한다.",
+  "defaultPortrait": "troubled",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "비가 쏟아지는 밤, 재하는 우산을 건네며 말을 고르느라 한참 멈췄다."
+          "text": "재하는 마지막 임무 이야기를 꺼냈다."
         },
         {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "오늘은… 같이 가주시겠습니까.",
-          "portrait": "smile"
+          "text": "보호 대상이던 아이가 있었습니다. 인간은 아니었지만… 아이였습니다.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "늘 ‘따라오세요’라고 말하던 사람이었다. 그 차이가 이상할 만큼 크게 들렸다."
+          "text": "조직은 위험 가능성이 있다는 이유로 회수 후 제거를 명령했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "명령을 거부했습니다. 동료와 싸웠고, 아이를 놓아줬습니다. 이 상처는 그때 생겼습니다.",
+          "portrait": "hmm"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "그는 담담했지만 손은 무릎 위에서 굳어 있었다."
+        },
+        {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "개인적인 부탁입니다.",
-          "portrait": "smile"
+          "text": "그 뒤로는 선악보다 지금 누가 누구를 해치려 하는지만 봅니다.",
+          "portrait": "main"
         }
       ],
       "choice": {
@@ -39,61 +49,49 @@
         "options": [
           {
             "id": "a",
-            "text": "“물론이죠.”",
-            "affection": 6,
-            "memoryKey": "affinity_80_a",
+            "text": "“그 선택 후회해요?”",
+            "affection": 7,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "권재하",
-                "text": "감사합니다.",
-                "portrait": "smile"
+                "text": "아니요. 결과가 힘들었어도 선택은 후회하지 않습니다.",
+                "portrait": "main"
               }
-            ]
+            ],
+            "memoryKey": "jaeha_80_regret"
           },
           {
             "id": "b",
-            "text": "“드디어 부탁하네요.”",
-            "affection": 4,
-            "memoryKey": "affinity_80_b",
+            "text": "“그 아이는 살았겠네요.”",
+            "affection": 8,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "권재하",
-                "text": "연습 중입니다.",
+                "text": "그랬기를 바랍니다. 아직도.",
                 "portrait": "troubled"
               }
-            ]
+            ],
+            "memoryKey": "jaeha_80_child"
           },
           {
             "id": "c",
-            "text": "“손도 잡을까요?”",
-            "affection": 5,
-            "memoryKey": "affinity_80_c",
+            "text": "“재하 씨는 명령보다 사람을 봤네요.”",
+            "affection": 7,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "권재하",
-                "text": "…비 때문에 미끄러우니까요.",
+                "text": "그때는 그게 맞았습니다. 지금도 그렇습니다.",
                 "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "jaeha_80_person"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 부탁의 형태은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "재하가 처음으로 명령 대신 부탁한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "부탁의 형태 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "재하의 경계는 냉정함에서 나온 게 아니라 잘못된 보호를 너무 많이 봐온 사람의 습관이었다."
 }

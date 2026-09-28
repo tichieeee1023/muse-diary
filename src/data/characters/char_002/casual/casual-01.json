@@ -1,37 +1,41 @@
 {
   "id": "char_002_casual_01",
   "kind": "casual",
-  "title": "비뚤어진 액자",
+  "title": "삐뚤어진 안내판",
   "minAffection": 0,
-  "maxAffection": 59,
-  "defaultPortrait": "hmm",
-  "completionAffection": 5,
+  "maxAffection": 39,
+  "defaultPortrait": "main",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "주원은 대화 중에도 벽의 액자를 세 번 바라봤다."
+          "text": "쇼핑몰 안내판 하나가 미세하게 기울어져 있었다. 주원은 지나치려다 세 걸음 뒤에서 멈췄다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "저거 2도쯤 기울었습니다.",
-          "portrait": "hmm"
+          "text": "잠깐만요.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "결국 자리에서 일어나 바로잡고 돌아왔다."
+          "text": "그는 되돌아와 안내판의 아래쪽을 손끝으로 밀었다. 수평을 맞춘 뒤에야 만족한 듯 손을 뗐다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "이제 얘기하죠.",
-          "portrait": "hmm"
+          "text": "이제 낫네요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "누가 알아볼 만큼 큰 차이는 아니었다. 주원에게는 그 작은 어긋남도 계속 보이는 모양이었다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 한주원이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "보이지 않는 어긋남을 그냥 지나치지 못한다. 주원의 완벽주의는 생각보다 사소한 곳에서 시작됐다."
 }

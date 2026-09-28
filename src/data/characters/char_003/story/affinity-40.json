@@ -1,81 +1,108 @@
 {
   "id": "char_003_affinity_40",
   "kind": "story",
-  "title": "세 정거장 지나서",
+  "title": "없는 승객",
   "threshold": 40,
-  "purpose": "해준의 인간적인 빈틈을 보여준다",
-  "defaultPortrait": "hmm",
+  "purpose": "해준이 특정 막차에서 존재하지 않는 승객을 본다는 비일상 징후를 처음 공유한다",
+  "defaultPortrait": "main",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "강변 벤치에서 해준을 발견했을 때 그는 앉은 채 잠들어 있었다. 손에는 읽다 만 시간표가 들려 있었다."
+          "text": "늦은 밤, 해준이 운행을 마치고도 빈 승강장을 한동안 바라보고 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "…몇 분 잤습니까?",
+          "text": "방금 저 사람 보셨습니까?",
           "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "깨어난 순간부터 시간을 확인하는 모습이 기관사답다가도, 머리카락이 한쪽으로 눌린 건 어쩔 수 없었다."
+          "text": "그가 가리킨 곳에는 아무도 없었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "회색 코트. 마지막 칸에서 내렸습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "CCTV를 확인하러 간 직원은 그런 승객이 없었다고 했다. 해준은 아무 말 없이 화면을 두 번 더 돌려봤다."
         }
       ]
     },
     {
-      "blocks": [
-        {
-          "type": "dialogue",
-          "speaker": "문해준",
-          "text": "보지 마십시오. 지금 상태 안 좋습니다.",
-          "portrait": "hmm"
-        }
-      ],
+      "blocks": [],
       "choice": {
         "id": "aff_40_choice",
         "options": [
           {
             "id": "a",
-            "text": "“사진 안 찍었어요.”",
-            "affection": 6,
-            "memoryKey": "affinity_40_a",
+            "text": "“저는 못 봤어요.”",
+            "affection": 5,
+            "memoryKey": "a40_no",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "그 말부터 하는 게 더 수상합니다.",
+                "text": "그렇군요.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "안도인지 실망인지 알 수 없는 표정이었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "그럼 제가 피곤한 걸 수도 있겠습니다.",
                 "portrait": "hmm"
               }
             ]
           },
           {
             "id": "b",
-            "text": "“조금 더 자도 돼요.”",
-            "affection": 4,
-            "memoryKey": "affinity_40_b",
+            "text": "“비슷한 사람을 본 것 같기도 해요.”",
+            "affection": 6,
+            "memoryKey": "a40_maybe",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "그러면… 5분만 부탁하죠.",
-                "portrait": "troubled"
+                "text": "확실하지 않으면 그렇게 생각하지 마세요.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "해준은 오히려 {name}이 겁먹는 쪽을 먼저 걱정했다."
               }
             ]
           },
           {
             "id": "c",
-            "text": "“세 정거장쯤 지나갔어요.”",
-            "affection": 5,
-            "memoryKey": "affinity_40_c",
+            "text": "“무섭지 않아요?”",
+            "affection": 6,
+            "memoryKey": "a40_fear",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "농담이면 다행이고요.",
-                "portrait": "hmm"
+                "text": "무섭습니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "의외로 솔직한 대답이었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "그래도 운행 중엔 확인해야 합니다. 사람이면 더 위험하니까요.",
+                "portrait": "main"
               }
             ]
           }
@@ -86,14 +113,24 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "그날의 세 정거장 지나서은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+          "text": "그날 이후 해준은 그 승객에 대해 먼저 이야기하지 않았다."
         },
         {
           "type": "narration",
-          "text": "해준의 인간적인 빈틈을 보여준다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+          "text": "하지만 특정 시간대 막차가 들어올 때마다 마지막 칸을 확인하는 버릇이 생겼다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "혹시 오늘도 보이면, 먼저 말하지 말고 저한테 알려주세요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "혼자 확인하려던 사람이 처음으로 이상한 일을 다른 사람과 나누기 시작했다."
         }
       ]
     }
   ],
-  "closing": "세 정거장 지나서 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "없는 승객 — 중요한 관계 기록이 다이어리에 남았다."
 }

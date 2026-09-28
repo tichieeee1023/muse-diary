@@ -2,11 +2,15 @@ import { useMemo, useState } from 'react'
 import { BottomNav, type MainSection } from '../components/BottomNav'
 import { HeartMeter, HeartRow } from '../components/HeartMeter'
 import { CharacterIcon } from '../components/CharacterIcon'
+import { MuseDollIcon } from '../components/MuseDollIcon'
 import { CharacterPortrait } from '../components/CharacterPortrait'
+import { CharacterSD } from '../components/CharacterSD'
 import { CollectionArt } from '../components/CollectionArt'
+import { getCharacterRouteProfile } from '../data/characters/index'
+import { getCharacterThemeLine } from '../data/characterFlavor'
+import { getPlace } from '../data/locations'
 import { getAllCharacters } from '../engine/encounterEngine'
-import { getCharacterRouteProfile } from '../data/characters'
-import { getStoryProgress } from '../engine/storyEngine'
+import { getStoryProgress, isAffinityEventReady } from '../engine/storyEngine'
 import { getEndingContent } from '../engine/endingEngine'
 import { formatGameText } from '../engine/textFormatter'
 import {
@@ -22,6 +26,7 @@ interface CharacterDiaryPageProps {
 }
 
 const CURRENT_ROSTER = 12
+function getPlaceName(placeId: string) { return getPlace(placeId)?.name ?? '어딘가' }
 
 export function CharacterDiaryPage({ onNavigate }: CharacterDiaryPageProps) {
   const collection = useGameStore((state) => state.collection)
@@ -29,6 +34,8 @@ export function CharacterDiaryPage({ onNavigate }: CharacterDiaryPageProps) {
   const markSecretRead = useGameStore((state) => state.markSecretRead)
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [readingSecret, setReadingSecret] = useState(false)
+  const [filter, setFilter] = useState<'all' | 'reality' | 'unusual' | 'R' | 'SR' | 'SSR' | 'complete'>('all')
+  const [galleryPreview, setGalleryPreview] = useState<{ src: string; alt: string; label: string } | null>(null)
   const characters = useMemo(() => getAllCharacters(), [])
   const discovered = new Set(collection.discoveredCharacterIds)
   const secondRunHints = hasReachedFirstCompletion(collection)
@@ -78,7 +85,7 @@ export function CharacterDiaryPage({ onNavigate }: CharacterDiaryPageProps) {
           </div>
         </header>
 
-        <section className="diary-profile-sheet">
+        <section className="diary-profile-sheet" data-character={selected.id}>
           <CharacterPortrait characterId={selected.id} name={selected.name} symbol={selected.symbol} expression={affection >= 80 ? 'smile' : affection >= 40 ? 'hmm' : 'main'} className="diary-main-portrait" />
           <div className="diary-profile-top">
             <div className="diary-profile-identity">
@@ -93,6 +100,8 @@ export function CharacterDiaryPage({ onNavigate }: CharacterDiaryPageProps) {
           </div>
 
           <p className="diary-impression">{selected.firstImpression}</p>
+          <blockquote className="character-theme-line">{getCharacterThemeLine(selected.id)}</blockquote>
+          {collection.lastMeetingByCharacterId[selected.id] && <div className="last-meeting-note"><span>LAST MEETING</span><strong>{collection.lastMeetingByCharacterId[selected.id].title}</strong><small>DAY {String(collection.lastMeetingByCharacterId[selected.id].day).padStart(2, '0')} · {getPlaceName(collection.lastMeetingByCharacterId[selected.id].placeId)}</small></div>}
 
           <div className="diary-heart-block">
             <div>
@@ -144,14 +153,16 @@ export function CharacterDiaryPage({ onNavigate }: CharacterDiaryPageProps) {
             <p className="eyebrow">VISUAL ARCHIVE</p>
             <h2>일러스트 기록</h2>
           </div>
-          <div className="visual-archive-grid">
-            <CharacterPortrait characterId={selected.id} name={selected.name} symbol={selected.symbol} expression="main" className="archive-portrait" />
-            <CharacterPortrait characterId={selected.id} name={selected.name} symbol={selected.symbol} expression="smile" className="archive-portrait" />
-            <CharacterPortrait characterId={selected.id} name={selected.name} symbol={selected.symbol} expression="troubled" className="archive-portrait" />
-            <CharacterPortrait characterId={selected.id} name={selected.name} symbol={selected.symbol} expression="hmm" className="archive-portrait" />
-          </div>
-          <div className="ending-gallery-card">
-            {isCompleted && routeProfile ? <CollectionArt src={routeProfile.visuals.endingCg} alt={`${selected.name} 엔딩 풀 일러스트`} label="ENDING CG" symbol={selected.symbol} className="ending-gallery-art" /> : <div className="gallery-locked"><strong>ENDING CG</strong><span>공략 완료 후 해금</span></div>}
+          {routeProfile && <div className="visual-archive-grid">
+            {([['main','MAIN'],['smile','SMILE'],['troubled','TROUBLED'],['hmm','HMM']] as const).map(([expression, label]) => (
+              <button type="button" className="gallery-thumb" key={expression} onClick={() => setGalleryPreview({ src: routeProfile.visuals[expression], alt: `${selected.name} ${label} 일러스트`, label })}>
+                <CharacterPortrait characterId={selected.id} name={selected.name} symbol={selected.symbol} expression={expression} className="archive-portrait" /><span>{label}</span>
+              </button>
+            ))}
+          </div>}
+          <div className="ending-gallery-grid">
+            {isCompleted && routeProfile ? <button type="button" className="gallery-art-button" onClick={() => setGalleryPreview({ src: routeProfile.visuals.endingCg, alt: `${selected.name} 엔딩 풀 일러스트`, label: 'ENDING CG' })}><CollectionArt src={routeProfile.visuals.endingCg} alt={`${selected.name} 엔딩 풀 일러스트`} label="ENDING CG" symbol={selected.symbol} className="ending-gallery-art" /></button> : <div className="gallery-locked"><strong>ENDING CG</strong><span>공략 완료 후 해금</span></div>}
+            {secretRead && routeProfile ? <button type="button" className="gallery-art-button" onClick={() => setGalleryPreview({ src: routeProfile.visuals.endingDoll, alt: `${selected.name} MUSE DOLL`, label: 'MUSE DOLL' })}><CollectionArt src={routeProfile.visuals.endingDoll} alt={`${selected.name} MUSE DOLL`} label="MUSE DOLL" symbol={selected.symbol} className="ending-gallery-art" /></button> : <div className="gallery-locked"><strong>MUSE DOLL</strong><span>비설 감상 후 해금</span></div>}
           </div>
         </section>
 
@@ -182,6 +193,7 @@ export function CharacterDiaryPage({ onNavigate }: CharacterDiaryPageProps) {
           </section>
         )}
 
+        {galleryPreview && <div className="gallery-lightbox" role="dialog" aria-modal="true" onClick={() => setGalleryPreview(null)}><button type="button" aria-label="닫기">×</button><span>{galleryPreview.label}</span><img src={galleryPreview.src} alt={galleryPreview.alt} /></div>}
         <BottomNav active="characters" onNavigate={onNavigate} />
       </div>
     )
@@ -217,8 +229,20 @@ export function CharacterDiaryPage({ onNavigate }: CharacterDiaryPageProps) {
         </div>
       )}
 
+
+      <div className="diary-filter-row" aria-label="인물 필터">
+        {([['all','전체'],['reality','현실'],['unusual','비일상'],['R','R'],['SR','SR'],['SSR','SSR'],['complete','COMPLETE']] as const).map(([id,label]) => <button key={id} type="button" className={filter === id ? 'is-active' : ''} onClick={() => setFilter(id)}>{label}</button>)}
+      </div>
+
       <div className="diary-grid">
         {characters.map((character, index) => {
+          const isDiscoveredForFilter = discovered.has(character.id)
+          if (filter !== 'all' && !isDiscoveredForFilter) return null
+          if (filter !== 'all') {
+            if (filter === 'complete' && !collection.completedCharacterIds.includes(character.id)) return null
+            if ((filter === 'reality' || filter === 'unusual') && character.category !== filter) return null
+            if ((filter === 'R' || filter === 'SR' || filter === 'SSR') && character.rarity !== filter) return null
+          }
           const isDiscovered = discovered.has(character.id)
           const affection = collection.affectionByCharacterId[character.id] ?? 0
           const encounters = collection.encounterCounts[character.id] ?? 0
@@ -235,22 +259,21 @@ export function CharacterDiaryPage({ onNavigate }: CharacterDiaryPageProps) {
           }
 
           return (
-            <button key={character.id} type="button" className="diary-card is-known" onClick={() => setSelectedId(character.id)}>
+            <button key={character.id} type="button" className="diary-card is-known" data-character={character.id} onClick={() => setSelectedId(character.id)}>
               <div className="diary-card-topline">
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <span className={`mini-rarity rarity-${character.rarity.toLowerCase()}`}>{character.rarity}</span>
               </div>
-              <CharacterPortrait
+              <CharacterSD
                 characterId={character.id}
                 name={character.name}
                 symbol={character.symbol}
-                expression={affection >= 80 ? 'smile' : affection >= 55 ? 'troubled' : affection >= 30 ? 'hmm' : 'main'}
-                className="diary-card-portrait"
+                className="diary-card-sd"
               />
               <div className="diary-card-identity">
                 <span className="character-mark"><CharacterIcon symbol={character.symbol} size={22} /></span>
                 <div>
-                  <strong>{character.name}</strong>
+                  <strong>{character.name}{collection.completedCharacterIds.includes(character.id) && <MuseDollIcon size={15} className="name-doll-icon" />}</strong>
                   <p>{character.ageLabel} · {character.occupation}</p>
                 </div>
               </div>
@@ -262,6 +285,7 @@ export function CharacterDiaryPage({ onNavigate }: CharacterDiaryPageProps) {
                 <span>만남 기록</span>
                 <span>{encounters}회</span>
               </div>
+              {isAffinityEventReady(character.id, collection) && <span className="new-event-badge">NEW EVENT</span>}
               {collection.completedCharacterIds.includes(character.id) && <span className="card-complete-sticker">COMPLETE</span>}
             </button>
           )

@@ -3,35 +3,45 @@
   "kind": "story",
   "title": "뜨거운 어묵",
   "threshold": 40,
-  "purpose": "물의 남자가 뜨거운 걸 못 먹는 갭",
-  "defaultPortrait": "hmm",
+  "purpose": "가벼운 갭모에를 통해 친밀도를 쌓고, 시온이 주인공 앞에서 허술한 모습을 숨기지 않게 되는 변화를 보여준다.",
+  "defaultPortrait": "troubled",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "강변 포장마차에서 시온은 어묵 국물을 한 모금 마시다 눈을 질끈 감았다."
+          "text": "겨울 강변. 시온이 호기롭게 어묵을 받아 들었다가 한입도 못 먹고 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "뜨거운 건 반칙 아니에요?",
-          "portrait": "hmm"
+          "text": "왜 김이 계속 나죠? 식을 생각이 없네.",
+          "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "물속에서는 누구보다 태연한 사람이 종이컵 앞에서 진지하게 경계했다."
+          "text": "{name}이 웃자 시온이 억울한 얼굴을 했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "물 좋아한다고 뜨거운 물까지 좋아하는 건 아니거든요.",
+          "portrait": "hmm"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "결국 반쯤 식은 어묵을 먹으며 시온은 혼잣말처럼 덧붙였다."
+        },
+        {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "불은 좀… 성격이 급하잖아요.",
-          "portrait": "hmm"
+          "text": "이런 꼴 남들한텐 잘 안 보여주는데. 뭐, 이제 상관없나.",
+          "portrait": "main"
         }
       ],
       "choice": {
@@ -39,61 +49,49 @@
         "options": [
           {
             "id": "a",
-            "text": "“후후 불어줄까요?”",
+            "text": "“다음엔 식혀줄게요.”",
             "affection": 6,
-            "memoryKey": "affinity_40_a",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "백시온",
-                "text": "그건 너무 부끄러운데… 해주면 먹을게요.",
-                "portrait": "hmm"
+                "text": "그거 꽤 좋은 약속인데요.",
+                "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "sion_40_cool"
           },
           {
             "id": "b",
-            "text": "“물은 안 무서우면서.”",
-            "affection": 4,
-            "memoryKey": "affinity_40_b",
+            "text": "“물에서는 그렇게 멋있더니.”",
+            "affection": 5,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "백시온",
-                "text": "그래서 제가 물 쪽 사람인가 봐요.",
-                "portrait": "troubled"
+                "text": "육지 버전은 옵션이 좀 다릅니다.",
+                "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "sion_40_tease"
           },
           {
             "id": "c",
-            "text": "“천천히 먹어요.”",
-            "affection": 5,
-            "memoryKey": "affinity_40_c",
+            "text": "“남들한테도 보여줘요. 귀여운데.”",
+            "affection": 4,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "백시온",
-                "text": "네. 같이 천천히.",
-                "portrait": "hmm"
+                "text": "그건 싫어요. 딱 여기까지만.",
+                "portrait": "troubled"
               }
-            ]
+            ],
+            "memoryKey": "sion_40_only_here"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 뜨거운 어묵은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "물의 남자가 뜨거운 걸 못 먹는 갭 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "뜨거운 어묵 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "완벽해서 가까워진 게 아니라, 허술한 모습을 숨기지 않게 되면서 거리가 줄었다."
 }

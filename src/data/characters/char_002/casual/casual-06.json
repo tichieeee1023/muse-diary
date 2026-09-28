@@ -1,76 +1,41 @@
 {
   "id": "char_002_casual_06",
   "kind": "casual",
-  "title": "휴일의 후드",
-  "minAffection": 60,
-  "maxAffection": 100,
+  "title": "냉장고의 현실",
+  "minAffection": 40,
+  "maxAffection": 79,
   "defaultPortrait": "main",
-  "completionAffection": 3,
+  "completionAffection": 5,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "평소 차콜 셔츠 대신 낡은 후드 차림의 주원을 마주쳤다."
+          "text": "물을 찾으러 연 주원의 냉장고에는 생수와 캔 음료, 소스 몇 개밖에 없었다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "퇴근한 사람에게도 드레스코드가 필요합니까.",
+          "text": "왜요.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "머리도 덜 정돈돼 평소보다 몇 살은 어려 보였다."
+          "text": "뭐라도 먹고 사느냐는 질문에 그가 잠깐 시선을 피했다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "보지 말고 익숙해지세요.",
-          "portrait": "main"
+          "text": "밖에서 먹습니다. 효율적이죠.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "반박할 틈도 없이 배달 앱 알림이 울렸다. 주원은 화면을 뒤집어 놓았다."
         }
-      ],
-      "choice": {
-        "id": "casual_6_choice",
-        "options": [
-          {
-            "id": "a",
-            "text": "조금 솔직하게 반응한다.",
-            "affection": 3,
-            "memoryKey": "casual_6_warm",
-            "response": [
-              {
-                "type": "narration",
-                "text": "한주원의 표정이 아주 조금 풀렸다."
-              }
-            ]
-          },
-          {
-            "id": "b",
-            "text": "가볍게 놀려본다.",
-            "affection": 2,
-            "response": [
-              {
-                "type": "narration",
-                "text": "한주원은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
-              }
-            ]
-          },
-          {
-            "id": "c",
-            "text": "그냥 옆에서 지켜본다.",
-            "affection": 1,
-            "response": [
-              {
-                "type": "narration",
-                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
-              }
-            ]
-          }
-        ]
-      }
+      ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 한주원이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "완벽주의는 생활력과 같은 말이 아니었다."
 }

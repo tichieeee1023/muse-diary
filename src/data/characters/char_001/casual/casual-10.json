@@ -1,0 +1,40 @@
+{
+  "id": "char_001_casual_10",
+  "kind": "casual",
+  "title": "컵라면과 고전문학",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "placeIds": [
+    "convenience"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "늦은 시간 편의점 창가에서 도윤을 발견했다. 한 손에는 두꺼운 고전문학 책, 다른 쪽에는 막 물을 부은 컵라면이 있다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "이 조합이 그렇게 이상합니까?",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "시선이 책과 컵라면 사이를 오가자 도윤이 괜히 책 표지를 뒤집어 놓는다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "퇴근하고 밥까지 품위 있게 먹을 필요는 없잖아요.",
+          "portrait": "main"
+        }
+      ]
+    }
+  ],
+  "closing": "조용한 사람의 야식은 생각보다 소박했다."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "char_002_casual_09",
+  "kind": "casual",
+  "title": "도시를 재는 사람",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "hmm",
+  "completionAffection": 4,
+  "repeatable": true,
+  "placeIds": [
+    "rooftop"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "루프탑 난간 앞에서 주원은 야경을 보는 대신 건물의 창 배열을 세고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "저쪽 간판, 높이가 안 맞습니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "아름다운 야경을 앞에 두고도 결국 레이아웃부터 보는 사람이다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "…왜 웃죠? 저는 꽤 진지합니다.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "낭만보다 정렬을 먼저 보는 게 한주원답다."
+}

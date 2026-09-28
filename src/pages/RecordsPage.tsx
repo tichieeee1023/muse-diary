@@ -1,5 +1,7 @@
 import { BottomNav, type MainSection } from '../components/BottomNav'
 import { getAchievements } from '../engine/achievementEngine'
+import { getAllCharacters } from '../engine/encounterEngine'
+import { getPlace } from '../data/locations'
 import { useGameStore } from '../store/useGameStore'
 
 interface RecordsPageProps { onNavigate: (section: MainSection) => void }
@@ -9,6 +11,10 @@ export function RecordsPage({ onNavigate }: RecordsPageProps) {
   const collection = useGameStore((state) => state.collection)
   const achievements = getAchievements(progress, collection)
   const unlocked = achievements.filter((item) => item.unlocked).length
+  const characters = getAllCharacters()
+  const recentMeetings = Object.entries(collection.lastMeetingByCharacterId)
+    .sort(([, a], [, b]) => b.day - a.day)
+    .slice(0, 4)
 
   return (
     <div className="page records-page">
@@ -18,8 +24,8 @@ export function RecordsPage({ onNavigate }: RecordsPageProps) {
       </header>
 
       <section className="records-summary">
-        <div><span>발견</span><strong>{collection.discoveredCharacterIds.length} / 30</strong></div>
-        <div><span>완료</span><strong>{collection.completedCharacterIds.length} / 30</strong></div>
+        <div><span>발견</span><strong>{collection.discoveredCharacterIds.length} / 12</strong></div>
+        <div><span>완료</span><strong>{collection.completedCharacterIds.length} / 12</strong></div>
         <div><span>DAY</span><strong>{String(progress.day).padStart(2, '0')}</strong></div>
       </section>
 
@@ -39,6 +45,14 @@ export function RecordsPage({ onNavigate }: RecordsPageProps) {
             )
           })}
         </div>
+      </section>
+
+      <section className="recent-record-section">
+        <div className="diary-section-title"><p className="eyebrow">RECENT PAGES</p><h2>최근의 만남</h2></div>
+        {recentMeetings.length ? <div className="recent-record-list">{recentMeetings.map(([characterId, meeting]) => {
+          const character = characters.find((item) => item.id === characterId)
+          return <article key={characterId}><span>DAY {String(meeting.day).padStart(2, '0')}</span><div><strong>{character?.name ?? 'UNKNOWN MUSE'}</strong><p>{meeting.title}</p></div><small>{getPlace(meeting.placeId)?.name ?? 'UNKNOWN PLACE'}</small></article>
+        })}</div> : <div className="recent-record-empty"><span>BLANK PAGE</span><p>첫 번째 만남이 이곳에 기록됩니다.</p></div>}
       </section>
       <BottomNav active="records" onNavigate={onNavigate} />
     </div>

@@ -1,0 +1,40 @@
+{
+  "id": "char_012_casual_10",
+  "kind": "casual",
+  "title": "너무 일찍 온 사람",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "smile",
+  "completionAffection": 5,
+  "repeatable": true,
+  "placeIds": [
+    "rooftop"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "약속보다 한참 이른 시간인데 이현은 이미 루프탑에 와 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "이번에는 늦고 싶지 않았습니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "평소에는 시간에 자주 어긋나는 사람이 오늘만큼은 도시의 불이 켜지기 전부터 기다린 모양이다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "기다리는 건 익숙하니까요.",
+          "portrait": "hmm"
+        }
+      ]
+    }
+  ],
+  "closing": "그에게 기다림은 습관이라기보다 오래된 삶의 방식처럼 보였다."
+}

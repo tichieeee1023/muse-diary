@@ -1,37 +1,100 @@
 {
   "id": "char_001_casual_02",
   "kind": "casual",
-  "title": "고양이 책갈피",
+  "title": "쓰디쓴 커피",
   "minAffection": 0,
-  "maxAffection": 59,
-  "defaultPortrait": "troubled",
-  "completionAffection": 5,
+  "maxAffection": 39,
+  "defaultPortrait": "main",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "책 사이에서 고양이 모양 책갈피가 떨어졌다."
+          "text": "오래된 카페에서 우연히 마주친 도윤의 앞에는 아무것도 넣지 않은 검은 커피가 놓여 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "제 겁니다. 왜요.",
-          "portrait": "troubled"
+          "text": "단 건 잘 안 마십니다.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "무심한 취향치고 귀가 너무 크고 분홍색이었다."
+          "text": "{name}의 잔을 한 번 본 그가 시선을 거뒀다."
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "선물 받은 겁니다. 굳이 설명하자면.",
-          "portrait": "troubled"
+          "text": "지난번에도 그거 드셨죠.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "무심코 나온 말처럼 들렸지만, 지난번은 꽤 전이었다."
         }
-      ]
+      ],
+      "choice": {
+        "id": "c2",
+        "options": [
+          {
+            "id": "a",
+            "text": "“그걸 기억해요?”",
+            "affection": 4,
+            "memoryKey": "casual_coffee_remembered",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "네. 그냥 기억났습니다.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "narration",
+                "text": "도윤은 컵 손잡이를 한 번 고쳐 잡았다."
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“도윤 씨 것도 기억해둘게요.”",
+            "affection": 5,
+            "memoryKey": "casual_remember_him",
+            "response": [
+              {
+                "type": "narration",
+                "text": "이번에는 도윤이 바로 대답하지 못했다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "…그러실 필요까지는 없습니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“한 입 바꿔 마셔볼래요?”",
+            "affection": 2,
+            "memoryKey": "casual_coffee_offer",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "괜찮습니다. 취향은 존중하죠.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "그러면서도 달콤한 향이 나는 잔을 아주 잠깐 본다."
+              }
+            ]
+          }
+        ]
+      }
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 서도윤이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "도윤은 남을 기억하는 데 익숙했지만, 자신이 기억될 가능성에는 조금 어색해 보였다."
 }

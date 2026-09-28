@@ -1,76 +1,41 @@
 {
   "id": "char_009_casual_03",
   "kind": "casual",
-  "title": "질문 금지 게임",
-  "minAffection": 20,
-  "maxAffection": 99,
-  "defaultPortrait": "main",
-  "completionAffection": 3,
+  "title": "제가 지금 화가 난 것 같군요",
+  "minAffection": 10,
+  "maxAffection": 59,
+  "defaultPortrait": "troubled",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "오늘은 서로 질문하지 않기로 했다. 이겸은 세 번이나 말을 멈췄다."
+          "text": "예약 시간을 무시한 손님이 직원에게 무례하게 굴자 이겸의 표정이 아주 조금 굳었다."
         },
         {
           "type": "dialogue",
           "speaker": "차이겸",
-          "text": "생각보다 어렵네요.",
-          "portrait": "main"
+          "text": "…제가 지금 화가 난 것 같군요.",
+          "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "질문이 없는 대화를 배우는 중이었다."
+          "text": "{name}이 지금 알았냐고 묻자 그가 진지하게 고개를 끄덕였다."
         },
         {
           "type": "dialogue",
           "speaker": "차이겸",
-          "text": "제가 너무 직업적으로 살았나 봅니다.",
-          "portrait": "main"
+          "text": "네. 가슴이 답답해서 원인을 생각해봤습니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "남의 감정은 잘 읽는 사람이 자기 화를 분석 보고서처럼 발견했다."
         }
-      ],
-      "choice": {
-        "id": "casual_3_choice",
-        "options": [
-          {
-            "id": "a",
-            "text": "조금 솔직하게 반응한다.",
-            "affection": 3,
-            "memoryKey": "casual_3_warm",
-            "response": [
-              {
-                "type": "narration",
-                "text": "차이겸의 표정이 아주 조금 풀렸다."
-              }
-            ]
-          },
-          {
-            "id": "b",
-            "text": "가볍게 놀려본다.",
-            "affection": 2,
-            "response": [
-              {
-                "type": "narration",
-                "text": "차이겸은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
-              }
-            ]
-          },
-          {
-            "id": "c",
-            "text": "그냥 옆에서 지켜본다.",
-            "affection": 1,
-            "response": [
-              {
-                "type": "narration",
-                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
-              }
-            ]
-          }
-        ]
-      }
+      ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 차이겸이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "이겸의 완벽함에는 꽤 큰 구멍이 있었다."
 }

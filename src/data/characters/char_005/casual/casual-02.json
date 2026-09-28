@@ -1,37 +1,41 @@
 {
   "id": "char_005_casual_02",
   "kind": "casual",
-  "title": "벌레 한 마리",
-  "minAffection": 20,
-  "maxAffection": 79,
-  "defaultPortrait": "troubled",
-  "completionAffection": 5,
+  "title": "버리지 못한 장갑",
+  "minAffection": 0,
+  "maxAffection": 49,
+  "defaultPortrait": "main",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "작은 벌레가 벽을 타고 올라가자 태겸이 조용히 거리를 뒀다."
+          "text": "태겸의 작업가방에서 낡아 해진 장갑 한 켤레가 보였다."
         },
         {
           "type": "dialogue",
           "speaker": "강태겸",
-          "text": "저건 업무 범위 밖입니다.",
-          "portrait": "troubled"
+          "text": "예비용입니다.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "검은 흔적보다 벌레를 더 진지하게 경계했다."
+          "text": "새 장갑이 따로 두 켤레나 있는데도 그는 오래된 것을 버리지 않았다."
         },
         {
           "type": "dialogue",
           "speaker": "강태겸",
-          "text": "진짜로요.",
-          "portrait": "troubled"
+          "text": "쓸 수 있는 건 굳이 버릴 필요 없지 않습니까.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "말은 실용적이었지만 접힌 자국까지 반듯하게 펴 두는 손길은 조금 달랐다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 강태겸이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "태겸은 지우는 일을 하면서도 이상할 만큼 오래된 것을 버리지 못했다."
 }

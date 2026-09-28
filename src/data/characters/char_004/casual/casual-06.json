@@ -1,76 +1,45 @@
 {
   "id": "char_004_casual_06",
   "kind": "casual",
-  "title": "쓴 초콜릿",
-  "minAffection": 60,
-  "maxAffection": 100,
-  "defaultPortrait": "smile",
-  "completionAffection": 3,
+  "title": "웃지 않는 얼굴",
+  "minAffection": 45,
+  "maxAffection": 89,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "로운이 유난히 쓴 초콜릿을 골라 {name}에게 건넸다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "이로운",
-          "text": "제 취향도 한번 알아두세요.",
-          "portrait": "smile"
+          "text": "마감 직전, 손님이 모두 빠진 카페에서 로운은 혼자 설거지를 하고 있었다. 오늘은 이상하게 웃고 있지 않았다."
         },
         {
           "type": "narration",
-          "text": "늘 상대 취향만 읽던 사람이 자기 취향을 내민 순간이었다."
+          "text": "무표정인 얼굴을 보는 건 처음이었다. 낯선데도 오히려 더 자연스러워 보였다."
         },
         {
           "type": "dialogue",
           "speaker": "이로운",
-          "text": "안 맞아도 괜찮고요.",
-          "portrait": "smile"
+          "text": "…이 얼굴이 더 이상하죠?",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "대답하기도 전에 그가 습관처럼 입꼬리를 올리려다 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "오늘은 그냥 안 웃어도 되죠. 손님도 없고.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그 말이 이상하게 허락을 구하는 것처럼 들렸다."
         }
-      ],
-      "choice": {
-        "id": "casual_6_choice",
-        "options": [
-          {
-            "id": "a",
-            "text": "조금 솔직하게 반응한다.",
-            "affection": 3,
-            "memoryKey": "casual_6_warm",
-            "response": [
-              {
-                "type": "narration",
-                "text": "이로운의 표정이 아주 조금 풀렸다."
-              }
-            ]
-          },
-          {
-            "id": "b",
-            "text": "가볍게 놀려본다.",
-            "affection": 2,
-            "response": [
-              {
-                "type": "narration",
-                "text": "이로운은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
-              }
-            ]
-          },
-          {
-            "id": "c",
-            "text": "그냥 옆에서 지켜본다.",
-            "affection": 1,
-            "response": [
-              {
-                "type": "narration",
-                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
-              }
-            ]
-          }
-        ]
-      }
+      ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 이로운이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "크게 특별한 일은 아니었다. 그래도 이런 짧은 만남들이 쌓일수록 이로운이라는 사람의 결이 조금씩 달라 보였다."
 }

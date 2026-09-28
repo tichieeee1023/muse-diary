@@ -1,80 +1,109 @@
 {
   "id": "char_003_affinity_60",
   "kind": "story",
-  "title": "기다리게 하는 사람",
+  "title": "기다리는 쪽",
   "threshold": 60,
-  "purpose": "해준이 과하게 시간을 지키는 이유",
-  "defaultPortrait": "troubled",
+  "purpose": "신입 시절 사고 직전의 기억과 해준의 과한 책임감이 연결되어 있음을 밝힌다",
+  "defaultPortrait": "main",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "해준은 약속 시간보다 스무 분 먼저 와 있었다. 이유를 묻자 오래전 누군가를 오래 기다리게 했던 일을 짧게 말했다."
+          "text": "열차 운행이 한동안 멈춘 날, 해준은 평소보다 말이 없었다. 인명 피해도 사고도 없었지만 손끝이 아주 미세하게 굳어 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "그 뒤로는 제가 늦는 게 싫어졌습니다.",
-          "portrait": "troubled"
+          "text": "예전에 비슷한 일이 있었습니다.",
+          "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "평소의 단단함은 책임감이 아니라 작은 후회에서 자란 것이었다."
+          "text": "신입 시절, 작은 판단 하나가 조금만 늦었으면 큰 사고로 이어질 뻔했다고 했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "제 잘못은 아니었습니다. 조사 결과도 그랬고요.",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "그런데 그 말이 별로 도움이 안 되더군요.",
+          "portrait": "troubled"
         }
       ]
     },
     {
-      "blocks": [
-        {
-          "type": "dialogue",
-          "speaker": "문해준",
-          "text": "별일 아닌데 오래 남더군요.",
-          "portrait": "troubled"
-        }
-      ],
+      "blocks": [],
       "choice": {
         "id": "aff_60_choice",
         "options": [
           {
             "id": "a",
-            "text": "“이젠 조금 늦어도 기다릴게요.”",
-            "affection": 6,
-            "memoryKey": "affinity_60_a",
+            "text": "“그래서 항상 무사히 도착했는지 확인하는 거구나.”",
+            "affection": 7,
+            "memoryKey": "a60_understand",
             "response": [
+              {
+                "type": "narration",
+                "text": "해준이 천천히 고개를 끄덕였다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "…그 말은 기억해두겠습니다.",
-                "portrait": "smile"
+                "text": "누군가 기다리고 있는데 안 돌아오면…… 그 뒤를 너무 많이 생각하게 됩니다.",
+                "portrait": "main"
               }
             ]
           },
           {
             "id": "b",
-            "text": "“나도 일찍 올게요.”",
-            "affection": 4,
-            "memoryKey": "affinity_60_b",
+            "text": "“해준 씨가 다 책임질 수는 없어요.”",
+            "affection": 6,
+            "memoryKey": "a60_limit",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "그러면 둘 다 너무 일찍 오겠네요.",
-                "portrait": "troubled"
+                "text": "압니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "알고 있다는 사람의 얼굴이 전혀 편하지 않았다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "아는 것과 멈출 수 있는 건 좀 다르네요.",
+                "portrait": "main"
               }
             ]
           },
           {
             "id": "c",
-            "text": "“그 후회 혼자 들고 있었어요?”",
-            "affection": 5,
-            "memoryKey": "affinity_60_c",
+            "text": "“그때 해준 씨가 잘한 판단도 있었잖아요.”",
+            "affection": 6,
+            "memoryKey": "a60_credit",
             "response": [
+              {
+                "type": "narration",
+                "text": "그가 잠깐 시선을 내렸다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "그랬던 것 같습니다.",
+                "text": "그 말은 처음 듣습니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "……고맙습니다.",
                 "portrait": "troubled"
               }
             ]
@@ -86,14 +115,20 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "그날의 기다리게 하는 사람은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+          "text": "헤어질 때 해준은 привыч관처럼 '도착하면 연락 주세요'라고 하려다 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "오늘은 제가 먼저 연락하겠습니다.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "해준이 과하게 시간을 지키는 이유 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+          "text": "누군가를 확인하는 사람에서, 자신의 도착도 알려주는 사람으로 아주 작은 방향 전환이 생겼다."
         }
       ]
     }
   ],
-  "closing": "기다리게 하는 사람 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "기다리는 쪽 — 중요한 관계 기록이 다이어리에 남았다."
 }

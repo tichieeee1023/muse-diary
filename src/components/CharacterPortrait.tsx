@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { CharacterIcon } from './CharacterIcon'
-import { getCharacterRouteProfile } from '../data/characters'
+import { getCharacterRouteProfile } from '../data/characters/index'
 import type { PortraitExpression } from '../types/game'
 
 interface CharacterPortraitProps {

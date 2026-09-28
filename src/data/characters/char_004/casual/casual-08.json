@@ -1,37 +1,41 @@
 {
   "id": "char_004_casual_08",
   "kind": "casual",
-  "title": "그림자 두 개",
-  "minAffection": 80,
+  "title": "같이 먹는 한 조각",
+  "minAffection": 75,
   "maxAffection": 100,
   "defaultPortrait": "smile",
-  "completionAffection": 5,
+  "completionAffection": 6,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "가로등 아래 두 사람의 그림자가 잠시 겹쳤다. 로운의 그림자가 먼저 움직이지 않았다."
+          "text": "로운은 접시에 케이크 한 조각을 올리고 포크를 두 개 가져왔다."
         },
         {
           "type": "dialogue",
           "speaker": "이로운",
-          "text": "오늘은 얌전하네.",
-          "portrait": "smile"
+          "text": "오늘은 저도 먹을게요.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "그는 그림자보다 {name} 쪽을 봤다."
+          "text": "본인이 만든 디저트는 맛만 확인하고 거의 먹지 않는다는 걸 이제는 알고 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "이로운",
-          "text": "주인이 기분 좋아서 그런가.",
-          "portrait": "smile"
+          "text": "혼자 먹으면 여전히 좀 달거든요. 같이 먹으면… 뭐, 덜 달게 느껴질 수도 있고.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "전혀 과학적이지 않은 설명이었다. 로운도 알아서 끝에 작게 웃었다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 이로운이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "크게 특별한 일은 아니었다. 그래도 이런 짧은 만남들이 쌓일수록 이로운이라는 사람의 결이 조금씩 달라 보였다."
 }

@@ -3,7 +3,7 @@ import { BottomNav, type MainSection } from '../components/BottomNav'
 import { getAllCharacters } from '../engine/encounterEngine'
 import { playUiSound } from '../engine/soundEngine'
 import { useGameStore } from '../store/useGameStore'
-import type { FontFamilySetting, TextSizeSetting } from '../types/game'
+import type { FontFamilySetting, TextSizeSetting, TextSpeedSetting } from '../types/game'
 
 interface SettingsPageProps { onNavigate: (section: MainSection) => void }
 
@@ -11,6 +11,12 @@ const fontOptions: { id: FontFamilySetting; label: string; note: string; sample:
   { id: 'clear', label: '또렷한 고딕', note: '본문 읽기에 가장 선명한 기본값', sample: '오늘도 누군가를 만나러 나가볼까.' },
   { id: 'pretendard', label: '프리텐다드 계열', note: '단정하고 현대적인 UI 느낌', sample: '오늘도 누군가를 만나러 나가볼까.' },
   { id: 'system', label: '기기 기본 고딕', note: '내 기기에서 가장 안정적으로 표시', sample: '오늘도 누군가를 만나러 나가볼까.' },
+]
+
+const speedOptions: { id: TextSpeedSetting; label: string; note: string }[] = [
+  { id: 'instant', label: '즉시', note: '애니메이션 없이 바로 표시' },
+  { id: 'normal', label: '보통', note: '짧고 자연스럽게 나타남' },
+  { id: 'slow', label: '천천히', note: '장면의 호흡을 길게' },
 ]
 
 const sizeOptions: { id: TextSizeSetting; label: string; note: string }[] = [
@@ -27,6 +33,7 @@ export function SettingsPage({ onNavigate }: SettingsPageProps) {
   const toggleSound = useGameStore((state) => state.toggleSound)
   const setFontFamily = useGameStore((state) => state.setFontFamily)
   const setTextSize = useGameStore((state) => state.setTextSize)
+  const setTextSpeed = useGameStore((state) => state.setTextSpeed)
   const nextDay = useGameStore((state) => state.nextDay)
   const resetCollectionOnly = useGameStore((state) => state.resetCollectionOnly)
   const resetCharacter = useGameStore((state) => state.resetCharacter)
@@ -79,6 +86,17 @@ export function SettingsPage({ onNavigate }: SettingsPageProps) {
               </button>
             ))}
           </div>
+
+        <div className="setting-subgroup">
+          <div className="setting-subhead"><strong>텍스트 표시 속도</strong><small>스토리 문장이 나타나는 호흡을 조절합니다.</small></div>
+          <div className="size-option-grid" role="radiogroup" aria-label="텍스트 표시 속도">
+            {speedOptions.map((option) => (
+              <button key={option.id} type="button" className={`reading-option size-option${settings.textSpeed === option.id ? ' is-selected' : ''}`} onClick={() => setTextSpeed(option.id)} role="radio" aria-checked={settings.textSpeed === option.id}>
+                <strong>{option.label}</strong><small>{option.note}</small>
+              </button>
+            ))}
+          </div>
+        </div>
           <div className="reading-preview" aria-label="읽기 설정 미리보기">
             <span>미리보기</span>
             <p>그는 잠깐 시선을 내렸다가 다시 이쪽을 바라봤다.</p>

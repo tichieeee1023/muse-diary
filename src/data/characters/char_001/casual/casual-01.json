@@ -1,37 +1,41 @@
 {
   "id": "char_001_casual_01",
   "kind": "casual",
-  "title": "포장지 모서리",
+  "title": "영수증 책갈피",
   "minAffection": 0,
   "maxAffection": 39,
   "defaultPortrait": "main",
-  "completionAffection": 5,
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "서점 카운터에서 도윤이 새 책 포장지를 반듯하게 접고 있었다."
+          "text": "서점에서 책을 펼치던 도윤의 손가락 사이로 오래된 영수증이 삐져나왔다."
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "비뚤어진 건 신경 쓰여서요.",
+          "text": "책갈피를 또 잃어버려서요.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "정작 자기 셔츠 소매는 한쪽만 접혀 있었다."
+          "text": "영수증에는 몇 달 전 날짜가 찍혀 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "…그건 지금 알았습니다.",
+          "text": "이게 더 잘 안 잃어버립니다.",
           "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "말하면서도 영수증 모서리를 반듯하게 접는다. 책갈피를 잃어버리는 사람답지 않게 꼼꼼한 손이었다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 서도윤이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "사소한 습관 하나를 알게 됐다. 도윤은 새것보다 오래 손에 남은 것을 편하게 여기는 듯했다."
 }

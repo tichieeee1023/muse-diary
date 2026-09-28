@@ -1,32 +1,46 @@
 {
   "id": "char_011_first",
   "kind": "first",
-  "title": "막 뒤의 빛",
+  "title": "비밀 하나 지켜주실래요?",
   "threshold": 0,
-  "defaultPortrait": "main",
+  "defaultPortrait": "smile",
   "completionAffection": 0,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "공연장 뒤편에서 화려한 의상의 남자가 손끝의 빛을 황급히 숨겼다."
+          "text": "쇼핑몰 문화 행사 무대에서 하얀 토끼 귀 소품을 쓴 남자가 아이들 앞에서 작은 마술을 하고 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "유리안",
-          "text": "방금 건 마술입니다.",
+          "text": "자, 이번에는 진짜로 사라집니다. 눈 깜빡이면 손해예요!",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "박수가 터지고 공연이 끝난 뒤, 그가 떨어진 별 스티커를 줍다가 {name}과 눈이 마주쳤다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "비밀 하나 지켜주실래요?",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "장난처럼 속삭인 뒤 그는 바닥에 떨어진 스티커를 들어 보였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "제가 이거 좋아하는 거요. 이미지 관리해야 하거든요.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "웃는 얼굴은 능숙했지만, 들킨 사실 자체가 흥미로운 듯 {name}을 살폈다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "유리안",
-          "text": "믿어주시면 서로 편하고요.",
-          "portrait": "hmm"
+          "text": "곧바로 웃었고, 옆의 스태프에게도 똑같이 장난을 걸었다."
         }
       ],
       "choice": {
@@ -34,49 +48,49 @@
         "options": [
           {
             "id": "a",
-            "text": "“마술치곤 이상했는데요.”",
+            "text": "“이미 다 들킨 것 같은데요.”",
             "affection": 2,
-            "memoryKey": "first_a",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "유리안",
-                "text": "눈썰미 좋으시네. 곤란한데.",
-                "portrait": "troubled"
+                "text": "앗. 그럼 공범으로 모시죠.",
+                "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "yurian_first_joke"
           },
           {
             "id": "b",
-            "text": "“비밀로 해줄게요.”",
+            "text": "“별 스티커가 왜 비밀이에요?”",
             "affection": 1,
-            "memoryKey": "first_b",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "유리안",
-                "text": "오, 믿을 만한 분이네. 감사합니다.",
+                "text": "SSR급 마술사는 더 고급 취향이어야 할 것 같잖아요.",
                 "portrait": "main"
               }
-            ]
+            ],
+            "memoryKey": "yurian_first_stars"
           },
           {
             "id": "c",
-            "text": "“공연 배우예요?”",
-            "affection": 0,
-            "memoryKey": "first_c",
+            "text": "“공연 재밌었어요.”",
+            "affection": 2,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "유리안",
-                "text": "네. 그건 진짜입니다.",
-                "portrait": "main"
+                "text": "감사합니다. 그 말이 제일 좋아요.",
+                "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "yurian_first_show"
           }
         ]
       }
     }
   ],
-  "closing": "첫인상만으로는 아직 아무것도 알 수 없다. 다만 다시 마주치면 조금 더 알게 될지도 모른다."
+  "closing": "유리안. 무대 위에서는 반짝이고, 누구에게나 쉽게 웃어주는 사람. 아직 그 웃음 밖의 얼굴은 보이지 않았다."
 }

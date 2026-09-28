@@ -1,27 +1,35 @@
 {
   "id": "char_008_affinity_80",
   "kind": "story",
-  "title": "폐관 후 십 분",
+  "title": "세현 씨는 뭘 좋아해요?",
   "threshold": 80,
-  "purpose": "업무 관계 밖의 시간을 처음 공유한다",
-  "defaultPortrait": "smile",
+  "purpose": "늘 타인의 취향을 묻던 세현이 자신의 취향과 욕망을 직접 말하도록 한다.",
+  "defaultPortrait": "main",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "폐관 방송 뒤 세현은 직원 출입문 대신 전시장 한가운데로 {name}을 데려갔다."
+          "text": "세현은 새 전시가 들어올 때마다 {name}에게 사진을 보내왔다. “이건 좋아할 것 같아요”, “이건 별로일 듯” 같은 짧은 말과 함께."
+        },
+        {
+          "type": "narration",
+          "text": "그날도 비슷한 질문이 이어지다가 {name}이 문득 말을 끊었다."
         },
         {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "딱 십 분만요. 제가 제일 좋아하는 시간이에요.",
-          "portrait": "smile"
+          "text": "왜요? 제가 또 너무 물어봤어요?",
+          "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "관람객이 없는 전시장은 조용했고, 세현도 설명을 멈췄다."
+          "text": "이번에는 반대 질문을 던졌다. “세현 씨는 뭘 좋아해요?”"
+        },
+        {
+          "type": "narration",
+          "text": "세현이 입을 다물었다. 그 흔한 질문 하나가 예상 밖의 문제처럼 얼굴에 떠올랐다."
         }
       ]
     },
@@ -30,7 +38,33 @@
         {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "이건 누구한테나 보여주는 거 아니에요.",
+          "text": "저는… 설명을 다 안 해주는 그림 좋아해요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "좀 서툴러도 만든 사람이 끝까지 남아 있는 것도 좋고. 반듯한 것보다 이상한 구석 있는 것도요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "하나를 말하자 다음 것이 따라왔다. 좋아하는 색, 싫어하는 재료, 언젠가 그리고 싶은 장면."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "이상하죠. 남들한텐 그렇게 잘 물어보면서 제가 뭘 좋아하는지는 말해본 적이 별로 없어요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "그리고 마지막에는 아주 작게 덧붙였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "요즘은… {name} 씨한테 보여주고 싶은 것도 생겼고요.",
           "portrait": "smile"
         }
       ],
@@ -39,61 +73,53 @@
         "options": [
           {
             "id": "a",
-            "text": "“영광이네요.”",
+            "text": "“보여줄 때까지 기다릴게요.”",
             "affection": 6,
-            "memoryKey": "affinity_80_a",
+            "memoryKey": "sehyun_80_wait_show",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "오세현",
-                "text": "그러니까 잘 기억해줘요.",
+                "text": "이번엔 진짜 오래 안 걸리게 해볼게요.",
                 "portrait": "smile"
               }
             ]
           },
           {
             "id": "b",
-            "text": "“그럼 조용히 볼게요.”",
-            "affection": 4,
-            "memoryKey": "affinity_80_b",
+            "text": "“내가 좋아할지는 아직 모르는데요?”",
+            "affection": 5,
+            "memoryKey": "sehyun_80_honest",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "오세현",
-                "text": "네. 같이요.",
-                "portrait": "troubled"
+                "text": "네. 그래서 보여주고 싶은 거예요. 진짜 반응이 궁금해서.",
+                "portrait": "main"
               }
             ]
           },
           {
             "id": "c",
-            "text": "“나한테 보여주고 싶었어요?”",
+            "text": "“세현 씨가 좋아하는 걸 더 말해줘요.”",
             "affection": 5,
-            "memoryKey": "affinity_80_c",
+            "memoryKey": "sehyun_80_more_self",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "오세현",
-                "text": "…네. 사실은.",
+                "text": "오늘 다 말하면 다음에 할 얘기 없잖아요.",
                 "portrait": "smile"
+              },
+              {
+                "type": "narration",
+                "text": "이번 장난은 화제를 피하기 위한 것이 아니었다."
               }
             ]
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 폐관 후 십 분은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "업무 관계 밖의 시간을 처음 공유한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "폐관 후 십 분 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "관찰 기록의 중심이 바뀌었다. 이제 세현은 {name}을 이해하려는 만큼, 자신도 이해받고 싶어 했다."
 }

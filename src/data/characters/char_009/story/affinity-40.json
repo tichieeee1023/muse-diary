@@ -1,37 +1,47 @@
 {
   "id": "char_009_affinity_40",
   "kind": "story",
-  "title": "공포영화 상담사",
+  "title": "제가 지금 화가 난 것 같군요",
   "threshold": 40,
-  "purpose": "이겸의 의외로 겁 많은 면",
-  "defaultPortrait": "hmm",
+  "purpose": "갭모에를 본격적으로 보여주고, 자기 감정 인식의 서툼을 관계 진전의 핵심으로 만든다.",
+  "defaultPortrait": "troubled",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "쇼핑몰 전광판에서 공포영화 예고편이 갑자기 재생됐다. 이겸의 어깨가 아주 미세하게 튀었다."
+          "text": "누군가 {name}에게 무례하게 말한 뒤였다. 이겸은 평소처럼 차분했지만 찻잔을 내려놓는 소리가 조금 컸다."
         },
         {
           "type": "dialogue",
           "speaker": "차이겸",
-          "text": "…놀란 게 아니라 소리가 컸습니다.",
+          "text": "잠시만요.",
           "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "손목의 검은 문양보다 화면 속 귀신을 더 경계하는 표정이었다."
+          "text": "그는 스스로 숨을 고르고 한참 생각했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "제가 지금… 상당히 화가 난 것 같습니다.",
+          "portrait": "troubled"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "이유를 묻자 이겸이 이번에는 바로 대답했다."
+        },
+        {
           "type": "dialogue",
           "speaker": "차이겸",
-          "text": "이건 기록하지 맙시다.",
-          "portrait": "hmm"
+          "text": "당신이 부당하게 취급받는 게 싫었습니다. 이건 비교적 분명하군요.",
+          "portrait": "main"
         }
       ],
       "choice": {
@@ -39,61 +49,49 @@
         "options": [
           {
             "id": "a",
-            "text": "“무서워해요?”",
-            "affection": 6,
-            "memoryKey": "affinity_40_a",
+            "text": "“그럼 화내도 돼요.”",
+            "affection": 7,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "차이겸",
-                "text": "장르를 선호하지 않을 뿐입니다.",
-                "portrait": "hmm"
+                "text": "그 허가가 왜 이렇게 어렵게 들리는지 모르겠습니다.",
+                "portrait": "troubled"
               }
-            ]
+            ],
+            "memoryKey": "igyeom_40_permission"
           },
           {
             "id": "b",
-            "text": "“손 잡아줄까요?”",
-            "affection": 4,
-            "memoryKey": "affinity_40_b",
+            "text": "“나 때문에 화난 거네요.”",
+            "affection": 6,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "차이겸",
-                "text": "그 정도까진… 아니, 잠깐은 괜찮겠네요.",
-                "portrait": "troubled"
+                "text": "네. 정확히는 당신을 향한 게 아니라 당신 때문에.",
+                "portrait": "hmm"
               }
-            ]
+            ],
+            "memoryKey": "igyeom_40_for_you"
           },
           {
             "id": "c",
-            "text": "“상담 필요하신가요?”",
-            "affection": 5,
-            "memoryKey": "affinity_40_c",
+            "text": "“감정 하나 찾았네요.”",
+            "affection": 6,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "차이겸",
-                "text": "직업 농담은 반칙입니다.",
-                "portrait": "hmm"
+                "text": "축하받을 일인지는 모르겠지만… 그렇군요.",
+                "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "igyeom_40_found"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 공포영화 상담사은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "이겸의 의외로 겁 많은 면 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "공포영화 상담사 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "이겸은 처음으로 자기 감정에 이름을 붙여 누군가에게 말했다."
 }

@@ -1,9 +1,9 @@
 {
   "id": "char_008_affinity_100",
   "kind": "story",
-  "title": "전시가 끝난 뒤",
+  "title": "완성",
   "threshold": 100,
-  "purpose": "세현이 관찰자가 아니라 관계의 당사자가 된다",
+  "purpose": "세현이 끝내 미완성으로 남겨두던 자신의 작품 하나를 완성하고, 관찰자가 아니라 관계의 당사자로 서는 결말.",
   "defaultPortrait": "smile",
   "completionAffection": 0,
   "sections": [
@@ -11,26 +11,70 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "전시 마지막 날, 세현은 작품이 철거되는 모습을 보다가 {name} 쪽으로 몸을 돌렸다."
+          "text": "작은 기획 전시의 마지막 벽에는 다른 작품들과 조금 떨어진 그림 하나가 걸려 있었다."
+        },
+        {
+          "type": "narration",
+          "text": "작품 아래에는 낯익은 이름이 적혀 있었다. 오세현."
+        },
+        {
+          "type": "narration",
+          "text": "세현은 그림보다 캡션을 더 오래 바라보고 있었다. 얼굴은 밝지 않았다. 오히려 도망치고 싶은 사람처럼 굳어 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "끝나는 전시는 익숙한데요.",
-          "portrait": "smile"
+          "text": "저거, 오늘 아침까지도 내릴까 고민했어요.",
+          "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "그는 웃으면서도 이번에는 바로 다음 말을 이어갔다."
+          "text": "그림은 완벽하지 않았다. 붓질이 거칠게 남은 곳도 있었고, 일부러 비워둔 것 같은 부분도 있었다. 그런데 끝나 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "완성했어요.",
+          "portrait": "main"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "{name}이 그림을 보고 있는 동안 세현은 아무 질문도 하지 않았다. “어때요?”조차 묻지 않았다."
+        },
+        {
+          "type": "narration",
+          "text": "한참 뒤에야 그가 숨을 길게 내쉬었다."
+        },
+        {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "당신이랑은 다음 전시도, 그 다음도 보고 싶어요.",
+          "text": "이상하네. 평가받는 게 제일 무서울 줄 알았는데.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "지금은 그냥… 당신이 봤다는 게 좋네요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "늘 관람객의 표정을 읽던 사람이 이번에는 제 표정을 숨기지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "그리고 하나 더 말해도 돼요?",
+          "portrait": "troubled"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "전시 끝나도 계속 보고 싶어요. 작품 말고, {name} 씨를요.",
           "portrait": "smile"
         }
       ],
@@ -39,61 +83,65 @@
         "options": [
           {
             "id": "a",
-            "text": "“같이 봐요.”",
+            "text": "“그럼 다음 작품도 같이 봐요.”",
             "affection": 6,
-            "memoryKey": "affinity_100_a",
+            "memoryKey": "sehyun_100_next",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "오세현",
-                "text": "약속입니다.",
+                "text": "네. 다음 건… 이번보다 덜 도망가볼게요.",
                 "portrait": "smile"
               }
             ]
           },
           {
             "id": "b",
-            "text": "“이번엔 내가 먼저 초대할게요.”",
-            "affection": 4,
-            "memoryKey": "affinity_100_b",
+            "text": "“이번엔 내가 세현 씨를 오래 볼게요.”",
+            "affection": 6,
+            "memoryKey": "sehyun_100_observed",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "오세현",
-                "text": "그거 좋네요.",
+                "text": "그 말, 처음 만났을 때 들었으면 도망갔을 것 같은데.",
                 "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "오세현",
+                "text": "지금은 좋네요.",
+                "portrait": "smile"
               }
             ]
           },
           {
             "id": "c",
-            "text": "“관람객 말고 다른 자격으로?”",
-            "affection": 5,
-            "memoryKey": "affinity_100_c",
+            "text": "“작품도, 세현 씨도 둘 다 좋아요.”",
+            "affection": 6,
+            "memoryKey": "sehyun_100_both",
             "response": [
+              {
+                "type": "narration",
+                "text": "세현이 잠깐 아무 말도 못 했다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "오세현",
-                "text": "…그 질문 기다렸어요.",
+                "text": "…그건 진짜 예상 못 했어요.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "오세현",
+                "text": "좋다. 엄청.",
                 "portrait": "smile"
               }
             ]
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 전시가 끝난 뒤은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "세현이 관찰자가 아니라 관계의 당사자가 된다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "전시가 끝난 뒤 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "전시장의 작은 캡션 아래에는 단 한 단어가 남아 있었다. “완성.” 세현에게는 끝을 뜻하는 말이 아니라, 다음 것을 시작할 수 있다는 말이 되었다."
 }

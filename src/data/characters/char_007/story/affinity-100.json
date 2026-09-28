@@ -1,36 +1,46 @@
 {
   "id": "char_007_affinity_100",
   "kind": "story",
-  "title": "오래된 이름, 새로운 약속",
+  "title": "오늘의 선택",
   "threshold": 100,
-  "purpose": "과거가 아니라 지금의 자신으로 사랑받기를 선택한다",
+  "purpose": "졸업 후 현재의 자신으로 미래를 선택하게 한다. 로맨스는 또래다운 수줍음과 약속 중심으로 마무리한다.",
   "defaultPortrait": "smile",
-  "completionAffection": 0,
+  "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "휘람은 오래된 기록 속 이름을 손가락으로 가리고 자기 이름만 남겼다."
+          "text": "졸업식이 끝난 날, 휘람은 처음으로 교복이 아닌 사복 차림이었다."
         },
         {
           "type": "dialogue",
           "speaker": "김휘람",
-          "text": "그 이름으로 불리던 시간보다 지금이 더 좋아요.",
-          "portrait": "smile"
+          "text": "이상하죠. 이 옷이 더 낯섭니다.",
+          "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "책을 덮은 뒤에는 더 이상 기록을 보지 않았다."
+          "text": "가방 안에는 오래된 검술 매듭이 들어 있었지만 손에 들고 있지는 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "버리는 건 아닙니다. 다만 매일 달고 다닐 필요는 없을 것 같아서요.",
+          "portrait": "main"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "휘람은 잠깐 망설이다가 {name}을 똑바로 봤다."
+        },
+        {
           "type": "dialogue",
           "speaker": "김휘람",
-          "text": "{name} 씨가 김휘람으로 기억해주면 되니까.",
+          "text": "앞으로 뭘 할지는 아직 모르겠습니다. 그래도… 다음에 어디 갈지는 제가 정해보고 싶어요. 같이 가주실래요?",
           "portrait": "smile"
         }
       ],
@@ -39,61 +49,53 @@
         "options": [
           {
             "id": "a",
-            "text": "“김휘람으로 좋아해요.”",
-            "affection": 6,
-            "memoryKey": "affinity_100_a",
+            "text": "“휘람이 가고 싶은 데로.”",
+            "affection": 8,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "김휘람",
-                "text": "…그 말 진짜 오래 기억할게요.",
+                "text": "그럼 진짜 멀리 갈 수도 있어요.",
                 "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "hwiram_100_trip"
           },
           {
             "id": "b",
-            "text": "“앞으로의 기록은 같이 만들어요.”",
-            "affection": 4,
-            "memoryKey": "affinity_100_b",
+            "text": "“이번엔 네가 먼저 정해.”",
+            "affection": 8,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "김휘람",
-                "text": "좋아요. 이번엔 틀리지 않게.",
-                "portrait": "troubled"
+                "text": "네. 이번엔 제가 선택할게요.",
+                "portrait": "main"
               }
-            ]
+            ],
+            "memoryKey": "hwiram_100_choose"
           },
           {
             "id": "c",
-            "text": "“그 이름 잊을 일 없어요.”",
-            "affection": 5,
-            "memoryKey": "affinity_100_c",
+            "text": "“일단 키오스크부터 정복할까?”",
+            "affection": 7,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "김휘람",
-                "text": "그럼 저도 안 잊을게요.",
-                "portrait": "smile"
+                "text": "…그건 여행보다 어렵습니다.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "narration",
+                "text": "그리고 아주 또래답게 웃었다."
               }
-            ]
+            ],
+            "memoryKey": "hwiram_100_kiosk"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 오래된 이름, 새로운 약속은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "과거가 아니라 지금의 자신으로 사랑받기를 선택한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "오래된 이름, 새로운 약속 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "과거를 기억하는 아이는 처음으로 현재의 자신이 원하는 다음 장면을 골랐다."
 }

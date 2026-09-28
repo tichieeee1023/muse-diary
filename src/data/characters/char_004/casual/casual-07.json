@@ -1,8 +1,8 @@
 {
   "id": "char_004_casual_07",
   "kind": "casual",
-  "title": "문 닫힌 카페",
-  "minAffection": 80,
+  "title": "내 취향",
+  "minAffection": 60,
   "maxAffection": 100,
   "defaultPortrait": "smile",
   "completionAffection": 5,
@@ -12,26 +12,30 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "문을 닫았는데도 로운이 불을 하나 남겨뒀다."
+          "text": "로운이 신메뉴 후보 두 개를 꺼내놓았다. 평소라면 {name}의 취향부터 물었을 텐데 오늘은 한쪽을 먼저 가리켰다."
         },
         {
           "type": "dialogue",
           "speaker": "이로운",
-          "text": "혹시 올까 봐요.",
+          "text": "전 이쪽이 좋아요.",
           "portrait": "smile"
         },
         {
           "type": "narration",
-          "text": "말하고 나서 본인이 더 놀란 듯 웃었다."
+          "text": "매운 국물 말고, 자신이 만든 디저트에 대해 로운이 먼저 취향을 말한 건 처음이었다."
         },
         {
           "type": "dialogue",
           "speaker": "이로운",
-          "text": "이건 좀 티 났네요.",
-          "portrait": "smile"
+          "text": "당신한테 맞는 걸 고르는 것도 재밌는데, 요즘은 제가 좋아하는 것도 보여주고 싶어서.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "맞춰주는 사람에서 보여주는 사람으로, 아주 작은 방향 전환이었다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 이로운이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "크게 특별한 일은 아니었다. 그래도 이런 짧은 만남들이 쌓일수록 이로운이라는 사람의 결이 조금씩 달라 보였다."
 }

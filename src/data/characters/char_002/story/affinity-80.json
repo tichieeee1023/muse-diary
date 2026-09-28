@@ -1,81 +1,119 @@
 {
   "id": "char_002_affinity_80",
   "kind": "story",
-  "title": "평가하지 않는 날",
+  "title": "버리지 못한 시안",
   "threshold": 80,
-  "purpose": "나에게만 평가를 멈추는 변화",
-  "defaultPortrait": "smile",
-  "completionAffection": 3,
+  "defaultPortrait": "main",
+  "completionAffection": 2,
+  "purpose": "주원이 커리어 실패와 통제 집착의 원인을 처음 직접 말하고, {name} 앞에서 실패를 정리된 결과가 아닌 상처로 보여준다",
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "{name}이 만든 새 인형을 보여주자 주원은 평소처럼 바로 분석하지 않았다. 한참 보고서야 웃었다."
+          "text": "주원의 집에서 오래된 파일을 정리하던 날, 유독 두꺼운 봉투 하나가 나왔다. 프로젝트명은 검은 펜으로 지워져 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "좋네요.",
-          "portrait": "smile"
+          "text": "그건 그냥 두세요.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "어디가 좋으냐고 묻자 그는 대답 대신 인형을 조심스럽게 제자리로 돌려놓았다."
+          "text": "목소리는 차분했지만 손이 먼저 봉투를 가져갔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "제가 제일 아끼던 프로젝트였습니다. 그리고 제일 크게 실패했죠.",
+          "portrait": "hmm"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "외부 사정만으로 망한 일이 아니었다. 주원은 자신의 판단을 끝까지 밀어붙였고, 팀원 한 명이 결국 회사를 떠났다."
+        },
+        {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "오늘은 그냥 좋다고만 해두죠.",
-          "portrait": "smile"
+          "text": "틀릴 가능성을 인정하면 흔들릴 것 같았습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "그래서 더 세게 밀었고요. 결과는 보시는 대로입니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "그가 실패를 이렇게 평평한 문장으로 말할 수 있기까지 오래 걸렸을 것 같았다."
         }
       ],
       "choice": {
-        "id": "aff_80_choice",
+        "id": "a80",
         "options": [
           {
             "id": "a",
-            "text": "“평가 안 해요?”",
-            "affection": 6,
-            "memoryKey": "affinity_80_a",
+            "text": "“그때의 잘못이 지금의 주원 씨 전부는 아니잖아요.”",
+            "affection": 7,
+            "memoryKey": "a80_not_whole_self",
             "response": [
+              {
+                "type": "narration",
+                "text": "주원이 시선을 들었다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "네. 오늘은 안 합니다.",
-                "portrait": "smile"
+                "text": "그 말을 믿기까지 시간이 좀 걸릴 것 같습니다.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "그래도… 기억해두죠.",
+                "portrait": "main"
               }
             ]
           },
           {
             "id": "b",
-            "text": "“나 봐서 봐주는 거예요?”",
-            "affection": 4,
-            "memoryKey": "affinity_80_b",
+            "text": "“그래서 모든 걸 미리 통제하려고 했구나.”",
+            "affection": 6,
+            "memoryKey": "a80_understood_control",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "그럴지도요.",
-                "portrait": "troubled"
+                "text": "네. 알아차리셨네요.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "비꼬지 않았다. 인정하는 데 힘이 드는 얼굴이었다."
               }
             ]
           },
           {
             "id": "c",
-            "text": "“그 한마디가 더 긴장되는데.”",
+            "text": "“그 시안, 이제 버릴 수 있어요?”",
             "affection": 5,
-            "memoryKey": "affinity_80_c",
+            "memoryKey": "a80_throw_away",
             "response": [
+              {
+                "type": "narration",
+                "text": "주원은 한참 봉투를 바라보다 고개를 저었다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "좋은 의미로 받아들이세요.",
-                "portrait": "smile"
+                "text": "아직은요. 다만 숨겨둘 필요는 없을 것 같습니다.",
+                "portrait": "main"
               }
             ]
           }
@@ -86,14 +124,26 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "그날의 평가하지 않는 날은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+          "text": "주원은 봉투를 가장 깊은 서랍이 아니라 책장 한쪽에 꽂았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "다음 작업은 완벽하게 하겠다는 말, 안 하려고요.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "나에게만 평가를 멈추는 변화 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+          "text": "그가 희미하게 웃었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "대신 틀리면 좀 빨리 인정해보죠. 옆에서 지적해주시든가.",
+          "portrait": "smile"
         }
       ]
     }
   ],
-  "closing": "평가하지 않는 날 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "주원은 실패를 없애는 대신, 실패가 있는 채로 다음 선택을 하는 법을 배우고 있었다."
 }

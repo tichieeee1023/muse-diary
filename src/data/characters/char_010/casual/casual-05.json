@@ -1,37 +1,41 @@
 {
   "id": "char_010_casual_05",
   "kind": "casual",
-  "title": "문구점 앞",
-  "minAffection": 40,
-  "maxAffection": 100,
-  "defaultPortrait": "troubled",
-  "completionAffection": 5,
+  "title": "밴드",
+  "minAffection": 30,
+  "maxAffection": 79,
+  "defaultPortrait": "main",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "재하가 문구점 쇼윈도 앞에서 멈췄다."
+          "text": "{name} 손가락의 작은 상처를 본 재하가 주머니에서 밴드를 꺼냈다."
         },
         {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "필요한 게 있습니다.",
-          "portrait": "troubled"
+          "text": "붙이십시오.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "시선은 작은 강아지 스티커 세트에 꽂혀 있었다."
+          "text": "왜 이런 걸 들고 다니냐고 묻자 잠깐 침묵했다."
         },
         {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "선물용입니다.",
-          "portrait": "troubled"
+          "text": "다치는 사람이 많아서.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "자기 이야기는 끝내 하지 않았다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 권재하이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "보호는 그에게 생각보다 먼저 나오는 습관이었다."
 }

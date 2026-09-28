@@ -1,81 +1,127 @@
 {
   "id": "char_002_affinity_60",
   "kind": "story",
-  "title": "버리지 못한 시안",
+  "title": "틀린 도면",
   "threshold": 60,
-  "purpose": "완벽주의 뒤에 남아 있는 미련과 다정함",
-  "defaultPortrait": "troubled",
-  "completionAffection": 3,
+  "defaultPortrait": "main",
+  "completionAffection": 2,
+  "purpose": "주원이 현실계 인물로서 공간의 이상을 최초로 구조적 오류로 감지하고, 통제할 수 없는 현상 앞에서 {name}과 함께 움직인다",
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "주원의 작업실 한쪽 상자에는 폐기된 시안들이 날짜별로 정리되어 있었다."
+          "text": "쇼핑몰 폐점 직전, 주원에게서 짧은 연락이 왔다. '지금 3층이면 움직이지 마세요.' 이유는 없었다."
+        },
+        {
+          "type": "narration",
+          "text": "그가 직접 찾아왔을 때 손에는 건물 도면이 들려 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "실패작입니다. 그래서 남겨뒀어요.",
-          "portrait": "troubled"
+          "text": "이 복도, 원래 18미터입니다.",
+          "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "그는 실패를 싫어하지만 실패한 시간을 버리는 건 더 싫다고 했다."
+          "text": "끝을 봐도 출구가 보이지 않았다. 걸어온 거리만 이미 그보다 길었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "도면이 틀렸다고 생각했는데… 아니네요.",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "틀린 건 지금 이 공간입니다.",
+          "portrait": "hmm"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "주원은 공포보다 먼저 벽의 간격과 천장 조명을 셌다. 통제할 수 없는 상황을 숫자로 붙잡으려는 사람처럼 보였다."
+        },
+        {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "사람도 마찬가지일지 모르겠네요.",
-          "portrait": "troubled"
+          "text": "제 뒤에 계세요. 같은 코너를 세 번 돌면 바로 말하고요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "명령조였지만 손끝은 평소보다 차가웠다."
         }
       ],
       "choice": {
-        "id": "aff_60_choice",
+        "id": "a60",
         "options": [
           {
             "id": "a",
-            "text": "“실패가 아니라 과정이잖아요.”",
-            "affection": 6,
-            "memoryKey": "affinity_60_a",
+            "text": "“혼자 다 판단하려고 하지 마요. 같이 볼게요.”",
+            "affection": 7,
+            "memoryKey": "a60_share_control",
             "response": [
+              {
+                "type": "narration",
+                "text": "주원이 바로 대답하지 못했다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "그 말, 제일 싫어하면서도 제일 필요한 말이네요.",
-                "portrait": "smile"
+                "text": "…알겠습니다. 이상한 게 보이면 먼저 말하세요.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "narration",
+                "text": "처음으로 역할을 나눴다."
               }
             ]
           },
           {
             "id": "b",
-            "text": "“나도 상자에 들어가요?”",
-            "affection": 4,
-            "memoryKey": "affinity_60_b",
+            "text": "“무서워요?”",
+            "affection": 5,
+            "memoryKey": "a60_fear",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "당신은 보관함이 따로 필요하겠는데요.",
+                "text": "기분은 나쁩니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "주원다운 대답이었다. 잠시 뒤 그가 작게 덧붙였다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "제가 모르는 규칙으로 움직이는 건 싫거든요.",
                 "portrait": "troubled"
               }
             ]
           },
           {
             "id": "c",
-            "text": "“주원 씨답지 않게 sentimental.”",
-            "affection": 5,
-            "memoryKey": "affinity_60_c",
+            "text": "“이런 것도 디자인 문제로 보여요?”",
+            "affection": 6,
+            "memoryKey": "a60_design_joke",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "그 단어 쓰지 마세요.",
-                "portrait": "troubled"
+                "text": "최악의 동선 설계죠.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "이 상황에서도 그답게 대답했다. 아주 잠깐 둘 다 웃었다."
               }
             ]
           }
@@ -86,14 +132,30 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "그날의 버리지 못한 시안은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+          "text": "두 사람은 조명의 반복 패턴을 기준으로 역방향을 찾아 결국 원래 복도로 빠져나왔다."
         },
         {
           "type": "narration",
-          "text": "완벽주의 뒤에 남아 있는 미련과 다정함 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+          "text": "정상적인 3층은 너무 평범해서 오히려 낯설었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "오늘 일은 제가 확인해보겠습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "평소 같으면 거기서 끝났을 말이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "…그리고 뭔가 또 이상하면 혼자 들어가지 마세요. 저한테 먼저 연락하고.",
+          "portrait": "troubled"
         }
       ]
     }
   ],
-  "closing": "버리지 못한 시안 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "주원은 설명할 수 없는 공간을 만났고, 처음으로 모든 변수를 혼자 통제하려 하지 않았다."
 }

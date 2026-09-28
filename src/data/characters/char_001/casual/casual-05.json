@@ -1,10 +1,10 @@
 {
   "id": "char_001_casual_05",
   "kind": "casual",
-  "title": "같은 문장",
-  "minAffection": 40,
-  "maxAffection": 99,
-  "defaultPortrait": "smile",
+  "title": "추천 순서",
+  "minAffection": 20,
+  "maxAffection": 69,
+  "defaultPortrait": "main",
   "completionAffection": 5,
   "repeatable": true,
   "sections": [
@@ -12,26 +12,89 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "둘이 동시에 같은 문장에 밑줄을 긋고 멈췄다."
+          "text": "도윤이 전에 추천한 책은 아직 가방 안에 있었다. 대신 다른 서점에서 추천받은 책을 먼저 꺼내자, 카운터 쪽에서 종이 넘기는 소리가 잠깐 멎었다."
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "…취향이 겹치는군요.",
-          "portrait": "smile"
+          "text": "그 책부터 읽으시는군요.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "도윤은 그 사실을 이상할 만큼 오래 바라봤다."
+          "text": "평소와 같은 목소리였다."
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "나쁘진 않습니다.",
-          "portrait": "smile"
+          "text": "아뇨. 상관없습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그리고 책 정리하는 소리가 평소보다 조금 커졌다."
         }
-      ]
+      ],
+      "choice": {
+        "id": "c5",
+        "options": [
+          {
+            "id": "a",
+            "text": "“혹시 삐졌어요?”",
+            "affection": 6,
+            "memoryKey": "caught_sulking",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "아닙니다.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "narration",
+                "text": "대답이 지나치게 빨랐다."
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“도윤 씨 책은 아껴두는 중인데.”",
+            "affection": 7,
+            "memoryKey": "saved_his_book",
+            "response": [
+              {
+                "type": "narration",
+                "text": "정리하던 손이 조용해졌다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "…그런 이유면 이해하겠습니다.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“읽는 순서까지 정해줘요?”",
+            "affection": 3,
+            "memoryKey": "teased_recommendation",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "그럴 권한은 없죠.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "도윤은 고개를 숙였지만 입꼬리가 아주 조금 굳어 있었다."
+              }
+            ]
+          }
+        ]
+      }
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 서도윤이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "무던한 사람도 서운할 때가 있었다. 티가 아주 조금 날 뿐이었다."
 }

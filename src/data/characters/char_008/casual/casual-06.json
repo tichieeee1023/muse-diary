@@ -1,76 +1,41 @@
 {
   "id": "char_008_casual_06",
   "kind": "casual",
-  "title": "폐관 방송 따라하기",
-  "minAffection": 60,
-  "maxAffection": 100,
-  "defaultPortrait": "smile",
-  "completionAffection": 3,
+  "title": "좋아하는 작품",
+  "minAffection": 40,
+  "maxAffection": 89,
+  "defaultPortrait": "main",
+  "completionAffection": 5,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "세현이 폐관 방송 멘트를 똑같이 흉내 냈다."
+          "text": "폐관 직전, 세현은 사람이 거의 없는 작은 전시실로 {name}을 데려갔다."
         },
         {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "맨날 들으면 외워져요.",
+          "text": "저 사실 여기 작품 제일 좋아해요. 유명한 건 아닌데.",
           "portrait": "smile"
         },
         {
           "type": "narration",
-          "text": "목소리까지 지나치게 비슷했다."
+          "text": "왜 좋아하느냐고 묻자 이번에는 대답이 의외로 빨랐다."
         },
         {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "쓸데없는 재능이죠.",
-          "portrait": "smile"
+          "text": "끝까지 다 설명 안 해줘서요. 보는 사람이 끼어들 자리가 있잖아요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "남의 작품 취향을 말할 때의 세현은 자기 얘기를 피할 때와 전혀 다른 얼굴이었다."
         }
-      ],
-      "choice": {
-        "id": "casual_6_choice",
-        "options": [
-          {
-            "id": "a",
-            "text": "조금 솔직하게 반응한다.",
-            "affection": 3,
-            "memoryKey": "casual_6_warm",
-            "response": [
-              {
-                "type": "narration",
-                "text": "오세현의 표정이 아주 조금 풀렸다."
-              }
-            ]
-          },
-          {
-            "id": "b",
-            "text": "가볍게 놀려본다.",
-            "affection": 2,
-            "response": [
-              {
-                "type": "narration",
-                "text": "오세현은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
-              }
-            ]
-          },
-          {
-            "id": "c",
-            "text": "그냥 옆에서 지켜본다.",
-            "affection": 1,
-            "response": [
-              {
-                "type": "narration",
-                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
-              }
-            ]
-          }
-        ]
-      }
+      ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 오세현이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "크게 특별한 일은 아니었다. 그래도 이런 날들이 쌓일수록 오세현이라는 사람의 윤곽이 선명해졌다."
 }

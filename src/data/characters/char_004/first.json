@@ -1,7 +1,7 @@
 {
   "id": "char_004_first",
   "kind": "first",
-  "title": "달콤한 첫인상",
+  "title": "오늘은 레몬 타르트",
   "threshold": 0,
   "defaultPortrait": "main",
   "completionAffection": 0,
@@ -10,23 +10,33 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "카페 문을 열자 버터 냄새와 함께 밝은 목소리가 들렸다."
+          "text": "카페 쇼케이스에는 지나치게 반듯한 케이크들이 줄지어 있었다. {name}이 메뉴판과 진열장을 번갈아 보는 사이, 안쪽에서 접시를 정리하던 남자가 고개를 들었다."
         },
         {
           "type": "dialogue",
           "speaker": "이로운",
-          "text": "오늘은 단 게 잘 맞을 얼굴인데요.",
-          "portrait": "main"
+          "text": "고민 길어지셨죠? 오늘은 레몬 타르트가 잘 맞겠는데요.",
+          "portrait": "smile"
         },
         {
           "type": "narration",
-          "text": "그는 다른 손님에게도 똑같이 자연스러운 미소를 건넸다."
+          "text": "처음 보는 손님에게 하기엔 묘하게 단정적인 말이었다. 하지만 특별한 관심은 아니었다. 바로 다음 손님에게도 그는 자연스럽게 다른 디저트를 골라주고 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "이로운",
-          "text": "추천 필요하면 불러주세요.",
-          "portrait": "hmm"
+          "text": "저분은 초콜릿. 저쪽은 치즈케이크. 아, 전부 맞는 건 아니고요.",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "틀리면 취향 조사한 걸로 치죠.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "장난스럽게 웃는 얼굴은 능숙했다. 사람을 편하게 만드는 데 익숙한 사람의 웃음이었다."
         }
       ],
       "choice": {
@@ -34,43 +44,51 @@
         "options": [
           {
             "id": "a",
-            "text": "“뭘 추천할 건데요?”",
+            "text": "“왜 레몬 타르트예요?”",
             "affection": 2,
-            "memoryKey": "first_a",
+            "memoryKey": "rowoon_first_reason",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "이로운",
-                "text": "오늘은 레몬 타르트. 이유는 비밀.",
-                "portrait": "main"
+                "text": "조금 지친 얼굴인데 너무 단 건 싫어할 것 같아서요. 새콤한 쪽이 낫겠다 싶었고.",
+                "portrait": "hmm"
+              },
+              {
+                "type": "narration",
+                "text": "생각보다 구체적인 대답이었다. 관찰인지 감인지, 아직은 알 수 없었다."
               }
             ]
           },
           {
             "id": "b",
-            "text": "“사람 얼굴로 그런 것도 알아요?”",
+            "text": "“모든 손님한테 그렇게 맞혀봐요?”",
             "affection": 1,
-            "memoryKey": "first_b",
+            "memoryKey": "rowoon_first_everyone",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "이로운",
-                "text": "직업적 감입니다. 대충 절반은 맞아요.",
+                "text": "네. 은근 재밌거든요. 틀려도 제가 케이크 하나 더 배우는 셈이고.",
                 "portrait": "main"
               }
             ]
           },
           {
             "id": "c",
-            "text": "“그냥 커피만 볼게요.”",
+            "text": "“추천은 됐어요. 제가 고를게요.”",
             "affection": 0,
-            "memoryKey": "first_c",
+            "memoryKey": "rowoon_first_own_choice",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "이로운",
-                "text": "네. 천천히 보세요.",
+                "text": "그게 제일 정확하죠. 천천히 보세요.",
                 "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "그는 더 권하지 않았다. 친절하지만 선을 넘지는 않는 사람 같았다."
               }
             ]
           }
@@ -78,5 +96,5 @@
       }
     }
   ],
-  "closing": "첫인상만으로는 아직 아무것도 알 수 없다. 다만 다시 마주치면 조금 더 알게 될지도 모른다."
+  "closing": "이로운. 사람의 기분을 디저트처럼 골라내는 파티시에. 아직은 그 능숙한 미소보다 더 안쪽의 얼굴은 보이지 않았다."
 }

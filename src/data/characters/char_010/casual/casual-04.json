@@ -1,37 +1,41 @@
 {
   "id": "char_010_casual_04",
   "kind": "casual",
-  "title": "휴대폰 확대",
-  "minAffection": 40,
-  "maxAffection": 100,
-  "defaultPortrait": "main",
-  "completionAffection": 5,
+  "title": "반사적으로",
+  "minAffection": 20,
+  "maxAffection": 69,
+  "defaultPortrait": "hmm",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "재하는 메시지 글자를 아주 크게 설정해두고 있었다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "권재하",
-          "text": "눈이 나쁜 건 아닙니다.",
-          "portrait": "main"
+          "text": "누군가 뒤에서 갑자기 어깨를 치자 재하의 손이 먼저 움직였다."
         },
         {
           "type": "narration",
-          "text": "오타가 싫어서 크게 본다는 이유였다."
+          "text": "상대 손목을 잡기 직전에 멈췄다."
         },
         {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "효율 문제입니다.",
+          "text": "…죄송합니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "그는 손을 내리고도 한동안 긴장을 풀지 못했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "습관이 좋지 않습니다.",
           "portrait": "main"
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 권재하이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "그의 몸에는 평범한 경호 업무보다 오래된 반응이 남아 있었다."
 }

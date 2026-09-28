@@ -1,37 +1,41 @@
 {
   "id": "char_003_casual_01",
   "kind": "casual",
-  "title": "딸기 우유 두 개",
+  "title": "고양이 비상용",
   "minAffection": 0,
-  "maxAffection": 59,
+  "maxAffection": 39,
   "defaultPortrait": "main",
-  "completionAffection": 5,
-  "repeatable": true,
+  "completionAffection": 4,
+  "repeatable": false,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "해준이 자판기에서 딸기 우유를 두 개 뽑았다."
+          "text": "역 뒤편 골목에서 해준이 쪼그려 앉아 있었다. 평소보다 훨씬 낮은 목소리가 들렸다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "하나는 예비입니다.",
-          "portrait": "main"
+          "text": "천천히 먹어. 아무도 안 뺏어.",
+          "portrait": "smile"
         },
         {
           "type": "narration",
-          "text": "예비라는 말치고 하나를 자연스럽게 건넸다."
+          "text": "그의 앞에는 길고양이 한 마리와 작은 사료 봉지가 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "남으면 곤란해서요.",
-          "portrait": "main"
+          "text": "……이건 비상용입니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "누구의 비상용인지는 굳이 묻지 않아도 알 것 같았다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 문해준이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "단호한 사람의 목소리가 고양이 앞에서는 놀랄 만큼 부드러워졌다."
 }

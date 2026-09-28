@@ -1,37 +1,41 @@
 {
   "id": "char_012_casual_04",
   "kind": "casual",
-  "title": "시계 두 개",
-  "minAffection": 40,
-  "maxAffection": 100,
+  "title": "서로 다른 시계",
+  "minAffection": 20,
+  "maxAffection": 69,
   "defaultPortrait": "hmm",
-  "completionAffection": 5,
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "이현은 손목시계를 두 개 차고 있었다."
+          "text": "수리점 벽의 시계들이 모두 다른 시간을 가리키고 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "진이현",
-          "text": "하나는 지금, 하나는 다른 기준입니다.",
+          "text": "고장 난 건 아닙니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그는 그 이상 설명하지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "전부 맞는 시간입니다. 장소가 조금 다를 뿐.",
           "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "설명은 이해되지 않았지만 본인은 매우 진지했다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "진이현",
-          "text": "둘 다 틀릴 때도 있습니다.",
-          "portrait": "hmm"
+          "text": "장소라는 말이 지리적 장소를 뜻하는 것 같지는 않았다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 진이현이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "이현의 가게는 현재라는 단어가 조금 느슨한 곳이었다."
 }

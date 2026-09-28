@@ -1,0 +1,40 @@
+{
+  "id": "char_008_casual_10",
+  "kind": "casual",
+  "title": "위에서 본 구도",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "smile",
+  "completionAffection": 5,
+  "repeatable": true,
+  "placeIds": [
+    "rooftop"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "낮의 루프탑에서 세현은 사람보다 그림자 모양을 구경하고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "위에서 보면 다들 되게 단순해 보여요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "그러다 이쪽을 올려다보며 손가락으로 네모난 프레임을 만든다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "근데 가까이 가면 다 복잡하죠. 그래서 재밌고.",
+          "portrait": "main"
+        }
+      ]
+    }
+  ],
+  "closing": "관찰하는 사람의 시선이 오늘은 조금 다정했다."
+}

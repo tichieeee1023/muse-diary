@@ -1,36 +1,46 @@
 {
   "id": "char_011_affinity_60",
   "kind": "story",
-  "title": "빛이 꺼진 뒤",
+  "title": "꺼지지 않는 빛",
   "threshold": 60,
-  "purpose": "리안의 불안과 정체를 보여준다",
-  "defaultPortrait": "troubled",
+  "purpose": "진짜 마법을 공개하고 “마술로 숨기기”라는 생존 방식을 드러낸다.",
+  "defaultPortrait": "hmm",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "무대 조명이 모두 꺼진 뒤에도 유리안 손끝에는 작은 빛이 남아 있었다. 그는 웃지 않았다."
+          "text": "모든 장비가 꺼진 빈 무대. 유리안이 손을 펴자 작은 빛 하나가 공중에 떠올랐다."
+        },
+        {
+          "type": "narration",
+          "text": "전선도 반사판도 없었다."
         },
         {
           "type": "dialogue",
           "speaker": "유리안",
-          "text": "이걸 좋아하는 건지, 무대 위 저를 좋아하는 건지 가끔 모르겠어요.",
-          "portrait": "troubled"
+          "text": "이건 장치 아닙니다.",
+          "portrait": "hmm"
         },
         {
-          "type": "narration",
-          "text": "처음으로 관객을 즐겁게 하는 사람이 아니라 평가받는 사람이 되어 있었다."
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "진짜예요. 작고 별거 없지만.",
+          "portrait": "main"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "빛이 손바닥 위에서 천천히 돌았다."
+        },
+        {
           "type": "dialogue",
           "speaker": "유리안",
-          "text": "당신은 어느 쪽이에요?",
+          "text": "마술 공연이 제일 안전해요. 진짜 마법을 써도 아무도 진짜라고 생각하지 않거든요.",
           "portrait": "troubled"
         }
       ],
@@ -39,61 +49,49 @@
         "options": [
           {
             "id": "a",
-            "text": "“둘 다 당신이잖아요.”",
-            "affection": 6,
-            "memoryKey": "affinity_60_a",
+            "text": "“예쁘다.”",
+            "affection": 7,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "유리안",
-                "text": "…그 말 위험하게 좋네요.",
+                "text": "…그 반응이 제일 좋네요. 무섭다가 아니라.",
                 "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "yurian_60_pretty"
           },
           {
             "id": "b",
-            "text": "“지금 얼굴이 더 좋아요.”",
-            "affection": 4,
-            "memoryKey": "affinity_60_b",
+            "text": "“그래서 공연을 시작했구나.”",
+            "affection": 6,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "유리안",
-                "text": "그건 더 부끄럽네.",
-                "portrait": "troubled"
+                "text": "네. 숨기기 제일 좋은 방법이라서.",
+                "portrait": "main"
               }
-            ]
+            ],
+            "memoryKey": "yurian_60_reason"
           },
           {
             "id": "c",
-            "text": "“아직 더 알고 싶어요.”",
-            "affection": 5,
-            "memoryKey": "affinity_60_c",
+            "text": "“나한테 보여줘도 괜찮아요?”",
+            "affection": 8,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "유리안",
-                "text": "그 대답이 제일 믿음 갑니다.",
+                "text": "괜찮고 싶어서 보여드린 겁니다.",
                 "portrait": "troubled"
               }
-            ]
+            ],
+            "memoryKey": "yurian_60_trust"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 빛이 꺼진 뒤은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "리안의 불안과 정체를 보여준다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "빛이 꺼진 뒤 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "유리안의 가장 화려한 비밀은 오히려 숨기기 위해 선택한 직업 안에 있었다."
 }

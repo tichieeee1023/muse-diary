@@ -1,37 +1,41 @@
 {
   "id": "char_010_casual_08",
   "kind": "casual",
-  "title": "기다리는 거리",
-  "minAffection": 80,
+  "title": "나란히 걷기",
+  "minAffection": 70,
   "maxAffection": 100,
   "defaultPortrait": "smile",
-  "completionAffection": 5,
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "재하는 예전처럼 앞서 걷지 않고 한 걸음 느리게 걸었다."
+          "text": "예전에는 늘 반걸음 앞에서 걷던 재하가 어느 순간 속도를 맞췄다."
         },
         {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "속도 괜찮습니까.",
+          "text": "왜 보십니까.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "“오늘은 앞에 안 가네요.”"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "같이 가는 중이니까요.",
           "portrait": "smile"
         },
         {
           "type": "narration",
-          "text": "처음으로 자신의 보폭을 상대에게 맞췄다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "권재하",
-          "text": "천천히 가도 됩니다.",
-          "portrait": "smile"
+          "text": "아주 작은 변화인데 재하다웠다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 권재하이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "후반의 재하는 지키는 위치보다 함께 걷는 위치를 선택했다."
 }

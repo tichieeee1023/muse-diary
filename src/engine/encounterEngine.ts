@@ -13,6 +13,7 @@ interface EncounterQuery {
   lastCharacterId: string | null
   completedCharacterIds?: string[]
   ssrMissStreak?: number
+  discoveredCharacterIds?: string[]
 }
 
 interface WeightedCharacter {
@@ -28,6 +29,7 @@ function buildCandidates(query: EncounterQuery, relaxed = false): WeightedCharac
 
     for (const rule of character.spawnRules) {
       if (rule.placeId !== query.placeId) continue
+      if (rule.secondaryOnly && !query.discoveredCharacterIds?.includes(character.id)) continue
       const routeMatches = relaxed || !rule.routeIds?.length || rule.routeIds.includes(query.routeId)
       const timeMatches = relaxed || !rule.times?.length || rule.times.includes(query.timeOfDay)
       const weatherMatches = relaxed || !rule.weather?.length || rule.weather.includes(query.weather)
@@ -80,7 +82,7 @@ export function selectEncounter(query: EncounterQuery): CharacterDefinition | nu
 
   // 마지막 조우자 때문에 후보가 사라진 경우에만 연속 방지 조건을 마지막 수단으로 해제합니다.
   return characters.find((character) =>
-    character.spawnRules.some((rule) => rule.placeId === query.placeId) &&
+    character.spawnRules.some((rule) => rule.placeId === query.placeId && (!rule.secondaryOnly || query.discoveredCharacterIds?.includes(character.id))) &&
     !(query.placeId === 'bar' && character.age < 19),
   ) ?? null
 }

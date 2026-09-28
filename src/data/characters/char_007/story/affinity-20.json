@@ -3,25 +3,34 @@
   "kind": "story",
   "title": "틀린 기록",
   "threshold": 20,
-  "purpose": "휘람의 예민함이 주인공 개인에 대한 호감이 아님을 분명히 한다",
-  "defaultPortrait": "main",
+  "purpose": "휘람이 역사 지식을 배운 수준이 아니라 직접 겪은 사람처럼 안다는 사실을 드러낸다.",
+  "defaultPortrait": "hmm",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "역사 자료실에서 다시 만난 휘람은 반갑다는 말보다 책의 오류부터 지적했다."
+          "text": "휘람은 같은 역사책을 다시 펼쳤다. 이번에는 주석까지 빼곡히 붙어 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "김휘람",
-          "text": "저번에 말한 건 잊으세요.",
-          "portrait": "main"
+          "text": "이 사람, 왼손잡이 아니었습니다.",
+          "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "{name}이 아니라 기록 자체에 화가 난 얼굴이었다."
+          "text": "기록에는 분명 왼손잡이라고 적혀 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "칼을 왼쪽에 찬 건 다친 오른팔 때문이었고…"
+        },
+        {
+          "type": "narration",
+          "text": "말이 멈췄다. 휘람이 스스로 너무 많이 말했다는 표정을 지었다."
         }
       ]
     },
@@ -30,7 +39,7 @@
         {
           "type": "dialogue",
           "speaker": "김휘람",
-          "text": "괜히 아는 척했다가 이상한 사람 됐잖아요.",
+          "text": "책에서 읽은 건 아닙니다.",
           "portrait": "main"
         }
       ],
@@ -39,61 +48,49 @@
         "options": [
           {
             "id": "a",
-            "text": "“이미 좀 이상했어요.”",
+            "text": "“직접 본 사람처럼 말하네요.”",
             "affection": 6,
-            "memoryKey": "affinity_20_a",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "김휘람",
-                "text": "그걸 그렇게 바로 말해요?",
-                "portrait": "main"
+                "text": "…그렇게 들렸습니까.",
+                "portrait": "troubled"
               }
-            ]
+            ],
+            "memoryKey": "hwiram_20_direct"
           },
           {
             "id": "b",
-            "text": "“그래도 궁금한데요.”",
-            "affection": 4,
-            "memoryKey": "affinity_20_b",
+            "text": "“기록이 틀릴 수도 있죠.”",
+            "affection": 5,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "김휘람",
-                "text": "…조금만 물어요.",
-                "portrait": "troubled"
+                "text": "네. 기록은 남은 사람의 것이니까요.",
+                "portrait": "hmm"
               }
-            ]
+            ],
+            "memoryKey": "hwiram_20_records"
           },
           {
             "id": "c",
-            "text": "“안 물어볼게요.”",
-            "affection": 5,
-            "memoryKey": "affinity_20_c",
+            "text": "“말하기 싫으면 안 해도 돼요.”",
+            "affection": 6,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "김휘람",
-                "text": "그게 더 신경 쓰이는데.",
+                "text": "고맙습니다. 아직은 좀 어렵습니다.",
                 "portrait": "main"
               }
-            ]
+            ],
+            "memoryKey": "hwiram_20_wait"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 틀린 기록은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "휘람의 예민함이 주인공 개인에 대한 호감이 아님을 분명히 한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "틀린 기록 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "그날부터 휘람의 역사 지식은 공부라는 말로 설명되지 않았다."
 }

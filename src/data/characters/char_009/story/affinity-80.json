@@ -1,37 +1,47 @@
 {
   "id": "char_009_affinity_80",
   "kind": "story",
-  "title": "질문 없는 저녁",
+  "title": "통제의 이유",
   "threshold": 80,
-  "purpose": "이겸이 분석하지 않고 함께 있는 법을 배운다",
-  "defaultPortrait": "smile",
+  "purpose": "어릴 때부터 감정을 억제하도록 교육받은 과거와 가장 큰 공포를 공개한다.",
+  "defaultPortrait": "troubled",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "평소라면 상태부터 물었을 이겸이 아무 질문도 하지 않고 따뜻한 차만 건넸다."
+          "text": "이겸은 어린 시절 이야기를 처음 꺼냈다."
         },
         {
           "type": "dialogue",
           "speaker": "차이겸",
-          "text": "오늘은 제가 묻지 않겠습니다.",
-          "portrait": "smile"
+          "text": "울면 봉인이 흔들렸고, 화를 내면 주변 사람이 다쳤습니다. 그래서 감정을 느끼기 전에 눌러버리는 법부터 배웠습니다.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "침묵이 불편하지 않았다. 오히려 그가 자기 이야기를 먼저 꺼냈다."
+          "text": "상담을 공부한 이유도 타인을 돕기 위해서만은 아니었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "감정을 이해하면 통제하기 쉬울 거라 생각했습니다.",
+          "portrait": "hmm"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "그는 한참 뒤 아주 낮게 덧붙였다."
+        },
+        {
           "type": "dialogue",
           "speaker": "차이겸",
-          "text": "저도 오늘 조금 지쳤습니다.",
-          "portrait": "smile"
+          "text": "제가 두려운 건 괴물이 되는 게 아닙니다. 괴물이 된 뒤에도 제가 옳다고 설명할 수 있을까 봐 두렵습니다.",
+          "portrait": "troubled"
         }
       ],
       "choice": {
@@ -39,61 +49,49 @@
         "options": [
           {
             "id": "a",
-            "text": "“이제야 사람 같네요.”",
-            "affection": 6,
-            "memoryKey": "affinity_80_a",
+            "text": "“그때는 내가 틀렸다고 말해줄게요.”",
+            "affection": 8,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "차이겸",
-                "text": "가끔은 그런 평가도 필요하군요.",
-                "portrait": "smile"
+                "text": "…그 역할을 부탁해도 되겠습니까.",
+                "portrait": "main"
               }
-            ]
+            ],
+            "memoryKey": "igyeom_80_callout"
           },
           {
             "id": "b",
-            "text": "“나한테 기대도 돼요.”",
-            "affection": 4,
-            "memoryKey": "affinity_80_b",
+            "text": "“혼자 판단하지 않아도 돼요.”",
+            "affection": 8,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "차이겸",
-                "text": "…연습해보겠습니다.",
+                "text": "혼자가 아니라는 전제가 아직 익숙하지 않습니다.",
                 "portrait": "troubled"
               }
-            ]
+            ],
+            "memoryKey": "igyeom_80_not_alone"
           },
           {
             "id": "c",
-            "text": "“그 말 해줘서 좋아요.”",
-            "affection": 5,
-            "memoryKey": "affinity_80_c",
+            "text": "“두려워한다는 것 자체가 답 같아요.”",
+            "affection": 7,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "차이겸",
-                "text": "저도 말하고 나니 좋네요.",
+                "text": "그렇게 간단한 답이면 좋겠습니다. 그래도 고맙습니다.",
                 "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "igyeom_80_fear"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 질문 없는 저녁은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "이겸이 분석하지 않고 함께 있는 법을 배운다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "질문 없는 저녁 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "이겸은 완벽한 통제를 원하는 게 아니라, 통제를 잃은 자신을 믿지 못하고 있었다."
 }

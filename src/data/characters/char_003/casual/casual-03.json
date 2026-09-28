@@ -1,76 +1,41 @@
 {
   "id": "char_003_casual_03",
   "kind": "casual",
-  "title": "매운 떡볶이",
-  "minAffection": 20,
-  "maxAffection": 99,
+  "title": "정확한 삼 분",
+  "minAffection": 10,
+  "maxAffection": 59,
   "defaultPortrait": "main",
-  "completionAffection": 3,
-  "repeatable": true,
+  "completionAffection": 4,
+  "repeatable": false,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "해준은 아주 매운 떡볶이를 아무렇지 않게 먹었다."
+          "text": "열차가 지연된 날이었다. 사람들은 불평했지만 해준은 같은 안내를 몇 번이고 차분하게 반복했다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "이 정도는 괜찮습니다.",
+          "text": "현재 삼 분 지연입니다. 환승하실 분은 다음 안내를 확인해 주세요.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "바로 옆 달달한 쿨피스는 누구보다 빠르게 비웠다."
+          "text": "휴게 시간에 마주치자 그가 손목시계를 확인했다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "균형이 중요하죠.",
-          "portrait": "main"
+          "text": "삼 분이 길죠. 기다리는 사람한텐.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "시간을 직업으로 다루는 사람치고, 기다림을 숫자로만 생각하지 않는 말이었다."
         }
-      ],
-      "choice": {
-        "id": "casual_3_choice",
-        "options": [
-          {
-            "id": "a",
-            "text": "조금 솔직하게 반응한다.",
-            "affection": 3,
-            "memoryKey": "casual_3_warm",
-            "response": [
-              {
-                "type": "narration",
-                "text": "문해준의 표정이 아주 조금 풀렸다."
-              }
-            ]
-          },
-          {
-            "id": "b",
-            "text": "가볍게 놀려본다.",
-            "affection": 2,
-            "response": [
-              {
-                "type": "narration",
-                "text": "문해준은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
-              }
-            ]
-          },
-          {
-            "id": "c",
-            "text": "그냥 옆에서 지켜본다.",
-            "affection": 1,
-            "response": [
-              {
-                "type": "narration",
-                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
-              }
-            ]
-          }
-        ]
-      }
+      ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 문해준이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "해준에게 시간은 정확함보다 누군가가 기다리는 길이와 더 가까운 것 같았다."
 }

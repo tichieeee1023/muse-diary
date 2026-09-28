@@ -1,76 +1,41 @@
 {
   "id": "char_008_casual_03",
   "kind": "casual",
-  "title": "작품 흉내",
-  "minAffection": 20,
-  "maxAffection": 99,
-  "defaultPortrait": "troubled",
-  "completionAffection": 3,
+  "title": "직원 전용 연필",
+  "minAffection": 10,
+  "maxAffection": 59,
+  "defaultPortrait": "smile",
+  "completionAffection": 5,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "세현이 조각상 자세를 따라 하다가 직원에게 걸렸다."
+          "text": "세현이 안내 데스크에서 짧아진 연필들을 모아 한 줄로 세우고 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "업무 연구였습니다.",
-          "portrait": "troubled"
+          "text": "이거 버리기 아깝지 않아요? 아직 한참 쓸 수 있는데.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "아무도 믿지 않는 변명이었다."
+          "text": "연필마다 언제, 어느 전시에서 썼는지 기억한다고 했다."
         },
         {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "진짜인데.",
-          "portrait": "troubled"
+          "text": "저는 이상하게 이런 건 잘 기억해요. 중요한 건 자꾸 까먹으면서.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "사람이 남긴 작은 흔적을 모으는 버릇은 작품을 보는 태도와도 조금 닮아 있었다."
         }
-      ],
-      "choice": {
-        "id": "casual_3_choice",
-        "options": [
-          {
-            "id": "a",
-            "text": "조금 솔직하게 반응한다.",
-            "affection": 3,
-            "memoryKey": "casual_3_warm",
-            "response": [
-              {
-                "type": "narration",
-                "text": "오세현의 표정이 아주 조금 풀렸다."
-              }
-            ]
-          },
-          {
-            "id": "b",
-            "text": "가볍게 놀려본다.",
-            "affection": 2,
-            "response": [
-              {
-                "type": "narration",
-                "text": "오세현은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
-              }
-            ]
-          },
-          {
-            "id": "c",
-            "text": "그냥 옆에서 지켜본다.",
-            "affection": 1,
-            "response": [
-              {
-                "type": "narration",
-                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
-              }
-            ]
-          }
-        ]
-      }
+      ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 오세현이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "크게 특별한 일은 아니었다. 그래도 이런 날들이 쌓일수록 오세현이라는 사람의 윤곽이 선명해졌다."
 }

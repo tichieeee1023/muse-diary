@@ -1,81 +1,123 @@
 {
   "id": "char_001_affinity_80",
   "kind": "story",
-  "title": "먼저 남겨둔 자리",
+  "title": "남겨진 메모",
   "threshold": 80,
-  "purpose": "나에게만 달라진 행동이 보이는 시기",
-  "defaultPortrait": "smile",
-  "completionAffection": 3,
+  "defaultPortrait": "main",
+  "completionAffection": 2,
+  "purpose": "도윤이 친구를 잃은 과거와 기억에 집착하는 이유를 주인공에게 처음 털어놓는다",
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "창가 자리에 작은 종이 한 장이 놓여 있었다. ‘예약석’ 대신 익숙한 필체로 {name}의 이름이 적혀 있었다."
+          "text": "비가 오래 내리던 밤, 도윤은 서점 문을 닫고도 불을 끄지 않았다. 평소라면 이미 정리를 끝냈을 시간이었다."
+        },
+        {
+          "type": "narration",
+          "text": "카운터 위에는 낡은 책 한 권이 놓여 있었다. 책 사이마다 색이 바랜 메모가 여러 장 끼워져 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "사람이 많아서요. 자리 없으면 돌아갈 것 같아서.",
-          "portrait": "smile"
+          "text": "친구가 쓴 겁니다.",
+          "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "먼저 기다렸다는 사실을 인정하는 데 도윤은 예상보다 오래 걸렸다."
+          "text": "도윤은 먼저 말을 꺼냈다. 질문하기도 전이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "대학 다닐 때… 가까웠던 사람이 있었습니다.",
+          "portrait": "main"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "마지막으로 빌려준 책이 사고 뒤 가족을 통해 돌아왔다고 했다. 그 안에 친구가 남긴 낙서, 가고 싶던 카페, 다음 달에 하려던 일들이 그대로 남아 있었다."
+        },
+        {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "커피는… 쓴 걸로 시켰는데 맞습니까?",
-          "portrait": "smile"
+          "text": "그 사람은 없어졌는데, '다음 달'은 계속 책 안에 남아 있더군요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "도윤은 메모를 만지지 않았다. 손을 뻗으면 부서질 것처럼 바라보기만 했다."
         }
       ],
       "choice": {
-        "id": "aff_80_choice",
+        "id": "a80",
         "options": [
           {
             "id": "a",
-            "text": "“기다렸어요?”",
+            "text": "“그래서 다 기억하려고 한 거예요?”",
             "affection": 6,
-            "memoryKey": "affinity_80_a",
+            "memoryKey": "a80_understood",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "서도윤",
-                "text": "조금. 많이는 아닙니다.",
-                "portrait": "smile"
-              }
-            ]
-          },
-          {
-            "id": "b",
-            "text": "“내 취향 다 외웠네요.”",
-            "affection": 4,
-            "memoryKey": "affinity_80_b",
-            "response": [
+                "text": "그랬던 것 같습니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "오래 생각한 뒤의 대답이었다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "서도윤",
-                "text": "외운 게 아니라… 자주 봤으니까요.",
+                "text": "갑자기 없어져도, 내가 기억하면 뭔가는 남는다고 생각해서요.",
                 "portrait": "troubled"
               }
             ]
           },
           {
-            "id": "c",
-            "text": "“고마워요. 같이 읽어요.”",
-            "affection": 5,
-            "memoryKey": "affinity_80_c",
+            "id": "b",
+            "text": "“도윤 씨 얘기를 해줘서 고마워요.”",
+            "affection": 7,
+            "memoryKey": "a80_thanks_story",
             "response": [
+              {
+                "type": "narration",
+                "text": "도윤이 아주 잠깐 눈을 감았다가 뜬다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "서도윤",
-                "text": "네. 오늘은 그렇게 하죠.",
+                "text": "이런 말에 고맙다고 해주는 사람은 처음이네요.",
                 "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“나한테도 없어질까 봐 그래요?”",
+            "affection": 5,
+            "memoryKey": "a80_fear_loss",
+            "response": [
+              {
+                "type": "narration",
+                "text": "평소라면 피해갔을 질문인데, 이번에는 피하지 않았다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "네.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "그래서… 조금 겁납니다.",
+                "portrait": "main"
               }
             ]
           }
@@ -86,14 +128,26 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "그날의 먼저 남겨둔 자리은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+          "text": "한참 뒤 도윤은 메모 한 장을 책에서 빼내 별도의 투명 봉투에 넣었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "이제 이건 추억이라기보다 기록에 가깝습니다.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "나에게만 달라진 행동이 보이는 시기 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+          "text": "그리고 {name}을 보며 아주 작게 웃었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "현재까지 전부 과거로 만들 필요는 없겠죠.",
+          "portrait": "smile"
         }
       ]
     }
   ],
-  "closing": "먼저 남겨둔 자리 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "도윤은 처음으로 기억의 이유를 설명했다. 그리고 처음으로 아직 오지 않은 시간을 입에 올렸다."
 }

@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { CharacterPortrait } from '../components/CharacterPortrait'
+import { CharacterSD } from '../components/CharacterSD'
 import { HeartMeter } from '../components/HeartMeter'
 import { PlaceIcon } from '../components/PlaceIcon'
 import { SceneBanner } from '../components/SceneBanner'
-import { getCharacterRouteProfile } from '../data/characters'
+import { getCharacterRouteProfile } from '../data/characters/index'
+import { getCharacterThemeLine, getReunionLine } from '../data/characterFlavor'
 import { getPlace } from '../data/locations'
 import { getEndingContent } from '../engine/endingEngine'
 import { selectEncounter } from '../engine/encounterEngine'
@@ -27,6 +29,12 @@ interface EncounterViewState {
 }
 
 const rarityCopy = { R: 'RARE', SR: 'SUPER RARE', SSR: 'SPECIAL' } as const
+
+function choiceTone(affection: number) {
+  if (affection >= 3) return '마음을 열어 다가가기'
+  if (affection >= 1) return '조심스럽게 공감하기'
+  return '담담하게 지켜보기'
+}
 
 function episodeLabel(episode: StoryEpisode, completedStory: number) {
   if (episode.kind === 'first') return 'FIRST ENCOUNTER'
@@ -56,6 +64,8 @@ export function LocationPage() {
   const [showEncounterClose, setShowEncounterClose] = useState(false)
   const [showEnding, setShowEnding] = useState(false)
   const [endingImageFailed, setEndingImageFailed] = useState(false)
+  const [showEpisodeTitle, setShowEpisodeTitle] = useState(false)
+  const [choiceAffection, setChoiceAffection] = useState<number | null>(null)
 
   if (!activePlaceId || !player) return null
   const place = getPlace(activePlaceId)
@@ -71,10 +81,11 @@ export function LocationPage() {
       lastCharacterId: collection.lastEncounterCharacterId,
       completedCharacterIds: collection.completedCharacterIds,
       ssrMissStreak: progress.ssrMissStreak,
+      discoveredCharacterIds: collection.discoveredCharacterIds,
     })
     if (!character) return
 
-    const episode = selectCharacterEpisode(character.id, collection)
+    const episode = selectCharacterEpisode(character.id, collection, place.id)
     if (!episode) return
     const affectionAtStart = collection.affectionByCharacterId[character.id] ?? 0
     const completedAtStart = collection.completedCharacterIds.includes(character.id)
@@ -82,6 +93,7 @@ export function LocationPage() {
     const encounterResult = recordEncounter(character.id, character.rarity)
     playUiSound(encounterResult.isNew ? 'new' : episode.kind === 'story' ? 'page' : 'tap', soundEnabled)
 
+    setShowEpisodeTitle(episode.kind !== 'casual')
     setEncounter({
       character,
       episode,
@@ -101,6 +113,7 @@ export function LocationPage() {
     applyDialogueChoice(encounter.character.id, option.affection, option.memoryKey)
     setChoiceResponse(option.response)
     setSelectedChoiceText(option.text)
+    setChoiceAffection(option.affection)
     playUiSound('heart', soundEnabled)
   }
 
@@ -111,6 +124,7 @@ export function LocationPage() {
       encounter.episode.id,
       encounter.episode.kind,
       encounter.episode.completionAffection,
+      { title: encounter.episode.title, day: progress.day, placeId: place.id },
     )
     if (isFinalStoryEpisode(encounter.episode)) {
       completeCharacter(encounter.character.id)
@@ -133,6 +147,7 @@ export function LocationPage() {
     setSectionIndex((value) => value + 1)
     setChoiceResponse(null)
     setSelectedChoiceText(null)
+    setChoiceAffection(null)
     playUiSound('page', soundEnabled)
   }
 
@@ -156,7 +171,10 @@ export function LocationPage() {
             <small>{rarityCopy[character.rarity]}</small>
           </div>
           <section className="discovery-sheet discovery-sheet-with-portrait">
-            <CharacterPortrait characterId={character.id} name={character.name} symbol={character.symbol} expression="main" className="discovery-portrait" />
+            <div className="discovery-portrait-stack">
+              <CharacterPortrait characterId={character.id} name={character.name} symbol={character.symbol} expression="main" className="discovery-portrait" />
+              <CharacterSD characterId={character.id} name={character.name} symbol={character.symbol} decorative className="discovery-sd-sticker" />
+            </div>
             <div>
               <p className="eyebrow">NEW MUSE FOUND</p>
               <h1>{character.name}</h1>
@@ -166,6 +184,21 @@ export function LocationPage() {
           <button type="button" className="primary-button full-button" onClick={() => { setRevealAcknowledged(true); playUiSound('page', soundEnabled) }}>
             첫 만남을 시작한다
           </button>
+        </div>
+      )
+    }
+
+    if (showEpisodeTitle) {
+      return (
+        <div className={`page episode-title-page rarity-${character.rarity.toLowerCase()}`}>
+          <div className="episode-title-rule"><span>{episode.kind === 'first' ? 'FIRST STORY' : 'AFFINITY STORY'}</span></div>
+          <CharacterPortrait characterId={character.id} name={character.name} symbol={character.symbol} expression={episode.defaultPortrait} className="episode-title-portrait" />
+          <section className="episode-title-sheet">
+            <p className="eyebrow">{character.name} · {episode.kind === 'first' ? '첫 번째 기록' : `호감도 ${episode.threshold} 이벤트`}</p>
+            <h1>{episode.title}</h1>
+            <p>{getCharacterThemeLine(character.id)}</p>
+          </section>
+          <button type="button" className="primary-button full-button" onClick={() => { setShowEpisodeTitle(false); playUiSound('page', soundEnabled) }}>이야기를 시작한다</button>
         </div>
       )
     }
@@ -192,8 +225,11 @@ export function LocationPage() {
             <h1>{ending.endingTitle}</h1>
             <div className="ending-rule" />
             {ending.endingParagraphs.map((paragraph) => <p key={paragraph}>{formatGameText(paragraph, player.name)}</p>)}
-            <div className="complete-stamp">COMPLETE</div>
+            <div className="complete-celebration"><CharacterSD characterId={character.id} name={character.name} symbol={character.symbol} decorative className="ending-sd" /><div className="complete-stamp">COMPLETE</div></div>
           </section>
+          <div className="ending-memory-strip" aria-label="엔딩 기록 순서">
+            <span>LAST PAGE</span><i /><span>MEMORY</span><i /><strong>ARCHIVE</strong>
+          </div>
           <div className="ending-unlock-note">
             <span>GALLERY UPDATED</span>
             <strong>엔딩 CG가 기록되었습니다. 비설을 읽으면 MUSE DOLL도 해금됩니다.</strong>
@@ -213,7 +249,7 @@ export function LocationPage() {
             <h1>{episode.title}</h1>
             <p className="novel-prose">{formatGameText(episode.closing, player.name)}</p>
             <div className="encounter-close-person">
-              <CharacterPortrait characterId={character.id} name={character.name} symbol={character.symbol} expression={portrait} className="close-mini-portrait" />
+              <CharacterSD characterId={character.id} name={character.name} symbol={character.symbol} className="close-mini-sd" />
               <div className="encounter-close-copy">
                 <strong>{character.name}</strong>
                 <span>{encounter.encounterCount}번째 만남 · 호감도 +{gained}</span>
@@ -234,7 +270,7 @@ export function LocationPage() {
     const label = episodeLabel(episode, storyProgress.completed)
 
     return (
-      <div className={`page story-page rarity-${character.rarity.toLowerCase()}`}>
+      <div className={`page story-page rarity-${character.rarity.toLowerCase()}`} data-character={character.id}>
         <header className="story-topbar">
           <div>
             <p className="eyebrow">{label}</p>
@@ -254,6 +290,7 @@ export function LocationPage() {
             {episode.kind === 'first' && routeProfile && <small>첫인상 · {routeProfile.initialAttitudeLabel}</small>}
             {episode.kind === 'story' && <small>중요 관계 이벤트 · 요구 호감도 {episode.threshold}</small>}
             {episode.kind === 'casual' && <small>사소한 만남이 관계에 쌓입니다.</small>}
+            {!encounter.isNew && sectionIndex === 0 && <em className="reunion-line">“{getReunionLine(character.id, encounter.encounterCount)}”</em>}
           </div>
         </section>
 
@@ -275,7 +312,7 @@ export function LocationPage() {
                 {section.choice.options.map((option, index) => (
                   <button key={option.id} type="button" className="choice-button story-choice-button" onClick={() => handleChoice(option)}>
                     <span>0{index + 1}</span>
-                    <strong>{formatGameText(option.text, player.name)}</strong>
+                    <span className="choice-copy"><small>{choiceTone(option.affection)}</small><strong>{formatGameText(option.text, player.name)}</strong></span>
                   </button>
                 ))}
               </div>
@@ -284,6 +321,7 @@ export function LocationPage() {
 
           {hasChoiceResponse && choiceResponse && (
             <div className="story-choice-result">
+              {choiceAffection !== null && <div className="affection-feedback" aria-live="polite"><span>RELATIONSHIP NOTE</span><strong>{choiceAffection > 0 ? `마음이 가까워졌어요  +${choiceAffection}` : '이 선택도 기록되었습니다'}</strong></div>}
               <div className="player-choice-log"><span>{player.name}</span><p>{formatGameText(selectedChoiceText ?? '', player.name)}</p></div>
               {choiceResponse.map((block, index) => block.type === 'narration' ? (
                 <p key={`response-${index}`} className="story-narration novel-prose">{formatGameText(block.text, player.name)}</p>

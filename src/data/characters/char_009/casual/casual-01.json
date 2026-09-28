@@ -1,37 +1,41 @@
 {
   "id": "char_009_casual_01",
   "kind": "casual",
-  "title": "매운 국물",
+  "title": "차는 뜨겁지 않게",
   "minAffection": 0,
-  "maxAffection": 59,
-  "defaultPortrait": "troubled",
-  "completionAffection": 5,
+  "maxAffection": 39,
+  "defaultPortrait": "main",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "이겸은 매운 국물을 한입 먹고 조용히 물을 찾았다."
+          "text": "이겸은 차를 주문하며 온도를 따로 낮춰달라고 부탁했다."
         },
         {
           "type": "dialogue",
           "speaker": "차이겸",
-          "text": "맵지 않습니다.",
-          "portrait": "troubled"
+          "text": "너무 뜨거우면 향을 구분하기 어렵습니다.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "눈가가 이미 붉었다."
+          "text": "찻잔을 잡는 손끝까지 조심스러웠다."
         },
         {
           "type": "dialogue",
           "speaker": "차이겸",
-          "text": "…조금 자극적일 뿐입니다.",
-          "portrait": "troubled"
+          "text": "습관입니다. 급하게 먹는 편이 아니라서요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "무엇이든 천천히 통제하는 사람 같았다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 차이겸이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "이겸은 작은 일에도 자기 리듬을 쉽게 흐트러뜨리지 않았다."
 }

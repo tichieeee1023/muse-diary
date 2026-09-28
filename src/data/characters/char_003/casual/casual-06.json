@@ -1,76 +1,47 @@
 {
   "id": "char_003_casual_06",
   "kind": "casual",
-  "title": "휴대폰 배경",
+  "title": "도착 문자",
   "minAffection": 40,
-  "maxAffection": 100,
-  "defaultPortrait": "smile",
-  "completionAffection": 3,
-  "repeatable": true,
+  "maxAffection": 89,
+  "defaultPortrait": "main",
+  "completionAffection": 5,
+  "repeatable": false,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "해준의 휴대폰 배경은 오래된 철도 사진이었다."
+          "text": "늦은 저녁 헤어지려는데 해준이 평소처럼 말했다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "어릴 때부터 좋아했습니다.",
-          "portrait": "smile"
+          "text": "도착하면 연락 주세요.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "직업이 취미를 먹어버린 사람처럼 조금 민망해했다."
+          "text": "익숙한 말이라 대수롭지 않게 넘기자, 그가 한 박자 늦게 덧붙였다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "그래도 질리진 않네요.",
-          "portrait": "smile"
+          "text": "의무적으로 확인하려는 건 아닙니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "그냥…… 알면 마음이 편해서요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "처음으로 그 말이 직업적인 습관만은 아니라는 걸 알았다."
         }
-      ],
-      "choice": {
-        "id": "casual_6_choice",
-        "options": [
-          {
-            "id": "a",
-            "text": "조금 솔직하게 반응한다.",
-            "affection": 3,
-            "memoryKey": "casual_6_warm",
-            "response": [
-              {
-                "type": "narration",
-                "text": "문해준의 표정이 아주 조금 풀렸다."
-              }
-            ]
-          },
-          {
-            "id": "b",
-            "text": "가볍게 놀려본다.",
-            "affection": 2,
-            "response": [
-              {
-                "type": "narration",
-                "text": "문해준은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
-              }
-            ]
-          },
-          {
-            "id": "c",
-            "text": "그냥 옆에서 지켜본다.",
-            "affection": 1,
-            "response": [
-              {
-                "type": "narration",
-                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
-              }
-            ]
-          }
-        ]
-      }
+      ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 문해준이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "같은 문장인데도 관계가 달라지면 전혀 다르게 들렸다."
 }

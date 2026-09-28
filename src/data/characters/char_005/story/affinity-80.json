@@ -1,37 +1,47 @@
 {
   "id": "char_005_affinity_80",
   "kind": "story",
-  "title": "화분 세 개",
+  "title": "사라진 이름",
   "threshold": 80,
-  "purpose": "거친 인상과 다른 생활 습관을 보여준다",
-  "defaultPortrait": "smile",
+  "purpose": "가족의 흔적을 지운 과거를 공개하고 태겸이 왜 남겨두는 데 집착하는지 설명한다.",
+  "defaultPortrait": "troubled",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "태겸의 휴게실 창가에는 구조한 화분 세 개가 줄지어 있었다. 잎마다 날짜가 적힌 작은 메모까지 붙어 있었다."
+          "text": "태겸은 오래된 명찰을 다시 꺼냈다. 이번에는 숨기지 않았다."
         },
         {
           "type": "dialogue",
           "speaker": "강태겸",
-          "text": "죽어가길래 가져온 겁니다.",
-          "portrait": "smile"
+          "text": "가족이 한 명 있었습니다. 비일상 사건에 휘말렸고… 뒤처리하러 온 사람들이 전부 지웠습니다.",
+          "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "상처투성이 손으로 새잎을 확인하는 모습이 이상할 만큼 조심스러웠다."
+          "text": "사진도, 기록도, 현장도. 사고를 없애는 과정에서 그 사람이 있었다는 흔적까지 사라졌다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "그래서 저는 이 일을 시작했습니다. 같은 일을 하지 않으려고.",
+          "portrait": "troubled"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "태겸은 명찰을 주먹 안에 잠깐 쥐었다가 다시 펴 보였다."
+        },
+        {
           "type": "dialogue",
           "speaker": "강태겸",
-          "text": "사람보다 얘들이 말은 잘 듣죠.",
-          "portrait": "smile"
+          "text": "안전하게 만들기 위해 지워야 하는 게 있습니다. 그래도 사람까지 지우면 안 됩니다.",
+          "portrait": "main"
         }
       ],
       "choice": {
@@ -39,61 +49,49 @@
         "options": [
           {
             "id": "a",
-            "text": "“엄청 다정하네요.”",
-            "affection": 6,
-            "memoryKey": "affinity_80_a",
+            "text": "“그 사람 이름, 기억하고 있어요?”",
+            "affection": 7,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "강태겸",
-                "text": "그 단어는 안 어울립니다.",
-                "portrait": "smile"
+                "text": "네. 제가 기억하는 동안은 사라지지 않습니다.",
+                "portrait": "main"
               }
-            ]
+            ],
+            "memoryKey": "taegyeom_80_name"
           },
           {
             "id": "b",
-            "text": "“하나 이름 붙여도 돼요?”",
-            "affection": 4,
-            "memoryKey": "affinity_80_b",
+            "text": "“나도 기억해도 돼요?”",
+            "affection": 8,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "강태겸",
-                "text": "…하나는 허락하죠.",
+                "text": "…그 말을 기다렸던 것 같습니다.",
                 "portrait": "troubled"
               }
-            ]
+            ],
+            "memoryKey": "taegyeom_80_share_memory"
           },
           {
             "id": "c",
-            "text": "“나한테도 메모 붙일 거예요?”",
-            "affection": 5,
-            "memoryKey": "affinity_80_c",
+            "text": "“태겸 씨가 남겨둔 것들도 이제 이해돼요.”",
+            "affection": 6,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "강태겸",
-                "text": "필요하면요. ‘위험한 데 가지 말 것’.",
+                "text": "이해받을 거라고는 생각하지 않았습니다.",
                 "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "taegyeom_80_understand"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 화분 세 개은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "거친 인상과 다른 생활 습관을 보여준다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "화분 세 개 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "처음으로 태겸이 자신의 기억을 다른 사람에게 건넸다."
 }

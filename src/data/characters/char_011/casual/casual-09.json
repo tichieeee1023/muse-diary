@@ -1,0 +1,40 @@
+{
+  "id": "char_011_casual_09",
+  "kind": "casual",
+  "title": "별 스티커 하나",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "smile",
+  "completionAffection": 4,
+  "repeatable": true,
+  "placeIds": [
+    "night-market"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "야시장 소품 노점에서 유리안이 싸구려 별 스티커 한 장을 진지하게 고르고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "이런 게 제일 좋아요. 반짝이는데 별 이유가 없잖아요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "무대에서는 훨씬 비싼 장식을 쓰는 사람이 천 원짜리 스티커를 소중하게 봉투에 넣는다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "비웃으면 하나 안 드릴 겁니다.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "화려한 사람의 진짜 취향은 작고 싸구려인 별에 가까웠다."
+}

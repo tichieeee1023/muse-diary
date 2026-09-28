@@ -1,37 +1,45 @@
 {
   "id": "char_003_casual_07",
   "kind": "casual",
-  "title": "기다림 5분",
-  "minAffection": 80,
-  "maxAffection": 100,
-  "defaultPortrait": "smile",
-  "completionAffection": 5,
-  "repeatable": true,
+  "title": "잠든 사람",
+  "minAffection": 60,
+  "maxAffection": 99,
+  "defaultPortrait": "main",
+  "completionAffection": 4,
+  "repeatable": false,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "{name}이 5분 늦자 해준은 아무 말 없이 따뜻한 음료를 건넸다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "문해준",
-          "text": "괜찮습니다. 기다릴 만했습니다.",
-          "portrait": "smile"
+          "text": "야간 근무 전 대기실 앞에서 해준을 발견했다. 의자에 앉아 팔짱을 낀 채 아주 잠깐 잠든 모습이었다."
         },
         {
           "type": "narration",
-          "text": "예전 같으면 먼저 시간을 확인했을 사람이었다."
+          "text": "평소엔 빈틈이 없어 보여서인지 그 짧은 순간이 낯설었다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "다음엔 천천히 오세요.",
-          "portrait": "smile"
+          "text": "……봤습니까?",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "눈을 뜬 해준은 민망한 듯 목을 한 번 가다듬었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "오 분만 자려고 했습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "정확한 사람도 피곤할 때는 오 분을 탐내는 평범한 사람이었다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 문해준이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "완벽한 책임감 아래에 피로한 사람 하나가 있다는 걸 보게 됐다."
 }

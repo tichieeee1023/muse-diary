@@ -49,6 +49,7 @@ export interface StoryEpisode {
   defaultPortrait: PortraitExpression
   completionAffection: number
   repeatable?: boolean
+  placeIds?: string[]
   sections: StorySection[]
   closing: string
 }
@@ -98,6 +99,7 @@ export interface CharacterSpawnRule {
   times?: TimeOfDay[]
   weather?: Weather[]
   weight?: number
+  secondaryOnly?: boolean
 }
 
 export interface DiaryFactUnlock {
@@ -201,13 +203,16 @@ export interface CollectionProgress {
   secretReadCharacterIds: string[]
   seenEpisodeIdsByCharacterId: Record<string, string[]>
   completedStoryEpisodeIdsByCharacterId: Record<string, string[]>
+  lastMeetingByCharacterId: Record<string, { episodeId: string; title: string; day: number; placeId: string; kind: StoryEpisodeKind }>
 }
 
 export type FontFamilySetting = 'clear' | 'pretendard' | 'system'
 export type TextSizeSetting = 'normal' | 'medium' | 'large'
+export type TextSpeedSetting = 'instant' | 'normal' | 'slow'
 
 export interface GameSettings {
   soundEnabled: boolean
   fontFamily: FontFamilySetting
   textSize: TextSizeSetting
+  textSpeed: TextSpeedSetting
 }

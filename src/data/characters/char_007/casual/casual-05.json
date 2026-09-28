@@ -1,37 +1,41 @@
 {
   "id": "char_007_casual_05",
   "kind": "casual",
-  "title": "시험 끝",
-  "minAffection": 40,
-  "maxAffection": 100,
-  "defaultPortrait": "troubled",
-  "completionAffection": 5,
+  "title": "유행어 시험",
+  "minAffection": 30,
+  "maxAffection": 79,
+  "defaultPortrait": "smile",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "시험이 끝난 휘람은 책상에 엎드려 있었다."
+          "text": "휘람이 휴대폰 메모장을 보여줬다. 유행어와 뜻이 줄지어 적혀 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "김휘람",
-          "text": "역사는 잘 봤어요. 수학은 묻지 마요.",
+          "text": "친구들이 자꾸 제가 늙은이 같다고 해서요.",
           "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "그 대답만으로 결과가 충분히 짐작됐다."
+          "text": "열여덟 살이 할 말은 아니었다."
         },
         {
           "type": "dialogue",
           "speaker": "김휘람",
-          "text": "인생에 필요 없을 수도 있잖아요.",
-          "portrait": "troubled"
+          "text": "이건 실전에서 쓰면 안 되는 표현입니까?",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "{name}의 대답에 따라 그는 진지하게 별표를 쳤다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 김휘람이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "현대에 적응하려는 노력이 조금 귀엽고 조금 서글펐다."
 }

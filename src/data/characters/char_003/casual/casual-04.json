@@ -1,37 +1,41 @@
 {
   "id": "char_003_casual_04",
   "kind": "casual",
-  "title": "우산 점검",
-  "minAffection": 40,
-  "maxAffection": 100,
-  "defaultPortrait": "hmm",
+  "title": "연한 커피",
+  "minAffection": 20,
+  "maxAffection": 69,
+  "defaultPortrait": "main",
   "completionAffection": 5,
-  "repeatable": true,
+  "repeatable": false,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "해준은 {name} 우산의 부러진 살을 발견하고 고쳐줬다."
+          "text": "역사 안 카페에서 해준이 주문한 커피는 놀랄 만큼 연했다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "이대로 쓰면 위험합니다.",
-          "portrait": "hmm"
+          "text": "진하면 잠은 깨는데 속이 불편합니다.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "업무와 전혀 상관없는 점검까지 꼼꼼했다."
+          "text": "그가 컵을 한 모금 마시고는 잠깐 미간을 찌푸렸다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "습관입니다. 아마도.",
-          "portrait": "hmm"
+          "text": "이것도 조금 진하네요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "겉보기와 달리 몸을 꽤 세심하게 챙기는 사람이라는 걸 처음 알았다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 문해준이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "강한 사람처럼 보이는 것과 무리하지 않는 것은 별개의 일이었다."
 }

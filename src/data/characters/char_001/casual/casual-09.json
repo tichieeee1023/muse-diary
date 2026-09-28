@@ -1,0 +1,40 @@
+{
+  "id": "char_001_casual_09",
+  "kind": "casual",
+  "title": "백룸의 박스",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "hmm",
+  "completionAffection": 4,
+  "repeatable": true,
+  "placeIds": [
+    "bookstore"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "서점 안쪽 문이 반쯤 열려 있었다. 도윤은 오래된 책 상자를 바닥에 늘어놓고 한 권씩 상태를 확인하고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "여긴 먼지가 많습니다. 옷 버릴 텐데요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "말은 나가라는 뜻에 가까운데, 손으로는 이미 작은 의자를 하나 비워준다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "…앉으실 거면 이쪽이 낫습니다.",
+          "portrait": "main"
+        }
+      ]
+    }
+  ],
+  "closing": "들어오지 말라면서도 앉을 자리는 만들어줬다."
+}

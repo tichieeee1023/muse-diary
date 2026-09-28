@@ -1,9 +1,9 @@
 {
   "id": "char_011_affinity_20",
   "kind": "story",
-  "title": "무대 위의 사람",
+  "title": "공연이 끝난 뒤",
   "threshold": 20,
-  "purpose": "리안의 친근함이 공연자 습관임을 보여준다",
+  "purpose": "무대 위 페르소나와 실제 유리안의 차이를 본격적으로 보여준다.",
   "defaultPortrait": "main",
   "completionAffection": 3,
   "sections": [
@@ -11,27 +11,37 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "공연이 끝나자 유리안은 아이들과 보호자 모두에게 똑같이 환하게 웃었다."
+          "text": "공연이 끝나고 텅 빈 무대 뒤에서 유리안은 후드 차림으로 바닥에 앉아 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "유리안",
-          "text": "아, 질투했어요?",
+          "text": "오늘 공연은 끝났습니다. 이제 재미없어요.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "장난스럽게 묻더니 금세 웃었다."
+          "text": "장난처럼 말했지만 정말로 말수가 적었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "사람들 없으면 원래 이래요. 놀라셨죠?",
+          "portrait": "hmm"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "{name}이 굳이 분위기를 띄우지 않고 옆에 앉자 유리안이 한참 뒤 말했다."
+        },
+        {
           "type": "dialogue",
           "speaker": "유리안",
-          "text": "농담. 아직 그럴 사이는 아니잖아요.",
-          "portrait": "main"
+          "text": "…편하네요. 말 안 해도 되는 거.",
+          "portrait": "smile"
         }
       ],
       "choice": {
@@ -39,61 +49,49 @@
         "options": [
           {
             "id": "a",
-            "text": "“잘 아네요.”",
-            "affection": 6,
-            "memoryKey": "affinity_20_a",
+            "text": "“이쪽도 좋아요.”",
+            "affection": 7,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "유리안",
-                "text": "그렇죠. 천천히 봅시다.",
-                "portrait": "main"
+                "text": "그 말은 조금 반칙인데. 아직 별로 보여준 것도 없는데요.",
+                "portrait": "troubled"
               }
-            ]
+            ],
+            "memoryKey": "yurian_20_like_quiet"
           },
           {
             "id": "b",
-            "text": "“조금 얄밉네요.”",
-            "affection": 4,
-            "memoryKey": "affinity_20_b",
+            "text": "“쉬는 사람 같아서 더 자연스러워요.”",
+            "affection": 6,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "유리안",
-                "text": "그 표정 재밌는데요.",
-                "portrait": "troubled"
+                "text": "아, 그 표현 좋네요. 쉬는 사람.",
+                "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "yurian_20_rest"
           },
           {
             "id": "c",
-            "text": "“그럼 언제 그런 사이 돼요?”",
-            "affection": 5,
-            "memoryKey": "affinity_20_c",
+            "text": "“재미없어도 괜찮아요.”",
+            "affection": 6,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "유리안",
-                "text": "오, 공격적이네. 기억해둘게요.",
+                "text": "…그걸 허락받는 기분은 처음이네요.",
                 "portrait": "main"
               }
-            ]
+            ],
+            "memoryKey": "yurian_20_no_fun"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 무대 위의 사람은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "리안의 친근함이 공연자 습관임을 보여준다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "무대 위의 사람 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "유리안은 무대 밖에서도 누군가와 같이 있을 수 있다는 걸 조금씩 확인했다."
 }

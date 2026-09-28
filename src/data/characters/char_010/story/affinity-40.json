@@ -1,37 +1,47 @@
 {
   "id": "char_010_affinity_40",
   "kind": "story",
-  "title": "바늘과 검은 실",
+  "title": "푸딩",
   "threshold": 40,
-  "purpose": "재하의 손재주라는 갭",
-  "defaultPortrait": "hmm",
+  "purpose": "가벼운 갭모에와 사적인 시간을 통해 관계를 인간적으로 풀어준다.",
+  "defaultPortrait": "smile",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "벤치에 떨어진 작은 인형의 팔이 뜯어져 있었다. 재하는 주머니에서 바늘과 검은 실을 꺼냈다."
+          "text": "경호 업무가 끝난 뒤 재하는 편의점 푸딩을 들고 옥상 계단에 앉았다."
         },
         {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "경호원도 옷은 찢어집니다.",
-          "portrait": "hmm"
+          "text": "이 시간엔 사람이 적어서 좋습니다.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "굵은 손가락으로 만든 매듭은 놀랄 만큼 작고 반듯했다."
+          "text": "그는 푸딩 뚜껑을 아주 깔끔하게 뜯었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "웃지 마십시오. 좋아하는 건 좋아하는 겁니다.",
+          "portrait": "troubled"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "한 숟갈 먹고 난 뒤, 평소보다 눈매가 아주 조금 풀렸다."
+        },
+        {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "왜 그렇게 봅니까.",
-          "portrait": "hmm"
+          "text": "…하나 드시겠습니까.",
+          "portrait": "smile"
         }
       ],
       "choice": {
@@ -39,61 +49,49 @@
         "options": [
           {
             "id": "a",
-            "text": "“너무 잘해서요.”",
+            "text": "“한 입만.”",
             "affection": 6,
-            "memoryKey": "affinity_40_a",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "권재하",
-                "text": "필요해서 배운 겁니다.",
-                "portrait": "hmm"
+                "text": "한 입 기준이 큽니다.",
+                "portrait": "troubled"
               }
-            ]
+            ],
+            "memoryKey": "jaeha_40_share"
           },
           {
             "id": "b",
-            "text": "“내 인형도 맡겨도 돼요?”",
-            "affection": 4,
-            "memoryKey": "affinity_40_b",
+            "text": "“다음엔 내가 사줄게요.”",
+            "affection": 7,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "권재하",
-                "text": "상태 보고 결정하죠.",
-                "portrait": "troubled"
+                "text": "그건… 기대하겠습니다.",
+                "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "jaeha_40_next"
           },
           {
             "id": "c",
-            "text": "“귀여운 취미네요.”",
+            "text": "“이런 취향 진짜 의외예요.”",
             "affection": 5,
-            "memoryKey": "affinity_40_c",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "권재하",
-                "text": "취미 아닙니다.",
-                "portrait": "hmm"
+                "text": "자주 듣습니다. 이해는 안 됩니다.",
+                "portrait": "main"
               }
-            ]
+            ],
+            "memoryKey": "jaeha_40_gap"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 바늘과 검은 실은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "재하의 손재주라는 갭 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "바늘과 검은 실 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "재하에게도 위험과 상관없는 아주 사소한 즐거움이 있었다."
 }

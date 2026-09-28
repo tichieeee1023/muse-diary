@@ -1,37 +1,41 @@
 {
   "id": "char_005_casual_05",
   "kind": "casual",
-  "title": "따뜻한 캔",
-  "minAffection": 40,
-  "maxAffection": 100,
-  "defaultPortrait": "hmm",
-  "completionAffection": 5,
+  "title": "세제 냄새",
+  "minAffection": 30,
+  "maxAffection": 79,
+  "defaultPortrait": "main",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "추운 밤, 태겸이 따뜻한 캔커피를 던지듯 건넸다."
+          "text": "태겸은 세제 병 뚜껑을 열자마자 얼굴을 살짝 찌푸렸다."
         },
         {
           "type": "dialogue",
           "speaker": "강태겸",
-          "text": "손 차갑잖아요.",
+          "text": "이 향은 너무 셉니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "평소 표정 변화가 적어서 그 작은 반응이 유난히 크게 보였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "무향이 제일 낫습니다. 냄새로 덮으면 남아 있는지 알 수 없으니까.",
           "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "자기는 찬 물을 마시면서도 {name} 손부터 봤다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "강태겸",
-          "text": "마시고 버리세요.",
-          "portrait": "hmm"
+          "text": "청소 얘기 같았지만, 어딘가 다른 뜻도 있는 것처럼 들렸다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 강태겸이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "태겸은 흔적을 덮는 것보다 확인하는 쪽을 택하는 사람이었다."
 }

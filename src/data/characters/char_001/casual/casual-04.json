@@ -1,10 +1,10 @@
 {
   "id": "char_001_casual_04",
   "kind": "casual",
-  "title": "쓴 커피",
+  "title": "상자 뜯는 손",
   "minAffection": 20,
-  "maxAffection": 99,
-  "defaultPortrait": "hmm",
+  "maxAffection": 59,
+  "defaultPortrait": "main",
   "completionAffection": 5,
   "repeatable": true,
   "sections": [
@@ -12,26 +12,36 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "도윤은 커피를 한 모금 마시고 아주 미세하게 인상을 썼다."
+          "text": "새 책이 들어온 날, 도윤은 바닥에 쌓인 상자를 뜯고 있었다. 손등의 작은 상처 위로 새 긁힌 자국이 하나 더 생겼다."
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "오늘은 좀 많이 쓰네요.",
-          "portrait": "hmm"
+          "text": "별거 아닙니다.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "쓴 걸 좋아한다던 사람치고 표정이 솔직했다."
+          "text": "밴드를 건네자 그는 잠깐 멈췄다."
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "설탕은 안 넣습니다. 자존심 문제라.",
-          "portrait": "hmm"
+          "text": "이런 건 금방 낫습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그런데도 밴드는 받았다. 붙이는 대신 잠시 손바닥 위에 올려두고 바라본다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "…감사합니다.",
+          "portrait": "smile"
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 서도윤이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "도윤은 도움을 주는 쪽에는 익숙하지만 받는 쪽에는 서툴렀다."
 }

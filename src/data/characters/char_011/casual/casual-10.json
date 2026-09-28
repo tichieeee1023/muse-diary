@@ -1,0 +1,40 @@
+{
+  "id": "char_011_casual_10",
+  "kind": "casual",
+  "title": "빛나지 않는 방",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "main",
+  "completionAffection": 5,
+  "repeatable": true,
+  "placeIds": [
+    "aquarium"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "해파리 전시실의 푸른 조명 아래에서 유리안은 평소보다 훨씬 조용했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "여긴 제가 뭘 안 해도 반짝이네요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "농담처럼 말했지만 목소리는 낮았다. 한동안 아무 마술도 보여주지 않는다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "이런 데서는 그냥 있어도 되니까 편해요.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "빛을 만드는 사람이 빛을 만들지 않아도 되는 시간을 좋아했다."
+}

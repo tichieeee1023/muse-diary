@@ -1,37 +1,41 @@
 {
   "id": "char_010_casual_07",
   "kind": "casual",
-  "title": "명령 취소",
-  "minAffection": 80,
-  "maxAffection": 100,
+  "title": "보호받는 쪽",
+  "minAffection": 60,
+  "maxAffection": 99,
   "defaultPortrait": "troubled",
-  "completionAffection": 5,
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "재하가 “따라오세요”라고 했다가 바로 말을 고쳤다."
+          "text": "무거운 상자를 옮기다 재하가 손목을 잠깐 찡그렸다."
         },
         {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "…같이 가시겠습니까.",
+          "text": "괜찮습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}이 상자를 뺏어들자 그가 진짜로 당황했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "제가 들겠습니다.",
           "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "고치는 데 꽤 큰 노력이 든 얼굴이었다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "권재하",
-          "text": "그쪽이 맞겠군요.",
-          "portrait": "troubled"
+          "text": "가끔은 도움받으라는 말에 한참 대답을 못 했다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 권재하이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "보호하는 데 익숙한 사람은 보호받는 상황에 형편없었다."
 }

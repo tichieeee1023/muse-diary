@@ -1,0 +1,40 @@
+{
+  "id": "char_002_casual_10",
+  "kind": "casual",
+  "title": "쓸데없이 진심인 게임",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "placeIds": [
+    "night-market"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "야시장 게임 노점 앞에서 주원이 작은 고리 던지기에 세 번째 도전 중이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "확률 문제가 아니라 배치 문제예요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "실버 액세서리와 말끔한 셔츠 차림으로 플라스틱 고리를 노려보는 모습이 묘하게 진지하다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "이번엔 됩니다. 말 걸지 마세요.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "완벽주의는 싸구려 야시장 게임에도 예외가 없었다."
+}

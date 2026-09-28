@@ -3,79 +3,112 @@
   "kind": "story",
   "title": "종착역 이후",
   "threshold": 100,
-  "purpose": "업무가 끝난 뒤에도 함께 있고 싶은 관계가 된다",
-  "defaultPortrait": "smile",
+  "purpose": "해준이 사랑을 보호와 통제가 아니라 함께 기다리고 함께 돌아오는 관계로 받아들인다",
+  "defaultPortrait": "main",
   "completionAffection": 0,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "마지막 열차가 지나간 플랫폼에서 해준은 퇴근했는데도 서두르지 않았다."
+          "text": "운행이 끝난 자정의 빈 플랫폼. 전광판 숫자가 00:00으로 바뀌는 순간 {name}이 계단을 내려왔다."
+        },
+        {
+          "type": "narration",
+          "text": "해준은 제복이 아닌 사복 차림으로 의자 옆에 서 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "오늘은 시간 안 봐도 됩니다.",
-          "portrait": "smile"
+          "text": "늦었네요.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "전광판 대신 {name}을 보는 시간이 길어졌다. 늘 시간을 맞추던 사람이 처음으로 시간을 흘려보냈다."
+          "text": "말과 달리 표정에는 재촉도 불안도 없었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "뛰어왔습니까? 안 뛰어도 됐는데.",
+          "portrait": "troubled"
         }
       ]
     },
     {
-      "blocks": [
-        {
-          "type": "dialogue",
-          "speaker": "문해준",
-          "text": "집에 가기 아쉽다고 말하면 너무 늦습니까?",
-          "portrait": "smile"
-        }
-      ],
+      "blocks": [],
       "choice": {
         "id": "aff_100_choice",
         "options": [
           {
             "id": "a",
-            "text": "“전혀 안 늦었어요.”",
-            "affection": 6,
-            "memoryKey": "affinity_100_a",
+            "text": "“기다렸어요?”",
+            "affection": 7,
+            "memoryKey": "a100_wait",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "다행이네요.",
+                "text": "네.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "이번에는 둘러대지 않았다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "기다릴 수 있으니까 기다렸습니다.",
                 "portrait": "smile"
               }
             ]
           },
           {
             "id": "b",
-            "text": "“그럼 한 정거장 더 걸어요.”",
-            "affection": 4,
-            "memoryKey": "affinity_100_b",
+            "text": "“오늘도 도착하면 연락해야 해요?”",
+            "affection": 7,
+            "memoryKey": "a100_arrive",
             "response": [
+              {
+                "type": "narration",
+                "text": "해준이 아주 작게 웃었다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "좋습니다. 오늘만은 천천히.",
-                "portrait": "troubled"
+                "text": "오늘은 같이 갈 겁니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "그러니까 확인할 필요 없겠네요.",
+                "portrait": "smile"
               }
             ]
           },
           {
             "id": "c",
-            "text": "“나도 아쉬웠어요.”",
-            "affection": 5,
-            "memoryKey": "affinity_100_c",
+            "text": "“해준 씨도 무사히 도착했네요.”",
+            "affection": 7,
+            "memoryKey": "a100_him",
             "response": [
+              {
+                "type": "narration",
+                "text": "그가 잠깐 눈을 내렸다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "…그 말 듣고 싶었습니다.",
-                "portrait": "smile"
+                "text": "……그 말, 생각보다 좋네요.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "앞으로는 저도 알려드리겠습니다.",
+                "portrait": "main"
               }
             ]
           }
@@ -86,14 +119,20 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "그날의 종착역 이후은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+          "text": "플랫폼을 나가는 동안 해준은 반걸음 앞서 걷지 않았다. {name}이 천천히 걸으면 같이 느려졌고, 계단 앞에서도 먼저 올라가지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "제가 기다릴 테니까 천천히 오세요.",
+          "portrait": "smile"
         },
         {
           "type": "narration",
-          "text": "업무가 끝난 뒤에도 함께 있고 싶은 관계가 된다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+          "text": "누군가를 무사히 보내는 일만 알던 사람이 이제는 같은 방향으로 함께 돌아가는 법을 배우고 있었다."
         }
       ]
     }
   ],
-  "closing": "종착역 이후 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "문해준의 COMPLETE — 기다림을 불안이 아니라 믿음으로 선택했다."
 }

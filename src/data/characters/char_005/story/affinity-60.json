@@ -1,37 +1,47 @@
 {
   "id": "char_005_affinity_60",
   "kind": "story",
-  "title": "지우지 못한 흔적",
+  "title": "청소가 끝난 뒤",
   "threshold": 60,
-  "purpose": "태겸의 일이 단순 청소가 아님을 밝힌다",
-  "defaultPortrait": "troubled",
+  "purpose": "잔재 처리자의 역할과 위험을 밝힌다. 주인공을 떼어내려는 이유가 경계가 아니라 보호임을 보여준다.",
+  "defaultPortrait": "hmm",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "그날의 검은 자국은 걸레로 닦을수록 더 짙어졌다. 태겸은 결국 장갑을 벗고 손바닥으로 그것을 눌렀다."
+          "text": "그날의 잔재는 평소보다 컸다. 바닥을 기어다니던 검은 흔적이 갑자기 일어나 사람의 실루엣처럼 흔들렸다."
         },
         {
           "type": "dialogue",
           "speaker": "강태겸",
-          "text": "보면 안 되는 걸 봤네요.",
-          "portrait": "troubled"
+          "text": "뒤로 가세요. 지금.",
+          "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "늘 쫓아내려 했던 이유가 귀찮음이 아니라 보호였다는 게 뒤늦게 선명해졌다."
+          "text": "태겸의 목소리는 오히려 평소보다 낮았다. 그는 {name}을 등 뒤로 보내고 검은 장갑으로 잔재를 붙잡았다."
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "모든 것이 끝난 뒤 태겸은 한동안 말이 없었다."
+        },
+        {
           "type": "dialogue",
           "speaker": "강태겸",
-          "text": "겁나면 지금부터라도 멀리해도 됩니다.",
-          "portrait": "troubled"
+          "text": "이런 건 죽거나 사라진 것들이 남긴 찌꺼기입니다. 오래 노출되면 사람도 망가집니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "제가 치우는 건 그겁니다.",
+          "portrait": "hmm"
         }
       ],
       "choice": {
@@ -39,61 +49,49 @@
         "options": [
           {
             "id": "a",
-            "text": "“그럴 생각 없어요.”",
+            "text": "“그래서 저를 계속 보내려고 했군요.”",
             "affection": 6,
-            "memoryKey": "affinity_60_a",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "강태겸",
-                "text": "…예상은 했습니다.",
-                "portrait": "smile"
+                "text": "네. 이유는 그게 전부입니다.",
+                "portrait": "main"
               }
-            ]
+            ],
+            "memoryKey": "taegyeom_60_protect"
           },
           {
             "id": "b",
-            "text": "“혼자 계속 했어요?”",
-            "affection": 4,
-            "memoryKey": "affinity_60_b",
+            "text": "“태겸 씨는 괜찮아요?”",
+            "affection": 6,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "강태겸",
-                "text": "네. 그래서 익숙합니다.",
+                "text": "…그 질문부터 하십니까.",
                 "portrait": "troubled"
               }
-            ]
+            ],
+            "memoryKey": "taegyeom_60_him"
           },
           {
             "id": "c",
-            "text": "“나도 조심할게요.”",
+            "text": "“이제는 모른 척 못 해요.”",
             "affection": 5,
-            "memoryKey": "affinity_60_c",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "강태겸",
-                "text": "그 말은 꼭 지키세요.",
+                "text": "알고 있습니다. 그게 문제군요.",
                 "portrait": "troubled"
               }
-            ]
+            ],
+            "memoryKey": "taegyeom_60_cant_unsee"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 지우지 못한 흔적은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "태겸의 일이 단순 청소가 아님을 밝힌다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "지우지 못한 흔적 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "정체를 알게 된 뒤에도 태겸은 달라지지 않았다. 다만 그의 경고들이 조금 다르게 들리기 시작했다."
 }

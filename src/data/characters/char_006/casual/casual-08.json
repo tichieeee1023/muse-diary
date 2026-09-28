@@ -1,37 +1,41 @@
 {
   "id": "char_006_casual_08",
   "kind": "casual",
-  "title": "손끝의 물방울",
-  "minAffection": 80,
+  "title": "약속 장소",
+  "minAffection": 70,
   "maxAffection": 100,
   "defaultPortrait": "smile",
-  "completionAffection": 5,
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "시온 손끝에서 물방울 하나가 떠올랐다가 {name} 손등에 내려앉았다."
+          "text": "이번 약속 장소는 강변이 아니었다. 시온이 먼저 고른 작은 카페였다."
         },
         {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "선물 치고 너무 싸죠?",
+          "text": "여기 맞죠? 저 오늘 꽤 육지 사람 같지 않아요?",
           "portrait": "smile"
         },
         {
           "type": "narration",
-          "text": "그는 유난히 조용히 웃었다."
+          "text": "농담은 여전했지만, 그는 일부러 물과 먼 곳을 골랐다."
         },
         {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "그래도 제일 저다운 거라.",
-          "portrait": "smile"
+          "text": "가끔은 제가 가도 되잖아요. 늘 오게만 하지 말고.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "가벼운 말처럼 들리지 않았다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 백시온이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "시온이 조금씩 주인공의 생활 쪽으로 걸어 들어오기 시작했다."
 }

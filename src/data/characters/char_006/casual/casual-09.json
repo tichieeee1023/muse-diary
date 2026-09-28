@@ -1,0 +1,40 @@
+{
+  "id": "char_006_casual_09",
+  "kind": "casual",
+  "title": "유리 너머의 물",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "hmm",
+  "completionAffection": 4,
+  "repeatable": true,
+  "placeIds": [
+    "aquarium"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "수중 터널에서 시온은 물고기보다 물의 흐름을 오래 바라보고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "여긴 물이 너무 얌전해요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "손바닥을 유리에 대자 반대편 작은 물고기 떼가 방향을 바꾼다. 우연이라고 하기에는 타이밍이 너무 정확했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "그래도 예쁘긴 하네요. 갇혀 있는 건 별로지만.",
+          "portrait": "main"
+        }
+      ]
+    }
+  ],
+  "closing": "물을 좋아하는 사람에게 아쿠아리움은 아름답고도 조금 답답한 장소였다."
+}

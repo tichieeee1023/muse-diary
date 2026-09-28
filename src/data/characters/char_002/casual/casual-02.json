@@ -1,37 +1,41 @@
 {
   "id": "char_002_casual_02",
   "kind": "casual",
-  "title": "캡슐 중복",
-  "minAffection": 20,
-  "maxAffection": 79,
-  "defaultPortrait": "troubled",
-  "completionAffection": 5,
+  "title": "메뉴보다 레이아웃",
+  "minAffection": 0,
+  "maxAffection": 39,
+  "defaultPortrait": "main",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "주원 손에는 똑같은 곰 열쇠고리 두 개가 있었다."
+          "text": "카페에서 메뉴를 고르던 주원이 한참 동안 메뉴판만 바라봤다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "중복은 실패가 아닙니다.",
-          "portrait": "troubled"
+          "text": "이 순서, 이상하지 않습니까?",
+          "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "말은 단호했지만 한 개를 {name} 쪽으로 밀었다."
+          "text": "추천 메뉴보다 가격이 먼저 보이고, 정작 대표 음료는 아래에 숨어 있다는 설명이 이어졌다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "보관 공간 분산입니다.",
-          "portrait": "troubled"
+          "text": "뭘 마실지는 아직 안 정했습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "디자인 분석을 다 끝내고도 주문은 못 고른 얼굴이었다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 한주원이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "주원은 선택보다 구조를 먼저 본다. 메뉴판 앞에서도 예외는 없었다."
 }

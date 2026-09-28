@@ -1,0 +1,40 @@
+{
+  "id": "char_005_casual_10",
+  "kind": "casual",
+  "title": "세제 대신 우유",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "placeIds": [
+    "convenience"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "편의점 세제 코너에서 태겸을 발견했지만 장바구니 안에는 우유와 식빵, 작은 영양제뿐이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "청소용품은 회사에서 받습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "영양제를 보자 태겸이 한 박자 늦게 가린다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "식물 영양제입니다. 사람 거 아닙니다.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "무서운 밤의 처리자는 퇴근 뒤 화분 걱정을 하고 있었다."
+}

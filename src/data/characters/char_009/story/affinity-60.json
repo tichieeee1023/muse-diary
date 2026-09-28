@@ -1,36 +1,46 @@
 {
   "id": "char_009_affinity_60",
   "kind": "story",
-  "title": "묻지 못한 것",
+  "title": "비 오는 날의 꽃",
   "threshold": 60,
-  "purpose": "이겸이 자신의 비밀을 말하기 시작한다",
-  "defaultPortrait": "troubled",
+  "purpose": "봉인을 명확히 공개하지만 정체와 과거는 일부만 설명한다.",
+  "defaultPortrait": "hmm",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "이겸은 처음으로 질문 대신 자기 손목을 먼저 내밀었다. 검은 문양이 맥박처럼 천천히 움직였다."
+          "text": "비가 거세지자 이겸의 손목 아래 검은 꽃 문양이 피부를 따라 번졌다."
         },
         {
           "type": "dialogue",
           "speaker": "차이겸",
-          "text": "이건 상담으로 해결되는 문제가 아닙니다.",
-          "portrait": "troubled"
+          "text": "가까이 오지 마십시오.",
+          "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "늘 남의 말을 기다리던 사람이 자기 이야기를 꺼내는 데 오래 걸렸다."
+          "text": "목소리는 차분했지만 숨은 평소보다 짧았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "문신이 아닙니다. 봉인입니다.",
+          "portrait": "main"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "그는 소매를 포기하고 손목을 드러냈다."
+        },
+        {
           "type": "dialogue",
           "speaker": "차이겸",
-          "text": "그래도 당신한테는 말하고 싶었어요.",
+          "text": "제 안에 인간이 감당하기 어려운 것이 있습니다. 감정이 크게 흔들리면 봉인도 영향을 받습니다.",
           "portrait": "troubled"
         }
       ],
@@ -39,61 +49,49 @@
         "options": [
           {
             "id": "a",
-            "text": "“들어줄게요.”",
-            "affection": 6,
-            "memoryKey": "affinity_60_a",
+            "text": "“그래서 늘 감정을 눌렀군요.”",
+            "affection": 7,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "차이겸",
-                "text": "고맙습니다. 그럼 천천히.",
-                "portrait": "smile"
+                "text": "네. 성격이라고 생각했는데, 대부분은 훈련이었습니다.",
+                "portrait": "main"
               }
-            ]
+            ],
+            "memoryKey": "igyeom_60_control"
           },
           {
             "id": "b",
-            "text": "“무서웠어요?”",
-            "affection": 4,
-            "memoryKey": "affinity_60_b",
+            "text": "“지금 내가 뭘 하면 돼요?”",
+            "affection": 8,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "차이겸",
-                "text": "네. 인정하기 싫었지만.",
+                "text": "그 자리에 있어주십시오. 그 정도면 됩니다.",
                 "portrait": "troubled"
               }
-            ]
+            ],
+            "memoryKey": "igyeom_60_stay"
           },
           {
             "id": "c",
-            "text": "“왜 나한테요?”",
-            "affection": 5,
-            "memoryKey": "affinity_60_c",
+            "text": "“무섭긴 하지만 안 갈게요.”",
+            "affection": 7,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "차이겸",
-                "text": "그게 제일 설명하기 어렵네요.",
+                "text": "…그 말이 더 어렵게 만듭니다. 기쁘다는 뜻입니다.",
                 "portrait": "troubled"
               }
-            ]
+            ],
+            "memoryKey": "igyeom_60_afraid_stay"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 묻지 못한 것은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "이겸이 자신의 비밀을 말하기 시작한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "묻지 못한 것 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "이겸의 침착함은 타고난 미덕이 아니라 오래 익힌 생존 방식이었다."
 }

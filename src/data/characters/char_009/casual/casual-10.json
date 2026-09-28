@@ -1,0 +1,40 @@
+{
+  "id": "char_009_casual_10",
+  "kind": "casual",
+  "title": "바람이 센 날",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "placeIds": [
+    "rooftop"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "루프탑의 강한 바람에 이겸의 긴 머리가 한쪽으로 흩어졌다. 평소 정돈된 인상이 잠깐 무너진다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "웃으셔도 됩니다. 저도 조금 우습군요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "그가 머리를 정리하다가 포기하고 작게 웃는다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "통제되지 않는 것도… 가끔은 나쁘지 않네요.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "통제가 풀린 순간이 오히려 가장 편안해 보였다."
+}

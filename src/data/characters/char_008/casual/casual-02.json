@@ -1,37 +1,41 @@
 {
   "id": "char_008_casual_02",
   "kind": "casual",
-  "title": "사람 그림",
-  "minAffection": 20,
-  "maxAffection": 79,
-  "defaultPortrait": "troubled",
-  "completionAffection": 5,
+  "title": "라벨이 삐뚤어졌다",
+  "minAffection": 0,
+  "maxAffection": 49,
+  "defaultPortrait": "hmm",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "세현의 메모 속 사람 그림은 충격적으로 단순했다."
+          "text": "작품 옆 캡션 하나가 아주 조금 기울어져 있었다. 세현은 지나치다가 두 걸음 뒤로 돌아왔다."
         },
         {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "정보 전달은 됩니다.",
+          "text": "잠깐만요. 이거 계속 신경 쓰였죠?",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "{name}이 대답하기도 전에 수평을 맞추고는 만족스럽게 고개를 끄덕인다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "작품보다 라벨이 먼저 보이면 진짜 큰일인데.",
           "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "머리와 몸이 원 두 개로 끝났다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "오세현",
-          "text": "표정까지 그려야 해요?",
-          "portrait": "troubled"
+          "text": "그러면서도 다시 한 번 각도를 확인한다. 생각보다 꽤 꼼꼼한 사람이다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 오세현이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "크게 특별한 일은 아니었다. 그래도 이런 날들이 쌓일수록 오세현이라는 사람의 윤곽이 선명해졌다."
 }

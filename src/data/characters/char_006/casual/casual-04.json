@@ -1,37 +1,41 @@
 {
   "id": "char_006_casual_04",
   "kind": "casual",
-  "title": "젖지 않은 소매",
-  "minAffection": 40,
-  "maxAffection": 100,
-  "defaultPortrait": "hmm",
-  "completionAffection": 5,
+  "title": "키오스크보다 쉬운 것",
+  "minAffection": 20,
+  "maxAffection": 69,
+  "defaultPortrait": "smile",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "비가 오는데 시온 소매만 이상하게 마른 채였다."
+          "text": "시온은 패들보드 위에서는 자유로웠지만 쇼핑몰 무인 주문기 앞에서는 메뉴를 세 번이나 취소했다."
         },
         {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "재질이 좋은 겁니다.",
-          "portrait": "hmm"
+          "text": "이거 왜 자꾸 옵션이 늘어나요? 물에서는 방향 두 개면 되는데.",
+          "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "뻔한 거짓말을 하면서도 웃음이 새어 나왔다."
+          "text": "결국 {name}이 대신 눌러주자 그가 진심으로 감탄했다."
         },
         {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "믿어줘요. 오늘만.",
-          "portrait": "hmm"
+          "text": "육지 생존력 높네요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "칭찬 기준이 또 이상했다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 백시온이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "물 밖의 시온은 생각보다 허술한 구석이 많았다."
 }

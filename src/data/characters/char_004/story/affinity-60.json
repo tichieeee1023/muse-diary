@@ -1,27 +1,35 @@
 {
   "id": "char_004_affinity_60",
   "kind": "story",
-  "title": "그림자의 기분",
+  "title": "한 박자 늦은 그림자",
   "threshold": 60,
-  "purpose": "비일상 비밀과 로운의 두려움",
-  "defaultPortrait": "troubled",
+  "purpose": "그림자의 이상을 명확히 드러내되 정체는 아직 밝히지 않는다. 로운이 농담으로 비일상을 숨기는 습관과 두려움을 보여준다.",
+  "defaultPortrait": "hmm",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "로운의 그림자가 조명보다 먼저 고개를 돌렸다. 이번에는 그도 숨기지 못했다."
+          "text": "비가 그친 저녁, 카페 바닥에 젖은 빛이 길게 번졌다. 로운이 조명을 끄러 창가를 지나가는 순간이었다."
+        },
+        {
+          "type": "narration",
+          "text": "몸이 먼저 멈췄다. 그의 그림자가 움직이지 않았다."
+        },
+        {
+          "type": "narration",
+          "text": "정확히 한 박자 뒤, 바닥의 검은 형체가 뒤늦게 로운의 발을 따라왔다."
         },
         {
           "type": "dialogue",
           "speaker": "이로운",
-          "text": "모른 척해주면 편한데.",
-          "portrait": "troubled"
+          "text": "…봤어요?",
+          "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "늘 농담으로 넘기던 얼굴에서 처음으로 웃음이 사라졌다."
+          "text": "이번에는 웃지 않았다. 언제나 먼저 농담하던 사람이 침묵하니 오히려 공기가 더 낯설어졌다."
         }
       ]
     },
@@ -30,8 +38,32 @@
         {
           "type": "dialogue",
           "speaker": "이로운",
-          "text": "그래도 도망가진 않았으면 좋겠어요.",
+          "text": "조명이 이상했나 보네요. 요즘 전기 상태가 별로라.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "너무 매끄러운 변명이었다. 그리고 바로 그래서 거짓말처럼 들렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "…그런 얼굴 하지 마요.",
           "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "로운의 웃음이 조금 흐려졌다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "사람들이 이상한 걸 보면 대개 두 가지거든요. 무서워하거나, 궁금해하거나. 둘 다 별로 좋은 끝은 아니었어요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "누구의 이야기인지 묻지 않아도 알 수 있었다. 적어도 비슷한 일이 전에도 있었다."
         }
       ],
       "choice": {
@@ -39,61 +71,53 @@
         "options": [
           {
             "id": "a",
-            "text": "“왜 도망가요?”",
+            "text": "“무섭긴 한데, 로운 씨가 더 궁금해요.”",
             "affection": 6,
-            "memoryKey": "affinity_60_a",
+            "memoryKey": "rowoon_60_curious_him",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "이로운",
-                "text": "…그렇게 쉽게 말하지 마요. 좋아지니까.",
-                "portrait": "smile"
+                "text": "그게 제일 곤란한 대답인데.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "narration",
+                "text": "그런데 이번에는 웃으며 넘기지 않았다."
               }
             ]
           },
           {
             "id": "b",
-            "text": "“설명할 준비 되면 해요.”",
-            "affection": 4,
-            "memoryKey": "affinity_60_b",
+            "text": "“지금 말하기 싫으면 안 해도 돼요.”",
+            "affection": 6,
+            "memoryKey": "rowoon_60_wait",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "이로운",
-                "text": "그 말이면 충분해요.",
-                "portrait": "troubled"
+                "text": "…그 말이 제일 어렵네요. 기다려준다는 거.",
+                "portrait": "main"
               }
             ]
           },
           {
             "id": "c",
-            "text": "“그림자도 로운 씨잖아요.”",
+            "text": "“조명 탓이라는 말은 안 믿을게요.”",
             "affection": 5,
-            "memoryKey": "affinity_60_c",
+            "memoryKey": "rowoon_60_no_lie",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "이로운",
-                "text": "그건 반칙인데.",
-                "portrait": "troubled"
+                "text": "네. 그건 저도 좀 성의 없는 거짓말이었다고 생각합니다.",
+                "portrait": "smile"
               }
             ]
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 그림자의 기분은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "비일상 비밀과 로운의 두려움 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "그림자의 기분 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "그날 이후 그림자를 못 본 척하기는 어려워졌다. 로운도 더는 완전히 감출 수 없다는 걸 아는 얼굴이었다."
 }

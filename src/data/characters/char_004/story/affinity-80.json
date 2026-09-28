@@ -1,37 +1,75 @@
 {
   "id": "char_004_affinity_80",
   "kind": "story",
-  "title": "웃지 않는 얼굴",
+  "title": "꿈의 잔향",
   "threshold": 80,
-  "purpose": "나에게만 연기하지 않는 순간",
-  "defaultPortrait": "smile",
+  "purpose": "로운의 정체와 과거의 실수를 공개한다. 인간의 꿈과 감정의 잔향을 먹는 존재이며, 한 사람의 기억을 잃게 만든 이후 직접 먹지 않게 되었음을 밝힌다.",
+  "defaultPortrait": "troubled",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "가게 문을 닫은 뒤 로운은 한동안 웃지 않았다. 침묵 속에서 손가락만 천천히 움직였다."
+          "text": "며칠째 같은 꿈을 꿨다. 오래된 골목, 이름 모를 사람의 웃음, 그리고 깨어나는 순간 혀끝에 남는 낯선 단맛."
+        },
+        {
+          "type": "narration",
+          "text": "로운에게 그 이야기를 꺼내자 그의 손이 멈췄다. 접시를 닦던 천이 한 자리에 오래 머물렀다."
         },
         {
           "type": "dialogue",
           "speaker": "이로운",
-          "text": "저 원래 조용한 사람입니다. 믿기 어렵죠?",
-          "portrait": "smile"
+          "text": "그 디저트 먹은 날부터죠.",
+          "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "모두를 편하게 해주느라 만든 미소보다 지금 얼굴이 훨씬 가까워 보였다."
+          "text": "질문이 아니라 확인이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "미안해요. 이번엔 제가 설명해야겠네요.",
+          "portrait": "troubled"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "로운은 사람의 꿈과 감정에 남는 잔향을 느낄 수 있다고 말했다. 행복, 미련, 안도, 슬픔. 원래는 그것을 직접 먹고 살아가는 존재에 가까웠다고."
+        },
+        {
           "type": "dialogue",
           "speaker": "이로운",
-          "text": "당신 앞에서는 좀 쉬어도 될 것 같아서.",
-          "portrait": "smile"
+          "text": "예전엔 조절을 못 했어요. 배고프면… 그냥 먹었고.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "한 번은 너무 많이 가져갔다. 그 사람은 중요한 추억 몇 개를 잃었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "제가 배부른 동안, 그 사람은 자기 인생에서 뭔가 빠졌다는 것도 몰랐어요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "그래서 지금은 디저트를 매개로 아주 조금씩만 잔향을 받는다. 사람의 것을 빼앗지 않도록, 사람이 스스로 느끼고 흘려보낸 것만."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "파티시에라는 직업, 꽤 안전하죠. 행복하게 먹고 가면 그걸로 끝이니까.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "웃음은 없었다. 처음으로 자신의 이야기를 맛있는 말로 포장하지 않았다."
         }
       ],
       "choice": {
@@ -39,61 +77,53 @@
         "options": [
           {
             "id": "a",
-            "text": "“그 얼굴도 좋아요.”",
+            "text": "“지금의 로운 씨는 안 그러잖아요.”",
             "affection": 6,
-            "memoryKey": "affinity_80_a",
+            "memoryKey": "rowoon_80_now",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "이로운",
-                "text": "…그 말 오래 기억할게요.",
-                "portrait": "smile"
+                "text": "그래서 계속 지금처럼 있으려고요. 매일 선택해야 하는 일이지만.",
+                "portrait": "main"
               }
             ]
           },
           {
             "id": "b",
-            "text": "“그럼 쉬어요. 말 안 해도 돼요.”",
-            "affection": 4,
-            "memoryKey": "affinity_80_b",
+            "text": "“그래서 사람 기분을 그렇게 잘 읽는 거였네요.”",
+            "affection": 5,
+            "memoryKey": "rowoon_80_understand",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "이로운",
-                "text": "네. 옆에만 있어줘요.",
-                "portrait": "troubled"
+                "text": "네. 사실 읽는다기보다… 맛에 가까워요.",
+                "portrait": "hmm"
               }
             ]
           },
           {
             "id": "c",
-            "text": "“내 앞에서만?”",
-            "affection": 5,
-            "memoryKey": "affinity_80_c",
+            "text": "“나한테서도 느껴져요?”",
+            "affection": 6,
+            "memoryKey": "rowoon_80_taste_me",
             "response": [
+              {
+                "type": "narration",
+                "text": "로운이 대답하지 못하고 시선을 피했다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "이로운",
-                "text": "가능하면요.",
-                "portrait": "smile"
+                "text": "그 질문은 다음에 대답할게요. 지금은 좀 자신이 없어서.",
+                "portrait": "troubled"
               }
             ]
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 웃지 않는 얼굴은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "나에게만 연기하지 않는 순간 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "웃지 않는 얼굴 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "로운의 비밀을 안 뒤에도 카페는 같은 냄새가 났다. 달라진 건, 그의 친절 뒤에 얼마나 많은 선택과 절제가 있었는지를 이제 알고 있다는 사실이었다."
 }

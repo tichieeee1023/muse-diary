@@ -3,25 +3,29 @@
   "kind": "story",
   "title": "바람과 반대인 물결",
   "threshold": 60,
-  "purpose": "시온의 정체를 더 깊이 본다",
-  "defaultPortrait": "troubled",
+  "purpose": "시온의 정체를 확실히 암시한다. 물이 그의 감정과 반응하는 장면을 보여준다.",
+  "defaultPortrait": "hmm",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "바람은 오른쪽으로 불었는데 시온 발밑의 물결만 반대로 번졌다."
+          "text": "바람은 동쪽으로 불고 있는데, 시온 발치의 물결만 반대로 밀려왔다."
+        },
+        {
+          "type": "narration",
+          "text": "그가 손을 수면 가까이 내리자 물결이 손끝을 따라 둥글게 모였다."
         },
         {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "이번엔 못 본 척 안 하네요.",
+          "text": "…이건 설명하기 좀 어려운데.",
           "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "장난기 많은 얼굴이 잠시 조용해졌다."
+          "text": "웃음으로 넘길 줄 알았는데 그날은 그러지 않았다."
         }
       ]
     },
@@ -30,8 +34,12 @@
         {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "이상하다고 생각해도 괜찮아요. 싫지만 않으면.",
-          "portrait": "troubled"
+          "text": "저는 물에서 오래 살았습니다. 생각하시는 것보다 훨씬 오래.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "사람처럼 말하고 사람처럼 살지만, 그 말의 주어가 사람은 아니라는 걸 알 수 있었다."
         }
       ],
       "choice": {
@@ -39,61 +47,49 @@
         "options": [
           {
             "id": "a",
-            "text": "“이상한 건 이미 알았어요.”",
-            "affection": 6,
-            "memoryKey": "affinity_60_a",
+            "text": "“그래도 지금은 백시온이잖아요.”",
+            "affection": 7,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "백시온",
-                "text": "그 말 왜 이렇게 안심되지.",
-                "portrait": "smile"
+                "text": "그 말… 꽤 마음에 드네요.",
+                "portrait": "main"
               }
-            ]
+            ],
+            "memoryKey": "sion_60_now"
           },
           {
             "id": "b",
-            "text": "“싫지 않아요.”",
-            "affection": 4,
-            "memoryKey": "affinity_60_b",
+            "text": "“무서워해야 해요?”",
+            "affection": 5,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "백시온",
-                "text": "…다행이다.",
-                "portrait": "troubled"
+                "text": "제가 겁주려고 했으면 진작 물에 빠뜨렸죠.",
+                "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "sion_60_fear"
           },
           {
             "id": "c",
-            "text": "“언제부터 그랬어요?”",
-            "affection": 5,
-            "memoryKey": "affinity_60_c",
+            "text": "“더 알고 싶어요.”",
+            "affection": 6,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "백시온",
-                "text": "오래됐어요. 생각보다.",
-                "portrait": "troubled"
+                "text": "천천히요. 오래된 얘기는 길거든요.",
+                "portrait": "hmm"
               }
-            ]
+            ],
+            "memoryKey": "sion_60_more"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 바람과 반대인 물결은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "시온의 정체를 더 깊이 본다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "바람과 반대인 물결 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "시온은 인간이 아니었다. 그런데 이상하게도 그 사실보다 그가 왜 계속 물가에만 머무는지가 더 궁금해졌다."
 }

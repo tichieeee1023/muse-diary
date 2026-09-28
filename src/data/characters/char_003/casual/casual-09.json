@@ -1,0 +1,40 @@
+{
+  "id": "char_003_casual_09",
+  "kind": "casual",
+  "title": "비상용 푸딩",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "troubled",
+  "completionAffection": 4,
+  "repeatable": true,
+  "placeIds": [
+    "convenience"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "편의점에서 해준이 계산대 앞에 서 있었다. 생수와 샌드위치 사이에 작은 푸딩 하나가 끼어 있다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "제가 먹을 건 아닙니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "묻지도 않았는데 먼저 부정한다. 계산대 밖 유리문 너머로 익숙한 길고양이 꼬리가 보인다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "…푸딩은 제가 먹는 게 맞습니다. 사료는 따로 샀고요.",
+          "portrait": "main"
+        }
+      ]
+    }
+  ],
+  "closing": "변명은 실패했지만 고양이 몫은 확실했다."
+}

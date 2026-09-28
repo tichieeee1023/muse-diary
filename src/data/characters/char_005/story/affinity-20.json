@@ -1,36 +1,46 @@
 {
   "id": "char_005_affinity_20",
   "kind": "story",
-  "title": "출입 금지선",
+  "title": "지워지지 않는 얼룩",
   "threshold": 20,
-  "purpose": "태겸이 주인공을 귀찮은 민간인으로 보는 단계",
-  "defaultPortrait": "main",
+  "purpose": "태겸의 일이 단순 청소가 아니라는 의심을 확실히 심는다. 정체 설명은 하지 않는다.",
+  "defaultPortrait": "hmm",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "야간 상가에서 태겸은 {name}을 보자마자 미간부터 찌푸렸다."
+          "text": "다시 만난 밤, 태겸은 폐점한 상가 벽을 닦고 있었다. 검은 얼룩은 빛이 닿을 때마다 움찔하듯 수축했다."
         },
         {
           "type": "dialogue",
           "speaker": "강태겸",
-          "text": "여긴 구경할 데 아닙니다.",
-          "portrait": "main"
+          "text": "오늘은 그냥 가시라고 해도 안 가시겠군요.",
+          "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "걱정이라기보다 업무 방해를 보는 표정이 정확했다."
+          "text": "그는 한숨 대신 장갑을 더 단단히 조였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "그럼 선 밖에는 나오지 마십시오.",
+          "portrait": "main"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "태겸이 특수한 가루를 뿌리자 얼룩이 비명을 내는 것처럼 흔들렸다. 잠시 뒤 벽은 아무 일도 없었던 것처럼 깨끗해졌다."
+        },
+        {
           "type": "dialogue",
           "speaker": "강태겸",
-          "text": "다음부턴 밝은 길로 가세요.",
+          "text": "봤던 건 잊는 게 좋습니다.",
           "portrait": "main"
         }
       ],
@@ -39,61 +49,49 @@
         "options": [
           {
             "id": "a",
-            "text": "“걱정하는 거예요?”",
-            "affection": 6,
-            "memoryKey": "affinity_20_a",
+            "text": "“잊으라고 하면 더 기억나요.”",
+            "affection": 5,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "강태겸",
-                "text": "아니요. 사고 나면 귀찮아서.",
-                "portrait": "main"
+                "text": "…그럴 줄 알았습니다.",
+                "portrait": "troubled"
               }
-            ]
+            ],
+            "memoryKey": "taegyeom_20_remember"
           },
           {
             "id": "b",
-            "text": "“그럼 왜 따라와요?”",
+            "text": "“저게 뭔지만 알려줘요.”",
             "affection": 4,
-            "memoryKey": "affinity_20_b",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "강태겸",
-                "text": "당신이 또 반대로 갈 것 같아서요.",
-                "portrait": "troubled"
+                "text": "아직은 모르는 편이 안전합니다.",
+                "portrait": "hmm"
               }
-            ]
+            ],
+            "memoryKey": "taegyeom_20_ask"
           },
           {
             "id": "c",
-            "text": "“알겠어요. 오늘만.”",
-            "affection": 5,
-            "memoryKey": "affinity_20_c",
+            "text": "“선 밖엔 안 나갈게요.”",
+            "affection": 6,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "강태겸",
-                "text": "그 약속 지키세요.",
+                "text": "그 약속은 지키십시오.",
                 "portrait": "main"
               }
-            ]
+            ],
+            "memoryKey": "taegyeom_20_boundary"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 출입 금지선은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "태겸이 주인공을 귀찮은 민간인으로 보는 단계 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "출입 금지선 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "그날부터 그의 청소는 더 이상 평범한 청소로 보이지 않았다."
 }

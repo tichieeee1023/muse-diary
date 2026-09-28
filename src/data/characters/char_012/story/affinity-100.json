@@ -1,37 +1,51 @@
 {
   "id": "char_012_affinity_100",
   "kind": "story",
-  "title": "멈추지 않는 초침",
+  "title": "돌아가지 말아요",
   "threshold": 100,
-  "purpose": "과거의 인연이 아니라 현재의 선택으로 관계를 완성한다",
+  "purpose": "다시 시간을 되돌릴 기회 앞에서 불완전한 현재를 함께 살아가는 선택으로 루트를 완성한다.",
   "defaultPortrait": "smile",
-  "completionAffection": 0,
+  "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "이현은 고장 난 시계를 고치지 않은 채 {name} 손바닥에 올려두었다."
+          "text": "수리점의 모든 시계가 불규칙하게 흔들렸다. 또 한 번 시간을 되돌릴 수 있는 이상이 열린 밤이었다."
         },
         {
           "type": "dialogue",
           "speaker": "진이현",
-          "text": "과거에는 당신을 되찾고 싶었습니다.",
-          "portrait": "smile"
+          "text": "이번 시간축도 완벽하지 않습니다. 위험은 남아 있습니다.",
+          "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "초침은 불규칙했지만 멈추지는 않았다."
+          "text": "이현은 손목시계를 쥐었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "예전 같았으면 이미 돌렸을 겁니다. 당신이 죽을 가능성이 조금이라도 있으면.",
+          "portrait": "troubled"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "하지만 이번에는 손이 움직이지 않았다."
+        },
+        {
           "type": "dialogue",
           "speaker": "진이현",
-          "text": "지금은 다릅니다. 지금의 당신과 처음부터 다시 좋아하고 싶습니다.",
-          "portrait": "smile"
+          "text": "이번엔 묻겠습니다. 돌아갈까요?",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}의 대답을 기다리는 동안, 이현은 처음으로 미래를 자기 혼자 결정하지 않았다."
         }
       ],
       "choice": {
@@ -39,61 +53,53 @@
         "options": [
           {
             "id": "a",
-            "text": "“그럼 지금부터 시작해요.”",
-            "affection": 6,
-            "memoryKey": "affinity_100_a",
+            "text": "“이번에는 돌아가지 말아요.”",
+            "affection": 9,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "진이현",
-                "text": "네. 이번에는 천천히.",
+                "text": "…네. 그럼 여기 있겠습니다. 당신과.",
                 "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "ihyeon_100_stay"
           },
           {
             "id": "b",
-            "text": "“이번엔 같이 기억해요.”",
-            "affection": 4,
-            "memoryKey": "affinity_100_b",
+            "text": "“완벽하지 않아도 같이 살아요.”",
+            "affection": 9,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "진이현",
-                "text": "그게 좋겠습니다.",
-                "portrait": "troubled"
+                "text": "완벽하지 않은 현재라… 처음으로 기대됩니다.",
+                "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "ihyeon_100_imperfect"
           },
           {
             "id": "c",
-            "text": "“나도 지금의 이현 씨가 좋아요.”",
-            "affection": 5,
-            "memoryKey": "affinity_100_c",
+            "text": "그의 멈춘 손목시계를 내려놓는다.",
+            "affection": 8,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "진이현",
-                "text": "…기다린 보람이 있네요.",
-                "portrait": "smile"
+                "text": "이제 필요 없겠군요. 시간을 확인하는 용도로는 특히.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "narration",
+                "text": "아주 작게 웃었다."
               }
-            ]
+            ],
+            "memoryKey": "ihyeon_100_watch"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 멈추지 않는 초침은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "과거의 인연이 아니라 현재의 선택으로 관계를 완성한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "멈추지 않는 초침 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "벽의 수십 개 시계가 처음으로 같은 시간을 가리켰다. 이현의 손목시계만 멈춘 채였다. 더 이상 돌아가기 위한 표식이 필요하지 않았다."
 }

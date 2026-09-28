@@ -1,10 +1,10 @@
 {
   "id": "char_004_casual_02",
   "kind": "casual",
-  "title": "그림자 장난",
-  "minAffection": 20,
-  "maxAffection": 79,
-  "defaultPortrait": "troubled",
+  "title": "마감 후의 컵라면",
+  "minAffection": 0,
+  "maxAffection": 49,
+  "defaultPortrait": "main",
   "completionAffection": 5,
   "repeatable": true,
   "sections": [
@@ -12,26 +12,30 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "로운 그림자가 손보다 먼저 인사하는 듯 흔들렸다."
+          "text": "늦은 시간 편의점 창가에서 익숙한 옆얼굴을 발견했다. 로운 앞에는 케이크 대신 새빨간 국물의 컵라면이 놓여 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "이로운",
-          "text": "저보다 사회성 좋죠?",
+          "text": "…왜 그렇게 봐요. 사람도 퇴근하면 밥 먹습니다.",
           "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "아무렇지 않은 척 웃었지만 귀가 살짝 붉었다."
+          "text": "그는 매운 국물을 한 숟갈 뜨고 만족스럽게 숨을 내쉬었다."
         },
         {
           "type": "dialogue",
           "speaker": "이로운",
-          "text": "가끔 제 말을 안 들어요.",
-          "portrait": "troubled"
+          "text": "이런 게 좋아요. 맵고 뜨겁고, 맛이 확실한 거.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "쇼케이스 속 정교한 케이크보다 훨씬 행복해 보였다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 이로운이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "크게 특별한 일은 아니었다. 그래도 이런 짧은 만남들이 쌓일수록 이로운이라는 사람의 결이 조금씩 달라 보였다."
 }

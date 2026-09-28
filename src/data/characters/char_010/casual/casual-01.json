@@ -1,37 +1,41 @@
 {
   "id": "char_010_casual_01",
   "kind": "casual",
-  "title": "구겨진 영수증",
+  "title": "푸딩",
   "minAffection": 0,
-  "maxAffection": 59,
+  "maxAffection": 39,
   "defaultPortrait": "troubled",
-  "completionAffection": 5,
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "재하 지갑에서 귀여운 캐릭터 문구점 영수증이 나왔다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "권재하",
-          "text": "업무용입니다.",
-          "portrait": "troubled"
+          "text": "편의점 냉장고 앞에서 재하가 푸딩 세 개를 바구니에 담았다."
         },
         {
           "type": "narration",
-          "text": "품목에는 토끼 메모지와 별 스티커가 적혀 있었다."
+          "text": "{name}과 눈이 마주쳤다."
         },
         {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "…업무용 맞습니다.",
-          "portrait": "troubled"
+          "text": "좋아합니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "변명도 숨김도 없었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "문제 있습니까?",
+          "portrait": "hmm"
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 권재하이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "무서운 경호원의 디저트 취향은 예상보다 아주 귀여웠다."
 }

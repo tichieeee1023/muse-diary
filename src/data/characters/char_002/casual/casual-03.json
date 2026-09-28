@@ -1,76 +1,41 @@
 {
   "id": "char_002_casual_03",
   "kind": "casual",
-  "title": "싼 스티커",
-  "minAffection": 20,
-  "maxAffection": 99,
-  "defaultPortrait": "troubled",
-  "completionAffection": 3,
+  "title": "손가락 사이의 펜",
+  "minAffection": 0,
+  "maxAffection": 59,
+  "defaultPortrait": "main",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "고급 노트 뒷면에 촌스러운 별 스티커가 붙어 있었다."
+          "text": "팝업 회의가 끝난 뒤, 주원은 빈 테이블에 남아 메모를 정리하고 있었다. 펜이 손가락 사이에서 일정한 속도로 돌아갔다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "그건 보지 마세요.",
-          "portrait": "troubled"
+          "text": "왜 그렇게 봅니까?",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "완벽한 취향에 난데없이 끼어든 유치한 별이었다."
+          "text": "펜은 멈추지 않았다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "조카가 붙인 겁니다. …절반은.",
-          "portrait": "troubled"
+          "text": "집중할 때 버릇입니다. 고칠 생각은 없고요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "잠시 뒤 펜이 바닥으로 떨어졌다. 주원은 아무 일도 없었던 것처럼 주워 들었다."
         }
-      ],
-      "choice": {
-        "id": "casual_3_choice",
-        "options": [
-          {
-            "id": "a",
-            "text": "조금 솔직하게 반응한다.",
-            "affection": 3,
-            "memoryKey": "casual_3_warm",
-            "response": [
-              {
-                "type": "narration",
-                "text": "한주원의 표정이 아주 조금 풀렸다."
-              }
-            ]
-          },
-          {
-            "id": "b",
-            "text": "가볍게 놀려본다.",
-            "affection": 2,
-            "response": [
-              {
-                "type": "narration",
-                "text": "한주원은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
-              }
-            ]
-          },
-          {
-            "id": "c",
-            "text": "그냥 옆에서 지켜본다.",
-            "affection": 1,
-            "response": [
-              {
-                "type": "narration",
-                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
-              }
-            ]
-          }
-        ]
-      }
+      ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 한주원이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "완벽해 보이는 사람에게도 손이 먼저 기억하는 사소한 버릇이 있었다."
 }

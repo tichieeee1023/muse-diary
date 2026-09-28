@@ -1,27 +1,31 @@
 {
   "id": "char_007_affinity_60",
   "kind": "story",
-  "title": "사진 속 옆얼굴",
+  "title": "낡은 매듭",
   "threshold": 60,
-  "purpose": "휘람의 비밀이 본격적으로 드러난다",
-  "defaultPortrait": "troubled",
+  "purpose": "유물이 과거 인격과 기억을 강하게 깨우는 장면. 현재와 과거의 경계가 흔들리는 것을 보여준다.",
+  "defaultPortrait": "hmm",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "낡은 사진 속 청년의 옆얼굴은 휘람과 놀랄 만큼 닮아 있었다."
+          "text": "박물관 특별전에서 휘람이 낡은 검술 매듭 앞에 멈춰 섰다."
+        },
+        {
+          "type": "narration",
+          "text": "얼굴에서 현대의 표정이 사라졌다."
         },
         {
           "type": "dialogue",
           "speaker": "김휘람",
-          "text": "후손이라서 닮은 거라고 하면 믿을래요?",
-          "portrait": "troubled"
+          "text": "이건… 저기에 있을 물건이 아닌데.",
+          "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "장난처럼 던졌지만 손끝은 사진 가장자리에서 미세하게 떨렸다."
+          "text": "휘람의 손이 떨렸다. 그는 전시장을 보지 않고 아주 먼 곳을 보는 사람처럼 서 있었다."
         }
       ]
     },
@@ -30,8 +34,18 @@
         {
           "type": "dialogue",
           "speaker": "김휘람",
-          "text": "…사실 그보다 조금 복잡해요.",
+          "text": "제가 그때 이걸 묶었습니다. 아니… 그 사람이.",
           "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "주어가 두 번 바뀌었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "저도 제가 누구인지 가끔 모르겠습니다.",
+          "portrait": "main"
         }
       ],
       "choice": {
@@ -39,61 +53,49 @@
         "options": [
           {
             "id": "a",
-            "text": "“천천히 말해도 돼요.”",
-            "affection": 6,
-            "memoryKey": "affinity_60_a",
+            "text": "“지금 내 앞에 있는 건 김휘람이에요.”",
+            "affection": 8,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "김휘람",
-                "text": "그럼 다음엔 조금 더 말할게요.",
-                "portrait": "smile"
+                "text": "…그 말은 좀 반칙 같습니다. 듣고 싶었던 말이라.",
+                "portrait": "troubled"
               }
-            ]
+            ],
+            "memoryKey": "hwiram_60_now"
           },
           {
             "id": "b",
-            "text": "“믿어볼게요.”",
-            "affection": 4,
-            "memoryKey": "affinity_60_b",
+            "text": "“둘 다 휘람일 수도 있잖아요.”",
+            "affection": 7,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "김휘람",
-                "text": "그 말이 제일 어렵네요. 고마워요.",
-                "portrait": "troubled"
+                "text": "둘 다라… 그건 생각 못 했네요.",
+                "portrait": "hmm"
               }
-            ]
+            ],
+            "memoryKey": "hwiram_60_both"
           },
           {
             "id": "c",
-            "text": "“무서워요?”",
-            "affection": 5,
-            "memoryKey": "affinity_60_c",
+            "text": "“정답을 지금 정할 필요 없어요.”",
+            "affection": 7,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "김휘람",
-                "text": "조금요. 당신 반응이.",
-                "portrait": "troubled"
+                "text": "시간을 좀 써도 되는 거군요.",
+                "portrait": "main"
               }
-            ]
+            ],
+            "memoryKey": "hwiram_60_no_answer"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 사진 속 옆얼굴은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "휘람의 비밀이 본격적으로 드러난다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "사진 속 옆얼굴 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "과거가 현재를 삼키는 게 아니라, 둘 사이에서 휘람이 버티고 있었다."
 }

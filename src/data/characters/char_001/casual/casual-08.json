@@ -1,10 +1,10 @@
 {
   "id": "char_001_casual_08",
   "kind": "casual",
-  "title": "낡은 영수증",
+  "title": "안 읽은 척",
   "minAffection": 60,
-  "maxAffection": 100,
-  "defaultPortrait": "hmm",
+  "maxAffection": 99,
+  "defaultPortrait": "troubled",
   "completionAffection": 5,
   "repeatable": true,
   "sections": [
@@ -12,26 +12,44 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "도윤 지갑에서 오래된 서점 영수증이 나왔다."
+          "text": "책상 한쪽에 로맨스 소설 한 권이 뒤집혀 있었다. 평소 도윤이 먼저 권할 법한 장르는 아니었다."
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "첫 월급으로 산 책입니다.",
-          "portrait": "hmm"
+          "text": "그건 제 책 아닙니다.",
+          "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "작은 종이 하나를 버리지 못하는 사람의 손이 조심스러웠다."
+          "text": "아직 아무것도 묻지 않았다."
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "쓸모없어도 남겨두는 게 있죠.",
-          "portrait": "hmm"
+          "text": "잠깐 맡아둔 겁니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "책갈피는 중간을 훌쩍 넘어가 있었다."
+        },
+        {
+          "type": "narration",
+          "text": "시선을 피하던 도윤이 결국 한숨을 아주 작게 쉰다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "…남자 주인공이 답답해서 어디까지 답답한지 확인한 겁니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "말은 냉정했지만 책 모서리를 만지는 손가락에는 이미 다음 장이 걸려 있었다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 서도윤이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "차분한 얼굴 뒤에도 과몰입은 있었다. 들키고 싶지 않았을 뿐."
 }

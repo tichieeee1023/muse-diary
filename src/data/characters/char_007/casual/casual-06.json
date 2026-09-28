@@ -1,76 +1,41 @@
 {
   "id": "char_007_casual_06",
   "kind": "casual",
-  "title": "사진 피하기",
-  "minAffection": 60,
-  "maxAffection": 100,
-  "defaultPortrait": "smile",
-  "completionAffection": 3,
+  "title": "비 오는 날의 우산",
+  "minAffection": 40,
+  "maxAffection": 89,
+  "defaultPortrait": "main",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "휘람은 오래된 사진 앞에서 자연스럽게 시선을 피했다."
+          "text": "비가 갑자기 쏟아지자 휘람이 반사적으로 {name}보다 바깥쪽에 섰다."
         },
         {
           "type": "dialogue",
           "speaker": "김휘람",
-          "text": "오늘은 그 얘기 말고 다른 거 해요.",
-          "portrait": "smile"
+          "text": "이쪽으로 오세요.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "과거보다 지금 얘기를 하고 싶은 날도 생긴 모양이었다."
+          "text": "자기 어깨가 젖는 건 전혀 신경 쓰지 않았다."
         },
         {
           "type": "dialogue",
           "speaker": "김휘람",
-          "text": "카페 갈래요?",
-          "portrait": "smile"
+          "text": "…아, 이건 그냥 습관이에요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "그 습관이 어디서 온 건지는 아직 묻지 않았다."
         }
-      ],
-      "choice": {
-        "id": "casual_6_choice",
-        "options": [
-          {
-            "id": "a",
-            "text": "조금 솔직하게 반응한다.",
-            "affection": 3,
-            "memoryKey": "casual_6_warm",
-            "response": [
-              {
-                "type": "narration",
-                "text": "김휘람의 표정이 아주 조금 풀렸다."
-              }
-            ]
-          },
-          {
-            "id": "b",
-            "text": "가볍게 놀려본다.",
-            "affection": 2,
-            "response": [
-              {
-                "type": "narration",
-                "text": "김휘람은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
-              }
-            ]
-          },
-          {
-            "id": "c",
-            "text": "그냥 옆에서 지켜본다.",
-            "affection": 1,
-            "response": [
-              {
-                "type": "narration",
-                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
-              }
-            ]
-          }
-        ]
-      }
+      ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 김휘람이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "휘람의 보호 본능은 현재보다 훨씬 오래된 데서 오는 듯했다."
 }

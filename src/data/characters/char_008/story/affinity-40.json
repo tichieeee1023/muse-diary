@@ -1,27 +1,35 @@
 {
   "id": "char_008_affinity_40",
   "kind": "story",
-  "title": "최악의 스케치",
+  "title": "보여주지 않는 그림",
   "threshold": 40,
-  "purpose": "세현의 미술 실력 갭",
-  "defaultPortrait": "hmm",
+  "purpose": "사교적이고 솔직한 세현이 자기 창작 앞에서만 도망치는 갭을 본격적으로 드러낸다.",
+  "defaultPortrait": "troubled",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "휴게실에서 세현이 그린 전시 배치 메모를 봤다. 사람 그림이 믿기 힘들 정도로 못생겼다."
+          "text": "미술관 교육 프로그램 준비 중, 직원들이 즉석에서 작은 그림을 그리는 시간이 생겼다."
+        },
+        {
+          "type": "narration",
+          "text": "세현은 사람들에게 종이와 펜을 나눠주면서도 자기 자리만 비워뒀다."
         },
         {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "설명용이에요! 작품 아니고!",
-          "portrait": "hmm"
+          "text": "저는 진행 담당이니까요. 빠지는 게 맞죠.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "미술관에서 누구보다 전문적으로 말하던 사람이 자기 그림을 필사적으로 가렸다."
+          "text": "너무 빠른 대답이었다. 동료가 “미대생이면서”라고 웃자 세현은 더 환하게 웃으며 다른 이야기를 꺼냈다."
+        },
+        {
+          "type": "narration",
+          "text": "사람이 화제를 피하는 방식에도 성격이 묻어난다. 세현은 침묵하는 대신 더 많이 말해버리는 쪽이었다."
         }
       ]
     },
@@ -30,8 +38,32 @@
         {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "웃어도 되는데 저장은 하지 마세요.",
+          "text": "진짜 별거 없어요. 제 건 보여줄 만한 게 아니고.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "그 말이 이상했다. 남의 미완성 작품에는 그렇게 너그러웠던 사람이 자기 것에는 완성품만 허락하는 것처럼."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "완성하면요.",
           "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "세현이 한참 뒤에야 덧붙였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "완성했는데 별로면, 그다음엔 핑계가 없잖아요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "처음으로 질문이 아니라 대답이 길어진 날이었다."
         }
       ],
       "choice": {
@@ -39,61 +71,57 @@
         "options": [
           {
             "id": "a",
-            "text": "“작품명은 뭔가요?”",
+            "text": "“안 보여줘도 돼요. 대신 도망가진 마요.”",
             "affection": 6,
-            "memoryKey": "affinity_40_a",
+            "memoryKey": "sehyun_40_dont_run",
             "response": [
+              {
+                "type": "narration",
+                "text": "세현의 웃음이 잠깐 멎었다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "오세현",
-                "text": "‘절망하는 인턴’.",
+                "text": "그 말은 좀 어렵네요. 그래도… 기억해둘게요.",
                 "portrait": "hmm"
               }
             ]
           },
           {
             "id": "b",
-            "text": "“귀여운데요.”",
-            "affection": 4,
-            "memoryKey": "affinity_40_b",
+            "text": "“별로여도 좋아하는 사람은 있을 텐데.”",
+            "affection": 5,
+            "memoryKey": "sehyun_40_audience",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "오세현",
-                "text": "그 평가가 제일 상처인데요.",
+                "text": "그게 제일 무서운 말이에요. 기대하게 되니까.",
                 "portrait": "troubled"
               }
             ]
           },
           {
             "id": "c",
-            "text": "“내가 대신 그려줄까요?”",
-            "affection": 5,
-            "memoryKey": "affinity_40_c",
+            "text": "“그럼 완성할 때까지 기다릴게요.”",
+            "affection": 4,
+            "memoryKey": "sehyun_40_wait",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "오세현",
-                "text": "그럼 진짜 부탁할래요.",
-                "portrait": "hmm"
+                "text": "기한은 안 물어보실 거죠?",
+                "portrait": "troubled"
+              },
+              {
+                "type": "narration",
+                "text": "농담처럼 말했지만, 이번에는 화제를 바꾸지 않았다."
               }
             ]
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 최악의 스케치은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "세현의 미술 실력 갭 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "최악의 스케치 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "세현의 다이어리에 처음으로 작품이 아니라 “작품을 만들던 사람”에 대한 기록이 남았다."
 }

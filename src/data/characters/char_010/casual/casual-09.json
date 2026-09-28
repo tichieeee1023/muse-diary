@@ -1,0 +1,40 @@
+{
+  "id": "char_010_casual_09",
+  "kind": "casual",
+  "title": "푸딩은 당당하게",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "main",
+  "completionAffection": 4,
+  "repeatable": true,
+  "placeIds": [
+    "convenience"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "재하의 장바구니에는 생수, 붕대, 건전지 그리고 푸딩이 네 개 들어 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "왜 보십니까.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "푸딩 쪽으로 시선이 가자 재하는 숨기기는커녕 하나를 더 집는다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "좋아합니다. 할인 중이기도 하고요.",
+          "portrait": "main"
+        }
+      ]
+    }
+  ],
+  "closing": "취향을 부끄러워하지 않는 점이 오히려 더 귀여웠다."
+}

@@ -1,37 +1,41 @@
 {
   "id": "char_009_casual_02",
   "kind": "casual",
-  "title": "공포 예고편",
-  "minAffection": 20,
-  "maxAffection": 79,
-  "defaultPortrait": "troubled",
-  "completionAffection": 5,
+  "title": "출구가 보이는 자리",
+  "minAffection": 0,
+  "maxAffection": 49,
+  "defaultPortrait": "hmm",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "갑자기 귀신 얼굴이 뜨자 이겸이 휴대폰을 뒤집었다."
+          "text": "빈자리가 많은데도 이겸은 항상 출구가 보이는 쪽을 골랐다."
         },
         {
           "type": "dialogue",
           "speaker": "차이겸",
-          "text": "광고가 과하군요.",
-          "portrait": "troubled"
+          "text": "이 자리가 편합니다.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "손목 문양보다 광고를 더 싫어하는 얼굴이었다."
+          "text": "이유를 묻자 잠깐 생각했다."
         },
         {
           "type": "dialogue",
           "speaker": "차이겸",
-          "text": "소리는 꺼두죠.",
-          "portrait": "troubled"
+          "text": "등 뒤를 오래 비워두는 걸 좋아하지 않습니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "상담실에서도 같은 자리를 택한다고 했다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 차이겸이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "예의 바른 사람에게도 몸이 먼저 기억하는 경계가 있었다."
 }

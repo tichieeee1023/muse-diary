@@ -1,27 +1,31 @@
 {
   "id": "char_011_affinity_100",
   "kind": "story",
-  "title": "막이 내린 다음 장면",
+  "title": "이건 진짜예요",
   "threshold": 100,
-  "purpose": "공연이 끝난 뒤의 자신으로 사랑을 고백한다",
+  "purpose": "빈 무대에서 꾸미지 않은 모습과 진짜 마법을 동시에 보여주며 관계를 완성한다.",
   "defaultPortrait": "smile",
-  "completionAffection": 0,
+  "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "공연이 끝난 무대에서 유리안은 평소의 화려한 인사를 하지 않았다."
+          "text": "공연이 끝난 빈 무대. 조명은 모두 꺼져 있었다."
+        },
+        {
+          "type": "narration",
+          "text": "유리안은 무대 의상도 없이 평범한 셔츠 차림으로 서 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "유리안",
-          "text": "이제 보여줄 건 다 보여준 것 같은데.",
-          "portrait": "smile"
+          "text": "오늘은 보여드릴 게 하나 있습니다. 공연용 아닙니다.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "손끝의 빛도, 미소도 없이 평범하게 말했다."
+          "text": "그가 손을 펴자 작은 별 하나가 떠올랐다."
         }
       ]
     },
@@ -30,8 +34,18 @@
         {
           "type": "dialogue",
           "speaker": "유리안",
-          "text": "그래도 계속 봐줬으면 좋겠어요. 제가 당신을 좋아하거든요.",
+          "text": "이건 진짜예요.",
           "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "별빛보다 유리안의 작은 미소가 더 조용했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "그리고 이것도요. 지금 웃는 거. 당신 앞이라서 웃는 겁니다.",
+          "portrait": "troubled"
         }
       ],
       "choice": {
@@ -39,61 +53,49 @@
         "options": [
           {
             "id": "a",
-            "text": "“계속 볼게요.”",
-            "affection": 6,
-            "memoryKey": "affinity_100_a",
+            "text": "“둘 다 예뻐요.”",
+            "affection": 8,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "유리안",
-                "text": "약속이에요.",
+                "text": "마법이랑 저를 한꺼번에 칭찬하네요. 반칙입니다.",
                 "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "yurian_100_both"
           },
           {
             "id": "b",
-            "text": "“나도 좋아해요.”",
-            "affection": 4,
-            "memoryKey": "affinity_100_b",
+            "text": "“오늘은 안 웃어도 돼요.”",
+            "affection": 8,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "유리안",
-                "text": "…와, 이건 진짜 대사 못 하겠다. 좋다.",
-                "portrait": "troubled"
+                "text": "알아요. 그래서 웃는 거예요.",
+                "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "yurian_100_free"
           },
           {
             "id": "c",
-            "text": "“다음 장면도 같이 만들어요.”",
-            "affection": 5,
-            "memoryKey": "affinity_100_c",
+            "text": "그의 손바닥 위 별을 가까이 본다.",
+            "affection": 7,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "유리안",
-                "text": "그게 제일 좋네요.",
-                "portrait": "smile"
+                "text": "가까이 와도 안 사라집니다. 이번엔.",
+                "portrait": "main"
               }
-            ]
+            ],
+            "memoryKey": "yurian_100_star"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 막이 내린 다음 장면은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "공연이 끝난 뒤의 자신으로 사랑을 고백한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "막이 내린 다음 장면 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "늘 먼저 웃어야 했던 사람은 처음으로 웃지 않아도 사랑받는 자리에서, 자기 의지로 웃었다."
 }

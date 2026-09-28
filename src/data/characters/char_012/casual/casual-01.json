@@ -1,37 +1,41 @@
 {
   "id": "char_012_casual_01",
   "kind": "casual",
-  "title": "고장 난 알람",
+  "title": "5분 늦은 시계 수리공",
   "minAffection": 0,
-  "maxAffection": 59,
+  "maxAffection": 39,
   "defaultPortrait": "troubled",
-  "completionAffection": 5,
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "이현의 휴대폰 알람이 이미 다섯 번 지나가 있었다."
+          "text": "약속 시간보다 이현이 정확히 5분 늦게 도착했다."
         },
         {
           "type": "dialogue",
           "speaker": "진이현",
-          "text": "큰 시간은 고치는데 아침은 못 고칩니다.",
+          "text": "늦지 않았습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}이 시간을 보여주자 이현이 손목시계와 휴대폰을 번갈아 봤다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "…아. 이쪽 기준이었군요.",
           "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "무표정하게 말해서 더 웃겼다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "진이현",
-          "text": "웃으셔도 됩니다.",
-          "portrait": "troubled"
+          "text": "시간을 다루는 직업치고 묘하게 허술했다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 진이현이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "이현의 시간 감각은 가끔 현재와 어긋났다."
 }

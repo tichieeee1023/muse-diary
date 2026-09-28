@@ -1,9 +1,9 @@
 {
   "id": "char_008_affinity_20",
   "kind": "story",
-  "title": "관람객 기록",
+  "title": "관람객을 보는 사람",
   "threshold": 20,
-  "purpose": "세현의 관심이 관찰욕에서 시작했음을 보여준다",
+  "purpose": "세현의 관심이 연애가 아니라 타인의 취향을 이해하고 싶은 관찰욕에서 시작했음을 분명히 한다.",
   "defaultPortrait": "main",
   "completionAffection": 3,
   "sections": [
@@ -11,27 +11,57 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "세현은 {name}이 지난번 어느 작품 앞에서 몇 분이나 서 있었는지 정확히 기억했다."
+          "text": "세현은 전시실 한쪽에서 관람객들이 머무는 시간을 작은 수첩에 적고 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "사람 보는 게 재밌어서요. 오해는 하지 마세요.",
+          "text": "업무 반, 취미 반이에요. 어디서 멈추는지 보면 재밌거든요.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "호감이라기보다 연구 대상에 가까운 시선이었다."
+          "text": "그는 {name}이 지난번 어느 그림 앞에서 오래 서 있었는지도 정확히 기억했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "처음 봤을 때도 그래서 말 걸었어요. 왜 저 그림을 오래 보나 궁금해서.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "“나한테 관심 있어서” 같은 듣기 좋은 이유는 아니었다. 오히려 너무 솔직해서 웃음이 났다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "왜 웃어요? 진짜 궁금했는데.",
+          "portrait": "troubled"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "잠깐 생각하던 세현이 수첩을 덮었다."
+        },
+        {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "근데 또 오니까 조금 반갑긴 하네요.",
+          "text": "근데 요즘은 조금 달라졌어요.",
           "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "무슨 작품을 볼지가 아니라, {name} 씨가 그걸 보고 무슨 말을 할지가 궁금해요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "그 말도 아직 고백과는 거리가 멀었다. 다만 사람을 보는 방식 안에 개인적인 관심이 처음 섞인 순간이었다."
         }
       ],
       "choice": {
@@ -39,61 +69,53 @@
         "options": [
           {
             "id": "a",
-            "text": "“연구 대상이에요?”",
+            "text": "“그럼 계속 관찰해봐요.”",
             "affection": 6,
-            "memoryKey": "affinity_20_a",
+            "memoryKey": "sehyun_20_allow",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "오세현",
-                "text": "조금요. 좋은 의미로.",
-                "portrait": "main"
+                "text": "허락 받으면 더 부담스러운데요? 그래도 좋습니다.",
+                "portrait": "smile"
               }
             ]
           },
           {
             "id": "b",
-            "text": "“반가운 건 인정하네요.”",
-            "affection": 4,
-            "memoryKey": "affinity_20_b",
+            "text": "“내가 세현 씨를 관찰하면요?”",
+            "affection": 5,
+            "memoryKey": "sehyun_20_reverse",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "오세현",
-                "text": "네. 그건 바로 인정할게요.",
+                "text": "저를요? …그건 생각 못 했는데.",
                 "portrait": "troubled"
+              },
+              {
+                "type": "narration",
+                "text": "처음으로 질문하는 쪽이 아니라 질문받는 쪽이 된 세현이 눈을 몇 번 깜빡였다."
               }
             ]
           },
           {
             "id": "c",
-            "text": "“관찰당하는 기분 묘한데.”",
-            "affection": 5,
-            "memoryKey": "affinity_20_c",
+            "text": "“너무 자세한 건 좀 무서운데요.”",
+            "affection": 4,
+            "memoryKey": "sehyun_20_boundary",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "오세현",
-                "text": "싫으면 줄일게요. 아마.",
+                "text": "아. 그럼 줄일게요. 그건 진짜 말해줘야 알아요.",
                 "portrait": "main"
               }
             ]
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 관람객 기록은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "세현의 관심이 관찰욕에서 시작했음을 보여준다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "관람객 기록 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "그날부터 세현의 질문은 조금 덜 일방적이 되었다. 관찰하는 사람도 관찰당할 수 있다는 걸 처음 의식한 듯했다."
 }

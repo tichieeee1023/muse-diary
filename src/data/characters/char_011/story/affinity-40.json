@@ -1,37 +1,47 @@
 {
   "id": "char_011_affinity_40",
   "kind": "story",
-  "title": "편의점 삼각김밥",
+  "title": "웃기지 않는 사람",
   "threshold": 40,
-  "purpose": "화려한 이미지와 소박한 생활의 갭",
-  "defaultPortrait": "hmm",
+  "purpose": "주인공이 공연자가 아닌 유리안을 좋아할 수 있다는 감각을 쌓는다.",
+  "defaultPortrait": "troubled",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "무대에서 내려온 유리안은 공연복 위에 패딩을 걸치고 편의점 앞에서 삼각김밥을 먹고 있었다."
+          "text": "그날 유리안은 농담을 몇 번이나 하려다 멈췄다."
         },
         {
           "type": "dialogue",
           "speaker": "유리안",
-          "text": "환상 깨졌죠?",
-          "portrait": "hmm"
+          "text": "제가 조용하면 사람들이 보통 “무슨 일 있어?”라고 하거든요.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "손끝에서 빛을 내는 사람이 참치마요 포장지를 진지하게 뜯고 있었다."
+          "text": "그는 작은 별 스티커 하나를 손톱으로 만지작거렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "아무 일 없어도 조용할 수 있는데. 그게 잘 안 믿기나 봐요.",
+          "portrait": "hmm"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "{name}이 그냥 조용히 앉아 있자 유리안이 먼저 침묵을 깨지 않았다."
+        },
+        {
           "type": "dialogue",
           "speaker": "유리안",
-          "text": "전 이게 제일 맛있어요.",
-          "portrait": "hmm"
+          "text": "…이상하게 안 불편하네요.",
+          "portrait": "smile"
         }
       ],
       "choice": {
@@ -39,61 +49,49 @@
         "options": [
           {
             "id": "a",
-            "text": "“더 좋아졌는데요.”",
-            "affection": 6,
-            "memoryKey": "affinity_40_a",
+            "text": "“말 안 해도 되니까.”",
+            "affection": 7,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "유리안",
-                "text": "그 대답은 예상 못 했네.",
-                "portrait": "hmm"
+                "text": "그 말 기억해둘게요.",
+                "portrait": "main"
               }
-            ]
+            ],
+            "memoryKey": "yurian_40_silence"
           },
           {
             "id": "b",
-            "text": "“마법으로 데우면 안 돼요?”",
-            "affection": 4,
-            "memoryKey": "affinity_40_b",
+            "text": "“오늘은 내가 얘기할까요?”",
+            "affection": 6,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "유리안",
-                "text": "전자레인지가 더 안전합니다.",
-                "portrait": "troubled"
+                "text": "좋아요. 듣는 역할 해볼게요.",
+                "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "yurian_40_listen"
           },
           {
             "id": "c",
-            "text": "“하나 더 사줄까요?”",
-            "affection": 5,
-            "memoryKey": "affinity_40_c",
+            "text": "“무대 위보다 지금이 더 궁금해요.”",
+            "affection": 7,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "유리안",
-                "text": "그럼 바나나우유도.",
-                "portrait": "hmm"
+                "text": "그건… 조금 무섭고 좋네요.",
+                "portrait": "troubled"
               }
-            ]
+            ],
+            "memoryKey": "yurian_40_real"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 편의점 삼각김밥은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "화려한 이미지와 소박한 생활의 갭 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "편의점 삼각김밥 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "유리안에게 관심이 향하는 방식이 공연에서 사람으로 조금씩 이동했다."
 }

@@ -1,37 +1,47 @@
 {
   "id": "char_006_affinity_100",
   "kind": "story",
-  "title": "물가의 약속",
+  "title": "육지 쪽으로 한 걸음",
   "threshold": 100,
-  "purpose": "시온이 농담 없이 마음을 전한다",
+  "purpose": "시온이 관계의 끝을 두려워하면서도 주인공의 생활권으로 들어오기로 선택한다.",
   "defaultPortrait": "smile",
-  "completionAffection": 0,
+  "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "해 질 무렵 시온은 물 위에 작은 빛을 띄웠다. 평소처럼 마술이라고 우기지 않았다."
+          "text": "시온이 먼저 도시 한복판의 약속 장소를 정했다. 강 소리도 물 냄새도 없는 곳이었다."
         },
         {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "이건 보여주고 싶었어요. 당신한테만.",
+          "text": "오늘은 제가 왔어요.",
           "portrait": "smile"
         },
         {
           "type": "narration",
-          "text": "웃고 있었지만 이번에는 장난으로 숨길 생각이 없었다."
+          "text": "그는 주변을 조금 불편해하면서도 돌아갈 생각은 없어 보였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "늘 물가에서만 만나면 결국 {name}만 제 쪽으로 오는 거잖아요. 그건 좀 비겁하더라고요.",
+          "portrait": "main"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "시온이 손을 내밀었다. 평소처럼 장난스럽게 흔들지 않았다."
+        },
+        {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "좋아해요. 그래서 다음 계절도 같이 보고 싶어요.",
-          "portrait": "smile"
+          "text": "끝이 있다는 건 알아요. 그래도 이번엔, 중간을 길게 살아보고 싶습니다. 같이.",
+          "portrait": "troubled"
         }
       ],
       "choice": {
@@ -39,61 +49,49 @@
         "options": [
           {
             "id": "a",
-            "text": "“나도요.”",
-            "affection": 6,
-            "memoryKey": "affinity_100_a",
+            "text": "그의 손을 잡는다.",
+            "affection": 8,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "백시온",
-                "text": "진짜 다행이다.",
+                "text": "좋아요. 그럼 오늘은 육지 코스부터 배워볼게요.",
                 "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "sion_100_hand"
           },
           {
             "id": "b",
-            "text": "“드디어 정직하네요.”",
-            "affection": 4,
-            "memoryKey": "affinity_100_b",
+            "text": "“강변 말고 갈 데 엄청 많아요.”",
+            "affection": 8,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "백시온",
-                "text": "엄청 노력했습니다.",
-                "portrait": "troubled"
+                "text": "그게 제일 무서운 말인데요. 기대되기도 하고.",
+                "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "sion_100_places"
           },
           {
             "id": "c",
-            "text": "“다음에도 여기서 만나요.”",
-            "affection": 5,
-            "memoryKey": "affinity_100_c",
+            "text": "“천천히 와도 돼요.”",
+            "affection": 7,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "백시온",
-                "text": "약속. 이번엔 제가 먼저 올게요.",
-                "portrait": "smile"
+                "text": "이번엔 제가 갈게요. 천천히라도.",
+                "portrait": "main"
               }
-            ]
+            ],
+            "memoryKey": "sion_100_slow"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 물가의 약속은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "시온이 농담 없이 마음을 전한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "물가의 약속 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "물의 사람은 처음으로 육지에 머무는 쪽을 선택했다."
 }

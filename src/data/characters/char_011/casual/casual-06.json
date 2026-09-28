@@ -1,76 +1,41 @@
 {
   "id": "char_011_casual_06",
   "kind": "casual",
-  "title": "아이의 편지",
-  "minAffection": 60,
-  "maxAffection": 100,
-  "defaultPortrait": "smile",
-  "completionAffection": 3,
+  "title": "손끝의 빛",
+  "minAffection": 40,
+  "maxAffection": 89,
+  "defaultPortrait": "hmm",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "유리안은 어린 관객이 준 삐뚤빼뚤한 편지를 지갑에 넣고 다녔다."
+          "text": "공연 장치가 전부 꺼진 뒤에도 유리안 손끝에 작은 빛이 남아 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "유리안",
-          "text": "이런 게 제일 오래 남아요.",
+          "text": "…아.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "그가 손을 쥐자 빛이 사라졌다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "LED 잔광이라고 하면 믿으실래요?",
           "portrait": "smile"
         },
         {
           "type": "narration",
-          "text": "화려한 박수보다 작은 편지 한 장을 더 아꼈다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "유리안",
-          "text": "안 버립니다.",
-          "portrait": "smile"
+          "text": "웃고 있었지만 눈은 웃지 않았다."
         }
-      ],
-      "choice": {
-        "id": "casual_6_choice",
-        "options": [
-          {
-            "id": "a",
-            "text": "조금 솔직하게 반응한다.",
-            "affection": 3,
-            "memoryKey": "casual_6_warm",
-            "response": [
-              {
-                "type": "narration",
-                "text": "유리안의 표정이 아주 조금 풀렸다."
-              }
-            ]
-          },
-          {
-            "id": "b",
-            "text": "가볍게 놀려본다.",
-            "affection": 2,
-            "response": [
-              {
-                "type": "narration",
-                "text": "유리안은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
-              }
-            ]
-          },
-          {
-            "id": "c",
-            "text": "그냥 옆에서 지켜본다.",
-            "affection": 1,
-            "response": [
-              {
-                "type": "narration",
-                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
-              }
-            ]
-          }
-        ]
-      }
+      ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 유리안이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "유리안의 마술 중 일부는 장치로 설명되지 않았다."
 }

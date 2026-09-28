@@ -1,0 +1,40 @@
+{
+  "id": "char_012_casual_09",
+  "kind": "casual",
+  "title": "폐관 뒤의 시계",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "hmm",
+  "completionAffection": 4,
+  "repeatable": true,
+  "placeIds": [
+    "library"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "밤 도서관에서 이현은 벽시계를 올려다보고 있었다. 초침은 정상적으로 움직이는데 그의 손목시계만 멈춰 있다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "여긴 예전에도 이 시간에 닫았던가요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "예전이라는 말이 어느 시점을 뜻하는지 묻기 전에 이현이 먼저 시선을 피한다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "아뇨. 그냥 오래된 기억이었습니다.",
+          "portrait": "main"
+        }
+      ]
+    }
+  ],
+  "closing": "그의 과거형은 가끔 현재보다 가까이 들렸다."
+}

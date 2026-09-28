@@ -1,36 +1,46 @@
 {
   "id": "char_007_affinity_40",
   "kind": "story",
-  "title": "유행어 시험",
+  "title": "현재의 김휘람",
   "threshold": 40,
-  "purpose": "휘람의 시대착오적인 갭",
-  "defaultPortrait": "hmm",
+  "purpose": "과거 떡밥보다 현재의 고등학생으로서 가진 욕망과 불안을 먼저 보여준다.",
+  "defaultPortrait": "main",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "휴대폰 화면을 보던 휘람이 한참 미간을 찌푸렸다."
+          "text": "휘람은 진학 희망서를 앞에 두고 한참 펜을 움직이지 못했다."
         },
         {
           "type": "dialogue",
           "speaker": "김휘람",
-          "text": "‘알잘딱깔센’이 정확히 무슨 뜻이에요?",
-          "portrait": "hmm"
+          "text": "제가 뭘 좋아하는지 잘 모르겠습니다.",
+          "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "역사 연도는 술술 외우면서 최신 유행어 하나에 완전히 막혀 있었다."
+          "text": "과거의 기술과 기억은 많지만, 현재의 희망은 이상할 만큼 비어 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "잘하는 거랑 하고 싶은 건 다른 거잖아요. 이제야 그걸 알았습니다.",
+          "portrait": "main"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "그는 역사학과와 전혀 상관없는 여행 관련 학과 페이지를 오래 봤다."
+        },
+        {
           "type": "dialogue",
           "speaker": "김휘람",
-          "text": "웃지 말고 설명해줘요.",
+          "text": "그냥 멀리 가보고 싶어요. 누구 지키러 가는 거 말고.",
           "portrait": "hmm"
         }
       ],
@@ -39,61 +49,49 @@
         "options": [
           {
             "id": "a",
-            "text": "“수업료 받아요.”",
-            "affection": 6,
-            "memoryKey": "affinity_40_a",
+            "text": "“그럼 그걸 해봐요.”",
+            "affection": 7,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "김휘람",
-                "text": "뭘 원하는데요.",
-                "portrait": "hmm"
+                "text": "그렇게 간단하게 말해도 되는 일이군요.",
+                "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "hwiram_40_want"
           },
           {
             "id": "b",
-            "text": "“귀엽다.”",
-            "affection": 4,
-            "memoryKey": "affinity_40_b",
+            "text": "“지금부터 찾아도 안 늦어요.”",
+            "affection": 6,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "김휘람",
-                "text": "아, 진짜 그런 말 하지 마요.",
+                "text": "…이번 생은 시간이 좀 더 있겠죠.",
                 "portrait": "troubled"
               }
-            ]
+            ],
+            "memoryKey": "hwiram_40_time"
           },
           {
             "id": "c",
-            "text": "“그냥 쓰지 마요.”",
-            "affection": 5,
-            "memoryKey": "affinity_40_c",
+            "text": "“역사 말고 좋아하는 걸 하나씩 찾아봐요.”",
+            "affection": 6,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "김휘람",
-                "text": "그게 제일 현명하겠네요.",
-                "portrait": "hmm"
+                "text": "도와주실 겁니까?",
+                "portrait": "main"
               }
-            ]
+            ],
+            "memoryKey": "hwiram_40_find"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 유행어 시험은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "휘람의 시대착오적인 갭 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "유행어 시험 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "휘람에게 필요한 건 과거의 정답이 아니라 현재의 취향이었다."
 }

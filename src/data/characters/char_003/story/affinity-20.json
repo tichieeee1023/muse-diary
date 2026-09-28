@@ -1,9 +1,9 @@
 {
   "id": "char_003_affinity_20",
   "kind": "story",
-  "title": "막차 전의 십 분",
+  "title": "도착하면 연락 주세요",
   "threshold": 20,
-  "purpose": "업무 밖에서 처음 대화를 나눈다",
+  "purpose": "해준의 반복되는 귀가 확인이 단순한 직업 습관이 아니라는 첫 단서를 준다",
   "defaultPortrait": "main",
   "completionAffection": 3,
   "sections": [
@@ -11,71 +11,96 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "운행이 끝나기 전 잠깐의 휴식 시간, 해준은 자판기에서 딸기 우유를 뽑았다."
+          "text": "비가 늦게까지 이어진 밤, 역 입구에서 해준과 다시 마주쳤다. 퇴근한 그는 제복 재킷을 팔에 걸친 채 출구 밖을 한 번 확인했다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "…왜 그런 표정입니까.",
+          "text": "이 시간엔 택시 잡기 어렵습니다.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "검은 커피를 마실 것 같은 얼굴로 아주 달아 보이는 음료를 고르는 장면이 이상하게 기억에 남았다."
+          "text": "그는 {name}의 귀가 경로를 듣더니 환승 시간과 막차 시간을 머릿속으로 계산했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "집에 도착하면 연락 주세요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "말투는 업무적이었지만 이미 근무는 끝난 뒤였다."
         }
       ]
     },
     {
-      "blocks": [
-        {
-          "type": "dialogue",
-          "speaker": "문해준",
-          "text": "이게 제일 빨리 당이 올라서요.",
-          "portrait": "main"
-        }
-      ],
+      "blocks": [],
       "choice": {
         "id": "aff_20_choice",
         "options": [
           {
             "id": "a",
-            "text": "“귀여운 취향이네요.”",
+            "text": "“매번 다 확인해요?”",
             "affection": 6,
-            "memoryKey": "affinity_20_a",
+            "memoryKey": "a20_everyone",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "그 표현은 조금 곤란하네요.",
+                "text": "아뇨.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "narration",
+                "text": "대답이 너무 빨라서 오히려 더 눈에 띄었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "……필요하다고 생각되는 경우에만요.",
                 "portrait": "main"
               }
             ]
           },
           {
             "id": "b",
-            "text": "“하나 더 뽑아드릴까요?”",
-            "affection": 4,
-            "memoryKey": "affinity_20_b",
+            "text": "“걱정되면 해준 씨가 데려다줘요.”",
+            "affection": 5,
+            "memoryKey": "a20_walk",
             "response": [
+              {
+                "type": "narration",
+                "text": "해준이 잠깐 말을 잃었다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "괜찮습니다. 이미 두 개 샀습니다.",
+                "text": "그건 일정 확인이 필요합니다.",
                 "portrait": "troubled"
+              },
+              {
+                "type": "narration",
+                "text": "거절치고는 이상하게 구체적이었다."
               }
             ]
           },
           {
             "id": "c",
-            "text": "“의외네요.”",
-            "affection": 5,
-            "memoryKey": "affinity_20_c",
+            "text": "“도착하면 꼭 연락할게요.”",
+            "affection": 6,
+            "memoryKey": "a20_promise",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "다들 그렇게 말합니다.",
+                "text": "네. 그럼 됐습니다.",
                 "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "그제야 어깨의 힘이 아주 조금 빠졌다."
               }
             ]
           }
@@ -86,14 +111,20 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "그날의 막차 전의 십 분은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+          "text": "집에 도착해 짧게 메시지를 보내자 답장은 거의 즉시 왔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "확인했습니다. 쉬세요.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "업무 밖에서 처음 대화를 나눈다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+          "text": "짧은 두 문장이었지만, 누군가가 도착을 기다리고 있었다는 사실은 생각보다 따뜻했다."
         }
       ]
     }
   ],
-  "closing": "막차 전의 십 분 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "도착하면 연락 주세요 — 중요한 관계 기록이 다이어리에 남았다."
 }

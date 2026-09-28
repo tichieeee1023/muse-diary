@@ -14,6 +14,11 @@ interface SceneBannerProps {
 const slugByPlace: Record<string, string> = {
   subway: 'subway',
   library: 'library',
+  bookstore: 'bookstore',
+  convenience: 'convenience',
+  aquarium: 'aquarium',
+  rooftop: 'rooftop',
+  'night-market': 'night-market',
   cafe: 'cafe',
   mall: 'mall',
   riverside: 'riverside',
@@ -24,6 +29,7 @@ const slugByPlace: Record<string, string> = {
 
 const routeAssetByKey: Record<string, string> = {
   'library:history-floor': 'history.webp',
+  'bookstore:backroom': 'backroom.webp',
   'mall:popup-floor': 'exhibition.webp',
   'museum:special-exhibit': 'exhibition.webp',
   'bar:back-seat': 'seating.webp',
@@ -43,6 +49,9 @@ export function SceneBanner({ placeId, placeName, timeOfDay, weather, routeId, r
       if (routeAsset) push(routeAsset)
     }
 
+    if (placeId === 'convenience') push('main.webp')
+    if (placeId === 'aquarium') push('main.webp')
+    if (placeId === 'night-market') push('night.webp')
     if (placeId === 'old-street' && weather === '비' && timeOfDay === '밤') push('night-rain.webp')
     if (placeId === 'riverside' && weather === '흐림') push('cloudy.webp')
     if (weather === '비') push('rain.webp')

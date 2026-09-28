@@ -1,0 +1,40 @@
+{
+  "id": "char_004_casual_10",
+  "kind": "casual",
+  "title": "감정 없는 삼각김밥",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "hmm",
+  "completionAffection": 5,
+  "repeatable": true,
+  "placeIds": [
+    "convenience"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "로운이 편의점 삼각김밥 포장을 한참 들여다보고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "이상하죠. 이런 건 아무 감정도 안 묻어 있어요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "그가 포장을 뜯어 한입 먹고는 잠깐 안심한 얼굴을 한다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "그래서 가끔은 이런 게 편해요. 아무것도 읽히지 않아서.",
+          "portrait": "main"
+        }
+      ]
+    }
+  ],
+  "closing": "타인의 감정을 읽는 사람에게 평범한 음식은 휴식일지도 모른다."
+}

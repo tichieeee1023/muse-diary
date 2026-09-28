@@ -1,0 +1,40 @@
+{
+  "id": "char_005_casual_09",
+  "kind": "casual",
+  "title": "옥상의 화분",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "main",
+  "completionAffection": 4,
+  "repeatable": true,
+  "placeIds": [
+    "rooftop"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "루프탑 구석에서 태겸이 작은 화분의 마른 잎을 정리하고 있었다. 밤의 잔재를 지우던 큰 손이 새잎은 놀랄 만큼 조심스럽게 만진다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "건드리면 잘 부러집니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "말을 마치고 잠시 뒤, 자신이 너무 엄하게 말했는지 눈치를 본다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "…보는 건 괜찮습니다.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "지우는 일을 하는 사람이 작은 생명을 오래 키운다."
+}

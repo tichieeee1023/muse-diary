@@ -1,81 +1,106 @@
 {
   "id": "char_003_affinity_80",
   "kind": "story",
-  "title": "보호받는 연습",
+  "title": "같이 가는 밤",
   "threshold": 80,
-  "purpose": "해준이 약한 모습을 나에게 허락한다",
-  "defaultPortrait": "smile",
+  "purpose": "보호해야 할 대상이 아니라 함께 판단할 사람으로 {name}을 대하기 시작한다",
+  "defaultPortrait": "main",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "야간 근무 뒤 해준은 평소보다 훨씬 지쳐 있었다. 그래도 집까지 데려다주겠다고 먼저 말했다."
+          "text": "마지막 열차에서 또 회색 코트의 승객이 나타났다. 이번에는 {name}도 분명히 봤다."
+        },
+        {
+          "type": "narration",
+          "text": "다음 역에서 문이 열리자 그 사람은 내렸지만, 승강장에는 발자국도 그림자도 남지 않았다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "괜찮습니다. 늘 하던 거라서.",
-          "portrait": "smile"
+          "text": "여기 계세요.",
+          "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "오늘만큼은 반대로 {name}이 그를 지하철 출구까지 데려다주었다. 해준은 몇 번 거절하다 결국 걸음을 맞췄다."
+          "text": "해준이 반사적으로 앞으로 나섰다가 멈췄다. 예전 같으면 그대로 혼자 확인하러 갔을 것이다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "……아니요. 같이 갑시다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "말을 고쳐 한 뒤 그는 {name}과 보폭을 맞췄다."
         }
       ]
     },
     {
-      "blocks": [
-        {
-          "type": "dialogue",
-          "speaker": "문해준",
-          "text": "이상하네요. 나쁘지는 않습니다.",
-          "portrait": "smile"
-        }
-      ],
+      "blocks": [],
       "choice": {
         "id": "aff_80_choice",
         "options": [
           {
             "id": "a",
-            "text": "“가끔은 맡겨요.”",
-            "affection": 6,
-            "memoryKey": "affinity_80_a",
+            "text": "“이제 안 말리네요.”",
+            "affection": 7,
+            "memoryKey": "a80_trust",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "노력해보겠습니다.",
+                "text": "말려도 올 것 같아서요.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "해준이 짧게 웃었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "그럼 차라리 제 옆에 있는 게 낫습니다.",
                 "portrait": "smile"
               }
             ]
           },
           {
             "id": "b",
-            "text": "“오늘은 내가 보호자.”",
-            "affection": 4,
-            "memoryKey": "affinity_80_b",
+            "text": "“무서우면 손 잡아도 돼요.”",
+            "affection": 6,
+            "memoryKey": "a80_hand",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "그 말은 좀 웃기지만… 네.",
+                "text": "제가 할 말 아닙니까, 그건.",
                 "portrait": "troubled"
+              },
+              {
+                "type": "narration",
+                "text": "그러면서도 손을 피하지는 않았다."
               }
             ]
           },
           {
             "id": "c",
-            "text": "“다음엔 해준 씨 차례예요.”",
-            "affection": 5,
-            "memoryKey": "affinity_80_c",
+            "text": "“이번엔 같이 확인해요.”",
+            "affection": 7,
+            "memoryKey": "a80_together",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "그게 더 익숙하겠군요.",
-                "portrait": "smile"
+                "text": "네.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "간단한 대답이었다. 그런데 그 한마디에 이전과 다른 신뢰가 있었다."
               }
             ]
           }
@@ -86,14 +111,26 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "그날의 보호받는 연습은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+          "text": "회색 코트의 흔적은 찾지 못했다. 대신 폐쇄된 승강장 끝에서 오래된 승차권 하나를 발견했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "혼자 봤으면 또 피곤해서 그랬다고 넘겼을 겁니다.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "해준이 약한 모습을 나에게 허락한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+          "text": "해준은 승차권을 봉투에 넣고 {name}에게 보여줬다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "이번에는 같이 본 거니까, 없던 일은 아니겠네요.",
+          "portrait": "smile"
         }
       ]
     }
   ],
-  "closing": "보호받는 연습 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "같이 가는 밤 — 중요한 관계 기록이 다이어리에 남았다."
 }

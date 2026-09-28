@@ -12,9 +12,10 @@
     "introLine": "찾는 책이 있습니까? 이쪽 선반은 조금 복잡해서요.",
     "spawnRules": [
       {
-        "placeId": "library",
+        "placeId": "bookstore",
         "routeIds": [
-          "window-seat"
+          "front-shelf",
+          "backroom"
         ],
         "times": [
           "낮",
@@ -26,7 +27,7 @@
           "비",
           "눈"
         ],
-        "weight": 1.2
+        "weight": 1.5
       },
       {
         "placeId": "cafe",
@@ -41,6 +42,23 @@
           "비"
         ],
         "weight": 0.8
+      },
+      {
+        "placeId": "convenience",
+        "routeIds": [
+          "window-table"
+        ],
+        "times": [
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.45,
+        "secondaryOnly": true
       }
     ],
     "secondRunHint": "조용한 실내, 책장이 많은 곳에서 자주 보인다는 기록.",
@@ -125,6 +143,42 @@
           "눈"
         ],
         "weight": 0.7
+      },
+      {
+        "placeId": "rooftop",
+        "routeIds": [
+          "railing",
+          "bench"
+        ],
+        "times": [
+          "낮",
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.85,
+        "secondaryOnly": true
+      },
+      {
+        "placeId": "night-market",
+        "routeIds": [
+          "game-stalls"
+        ],
+        "times": [
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.55,
+        "secondaryOnly": true
       }
     ],
     "secondRunHint": "사람보다 진열과 동선을 먼저 보는 남자가 쇼핑몰에 있다.",
@@ -207,6 +261,42 @@
           "흐림"
         ],
         "weight": 0.6
+      },
+      {
+        "placeId": "convenience",
+        "routeIds": [
+          "drink-aisle",
+          "window-table"
+        ],
+        "times": [
+          "낮",
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.95,
+        "secondaryOnly": true
+      },
+      {
+        "placeId": "rooftop",
+        "routeIds": [
+          "bench"
+        ],
+        "times": [
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.45,
+        "secondaryOnly": true
       }
     ],
     "secondRunHint": "지하철에서 길을 잃으면 이상할 만큼 친절한 안내를 받을지도.",
@@ -289,6 +379,40 @@
           "비"
         ],
         "weight": 0.7
+      },
+      {
+        "placeId": "night-market",
+        "routeIds": [
+          "food-stalls"
+        ],
+        "times": [
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.95,
+        "secondaryOnly": true
+      },
+      {
+        "placeId": "convenience",
+        "routeIds": [
+          "drink-aisle"
+        ],
+        "times": [
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.55,
+        "secondaryOnly": true
       }
     ],
     "secondRunHint": "달콤한 냄새가 나는 곳. 가끔 그림자가 한 박자 늦는 사람이 있다.",
@@ -372,6 +496,41 @@
           "눈"
         ],
         "weight": 0.8
+      },
+      {
+        "placeId": "rooftop",
+        "routeIds": [
+          "railing",
+          "bench"
+        ],
+        "times": [
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.8,
+        "secondaryOnly": true
+      },
+      {
+        "placeId": "convenience",
+        "routeIds": [
+          "window-table"
+        ],
+        "times": [
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.65,
+        "secondaryOnly": true
       }
     ],
     "secondRunHint": "문 닫은 가게가 많은 밤, 혼자 남아 있는 사람을 본 적이 있다는 소문.",
@@ -455,6 +614,42 @@
           "눈"
         ],
         "weight": 0.5
+      },
+      {
+        "placeId": "aquarium",
+        "routeIds": [
+          "tunnel",
+          "jellyfish"
+        ],
+        "times": [
+          "낮",
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 1.2,
+        "secondaryOnly": true
+      },
+      {
+        "placeId": "night-market",
+        "routeIds": [
+          "food-stalls"
+        ],
+        "times": [
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.5,
+        "secondaryOnly": true
       }
     ],
     "secondRunHint": "강가에서 물의 기분을 말하는 사람이 있다는 이야기.",
@@ -537,6 +732,42 @@
           "눈"
         ],
         "weight": 0.7
+      },
+      {
+        "placeId": "library",
+        "routeIds": [
+          "history-floor",
+          "window-seat"
+        ],
+        "times": [
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.8,
+        "secondaryOnly": true
+      },
+      {
+        "placeId": "convenience",
+        "routeIds": [
+          "drink-aisle"
+        ],
+        "times": [
+          "낮",
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.7,
+        "secondaryOnly": true
       }
     ],
     "secondRunHint": "역사 자료를 읽으며 기록의 오류를 직접 잡아내는 학생.",
@@ -619,6 +850,42 @@
           "흐림"
         ],
         "weight": 0.6
+      },
+      {
+        "placeId": "aquarium",
+        "routeIds": [
+          "jellyfish",
+          "tunnel"
+        ],
+        "times": [
+          "낮",
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.85,
+        "secondaryOnly": true
+      },
+      {
+        "placeId": "rooftop",
+        "routeIds": [
+          "railing"
+        ],
+        "times": [
+          "낮"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.5,
+        "secondaryOnly": true
       }
     ],
     "secondRunHint": "미술관에서 작품보다 관람객을 더 잘 기억하는 인턴.",
@@ -713,6 +980,40 @@
           "비"
         ],
         "weight": 0.5
+      },
+      {
+        "placeId": "library",
+        "routeIds": [
+          "window-seat"
+        ],
+        "times": [
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.75,
+        "secondaryOnly": true
+      },
+      {
+        "placeId": "rooftop",
+        "routeIds": [
+          "bench"
+        ],
+        "times": [
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.8,
+        "secondaryOnly": true
       }
     ],
     "secondRunHint": "사람이 적은 길을 먼저 고르는 정중한 남자. 비 오는 밤에 목격담이 많다.",
@@ -810,6 +1111,41 @@
           "흐림"
         ],
         "weight": 0.7
+      },
+      {
+        "placeId": "convenience",
+        "routeIds": [
+          "drink-aisle",
+          "window-table"
+        ],
+        "times": [
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.85,
+        "secondaryOnly": true
+      },
+      {
+        "placeId": "rooftop",
+        "routeIds": [
+          "railing"
+        ],
+        "times": [
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.75,
+        "secondaryOnly": true
       }
     ],
     "secondRunHint": "폐점 직전의 쇼핑몰이나 늦은 밤에만 자주 보이는 경호원.",
@@ -906,6 +1242,42 @@
           "눈"
         ],
         "weight": 0.5
+      },
+      {
+        "placeId": "night-market",
+        "routeIds": [
+          "game-stalls",
+          "food-stalls"
+        ],
+        "times": [
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 1.05,
+        "secondaryOnly": true
+      },
+      {
+        "placeId": "aquarium",
+        "routeIds": [
+          "jellyfish"
+        ],
+        "times": [
+          "낮",
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.65,
+        "secondaryOnly": true
       }
     ],
     "secondRunHint": "아이들 앞에서는 누구보다 평범한 배우. 가끔 손끝이 너무 밝다.",
@@ -999,6 +1371,42 @@
           "맑음"
         ],
         "weight": 0.6
+      },
+      {
+        "placeId": "library",
+        "routeIds": [
+          "window-seat",
+          "history-floor"
+        ],
+        "times": [
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.9,
+        "secondaryOnly": true
+      },
+      {
+        "placeId": "rooftop",
+        "routeIds": [
+          "railing",
+          "bench"
+        ],
+        "times": [
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.85,
+        "secondaryOnly": true
       }
     ],
     "secondRunHint": "시간이 어긋나는 곳에 나타난다는 시계 수리공. 먼저 아는 척할 수도 있다.",

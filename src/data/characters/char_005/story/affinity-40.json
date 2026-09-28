@@ -1,37 +1,47 @@
 {
   "id": "char_005_affinity_40",
   "kind": "story",
-  "title": "청소업자의 천적",
+  "title": "버리지 않는 사람",
   "threshold": 40,
-  "purpose": "태겸의 예상 밖 약점",
-  "defaultPortrait": "hmm",
+  "purpose": "갭모에와 태겸의 가치관을 메인 서사에 연결한다. 지우는 직업과 남겨두는 성향의 모순을 보여준다.",
+  "defaultPortrait": "main",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "창고 문을 열자 작은 바퀴벌레 하나가 지나갔다. 검은 흔적 앞에서도 눈 하나 깜빡 않던 태겸이 그대로 멈췄다."
+          "text": "태겸의 작업실 한쪽에는 낡은 의자, 고장 난 손전등, 오래된 작업복이 차곡차곡 쌓여 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "강태겸",
-          "text": "…저건 당신이 처리해요.",
-          "portrait": "hmm"
+          "text": "쓸모없어 보입니까?",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "대답할 틈도 없이 한 걸음 뒤로 물러나는 속도가 놀라웠다."
+          "text": "그는 버릴 물건을 고르라는 말에 한참 대답하지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "흔적은 생각보다 쉽게 없어집니다. 한 번 없어지면 다시 만들 수 없는 것도 많고요.",
+          "portrait": "hmm"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "그가 작은 금속 명찰 하나를 손바닥에 올렸다. 이름 부분은 심하게 긁혀 읽을 수 없었다."
+        },
+        {
           "type": "dialogue",
           "speaker": "강태겸",
-          "text": "웃으면 두고 갑니다.",
-          "portrait": "hmm"
+          "text": "그래서 저는… 가능한 건 남겨두는 편입니다.",
+          "portrait": "troubled"
         }
       ],
       "choice": {
@@ -39,61 +49,49 @@
         "options": [
           {
             "id": "a",
-            "text": "“무서워요?”",
-            "affection": 6,
-            "memoryKey": "affinity_40_a",
+            "text": "“그 명찰도 중요한 거예요?”",
+            "affection": 5,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "강태겸",
-                "text": "싫은 겁니다. 무서운 게 아니라.",
+                "text": "네. 아직은 설명하기 어렵지만.",
                 "portrait": "hmm"
               }
-            ]
+            ],
+            "memoryKey": "taegyeom_40_tag"
           },
           {
             "id": "b",
-            "text": "“제가 구해드리죠.”",
-            "affection": 4,
-            "memoryKey": "affinity_40_b",
+            "text": "“남겨두는 것도 일이네요.”",
+            "affection": 6,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "강태겸",
-                "text": "빨리요. 부탁…합니다.",
-                "portrait": "troubled"
+                "text": "그렇게 생각해본 적은 없는데… 맞을지도 모르겠습니다.",
+                "portrait": "smile"
               }
-            ]
+            ],
+            "memoryKey": "taegyeom_40_keep"
           },
           {
             "id": "c",
-            "text": "“의외의 약점 발견.”",
-            "affection": 5,
-            "memoryKey": "affinity_40_c",
+            "text": "“화분도 그래서 많은 거예요?”",
+            "affection": 4,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "강태겸",
-                "text": "기억에서 지우세요.",
-                "portrait": "hmm"
+                "text": "그건 그냥 살아 있어서입니다.",
+                "portrait": "troubled"
               }
-            ]
+            ],
+            "memoryKey": "taegyeom_40_plants"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 청소업자의 천적은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "태겸의 예상 밖 약점 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "청소업자의 천적 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "태겸에게 남긴다는 건 취향이 아니라 거의 원칙에 가까웠다."
 }

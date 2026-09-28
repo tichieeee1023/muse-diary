@@ -1,76 +1,51 @@
 {
   "id": "char_001_casual_03",
   "kind": "casual",
-  "title": "메시지 오타",
-  "minAffection": 20,
-  "maxAffection": 79,
-  "defaultPortrait": "troubled",
-  "completionAffection": 3,
+  "title": "오른쪽 어깨",
+  "minAffection": 0,
+  "maxAffection": 39,
+  "defaultPortrait": "main",
+  "completionAffection": 5,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "도윤이 보낸 추천 목록에는 보기 드문 오타가 하나 있었다."
+          "text": "비가 오는 날이었다. 서점에 들어서자 도윤이 수건 한 장을 내밀었다."
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "수정하려다 더 망가졌습니다.",
+          "text": "오른쪽부터 닦으세요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "무슨 뜻인지 몰라 바라보자 그가 {name}의 어깨를 가리켰다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "지난번에도 그쪽만 많이 젖었으니까요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "우산을 어느 손으로 드는지까지 기억한 셈이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "…이상한 건 아닙니다.",
           "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "휴대폰 자판 앞에서 유난히 진지한 얼굴이었다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "서도윤",
-          "text": "종이에 쓰면 안 틀립니다.",
-          "portrait": "troubled"
+          "text": "아무 말도 하지 않았는데 먼저 변명했다."
         }
-      ],
-      "choice": {
-        "id": "casual_3_choice",
-        "options": [
-          {
-            "id": "a",
-            "text": "조금 솔직하게 반응한다.",
-            "affection": 3,
-            "memoryKey": "casual_3_warm",
-            "response": [
-              {
-                "type": "narration",
-                "text": "서도윤의 표정이 아주 조금 풀렸다."
-              }
-            ]
-          },
-          {
-            "id": "b",
-            "text": "가볍게 놀려본다.",
-            "affection": 2,
-            "response": [
-              {
-                "type": "narration",
-                "text": "서도윤은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
-              }
-            ]
-          },
-          {
-            "id": "c",
-            "text": "그냥 옆에서 지켜본다.",
-            "affection": 1,
-            "response": [
-              {
-                "type": "narration",
-                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
-              }
-            ]
-          }
-        ]
-      }
+      ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 서도윤이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "기억력이 좋다는 말로 설명하기엔, 도윤의 기억은 이상하게 구체적이었다."
 }

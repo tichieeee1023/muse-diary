@@ -1,0 +1,40 @@
+{
+  "id": "char_003_casual_10",
+  "kind": "casual",
+  "title": "마지막 불빛",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "smile",
+  "completionAffection": 5,
+  "repeatable": true,
+  "placeIds": [
+    "rooftop"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "야간 운행을 마친 해준이 루프탑 벤치에 앉아 있었다. 아래로 막차가 지나가는 선로의 불빛이 길게 움직인다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "저 불빛까지 들어가면 오늘 일도 끝입니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "늘 시간을 확인하던 사람이 오늘은 시계를 보지 않는다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "조금 있다 내려가죠. 지금은 안 급합니다.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "무사히 도착하는 것만큼, 잠시 머무는 것도 중요해진 모양이다."
+}

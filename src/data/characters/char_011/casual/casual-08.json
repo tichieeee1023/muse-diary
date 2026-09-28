@@ -1,37 +1,41 @@
 {
   "id": "char_011_casual_08",
   "kind": "casual",
-  "title": "손끝 빛 하나",
-  "minAffection": 80,
+  "title": "무대용 미소",
+  "minAffection": 70,
   "maxAffection": 100,
   "defaultPortrait": "smile",
-  "completionAffection": 5,
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "유리안이 아주 작은 빛 하나만 켰다."
+          "text": "사진 요청을 받은 유리안이 익숙한 큰 미소를 지었다. 촬영이 끝나자 표정이 내려왔다."
+        },
+        {
+          "type": "narration",
+          "text": "{name}을 보자 이번에는 훨씬 작은 미소가 다시 생겼다."
         },
         {
           "type": "dialogue",
           "speaker": "유리안",
-          "text": "이 정도면 과하지 않죠?",
+          "text": "이쪽이 진짜예요.",
           "portrait": "smile"
         },
         {
           "type": "narration",
-          "text": "그 빛은 무대가 아니라 {name} 얼굴만 비췄다."
+          "text": "설명은 그 한마디뿐이었다."
         },
         {
           "type": "dialogue",
           "speaker": "유리안",
-          "text": "오늘 관객은 한 명이면 됩니다.",
-          "portrait": "smile"
+          "text": "큰 건 일할 때 쓰는 거고.",
+          "portrait": "main"
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 유리안이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "공략 후반에는 표정 하나만으로도 무대와 사생활의 경계가 보였다."
 }

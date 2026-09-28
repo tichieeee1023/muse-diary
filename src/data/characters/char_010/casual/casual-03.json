@@ -1,76 +1,41 @@
 {
   "id": "char_010_casual_03",
   "kind": "casual",
-  "title": "작은 바늘",
-  "minAffection": 20,
-  "maxAffection": 99,
-  "defaultPortrait": "troubled",
-  "completionAffection": 3,
+  "title": "연한 커피",
+  "minAffection": 10,
+  "maxAffection": 59,
+  "defaultPortrait": "main",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "재하가 손바닥보다 작은 바늘통을 꺼냈다."
+          "text": "재하의 커피는 거의 우유처럼 연했다."
         },
         {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "비상용입니다.",
-          "portrait": "troubled"
+          "text": "쓴 걸 못 먹는 건 아닙니다.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "안에는 실 색깔이 여섯 종류나 있었다."
+          "text": "그는 굳이 먼저 해명했다."
         },
         {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "색 맞추는 게 낫잖습니까.",
-          "portrait": "troubled"
+          "text": "굳이 쓴 걸 마실 이유가 없어서 그렇습니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "푸딩 세 개를 사던 사람이 할 법한 말이었다."
         }
-      ],
-      "choice": {
-        "id": "casual_3_choice",
-        "options": [
-          {
-            "id": "a",
-            "text": "조금 솔직하게 반응한다.",
-            "affection": 3,
-            "memoryKey": "casual_3_warm",
-            "response": [
-              {
-                "type": "narration",
-                "text": "권재하의 표정이 아주 조금 풀렸다."
-              }
-            ]
-          },
-          {
-            "id": "b",
-            "text": "가볍게 놀려본다.",
-            "affection": 2,
-            "response": [
-              {
-                "type": "narration",
-                "text": "권재하은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
-              }
-            ]
-          },
-          {
-            "id": "c",
-            "text": "그냥 옆에서 지켜본다.",
-            "affection": 1,
-            "response": [
-              {
-                "type": "narration",
-                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
-              }
-            ]
-          }
-        ]
-      }
+      ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 권재하이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "재하의 취향은 얼굴보다 훨씬 부드러운 쪽이었다."
 }

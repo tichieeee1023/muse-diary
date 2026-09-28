@@ -1,76 +1,41 @@
 {
   "id": "char_007_casual_03",
   "kind": "casual",
-  "title": "딸기 사탕",
-  "minAffection": 20,
-  "maxAffection": 99,
-  "defaultPortrait": "troubled",
-  "completionAffection": 3,
+  "title": "편의점 삼각김밥",
+  "minAffection": 10,
+  "maxAffection": 59,
+  "defaultPortrait": "smile",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "휘람은 사탕 봉지에서 딸기맛만 먼저 골랐다."
+          "text": "휘람은 삼각김밥 포장 설명을 세 번 읽은 뒤 정확히 실패했다."
         },
         {
           "type": "dialogue",
           "speaker": "김휘람",
-          "text": "이건 제 거예요.",
+          "text": "…김이 절반 남았습니다.",
           "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "아까 단 걸 안 좋아한다고 한 사람이었다."
+          "text": "{name}이 웃자 처음에는 억울해하다가 결국 같이 웃었다."
         },
         {
           "type": "dialogue",
           "speaker": "김휘람",
-          "text": "예외가 있을 수 있죠.",
-          "portrait": "troubled"
+          "text": "이건 기록이 잘못된 게 아니라 제가 잘못한 거네요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "그 웃음은 이상할 정도로 평범한 열여덟 살 같았다."
         }
-      ],
-      "choice": {
-        "id": "casual_3_choice",
-        "options": [
-          {
-            "id": "a",
-            "text": "조금 솔직하게 반응한다.",
-            "affection": 3,
-            "memoryKey": "casual_3_warm",
-            "response": [
-              {
-                "type": "narration",
-                "text": "김휘람의 표정이 아주 조금 풀렸다."
-              }
-            ]
-          },
-          {
-            "id": "b",
-            "text": "가볍게 놀려본다.",
-            "affection": 2,
-            "response": [
-              {
-                "type": "narration",
-                "text": "김휘람은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
-              }
-            ]
-          },
-          {
-            "id": "c",
-            "text": "그냥 옆에서 지켜본다.",
-            "affection": 1,
-            "response": [
-              {
-                "type": "narration",
-                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
-              }
-            ]
-          }
-        ]
-      }
+      ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 김휘람이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "오래된 사람 같은 아이에게도 아주 현재적인 순간이 있었다."
 }

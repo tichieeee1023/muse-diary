@@ -1,37 +1,41 @@
 {
   "id": "char_006_casual_01",
   "kind": "casual",
-  "title": "아이스만",
+  "title": "뜨거운 건 사양",
   "minAffection": 0,
-  "maxAffection": 59,
-  "defaultPortrait": "main",
-  "completionAffection": 5,
+  "maxAffection": 39,
+  "defaultPortrait": "troubled",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "시온은 한겨울에도 아이스 음료를 주문했다."
+          "text": "강변 포장마차에서 시온이 어묵 국물을 한 모금 마시자마자 눈을 크게 떴다."
         },
         {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "뜨거운 건 못 믿겠어요.",
-          "portrait": "main"
+          "text": "뜨거워. 아니, 왜 이걸 이렇게 뜨겁게 줘요?",
+          "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "손은 차가운데 컵은 더 차가웠다."
+          "text": "물속에서는 겁이 없던 사람이 종이컵 하나를 두 손으로 들고 쩔쩔맸다."
         },
         {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "이게 편합니다.",
-          "portrait": "main"
+          "text": "저 뜨거운 물 진짜 싫어해요. 바다는 이렇지 않잖아요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "비교 기준이 이상했다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 백시온이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "물의 남자가 뜨거운 국물에는 형편없었다."
 }

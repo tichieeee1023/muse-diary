@@ -1,37 +1,73 @@
 {
   "id": "char_004_affinity_40",
   "kind": "story",
-  "title": "배고픈 여우",
+  "title": "달지 않은 사람",
   "threshold": 40,
-  "purpose": "로운의 완벽한 서비스 미소가 무너지는 갭",
-  "defaultPortrait": "hmm",
+  "purpose": "달콤한 파티시에가 단 음식을 싫어하는 갭을 본격적으로 드러내고, 타인의 감정을 잘 읽으면서 자기 취향을 숨기는 습관을 보여준다.",
+  "defaultPortrait": "troubled",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "마감 직전, 로운은 카운터 뒤에서 식빵 끝부분을 몰래 씹고 있었다."
+          "text": "마감 직전, 로운이 테스트용 케이크 한 조각을 작게 잘라 입에 넣었다. 잠깐 뒤 그의 표정이 아주 노골적으로 굳었다."
         },
         {
           "type": "dialogue",
           "speaker": "이로운",
-          "text": "…이 시간엔 사람이 예민해져요.",
-          "portrait": "hmm"
+          "text": "아, 달아.",
+          "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "평소의 반짝이는 미소는 사라지고 눈꼬리가 축 늘어져 있었다."
+          "text": "그가 물을 연달아 두 모금 마셨다. 파티시에가 자기 케이크를 이렇게 싫어해도 되는 건지 의심스러울 정도였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "맛은 괜찮아요. 제가 단 걸 싫어하는 거지.",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "제일 좋아하는 건 얼큰한 국물. 땀날 정도로 매운 거.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "쇼케이스 안의 정교한 케이크들과 조금도 어울리지 않는 취향이었다."
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "왜 지금까지 말하지 않았냐고 묻자 로운은 어깨를 으쓱했다."
+        },
+        {
           "type": "dialogue",
           "speaker": "이로운",
-          "text": "웃으면 오늘 케이크 안 줍니다.",
+          "text": "손님들이 좋아하는 걸 맞히는 게 일이잖아요. 제 취향은 굳이 필요 없으니까.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그 말이 디저트 얘기만은 아닌 것처럼 들렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "남이 뭘 좋아하는지는 쉬워요. 얼굴 보면 대충 보이거든요.",
           "portrait": "hmm"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "근데 제가 뭘 좋아하는지는… 생각해보면 별로 말 안 해봤네.",
+          "portrait": "troubled"
         }
       ],
       "choice": {
@@ -39,61 +75,53 @@
         "options": [
           {
             "id": "a",
-            "text": "“이쪽이 더 귀여운데요.”",
+            "text": "“그럼 하나씩 알려줘요.”",
             "affection": 6,
-            "memoryKey": "affinity_40_a",
+            "memoryKey": "rowoon_40_tell_me",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "이로운",
-                "text": "그 말 금지.",
-                "portrait": "hmm"
+                "text": "하나씩이면 꽤 오래 걸리겠는데.",
+                "portrait": "smile"
+              },
+              {
+                "type": "narration",
+                "text": "거절은 아니었다."
               }
             ]
           },
           {
             "id": "b",
-            "text": "“제 간식 나눠줄까요?”",
-            "affection": 4,
-            "memoryKey": "affinity_40_b",
+            "text": "“매운 국물부터 기억할게요.”",
+            "affection": 5,
+            "memoryKey": "rowoon_40_spicy",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "이로운",
-                "text": "…반만 받을게요.",
+                "text": "그거 하나 기억해주는 게 왜 이렇게 좀… 이상하지.",
                 "portrait": "troubled"
               }
             ]
           },
           {
             "id": "c",
-            "text": "“케이크보다 밥 먹어요.”",
-            "affection": 5,
-            "memoryKey": "affinity_40_c",
+            "text": "“파티시에 이미지 망가지겠네요.”",
+            "affection": 4,
+            "memoryKey": "rowoon_40_image",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "이로운",
-                "text": "지금 그 말이 제일 설레네요.",
-                "portrait": "hmm"
+                "text": "쉿. 손님들 환상은 지켜드려야죠.",
+                "portrait": "smile"
               }
             ]
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 배고픈 여우은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "로운의 완벽한 서비스 미소가 무너지는 갭 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "배고픈 여우 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "달콤한 것을 만드는 사람의 입맛은 맵고 뜨거웠다. 그리고 남의 취향은 잘 맞히는 사람이 자기 취향을 말할 때는 이상할 만큼 서툴렀다."
 }

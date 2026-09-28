@@ -1,76 +1,41 @@
 {
   "id": "char_009_casual_06",
   "kind": "casual",
-  "title": "상담 받는 날",
-  "minAffection": 60,
-  "maxAffection": 100,
+  "title": "우산 없는 날",
+  "minAffection": 40,
+  "maxAffection": 89,
   "defaultPortrait": "troubled",
-  "completionAffection": 3,
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "이겸은 오늘은 자기 얘기를 해도 되냐고 먼저 물었다."
+          "text": "갑자기 비가 내리자 이겸은 평소보다 빠르게 소매를 내렸다."
         },
         {
           "type": "dialogue",
           "speaker": "차이겸",
-          "text": "조언은 없어도 됩니다.",
+          "text": "오늘은 먼저 가보겠습니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "손목 아래로 먹빛 꽃잎 같은 선이 잠깐 비쳤다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "…보셨습니까.",
           "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "듣는 역할에서 벗어나는 게 아직 어색한 얼굴이었다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "차이겸",
-          "text": "그냥 들어주시면 됩니다.",
-          "portrait": "troubled"
+          "text": "처음으로 그 정중한 얼굴에 명백한 당황이 떠올랐다."
         }
-      ],
-      "choice": {
-        "id": "casual_6_choice",
-        "options": [
-          {
-            "id": "a",
-            "text": "조금 솔직하게 반응한다.",
-            "affection": 3,
-            "memoryKey": "casual_6_warm",
-            "response": [
-              {
-                "type": "narration",
-                "text": "차이겸의 표정이 아주 조금 풀렸다."
-              }
-            ]
-          },
-          {
-            "id": "b",
-            "text": "가볍게 놀려본다.",
-            "affection": 2,
-            "response": [
-              {
-                "type": "narration",
-                "text": "차이겸은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
-              }
-            ]
-          },
-          {
-            "id": "c",
-            "text": "그냥 옆에서 지켜본다.",
-            "affection": 1,
-            "response": [
-              {
-                "type": "narration",
-                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
-              }
-            ]
-          }
-        ]
-      }
+      ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 차이겸이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "비가 오면 이겸이 감추던 것이 조금 더 선명해졌다."
 }

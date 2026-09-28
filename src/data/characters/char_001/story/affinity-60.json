@@ -1,81 +1,117 @@
 {
   "id": "char_001_affinity_60",
   "kind": "story",
-  "title": "다 읽지 않은 결말",
+  "title": "돌아온 책",
   "threshold": 60,
-  "purpose": "도윤이 감정을 숨기는 방식의 이유",
-  "defaultPortrait": "troubled",
-  "completionAffection": 3,
+  "defaultPortrait": "main",
+  "completionAffection": 2,
+  "purpose": "현실계인 도윤이 기록을 통해 비일상의 틈을 처음 분명하게 목격한다",
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "도윤은 늘 마지막 장을 조금 남겨둔 책이 있다고 털어놓았다. 좋아하는 이야기가 끝나는 걸 싫어해서라는 이유였다."
+          "text": "폐점 직전, 도윤에게서 드물게 먼저 연락이 왔다."
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "끝을 알면 다시는 처음처럼 읽을 수 없잖습니까.",
-          "portrait": "troubled"
+          "text": "혹시 지금 근처입니까?",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "무심한 사람이라고 생각했던 첫인상과 달리 그는 끝나는 것에 유난히 약했다."
+          "text": "서점에 도착하자 카운터 위에 낡은 책 한 권과 장부가 나란히 놓여 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "이 책, 분명히 없앴습니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "장부에는 폐기 날짜와 이유까지 적혀 있었다. 침수로 복구 불가. 그런데 눈앞의 책은 그때 기록된 얼룩을 그대로 가진 채 돌아와 있었다."
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "도윤은 겁먹기보다 페이지 번호와 장부 기록을 대조했다. 손끝만 평소보다 조금 느렸다."
+        },
+        {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "사람도 그런지는 아직 잘 모르겠습니다.",
-          "portrait": "troubled"
+          "text": "제가 잘못 기억한 게 아니라면 설명이 안 됩니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "기억을 믿는 사람에게 '기억이 틀렸을지도 모른다'는 가능성은 꽤 큰 균열처럼 보였다."
         }
       ],
       "choice": {
-        "id": "aff_60_choice",
+        "id": "a60",
         "options": [
           {
             "id": "a",
-            "text": "“그럼 천천히 알아가요.”",
-            "affection": 6,
-            "memoryKey": "affinity_60_a",
+            "text": "“도윤 씨 기억을 믿어요.”",
+            "affection": 7,
+            "memoryKey": "a60_trust_memory",
             "response": [
+              {
+                "type": "narration",
+                "text": "그가 바로 고개를 들었다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "서도윤",
-                "text": "그 말은… 꽤 마음에 듭니다.",
+                "text": "…그 말, 생각보다 든든하네요.",
                 "portrait": "smile"
               }
             ]
           },
           {
             "id": "b",
-            "text": "“끝나지 않게 하면 되죠.”",
-            "affection": 4,
-            "memoryKey": "affinity_60_b",
+            "text": "“같이 확인해봐요.”",
+            "affection": 6,
+            "memoryKey": "a60_together",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "서도윤",
-                "text": "쉽게 말하네요. 그런데 싫지는 않습니다.",
-                "portrait": "troubled"
+                "text": "네. 혼자 보는 것보다 낫겠습니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "처음으로 그는 이상한 일에서 {name}을 밀어내지 않았다."
               }
             ]
           },
           {
             "id": "c",
-            "text": "“생각보다 낭만적이네요.”",
-            "affection": 5,
-            "memoryKey": "affinity_60_c",
+            "text": "“무서워요?”",
+            "affection": 4,
+            "memoryKey": "a60_fear",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "서도윤",
-                "text": "그 얘기는 다른 데서 하지 마세요.",
+                "text": "조금은요.",
                 "portrait": "troubled"
+              },
+              {
+                "type": "narration",
+                "text": "의외로 솔직한 답이었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "기록이 틀리는 것보다, 제가 기억을 틀리게 붙잡고 있는 게 더 싫습니다.",
+                "portrait": "main"
               }
             ]
           }
@@ -86,14 +122,20 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "그날의 다 읽지 않은 결말은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+          "text": "결국 그날 책의 출처는 밝혀지지 않았다. 도윤은 책을 폐기하지 않고 별도 상자에 보관했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "없던 일로 만들지는 않겠습니다.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "도윤이 감정을 숨기는 방식의 이유 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+          "text": "그 말은 책에 대한 이야기 같으면서도, 다른 무언가에 대한 다짐처럼 들렸다."
         }
       ]
     }
   ],
-  "closing": "다 읽지 않은 결말 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "도윤은 이상한 일을 믿지 않았지만, 이상한 일을 지워버리려고도 하지 않았다."
 }

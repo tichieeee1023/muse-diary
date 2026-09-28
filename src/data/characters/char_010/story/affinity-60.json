@@ -1,36 +1,46 @@
 {
   "id": "char_010_affinity_60",
   "kind": "story",
-  "title": "상처의 방향",
+  "title": "빛나는 상처",
   "threshold": 60,
-  "purpose": "재하가 경계하는 이유를 밝힌다",
-  "defaultPortrait": "troubled",
+  "purpose": "비일상 조직과 연결된 과거를 암시하고 상처의 의미를 보여준다.",
+  "defaultPortrait": "hmm",
   "completionAffection": 3,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "재하 손등의 오래된 흉터와 오늘 생긴 상처의 방향이 비슷했다."
+          "text": "밤이 깊어지자 재하 손등의 흉터가 선명하게 빛났다."
         },
         {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "사람을 지키다 생긴 겁니다.",
-          "portrait": "troubled"
+          "text": "이건 일반적인 상처가 아닙니다.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "그는 자세한 설명보다 먼저 {name}이 다치지 않았는지 확인했다."
+          "text": "그는 오래된 흉터를 가리지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "비일상 존재를 상대하던 조직에서 일했습니다. 보호와 회수가 제 일이었습니다.",
+          "portrait": "hmm"
         }
       ]
     },
     {
       "blocks": [
         {
+          "type": "narration",
+          "text": "조직 이야기를 하는 동안 재하의 손은 계속 굳어 있었다."
+        },
+        {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "그래서 위험한 걸 싫어합니다. 특히 반복되는 건.",
+          "text": "좋은 조직이었다고는 말하지 않겠습니다.",
           "portrait": "troubled"
         }
       ],
@@ -39,61 +49,49 @@
         "options": [
           {
             "id": "a",
-            "text": "“이번엔 같이 조심해요.”",
+            "text": "“그래서 그만둔 거예요?”",
             "affection": 6,
-            "memoryKey": "affinity_60_a",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "권재하",
-                "text": "그게 좋겠습니다.",
-                "portrait": "smile"
+                "text": "네. 명령 하나를 거부했습니다.",
+                "portrait": "hmm"
               }
-            ]
+            ],
+            "memoryKey": "jaeha_60_quit"
           },
           {
             "id": "b",
-            "text": "“나 때문에 신경 쓰여요?”",
-            "affection": 4,
-            "memoryKey": "affinity_60_b",
+            "text": "“그 흉터도 그때 생긴 거고요?”",
+            "affection": 6,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "권재하",
-                "text": "…네. 이제는.",
-                "portrait": "troubled"
+                "text": "그렇습니다. 대가라고 생각하지는 않습니다.",
+                "portrait": "main"
               }
-            ]
+            ],
+            "memoryKey": "jaeha_60_scar"
           },
           {
             "id": "c",
-            "text": "“재하 씨도 다치지 마요.”",
-            "affection": 5,
-            "memoryKey": "affinity_60_c",
+            "text": "“말해줘서 고마워요.”",
+            "affection": 7,
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "권재하",
-                "text": "그 말은 처음 듣네요.",
+                "text": "숨기는 편이 더 위험해졌으니까요. …그 이유만은 아닙니다.",
                 "portrait": "troubled"
               }
-            ]
+            ],
+            "memoryKey": "jaeha_60_thanks"
           }
         ]
       }
-    },
-    {
-      "blocks": [
-        {
-          "type": "narration",
-          "text": "그날의 상처의 방향은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
-        },
-        {
-          "type": "narration",
-          "text": "재하가 경계하는 이유를 밝힌다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
-        }
-      ]
     }
   ],
-  "closing": "상처의 방향 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "재하는 한때 훨씬 큰 위험을 다루던 사람이었다."
 }

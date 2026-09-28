@@ -1,0 +1,40 @@
+{
+  "id": "char_006_casual_10",
+  "kind": "casual",
+  "title": "육지의 야식",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "smile",
+  "completionAffection": 5,
+  "repeatable": true,
+  "placeIds": [
+    "night-market"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "시온은 야시장 한복판에서 손에 꼬치 세 개를 들고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "육지는 먹을 게 계속 나오네요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "무언가를 발견한 그가 네 번째 줄에 또 선다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "이건 조사예요. 문화 조사.",
+          "portrait": "main"
+        }
+      ]
+    }
+  ],
+  "closing": "육지 생활에 적응하는 방식이 꽤 맛있어 보였다."
+}

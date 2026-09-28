@@ -1,0 +1,40 @@
+{
+  "id": "char_009_casual_09",
+  "kind": "casual",
+  "title": "닫히기 직전의 도서관",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "hmm",
+  "completionAffection": 4,
+  "repeatable": true,
+  "placeIds": [
+    "library"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "밤 도서관 창가에서 이겸은 책을 읽는 대신 빗방울이 번지는 유리창을 보고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "조용한 곳은 좋습니다. 감정도 덜 흔들리는 것 같아서요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그 말과 반대로 소매 끝을 잡아당기는 손에는 힘이 들어가 있다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "…오늘은 조금 어렵군요.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "침착한 얼굴 아래의 파문은 가까이서야 보였다."
+}

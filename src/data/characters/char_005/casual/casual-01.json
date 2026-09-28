@@ -1,37 +1,41 @@
 {
   "id": "char_005_casual_01",
   "kind": "casual",
-  "title": "청소 카트 정리",
+  "title": "화분에 물 주는 사람",
   "minAffection": 0,
-  "maxAffection": 59,
-  "defaultPortrait": "main",
-  "completionAffection": 5,
+  "maxAffection": 39,
+  "defaultPortrait": "troubled",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "태겸의 카트 안은 군대처럼 정돈돼 있었다."
+          "text": "편의점 뒤편에서 태겸이 작은 화분을 들고 있었다. 손에는 청소도구 대신 분무기가 들려 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "강태겸",
-          "text": "찾기 빨라서 그렇습니다.",
+          "text": "잎 끝이 마르면 물이 부족한 겁니다.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "작은 수건까지 크기순으로 접혀 있었다."
+          "text": "그가 손가락으로 아주 조심스럽게 잎을 받쳤다."
         },
         {
           "type": "dialogue",
           "speaker": "강태겸",
-          "text": "그렇게 보지 마세요.",
-          "portrait": "main"
+          "text": "…왜 웃습니까?",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "밤의 얼룩을 치우던 사람과 같은 손이라는 게 조금 어색했다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 강태겸이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "무서운 인상과 작은 화분이 이상하게 잘 어울렸다."
 }

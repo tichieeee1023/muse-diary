@@ -1,37 +1,41 @@
 {
   "id": "char_006_casual_07",
   "kind": "casual",
-  "title": "말 없는 벤치",
-  "minAffection": 80,
-  "maxAffection": 100,
-  "defaultPortrait": "troubled",
-  "completionAffection": 5,
+  "title": "말 없는 날",
+  "minAffection": 60,
+  "maxAffection": 99,
+  "defaultPortrait": "main",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "둘은 한참 강만 보며 앉아 있었다."
+          "text": "그날 시온은 드물게 장난을 치지 않았다. 강변 계단에 앉아 물만 보고 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "이런 것도 데이트면 좋겠네요.",
-          "portrait": "troubled"
+          "text": "오늘은 그냥 좀 조용히 있어도 돼요?",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "장난처럼 말했지만 시선을 피했다."
+          "text": "{name}이 옆에 앉자 그는 고맙다는 말도 하지 않았다."
+        },
+        {
+          "type": "narration",
+          "text": "한참 뒤에야 어깨가 아주 조금 편해졌다."
         },
         {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "아니면 말고요.",
-          "portrait": "troubled"
+          "text": "이런 것도 괜찮네요. 아무 말 안 하는 거.",
+          "portrait": "smile"
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 백시온이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "웃지 않는 시온과 함께 있는 시간이 처음으로 어색하지 않았다."
 }

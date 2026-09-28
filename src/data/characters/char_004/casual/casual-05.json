@@ -1,10 +1,10 @@
 {
   "id": "char_004_casual_05",
   "kind": "casual",
-  "title": "조용한 휴식",
-  "minAffection": 60,
-  "maxAffection": 100,
-  "defaultPortrait": "main",
+  "title": "레시피 노트",
+  "minAffection": 30,
+  "maxAffection": 79,
+  "defaultPortrait": "hmm",
   "completionAffection": 5,
   "repeatable": true,
   "sections": [
@@ -12,26 +12,30 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "로운은 빈 카페에서 음악도 끄고 앉아 있었다."
+          "text": "로운이 잠깐 자리를 비운 사이 열린 레시피 노트가 바람에 넘어갔다. 재료명 옆에는 낯선 메모가 붙어 있었다."
+        },
+        {
+          "type": "narration",
+          "text": "‘미련이 강한 날 — 카카오 줄이기.’ ‘기대가 큰 날 — 산미 조금.’ 음식 레시피라기엔 이상한 문장이었다."
         },
         {
           "type": "dialogue",
           "speaker": "이로운",
-          "text": "오늘은 소리도 좀 피곤해서.",
+          "text": "남의 노트 훔쳐보면 안 되는데.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "{name}이 앉자 굳이 분위기를 만들지 않았다."
+          "text": "말은 장난스러웠지만 손이 노트를 덮는 속도는 평소보다 빨랐다."
         },
         {
           "type": "dialogue",
           "speaker": "이로운",
-          "text": "이렇게 있어도 괜찮네요.",
-          "portrait": "main"
+          "text": "그냥… 손님들 반응 적어둔 거예요. 너무 의미 두진 마요.",
+          "portrait": "troubled"
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 이로운이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "크게 특별한 일은 아니었다. 그래도 이런 짧은 만남들이 쌓일수록 이로운이라는 사람의 결이 조금씩 달라 보였다."
 }

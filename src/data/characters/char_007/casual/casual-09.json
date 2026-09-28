@@ -1,0 +1,40 @@
+{
+  "id": "char_007_casual_09",
+  "kind": "casual",
+  "title": "폐관 방송 뒤",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "hmm",
+  "completionAffection": 4,
+  "repeatable": true,
+  "placeIds": [
+    "library"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "밤 도서관에 폐관 안내 방송이 흘렀다. 휘람은 역사 자료실 한쪽에서 오래된 도판을 내려다보고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "밤에 보면 더 이상하네요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "무엇이 이상한지 물으려 하자 그가 도판을 조용히 덮는다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "기록은 낮이나 밤이나 똑같아야 하는데 말입니다.",
+          "portrait": "main"
+        }
+      ]
+    }
+  ],
+  "closing": "밤의 기록은 휘람에게 조금 더 많은 기억을 건드리는 듯했다."
+}

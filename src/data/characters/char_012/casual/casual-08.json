@@ -1,37 +1,41 @@
 {
   "id": "char_012_casual_08",
   "kind": "casual",
-  "title": "틀린 약속 시간",
-  "minAffection": 80,
+  "title": "오늘의 기록",
+  "minAffection": 70,
   "maxAffection": 100,
-  "defaultPortrait": "troubled",
-  "completionAffection": 5,
+  "defaultPortrait": "main",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "이현이 약속보다 12분 늦었다."
+          "text": "이현이 작은 수첩에 날짜와 날씨, {name}과 나눈 말을 적고 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "진이현",
-          "text": "죄송합니다. 되돌리진 않겠습니다.",
+          "text": "잊지 않으려고 적습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "왜 그렇게까지 하냐고 묻자 펜이 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "이번에는 사라지게 두고 싶지 않아서요.",
           "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "숨이 조금 가쁜 채로 직접 늦어온 시간이었다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "진이현",
-          "text": "기다려주셔서 감사합니다.",
-          "portrait": "troubled"
+          "text": "무엇이 사라지는지 아직 전부 듣지 못했지만, 대답은 충분히 무거웠다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 진이현이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "이현은 현재를 기억하기 위해 기록하고 있었다."
 }

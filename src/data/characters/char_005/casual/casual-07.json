@@ -1,37 +1,41 @@
 {
   "id": "char_005_casual_07",
   "kind": "casual",
-  "title": "문 잡아주는 시간",
-  "minAffection": 80,
-  "maxAffection": 100,
+  "title": "새벽의 물주기",
+  "minAffection": 60,
+  "maxAffection": 99,
   "defaultPortrait": "smile",
-  "completionAffection": 5,
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "태겸은 문을 잡고 {name}이 올 때까지 평소보다 오래 기다렸다."
+          "text": "새벽 네 시. 일을 마친 태겸이 창가의 화분들에 차례로 물을 줬다."
         },
         {
           "type": "dialogue",
           "speaker": "강태겸",
-          "text": "빨리 안 와도 됩니다.",
-          "portrait": "smile"
+          "text": "이 시간에 주면 안 되는 종도 있습니다.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "예전의 재촉이 사라져 있었다."
+          "text": "하나하나 이름과 물 주는 주기를 설명하는 목소리가 이상하게 부드러웠다."
         },
         {
           "type": "dialogue",
           "speaker": "강태겸",
-          "text": "제가 잡고 있으니까.",
-          "portrait": "smile"
+          "text": "…많이 외웠다고 보지 마십시오. 같이 산 지 오래돼서 그렇습니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "변명이 오히려 더 귀여웠다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 강태겸이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "강태겸의 집에는 생각보다 많은 것이 오래 남아 있었다."
 }

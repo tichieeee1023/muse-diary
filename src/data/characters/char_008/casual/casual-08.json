@@ -1,10 +1,10 @@
 {
   "id": "char_008_casual_08",
   "kind": "casual",
-  "title": "초대장 뒤쪽",
-  "minAffection": 80,
+  "title": "먼저 묻지 않은 날",
+  "minAffection": 75,
   "maxAffection": 100,
-  "defaultPortrait": "troubled",
+  "defaultPortrait": "smile",
   "completionAffection": 5,
   "repeatable": true,
   "sections": [
@@ -12,26 +12,30 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "전시 초대장 뒤에 세현이 작은 낙서를 남겼다."
+          "text": "이상하게도 오늘 세현은 아무 질문도 하지 않았다. 대신 음료 두 개를 들고 옆자리에 앉았다."
         },
         {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "그림은 보지 말고 글만 봐요.",
+          "text": "오늘은 제가 말할게요. 질문은 나중에 해요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "그는 별것 아닌 하루 이야기를 했다. 실수한 일, 점심 메뉴, 마음에 든 전시 포스터."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "맨날 제가 물어보기만 했잖아요. 생각해보니까 좀 얄미웠을 것 같아서.",
           "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "글에는 ‘같이 보면 더 좋을 것 같아서’라고 적혀 있었다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "오세현",
-          "text": "그쪽이 핵심입니다.",
-          "portrait": "troubled"
+          "text": "관찰하던 사람이 자기 쪽 이야기를 먼저 꺼내는 데는 생각보다 꽤 긴 시간이 필요했던 모양이다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 오세현이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "크게 특별한 일은 아니었다. 그래도 이런 날들이 쌓일수록 오세현이라는 사람의 윤곽이 선명해졌다."
 }

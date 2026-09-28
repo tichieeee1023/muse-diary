@@ -1,10 +1,10 @@
 {
   "id": "char_008_casual_04",
   "kind": "casual",
-  "title": "기념품 자랑",
-  "minAffection": 40,
-  "maxAffection": 100,
-  "defaultPortrait": "main",
+  "title": "그림은 안 그려요",
+  "minAffection": 20,
+  "maxAffection": 69,
+  "defaultPortrait": "troubled",
   "completionAffection": 5,
   "repeatable": true,
   "sections": [
@@ -12,26 +12,30 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "세현 가방에 작은 박물관 자석이 여러 개 붙어 있었다."
+          "text": "굿즈 코너에 체험용 스케치 카드가 놓여 있었다. 세현은 {name}에게는 신나게 한 장을 건넸지만 자기 몫은 집지 않았다."
         },
         {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "출장 가면 하나씩 삽니다.",
+          "text": "저는 됐어요. 보는 쪽이 더 재밌어서.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "전문가의 가방치고 꽤 귀여웠다."
+          "text": "“세현 씨도 그려요?”라는 말에 표정이 아주 미세하게 굳었다."
         },
         {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "수집은 별개죠.",
-          "portrait": "main"
+          "text": "아, 저는 진짜 별거 없어요. 다음 코너 갈까요?",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "조금 전까지 끝없이 이어지던 질문이 자기 얘기 하나에 너무 쉽게 끊겼다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 오세현이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "크게 특별한 일은 아니었다. 그래도 이런 날들이 쌓일수록 오세현이라는 사람의 윤곽이 선명해졌다."
 }

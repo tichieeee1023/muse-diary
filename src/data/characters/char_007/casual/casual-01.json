@@ -1,37 +1,41 @@
 {
   "id": "char_007_casual_01",
   "kind": "casual",
-  "title": "역사책 낙서",
+  "title": "키오스크 앞의 전사",
   "minAffection": 0,
-  "maxAffection": 59,
-  "defaultPortrait": "hmm",
-  "completionAffection": 5,
+  "maxAffection": 39,
+  "defaultPortrait": "troubled",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "휘람 책 여백에 빽빽한 정정 메모가 있었다."
+          "text": "푸드코트 키오스크 앞에서 휘람이 화면을 노려보고 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "김휘람",
-          "text": "출판사에 보내고 싶어요.",
+          "text": "왜 주문 하나 하는데 선택지가 이렇게 많습니까.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "전투 계획이라도 세우는 사람처럼 진지했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "…이럴 때 킹받네, 라고 하는 게 맞습니까?",
           "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "고3 문제집보다 역사책에 더 진심인 얼굴이었다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "김휘람",
-          "text": "진짜 많이 틀렸거든요.",
-          "portrait": "hmm"
+          "text": "누가 가르쳤는지부터 묻고 싶어졌다."
         }
       ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 김휘람이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "역사에는 강한데 키오스크에는 약했다."
 }

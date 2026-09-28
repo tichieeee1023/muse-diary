@@ -1,9 +1,9 @@
 {
   "id": "char_001_casual_07",
   "kind": "casual",
-  "title": "우산 한 칸",
+  "title": "기억해둔 주문",
   "minAffection": 40,
-  "maxAffection": 100,
+  "maxAffection": 89,
   "defaultPortrait": "main",
   "completionAffection": 5,
   "repeatable": true,
@@ -12,26 +12,85 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "비 오는 날 우산꽂이에 우산이 하나뿐이었다."
+          "text": "카페에 도착하니 도윤 앞에 빈 자리가 하나 남아 있었다. 맞은편에는 아직 손대지 않은 음료도 한 잔 놓여 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "같이 가시죠. 방향 비슷하니까.",
+          "text": "늦으실 줄 알았습니다.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "도윤은 끝까지 자기 쪽 어깨가 더 젖는 걸 모른 척했다."
+          "text": "컵을 보니 늘 마시던 메뉴였다."
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "괜찮습니다. 책만 안 젖으면.",
+          "text": "혹시 바뀌었으면 제가 마시죠.",
           "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "도윤은 아무렇지 않게 말했지만, 주문 시각은 {name}이 도착하기 한참 전이었다."
         }
-      ]
+      ],
+      "choice": {
+        "id": "c7",
+        "options": [
+          {
+            "id": "a",
+            "text": "“기다렸어요?”",
+            "affection": 6,
+            "memoryKey": "asked_waiting",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "…조금요.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "narration",
+                "text": "예전 같으면 부정부터 했을 사람이 이번에는 짧게 인정했다."
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“내 취향 진짜 다 기억하네요.”",
+            "affection": 5,
+            "memoryKey": "noticed_memory",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "기억하고 싶은 건 잘 안 잊습니다.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“다음엔 내가 도윤 씨 거 사둘게요.”",
+            "affection": 7,
+            "memoryKey": "reciprocal_care",
+            "response": [
+              {
+                "type": "narration",
+                "text": "그가 컵을 들다가 멈춘다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "그럼…쓴 걸로 부탁드립니다.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 서도윤이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "도윤의 기억은 이제 일방적인 관찰이 아니라 서로 주고받는 것이 되어가고 있었다."
 }

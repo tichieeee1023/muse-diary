@@ -1,0 +1,40 @@
+{
+  "id": "char_008_casual_09",
+  "kind": "casual",
+  "title": "파란 방의 스케치",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "hmm",
+  "completionAffection": 4,
+  "repeatable": true,
+  "placeIds": [
+    "aquarium"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "해파리 전시실 구석에서 세현이 작은 수첩에 무언가를 그리고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "완성할 건 아니에요. 그냥 선만 좀.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "완성이라는 단어를 먼저 꺼낸 걸 보면 그 역시 자기 버릇을 알고 있다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "…근데 오늘은 끝까지 그려볼까 싶기도 하고.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "푸른 빛 아래에서 미완성에 머물던 손이 조금 더 움직였다."
+}

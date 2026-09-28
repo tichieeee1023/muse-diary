@@ -1,76 +1,41 @@
 {
   "id": "char_005_casual_03",
   "kind": "casual",
-  "title": "새잎",
-  "minAffection": 20,
-  "maxAffection": 99,
-  "defaultPortrait": "troubled",
-  "completionAffection": 3,
+  "title": "야간 간식",
+  "minAffection": 10,
+  "maxAffection": 59,
+  "defaultPortrait": "main",
+  "completionAffection": 4,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "휴게실 화분에 새잎이 났다. 태겸은 사진까지 찍고 있었다."
+          "text": "자정이 가까운 시간, 태겸이 편의점 앞에서 컵라면 뚜껑을 누르고 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "강태겸",
-          "text": "기록용입니다.",
-          "portrait": "troubled"
+          "text": "야간 근무는 이 시간이 제일 애매합니다.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "사진 앨범에는 잎 사진이 생각보다 많았다."
+          "text": "라면 옆에는 작은 우유와 바나나가 놓여 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "강태겸",
-          "text": "삭제 안 합니다.",
-          "portrait": "troubled"
+          "text": "식사는 챙겨야 합니다. 안 그러면 판단이 느려집니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "자기 관리 얘기를 하면서도 그는 {name} 앞에 따뜻한 캔커피 하나를 밀어놨다."
         }
-      ],
-      "choice": {
-        "id": "casual_3_choice",
-        "options": [
-          {
-            "id": "a",
-            "text": "조금 솔직하게 반응한다.",
-            "affection": 3,
-            "memoryKey": "casual_3_warm",
-            "response": [
-              {
-                "type": "narration",
-                "text": "강태겸의 표정이 아주 조금 풀렸다."
-              }
-            ]
-          },
-          {
-            "id": "b",
-            "text": "가볍게 놀려본다.",
-            "affection": 2,
-            "response": [
-              {
-                "type": "narration",
-                "text": "강태겸은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
-              }
-            ]
-          },
-          {
-            "id": "c",
-            "text": "그냥 옆에서 지켜본다.",
-            "affection": 1,
-            "response": [
-              {
-                "type": "narration",
-                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
-              }
-            ]
-          }
-        ]
-      }
+      ]
     }
   ],
-  "closing": "사소한 만남이었다. 그래서 오히려 강태겸이라는 사람을 조금 더 알게 된 것 같다."
+  "closing": "말보다 행동이 먼저 나오는 타입이라는 걸 조금씩 알게 됐다."
 }

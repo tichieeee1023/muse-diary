@@ -1,0 +1,40 @@
+{
+  "id": "char_010_casual_10",
+  "kind": "casual",
+  "title": "반걸음의 거리",
+  "minAffection": 0,
+  "maxAffection": 100,
+  "defaultPortrait": "smile",
+  "completionAffection": 5,
+  "repeatable": true,
+  "placeIds": [
+    "rooftop"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "루프탑 난간 앞에서 재하는 습관처럼 반걸음 앞에 섰다가 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "…이쪽으로 오십시오.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "이번에는 앞을 막지 않고 옆자리를 비운다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "같이 보는 편이 낫겠군요.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "보호하는 거리에서 나란히 서는 거리로 조금씩 바뀌고 있었다."
+}

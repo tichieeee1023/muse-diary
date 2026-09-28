@@ -1,7 +1,7 @@
 {
   "id": "char_002_first",
   "kind": "first",
-  "title": "쇼윈도 앞의 평가",
+  "title": "쇼윈도 앞의 낯선 평가",
   "threshold": 0,
   "defaultPortrait": "main",
   "completionAffection": 0,
@@ -10,22 +10,50 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "쇼윈도 앞에서 남자가 진열을 노골적으로 훑어보고 있었다."
+          "text": "대형 쇼핑몰 중앙의 팝업 공간은 설치 막바지였다. 유리 너머로 마네킹과 소품이 빼곡하게 놓여 있었고, 한 남자가 한참 동안 그 앞을 움직이지 않았다."
+        },
+        {
+          "type": "narration",
+          "text": "감상하는 얼굴은 아니었다. 시선이 천장 조명에서 바닥의 동선, 진열대 높이까지 빠르게 훑었다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "저 배치, 답답하지 않습니까?",
+          "text": "입구가 막혔네요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "혼잣말인 줄 알았는데 그가 옆에 서 있던 {name} 쪽을 봤다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "들어가고 싶다는 생각보다 돌아가고 싶다는 생각이 먼저 들지 않습니까?",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "처음 보는 사람에게 동의를 구한 게 아니라 자신의 판단을 확인하는 태도에 가까웠다."
+          "text": "동의를 구한다기보다 자신의 판단을 확인하는 말투였다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "자세히 보니 출입증이 목에 걸려 있었다. 관계자였다. 그런데 관계자치고는 진열을 보는 표정이 꽤 노골적으로 못마땅했다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "아, 취향 다르면 굳이 맞출 필요는 없습니다.",
+          "text": "예쁜 것과 잘 만든 건 다릅니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "저건 예쁘긴 한데, 사람을 안으로 끌어들이진 못하죠.",
           "portrait": "hmm"
         }
       ],
@@ -34,49 +62,95 @@
         "options": [
           {
             "id": "a",
-            "text": "“조금 답답하긴 해요.”",
-            "affection": 2,
-            "memoryKey": "first_a",
+            "text": "“그래도 안쪽에 보고 싶은 소품은 있어요.”",
+            "affection": 3,
+            "memoryKey": "first_defended_interest",
             "response": [
+              {
+                "type": "narration",
+                "text": "주원이 다시 쇼윈도를 봤다. 이번에는 진열보다 {name}이 가리킨 소품에 시선이 머문다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "역시. 시선이 막히죠.",
+                "text": "그건 괜찮네요. 적어도 하나는 시선을 붙잡았으니까.",
                 "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "칭찬은 작품에게 갔고, {name}에게는 오지 않았다. 이상하게 그 점이 더 솔직하게 느껴졌다."
               }
             ]
           },
           {
             "id": "b",
-            "text": "“전 괜찮은데요.”",
-            "affection": 1,
-            "memoryKey": "first_b",
+            "text": "“처음 보는 사람한테도 이렇게 바로 평가해요?”",
+            "affection": 2,
+            "memoryKey": "first_called_him_out",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "그럴 수 있죠. 취향은 다르니까.",
+                "text": "사람을 평가한 건 아닙니다.",
                 "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "한 박자 뒤, 그가 아주 조금 눈썹을 올렸다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "불편했다면 사과하죠. 직업병이 심해서.",
+                "portrait": "troubled"
               }
             ]
           },
           {
             "id": "c",
-            "text": "“원래 이렇게 바로 평가해요?”",
-            "affection": 0,
-            "memoryKey": "first_c",
+            "text": "“전 답답한지 잘 모르겠는데요.”",
+            "affection": 1,
+            "memoryKey": "first_disagreed",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "직업병입니다. 불편했으면 사과하죠.",
+                "text": "그럴 수 있습니다. 취향은 합의하는 게 아니니까.",
                 "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "반박할 줄 알았는데 그는 의외로 미련 없이 고개를 끄덕였다."
               }
             ]
           }
         ]
       }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "잠시 뒤 스태프가 그를 불렀다. 남자는 돌아서기 전 삐뚤어진 안내판을 손끝으로 반듯하게 세웠다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "한주원입니다. 여기 디스플레이 쪽 맡고 있습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "이름을 알려준 이유도 친해지고 싶어서라기보다 다음에 현장에서 마주쳤을 때 서로 곤란하지 않기 위해서인 듯했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "그리고 아까 말은 잊으셔도 됩니다. 결국 들어갈 사람은 들어가니까.",
+          "portrait": "main"
+        }
+      ]
     }
   ],
-  "closing": "첫인상만으로는 아직 아무것도 알 수 없다. 다만 다시 마주치면 조금 더 알게 될지도 모른다."
+  "closing": "첫 만남의 한주원은 사람보다 공간을 먼저 보는 남자였다. {name}이 그의 시야에 얼마나 남았는지는 알 수 없었다."
 }
