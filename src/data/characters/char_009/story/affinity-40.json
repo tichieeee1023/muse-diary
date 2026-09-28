@@ -1,0 +1,99 @@
+{
+  "id": "char_009_affinity_40",
+  "kind": "story",
+  "title": "공포영화 상담사",
+  "threshold": 40,
+  "purpose": "이겸의 의외로 겁 많은 면",
+  "defaultPortrait": "hmm",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "쇼핑몰 전광판에서 공포영화 예고편이 갑자기 재생됐다. 이겸의 어깨가 아주 미세하게 튀었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "…놀란 게 아니라 소리가 컸습니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "손목의 검은 문양보다 화면 속 귀신을 더 경계하는 표정이었다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "이건 기록하지 맙시다.",
+          "portrait": "hmm"
+        }
+      ],
+      "choice": {
+        "id": "aff_40_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“무서워해요?”",
+            "affection": 6,
+            "memoryKey": "affinity_40_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "장르를 선호하지 않을 뿐입니다.",
+                "portrait": "hmm"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“손 잡아줄까요?”",
+            "affection": 4,
+            "memoryKey": "affinity_40_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "그 정도까진… 아니, 잠깐은 괜찮겠네요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“상담 필요하신가요?”",
+            "affection": 5,
+            "memoryKey": "affinity_40_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "직업 농담은 반칙입니다.",
+                "portrait": "hmm"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 공포영화 상담사은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "이겸의 의외로 겁 많은 면 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "공포영화 상담사 — 중요한 관계 기록이 다이어리에 남았다."
+}

@@ -1,0 +1,99 @@
+{
+  "id": "char_003_affinity_40",
+  "kind": "story",
+  "title": "세 정거장 지나서",
+  "threshold": 40,
+  "purpose": "해준의 인간적인 빈틈을 보여준다",
+  "defaultPortrait": "hmm",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "강변 벤치에서 해준을 발견했을 때 그는 앉은 채 잠들어 있었다. 손에는 읽다 만 시간표가 들려 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "…몇 분 잤습니까?",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "깨어난 순간부터 시간을 확인하는 모습이 기관사답다가도, 머리카락이 한쪽으로 눌린 건 어쩔 수 없었다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "보지 마십시오. 지금 상태 안 좋습니다.",
+          "portrait": "hmm"
+        }
+      ],
+      "choice": {
+        "id": "aff_40_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“사진 안 찍었어요.”",
+            "affection": 6,
+            "memoryKey": "affinity_40_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "그 말부터 하는 게 더 수상합니다.",
+                "portrait": "hmm"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“조금 더 자도 돼요.”",
+            "affection": 4,
+            "memoryKey": "affinity_40_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "그러면… 5분만 부탁하죠.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“세 정거장쯤 지나갔어요.”",
+            "affection": 5,
+            "memoryKey": "affinity_40_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "농담이면 다행이고요.",
+                "portrait": "hmm"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 세 정거장 지나서은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "해준의 인간적인 빈틈을 보여준다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "세 정거장 지나서 — 중요한 관계 기록이 다이어리에 남았다."
+}

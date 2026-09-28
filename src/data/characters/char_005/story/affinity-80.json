@@ -1,0 +1,99 @@
+{
+  "id": "char_005_affinity_80",
+  "kind": "story",
+  "title": "화분 세 개",
+  "threshold": 80,
+  "purpose": "거친 인상과 다른 생활 습관을 보여준다",
+  "defaultPortrait": "smile",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "태겸의 휴게실 창가에는 구조한 화분 세 개가 줄지어 있었다. 잎마다 날짜가 적힌 작은 메모까지 붙어 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "죽어가길래 가져온 겁니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "상처투성이 손으로 새잎을 확인하는 모습이 이상할 만큼 조심스러웠다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "사람보다 얘들이 말은 잘 듣죠.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "aff_80_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“엄청 다정하네요.”",
+            "affection": 6,
+            "memoryKey": "affinity_80_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "강태겸",
+                "text": "그 단어는 안 어울립니다.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“하나 이름 붙여도 돼요?”",
+            "affection": 4,
+            "memoryKey": "affinity_80_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "강태겸",
+                "text": "…하나는 허락하죠.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“나한테도 메모 붙일 거예요?”",
+            "affection": 5,
+            "memoryKey": "affinity_80_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "강태겸",
+                "text": "필요하면요. ‘위험한 데 가지 말 것’.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 화분 세 개은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "거친 인상과 다른 생활 습관을 보여준다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "화분 세 개 — 중요한 관계 기록이 다이어리에 남았다."
+}

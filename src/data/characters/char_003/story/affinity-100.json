@@ -1,0 +1,99 @@
+{
+  "id": "char_003_affinity_100",
+  "kind": "story",
+  "title": "종착역 이후",
+  "threshold": 100,
+  "purpose": "업무가 끝난 뒤에도 함께 있고 싶은 관계가 된다",
+  "defaultPortrait": "smile",
+  "completionAffection": 0,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "마지막 열차가 지나간 플랫폼에서 해준은 퇴근했는데도 서두르지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "오늘은 시간 안 봐도 됩니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "전광판 대신 {name}을 보는 시간이 길어졌다. 늘 시간을 맞추던 사람이 처음으로 시간을 흘려보냈다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "집에 가기 아쉽다고 말하면 너무 늦습니까?",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "aff_100_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“전혀 안 늦었어요.”",
+            "affection": 6,
+            "memoryKey": "affinity_100_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "다행이네요.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“그럼 한 정거장 더 걸어요.”",
+            "affection": 4,
+            "memoryKey": "affinity_100_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "좋습니다. 오늘만은 천천히.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“나도 아쉬웠어요.”",
+            "affection": 5,
+            "memoryKey": "affinity_100_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "…그 말 듣고 싶었습니다.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 종착역 이후은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "업무가 끝난 뒤에도 함께 있고 싶은 관계가 된다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "종착역 이후 — 중요한 관계 기록이 다이어리에 남았다."
+}

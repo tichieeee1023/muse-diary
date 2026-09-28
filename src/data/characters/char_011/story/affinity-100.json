@@ -1,0 +1,99 @@
+{
+  "id": "char_011_affinity_100",
+  "kind": "story",
+  "title": "막이 내린 다음 장면",
+  "threshold": 100,
+  "purpose": "공연이 끝난 뒤의 자신으로 사랑을 고백한다",
+  "defaultPortrait": "smile",
+  "completionAffection": 0,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "공연이 끝난 무대에서 유리안은 평소의 화려한 인사를 하지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "이제 보여줄 건 다 보여준 것 같은데.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "손끝의 빛도, 미소도 없이 평범하게 말했다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "그래도 계속 봐줬으면 좋겠어요. 제가 당신을 좋아하거든요.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "aff_100_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“계속 볼게요.”",
+            "affection": 6,
+            "memoryKey": "affinity_100_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "유리안",
+                "text": "약속이에요.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“나도 좋아해요.”",
+            "affection": 4,
+            "memoryKey": "affinity_100_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "유리안",
+                "text": "…와, 이건 진짜 대사 못 하겠다. 좋다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“다음 장면도 같이 만들어요.”",
+            "affection": 5,
+            "memoryKey": "affinity_100_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "유리안",
+                "text": "그게 제일 좋네요.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 막이 내린 다음 장면은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "공연이 끝난 뒤의 자신으로 사랑을 고백한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "막이 내린 다음 장면 — 중요한 관계 기록이 다이어리에 남았다."
+}

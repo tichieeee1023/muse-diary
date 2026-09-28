@@ -1,0 +1,37 @@
+{
+  "id": "char_011_casual_01",
+  "kind": "casual",
+  "title": "무대 뒤 생수",
+  "minAffection": 0,
+  "maxAffection": 59,
+  "defaultPortrait": "main",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "유리안은 무대 뒤에서 반짝이 의상 차림으로 생수를 벌컥 마셨다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "환상은 무대에 두고 왔습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "숨을 고르는 얼굴은 생각보다 평범했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "지금은 그냥 사람입니다.",
+          "portrait": "main"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 유리안이라는 사람을 조금 더 알게 된 것 같다."
+}

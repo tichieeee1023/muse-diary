@@ -1,0 +1,20 @@
+{
+  "characterId": "char_011",
+  "name": "유리안",
+  "initialAttitude": "performative_curiosity",
+  "initialAttitudeLabel": "연기자적 호기심",
+  "surface": "화려하고 잘 웃고 능숙하다. 첫 관심도 상대가 흥미롭기 때문이지 연애 감정은 아니다.",
+  "gapMoe": "무대 밖에서는 의외로 낯을 가리고, 진심을 말하려 하면 화려한 말솜씨가 전부 사라진다. 생활은 놀랄 만큼 소박하다.",
+  "weakness": "사람들이 좋아하는 ‘유리안’과 실제 자신을 구분 못 할까 봐 두려워한다.",
+  "lateChange": "무대용 미소 대신 서툰 진짜 표정을 {name}에게 먼저 보여준다.",
+  "voiceNote": "화려하고 능청스러운 존댓말. 진심일 때 짧고 평범해진다.",
+  "specialFromFirstMeet": false,
+  "visuals": {
+    "main": "/assets/characters/char_011/main.webp",
+    "smile": "/assets/characters/char_011/smile.webp",
+    "troubled": "/assets/characters/char_011/troubled.webp",
+    "hmm": "/assets/characters/char_011/hmm.webp",
+    "endingCg": "/assets/characters/char_011/ending-cg.webp",
+    "endingDoll": "/assets/characters/char_011/ending-doll.webp"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "id": "char_009_affinity_100",
+  "kind": "story",
+  "title": "말하지 않아도 되는 밤",
+  "threshold": 100,
+  "purpose": "이겸이 관계를 분석하지 않고 선택한다",
+  "defaultPortrait": "smile",
+  "completionAffection": 0,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "밤길에서 이겸은 평소처럼 안전한 길을 설명하지 않았다. 그냥 {name} 옆을 걸었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "이 감정을 정의하는 데 오래 걸렸습니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "잠시 웃은 뒤 그는 스스로 말을 고쳤다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "아니요. 오늘은 정의 안 하겠습니다. 그냥 좋아합니다.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "aff_100_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“나도 좋아해요.”",
+            "affection": 6,
+            "memoryKey": "affinity_100_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "다행입니다.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“상담 결과인가요?”",
+            "affection": 4,
+            "memoryKey": "affinity_100_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "그 질문은 예상했습니다. 개인적인 결론입니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“그 말이면 충분해요.”",
+            "affection": 5,
+            "memoryKey": "affinity_100_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "저도요.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 말하지 않아도 되는 밤은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "이겸이 관계를 분석하지 않고 선택한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "말하지 않아도 되는 밤 — 중요한 관계 기록이 다이어리에 남았다."
+}

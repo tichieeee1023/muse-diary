@@ -1,0 +1,37 @@
+{
+  "id": "char_008_casual_02",
+  "kind": "casual",
+  "title": "사람 그림",
+  "minAffection": 20,
+  "maxAffection": 79,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "세현의 메모 속 사람 그림은 충격적으로 단순했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "정보 전달은 됩니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "머리와 몸이 원 두 개로 끝났다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "표정까지 그려야 해요?",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 오세현이라는 사람을 조금 더 알게 된 것 같다."
+}

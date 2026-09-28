@@ -1,0 +1,99 @@
+{
+  "id": "char_004_affinity_80",
+  "kind": "story",
+  "title": "웃지 않는 얼굴",
+  "threshold": 80,
+  "purpose": "나에게만 연기하지 않는 순간",
+  "defaultPortrait": "smile",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "가게 문을 닫은 뒤 로운은 한동안 웃지 않았다. 침묵 속에서 손가락만 천천히 움직였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "저 원래 조용한 사람입니다. 믿기 어렵죠?",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "모두를 편하게 해주느라 만든 미소보다 지금 얼굴이 훨씬 가까워 보였다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "당신 앞에서는 좀 쉬어도 될 것 같아서.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "aff_80_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“그 얼굴도 좋아요.”",
+            "affection": 6,
+            "memoryKey": "affinity_80_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "이로운",
+                "text": "…그 말 오래 기억할게요.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“그럼 쉬어요. 말 안 해도 돼요.”",
+            "affection": 4,
+            "memoryKey": "affinity_80_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "이로운",
+                "text": "네. 옆에만 있어줘요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“내 앞에서만?”",
+            "affection": 5,
+            "memoryKey": "affinity_80_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "이로운",
+                "text": "가능하면요.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 웃지 않는 얼굴은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "나에게만 연기하지 않는 순간 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "웃지 않는 얼굴 — 중요한 관계 기록이 다이어리에 남았다."
+}

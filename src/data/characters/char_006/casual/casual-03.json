@@ -1,0 +1,76 @@
+{
+  "id": "char_006_casual_03",
+  "kind": "casual",
+  "title": "쓴 커피 한 모금",
+  "minAffection": 20,
+  "maxAffection": 99,
+  "defaultPortrait": "troubled",
+  "completionAffection": 3,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "시온이 아메리카노를 마시고 표정을 숨기지 못했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "왜 어른들은 이걸 좋아하죠?",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "곧바로 시럽을 두 번 넣었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "전 아직 이해 못 하겠습니다.",
+          "portrait": "troubled"
+        }
+      ],
+      "choice": {
+        "id": "casual_3_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "조금 솔직하게 반응한다.",
+            "affection": 3,
+            "memoryKey": "casual_3_warm",
+            "response": [
+              {
+                "type": "narration",
+                "text": "백시온의 표정이 아주 조금 풀렸다."
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "가볍게 놀려본다.",
+            "affection": 2,
+            "response": [
+              {
+                "type": "narration",
+                "text": "백시온은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "그냥 옆에서 지켜본다.",
+            "affection": 1,
+            "response": [
+              {
+                "type": "narration",
+                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 백시온이라는 사람을 조금 더 알게 된 것 같다."
+}

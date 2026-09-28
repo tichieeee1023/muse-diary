@@ -1,0 +1,99 @@
+{
+  "id": "char_009_affinity_60",
+  "kind": "story",
+  "title": "묻지 못한 것",
+  "threshold": 60,
+  "purpose": "이겸이 자신의 비밀을 말하기 시작한다",
+  "defaultPortrait": "troubled",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이겸은 처음으로 질문 대신 자기 손목을 먼저 내밀었다. 검은 문양이 맥박처럼 천천히 움직였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "이건 상담으로 해결되는 문제가 아닙니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "늘 남의 말을 기다리던 사람이 자기 이야기를 꺼내는 데 오래 걸렸다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "그래도 당신한테는 말하고 싶었어요.",
+          "portrait": "troubled"
+        }
+      ],
+      "choice": {
+        "id": "aff_60_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“들어줄게요.”",
+            "affection": 6,
+            "memoryKey": "affinity_60_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "고맙습니다. 그럼 천천히.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“무서웠어요?”",
+            "affection": 4,
+            "memoryKey": "affinity_60_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "네. 인정하기 싫었지만.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“왜 나한테요?”",
+            "affection": 5,
+            "memoryKey": "affinity_60_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "그게 제일 설명하기 어렵네요.",
+                "portrait": "troubled"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 묻지 못한 것은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "이겸이 자신의 비밀을 말하기 시작한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "묻지 못한 것 — 중요한 관계 기록이 다이어리에 남았다."
+}

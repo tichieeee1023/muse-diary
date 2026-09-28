@@ -1,0 +1,99 @@
+{
+  "id": "char_007_affinity_100",
+  "kind": "story",
+  "title": "오래된 이름, 새로운 약속",
+  "threshold": 100,
+  "purpose": "과거가 아니라 지금의 자신으로 사랑받기를 선택한다",
+  "defaultPortrait": "smile",
+  "completionAffection": 0,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "휘람은 오래된 기록 속 이름을 손가락으로 가리고 자기 이름만 남겼다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "그 이름으로 불리던 시간보다 지금이 더 좋아요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "책을 덮은 뒤에는 더 이상 기록을 보지 않았다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "{name} 씨가 김휘람으로 기억해주면 되니까.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "aff_100_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“김휘람으로 좋아해요.”",
+            "affection": 6,
+            "memoryKey": "affinity_100_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "김휘람",
+                "text": "…그 말 진짜 오래 기억할게요.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“앞으로의 기록은 같이 만들어요.”",
+            "affection": 4,
+            "memoryKey": "affinity_100_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "김휘람",
+                "text": "좋아요. 이번엔 틀리지 않게.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“그 이름 잊을 일 없어요.”",
+            "affection": 5,
+            "memoryKey": "affinity_100_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "김휘람",
+                "text": "그럼 저도 안 잊을게요.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 오래된 이름, 새로운 약속은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "과거가 아니라 지금의 자신으로 사랑받기를 선택한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "오래된 이름, 새로운 약속 — 중요한 관계 기록이 다이어리에 남았다."
+}

@@ -1,0 +1,37 @@
+{
+  "id": "char_010_casual_05",
+  "kind": "casual",
+  "title": "문구점 앞",
+  "minAffection": 40,
+  "maxAffection": 100,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "재하가 문구점 쇼윈도 앞에서 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "필요한 게 있습니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "시선은 작은 강아지 스티커 세트에 꽂혀 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "선물용입니다.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 권재하이라는 사람을 조금 더 알게 된 것 같다."
+}

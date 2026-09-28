@@ -1,0 +1,37 @@
+{
+  "id": "char_003_casual_05",
+  "kind": "casual",
+  "title": "전광판 대신",
+  "minAffection": 60,
+  "maxAffection": 100,
+  "defaultPortrait": "smile",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "해준이 전광판을 보려다 {name} 쪽으로 시선을 틀었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "오늘은 시간 괜찮습니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "본인이 먼저 놀란 얼굴이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "가끔은 그래도 되겠죠.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 문해준이라는 사람을 조금 더 알게 된 것 같다."
+}

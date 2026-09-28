@@ -1,0 +1,37 @@
+{
+  "id": "char_006_casual_04",
+  "kind": "casual",
+  "title": "젖지 않은 소매",
+  "minAffection": 40,
+  "maxAffection": 100,
+  "defaultPortrait": "hmm",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "비가 오는데 시온 소매만 이상하게 마른 채였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "재질이 좋은 겁니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "뻔한 거짓말을 하면서도 웃음이 새어 나왔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "믿어줘요. 오늘만.",
+          "portrait": "hmm"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 백시온이라는 사람을 조금 더 알게 된 것 같다."
+}

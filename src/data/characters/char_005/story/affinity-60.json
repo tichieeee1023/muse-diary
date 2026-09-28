@@ -1,0 +1,99 @@
+{
+  "id": "char_005_affinity_60",
+  "kind": "story",
+  "title": "지우지 못한 흔적",
+  "threshold": 60,
+  "purpose": "태겸의 일이 단순 청소가 아님을 밝힌다",
+  "defaultPortrait": "troubled",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 검은 자국은 걸레로 닦을수록 더 짙어졌다. 태겸은 결국 장갑을 벗고 손바닥으로 그것을 눌렀다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "보면 안 되는 걸 봤네요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "늘 쫓아내려 했던 이유가 귀찮음이 아니라 보호였다는 게 뒤늦게 선명해졌다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "겁나면 지금부터라도 멀리해도 됩니다.",
+          "portrait": "troubled"
+        }
+      ],
+      "choice": {
+        "id": "aff_60_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“그럴 생각 없어요.”",
+            "affection": 6,
+            "memoryKey": "affinity_60_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "강태겸",
+                "text": "…예상은 했습니다.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“혼자 계속 했어요?”",
+            "affection": 4,
+            "memoryKey": "affinity_60_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "강태겸",
+                "text": "네. 그래서 익숙합니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“나도 조심할게요.”",
+            "affection": 5,
+            "memoryKey": "affinity_60_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "강태겸",
+                "text": "그 말은 꼭 지키세요.",
+                "portrait": "troubled"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 지우지 못한 흔적은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "태겸의 일이 단순 청소가 아님을 밝힌다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "지우지 못한 흔적 — 중요한 관계 기록이 다이어리에 남았다."
+}

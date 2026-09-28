@@ -1,0 +1,37 @@
+{
+  "id": "char_011_casual_04",
+  "kind": "casual",
+  "title": "마술 실패",
+  "minAffection": 40,
+  "maxAffection": 100,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "유리안이 동전을 사라지게 하다 바닥에 떨어뜨렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "오늘 습도 탓입니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "마법을 쓰는 사람이 기본 마술에서 실패했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "진짜예요. 웃지 마요.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 유리안이라는 사람을 조금 더 알게 된 것 같다."
+}

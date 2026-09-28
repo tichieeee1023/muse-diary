@@ -1,0 +1,37 @@
+{
+  "id": "char_012_casual_05",
+  "kind": "casual",
+  "title": "놓친 버스",
+  "minAffection": 40,
+  "maxAffection": 100,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이현이 버스를 눈앞에서 놓쳤다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "…이건 예상 못 했습니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "시간을 다루는 사람처럼 보이는 남자가 허탈하게 정류장에 섰다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "다음 거 타죠. 같이.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 진이현이라는 사람을 조금 더 알게 된 것 같다."
+}

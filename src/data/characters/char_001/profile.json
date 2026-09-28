@@ -1,0 +1,20 @@
+{
+  "characterId": "char_001",
+  "name": "서도윤",
+  "initialAttitude": "indifferent",
+  "initialAttitudeLabel": "무관심",
+  "surface": "말수가 적고 차분하다. 친절하더라도 업무와 사적인 관심의 선을 정확히 긋는다.",
+  "gapMoe": "무심한 얼굴로 로맨스 소설의 사소한 장면에 과몰입한다. 전자기기에는 믿기 어려울 만큼 약하다.",
+  "weakness": "좋아하는 걸 들키면 책으로 얼굴을 가리는 버릇.",
+  "lateChange": "말수는 그대로 적지만, 이제는 먼저 읽을 책을 골라두고 {name}이 올 시간을 의식한다.",
+  "voiceNote": "짧고 정돈된 존댓말. 감정이 커질수록 오히려 말이 더 짧아진다.",
+  "specialFromFirstMeet": false,
+  "visuals": {
+    "main": "/assets/characters/char_001/main.webp",
+    "smile": "/assets/characters/char_001/smile.webp",
+    "troubled": "/assets/characters/char_001/troubled.webp",
+    "hmm": "/assets/characters/char_001/hmm.webp",
+    "endingCg": "/assets/characters/char_001/ending-cg.webp",
+    "endingDoll": "/assets/characters/char_001/ending-doll.webp"
+  }
+}

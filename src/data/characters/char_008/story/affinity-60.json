@@ -1,0 +1,99 @@
+{
+  "id": "char_008_affinity_60",
+  "kind": "story",
+  "title": "작품보다 먼저",
+  "threshold": 60,
+  "purpose": "세현이 주인공을 보는 이유가 달라지기 시작한다",
+  "defaultPortrait": "troubled",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "새 전시가 열렸는데 세현은 작품 설명보다 {name}의 표정을 먼저 확인했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "아, 또 그랬네요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "본인도 자각한 순간 목덜미까지 빨개졌다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "요즘은 작품 반응보다 당신 반응이 더 궁금합니다.",
+          "portrait": "troubled"
+        }
+      ],
+      "choice": {
+        "id": "aff_60_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“그건 좀 특별하네요.”",
+            "affection": 6,
+            "memoryKey": "affinity_60_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "오세현",
+                "text": "…네. 꽤요.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“이제 연구 아니죠?”",
+            "affection": 4,
+            "memoryKey": "affinity_60_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "오세현",
+                "text": "아마 아닌 것 같아요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“나도 세현 씨부터 봤어요.”",
+            "affection": 5,
+            "memoryKey": "affinity_60_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "오세현",
+                "text": "그 말은 위험한데요.",
+                "portrait": "troubled"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 작품보다 먼저은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "세현이 주인공을 보는 이유가 달라지기 시작한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "작품보다 먼저 — 중요한 관계 기록이 다이어리에 남았다."
+}

@@ -1,0 +1,37 @@
+{
+  "id": "char_008_casual_07",
+  "kind": "casual",
+  "title": "작품보다 먼저",
+  "minAffection": 80,
+  "maxAffection": 100,
+  "defaultPortrait": "smile",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "새 전시장에 들어선 세현이 작품보다 {name}부터 봤다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "아, 또 걸렸네.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "본인도 이제 숨길 생각이 없는 듯했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "습관 됐나 봐요.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 오세현이라는 사람을 조금 더 알게 된 것 같다."
+}

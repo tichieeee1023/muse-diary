@@ -1,0 +1,37 @@
+{
+  "id": "char_008_casual_05",
+  "kind": "casual",
+  "title": "관찰 역전",
+  "minAffection": 40,
+  "maxAffection": 100,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "{name}이 세현을 빤히 보자 그가 먼저 시선을 피했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "왜 이렇게 보는 건데요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "늘 관찰하던 사람이 관찰당하자 훨씬 약했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "이거 생각보다 긴장되네요.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 오세현이라는 사람을 조금 더 알게 된 것 같다."
+}

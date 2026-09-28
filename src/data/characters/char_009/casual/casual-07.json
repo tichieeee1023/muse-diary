@@ -1,0 +1,37 @@
+{
+  "id": "char_009_casual_07",
+  "kind": "casual",
+  "title": "먼저 연락",
+  "minAffection": 80,
+  "maxAffection": 100,
+  "defaultPortrait": "smile",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이겸이 먼저 “잘 들어갔습니까”라는 메시지를 보냈다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "직업적 확인은 아닙니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "만나자마자 스스로 정정했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "이제 그건 구분하려고요.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 차이겸이라는 사람을 조금 더 알게 된 것 같다."
+}

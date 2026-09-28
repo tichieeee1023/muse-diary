@@ -1,0 +1,37 @@
+{
+  "id": "char_012_casual_02",
+  "kind": "casual",
+  "title": "낡은 동전",
+  "minAffection": 0,
+  "maxAffection": 79,
+  "defaultPortrait": "hmm",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이현은 새 동전보다 마모된 옛 동전을 오래 들여다봤다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "오래 쓴 물건엔 시간이 남습니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "손끝이 유난히 조심스러웠다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "사람도 비슷하고요.",
+          "portrait": "hmm"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 진이현이라는 사람을 조금 더 알게 된 것 같다."
+}

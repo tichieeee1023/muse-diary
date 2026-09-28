@@ -1,0 +1,37 @@
+{
+  "id": "char_006_casual_01",
+  "kind": "casual",
+  "title": "아이스만",
+  "minAffection": 0,
+  "maxAffection": 59,
+  "defaultPortrait": "main",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "시온은 한겨울에도 아이스 음료를 주문했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "뜨거운 건 못 믿겠어요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "손은 차가운데 컵은 더 차가웠다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "이게 편합니다.",
+          "portrait": "main"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 백시온이라는 사람을 조금 더 알게 된 것 같다."
+}

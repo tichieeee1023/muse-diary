@@ -1,0 +1,99 @@
+{
+  "id": "char_006_affinity_40",
+  "kind": "story",
+  "title": "뜨거운 어묵",
+  "threshold": 40,
+  "purpose": "물의 남자가 뜨거운 걸 못 먹는 갭",
+  "defaultPortrait": "hmm",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "강변 포장마차에서 시온은 어묵 국물을 한 모금 마시다 눈을 질끈 감았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "뜨거운 건 반칙 아니에요?",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "물속에서는 누구보다 태연한 사람이 종이컵 앞에서 진지하게 경계했다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "불은 좀… 성격이 급하잖아요.",
+          "portrait": "hmm"
+        }
+      ],
+      "choice": {
+        "id": "aff_40_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“후후 불어줄까요?”",
+            "affection": 6,
+            "memoryKey": "affinity_40_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "그건 너무 부끄러운데… 해주면 먹을게요.",
+                "portrait": "hmm"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“물은 안 무서우면서.”",
+            "affection": 4,
+            "memoryKey": "affinity_40_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "그래서 제가 물 쪽 사람인가 봐요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“천천히 먹어요.”",
+            "affection": 5,
+            "memoryKey": "affinity_40_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "네. 같이 천천히.",
+                "portrait": "hmm"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 뜨거운 어묵은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "물의 남자가 뜨거운 걸 못 먹는 갭 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "뜨거운 어묵 — 중요한 관계 기록이 다이어리에 남았다."
+}

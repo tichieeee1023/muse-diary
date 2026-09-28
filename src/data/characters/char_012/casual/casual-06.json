@@ -1,0 +1,76 @@
+{
+  "id": "char_012_casual_06",
+  "kind": "casual",
+  "title": "오래된 캔디",
+  "minAffection": 60,
+  "maxAffection": 100,
+  "defaultPortrait": "smile",
+  "completionAffection": 3,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이현이 주머니에서 오래된 포장 디자인의 사탕을 꺼냈다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "아직 팝니다. 다행히.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "사라진 것들을 찾는 사람처럼 안도했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "하나 드릴까요?",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "casual_6_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "조금 솔직하게 반응한다.",
+            "affection": 3,
+            "memoryKey": "casual_6_warm",
+            "response": [
+              {
+                "type": "narration",
+                "text": "진이현의 표정이 아주 조금 풀렸다."
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "가볍게 놀려본다.",
+            "affection": 2,
+            "response": [
+              {
+                "type": "narration",
+                "text": "진이현은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "그냥 옆에서 지켜본다.",
+            "affection": 1,
+            "response": [
+              {
+                "type": "narration",
+                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 진이현이라는 사람을 조금 더 알게 된 것 같다."
+}

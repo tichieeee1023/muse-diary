@@ -1,0 +1,37 @@
+{
+  "id": "char_005_casual_04",
+  "kind": "casual",
+  "title": "장갑 여분",
+  "minAffection": 40,
+  "maxAffection": 100,
+  "defaultPortrait": "main",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "태겸이 새 장갑 한 켤레를 건넸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "혹시 모르니까 가지고 다녀요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "사이즈가 딱 맞았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "우연입니다.",
+          "portrait": "main"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 강태겸이라는 사람을 조금 더 알게 된 것 같다."
+}

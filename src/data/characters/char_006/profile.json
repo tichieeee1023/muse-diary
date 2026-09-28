@@ -1,0 +1,20 @@
+{
+  "characterId": "char_006",
+  "name": "백시온",
+  "initialAttitude": "playful",
+  "initialAttitudeLabel": "가벼운 호기심",
+  "surface": "사교적이고 장난이 많다. 처음에는 누구에게나 쉽게 다가가는 타입이라 특별함이 없다.",
+  "gapMoe": "물에서는 겁이 없는데 뜨거운 음식과 쓴 커피에 유난히 약하다. 혼자 있을 때는 생각보다 조용하다.",
+  "weakness": "진지한 감정을 말하려 하면 농담부터 던진다.",
+  "lateChange": "장난은 그대로지만, 중요한 순간에는 도망가지 않고 정확히 말한다.",
+  "voiceNote": "가볍고 친근한 존댓말. 가까워지면 말끝이 조금 편해진다.",
+  "specialFromFirstMeet": false,
+  "visuals": {
+    "main": "/assets/characters/char_006/main.webp",
+    "smile": "/assets/characters/char_006/smile.webp",
+    "troubled": "/assets/characters/char_006/troubled.webp",
+    "hmm": "/assets/characters/char_006/hmm.webp",
+    "endingCg": "/assets/characters/char_006/ending-cg.webp",
+    "endingDoll": "/assets/characters/char_006/ending-doll.webp"
+  }
+}

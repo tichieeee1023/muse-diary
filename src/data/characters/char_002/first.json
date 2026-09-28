@@ -1,0 +1,82 @@
+{
+  "id": "char_002_first",
+  "kind": "first",
+  "title": "쇼윈도 앞의 평가",
+  "threshold": 0,
+  "defaultPortrait": "main",
+  "completionAffection": 0,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "쇼윈도 앞에서 남자가 진열을 노골적으로 훑어보고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "저 배치, 답답하지 않습니까?",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "처음 보는 사람에게 동의를 구한 게 아니라 자신의 판단을 확인하는 태도에 가까웠다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "아, 취향 다르면 굳이 맞출 필요는 없습니다.",
+          "portrait": "hmm"
+        }
+      ],
+      "choice": {
+        "id": "first_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“조금 답답하긴 해요.”",
+            "affection": 2,
+            "memoryKey": "first_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "역시. 시선이 막히죠.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“전 괜찮은데요.”",
+            "affection": 1,
+            "memoryKey": "first_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "그럴 수 있죠. 취향은 다르니까.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“원래 이렇게 바로 평가해요?”",
+            "affection": 0,
+            "memoryKey": "first_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "직업병입니다. 불편했으면 사과하죠.",
+                "portrait": "main"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "closing": "첫인상만으로는 아직 아무것도 알 수 없다. 다만 다시 마주치면 조금 더 알게 될지도 모른다."
+}

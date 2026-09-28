@@ -1,0 +1,99 @@
+{
+  "id": "char_010_affinity_60",
+  "kind": "story",
+  "title": "상처의 방향",
+  "threshold": 60,
+  "purpose": "재하가 경계하는 이유를 밝힌다",
+  "defaultPortrait": "troubled",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "재하 손등의 오래된 흉터와 오늘 생긴 상처의 방향이 비슷했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "사람을 지키다 생긴 겁니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "그는 자세한 설명보다 먼저 {name}이 다치지 않았는지 확인했다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "그래서 위험한 걸 싫어합니다. 특히 반복되는 건.",
+          "portrait": "troubled"
+        }
+      ],
+      "choice": {
+        "id": "aff_60_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“이번엔 같이 조심해요.”",
+            "affection": 6,
+            "memoryKey": "affinity_60_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "그게 좋겠습니다.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“나 때문에 신경 쓰여요?”",
+            "affection": 4,
+            "memoryKey": "affinity_60_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "…네. 이제는.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“재하 씨도 다치지 마요.”",
+            "affection": 5,
+            "memoryKey": "affinity_60_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "그 말은 처음 듣네요.",
+                "portrait": "troubled"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 상처의 방향은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "재하가 경계하는 이유를 밝힌다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "상처의 방향 — 중요한 관계 기록이 다이어리에 남았다."
+}

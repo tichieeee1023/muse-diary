@@ -1,0 +1,76 @@
+{
+  "id": "char_009_casual_03",
+  "kind": "casual",
+  "title": "질문 금지 게임",
+  "minAffection": 20,
+  "maxAffection": 99,
+  "defaultPortrait": "main",
+  "completionAffection": 3,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "오늘은 서로 질문하지 않기로 했다. 이겸은 세 번이나 말을 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "생각보다 어렵네요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "질문이 없는 대화를 배우는 중이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "제가 너무 직업적으로 살았나 봅니다.",
+          "portrait": "main"
+        }
+      ],
+      "choice": {
+        "id": "casual_3_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "조금 솔직하게 반응한다.",
+            "affection": 3,
+            "memoryKey": "casual_3_warm",
+            "response": [
+              {
+                "type": "narration",
+                "text": "차이겸의 표정이 아주 조금 풀렸다."
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "가볍게 놀려본다.",
+            "affection": 2,
+            "response": [
+              {
+                "type": "narration",
+                "text": "차이겸은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "그냥 옆에서 지켜본다.",
+            "affection": 1,
+            "response": [
+              {
+                "type": "narration",
+                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 차이겸이라는 사람을 조금 더 알게 된 것 같다."
+}

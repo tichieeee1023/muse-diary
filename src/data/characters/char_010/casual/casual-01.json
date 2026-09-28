@@ -1,0 +1,37 @@
+{
+  "id": "char_010_casual_01",
+  "kind": "casual",
+  "title": "구겨진 영수증",
+  "minAffection": 0,
+  "maxAffection": 59,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "재하 지갑에서 귀여운 캐릭터 문구점 영수증이 나왔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "업무용입니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "품목에는 토끼 메모지와 별 스티커가 적혀 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "…업무용 맞습니다.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 권재하이라는 사람을 조금 더 알게 된 것 같다."
+}

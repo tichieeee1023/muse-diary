@@ -1,0 +1,82 @@
+{
+  "id": "char_005_first",
+  "kind": "first",
+  "title": "출입 금지",
+  "threshold": 0,
+  "defaultPortrait": "main",
+  "completionAffection": 0,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "문 닫은 상가 통로에서 검은 장갑의 남자가 바닥 자국을 닦고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "거기서 멈추세요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "명백한 경계였다. 반가움이나 호기심은 한 톨도 없어 보였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "돌아서 밝은 길로 가십시오.",
+          "portrait": "main"
+        }
+      ],
+      "choice": {
+        "id": "first_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“왜요? 위험해요?”",
+            "affection": 2,
+            "memoryKey": "first_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "강태겸",
+                "text": "그렇게 이해하세요.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“여긴 길인데요.”",
+            "affection": 1,
+            "memoryKey": "first_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "강태겸",
+                "text": "지금은 아닙니다.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“알겠어요.”",
+            "affection": 0,
+            "memoryKey": "first_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "강태겸",
+                "text": "네. 그게 좋습니다.",
+                "portrait": "main"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "closing": "첫인상만으로는 아직 아무것도 알 수 없다. 다만 다시 마주치면 조금 더 알게 될지도 모른다."
+}

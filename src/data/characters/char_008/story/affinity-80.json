@@ -1,0 +1,99 @@
+{
+  "id": "char_008_affinity_80",
+  "kind": "story",
+  "title": "폐관 후 십 분",
+  "threshold": 80,
+  "purpose": "업무 관계 밖의 시간을 처음 공유한다",
+  "defaultPortrait": "smile",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "폐관 방송 뒤 세현은 직원 출입문 대신 전시장 한가운데로 {name}을 데려갔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "딱 십 분만요. 제가 제일 좋아하는 시간이에요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "관람객이 없는 전시장은 조용했고, 세현도 설명을 멈췄다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "이건 누구한테나 보여주는 거 아니에요.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "aff_80_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“영광이네요.”",
+            "affection": 6,
+            "memoryKey": "affinity_80_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "오세현",
+                "text": "그러니까 잘 기억해줘요.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“그럼 조용히 볼게요.”",
+            "affection": 4,
+            "memoryKey": "affinity_80_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "오세현",
+                "text": "네. 같이요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“나한테 보여주고 싶었어요?”",
+            "affection": 5,
+            "memoryKey": "affinity_80_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "오세현",
+                "text": "…네. 사실은.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 폐관 후 십 분은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "업무 관계 밖의 시간을 처음 공유한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "폐관 후 십 분 — 중요한 관계 기록이 다이어리에 남았다."
+}

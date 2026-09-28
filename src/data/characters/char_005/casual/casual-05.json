@@ -1,0 +1,37 @@
+{
+  "id": "char_005_casual_05",
+  "kind": "casual",
+  "title": "따뜻한 캔",
+  "minAffection": 40,
+  "maxAffection": 100,
+  "defaultPortrait": "hmm",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "추운 밤, 태겸이 따뜻한 캔커피를 던지듯 건넸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "손 차갑잖아요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "자기는 찬 물을 마시면서도 {name} 손부터 봤다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "마시고 버리세요.",
+          "portrait": "hmm"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 강태겸이라는 사람을 조금 더 알게 된 것 같다."
+}

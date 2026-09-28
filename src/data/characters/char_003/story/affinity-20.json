@@ -1,0 +1,99 @@
+{
+  "id": "char_003_affinity_20",
+  "kind": "story",
+  "title": "막차 전의 십 분",
+  "threshold": 20,
+  "purpose": "업무 밖에서 처음 대화를 나눈다",
+  "defaultPortrait": "main",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "운행이 끝나기 전 잠깐의 휴식 시간, 해준은 자판기에서 딸기 우유를 뽑았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "…왜 그런 표정입니까.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "검은 커피를 마실 것 같은 얼굴로 아주 달아 보이는 음료를 고르는 장면이 이상하게 기억에 남았다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "이게 제일 빨리 당이 올라서요.",
+          "portrait": "main"
+        }
+      ],
+      "choice": {
+        "id": "aff_20_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“귀여운 취향이네요.”",
+            "affection": 6,
+            "memoryKey": "affinity_20_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "그 표현은 조금 곤란하네요.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“하나 더 뽑아드릴까요?”",
+            "affection": 4,
+            "memoryKey": "affinity_20_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "괜찮습니다. 이미 두 개 샀습니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“의외네요.”",
+            "affection": 5,
+            "memoryKey": "affinity_20_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "다들 그렇게 말합니다.",
+                "portrait": "main"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 막차 전의 십 분은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "업무 밖에서 처음 대화를 나눈다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "막차 전의 십 분 — 중요한 관계 기록이 다이어리에 남았다."
+}

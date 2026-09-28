@@ -1,0 +1,99 @@
+{
+  "id": "char_011_affinity_80",
+  "kind": "story",
+  "title": "대사가 없는 장면",
+  "threshold": 80,
+  "purpose": "유리안이 연기 없이 함께 있는 시간을 원한다",
+  "defaultPortrait": "smile",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "빈 무대에 앉은 유리안은 아무 공연도 하지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "오늘은 재밌게 안 해도 돼요?",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "완벽한 침묵 속에서 그는 조금 긴장한 얼굴로 {name}의 반응을 기다렸다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "그냥 옆에 있고 싶어서.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "aff_80_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“그게 제일 좋아요.”",
+            "affection": 6,
+            "memoryKey": "affinity_80_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "유리안",
+                "text": "…진짜요? 다행이다.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“말 안 해도 돼요.”",
+            "affection": 4,
+            "memoryKey": "affinity_80_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "유리안",
+                "text": "그러죠.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“긴장했어요?”",
+            "affection": 5,
+            "memoryKey": "affinity_80_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "유리안",
+                "text": "조금. 엄청.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 대사가 없는 장면은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "유리안이 연기 없이 함께 있는 시간을 원한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "대사가 없는 장면 — 중요한 관계 기록이 다이어리에 남았다."
+}

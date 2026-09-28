@@ -1,0 +1,99 @@
+{
+  "id": "char_009_affinity_20",
+  "kind": "story",
+  "title": "질문하는 사람",
+  "threshold": 20,
+  "purpose": "이겸의 친절이 직업적 경계 안에 있음을 보여준다",
+  "defaultPortrait": "main",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이겸은 지난 만남을 기억했지만 먼저 사적인 질문을 하지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "불편한 건 말하지 않아도 됩니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "관심과 호감 사이에 정확한 거리를 두는 태도였다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "저도 그 선은 지키려고 합니다.",
+          "portrait": "main"
+        }
+      ],
+      "choice": {
+        "id": "aff_20_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“그럼 내가 물어봐도 돼요?”",
+            "affection": 6,
+            "memoryKey": "affinity_20_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "대답할 수 있는 만큼은요.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“항상 그렇게 조심해요?”",
+            "affection": 4,
+            "memoryKey": "affinity_20_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "습관에 가깝습니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“편해요. 그런 태도.”",
+            "affection": 5,
+            "memoryKey": "affinity_20_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "다행이네요.",
+                "portrait": "main"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 질문하는 사람은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "이겸의 친절이 직업적 경계 안에 있음을 보여준다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "질문하는 사람 — 중요한 관계 기록이 다이어리에 남았다."
+}

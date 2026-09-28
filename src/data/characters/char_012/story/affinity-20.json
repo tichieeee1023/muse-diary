@@ -1,0 +1,99 @@
+{
+  "id": "char_012_affinity_20",
+  "kind": "story",
+  "title": "처음이 아닌 처음",
+  "threshold": 20,
+  "purpose": "첫 만남부터 존재하는 특별한 감정의 이유를 미스터리로 만든다",
+  "defaultPortrait": "main",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이현은 두 번째 만남인데도 안도한 얼굴이었다. 처음 만났을 때부터 그랬다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "이번에도 와주셨군요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "‘이번에도’라는 말이 이상하다는 걸 본인도 아는 듯 잠깐 눈을 감았다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "죄송합니다. 지금의 당신에겐 처음이라는 걸 자꾸 잊습니다.",
+          "portrait": "main"
+        }
+      ],
+      "choice": {
+        "id": "aff_20_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“우린 어디서 만났어요?”",
+            "affection": 6,
+            "memoryKey": "affinity_20_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "아직 말하면 안 될 것 같습니다.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“나를 기억해요?”",
+            "affection": 4,
+            "memoryKey": "affinity_20_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "네. 너무 오래.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“그 말 좀 슬퍼요.”",
+            "affection": 5,
+            "memoryKey": "affinity_20_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "…저도 그렇게 들리네요.",
+                "portrait": "main"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 처음이 아닌 처음은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "첫 만남부터 존재하는 특별한 감정의 이유를 미스터리로 만든다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "처음이 아닌 처음 — 중요한 관계 기록이 다이어리에 남았다."
+}

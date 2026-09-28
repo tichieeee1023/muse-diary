@@ -1,0 +1,99 @@
+{
+  "id": "char_004_affinity_40",
+  "kind": "story",
+  "title": "배고픈 여우",
+  "threshold": 40,
+  "purpose": "로운의 완벽한 서비스 미소가 무너지는 갭",
+  "defaultPortrait": "hmm",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "마감 직전, 로운은 카운터 뒤에서 식빵 끝부분을 몰래 씹고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "…이 시간엔 사람이 예민해져요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "평소의 반짝이는 미소는 사라지고 눈꼬리가 축 늘어져 있었다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "웃으면 오늘 케이크 안 줍니다.",
+          "portrait": "hmm"
+        }
+      ],
+      "choice": {
+        "id": "aff_40_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“이쪽이 더 귀여운데요.”",
+            "affection": 6,
+            "memoryKey": "affinity_40_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "이로운",
+                "text": "그 말 금지.",
+                "portrait": "hmm"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“제 간식 나눠줄까요?”",
+            "affection": 4,
+            "memoryKey": "affinity_40_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "이로운",
+                "text": "…반만 받을게요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“케이크보다 밥 먹어요.”",
+            "affection": 5,
+            "memoryKey": "affinity_40_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "이로운",
+                "text": "지금 그 말이 제일 설레네요.",
+                "portrait": "hmm"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 배고픈 여우은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "로운의 완벽한 서비스 미소가 무너지는 갭 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "배고픈 여우 — 중요한 관계 기록이 다이어리에 남았다."
+}

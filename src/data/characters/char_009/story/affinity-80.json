@@ -1,0 +1,99 @@
+{
+  "id": "char_009_affinity_80",
+  "kind": "story",
+  "title": "질문 없는 저녁",
+  "threshold": 80,
+  "purpose": "이겸이 분석하지 않고 함께 있는 법을 배운다",
+  "defaultPortrait": "smile",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "평소라면 상태부터 물었을 이겸이 아무 질문도 하지 않고 따뜻한 차만 건넸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "오늘은 제가 묻지 않겠습니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "침묵이 불편하지 않았다. 오히려 그가 자기 이야기를 먼저 꺼냈다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "저도 오늘 조금 지쳤습니다.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "aff_80_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“이제야 사람 같네요.”",
+            "affection": 6,
+            "memoryKey": "affinity_80_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "가끔은 그런 평가도 필요하군요.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“나한테 기대도 돼요.”",
+            "affection": 4,
+            "memoryKey": "affinity_80_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "…연습해보겠습니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“그 말 해줘서 좋아요.”",
+            "affection": 5,
+            "memoryKey": "affinity_80_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "저도 말하고 나니 좋네요.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 질문 없는 저녁은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "이겸이 분석하지 않고 함께 있는 법을 배운다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "질문 없는 저녁 — 중요한 관계 기록이 다이어리에 남았다."
+}

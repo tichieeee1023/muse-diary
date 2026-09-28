@@ -1,0 +1,99 @@
+{
+  "id": "char_010_affinity_40",
+  "kind": "story",
+  "title": "바늘과 검은 실",
+  "threshold": 40,
+  "purpose": "재하의 손재주라는 갭",
+  "defaultPortrait": "hmm",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "벤치에 떨어진 작은 인형의 팔이 뜯어져 있었다. 재하는 주머니에서 바늘과 검은 실을 꺼냈다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "경호원도 옷은 찢어집니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "굵은 손가락으로 만든 매듭은 놀랄 만큼 작고 반듯했다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "왜 그렇게 봅니까.",
+          "portrait": "hmm"
+        }
+      ],
+      "choice": {
+        "id": "aff_40_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“너무 잘해서요.”",
+            "affection": 6,
+            "memoryKey": "affinity_40_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "필요해서 배운 겁니다.",
+                "portrait": "hmm"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“내 인형도 맡겨도 돼요?”",
+            "affection": 4,
+            "memoryKey": "affinity_40_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "상태 보고 결정하죠.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“귀여운 취미네요.”",
+            "affection": 5,
+            "memoryKey": "affinity_40_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "취미 아닙니다.",
+                "portrait": "hmm"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 바늘과 검은 실은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "재하의 손재주라는 갭 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "바늘과 검은 실 — 중요한 관계 기록이 다이어리에 남았다."
+}

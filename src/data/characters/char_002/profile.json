@@ -1,0 +1,20 @@
+{
+  "characterId": "char_002",
+  "name": "한주원",
+  "initialAttitude": "critical",
+  "initialAttitudeLabel": "비판적/관심",
+  "surface": "세련되고 자신감이 강하다. 사람과 공간을 빠르게 평가하고 틀린 건 바로 지적한다.",
+  "gapMoe": "완벽주의자면서 촌스럽고 값싼 기념품을 버리지 못한다. 캡슐토이에 은근히 진심이다.",
+  "weakness": "본인이 만든 결과물보다 누군가가 즐거워하는 순간을 칭찬받으면 당황한다.",
+  "lateChange": "여전히 까다롭지만, {name}의 작업 앞에서는 평가보다 질문을 먼저 한다.",
+  "voiceNote": "간결하고 세련된 존댓말. 장난칠 때는 은근히 도발적.",
+  "specialFromFirstMeet": false,
+  "visuals": {
+    "main": "/assets/characters/char_002/main.webp",
+    "smile": "/assets/characters/char_002/smile.webp",
+    "troubled": "/assets/characters/char_002/troubled.webp",
+    "hmm": "/assets/characters/char_002/hmm.webp",
+    "endingCg": "/assets/characters/char_002/ending-cg.webp",
+    "endingDoll": "/assets/characters/char_002/ending-doll.webp"
+  }
+}

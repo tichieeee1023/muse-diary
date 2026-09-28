@@ -1,0 +1,37 @@
+{
+  "id": "char_010_casual_07",
+  "kind": "casual",
+  "title": "명령 취소",
+  "minAffection": 80,
+  "maxAffection": 100,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "재하가 “따라오세요”라고 했다가 바로 말을 고쳤다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "…같이 가시겠습니까.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "고치는 데 꽤 큰 노력이 든 얼굴이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "그쪽이 맞겠군요.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 권재하이라는 사람을 조금 더 알게 된 것 같다."
+}

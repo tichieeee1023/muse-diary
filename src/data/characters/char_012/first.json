@@ -1,0 +1,82 @@
+{
+  "id": "char_012_first",
+  "kind": "first",
+  "title": "늦게 온 사람",
+  "threshold": 0,
+  "defaultPortrait": "main",
+  "completionAffection": 0,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "낡은 시계 가게 앞에서 남자가 {name}을 보자 아주 잠깐 숨을 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "…오늘은 조금 늦었군요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "처음 보는 얼굴이었는데, 그는 오래 기다린 사람처럼 보였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "죄송합니다. 지금은 처음 만나는 게 맞죠.",
+          "portrait": "hmm"
+        }
+      ],
+      "choice": {
+        "id": "first_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“저 알아요?”",
+            "affection": 5,
+            "memoryKey": "first_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "네. 아니… 설명하려면 시간이 필요합니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“누굴 기다렸어요?”",
+            "affection": 4,
+            "memoryKey": "first_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "아마 당신을요.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“처음 보는데요.”",
+            "affection": 3,
+            "memoryKey": "first_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "알고 있습니다. 당신에게는.",
+                "portrait": "main"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "closing": "첫인상만으로는 아직 아무것도 알 수 없다. 다만 다시 마주치면 조금 더 알게 될지도 모른다."
+}

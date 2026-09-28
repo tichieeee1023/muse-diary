@@ -1,0 +1,99 @@
+{
+  "id": "char_011_affinity_20",
+  "kind": "story",
+  "title": "무대 위의 사람",
+  "threshold": 20,
+  "purpose": "리안의 친근함이 공연자 습관임을 보여준다",
+  "defaultPortrait": "main",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "공연이 끝나자 유리안은 아이들과 보호자 모두에게 똑같이 환하게 웃었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "아, 질투했어요?",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "장난스럽게 묻더니 금세 웃었다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "농담. 아직 그럴 사이는 아니잖아요.",
+          "portrait": "main"
+        }
+      ],
+      "choice": {
+        "id": "aff_20_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“잘 아네요.”",
+            "affection": 6,
+            "memoryKey": "affinity_20_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "유리안",
+                "text": "그렇죠. 천천히 봅시다.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“조금 얄밉네요.”",
+            "affection": 4,
+            "memoryKey": "affinity_20_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "유리안",
+                "text": "그 표정 재밌는데요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“그럼 언제 그런 사이 돼요?”",
+            "affection": 5,
+            "memoryKey": "affinity_20_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "유리안",
+                "text": "오, 공격적이네. 기억해둘게요.",
+                "portrait": "main"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 무대 위의 사람은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "리안의 친근함이 공연자 습관임을 보여준다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "무대 위의 사람 — 중요한 관계 기록이 다이어리에 남았다."
+}

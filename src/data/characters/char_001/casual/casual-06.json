@@ -1,0 +1,76 @@
+{
+  "id": "char_001_casual_06",
+  "kind": "casual",
+  "title": "폐점 음악",
+  "minAffection": 60,
+  "maxAffection": 100,
+  "defaultPortrait": "smile",
+  "completionAffection": 3,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "폐점 음악이 흐르자 도윤이 책장을 닫지 않고 시간을 끌었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "마지막 손님이면 조금 늦어도 됩니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "업무 원칙이 갑자기 느슨해진 이유를 굳이 묻지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "제가 닫으면 되니까요.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "casual_6_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "조금 솔직하게 반응한다.",
+            "affection": 3,
+            "memoryKey": "casual_6_warm",
+            "response": [
+              {
+                "type": "narration",
+                "text": "서도윤의 표정이 아주 조금 풀렸다."
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "가볍게 놀려본다.",
+            "affection": 2,
+            "response": [
+              {
+                "type": "narration",
+                "text": "서도윤은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "그냥 옆에서 지켜본다.",
+            "affection": 1,
+            "response": [
+              {
+                "type": "narration",
+                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 서도윤이라는 사람을 조금 더 알게 된 것 같다."
+}

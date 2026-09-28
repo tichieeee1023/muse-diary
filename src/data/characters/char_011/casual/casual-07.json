@@ -1,0 +1,37 @@
+{
+  "id": "char_011_casual_07",
+  "kind": "casual",
+  "title": "공연 없는 초대",
+  "minAffection": 80,
+  "maxAffection": 100,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "유리안이 아무 공연도 없는 날 만나자고 했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "보여줄 건 없는데도 괜찮아요?",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "그 질문이 오히려 진심에 가까웠다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "그냥 저만 있습니다.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 유리안이라는 사람을 조금 더 알게 된 것 같다."
+}

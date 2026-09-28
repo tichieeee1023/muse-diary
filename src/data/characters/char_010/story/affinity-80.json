@@ -1,0 +1,99 @@
+{
+  "id": "char_010_affinity_80",
+  "kind": "story",
+  "title": "부탁의 형태",
+  "threshold": 80,
+  "purpose": "재하가 처음으로 명령 대신 부탁한다",
+  "defaultPortrait": "smile",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "비가 쏟아지는 밤, 재하는 우산을 건네며 말을 고르느라 한참 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "오늘은… 같이 가주시겠습니까.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "늘 ‘따라오세요’라고 말하던 사람이었다. 그 차이가 이상할 만큼 크게 들렸다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "개인적인 부탁입니다.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "aff_80_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“물론이죠.”",
+            "affection": 6,
+            "memoryKey": "affinity_80_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "감사합니다.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“드디어 부탁하네요.”",
+            "affection": 4,
+            "memoryKey": "affinity_80_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "연습 중입니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“손도 잡을까요?”",
+            "affection": 5,
+            "memoryKey": "affinity_80_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "…비 때문에 미끄러우니까요.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 부탁의 형태은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "재하가 처음으로 명령 대신 부탁한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "부탁의 형태 — 중요한 관계 기록이 다이어리에 남았다."
+}

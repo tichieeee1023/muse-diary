@@ -1,0 +1,99 @@
+{
+  "id": "char_005_affinity_40",
+  "kind": "story",
+  "title": "청소업자의 천적",
+  "threshold": 40,
+  "purpose": "태겸의 예상 밖 약점",
+  "defaultPortrait": "hmm",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "창고 문을 열자 작은 바퀴벌레 하나가 지나갔다. 검은 흔적 앞에서도 눈 하나 깜빡 않던 태겸이 그대로 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "…저건 당신이 처리해요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "대답할 틈도 없이 한 걸음 뒤로 물러나는 속도가 놀라웠다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "웃으면 두고 갑니다.",
+          "portrait": "hmm"
+        }
+      ],
+      "choice": {
+        "id": "aff_40_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“무서워요?”",
+            "affection": 6,
+            "memoryKey": "affinity_40_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "강태겸",
+                "text": "싫은 겁니다. 무서운 게 아니라.",
+                "portrait": "hmm"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“제가 구해드리죠.”",
+            "affection": 4,
+            "memoryKey": "affinity_40_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "강태겸",
+                "text": "빨리요. 부탁…합니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“의외의 약점 발견.”",
+            "affection": 5,
+            "memoryKey": "affinity_40_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "강태겸",
+                "text": "기억에서 지우세요.",
+                "portrait": "hmm"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 청소업자의 천적은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "태겸의 예상 밖 약점 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "청소업자의 천적 — 중요한 관계 기록이 다이어리에 남았다."
+}

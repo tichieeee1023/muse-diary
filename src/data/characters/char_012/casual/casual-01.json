@@ -1,0 +1,37 @@
+{
+  "id": "char_012_casual_01",
+  "kind": "casual",
+  "title": "고장 난 알람",
+  "minAffection": 0,
+  "maxAffection": 59,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이현의 휴대폰 알람이 이미 다섯 번 지나가 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "큰 시간은 고치는데 아침은 못 고칩니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "무표정하게 말해서 더 웃겼다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "웃으셔도 됩니다.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 진이현이라는 사람을 조금 더 알게 된 것 같다."
+}

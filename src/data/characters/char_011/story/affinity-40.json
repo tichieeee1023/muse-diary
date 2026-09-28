@@ -1,0 +1,99 @@
+{
+  "id": "char_011_affinity_40",
+  "kind": "story",
+  "title": "편의점 삼각김밥",
+  "threshold": 40,
+  "purpose": "화려한 이미지와 소박한 생활의 갭",
+  "defaultPortrait": "hmm",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "무대에서 내려온 유리안은 공연복 위에 패딩을 걸치고 편의점 앞에서 삼각김밥을 먹고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "환상 깨졌죠?",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "손끝에서 빛을 내는 사람이 참치마요 포장지를 진지하게 뜯고 있었다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "전 이게 제일 맛있어요.",
+          "portrait": "hmm"
+        }
+      ],
+      "choice": {
+        "id": "aff_40_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“더 좋아졌는데요.”",
+            "affection": 6,
+            "memoryKey": "affinity_40_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "유리안",
+                "text": "그 대답은 예상 못 했네.",
+                "portrait": "hmm"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“마법으로 데우면 안 돼요?”",
+            "affection": 4,
+            "memoryKey": "affinity_40_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "유리안",
+                "text": "전자레인지가 더 안전합니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“하나 더 사줄까요?”",
+            "affection": 5,
+            "memoryKey": "affinity_40_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "유리안",
+                "text": "그럼 바나나우유도.",
+                "portrait": "hmm"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 편의점 삼각김밥은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "화려한 이미지와 소박한 생활의 갭 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "편의점 삼각김밥 — 중요한 관계 기록이 다이어리에 남았다."
+}

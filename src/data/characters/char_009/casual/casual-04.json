@@ -1,0 +1,37 @@
+{
+  "id": "char_009_casual_04",
+  "kind": "casual",
+  "title": "단 커피",
+  "minAffection": 40,
+  "maxAffection": 100,
+  "defaultPortrait": "smile",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이겸의 커피에는 시럽이 세 번 들어갔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "쓴 건 별로입니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "차분한 인상과 달리 입맛은 꽤 달았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "이건 비밀일 이유가 없죠.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 차이겸이라는 사람을 조금 더 알게 된 것 같다."
+}

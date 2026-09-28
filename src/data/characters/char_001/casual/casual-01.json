@@ -1,0 +1,37 @@
+{
+  "id": "char_001_casual_01",
+  "kind": "casual",
+  "title": "포장지 모서리",
+  "minAffection": 0,
+  "maxAffection": 39,
+  "defaultPortrait": "main",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "서점 카운터에서 도윤이 새 책 포장지를 반듯하게 접고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "비뚤어진 건 신경 쓰여서요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "정작 자기 셔츠 소매는 한쪽만 접혀 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "…그건 지금 알았습니다.",
+          "portrait": "main"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 서도윤이라는 사람을 조금 더 알게 된 것 같다."
+}

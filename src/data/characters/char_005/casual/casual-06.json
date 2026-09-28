@@ -1,0 +1,76 @@
+{
+  "id": "char_005_casual_06",
+  "kind": "casual",
+  "title": "길고양이 급식",
+  "minAffection": 60,
+  "maxAffection": 100,
+  "defaultPortrait": "troubled",
+  "completionAffection": 3,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "태겸이 골목 고양이 밥그릇을 채우고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "청소하면서 남은 겁니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "사료 봉투에는 새 제품 스티커가 붙어 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "묻지 마세요.",
+          "portrait": "troubled"
+        }
+      ],
+      "choice": {
+        "id": "casual_6_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "조금 솔직하게 반응한다.",
+            "affection": 3,
+            "memoryKey": "casual_6_warm",
+            "response": [
+              {
+                "type": "narration",
+                "text": "강태겸의 표정이 아주 조금 풀렸다."
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "가볍게 놀려본다.",
+            "affection": 2,
+            "response": [
+              {
+                "type": "narration",
+                "text": "강태겸은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "그냥 옆에서 지켜본다.",
+            "affection": 1,
+            "response": [
+              {
+                "type": "narration",
+                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 강태겸이라는 사람을 조금 더 알게 된 것 같다."
+}

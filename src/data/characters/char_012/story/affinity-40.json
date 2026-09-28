@@ -1,0 +1,99 @@
+{
+  "id": "char_012_affinity_40",
+  "kind": "story",
+  "title": "알람을 세 개나",
+  "threshold": 40,
+  "purpose": "완벽한 시간 수리공의 우스운 생활 갭",
+  "defaultPortrait": "hmm",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이현의 휴대폰에서 알람이 세 번 연속 울렸다. 그는 세 번 모두 조금 놀랐다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "제가 시간을 잘 다룬다고 생각하셨습니까?",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "시계를 고치면서 정작 약속 시간을 놓치는 일이 잦다고 담담히 고백했다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "큰 시간은 보이는데 작은 시간은 자꾸 놓칩니다.",
+          "portrait": "hmm"
+        }
+      ],
+      "choice": {
+        "id": "aff_40_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“그래서 알람이 세 개?”",
+            "affection": 6,
+            "memoryKey": "affinity_40_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "네. 다섯 개까지 간 적도 있습니다.",
+                "portrait": "hmm"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“다음엔 내가 알려줄게요.”",
+            "affection": 4,
+            "memoryKey": "affinity_40_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "그건… 꽤 좋겠네요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“의외로 허술하네요.”",
+            "affection": 5,
+            "memoryKey": "affinity_40_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "그 평가는 부정하기 어렵습니다.",
+                "portrait": "hmm"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 알람을 세 개나은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "완벽한 시간 수리공의 우스운 생활 갭 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "알람을 세 개나 — 중요한 관계 기록이 다이어리에 남았다."
+}

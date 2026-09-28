@@ -1,0 +1,20 @@
+{
+  "characterId": "char_009",
+  "name": "차이겸",
+  "initialAttitude": "polite_guarded",
+  "initialAttitudeLabel": "정중한 경계",
+  "surface": "정중하고 안정적이며 타인의 선을 잘 지킨다. 그만큼 자기 선도 절대 넘기지 못하게 한다.",
+  "gapMoe": "초자연적인 문양을 달고 살면서 공포영화와 갑작스러운 소리에 약하다. 매운 음식도 못 먹는다.",
+  "weakness": "자기 감정을 분석하려 들수록 오히려 말문이 막힌다.",
+  "lateChange": "상담하듯 질문하지 않고, 먼저 자기 감정을 말하는 법을 배운다.",
+  "voiceNote": "차분한 존댓말. 질문형 문장이 많지만 가까워질수록 자기 얘기가 늘어난다.",
+  "specialFromFirstMeet": false,
+  "visuals": {
+    "main": "/assets/characters/char_009/main.webp",
+    "smile": "/assets/characters/char_009/smile.webp",
+    "troubled": "/assets/characters/char_009/troubled.webp",
+    "hmm": "/assets/characters/char_009/hmm.webp",
+    "endingCg": "/assets/characters/char_009/ending-cg.webp",
+    "endingDoll": "/assets/characters/char_009/ending-doll.webp"
+  }
+}

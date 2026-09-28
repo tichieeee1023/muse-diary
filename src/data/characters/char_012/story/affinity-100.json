@@ -1,0 +1,99 @@
+{
+  "id": "char_012_affinity_100",
+  "kind": "story",
+  "title": "멈추지 않는 초침",
+  "threshold": 100,
+  "purpose": "과거의 인연이 아니라 현재의 선택으로 관계를 완성한다",
+  "defaultPortrait": "smile",
+  "completionAffection": 0,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이현은 고장 난 시계를 고치지 않은 채 {name} 손바닥에 올려두었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "과거에는 당신을 되찾고 싶었습니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "초침은 불규칙했지만 멈추지는 않았다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "지금은 다릅니다. 지금의 당신과 처음부터 다시 좋아하고 싶습니다.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "aff_100_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“그럼 지금부터 시작해요.”",
+            "affection": 6,
+            "memoryKey": "affinity_100_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "네. 이번에는 천천히.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“이번엔 같이 기억해요.”",
+            "affection": 4,
+            "memoryKey": "affinity_100_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "그게 좋겠습니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“나도 지금의 이현 씨가 좋아요.”",
+            "affection": 5,
+            "memoryKey": "affinity_100_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "…기다린 보람이 있네요.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 멈추지 않는 초침은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "과거의 인연이 아니라 현재의 선택으로 관계를 완성한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "멈추지 않는 초침 — 중요한 관계 기록이 다이어리에 남았다."
+}

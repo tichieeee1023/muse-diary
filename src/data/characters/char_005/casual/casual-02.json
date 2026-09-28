@@ -1,0 +1,37 @@
+{
+  "id": "char_005_casual_02",
+  "kind": "casual",
+  "title": "벌레 한 마리",
+  "minAffection": 20,
+  "maxAffection": 79,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "작은 벌레가 벽을 타고 올라가자 태겸이 조용히 거리를 뒀다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "저건 업무 범위 밖입니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "검은 흔적보다 벌레를 더 진지하게 경계했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "진짜로요.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 강태겸이라는 사람을 조금 더 알게 된 것 같다."
+}

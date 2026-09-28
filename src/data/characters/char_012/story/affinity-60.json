@@ -1,0 +1,99 @@
+{
+  "id": "char_012_affinity_60",
+  "kind": "story",
+  "title": "되감긴 기억",
+  "threshold": 60,
+  "purpose": "이현이 과거의 시간선을 암시한다",
+  "defaultPortrait": "troubled",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이현은 오래된 시계 뚜껑 안쪽에 새겨진 {name}의 이름을 보여줬다. 글씨는 분명 오래되어 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "제가 새긴 게 아닙니다. 정확히는 지금의 제가.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "말이 모순인데도 그의 표정은 농담과 거리가 멀었다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "한 번 잃어본 적이 있다고만 해두겠습니다.",
+          "portrait": "troubled"
+        }
+      ],
+      "choice": {
+        "id": "aff_60_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“나를?”",
+            "affection": 6,
+            "memoryKey": "affinity_60_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "…네.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“그래서 처음부터 그랬어요?”",
+            "affection": 4,
+            "memoryKey": "affinity_60_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "그게 가장 큰 이유입니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“이번엔 잃지 마요.”",
+            "affection": 5,
+            "memoryKey": "affinity_60_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "그 말은 제가 해도 됩니까.",
+                "portrait": "troubled"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 되감긴 기억은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "이현이 과거의 시간선을 암시한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "되감긴 기억 — 중요한 관계 기록이 다이어리에 남았다."
+}

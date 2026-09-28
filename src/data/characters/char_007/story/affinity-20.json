@@ -1,0 +1,99 @@
+{
+  "id": "char_007_affinity_20",
+  "kind": "story",
+  "title": "틀린 기록",
+  "threshold": 20,
+  "purpose": "휘람의 예민함이 주인공 개인에 대한 호감이 아님을 분명히 한다",
+  "defaultPortrait": "main",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "역사 자료실에서 다시 만난 휘람은 반갑다는 말보다 책의 오류부터 지적했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "저번에 말한 건 잊으세요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}이 아니라 기록 자체에 화가 난 얼굴이었다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "괜히 아는 척했다가 이상한 사람 됐잖아요.",
+          "portrait": "main"
+        }
+      ],
+      "choice": {
+        "id": "aff_20_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“이미 좀 이상했어요.”",
+            "affection": 6,
+            "memoryKey": "affinity_20_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "김휘람",
+                "text": "그걸 그렇게 바로 말해요?",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“그래도 궁금한데요.”",
+            "affection": 4,
+            "memoryKey": "affinity_20_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "김휘람",
+                "text": "…조금만 물어요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“안 물어볼게요.”",
+            "affection": 5,
+            "memoryKey": "affinity_20_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "김휘람",
+                "text": "그게 더 신경 쓰이는데.",
+                "portrait": "main"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 틀린 기록은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "휘람의 예민함이 주인공 개인에 대한 호감이 아님을 분명히 한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "틀린 기록 — 중요한 관계 기록이 다이어리에 남았다."
+}

@@ -1,0 +1,20 @@
+{
+  "characterId": "char_003",
+  "name": "문해준",
+  "initialAttitude": "professional",
+  "initialAttitudeLabel": "업무적",
+  "surface": "피곤해 보여도 빈틈이 없고 책임감이 강하다. 첫 만남에서는 철저히 직업적인 친절만 보인다.",
+  "gapMoe": "긴장만 풀리면 어디서든 순식간에 잠든다. 매운 음식은 강한데 유난히 달고 어린 입맛의 음료를 좋아한다.",
+  "weakness": "누군가를 기다리게 했다고 생각하면 필요 이상으로 신경 쓴다.",
+  "lateChange": "보호하려는 태도는 그대로지만, 이제는 {name}에게 보호받는 것도 조금씩 허락한다.",
+  "voiceNote": "낮고 담백한 존댓말. 피곤하면 문장이 짧아지고 솔직해진다.",
+  "specialFromFirstMeet": false,
+  "visuals": {
+    "main": "/assets/characters/char_003/main.webp",
+    "smile": "/assets/characters/char_003/smile.webp",
+    "troubled": "/assets/characters/char_003/troubled.webp",
+    "hmm": "/assets/characters/char_003/hmm.webp",
+    "endingCg": "/assets/characters/char_003/ending-cg.webp",
+    "endingDoll": "/assets/characters/char_003/ending-doll.webp"
+  }
+}

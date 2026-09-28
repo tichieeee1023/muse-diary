@@ -1,0 +1,37 @@
+{
+  "id": "char_002_casual_07",
+  "kind": "casual",
+  "title": "진열 금지",
+  "minAffection": 60,
+  "maxAffection": 100,
+  "defaultPortrait": "smile",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "주원은 {name}이 만든 인형 하나를 자기 책상에 두고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "전시가 아니라 개인 소장입니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "가장 잘 보이는 위치라는 점은 언급하지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "업무와는 무관합니다.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 한주원이라는 사람을 조금 더 알게 된 것 같다."
+}

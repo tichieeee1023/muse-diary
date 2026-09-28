@@ -1,0 +1,99 @@
+{
+  "id": "char_005_affinity_20",
+  "kind": "story",
+  "title": "출입 금지선",
+  "threshold": 20,
+  "purpose": "태겸이 주인공을 귀찮은 민간인으로 보는 단계",
+  "defaultPortrait": "main",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "야간 상가에서 태겸은 {name}을 보자마자 미간부터 찌푸렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "여긴 구경할 데 아닙니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "걱정이라기보다 업무 방해를 보는 표정이 정확했다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "다음부턴 밝은 길로 가세요.",
+          "portrait": "main"
+        }
+      ],
+      "choice": {
+        "id": "aff_20_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“걱정하는 거예요?”",
+            "affection": 6,
+            "memoryKey": "affinity_20_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "강태겸",
+                "text": "아니요. 사고 나면 귀찮아서.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“그럼 왜 따라와요?”",
+            "affection": 4,
+            "memoryKey": "affinity_20_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "강태겸",
+                "text": "당신이 또 반대로 갈 것 같아서요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“알겠어요. 오늘만.”",
+            "affection": 5,
+            "memoryKey": "affinity_20_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "강태겸",
+                "text": "그 약속 지키세요.",
+                "portrait": "main"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 출입 금지선은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "태겸이 주인공을 귀찮은 민간인으로 보는 단계 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "출입 금지선 — 중요한 관계 기록이 다이어리에 남았다."
+}

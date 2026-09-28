@@ -1,0 +1,37 @@
+{
+  "id": "char_009_casual_02",
+  "kind": "casual",
+  "title": "공포 예고편",
+  "minAffection": 20,
+  "maxAffection": 79,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "갑자기 귀신 얼굴이 뜨자 이겸이 휴대폰을 뒤집었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "광고가 과하군요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "손목 문양보다 광고를 더 싫어하는 얼굴이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "소리는 꺼두죠.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 차이겸이라는 사람을 조금 더 알게 된 것 같다."
+}

@@ -1,0 +1,99 @@
+{
+  "id": "char_008_affinity_100",
+  "kind": "story",
+  "title": "전시가 끝난 뒤",
+  "threshold": 100,
+  "purpose": "세현이 관찰자가 아니라 관계의 당사자가 된다",
+  "defaultPortrait": "smile",
+  "completionAffection": 0,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "전시 마지막 날, 세현은 작품이 철거되는 모습을 보다가 {name} 쪽으로 몸을 돌렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "끝나는 전시는 익숙한데요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "그는 웃으면서도 이번에는 바로 다음 말을 이어갔다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "당신이랑은 다음 전시도, 그 다음도 보고 싶어요.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "aff_100_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“같이 봐요.”",
+            "affection": 6,
+            "memoryKey": "affinity_100_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "오세현",
+                "text": "약속입니다.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“이번엔 내가 먼저 초대할게요.”",
+            "affection": 4,
+            "memoryKey": "affinity_100_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "오세현",
+                "text": "그거 좋네요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“관람객 말고 다른 자격으로?”",
+            "affection": 5,
+            "memoryKey": "affinity_100_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "오세현",
+                "text": "…그 질문 기다렸어요.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 전시가 끝난 뒤은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "세현이 관찰자가 아니라 관계의 당사자가 된다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "전시가 끝난 뒤 — 중요한 관계 기록이 다이어리에 남았다."
+}

@@ -1,0 +1,37 @@
+{
+  "id": "char_006_casual_07",
+  "kind": "casual",
+  "title": "말 없는 벤치",
+  "minAffection": 80,
+  "maxAffection": 100,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "둘은 한참 강만 보며 앉아 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "이런 것도 데이트면 좋겠네요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "장난처럼 말했지만 시선을 피했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "아니면 말고요.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 백시온이라는 사람을 조금 더 알게 된 것 같다."
+}

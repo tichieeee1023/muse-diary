@@ -1,0 +1,37 @@
+{
+  "id": "char_005_casual_07",
+  "kind": "casual",
+  "title": "문 잡아주는 시간",
+  "minAffection": 80,
+  "maxAffection": 100,
+  "defaultPortrait": "smile",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "태겸은 문을 잡고 {name}이 올 때까지 평소보다 오래 기다렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "빨리 안 와도 됩니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "예전의 재촉이 사라져 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "제가 잡고 있으니까.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 강태겸이라는 사람을 조금 더 알게 된 것 같다."
+}

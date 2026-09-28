@@ -1,0 +1,37 @@
+{
+  "id": "char_004_casual_01",
+  "kind": "casual",
+  "title": "시식 실패",
+  "minAffection": 0,
+  "maxAffection": 59,
+  "defaultPortrait": "hmm",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "로운이 새 크림을 맛보고 바로 얼굴을 찌푸렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "이건 실패. 너무 달아요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "달콤한 가게 주인이 단맛에 이렇게 박한 건 여전히 낯설었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "손님한텐 안 냅니다.",
+          "portrait": "hmm"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 이로운이라는 사람을 조금 더 알게 된 것 같다."
+}

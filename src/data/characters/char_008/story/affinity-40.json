@@ -1,0 +1,99 @@
+{
+  "id": "char_008_affinity_40",
+  "kind": "story",
+  "title": "최악의 스케치",
+  "threshold": 40,
+  "purpose": "세현의 미술 실력 갭",
+  "defaultPortrait": "hmm",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "휴게실에서 세현이 그린 전시 배치 메모를 봤다. 사람 그림이 믿기 힘들 정도로 못생겼다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "설명용이에요! 작품 아니고!",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "미술관에서 누구보다 전문적으로 말하던 사람이 자기 그림을 필사적으로 가렸다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "웃어도 되는데 저장은 하지 마세요.",
+          "portrait": "hmm"
+        }
+      ],
+      "choice": {
+        "id": "aff_40_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“작품명은 뭔가요?”",
+            "affection": 6,
+            "memoryKey": "affinity_40_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "오세현",
+                "text": "‘절망하는 인턴’.",
+                "portrait": "hmm"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“귀여운데요.”",
+            "affection": 4,
+            "memoryKey": "affinity_40_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "오세현",
+                "text": "그 평가가 제일 상처인데요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“내가 대신 그려줄까요?”",
+            "affection": 5,
+            "memoryKey": "affinity_40_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "오세현",
+                "text": "그럼 진짜 부탁할래요.",
+                "portrait": "hmm"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 최악의 스케치은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "세현의 미술 실력 갭 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "최악의 스케치 — 중요한 관계 기록이 다이어리에 남았다."
+}

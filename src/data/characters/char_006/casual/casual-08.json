@@ -1,0 +1,37 @@
+{
+  "id": "char_006_casual_08",
+  "kind": "casual",
+  "title": "손끝의 물방울",
+  "minAffection": 80,
+  "maxAffection": 100,
+  "defaultPortrait": "smile",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "시온 손끝에서 물방울 하나가 떠올랐다가 {name} 손등에 내려앉았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "선물 치고 너무 싸죠?",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "그는 유난히 조용히 웃었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "그래도 제일 저다운 거라.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 백시온이라는 사람을 조금 더 알게 된 것 같다."
+}

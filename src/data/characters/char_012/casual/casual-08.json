@@ -1,0 +1,37 @@
+{
+  "id": "char_012_casual_08",
+  "kind": "casual",
+  "title": "틀린 약속 시간",
+  "minAffection": 80,
+  "maxAffection": 100,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이현이 약속보다 12분 늦었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "죄송합니다. 되돌리진 않겠습니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "숨이 조금 가쁜 채로 직접 늦어온 시간이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "기다려주셔서 감사합니다.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 진이현이라는 사람을 조금 더 알게 된 것 같다."
+}

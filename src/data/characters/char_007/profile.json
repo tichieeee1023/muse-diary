@@ -1,0 +1,20 @@
+{
+  "characterId": "char_007",
+  "name": "김휘람",
+  "initialAttitude": "defensive",
+  "initialAttitudeLabel": "방어적",
+  "surface": "또래보다 날이 서 있고 자기 영역이 분명하다. 역사 이야기를 건드리면 예민해진다.",
+  "gapMoe": "고리타분할 정도로 역사에 밝으면서 최신 유행어와 앱에는 처참하게 약하다. 칭찬에 매우 약한 고등학생 티가 난다.",
+  "weakness": "자기 과거와 관련된 이야기가 나오면 갑자기 말이 많아졌다가 뒤늦게 후회한다.",
+  "lateChange": "경계하던 태도는 남아 있지만 {name} 앞에서는 또래다운 투정과 기대를 숨기지 않는다.",
+  "voiceNote": "또래 존댓말. 살짝 까칠하고 솔직하다. 당황하면 말이 빨라진다.",
+  "specialFromFirstMeet": false,
+  "visuals": {
+    "main": "/assets/characters/char_007/main.webp",
+    "smile": "/assets/characters/char_007/smile.webp",
+    "troubled": "/assets/characters/char_007/troubled.webp",
+    "hmm": "/assets/characters/char_007/hmm.webp",
+    "endingCg": "/assets/characters/char_007/ending-cg.webp",
+    "endingDoll": "/assets/characters/char_007/ending-doll.webp"
+  }
+}

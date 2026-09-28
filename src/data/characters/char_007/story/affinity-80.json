@@ -1,0 +1,99 @@
+{
+  "id": "char_007_affinity_80",
+  "kind": "story",
+  "title": "교복 주머니의 사탕",
+  "threshold": 80,
+  "purpose": "비일상적 인물의 아주 평범한 고등학생 면",
+  "defaultPortrait": "smile",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "휘람은 수업 끝나고 바로 왔는지 교복 주머니에서 사탕을 한 움큼 꺼냈다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "친구들이 넣어둔 거예요. 저는 안 좋아해요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "말하면서도 딸기맛만 골라 자기 쪽에 두는 모습이 너무 명백했다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "왜 봐요. 이건 예외예요.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "aff_80_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“딸기맛 좋아하네.”",
+            "affection": 6,
+            "memoryKey": "affinity_80_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "김휘람",
+                "text": "…비밀로 해요.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“하나 줘요.”",
+            "affection": 4,
+            "memoryKey": "affinity_80_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "김휘람",
+                "text": "하나만요. 딸기는 빼고.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“평범한 고3 같아서요.”",
+            "affection": 5,
+            "memoryKey": "affinity_80_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "김휘람",
+                "text": "저도 평범할 때 있거든요.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 교복 주머니의 사탕은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "비일상적 인물의 아주 평범한 고등학생 면 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "교복 주머니의 사탕 — 중요한 관계 기록이 다이어리에 남았다."
+}

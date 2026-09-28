@@ -1,0 +1,37 @@
+{
+  "id": "char_003_casual_04",
+  "kind": "casual",
+  "title": "우산 점검",
+  "minAffection": 40,
+  "maxAffection": 100,
+  "defaultPortrait": "hmm",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "해준은 {name} 우산의 부러진 살을 발견하고 고쳐줬다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "이대로 쓰면 위험합니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "업무와 전혀 상관없는 점검까지 꼼꼼했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "습관입니다. 아마도.",
+          "portrait": "hmm"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 문해준이라는 사람을 조금 더 알게 된 것 같다."
+}

@@ -1,0 +1,99 @@
+{
+  "id": "char_006_affinity_100",
+  "kind": "story",
+  "title": "물가의 약속",
+  "threshold": 100,
+  "purpose": "시온이 농담 없이 마음을 전한다",
+  "defaultPortrait": "smile",
+  "completionAffection": 0,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "해 질 무렵 시온은 물 위에 작은 빛을 띄웠다. 평소처럼 마술이라고 우기지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "이건 보여주고 싶었어요. 당신한테만.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "웃고 있었지만 이번에는 장난으로 숨길 생각이 없었다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "좋아해요. 그래서 다음 계절도 같이 보고 싶어요.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "aff_100_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“나도요.”",
+            "affection": 6,
+            "memoryKey": "affinity_100_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "진짜 다행이다.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“드디어 정직하네요.”",
+            "affection": 4,
+            "memoryKey": "affinity_100_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "엄청 노력했습니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“다음에도 여기서 만나요.”",
+            "affection": 5,
+            "memoryKey": "affinity_100_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "약속. 이번엔 제가 먼저 올게요.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 물가의 약속은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "시온이 농담 없이 마음을 전한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "물가의 약속 — 중요한 관계 기록이 다이어리에 남았다."
+}

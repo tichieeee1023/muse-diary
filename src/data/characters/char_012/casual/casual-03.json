@@ -1,0 +1,76 @@
+{
+  "id": "char_012_casual_03",
+  "kind": "casual",
+  "title": "먼저 안부",
+  "minAffection": 20,
+  "maxAffection": 99,
+  "defaultPortrait": "main",
+  "completionAffection": 3,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이현은 만나자마자 “잘 지냈습니까”라고 물었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "이번에는 묻고 싶었습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "처음부터 알고 지낸 사람 같은 말투는 여전했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "지금의 답을 듣고 싶어서요.",
+          "portrait": "main"
+        }
+      ],
+      "choice": {
+        "id": "casual_3_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "조금 솔직하게 반응한다.",
+            "affection": 3,
+            "memoryKey": "casual_3_warm",
+            "response": [
+              {
+                "type": "narration",
+                "text": "진이현의 표정이 아주 조금 풀렸다."
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "가볍게 놀려본다.",
+            "affection": 2,
+            "response": [
+              {
+                "type": "narration",
+                "text": "진이현은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "그냥 옆에서 지켜본다.",
+            "affection": 1,
+            "response": [
+              {
+                "type": "narration",
+                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 진이현이라는 사람을 조금 더 알게 된 것 같다."
+}

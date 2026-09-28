@@ -1,0 +1,37 @@
+{
+  "id": "char_006_casual_05",
+  "kind": "casual",
+  "title": "강아지보다 물고기",
+  "minAffection": 40,
+  "maxAffection": 100,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "강아지가 다가오자 시온이 어색하게 굳었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "저, 육상 생물은 조금 어려워요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "물고기와 대화할 듯한 사람이 강아지 앞에서 손 위치를 몰랐다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "어디를 만져야 하죠?",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 백시온이라는 사람을 조금 더 알게 된 것 같다."
+}

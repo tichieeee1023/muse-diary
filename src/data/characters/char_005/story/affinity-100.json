@@ -1,0 +1,99 @@
+{
+  "id": "char_005_affinity_100",
+  "kind": "story",
+  "title": "불이 꺼진 뒤에도",
+  "threshold": 100,
+  "purpose": "태겸이 보호가 아니라 동행을 선택한다",
+  "defaultPortrait": "smile",
+  "completionAffection": 0,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "마지막 조명이 꺼진 뒤 태겸은 늘 하던 대로 앞장서지 않았다. {name} 옆에 나란히 섰다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "오늘은 뒤에 있으라는 말 안 하겠습니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "경계는 여전했지만 거리를 정하는 방식이 달라졌다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "대신 옆에 있어요. 계속.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "aff_100_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“그게 더 좋아요.”",
+            "affection": 6,
+            "memoryKey": "affinity_100_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "강태겸",
+                "text": "저도요.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“명령이에요, 부탁이에요?”",
+            "affection": 4,
+            "memoryKey": "affinity_100_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "강태겸",
+                "text": "…부탁입니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“계속 옆에 있을게요.”",
+            "affection": 5,
+            "memoryKey": "affinity_100_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "강태겸",
+                "text": "그럼 됐습니다.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 불이 꺼진 뒤에도은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "태겸이 보호가 아니라 동행을 선택한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "불이 꺼진 뒤에도 — 중요한 관계 기록이 다이어리에 남았다."
+}

@@ -1,0 +1,37 @@
+{
+  "id": "char_006_casual_02",
+  "kind": "casual",
+  "title": "수건 접기",
+  "minAffection": 20,
+  "maxAffection": 79,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "시온이 수건을 수달처럼 돌돌 말아 쌓고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "이게 제일 빨리 마릅니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "마지막 하나는 얼굴 모양처럼 묘하게 귀여웠다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "의도한 건 아니고요.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 백시온이라는 사람을 조금 더 알게 된 것 같다."
+}

@@ -1,0 +1,37 @@
+{
+  "id": "char_012_casual_07",
+  "kind": "casual",
+  "title": "현재 시각",
+  "minAffection": 80,
+  "maxAffection": 100,
+  "defaultPortrait": "smile",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이현이 시계를 보지 않고 {name}에게 시간을 물었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "오늘은 당신 기준으로 맞추려고요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "정확한 시간을 아는 사람에게서 가장 이상한 질문이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "그게 지금은 더 중요합니다.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 진이현이라는 사람을 조금 더 알게 된 것 같다."
+}

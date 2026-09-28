@@ -1,0 +1,99 @@
+{
+  "id": "char_010_affinity_100",
+  "kind": "story",
+  "title": "경계선 안쪽",
+  "threshold": 100,
+  "purpose": "재하가 주인공을 보호 대상이 아니라 동반자로 인정한다",
+  "defaultPortrait": "smile",
+  "completionAffection": 0,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "재하는 늘 반걸음 앞에 서던 습관을 멈추고 {name} 옆에 섰다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "앞에 있을 필요가 없다는 걸 이제 압니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "경계하던 눈이 처음으로 완전히 풀렸다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "당신이 제 옆에 있는 게 좋습니다.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "aff_100_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“계속 옆에 있을게요.”",
+            "affection": 6,
+            "memoryKey": "affinity_100_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "그렇게 해주십시오. 아니… 부탁합니다.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“이제 명령 안 해요?”",
+            "affection": 4,
+            "memoryKey": "affinity_100_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "필요할 때만요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“나도 좋아해요.”",
+            "affection": 5,
+            "memoryKey": "affinity_100_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "…다행입니다.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 경계선 안쪽은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "재하가 주인공을 보호 대상이 아니라 동반자로 인정한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "경계선 안쪽 — 중요한 관계 기록이 다이어리에 남았다."
+}

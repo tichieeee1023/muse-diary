@@ -1,0 +1,20 @@
+{
+  "characterId": "char_012",
+  "name": "진이현",
+  "initialAttitude": "special",
+  "initialAttitudeLabel": "처음부터 특별함",
+  "surface": "침착하고 거리감이 있다. 그런데 첫 만남부터 주인공을 이미 아는 사람처럼 바라본다.",
+  "gapMoe": "시간을 다루는 듯한 신비한 사람인데 현실의 알람과 약속 시간 관리에는 의외로 허술하다. 평범한 새 물건보다 낡은 것을 좋아한다.",
+  "weakness": "과거를 알고 있다는 사실 때문에 현재의 선택에 지나치게 조심스럽다.",
+  "lateChange": "이미 알고 있던 사람을 되찾으려는 태도에서, 지금의 {name}을 새로 사랑하는 태도로 바뀐다.",
+  "voiceNote": "조용하고 정확한 존댓말. 아련한 말이 많지만 장난칠 때는 건조하다.",
+  "specialFromFirstMeet": true,
+  "visuals": {
+    "main": "/assets/characters/char_012/main.webp",
+    "smile": "/assets/characters/char_012/smile.webp",
+    "troubled": "/assets/characters/char_012/troubled.webp",
+    "hmm": "/assets/characters/char_012/hmm.webp",
+    "endingCg": "/assets/characters/char_012/ending-cg.webp",
+    "endingDoll": "/assets/characters/char_012/ending-doll.webp"
+  }
+}

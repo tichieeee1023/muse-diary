@@ -1,0 +1,37 @@
+{
+  "id": "char_004_casual_08",
+  "kind": "casual",
+  "title": "그림자 두 개",
+  "minAffection": 80,
+  "maxAffection": 100,
+  "defaultPortrait": "smile",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "가로등 아래 두 사람의 그림자가 잠시 겹쳤다. 로운의 그림자가 먼저 움직이지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "오늘은 얌전하네.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "그는 그림자보다 {name} 쪽을 봤다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "주인이 기분 좋아서 그런가.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 이로운이라는 사람을 조금 더 알게 된 것 같다."
+}

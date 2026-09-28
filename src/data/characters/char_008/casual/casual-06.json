@@ -1,0 +1,76 @@
+{
+  "id": "char_008_casual_06",
+  "kind": "casual",
+  "title": "폐관 방송 따라하기",
+  "minAffection": 60,
+  "maxAffection": 100,
+  "defaultPortrait": "smile",
+  "completionAffection": 3,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "세현이 폐관 방송 멘트를 똑같이 흉내 냈다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "맨날 들으면 외워져요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "목소리까지 지나치게 비슷했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "쓸데없는 재능이죠.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "casual_6_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "조금 솔직하게 반응한다.",
+            "affection": 3,
+            "memoryKey": "casual_6_warm",
+            "response": [
+              {
+                "type": "narration",
+                "text": "오세현의 표정이 아주 조금 풀렸다."
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "가볍게 놀려본다.",
+            "affection": 2,
+            "response": [
+              {
+                "type": "narration",
+                "text": "오세현은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "그냥 옆에서 지켜본다.",
+            "affection": 1,
+            "response": [
+              {
+                "type": "narration",
+                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 오세현이라는 사람을 조금 더 알게 된 것 같다."
+}

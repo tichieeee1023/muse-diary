@@ -1,0 +1,20 @@
+{
+  "characterId": "char_004",
+  "name": "이로운",
+  "initialAttitude": "friendly_to_all",
+  "initialAttitudeLabel": "사교적·보편적 친절",
+  "surface": "밝고 친절하고 눈치가 빠르다. 하지만 처음부터 특별히 친절한 게 아니라 누구에게나 능숙하다.",
+  "gapMoe": "늘 여유로운데 배가 고프면 표정과 말투가 놀랄 만큼 솔직해진다. 칭찬을 받는 데는 의외로 약하다.",
+  "weakness": "자기 그림자가 이상해질수록 농담이 많아진다.",
+  "lateChange": "모두에게 친절한 미소와 {name}에게만 보이는 조용한 얼굴의 차이가 커진다.",
+  "voiceNote": "부드럽고 장난스러운 반말 섞인 존댓말. 진심일수록 장난이 사라진다.",
+  "specialFromFirstMeet": false,
+  "visuals": {
+    "main": "/assets/characters/char_004/main.webp",
+    "smile": "/assets/characters/char_004/smile.webp",
+    "troubled": "/assets/characters/char_004/troubled.webp",
+    "hmm": "/assets/characters/char_004/hmm.webp",
+    "endingCg": "/assets/characters/char_004/ending-cg.webp",
+    "endingDoll": "/assets/characters/char_004/ending-doll.webp"
+  }
+}

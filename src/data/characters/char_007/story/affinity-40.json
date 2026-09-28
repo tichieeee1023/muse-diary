@@ -1,0 +1,99 @@
+{
+  "id": "char_007_affinity_40",
+  "kind": "story",
+  "title": "유행어 시험",
+  "threshold": 40,
+  "purpose": "휘람의 시대착오적인 갭",
+  "defaultPortrait": "hmm",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "휴대폰 화면을 보던 휘람이 한참 미간을 찌푸렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "‘알잘딱깔센’이 정확히 무슨 뜻이에요?",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "역사 연도는 술술 외우면서 최신 유행어 하나에 완전히 막혀 있었다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "웃지 말고 설명해줘요.",
+          "portrait": "hmm"
+        }
+      ],
+      "choice": {
+        "id": "aff_40_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“수업료 받아요.”",
+            "affection": 6,
+            "memoryKey": "affinity_40_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "김휘람",
+                "text": "뭘 원하는데요.",
+                "portrait": "hmm"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“귀엽다.”",
+            "affection": 4,
+            "memoryKey": "affinity_40_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "김휘람",
+                "text": "아, 진짜 그런 말 하지 마요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“그냥 쓰지 마요.”",
+            "affection": 5,
+            "memoryKey": "affinity_40_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "김휘람",
+                "text": "그게 제일 현명하겠네요.",
+                "portrait": "hmm"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 유행어 시험은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "휘람의 시대착오적인 갭 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "유행어 시험 — 중요한 관계 기록이 다이어리에 남았다."
+}

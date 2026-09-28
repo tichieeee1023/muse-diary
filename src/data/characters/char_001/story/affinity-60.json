@@ -1,0 +1,99 @@
+{
+  "id": "char_001_affinity_60",
+  "kind": "story",
+  "title": "다 읽지 않은 결말",
+  "threshold": 60,
+  "purpose": "도윤이 감정을 숨기는 방식의 이유",
+  "defaultPortrait": "troubled",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "도윤은 늘 마지막 장을 조금 남겨둔 책이 있다고 털어놓았다. 좋아하는 이야기가 끝나는 걸 싫어해서라는 이유였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "끝을 알면 다시는 처음처럼 읽을 수 없잖습니까.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "무심한 사람이라고 생각했던 첫인상과 달리 그는 끝나는 것에 유난히 약했다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "사람도 그런지는 아직 잘 모르겠습니다.",
+          "portrait": "troubled"
+        }
+      ],
+      "choice": {
+        "id": "aff_60_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“그럼 천천히 알아가요.”",
+            "affection": 6,
+            "memoryKey": "affinity_60_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "그 말은… 꽤 마음에 듭니다.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“끝나지 않게 하면 되죠.”",
+            "affection": 4,
+            "memoryKey": "affinity_60_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "쉽게 말하네요. 그런데 싫지는 않습니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“생각보다 낭만적이네요.”",
+            "affection": 5,
+            "memoryKey": "affinity_60_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "그 얘기는 다른 데서 하지 마세요.",
+                "portrait": "troubled"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 다 읽지 않은 결말은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "도윤이 감정을 숨기는 방식의 이유 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "다 읽지 않은 결말 — 중요한 관계 기록이 다이어리에 남았다."
+}

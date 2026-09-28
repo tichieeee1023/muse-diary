@@ -1,0 +1,37 @@
+{
+  "id": "char_001_casual_02",
+  "kind": "casual",
+  "title": "고양이 책갈피",
+  "minAffection": 0,
+  "maxAffection": 59,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "책 사이에서 고양이 모양 책갈피가 떨어졌다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "제 겁니다. 왜요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "무심한 취향치고 귀가 너무 크고 분홍색이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "선물 받은 겁니다. 굳이 설명하자면.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 서도윤이라는 사람을 조금 더 알게 된 것 같다."
+}

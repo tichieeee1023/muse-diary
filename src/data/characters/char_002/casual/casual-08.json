@@ -1,0 +1,37 @@
+{
+  "id": "char_002_casual_08",
+  "kind": "casual",
+  "title": "한 칸의 여백",
+  "minAffection": 80,
+  "maxAffection": 100,
+  "defaultPortrait": "smile",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "새 진열에서 일부러 빈 공간을 남겨둔 주원이 말했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "당신이라면 뭘 둘지 궁금해서요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "정답을 먼저 정해두지 않은 질문이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "이번엔 같이 정하죠.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 한주원이라는 사람을 조금 더 알게 된 것 같다."
+}

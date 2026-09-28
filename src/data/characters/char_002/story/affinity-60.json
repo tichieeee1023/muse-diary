@@ -1,0 +1,99 @@
+{
+  "id": "char_002_affinity_60",
+  "kind": "story",
+  "title": "버리지 못한 시안",
+  "threshold": 60,
+  "purpose": "완벽주의 뒤에 남아 있는 미련과 다정함",
+  "defaultPortrait": "troubled",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "주원의 작업실 한쪽 상자에는 폐기된 시안들이 날짜별로 정리되어 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "실패작입니다. 그래서 남겨뒀어요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "그는 실패를 싫어하지만 실패한 시간을 버리는 건 더 싫다고 했다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "사람도 마찬가지일지 모르겠네요.",
+          "portrait": "troubled"
+        }
+      ],
+      "choice": {
+        "id": "aff_60_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“실패가 아니라 과정이잖아요.”",
+            "affection": 6,
+            "memoryKey": "affinity_60_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "그 말, 제일 싫어하면서도 제일 필요한 말이네요.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“나도 상자에 들어가요?”",
+            "affection": 4,
+            "memoryKey": "affinity_60_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "당신은 보관함이 따로 필요하겠는데요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“주원 씨답지 않게 sentimental.”",
+            "affection": 5,
+            "memoryKey": "affinity_60_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "그 단어 쓰지 마세요.",
+                "portrait": "troubled"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 버리지 못한 시안은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "완벽주의 뒤에 남아 있는 미련과 다정함 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "버리지 못한 시안 — 중요한 관계 기록이 다이어리에 남았다."
+}

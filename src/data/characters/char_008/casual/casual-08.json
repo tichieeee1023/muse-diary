@@ -1,0 +1,37 @@
+{
+  "id": "char_008_casual_08",
+  "kind": "casual",
+  "title": "초대장 뒤쪽",
+  "minAffection": 80,
+  "maxAffection": 100,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "전시 초대장 뒤에 세현이 작은 낙서를 남겼다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "그림은 보지 말고 글만 봐요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "글에는 ‘같이 보면 더 좋을 것 같아서’라고 적혀 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "그쪽이 핵심입니다.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 오세현이라는 사람을 조금 더 알게 된 것 같다."
+}

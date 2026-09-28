@@ -1,0 +1,37 @@
+{
+  "id": "char_009_casual_01",
+  "kind": "casual",
+  "title": "매운 국물",
+  "minAffection": 0,
+  "maxAffection": 59,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이겸은 매운 국물을 한입 먹고 조용히 물을 찾았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "맵지 않습니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "눈가가 이미 붉었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "…조금 자극적일 뿐입니다.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 차이겸이라는 사람을 조금 더 알게 된 것 같다."
+}

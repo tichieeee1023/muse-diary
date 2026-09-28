@@ -1,0 +1,37 @@
+{
+  "id": "char_007_casual_07",
+  "kind": "casual",
+  "title": "먼저 메시지",
+  "minAffection": 80,
+  "maxAffection": 100,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "휘람이 먼저 보낸 메시지는 “도서관 오세요?” 한 줄이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "별 의미는 없어요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "만나자마자 먼저 변명했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "그냥… 있으면 덜 심심해서.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 김휘람이라는 사람을 조금 더 알게 된 것 같다."
+}

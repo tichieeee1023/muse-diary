@@ -1,0 +1,37 @@
+{
+  "id": "char_001_casual_08",
+  "kind": "casual",
+  "title": "낡은 영수증",
+  "minAffection": 60,
+  "maxAffection": 100,
+  "defaultPortrait": "hmm",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "도윤 지갑에서 오래된 서점 영수증이 나왔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "첫 월급으로 산 책입니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "작은 종이 하나를 버리지 못하는 사람의 손이 조심스러웠다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "쓸모없어도 남겨두는 게 있죠.",
+          "portrait": "hmm"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 서도윤이라는 사람을 조금 더 알게 된 것 같다."
+}

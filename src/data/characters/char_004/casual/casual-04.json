@@ -1,0 +1,37 @@
+{
+  "id": "char_004_casual_04",
+  "kind": "casual",
+  "title": "실패한 하트",
+  "minAffection": 40,
+  "maxAffection": 100,
+  "defaultPortrait": "troubled",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "로운이 초콜릿으로 하트를 만들다 한쪽을 부러뜨렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "원래 추상화였습니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "뻔뻔하게 우기면서도 새 걸 다시 만들었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "두 번째는 안 보여줄 겁니다.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 이로운이라는 사람을 조금 더 알게 된 것 같다."
+}

@@ -1,0 +1,99 @@
+{
+  "id": "char_012_affinity_80",
+  "kind": "story",
+  "title": "고치지 않은 실수",
+  "threshold": 80,
+  "purpose": "이현이 과거를 수정하지 않고 현재를 받아들이기 시작한다",
+  "defaultPortrait": "smile",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이현은 대화 중 단어를 잘못 골라 {name}을 웃게 만들었다. 손이 시계로 갔다가 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "예전 같으면 이 순간을 되돌렸을 겁니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "그는 잘못 말한 문장을 그대로 두고 조금 어색하게 웃었다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "그런데 당신이 웃었으니 이게 더 낫네요.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "aff_80_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“그대로 둬요.”",
+            "affection": 6,
+            "memoryKey": "affinity_80_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "그러겠습니다.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“실수하는 이현 씨도 좋아요.”",
+            "affection": 4,
+            "memoryKey": "affinity_80_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "…그 말은 예상 못 했습니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“또 틀려도 돼요.”",
+            "affection": 5,
+            "memoryKey": "affinity_80_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "그건 너무 관대한데요.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 고치지 않은 실수은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "이현이 과거를 수정하지 않고 현재를 받아들이기 시작한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "고치지 않은 실수 — 중요한 관계 기록이 다이어리에 남았다."
+}

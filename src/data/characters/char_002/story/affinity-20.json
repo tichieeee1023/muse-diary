@@ -1,0 +1,99 @@
+{
+  "id": "char_002_affinity_20",
+  "kind": "story",
+  "title": "시선이 머문 자리",
+  "threshold": 20,
+  "purpose": "서로의 작업 감각을 인정하기 시작한다",
+  "defaultPortrait": "main",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "쇼윈도 앞에서 주원은 {name}이 멈춰 선 위치를 보고 조명의 각도를 다시 확인했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "당신이 거기서 멈췄다는 건 이유가 있겠죠.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "처음 만났을 때처럼 정답을 말하기보다 이번에는 먼저 의견을 기다렸다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "말해봐요. 이번엔 제가 듣겠습니다.",
+          "portrait": "main"
+        }
+      ],
+      "choice": {
+        "id": "aff_20_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“조명이 인형 얼굴을 가려요.”",
+            "affection": 6,
+            "memoryKey": "affinity_20_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "그렇군요. 바로 고치죠.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“완벽한 척하더니 물어보네요.”",
+            "affection": 4,
+            "memoryKey": "affinity_20_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "필요한 사람에게는 묻습니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“내 감각을 믿어요?”",
+            "affection": 5,
+            "memoryKey": "affinity_20_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "생각보다 많이요.",
+                "portrait": "main"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 시선이 머문 자리은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "서로의 작업 감각을 인정하기 시작한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "시선이 머문 자리 — 중요한 관계 기록이 다이어리에 남았다."
+}

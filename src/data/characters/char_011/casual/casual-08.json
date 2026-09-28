@@ -1,0 +1,37 @@
+{
+  "id": "char_011_casual_08",
+  "kind": "casual",
+  "title": "손끝 빛 하나",
+  "minAffection": 80,
+  "maxAffection": 100,
+  "defaultPortrait": "smile",
+  "completionAffection": 5,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "유리안이 아주 작은 빛 하나만 켰다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "이 정도면 과하지 않죠?",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "그 빛은 무대가 아니라 {name} 얼굴만 비췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "오늘 관객은 한 명이면 됩니다.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 유리안이라는 사람을 조금 더 알게 된 것 같다."
+}

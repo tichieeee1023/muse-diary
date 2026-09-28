@@ -1,0 +1,99 @@
+{
+  "id": "char_004_affinity_20",
+  "kind": "story",
+  "title": "오늘의 디저트",
+  "threshold": 20,
+  "purpose": "로운의 친절이 특별한 호감이 아니라 직업적 습관임을 보여준다",
+  "defaultPortrait": "main",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "로운은 손님마다 다른 디저트를 추천하고 있었다. {name}에게만 그러는 줄 알았던 첫인상이 조금 민망해졌다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "실망했어요?",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "웃으면서 묻지만 놀리는 기색이 더 컸다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "대신 당신 건 이유를 조금 더 오래 고민하긴 했는데.",
+          "portrait": "main"
+        }
+      ],
+      "choice": {
+        "id": "aff_20_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“그건 좀 특별하네요.”",
+            "affection": 6,
+            "memoryKey": "affinity_20_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "이로운",
+                "text": "그 정도만 인정할게요.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“다른 손님한테도 똑같이 말하죠?”",
+            "affection": 4,
+            "memoryKey": "affinity_20_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "이로운",
+                "text": "아, 들켰나. 그 말은 처음입니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“실망 안 했어요.”",
+            "affection": 5,
+            "memoryKey": "affinity_20_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "이로운",
+                "text": "그럼 제가 조금 실망할 뻔했네.",
+                "portrait": "main"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 오늘의 디저트은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "로운의 친절이 특별한 호감이 아니라 직업적 습관임을 보여준다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "오늘의 디저트 — 중요한 관계 기록이 다이어리에 남았다."
+}

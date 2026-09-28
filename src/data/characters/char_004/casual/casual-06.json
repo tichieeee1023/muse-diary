@@ -1,0 +1,76 @@
+{
+  "id": "char_004_casual_06",
+  "kind": "casual",
+  "title": "쓴 초콜릿",
+  "minAffection": 60,
+  "maxAffection": 100,
+  "defaultPortrait": "smile",
+  "completionAffection": 3,
+  "repeatable": true,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "로운이 유난히 쓴 초콜릿을 골라 {name}에게 건넸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "제 취향도 한번 알아두세요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "늘 상대 취향만 읽던 사람이 자기 취향을 내민 순간이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "안 맞아도 괜찮고요.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "casual_6_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "조금 솔직하게 반응한다.",
+            "affection": 3,
+            "memoryKey": "casual_6_warm",
+            "response": [
+              {
+                "type": "narration",
+                "text": "이로운의 표정이 아주 조금 풀렸다."
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "가볍게 놀려본다.",
+            "affection": 2,
+            "response": [
+              {
+                "type": "narration",
+                "text": "이로운은 잠깐 말문이 막혔다가 어이없다는 듯 반응했다."
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "그냥 옆에서 지켜본다.",
+            "affection": 1,
+            "response": [
+              {
+                "type": "narration",
+                "text": "굳이 말을 보태지 않아도 어색하지 않은 시간이 잠깐 이어졌다."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "closing": "사소한 만남이었다. 그래서 오히려 이로운이라는 사람을 조금 더 알게 된 것 같다."
+}

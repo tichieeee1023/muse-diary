@@ -1,0 +1,20 @@
+{
+  "characterId": "char_005",
+  "name": "강태겸",
+  "initialAttitude": "guarded",
+  "initialAttitudeLabel": "경계",
+  "surface": "무뚝뚝하고 경계심이 강하다. 위험한 곳에 들어온 사람을 달가워하지 않는다.",
+  "gapMoe": "무서운 흔적은 태연히 지우면서 벌레만 나오면 진심으로 질색한다. 작은 화분을 살리는 데 집착한다.",
+  "weakness": "걱정이 많아지면 명령조가 심해진다.",
+  "lateChange": "여전히 까칠하고 명령조지만 {name}에게는 설명하고 기다리는 시간이 생긴다.",
+  "voiceNote": "짧고 단호한 반말에 가까운 존댓말. 다정함은 행동으로 먼저 나온다.",
+  "specialFromFirstMeet": false,
+  "visuals": {
+    "main": "/assets/characters/char_005/main.webp",
+    "smile": "/assets/characters/char_005/smile.webp",
+    "troubled": "/assets/characters/char_005/troubled.webp",
+    "hmm": "/assets/characters/char_005/hmm.webp",
+    "endingCg": "/assets/characters/char_005/ending-cg.webp",
+    "endingDoll": "/assets/characters/char_005/ending-doll.webp"
+  }
+}

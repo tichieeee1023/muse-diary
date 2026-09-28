@@ -1,0 +1,99 @@
+{
+  "id": "char_001_affinity_80",
+  "kind": "story",
+  "title": "먼저 남겨둔 자리",
+  "threshold": 80,
+  "purpose": "나에게만 달라진 행동이 보이는 시기",
+  "defaultPortrait": "smile",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "창가 자리에 작은 종이 한 장이 놓여 있었다. ‘예약석’ 대신 익숙한 필체로 {name}의 이름이 적혀 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "사람이 많아서요. 자리 없으면 돌아갈 것 같아서.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "먼저 기다렸다는 사실을 인정하는 데 도윤은 예상보다 오래 걸렸다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "커피는… 쓴 걸로 시켰는데 맞습니까?",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "aff_80_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“기다렸어요?”",
+            "affection": 6,
+            "memoryKey": "affinity_80_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "조금. 많이는 아닙니다.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“내 취향 다 외웠네요.”",
+            "affection": 4,
+            "memoryKey": "affinity_80_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "외운 게 아니라… 자주 봤으니까요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“고마워요. 같이 읽어요.”",
+            "affection": 5,
+            "memoryKey": "affinity_80_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "네. 오늘은 그렇게 하죠.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 먼저 남겨둔 자리은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "나에게만 달라진 행동이 보이는 시기 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "먼저 남겨둔 자리 — 중요한 관계 기록이 다이어리에 남았다."
+}

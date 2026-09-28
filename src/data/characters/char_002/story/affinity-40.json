@@ -1,0 +1,99 @@
+{
+  "id": "char_002_affinity_40",
+  "kind": "story",
+  "title": "캡슐 하나의 자존심",
+  "threshold": 40,
+  "purpose": "주원의 촌스러운 수집 취향이 드러난다",
+  "defaultPortrait": "hmm",
+  "completionAffection": 3,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "퇴근길의 캡슐토이 기계 앞에서 주원을 발견했다. 차콜 코트 주머니에는 이미 작은 플라스틱 캡슐이 두 개 들어 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "보고도 못 본 척해주시죠.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "꺼낸 건 이상할 만큼 투박한 곰 열쇠고리였다. 완벽한 디스플레이 기획자의 취향과는 거리가 멀었다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "이 시리즈는 균형이 이상해서 좋습니다.",
+          "portrait": "hmm"
+        }
+      ],
+      "choice": {
+        "id": "aff_40_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“귀여운 취향이네요.”",
+            "affection": 6,
+            "memoryKey": "affinity_40_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "취향이라는 단어는 인정하죠. 귀엽다는 건 빼고.",
+                "portrait": "hmm"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“하나 더 뽑아줄까요?”",
+            "affection": 4,
+            "memoryKey": "affinity_40_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "중복 나오면 책임지세요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“완벽하지 않아서 좋아요?”",
+            "affection": 5,
+            "memoryKey": "affinity_40_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "…네. 이상하게도요.",
+                "portrait": "hmm"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 캡슐 하나의 자존심은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "주원의 촌스러운 수집 취향이 드러난다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "캡슐 하나의 자존심 — 중요한 관계 기록이 다이어리에 남았다."
+}

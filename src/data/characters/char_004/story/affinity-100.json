@@ -1,0 +1,99 @@
+{
+  "id": "char_004_affinity_100",
+  "kind": "story",
+  "title": "설탕이 녹기 전에",
+  "threshold": 100,
+  "purpose": "로운이 장난 없이 진심을 말한다",
+  "defaultPortrait": "smile",
+  "completionAffection": 0,
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "로운은 설탕 공예 하나를 내밀었다. 평소라면 멋진 설명을 붙였을 텐데 아무 말도 하지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "이건 추천이 아니라 선물입니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "그림자도 이번에는 그의 발밑에 얌전히 붙어 있었다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "좋아합니다. 손님으로 말고요.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "aff_100_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "“나도 좋아해요.”",
+            "affection": 6,
+            "memoryKey": "affinity_100_a",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "이로운",
+                "text": "다행이다.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“오늘은 농담 아니네요.”",
+            "affection": 4,
+            "memoryKey": "affinity_100_b",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "이로운",
+                "text": "네. 드디어요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“그럼 단골은 그만할까요?”",
+            "affection": 5,
+            "memoryKey": "affinity_100_c",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "이로운",
+                "text": "대신 제일 자주 오는 사람은 해줘요.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날의 설탕이 녹기 전에은 이전의 만남과 조금 다른 모양으로 기억에 남았다."
+        },
+        {
+          "type": "narration",
+          "text": "로운이 장난 없이 진심을 말한다 관계가 한 단계 움직였다는 걸, 굳이 숫자로 확인하지 않아도 알 수 있었다."
+        }
+      ]
+    }
+  ],
+  "closing": "설탕이 녹기 전에 — 중요한 관계 기록이 다이어리에 남았다."
+}
