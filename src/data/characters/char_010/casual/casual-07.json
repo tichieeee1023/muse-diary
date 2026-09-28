@@ -22,7 +22,7 @@
         },
         {
           "type": "narration",
-          "text": "{name}이 상자를 뺏어들자 그가 진짜로 당황했다."
+          "text": "{name}{이가} 상자를 뺏어들자 그가 진짜로 당황했다."
         },
         {
           "type": "dialogue",

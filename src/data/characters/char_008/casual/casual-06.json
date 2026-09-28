@@ -1,6 +1,7 @@
 {
   "id": "char_008_casual_06",
   "kind": "casual",
+  "times": ["밤"],
   "title": "좋아하는 작품",
   "minAffection": 40,
   "maxAffection": 89,
@@ -12,7 +13,7 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "폐관 직전, 세현은 사람이 거의 없는 작은 전시실로 {name}을 데려갔다."
+          "text": "폐관 직전, 세현은 사람이 거의 없는 작은 전시실로 {name}{을를} 데려갔다."
         },
         {
           "type": "dialogue",

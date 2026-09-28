@@ -22,7 +22,7 @@
         },
         {
           "type": "narration",
-          "text": "결국 {name}이 대신 눌러주자 그가 진심으로 감탄했다."
+          "text": "결국 {name}{이가} 대신 눌러주자 그가 진심으로 감탄했다."
         },
         {
           "type": "dialogue",

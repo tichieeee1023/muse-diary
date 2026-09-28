@@ -1,6 +1,7 @@
 {
   "id": "char_008_casual_10",
   "kind": "casual",
+  "times": ["낮"],
   "title": "위에서 본 구도",
   "minAffection": 0,
   "maxAffection": 100,

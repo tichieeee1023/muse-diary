@@ -1,6 +1,7 @@
 {
   "id": "char_005_casual_10",
   "kind": "casual",
+  "times": ["밤"],
   "title": "세제 대신 우유",
   "minAffection": 0,
   "maxAffection": 100,

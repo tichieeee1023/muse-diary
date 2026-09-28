@@ -1,6 +1,7 @@
 {
   "id": "char_005_casual_09",
   "kind": "casual",
+  "times": ["밤"],
   "title": "옥상의 화분",
   "minAffection": 0,
   "maxAffection": 100,

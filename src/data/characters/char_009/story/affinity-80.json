@@ -1,6 +1,7 @@
 {
   "id": "char_009_affinity_80",
   "kind": "story",
+  "times": ["낮"],
   "title": "통제의 이유",
   "threshold": 80,
   "purpose": "어릴 때부터 감정을 억제하도록 교육받은 과거와 가장 큰 공포를 공개한다.",

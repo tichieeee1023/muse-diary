@@ -1,6 +1,7 @@
 {
   "id": "char_001_affinity_80",
   "kind": "story",
+  "times": ["밤"],
   "title": "남겨진 메모",
   "threshold": 80,
   "defaultPortrait": "main",
@@ -138,7 +139,7 @@
         },
         {
           "type": "narration",
-          "text": "그리고 {name}을 보며 아주 작게 웃었다."
+          "text": "그리고 {name}{을를} 보며 아주 작게 웃었다."
         },
         {
           "type": "dialogue",

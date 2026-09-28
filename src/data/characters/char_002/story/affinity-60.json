@@ -5,7 +5,7 @@
   "threshold": 60,
   "defaultPortrait": "main",
   "completionAffection": 2,
-  "purpose": "주원이 현실계 인물로서 공간의 이상을 최초로 구조적 오류로 감지하고, 통제할 수 없는 현상 앞에서 {name}과 함께 움직인다",
+  "purpose": "주원이 현실계 인물로서 공간의 이상을 최초로 구조적 오류로 감지하고, 통제할 수 없는 현상 앞에서 {name}{과와} 함께 움직인다",
   "sections": [
     {
       "blocks": [

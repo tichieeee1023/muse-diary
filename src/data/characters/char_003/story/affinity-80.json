@@ -1,9 +1,10 @@
 {
   "id": "char_003_affinity_80",
   "kind": "story",
+  "times": ["밤"],
   "title": "같이 가는 밤",
   "threshold": 80,
-  "purpose": "보호해야 할 대상이 아니라 함께 판단할 사람으로 {name}을 대하기 시작한다",
+  "purpose": "보호해야 할 대상이 아니라 함께 판단할 사람으로 {name}{을를} 대하기 시작한다",
   "defaultPortrait": "main",
   "completionAffection": 3,
   "sections": [
@@ -35,7 +36,7 @@
         },
         {
           "type": "narration",
-          "text": "말을 고쳐 한 뒤 그는 {name}과 보폭을 맞췄다."
+          "text": "말을 고쳐 한 뒤 그는 {name}{과와} 보폭을 맞췄다."
         }
       ]
     },

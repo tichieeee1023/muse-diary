@@ -1,4 +1,4 @@
-export type UiSound = 'tap' | 'page' | 'new' | 'heart'
+export type UiSound = 'tap' | 'page' | 'new' | 'heart' | 'rarity-r' | 'rarity-sr' | 'rarity-ssr'
 
 let audioContext: AudioContext | null = null
 
@@ -15,6 +15,9 @@ const presets: Record<UiSound, { frequency: number; duration: number; gain: numb
   page: { frequency: 240, duration: 0.07, gain: 0.02 },
   new: { frequency: 620, duration: 0.12, gain: 0.035 },
   heart: { frequency: 480, duration: 0.09, gain: 0.03 },
+  'rarity-r': { frequency: 410, duration: 0.11, gain: 0.028 },
+  'rarity-sr': { frequency: 520, duration: 0.17, gain: 0.032 },
+  'rarity-ssr': { frequency: 660, duration: 0.25, gain: 0.04 },
 }
 
 export function playUiSound(kind: UiSound, enabled = true) {
@@ -27,8 +30,10 @@ export function playUiSound(kind: UiSound, enabled = true) {
     const gainNode = context.createGain()
     const now = context.currentTime
 
-    oscillator.type = 'sine'
+    oscillator.type = kind === 'rarity-ssr' ? 'triangle' : 'sine'
     oscillator.frequency.setValueAtTime(preset.frequency, now)
+    if (kind === 'rarity-sr') oscillator.frequency.exponentialRampToValueAtTime(preset.frequency * 1.35, now + preset.duration)
+    if (kind === 'rarity-ssr') oscillator.frequency.exponentialRampToValueAtTime(preset.frequency * 1.52, now + preset.duration)
     gainNode.gain.setValueAtTime(preset.gain, now)
     gainNode.gain.exponentialRampToValueAtTime(0.0001, now + preset.duration)
     oscillator.connect(gainNode)

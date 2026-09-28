@@ -41,6 +41,7 @@ export interface StorySection {
 export interface StoryEpisode {
   id: string
   kind: StoryEpisodeKind
+  times?: TimeOfDay[]
   title: string
   threshold?: number
   purpose?: string

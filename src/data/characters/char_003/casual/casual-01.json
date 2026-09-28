@@ -1,6 +1,7 @@
 {
   "id": "char_003_casual_01",
   "kind": "casual",
+  "times": ["낮"],
   "title": "고양이 비상용",
   "minAffection": 0,
   "maxAffection": 39,

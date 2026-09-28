@@ -1,6 +1,7 @@
 {
   "id": "char_009_casual_09",
   "kind": "casual",
+  "times": ["밤"],
   "title": "닫히기 직전의 도서관",
   "minAffection": 0,
   "maxAffection": 100,

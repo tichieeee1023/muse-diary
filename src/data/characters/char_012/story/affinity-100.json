@@ -1,6 +1,7 @@
 {
   "id": "char_012_affinity_100",
   "kind": "story",
+  "times": ["밤"],
   "title": "돌아가지 말아요",
   "threshold": 100,
   "purpose": "다시 시간을 되돌릴 기회 앞에서 불완전한 현재를 함께 살아가는 선택으로 루트를 완성한다.",

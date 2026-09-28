@@ -1,6 +1,7 @@
 {
   "id": "char_005_affinity_100",
   "kind": "story",
+  "times": ["밤"],
   "title": "기억해도 됩니다",
   "threshold": 100,
   "purpose": "루트 핵심 문장을 회수하고, 주인공을 보호 대상이 아닌 기억을 나누는 동료이자 연인으로 받아들인다.",

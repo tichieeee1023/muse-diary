@@ -1,6 +1,7 @@
 {
   "id": "char_005_casual_07",
   "kind": "casual",
+  "times": ["밤"],
   "title": "새벽의 물주기",
   "minAffection": 60,
   "maxAffection": 99,

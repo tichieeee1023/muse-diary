@@ -11,7 +11,7 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "이현은 {name}이 가게 문을 열기 직전 이미 고개를 들고 있었다."
+          "text": "이현은 {name}{이가} 가게 문을 열기 직전 이미 고개를 들고 있었다."
         },
         {
           "type": "dialogue",
@@ -35,7 +35,7 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "작업대 한쪽에는 {name}이 좋아할 법한 차가 이미 준비되어 있었다."
+          "text": "작업대 한쪽에는 {name}{이가} 좋아할 법한 차가 이미 준비되어 있었다."
         },
         {
           "type": "dialogue",

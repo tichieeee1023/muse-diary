@@ -1,6 +1,7 @@
 {
   "id": "char_005_affinity_20",
   "kind": "story",
+  "times": ["밤"],
   "title": "지워지지 않는 얼룩",
   "threshold": 20,
   "purpose": "태겸의 일이 단순 청소가 아니라는 의심을 확실히 심는다. 정체 설명은 하지 않는다.",

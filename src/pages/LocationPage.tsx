@@ -85,13 +85,14 @@ export function LocationPage() {
     })
     if (!character) return
 
-    const episode = selectCharacterEpisode(character.id, collection, place.id)
+    const episode = selectCharacterEpisode(character.id, collection, place.id, visitTime)
     if (!episode) return
     const affectionAtStart = collection.affectionByCharacterId[character.id] ?? 0
     const completedAtStart = collection.completedCharacterIds.includes(character.id)
     const actionResult = completePlaceAction(place.id, !completedAtStart)
     const encounterResult = recordEncounter(character.id, character.rarity)
-    playUiSound(encounterResult.isNew ? 'new' : episode.kind === 'story' ? 'page' : 'tap', soundEnabled)
+    const encounterSound = character.rarity === 'SSR' ? 'rarity-ssr' : character.rarity === 'SR' ? 'rarity-sr' : 'rarity-r'
+    playUiSound(encounterResult.isNew ? encounterSound : episode.kind === 'story' ? 'page' : 'tap', soundEnabled)
 
     setShowEpisodeTitle(episode.kind !== 'casual')
     setEncounter({
@@ -165,6 +166,8 @@ export function LocationPage() {
     if (encounter.isNew && !revealAcknowledged) {
       return (
         <div className={`page discovery-page rarity-${character.rarity.toLowerCase()}`}>
+          <div className="rarity-reveal-backdrop" aria-hidden="true"><i /><i /><i /><i /><i /><i /><i /><i /></div>
+          <div className="rarity-reveal-label" aria-hidden="true"><span>{character.rarity === 'SSR' ? 'SPECIAL SIGNAL' : character.rarity === 'SR' ? 'RARE SIGNAL' : 'FOUND SIGNAL'}</span><strong>{character.rarity === 'SSR' ? '✦ ✦ ✦' : character.rarity === 'SR' ? '✦ ✦' : '✦'}</strong></div>
           <div className={`discovery-seal rarity-seal-${character.rarity.toLowerCase()}`}>
             <span>{character.rarity === 'SSR' ? 'UNUSUAL SIGNAL' : character.rarity === 'SR' ? 'RARE ENCOUNTER' : 'NEW ENCOUNTER'}</span>
             <strong>{character.rarity}</strong>
@@ -173,7 +176,6 @@ export function LocationPage() {
           <section className="discovery-sheet discovery-sheet-with-portrait">
             <div className="discovery-portrait-stack">
               <CharacterPortrait characterId={character.id} name={character.name} symbol={character.symbol} expression="main" className="discovery-portrait" />
-              <CharacterSD characterId={character.id} name={character.name} symbol={character.symbol} decorative className="discovery-sd-sticker" />
             </div>
             <div>
               <p className="eyebrow">NEW MUSE FOUND</p>
@@ -295,7 +297,7 @@ export function LocationPage() {
         </section>
 
         <article key={`${episode.id}-${sectionIndex}-${choiceResponse ? 'response' : 'base'}`} className="story-sheet" aria-live="polite">
-          <div className="story-scene-index" aria-hidden="true"><span>SCENE</span><strong>{String(sectionIndex + 1).padStart(2, '0')}</strong><i>/</i><small>{String(episode.sections.length).padStart(2, '0')}</small></div>
+          <div className="story-scene-index" aria-label={`장면 ${sectionIndex + 1} / ${episode.sections.length}`}><span>SCENE</span><strong>{String(sectionIndex + 1).padStart(2, '0')}</strong><i aria-hidden="true">/</i><small>{String(episode.sections.length).padStart(2, '0')}</small></div>
           {section.blocks.map((block, index) => block.type === 'narration' ? (
             <p key={`${sectionIndex}-${index}`} className="story-narration novel-prose">{formatGameText(block.text, player.name)}</p>
           ) : (
@@ -311,7 +313,7 @@ export function LocationPage() {
               <div className="choice-list">
                 {section.choice.options.map((option, index) => (
                   <button key={option.id} type="button" className="choice-button story-choice-button" onClick={() => handleChoice(option)}>
-                    <span>0{index + 1}</span>
+                    <span className="choice-number">0{index + 1}</span>
                     <span className="choice-copy"><small>{choiceTone(option.affection)}</small><strong>{formatGameText(option.text, player.name)}</strong></span>
                   </button>
                 ))}
@@ -365,6 +367,7 @@ export function LocationPage() {
           <button key={route.id} type="button" className="route-card" onClick={() => handleRoute(route.id)}>
             <span className="route-number">0{index + 1}</span>
             <span><strong>{route.title}</strong><small>{route.note}</small></span>
+            <span className="route-commit"><b>ACTION 1</b><i>→</i></span>
           </button>
         ))}
       </div>

@@ -1,6 +1,7 @@
 {
   "id": "char_010_affinity_20",
   "kind": "story",
+  "times": ["밤"],
   "title": "관여하지 마십시오",
   "threshold": 20,
   "purpose": "재하의 보호 본능이 상대 선택권을 침해하는 방식으로 작동함을 보여준다.",
@@ -11,7 +12,7 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "야간 골목에서 수상한 흔적을 본 {name}이 따라가려 하자 재하가 길을 막았다."
+          "text": "야간 골목에서 수상한 흔적을 본 {name}{이가} 따라가려 하자 재하가 길을 막았다."
         },
         {
           "type": "dialogue",
@@ -35,7 +36,7 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "{name}이 불쾌함을 드러내자 재하가 처음으로 조금 멈칫했다."
+          "text": "{name}{이가} 불쾌함을 드러내자 재하가 처음으로 조금 멈칫했다."
         },
         {
           "type": "dialogue",

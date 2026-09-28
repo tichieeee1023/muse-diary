@@ -16,7 +16,7 @@
         },
         {
           "type": "narration",
-          "text": "{name}을 보자 이번에는 훨씬 작은 미소가 다시 생겼다."
+          "text": "{name}{을를} 보자 이번에는 훨씬 작은 미소가 다시 생겼다."
         },
         {
           "type": "dialogue",

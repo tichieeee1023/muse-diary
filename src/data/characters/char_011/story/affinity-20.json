@@ -35,7 +35,7 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "{name}이 굳이 분위기를 띄우지 않고 옆에 앉자 유리안이 한참 뒤 말했다."
+          "text": "{name}{이가} 굳이 분위기를 띄우지 않고 옆에 앉자 유리안이 한참 뒤 말했다."
         },
         {
           "type": "dialogue",

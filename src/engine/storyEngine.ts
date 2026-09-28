@@ -1,12 +1,16 @@
 import { getCharacterStoryBundle } from '../data/characters/index'
-import type { CollectionProgress, PortraitExpression, StoryBlock, StoryEpisode } from '../types/game'
+import type { CollectionProgress, PortraitExpression, StoryBlock, StoryEpisode, TimeOfDay } from '../types/game'
 
 function pick<T>(items: T[]): T | null {
   if (!items.length) return null
   return items[Math.floor(Math.random() * items.length)] ?? null
 }
 
-export function selectCharacterEpisode(characterId: string, collection: CollectionProgress, placeId?: string): StoryEpisode | null {
+function matchesTime(episode: StoryEpisode, timeOfDay?: TimeOfDay) {
+  return !timeOfDay || !episode.times?.length || episode.times.includes(timeOfDay)
+}
+
+export function selectCharacterEpisode(characterId: string, collection: CollectionProgress, placeId?: string, timeOfDay?: TimeOfDay): StoryEpisode | null {
   const bundle = getCharacterStoryBundle(characterId)
   if (!bundle) return null
 
@@ -17,14 +21,14 @@ export function selectCharacterEpisode(characterId: string, collection: Collecti
   if (!seen.includes(bundle.first.id)) return bundle.first
 
   const nextStory = bundle.story.find((episode) =>
-    !storyDone.includes(episode.id) && affection >= (episode.threshold ?? 0),
+    !storyDone.includes(episode.id) && affection >= (episode.threshold ?? 0) && matchesTime(episode, timeOfDay),
   )
   if (nextStory) return nextStory
 
   const eligible = bundle.casual.filter((episode) => {
     const min = episode.minAffection ?? 0
     const max = episode.maxAffection ?? 100
-    return affection >= min && affection <= max
+    return affection >= min && affection <= max && matchesTime(episode, timeOfDay)
   })
 
   const placeMatched = placeId ? eligible.filter((episode) => episode.placeIds?.includes(placeId)) : []

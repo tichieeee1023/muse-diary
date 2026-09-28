@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import type { TimeOfDay, Weather } from '../types/game'
 import { PlaceIcon } from './PlaceIcon'
+import { AmbientCanvas } from './AmbientCanvas'
 
 interface SceneBannerProps {
   placeId: string
@@ -64,6 +65,8 @@ export function SceneBanner({ placeId, placeName, timeOfDay, weather, routeId, r
 
   const [candidateIndex, setCandidateIndex] = useState(0)
   const [imageUnavailable, setImageUnavailable] = useState(false)
+  const activeAsset = candidates[candidateIndex] ?? ''
+  const atmosphere = activeAsset.includes('rain') ? 'rain' : activeAsset.includes('snow') ? 'snow' : activeAsset.includes('night') ? 'sparkle' : 'dust'
 
   const handleImageError = () => {
     if (candidateIndex < candidates.length - 1) setCandidateIndex((index) => index + 1)
@@ -81,6 +84,7 @@ export function SceneBanner({ placeId, placeName, timeOfDay, weather, routeId, r
         />
       )}
       <div className="scene-banner-fallback" aria-hidden={!imageUnavailable} />
+      <AmbientCanvas effect={atmosphere} density={atmosphere === 'rain' ? 'medium' : 'low'} />
       <figcaption>
         <span className="scene-place-icon"><PlaceIcon placeId={placeId} size={19} /></span>
         <span className="scene-caption-copy">

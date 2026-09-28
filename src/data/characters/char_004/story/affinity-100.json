@@ -3,7 +3,7 @@
   "kind": "story",
   "title": "당신에게 어울리는 맛",
   "threshold": 100,
-  "purpose": "늘 타인의 감정을 맛으로 읽던 로운이 {name}을 더 이상 분석하지 않고, 자신의 감정을 자기 말로 표현한다. 엔딩에서는 처음으로 자신이 만든 케이크를 함께 먹는다.",
+  "purpose": "늘 타인의 감정을 맛으로 읽던 로운이 {name}{을를} 더 이상 분석하지 않고, 자신의 감정을 자기 말로 표현한다. 엔딩에서는 처음으로 자신이 만든 케이크를 함께 먹는다.",
   "defaultPortrait": "smile",
   "completionAffection": 0,
   "sections": [

@@ -35,7 +35,7 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "그는 {name}을 보지 못하고 작업대만 바라봤다."
+          "text": "그는 {name}{을를} 보지 못하고 작업대만 바라봤다."
         },
         {
           "type": "dialogue",

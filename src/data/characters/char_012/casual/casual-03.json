@@ -12,7 +12,7 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "이현이 차를 주문하며 {name}이 좋아하는 메뉴를 자연스럽게 말했다."
+          "text": "이현이 차를 주문하며 {name}{이가} 좋아하는 메뉴를 자연스럽게 말했다."
         },
         {
           "type": "narration",

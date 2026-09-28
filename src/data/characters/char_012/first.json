@@ -14,7 +14,7 @@
         },
         {
           "type": "narration",
-          "text": "그는 {name}을 보는 순간 아주 짧게 숨을 멈췄다."
+          "text": "그는 {name}{을를} 보는 순간 아주 짧게 숨을 멈췄다."
         },
         {
           "type": "dialogue",
@@ -28,7 +28,7 @@
         },
         {
           "type": "narration",
-          "text": "{name}이 이상한 표정을 짓자 이현의 눈빛이 천천히 흔들렸다."
+          "text": "{name}{이가} 이상한 표정을 짓자 이현의 눈빛이 천천히 흔들렸다."
         },
         {
           "type": "dialogue",

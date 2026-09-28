@@ -1,6 +1,7 @@
 {
   "id": "char_010_affinity_60",
   "kind": "story",
+  "times": ["밤"],
   "title": "빛나는 상처",
   "threshold": 60,
   "purpose": "비일상 조직과 연결된 과거를 암시하고 상처의 의미를 보여준다.",

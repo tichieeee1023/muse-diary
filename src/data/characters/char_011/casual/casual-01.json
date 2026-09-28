@@ -1,6 +1,7 @@
 {
   "id": "char_011_casual_01",
   "kind": "casual",
+  "times": ["낮"],
   "title": "삼각김밥",
   "minAffection": 0,
   "maxAffection": 39,

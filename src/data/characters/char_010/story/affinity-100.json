@@ -1,6 +1,7 @@
 {
   "id": "char_010_affinity_100",
   "kind": "story",
+  "times": ["밤"],
   "title": "이번에는 같이 갑시다",
   "threshold": 100,
   "purpose": "주인공을 보호 대상이 아니라 동등한 동료이자 연인으로 인정하는 변화의 완성.",
@@ -35,7 +36,7 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "{name}이 가겠다고 답하자 재하가 한 번 숨을 내쉬었다."
+          "text": "{name}{이가} 가겠다고 답하자 재하가 한 번 숨을 내쉬었다."
         },
         {
           "type": "dialogue",

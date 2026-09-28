@@ -21,7 +21,7 @@
         },
         {
           "type": "narration",
-          "text": "{name}이 웃자 시온이 억울한 얼굴을 했다."
+          "text": "{name}{이가} 웃자 시온이 억울한 얼굴을 했다."
         },
         {
           "type": "dialogue",

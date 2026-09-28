@@ -1,6 +1,7 @@
 {
   "id": "char_009_affinity_100",
   "kind": "story",
+  "times": ["밤"],
   "title": "도망가지 않은 사람",
   "threshold": 100,
   "purpose": "봉인이 흔들리는 실제 위기에서 주인공이 남고, 이겸이 감정을 숨기지 않는 선택을 한다.",

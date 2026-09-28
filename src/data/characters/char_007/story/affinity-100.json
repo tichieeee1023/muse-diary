@@ -35,7 +35,7 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "휘람은 잠깐 망설이다가 {name}을 똑바로 봤다."
+          "text": "휘람은 잠깐 망설이다가 {name}{을를} 똑바로 봤다."
         },
         {
           "type": "dialogue",

@@ -12,7 +12,7 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "이현이 작은 수첩에 날짜와 날씨, {name}과 나눈 말을 적고 있었다."
+          "text": "이현이 작은 수첩에 날짜와 날씨, {name}{과와} 나눈 말을 적고 있었다."
         },
         {
           "type": "dialogue",

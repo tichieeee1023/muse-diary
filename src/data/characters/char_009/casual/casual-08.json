@@ -22,7 +22,7 @@
         },
         {
           "type": "narration",
-          "text": "평소라면 분석부터 했을 사람이 이번에는 {name}을 봤다."
+          "text": "평소라면 분석부터 했을 사람이 이번에는 {name}{을를} 봤다."
         },
         {
           "type": "dialogue",

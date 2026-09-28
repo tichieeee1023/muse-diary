@@ -16,7 +16,7 @@
         },
         {
           "type": "narration",
-          "text": "{name}과 눈이 마주쳤다."
+          "text": "{name}{과와} 눈이 마주쳤다."
         },
         {
           "type": "dialogue",

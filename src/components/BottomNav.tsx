@@ -13,6 +13,9 @@ const items: Array<{ icon: string; label: string; section: MainSection }> = [
 ]
 
 export function BottomNav({ active, onNavigate }: BottomNavProps) {
+  const collection = useGameStore((state) => state.collection)
+  const hasCharacterUpdate = getAllCharacters().some((character) => collection.discoveredCharacterIds.includes(character.id) && isAffinityEventReady(character.id, collection))
+
   return (
     <nav className="bottom-nav" aria-label="주요 메뉴">
       {items.map((item) => (
@@ -23,10 +26,14 @@ export function BottomNav({ active, onNavigate }: BottomNavProps) {
           aria-current={active === item.section ? 'page' : undefined}
           onClick={() => onNavigate(item.section)}
         >
-          <span className="nav-icon" aria-hidden="true">{item.icon}</span>
+          <span className="nav-icon" aria-hidden="true">{item.icon}{item.section === 'characters' && hasCharacterUpdate && <i className="nav-update-dot" />}</span>
           <span>{item.label}</span>
+          {item.section === 'characters' && hasCharacterUpdate && <span className="sr-only">새 호감도 이벤트가 있습니다</span>}
         </button>
       ))}
     </nav>
   )
 }
+import { getAllCharacters } from '../engine/encounterEngine'
+import { isAffinityEventReady } from '../engine/storyEngine'
+import { useGameStore } from '../store/useGameStore'

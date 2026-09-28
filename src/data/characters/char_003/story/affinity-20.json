@@ -1,6 +1,7 @@
 {
   "id": "char_003_affinity_20",
   "kind": "story",
+  "times": ["밤"],
   "title": "도착하면 연락 주세요",
   "threshold": 20,
   "purpose": "해준의 반복되는 귀가 확인이 단순한 직업 습관이 아니라는 첫 단서를 준다",

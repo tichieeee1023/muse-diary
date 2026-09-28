@@ -1,6 +1,7 @@
 {
   "id": "char_012_affinity_60",
   "kind": "story",
+  "times": ["밤"],
   "title": "다른 시간을 가리키는 시계들",
   "threshold": 60,
   "purpose": "이현의 능력과 기억 소실 대가를 공개한다.",

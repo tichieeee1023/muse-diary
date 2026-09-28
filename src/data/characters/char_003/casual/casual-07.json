@@ -1,6 +1,7 @@
 {
   "id": "char_003_casual_07",
   "kind": "casual",
+  "times": ["밤"],
   "title": "잠든 사람",
   "minAffection": 60,
   "maxAffection": 99,

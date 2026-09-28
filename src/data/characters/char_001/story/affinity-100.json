@@ -55,7 +55,7 @@
         },
         {
           "type": "narration",
-          "text": "도윤이 {name}을 똑바로 바라봤다."
+          "text": "도윤이 {name}{을를} 똑바로 바라봤다."
         },
         {
           "type": "dialogue",
@@ -144,7 +144,7 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "도윤은 {name}이 읽던 책을 받아 마지막 페이지가 아니라 중간쯤에 책갈피를 끼웠다."
+          "text": "도윤은 {name}{이가} 읽던 책을 받아 마지막 페이지가 아니라 중간쯤에 책갈피를 끼웠다."
         },
         {
           "type": "dialogue",

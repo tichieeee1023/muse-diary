@@ -1,6 +1,7 @@
 {
   "id": "char_002_affinity_20",
   "kind": "story",
+  "times": ["낮"],
   "title": "취향과 의도",
   "threshold": 20,
   "defaultPortrait": "main",
@@ -11,7 +12,7 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "쇼핑몰 문화 공간 한편에서 소규모 수공예 전시가 열렸다. {name}이 만든 인형 샘플을 내려놓고 있는데 익숙한 목소리가 뒤에서 들렸다."
+          "text": "쇼핑몰 문화 공간 한편에서 소규모 수공예 전시가 열렸다. {name}{이가} 만든 인형 샘플을 내려놓고 있는데 익숙한 목소리가 뒤에서 들렸다."
         },
         {
           "type": "dialogue",

@@ -1,6 +1,7 @@
 {
   "id": "char_012_casual_09",
   "kind": "casual",
+  "times": ["밤"],
   "title": "폐관 뒤의 시계",
   "minAffection": 0,
   "maxAffection": 100,

@@ -22,7 +22,7 @@
         },
         {
           "type": "narration",
-          "text": "{name}이 와본 적 있냐고 묻자 걸음이 멈췄다."
+          "text": "{name}{이가} 와본 적 있냐고 묻자 걸음이 멈췄다."
         },
         {
           "type": "dialogue",

@@ -1,6 +1,7 @@
 {
   "id": "char_003_casual_10",
   "kind": "casual",
+  "times": ["밤"],
   "title": "마지막 불빛",
   "minAffection": 0,
   "maxAffection": 100,

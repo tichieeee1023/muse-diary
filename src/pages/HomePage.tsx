@@ -10,10 +10,10 @@ import { getPlace } from '../data/locations'
 import { useGameStore } from '../store/useGameStore'
 
 const weatherCopy = {
-  맑음: '햇빛이 작업실 바닥까지 길게 들어온다.',
-  흐림: '창밖은 흐리지만, 걷기에는 나쁘지 않은 날이다.',
-  비: '창문을 두드리는 빗소리가 오늘의 분위기를 바꿔놓는다.',
-  눈: '도시가 평소보다 조금 낯설어 보인다.',
+  맑음: { 낮: '햇빛이 작업실 바닥까지 길게 들어온다.', 밤: '창밖의 불빛이 작업실 바닥에 옅게 번진다.' },
+  흐림: { 낮: '창밖은 흐리지만, 걷기에는 나쁘지 않은 날이다.', 밤: '흐린 밤공기 너머로 창문에 실내 불빛이 비친다.' },
+  비: { 낮: '창문을 두드리는 빗소리가 오늘의 분위기를 바꿔놓는다.', 밤: '창문을 두드리는 빗소리가 조용한 작업실에 남는다.' },
+  눈: { 낮: '도시가 평소보다 조금 낯설어 보인다.', 밤: '가로등 아래 눈발이 천천히 쌓인다.' },
 } as const
 
 const weatherMark = {
@@ -98,8 +98,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <h1>DAY {String(progress.day).padStart(2, '0')}</h1>
         </div>
         <div className={`weather-badge weather-${progress.weather}`} aria-label={`오늘 날씨 ${progress.weather}`}>
-          <b aria-hidden="true">{weatherMark[progress.weather]}</b>
-          <span>{progress.weather}</span>
+          <b aria-hidden="true">{timeOfDay === '밤' ? '☾' : weatherMark[progress.weather]}</b>
+          <span>{timeOfDay === '밤' ? `${progress.weather} · 밤` : progress.weather}</span>
         </div>
       </header>
 
@@ -119,7 +119,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <span>{player.occupation}</span>
         </div>
         <h2>{player.name}, 오늘은 어디로 가볼까?</h2>
-        <p>{weatherCopy[progress.weather]}</p>
+        <p>{weatherCopy[progress.weather][timeOfDay]}</p>
         <div className="progress-line">
           <span>오늘의 외출</span>
           <strong>{'●'.repeat(progress.actionsLeft)}{'○'.repeat(3 - progress.actionsLeft)}</strong>
@@ -127,14 +127,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       <section className="next-step-card">
-        <div className="next-step-index"><span>NOW</span><strong>{readyEvents.length ? '01' : 'NEXT'}</strong></div>
+        <div className="next-step-icon" aria-hidden="true">✦</div>
         <div>
-          <p className="eyebrow">TODAY'S THREAD</p>
+          <p className="eyebrow">오늘의 추천</p>
           <strong>{recommendedCharacter ? `${recommendedCharacter.name}와의 다음 기록` : '오늘의 영감을 찾아 떠나기'}</strong>
           <small>{recommendedPlace ? `${recommendedPlace.name}에서 새로운 장면을 발견할 수 있어요.` : '지도를 열고 오늘 갈 수 있는 장소를 골라보세요.'}</small>
         </div>
         <button type="button" className="next-step-go" onClick={() => recommendedPlace ? enterPlace(recommendedPlace.id) : onNavigate('characters')} disabled={!recommendedPlace || progress.actionsLeft <= 0}>
-          {recommendedPlace ? 'GO' : 'VIEW'}
+          {recommendedPlace ? '장소 보기' : '도감 보기'}
         </button>
       </section>
 
@@ -156,7 +156,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <section className="place-section" aria-labelledby="place-title">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">TODAY'S PLACES</p>
+            <p className="eyebrow">오늘의 장소</p>
             <h2 id="place-title">영감을 찾아 나가보자.</h2>
           </div>
           <button
@@ -203,6 +203,11 @@ onClick={() => setShowDayEndModal(true)}
                     </button>
                   )
                 })}
+                <div className="city-map-legend" aria-label="지도 표시 안내">
+                  <span><i className="is-available" />오늘 방문 가능</span>
+                  <span><i className="is-event" />새 이벤트</span>
+                  <span><i className="is-locked" />아직 잠김</span>
+                </div>
                 <p className="city-map-note">밝게 표시된 장소가 오늘의 외출 후보예요.</p>
               </div>
             ) : (

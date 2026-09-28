@@ -1,6 +1,7 @@
 {
   "id": "char_002_affinity_100",
   "kind": "story",
+  "times": ["밤"],
   "title": "비워둔 자리",
   "threshold": 100,
   "defaultPortrait": "main",
@@ -11,7 +12,7 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "새 팝업 오픈 전날 밤, 주원이 아직 조명이 켜진 쇼윈도 앞으로 {name}을 불렀다."
+          "text": "새 팝업 오픈 전날 밤, 주원이 아직 조명이 켜진 쇼윈도 앞으로 {name}{을를} 불렀다."
         },
         {
           "type": "narration",
@@ -152,7 +153,7 @@
         },
         {
           "type": "narration",
-          "text": "먼저 걸어가던 그가 두 걸음 뒤 멈춰 {name}을 기다렸다."
+          "text": "먼저 걸어가던 그가 두 걸음 뒤 멈춰 {name}{을를} 기다렸다."
         },
         {
           "type": "dialogue",
