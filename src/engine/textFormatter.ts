@@ -36,6 +36,20 @@ export function formatGameText(text: string, playerName: string) {
     .replaceAll('{name}{과와}', withJosa(playerName, '과/와'))
     .replaceAll('{name}{아야}', withJosa(playerName, '아/야'))
     .replaceAll('{name}{으로로}', withJosa(playerName, '으로/로'))
+    // Tolerate older one-sided brace placeholders that leaked into some scripts.
+    .replaceAll('{name}{이}', withJosa(playerName, '이/가'))
+    .replaceAll('{name}{가}', withJosa(playerName, '이/가'))
+    .replaceAll('{name}{은}', withJosa(playerName, '은/는'))
+    .replaceAll('{name}{는}', withJosa(playerName, '은/는'))
+    .replaceAll('{name}{을}', withJosa(playerName, '을/를'))
+    .replaceAll('{name}{를}', withJosa(playerName, '을/를'))
+    .replaceAll('{name}{과}', withJosa(playerName, '과/와'))
+    .replaceAll('{name}{와}', withJosa(playerName, '과/와'))
+    // These particles do not change with batchim.
+    .replaceAll('{name}{의}', `${playerName}의`)
+    .replaceAll('{name}{도}', `${playerName}도`)
+    .replaceAll('{name}{에게}', `${playerName}에게`)
+    .replaceAll('{name}{보다}', `${playerName}보다`)
 
   // Backward compatibility for older scripts that wrote a literal Korean particle
   // directly after {name}. Long forms must run first to avoid partial matches.

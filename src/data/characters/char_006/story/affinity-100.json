@@ -163,7 +163,7 @@
         {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "{name}이랑은 그 중간을 길게 살아보고 싶습니다.",
+          "text": "{name}{과와}는 그 중간을 길게 살아보고 싶습니다.",
           "portrait": "smile"
         }
       ],

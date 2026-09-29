@@ -2,7 +2,8 @@ import { useMemo, useState } from 'react'
 import { BottomNav, type MainSection } from '../components/BottomNav'
 import { CharacterSD } from '../components/CharacterSD'
 import { getCharacterRouteProfile } from '../data/characters/index'
-import { getPostRouteLine, getWorkroomDialogue } from '../data/characterFlavor'
+import { getMyRoomEndingDialogue, getMyRoomRivalryLine, getPostRouteLine } from '../data/characterFlavor'
+import { getMyRoomSpecialPairDialogue } from '../data/myRoomPairDialogue'
 import { getAllCharacters } from '../engine/encounterEngine'
 import { getEndingContent } from '../engine/endingEngine'
 import { playUiSound } from '../engine/soundEngine'
@@ -38,12 +39,21 @@ export function MyRoomPage({ onNavigate }: MyRoomPageProps) {
 
   const visitors = (() => {
     if (completedCharacters.length === 0) return []
-    const count = Math.min(3, completedCharacters.length)
-    const start = (progress.day - 1) % completedCharacters.length
-    return Array.from({ length: count }, (_, index) => completedCharacters[(start + index) % completedCharacters.length])
+    if (completedCharacters.length === 1) return [completedCharacters[0]]
+
+    // 엔딩을 본 인물 중 매일 두 명만 작업실에 방문한다.
+    // 완전 랜덤 대신 DAY + 해금 목록을 seed로 써서 같은 날 새로고침해도 멤버가 바뀌지 않는다.
+    const seedText = `${progress.day}:${completedCharacters.map((character) => character.id).join('|')}`
+    const hash = (value: string) => Array.from(value).reduce((acc, char) => ((acc * 31) + char.charCodeAt(0)) >>> 0, 7)
+    const firstIndex = hash(seedText) % completedCharacters.length
+    const secondOffset = 1 + (hash(`pair:${seedText}`) % (completedCharacters.length - 1))
+    const secondIndex = (firstIndex + secondOffset) % completedCharacters.length
+
+    return [completedCharacters[firstIndex], completedCharacters[secondIndex]]
   })()
 
   const selectedVisitor = visitors.find((character) => character.id === selectedVisitorId) ?? visitors[0] ?? null
+  const specialPairDialogue = visitors.length === 2 ? getMyRoomSpecialPairDialogue(visitors[0].id, visitors[1].id, progress.day) : null
   const selectedDollCharacter = selectedDollId ? characters.find((character) => character.id === selectedDollId) ?? null : null
   const selectedDollProfile = selectedDollCharacter ? getCharacterRouteProfile(selectedDollCharacter.id) : null
   const selectedDollEnding = selectedDollCharacter ? getEndingContent(selectedDollCharacter.id) : null
@@ -63,7 +73,7 @@ export function MyRoomPage({ onNavigate }: MyRoomPageProps) {
         <div className="my-room-stage-shade" aria-hidden="true" />
         <div className="my-room-stage-label">
           <span>{timeOfDay === '밤' ? 'NIGHT VISIT' : 'DAY VISIT'}</span>
-          <strong>{visitors.length > 0 ? '오늘 작업실에 놀러 온 사람' : '아직 조용한 작업실'}</strong>
+          <strong>{visitors.length === 2 ? '오늘 작업실에 놀러 온 두 사람' : visitors.length === 1 ? '오늘 작업실에 놀러 온 사람' : '아직 조용한 작업실'}</strong>
         </div>
 
         {visitors.length > 0 ? (
@@ -87,7 +97,7 @@ export function MyRoomPage({ onNavigate }: MyRoomPageProps) {
         ) : (
           <div className="my-room-empty-stage">
             <span>EMPTY ROOM</span>
-            <p>한 사람의 이야기를 끝까지 완성하면<br />가끔 이 작업실에 놀러 옵니다.</p>
+            <p>한 사람의 이야기를 끝까지 완성하면<br />그 이후부터 이 작업실에서 다시 만날 수 있습니다.</p>
           </div>
         )}
       </section>
@@ -98,8 +108,49 @@ export function MyRoomPage({ onNavigate }: MyRoomPageProps) {
             <span>VISITOR · ROUTE COMPLETE</span>
             <strong>{selectedVisitor.name}</strong>
           </div>
-          <p>“{getWorkroomDialogue(selectedVisitor.id, 100, true, progress.day)}”</p>
+          <p>“{getMyRoomEndingDialogue(selectedVisitor.id, progress.day)}”</p>
           <small>{getPostRouteLine(selectedVisitor.id, progress.day)}</small>
+        </section>
+      )}
+
+      {visitors.length === 2 && (
+        <section className="my-room-cross-talk" aria-label={`${visitors[0].name}와 ${visitors[1].name}의 대화`}>
+          <div className="my-room-cross-talk-head">
+            <span>TWO VISITORS</span>
+            <strong>둘이 마주친 날</strong>
+            <small>오늘은 둘 다 먼저 돌아갈 생각이 없어 보인다.</small>
+          </div>
+          <div className="my-room-cross-talk-lines">
+            <div className="my-room-cross-talk-line">
+              <strong>{visitors[0].name}</strong>
+              <p>“{getMyRoomRivalryLine(visitors[0].id, visitors[1].name, progress.day)}”</p>
+            </div>
+            <div className="my-room-cross-talk-divider" aria-hidden="true">×</div>
+            <div className="my-room-cross-talk-line">
+              <strong>{visitors[1].name}</strong>
+              <p>“{getMyRoomRivalryLine(visitors[1].id, visitors[0].name, progress.day + 1)}”</p>
+            </div>
+          </div>
+
+          {specialPairDialogue && (
+            <div className="my-room-special-talk">
+              <div className="my-room-special-talk-title">
+                <span>SPECIAL TALK</span>
+                <strong>{visitors[0].name} × {visitors[1].name}</strong>
+              </div>
+              <div className="my-room-special-talk-script">
+                {specialPairDialogue.map((line, index) => {
+                  const speaker = characters.find((character) => character.id === line.speakerId)
+                  return (
+                    <div className="my-room-special-talk-line" key={`${line.speakerId}-${index}`}>
+                      <strong>{speaker?.name ?? '???'}</strong>
+                      <p>“{line.text}”</p>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          )}
         </section>
       )}
 

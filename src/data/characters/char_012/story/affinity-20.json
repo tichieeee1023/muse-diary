@@ -21,7 +21,7 @@
         },
         {
           "type": "narration",
-          "text": "너무 자연스러운 반말이었다. 이현도 반 박자 늦게 자신이 한 말을 알아챘다."
+          "text": "이현은 말을 마친 뒤 아주 잠깐 멈췄다."
         },
         {
           "type": "dialogue",
@@ -87,7 +87,7 @@
           },
           {
             "id": "b",
-            "text": "“반말해도 괜찮은데요.”",
+            "text": "“저한테 그렇게 거리 둘 필요 없어요.”",
             "affection": 8,
             "memoryKey": "ihyeon_20_banmal_ok",
             "response": [
@@ -111,7 +111,7 @@
           },
           {
             "id": "c",
-            "text": "“그냥 편하게 말해요. 자꾸 고치는 게 더 수상해요.”",
+            "text": "“자꾸 선 긋는 게 더 수상해요.”",
             "affection": 9,
             "memoryKey": "ihyeon_20_stop_correcting",
             "response": [

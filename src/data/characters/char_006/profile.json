@@ -18,6 +18,7 @@
     "endingDoll": "/assets/characters/char_006/ending-doll.webp",
     "genuineSmile": "/assets/characters/char_006/genuine-smile.webp",
     "dim": "/assets/characters/char_006/dim.webp",
-    "eyesClosedSmile": "/assets/characters/char_006/eyes-closed-smile.webp"
+    "eyesClosedSmile": "/assets/characters/char_006/eyes-closed-smile.webp",
+    "shy": "/assets/characters/char_006/shy.webp"
   }
 }

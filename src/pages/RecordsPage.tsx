@@ -2,6 +2,8 @@ import { BottomNav, type MainSection } from '../components/BottomNav'
 import { getAchievements } from '../engine/achievementEngine'
 import { getAllCharacters } from '../engine/encounterEngine'
 import { getPlace } from '../data/locations'
+import { datePlaces, getDateRecordTitle, getDateTouchStateLabel } from '../data/dateScenarios'
+import { formatGameText } from '../engine/textFormatter'
 import { useGameStore } from '../store/useGameStore'
 
 interface RecordsPageProps { onNavigate: (section: MainSection) => void }
@@ -9,6 +11,7 @@ interface RecordsPageProps { onNavigate: (section: MainSection) => void }
 export function RecordsPage({ onNavigate }: RecordsPageProps) {
   const progress = useGameStore((state) => state.progress)
   const collection = useGameStore((state) => state.collection)
+  const player = useGameStore((state) => state.player)
   const achievements = getAchievements(progress, collection)
   const unlocked = achievements.filter((item) => item.unlocked).length
   const characters = getAllCharacters()
@@ -16,6 +19,7 @@ export function RecordsPage({ onNavigate }: RecordsPageProps) {
     .sort(([, a], [, b]) => b.day - a.day)
     .slice(0, 4)
   const seasonalRecords = Object.values(collection.seasonalEventRecords).sort((a, b) => b.day - a.day)
+  const dateRecords = [...collection.dateRecords].sort((a, b) => b.createdAt - a.createdAt)
 
   return (
     <div className="page records-page">
@@ -47,6 +51,57 @@ export function RecordsPage({ onNavigate }: RecordsPageProps) {
           })}
         </div>
       </section>
+
+      {dateRecords.length > 0 && (
+        <section className="date-record-section">
+          <div className="diary-section-title"><p className="eyebrow">DATE MEMORIES</p><h2>데이트 기록</h2></div>
+          <div className="date-record-list">
+            {dateRecords.map((record) => {
+              const companion = characters.find((character) => character.id === record.characterId)
+              const datePlace = datePlaces.find((place) => place.id === record.placeId)
+              return (
+                <details className="date-record-card" key={record.id}>
+                  <summary>
+                    <div className="date-record-summary-copy">
+                      <small>DAY {String(record.day).padStart(2, '0')} · {companion?.name ?? 'UNKNOWN MUSE'} · {datePlace?.name ?? 'DATE'}</small>
+                      <strong>{getDateRecordTitle(record.placeId, record.finalHeart)}</strong>
+                    </div>
+                    <span>{'♥'.repeat(record.finalHeart)}{'♡'.repeat(5 - record.finalHeart)}</span>
+                    <em>{record.turns.length} PAGES</em>
+                  </summary>
+                  <div className="date-record-body">
+                    {record.turns.some((turn) => turn.weakDiscovery && turn.weakSpotLabel) && (
+                      <div className="date-record-found">
+                        <span>오늘 알게 된 것</span>
+                        <strong>유난히 반응이 컸던 곳 · {record.turns.find((turn) => turn.weakDiscovery && turn.weakSpotLabel)?.weakSpotLabel}</strong>
+                      </div>
+                    )}
+                    {record.turns.map((turn) => (
+                      <article className="date-record-turn" key={`${record.id}-${turn.turn}`}>
+                        <div className="date-record-turn-head">
+                          <strong>TURN {String(turn.turn).padStart(2, '0')}</strong>
+                          <small>{getDateTouchStateLabel(turn.touchState)} · {'♥'.repeat(turn.heartAfter)}{'♡'.repeat(5 - turn.heartAfter)}</small>
+                        </div>
+                        {turn.lines.map((line, index) => <p key={`${record.id}-${turn.turn}-${index}`}>{formatGameText(line, player?.name ?? '')}</p>)}
+                        {turn.reactionLine && (
+                          <div className={`date-record-reaction${turn.isWeak ? ' is-weak' : ''}`}>
+                            <strong>{companion?.name ?? 'MUSE'}{turn.isWeak && turn.weakSpotLabel ? ` · ✦ ${turn.weakSpotLabel}` : ''}</strong>
+                            <p>“{formatGameText(turn.reactionLine, player?.name ?? '')}”</p>
+                            {turn.reactionNarration && <small>{formatGameText(turn.reactionNarration, player?.name ?? '')}</small>}
+                            {turn.innerThought && <em className="date-record-thought">({formatGameText(turn.innerThought, player?.name ?? '')})</em>}
+                          </div>
+                        )}
+                        {turn.returnTouch && <p className="date-record-return">{formatGameText(turn.returnTouch, player?.name ?? '')}</p>}
+                      </article>
+                    ))}
+                    <p className="date-record-closing">{formatGameText(record.closing, player?.name ?? '')}</p>
+                  </div>
+                </details>
+              )
+            })}
+          </div>
+        </section>
+      )}
 
       {seasonalRecords.length > 0 && (
         <section className="seasonal-record-section">

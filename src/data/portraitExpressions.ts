@@ -15,12 +15,12 @@ const archiveMap: Record<string, Array<[PortraitExpression, string]>> = {
   char_003: [['sad','SAD'],['shy','SHY']],
   char_004: [['angry','ANGRY'],['shy','SHY']],
   char_005: [['faintSmile','FAINT SMILE'],['sly','SLY'],['shy','SHY']],
-  char_006: [['genuineSmile','GENUINE SMILE'],['dim','DISTANT'],['eyesClosedSmile','EYES CLOSED']],
-  char_007: [['confident','CONFIDENT'],['desolate','DISTANT'],['love','IN LOVE']],
-  char_008: [['glasses','GLASSES'],['love','IN LOVE'],['loveSmile','LOVE SMILE']],
-  char_009: [['thinking','THINKING'],['serious','SERIOUS'],['angry','ANGRY'],['sorrowful','SORROWFUL']],
-  char_010: [['busted','CAUGHT'],['love','IN LOVE']],
-  char_011: [['interested','INTERESTED'],['exhausted','EXHAUSTED'],['sad','SAD'],['desolate','DISTANT'],['love','IN LOVE'],['loveShy','LOVE · SHY'],['deepLove','DEEPLY IN LOVE']],
+  char_006: [['genuineSmile','GENUINE SMILE'],['dim','DISTANT'],['eyesClosedSmile','EYES CLOSED'],['shy','SHY']],
+  char_007: [['confident','CONFIDENT'],['desolate','DISTANT'],['love','IN LOVE'],['shy','SHY']],
+  char_008: [['glasses','GLASSES'],['love','IN LOVE'],['loveSmile','LOVE SMILE'],['shy','SHY']],
+  char_009: [['thinking','THINKING'],['serious','SERIOUS'],['angry','ANGRY'],['sorrowful','SORROWFUL'],['shy','SHY']],
+  char_010: [['busted','CAUGHT'],['love','IN LOVE'],['shy','SHY']],
+  char_011: [['interested','INTERESTED'],['exhausted','EXHAUSTED'],['sad','SAD'],['desolate','DISTANT'],['love','IN LOVE'],['loveShy','LOVE · SHY'],['deepLove','DEEPLY IN LOVE'],['shy','SHY']],
   char_012: [['blank','BLANK'],['desolate','DISTANT'],['sad','SAD'],['sorrowful','SORROWFUL'],['eyesClosedSad','EYES CLOSED'],['tearful','TEARFUL'],['shy','SHY'],['love','IN LOVE']],
 }
 
@@ -132,7 +132,15 @@ const seasonalMap: Record<string, { early?: PortraitExpression; close?: Portrait
 export function getSeasonalPortraitExpression(characterId: string, tier: SeasonalTier, phase: SeasonalPhase): PortraitExpression {
   const set = seasonalMap[characterId]
   if (!set) return phase === 'branch' && tier === 'early' ? 'main' : 'smile'
-  if (phase === 'choice-result') return set.result ?? set[tier] ?? 'smile'
+
+  // 선택 직후 표정은 현재 호감도 단계보다 앞서가지 않는다.
+  // 낮은 호감도에서 최종 연애 표정이 튀어나오면 관계 진척과 얼굴의 감정 강도가 어긋난다.
+  if (phase === 'choice-result') {
+    if (tier === 'early') return set.early ?? 'smile'
+    if (tier === 'close') return set.close ?? set.early ?? 'smile'
+    return set.result ?? set.deep ?? 'smile'
+  }
+
   if (phase === 'complete') return set.complete ?? set.deep ?? 'smile'
   return set[tier] ?? (tier === 'early' ? 'main' : 'smile')
 }

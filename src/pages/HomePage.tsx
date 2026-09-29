@@ -28,9 +28,10 @@ const weatherMark = {
 interface HomePageProps {
   onNavigate: (section: MainSection) => void
   onStartSeasonalEvent: (eventId: string) => void
+  onStartDate: () => void
 }
 
-export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
+export function HomePage({ onNavigate, onStartSeasonalEvent, onStartDate }: HomePageProps) {
   const player = useGameStore((state) => state.player)
   const progress = useGameStore((state) => state.progress)
   const nextDay = useGameStore((state) => state.nextDay)
@@ -101,12 +102,22 @@ export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
   }
 
   const readyEvents = characters.filter((character) => collection.discoveredCharacterIds.includes(character.id) && isAffinityEventReady(character.id, collection))
-  const recommendedReadyCharacter = readyEvents[0]
-  const recommendedReadyPlaceId = recommendedReadyCharacter?.spawnRules.find((rule) =>
-    todayPlaces.some((place) => place?.id === rule.placeId)
-    && progress.unlockedPlaceIds.includes(rule.placeId)
-    && canEncounterAtPlace(rule.placeId),
-  )?.placeId
+  const recommendedReadyCharacter = readyEvents.find((character) => character.spawnRules.some((rule) => {
+    const place = todayPlaces.find((item) => item?.id === rule.placeId)
+    if (!place || !progress.unlockedPlaceIds.includes(rule.placeId)) return false
+    if (rule.secondaryOnly && !collection.discoveredCharacterIds.includes(character.id)) return false
+    if (rule.times?.length && !rule.times.includes(timeOfDay)) return false
+    if (rule.weather?.length && !rule.weather.includes(progress.weather)) return false
+    return place.routes.some((route) => !rule.routeIds?.length || rule.routeIds.includes(route.id))
+  }))
+  const recommendedReadyPlaceId = recommendedReadyCharacter?.spawnRules.find((rule) => {
+    const place = todayPlaces.find((item) => item?.id === rule.placeId)
+    if (!place || !progress.unlockedPlaceIds.includes(rule.placeId)) return false
+    if (rule.secondaryOnly && !collection.discoveredCharacterIds.includes(recommendedReadyCharacter.id)) return false
+    if (rule.times?.length && !rule.times.includes(timeOfDay)) return false
+    if (rule.weather?.length && !rule.weather.includes(progress.weather)) return false
+    return place.routes.some((route) => !rule.routeIds?.length || rule.routeIds.includes(route.id))
+  })?.placeId
 
   const recommendedFirstCharacter = characters.find((character) =>
     !hasCompletedFirstEncounter(character.id, collection)
@@ -290,6 +301,18 @@ export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
         </section>
       )}
 
+      {seasonalEligibleCharacters.some((character) => (collection.affectionByCharacterId[character.id] ?? 0) >= 20) && (
+        <section className="date-home-card">
+          <div className="date-home-mark" aria-hidden="true">♡</div>
+          <div>
+            <p className="eyebrow">DATE DIARY</p>
+            <strong>오늘은 조금 더 가까이</strong>
+            <small>호감이 깊어진 사람과 데이트하고, 장소마다 다른 스킨십 반응을 만나보세요.</small>
+          </div>
+          <button type="button" onClick={onStartDate}>데이트 약속 <b>→</b></button>
+        </section>
+      )}
+
       <section className={`next-step-card${readyEvents.length > 0 ? ' has-ready-event' : ''}`}>
         <div className="next-step-icon" aria-hidden="true">{readyEvents.length > 0 ? '♥' : '✦'}</div>
         <div>
@@ -462,7 +485,29 @@ export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
       )}
 
       {showDayTransition && (
-        <div className="day-transition-overlay" aria-live="polite"><span>NEW DAY</span><strong>DAY {String(progress.day).padStart(2, '0')}</strong><small>{weatherMark[progress.weather]} {progress.weather} · 새로운 하루가 시작되었습니다.</small></div>
+        <div className={`day-transition-overlay weather-${progress.weather}`} aria-live="polite">
+          <div className="day-transition-book" aria-label={`DAY ${String(progress.day).padStart(2, '0')}, ${progress.weather}`}>
+            <div className="day-transition-new-page">
+              <span className="day-transition-kicker">NEW PAGE</span>
+              <strong className="day-transition-day"><em>DAY</em>{String(progress.day).padStart(2, '0')}</strong>
+              <div className="day-transition-weather">
+                <b aria-hidden="true">{weatherMark[progress.weather]}</b>
+                <div><span>TODAY'S WEATHER</span><strong>{progress.weather}</strong></div>
+              </div>
+              <p>새로운 하루의 기록을 펼칩니다.</p>
+            </div>
+            <div className="day-transition-turning-page" aria-hidden="true">
+              <div className="day-transition-page-front">
+                <span>END OF DAY</span>
+                <strong>{String(Math.max(1, progress.day - 1)).padStart(2, '0')}</strong>
+                <i />
+                <small>오늘의 기록을 덮습니다.</small>
+              </div>
+              <div className="day-transition-page-back" />
+            </div>
+            <div className="day-transition-binding" aria-hidden="true" />
+          </div>
+        </div>
       )}
 
       <BottomNav active="outing" onNavigate={onNavigate} />

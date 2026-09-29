@@ -109,7 +109,7 @@
           },
           {
             "id": "c",
-            "text": "“그래서 계속 존댓말한 거예요?”",
+            "text": "“그래서 계속 거리를 둔 거예요?”",
             "affection": 10,
             "memoryKey": "ihyeon_80_why_formal",
             "response": [
@@ -126,7 +126,7 @@
               {
                 "type": "dialogue",
                 "speaker": "진이현",
-                "text": "……근데 몸이 자꾸 말을 안 듣더라.",
+                "text": "……근데 마음은 자꾸 말을 안 듣더라.",
                 "portrait": "smile"
               }
             ]
@@ -244,7 +244,7 @@
               },
               {
                 "type": "narration",
-                "text": "이번 반말은 고치지 않았다."
+                "text": "이현은 짧게 웃고 더 설명하지 않았다."
               }
             ]
           },
@@ -304,7 +304,7 @@
         {
           "type": "dialogue",
           "speaker": "진이현",
-          "text": "한 가지 부탁만 해도 됩니까.",
+          "text": "부탁 하나만 해도 됩니까?",
           "portrait": "main"
         },
         {

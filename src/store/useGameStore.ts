@@ -1,9 +1,9 @@
 import { create } from 'zustand'
 import { getPlace, getWeightedDailyPlaces, initialUnlockedPlaceIds } from '../data/locations'
-import type { CollectionProgress, FontFamilySetting, GameProgress, GameSettings, PlayerProfile, Rarity, SeasonKey, TextSizeSetting, TextSpeedSetting, Weather } from '../types/game'
+import type { CollectionProgress, DateRecord, FontFamilySetting, GameProgress, GameSettings, PlayerProfile, Rarity, SeasonKey, TextSizeSetting, TextSpeedSetting, Weather } from '../types/game'
 
-const STORAGE_KEY = 'muse-diary-save-v12'
-const LEGACY_STORAGE_KEYS = ['muse-diary-save-v11','muse-diary-save-v10','muse-diary-save-v9','muse-diary-save-v8','muse-diary-save-v7','muse-diary-save-v6', 'muse-diary-save-v5', 'muse-diary-save-v4', 'muse-diary-save-v3', 'muse-diary-save-v2', 'muse-diary-save-v1']
+const STORAGE_KEY = 'muse-diary-save-v13'
+const LEGACY_STORAGE_KEYS = ['muse-diary-save-v12','muse-diary-save-v11','muse-diary-save-v10','muse-diary-save-v9','muse-diary-save-v8','muse-diary-save-v7','muse-diary-save-v6', 'muse-diary-save-v5', 'muse-diary-save-v4', 'muse-diary-save-v3', 'muse-diary-save-v2', 'muse-diary-save-v1']
 const BAR_UNLOCK_VISITS = 3
 const CHARACTER_PLACE_UNLOCKS: Record<string, string[]> = {
   char_003: ['convenience'], char_007: ['convenience'],
@@ -30,6 +30,7 @@ interface GameState extends PersistedState {
   applyDialogueChoice: (characterId: string, affection: number, memoryKey?: string) => number
   completeEpisode: (characterId: string, episodeId: string, kind: 'first' | 'casual' | 'story', affectionGain: number, meeting?: { title: string; day: number; placeId: string }) => number
   completeCharacter: (characterId: string) => void
+  saveDateRecord: (record: DateRecord) => void
   markSecretRead: (characterId: string) => void
   resetCollectionOnly: () => void
   restartGame: () => void
@@ -76,6 +77,7 @@ function createCollection(): CollectionProgress {
     recentCasualEpisodeIdsByCharacterId: {},
     lastMeetingByCharacterId: {},
     seasonalEventRecords: {},
+    dateRecords: [],
   }
 }
 
@@ -120,6 +122,7 @@ function normalizeCollection(collection?: Partial<CollectionProgress>): Collecti
     recentCasualEpisodeIdsByCharacterId: collection?.recentCasualEpisodeIdsByCharacterId ?? {},
     lastMeetingByCharacterId: collection?.lastMeetingByCharacterId ?? {},
     seasonalEventRecords: collection?.seasonalEventRecords ?? {},
+    dateRecords: Array.isArray(collection?.dateRecords) ? collection.dateRecords.slice(-50) : [],
   }
 }
 
@@ -324,6 +327,21 @@ export const useGameStore = create<GameState>((set) => ({
       return { ...next }
     }),
 
+  saveDateRecord: (record) =>
+    set((state) => {
+      if (state.collection.dateRecords.some((item) => item.id === record.id)) return state
+      const dateRecords = [...state.collection.dateRecords, record].slice(-50)
+      const nextCollection: CollectionProgress = { ...state.collection, dateRecords }
+      const next: PersistedState = {
+        player: state.player,
+        progress: state.progress,
+        collection: nextCollection,
+        settings: state.settings,
+      }
+      persist(next)
+      return { ...next }
+    }),
+
   markSecretRead: (characterId) =>
     set((state) => {
       if (state.collection.secretReadCharacterIds.includes(characterId)) return state
@@ -373,6 +391,7 @@ export const useGameStore = create<GameState>((set) => ({
       const seasonalEventRecords = Object.fromEntries(
         Object.entries(state.collection.seasonalEventRecords).filter(([, record]) => record.companionId !== characterId),
       )
+      const dateRecords = state.collection.dateRecords.filter((record) => record.characterId !== characterId)
       delete affectionByCharacterId[characterId]
       delete encounterCounts[characterId]
       delete importantMemories[characterId]
@@ -393,6 +412,7 @@ export const useGameStore = create<GameState>((set) => ({
         recentCasualEpisodeIdsByCharacterId,
         lastMeetingByCharacterId,
         seasonalEventRecords,
+        dateRecords,
         completedCharacterIds: without(state.collection.completedCharacterIds),
         secretReadCharacterIds: without(state.collection.secretReadCharacterIds),
       }

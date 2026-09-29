@@ -215,6 +215,33 @@ export interface SeasonalEventRecord {
   souvenirNote: string
 }
 
+export interface DateRecordTurn {
+  turn: number
+  distanceState: 'space' | 'normal' | 'close'
+  touchState: 'none' | 'holdingHands' | 'interlockedHands' | 'sleeveHeld' | 'shoulderContact'
+  lines: string[]
+  reactionLine?: string
+  reactionNarration?: string
+  innerThought?: string
+  heartDelta: number
+  heartAfter: number
+  isWeak: boolean
+  weakSpotLabel?: string
+  weakDiscovery: boolean
+  returnTouch?: string
+}
+
+export interface DateRecord {
+  id: string
+  day: number
+  createdAt: number
+  characterId: string
+  placeId: string
+  finalHeart: number
+  closing: string
+  turns: DateRecordTurn[]
+}
+
 export interface CollectionProgress {
   discoveredCharacterIds: string[]
   lastEncounterCharacterId: string | null
@@ -229,6 +256,7 @@ export interface CollectionProgress {
   recentCasualEpisodeIdsByCharacterId: Record<string, string[]>
   lastMeetingByCharacterId: Record<string, { episodeId: string; title: string; day: number; placeId: string; kind: StoryEpisodeKind }>
   seasonalEventRecords: Record<string, SeasonalEventRecord>
+  dateRecords: DateRecord[]
 }
 
 export type FontFamilySetting = 'clear' | 'pretendard' | 'system'

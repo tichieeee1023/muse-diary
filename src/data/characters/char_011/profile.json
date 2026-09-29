@@ -22,6 +22,7 @@
     "love": "/assets/characters/char_011/love.webp",
     "loveShy": "/assets/characters/char_011/love-shy.webp",
     "deepLove": "/assets/characters/char_011/deep-love.webp",
-    "sad": "/assets/characters/char_011/sad.webp"
+    "sad": "/assets/characters/char_011/sad.webp",
+    "shy": "/assets/characters/char_011/shy.webp"
   }
 }

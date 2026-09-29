@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { GameShell } from './components/GameShell'
 import type { MainSection } from './components/BottomNav'
 import { CharacterDiaryPage } from './pages/CharacterDiaryPage'
+import { DatePage } from './pages/DatePage'
 import { AchievementToast } from './components/AchievementToast'
 import { HomePage } from './pages/HomePage'
 import { LocationPage } from './pages/LocationPage'
@@ -22,12 +23,14 @@ export default function App() {
   const [section, setSection] = useState<MainSection>('outing')
   const [showTitle, setShowTitle] = useState(true)
   const [seasonalEventId, setSeasonalEventId] = useState<string | null>(null)
+  const [showDate, setShowDate] = useState(false)
 
   const navigate = (next: MainSection) => setSection(next)
 
   let content
   if (showTitle) content = <TitlePage onEnter={() => setShowTitle(false)} />
   else if (!player) content = <NameSetupPage />
+  else if (showDate) content = <DatePage onClose={() => setShowDate(false)} />
   else if (seasonalEventId === 'spring-night-bloom') content = <SpringEventPage onClose={() => setSeasonalEventId(null)} />
   else if (seasonalEventId === 'summer-fireworks-night') content = <SummerEventPage onClose={() => setSeasonalEventId(null)} />
   else if (seasonalEventId === 'autumn-late-garden') content = <AutumnEventPage onClose={() => setSeasonalEventId(null)} />
@@ -37,7 +40,7 @@ export default function App() {
   else if (section === 'room') content = <MyRoomPage onNavigate={navigate} />
   else if (section === 'records') content = <RecordsPage onNavigate={navigate} />
   else if (section === 'settings') content = <SettingsPage onNavigate={navigate} />
-  else content = <HomePage onNavigate={navigate} onStartSeasonalEvent={(eventId) => setSeasonalEventId(eventId)} />
+  else content = <HomePage onNavigate={navigate} onStartSeasonalEvent={(eventId) => setSeasonalEventId(eventId)} onStartDate={() => setShowDate(true)} />
 
   return <GameShell>{content}<AchievementToast /></GameShell>
 }

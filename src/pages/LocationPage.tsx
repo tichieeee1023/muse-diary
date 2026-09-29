@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { CharacterPortrait } from '../components/CharacterPortrait'
 import { CharacterSD } from '../components/CharacterSD'
 import { HeartMeter } from '../components/HeartMeter'
@@ -8,10 +8,10 @@ import { getCharacterRouteProfile } from '../data/characters/index'
 import { getCharacterThemeLine, getReunionLine } from '../data/characterFlavor'
 import { getPlace } from '../data/locations'
 import { getEndingContent } from '../engine/endingEngine'
-import { selectEncounter } from '../engine/encounterEngine'
+import { getAllCharacters, selectEncounter } from '../engine/encounterEngine'
 import { formatGameText } from '../engine/textFormatter'
 import { playUiSound } from '../engine/soundEngine'
-import { getLatestPortrait, getStoryProgress, hasCompletedFirstEncounter, isFinalStoryEpisode, selectCharacterEpisode } from '../engine/storyEngine'
+import { getLatestPortrait, getStoryProgress, hasCompletedFirstEncounter, isAffinityEventReady, isFinalStoryEpisode, selectCharacterEpisode } from '../engine/storyEngine'
 import { useGameStore } from '../store/useGameStore'
 import type { CharacterDefinition, StoryBlock, StoryChoiceOption, StoryEpisode, TimeOfDay } from '../types/game'
 
@@ -66,6 +66,14 @@ export function LocationPage() {
   const [endingImageFailed, setEndingImageFailed] = useState(false)
   const [showEpisodeTitle, setShowEpisodeTitle] = useState(false)
   const [choiceAffection, setChoiceAffection] = useState<number | null>(null)
+  const storySheetRef = useRef<HTMLElement | null>(null)
+
+  useEffect(() => {
+    if (sectionIndex === 0) return
+    window.requestAnimationFrame(() => {
+      storySheetRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
+  }, [sectionIndex])
 
   const firstEncounterCompletedCharacterIds = Object.keys(collection.seenEpisodeIdsByCharacterId)
     .filter((characterId) => hasCompletedFirstEncounter(characterId, collection))
@@ -74,9 +82,24 @@ export function LocationPage() {
   const place = getPlace(activePlaceId)
   if (!place) return null
 
+  const allCharacters = getAllCharacters()
+  const readyAffinityCharactersForRoute = (routeId: string) => allCharacters.filter((character) => {
+    if (!collection.discoveredCharacterIds.includes(character.id)) return false
+    if (!isAffinityEventReady(character.id, collection)) return false
+    return character.spawnRules.some((rule) => {
+      if (rule.placeId !== place.id) return false
+      if (rule.secondaryOnly && !collection.discoveredCharacterIds.includes(character.id)) return false
+      if (rule.routeIds?.length && !rule.routeIds.includes(routeId)) return false
+      if (rule.times?.length && !rule.times.includes(visitTime)) return false
+      if (rule.weather?.length && !rule.weather.includes(progress.weather)) return false
+      return true
+    })
+  })
+
   const handleRoute = (routeId: string) => {
     if (encounter) return
-    const character = selectEncounter({
+    const priorityAffinityCharacter = readyAffinityCharactersForRoute(routeId)[0] ?? null
+    const character = priorityAffinityCharacter ?? selectEncounter({
       placeId: place.id,
       routeId,
       timeOfDay: visitTime,
@@ -302,7 +325,7 @@ export function LocationPage() {
           </div>
         </section>
 
-        <article key={`${episode.id}-${sectionIndex}-${choiceResponse ? 'response' : 'base'}`} className="story-sheet" aria-live="polite">
+        <article ref={storySheetRef} key={`${episode.id}-${sectionIndex}-${choiceResponse ? 'response' : 'base'}`} className="story-sheet" aria-live="polite">
           <div className="story-scene-index" aria-label={`장면 ${sectionIndex + 1} / ${episode.sections.length}`}><span>SCENE</span><strong>{String(sectionIndex + 1).padStart(2, '0')}</strong><i aria-hidden="true">/</i><small>{String(episode.sections.length).padStart(2, '0')}</small></div>
           {section.blocks.map((block, index) => block.type === 'narration' ? (
             <p key={`${sectionIndex}-${index}`} className="story-narration novel-prose">{formatGameText(block.text, player.name)}</p>
@@ -369,13 +392,26 @@ export function LocationPage() {
         <p>{place.note}</p>
       </section>
       <div className="route-list">
-        {place.routes.map((route, index) => (
-          <button key={route.id} type="button" className="route-card" onClick={() => handleRoute(route.id)}>
-            <span className="route-number">0{index + 1}</span>
-            <span><strong>{route.title}</strong><small>{route.note}</small></span>
-            <span className="route-commit"><b>ACTION 1</b><i>→</i></span>
-          </button>
-        ))}
+        {place.routes.map((route, index) => {
+          const readyCharacter = readyAffinityCharactersForRoute(route.id)[0] ?? null
+          return (
+            <button
+              key={route.id}
+              type="button"
+              className={`route-card${readyCharacter ? ' has-affinity-event' : ''}`}
+              data-character={readyCharacter?.id}
+              onClick={() => handleRoute(route.id)}
+            >
+              <span className="route-number">0{index + 1}</span>
+              <span>
+                <strong>{route.title}</strong>
+                <small>{route.note}</small>
+                {readyCharacter && <em className="route-event-hint"><i aria-hidden="true" /> 중요한 기록이 기다리고 있어요</em>}
+              </span>
+              <span className="route-commit"><b>{readyCharacter ? 'EVENT' : `ACTION ${index + 1}`}</b><i>→</i></span>
+            </button>
+          )
+        })}
       </div>
       <p className="location-footnote">선택하면 오늘의 외출 횟수 1회가 사용되고, 누군가와 반드시 조우합니다.</p>
     </div>
