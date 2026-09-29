@@ -136,11 +136,11 @@ export function LocationPage() {
     if (isFinalStoryEpisode(encounter.episode)) {
       completeCharacter(encounter.character.id)
       setShowEnding(true)
-      playUiSound('new', soundEnabled)
+      playUiSound('complete', soundEnabled)
       return
     }
     setShowEncounterClose(true)
-    playUiSound('page', soundEnabled)
+    playUiSound(encounter.unlockedBar ? 'unlock' : encounter.episode.kind === 'story' ? 'new' : 'page', soundEnabled)
     void finalAffection
   }
 
@@ -242,7 +242,7 @@ export function LocationPage() {
             <span>GALLERY UPDATED</span>
             <strong>엔딩 CG가 기록되었습니다. 비설을 읽으면 MUSE DOLL도 해금됩니다.</strong>
           </div>
-          <button type="button" className="primary-button full-button" onClick={leavePlace}>작업실로 돌아간다</button>
+          <button type="button" className="primary-button full-button" onClick={() => { playUiSound('travel', soundEnabled); leavePlace() }}>작업실로 돌아간다</button>
         </div>
       )
     }
@@ -267,7 +267,7 @@ export function LocationPage() {
             {episode.kind === 'story' && <div className="story-record-stamp">STORY {storyProgress.completed} / 5</div>}
             {encounter.unlockedBar && <div className="unlock-note"><span>NEW PLACE</span><strong>밤에만 열리는 BAR의 위치를 알아냈다.</strong></div>}
           </section>
-          <button type="button" className="primary-button full-button" onClick={leavePlace}>작업실로 돌아간다</button>
+          <button type="button" className="primary-button full-button" onClick={() => { playUiSound('travel', soundEnabled); leavePlace() }}>작업실로 돌아간다</button>
         </div>
       )
     }

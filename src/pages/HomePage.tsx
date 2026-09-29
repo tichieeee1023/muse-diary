@@ -5,6 +5,9 @@ import { PlaceIcon } from '../components/PlaceIcon'
 import { getAllCharacters, hasEncounterCandidate, isFirstEncounterAvailable } from '../engine/encounterEngine'
 import { hasCompletedFirstEncounter, isAffinityEventReady } from '../engine/storyEngine'
 import { getPlace } from '../data/locations'
+import { getWorkroomDialogue } from '../data/characterFlavor'
+import { formatGameText } from '../engine/textFormatter'
+import { playUiSound } from '../engine/soundEngine'
 import { AUTUMN_EVENT_DAY, AUTUMN_EVENT_ID, SPRING_EVENT_DAY, SPRING_EVENT_ID, SUMMER_EVENT_DAY, SUMMER_EVENT_ID, WINTER_EVENT_DAY, WINTER_EVENT_ID, autumnEvent, springEvent, summerEvent, winterEvent } from '../data/seasonalEvents'
 import { useGameStore } from '../store/useGameStore'
 
@@ -33,6 +36,7 @@ export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
   const nextDay = useGameStore((state) => state.nextDay)
   const enterPlace = useGameStore((state) => state.enterPlace)
   const collection = useGameStore((state) => state.collection)
+  const soundEnabled = useGameStore((state) => state.settings.soundEnabled)
   const [showDayEndModal, setShowDayEndModal] = useState(false)
   const [showDayTransition, setShowDayTransition] = useState(false)
   const [placeView, setPlaceView] = useState<'map' | 'list'>('map')
@@ -60,21 +64,21 @@ export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
   const summerEventComplete = Boolean(summerRecord)
   const autumnEventComplete = Boolean(autumnRecord)
   const winterEventComplete = Boolean(winterRecord)
-  const isSpringSpecialDay = progress.day >= SPRING_EVENT_DAY && !springEventComplete && seasonalEligibleCharacters.length > 0
+  const isSpringSpecialDay = progress.day >= SPRING_EVENT_DAY && !springEventComplete && seasonalEligibleCharacters.length >= 2
   const isSummerSpecialDay = progress.day >= SUMMER_EVENT_DAY
     && springEventComplete
     && !summerEventComplete
-    && seasonalEligibleCharacters.length > 0
+    && seasonalEligibleCharacters.length >= 2
     && (springRecord?.day ?? 0) < progress.day
   const isAutumnSpecialDay = progress.day >= AUTUMN_EVENT_DAY
     && summerEventComplete
     && !autumnEventComplete
-    && seasonalEligibleCharacters.length > 0
+    && seasonalEligibleCharacters.length >= 2
     && (summerRecord?.day ?? 0) < progress.day
   const isWinterSpecialDay = progress.day >= WINTER_EVENT_DAY
     && autumnEventComplete
     && !winterEventComplete
-    && seasonalEligibleCharacters.length > 0
+    && seasonalEligibleCharacters.length >= 2
     && (autumnRecord?.day ?? 0) < progress.day
 
   const canEncounterAtPlace = (placeId: string) => {
@@ -120,6 +124,17 @@ export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
     .map(([characterId, meeting]) => ({ character: characters.find((character) => character.id === characterId), meeting }))
     .filter((item) => item.character)
 
+  const messageCharacters = characters.filter((character) =>
+    collection.discoveredCharacterIds.includes(character.id) && hasCompletedFirstEncounter(character.id, collection),
+  )
+  const dailyMessageCharacter = messageCharacters.length
+    ? messageCharacters[(Math.max(1, progress.day) - 1) % messageCharacters.length]
+    : null
+  const dailyMessageAffection = dailyMessageCharacter ? (collection.affectionByCharacterId[dailyMessageCharacter.id] ?? 0) : 0
+  const dailyMessageCompleted = dailyMessageCharacter ? collection.completedCharacterIds.includes(dailyMessageCharacter.id) : false
+  const dailyMessage = dailyMessageCharacter
+    ? formatGameText(getWorkroomDialogue(dailyMessageCharacter.id, dailyMessageAffection, dailyMessageCompleted, progress.day), player.name)
+    : ''
 
   const mapPositions: Record<string, { x: number; y: number }> = {
     rooftop: { x: 51, y: 10 },
@@ -195,6 +210,26 @@ export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
         </div>
       </section>
 
+      {dailyMessageCharacter && (
+        <section className={`workroom-message${dailyMessageCompleted ? ' is-complete' : ''}`} aria-label={`${dailyMessageCharacter.name}에게서 온 오늘의 메시지`}>
+          <CharacterSD
+            characterId={dailyMessageCharacter.id}
+            name={dailyMessageCharacter.name}
+            symbol={dailyMessageCharacter.symbol}
+            className="workroom-message-sd"
+            decorative
+          />
+          <div className="workroom-message-copy">
+            <div className="workroom-message-meta">
+              <span>TODAY'S MESSAGE</span>
+              <small>{dailyMessageCompleted ? 'ROUTE COMPLETE' : `HEART ${dailyMessageAffection}`}</small>
+            </div>
+            <strong>{dailyMessageCharacter.name}</strong>
+            <p>“{dailyMessage}”</p>
+          </div>
+        </section>
+      )}
+
       {isSpringSpecialDay && (
         <section className="spring-special-home">
           <div className="spring-special-home-petals" aria-hidden="true">✿ · ✿ · ✿</div>
@@ -206,7 +241,7 @@ export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
             <p>오늘은 평소의 외출을 쉬고, 지금까지 만난 사람 중 한 명과 봄꽃 야간 개장에 갑니다.</p>
             <small>동행 가능 {seasonalEligibleCharacters.length}명 · 선택한 사람과 특별한 봄 기록이 남아요.</small>
           </div>
-          <button type="button" className="spring-special-home-button" onClick={() => onStartSeasonalEvent(SPRING_EVENT_ID)}>함께 갈 사람 고르기 <b>→</b></button>
+          <button type="button" className="spring-special-home-button" onClick={() => { playUiSound('special', soundEnabled); onStartSeasonalEvent(SPRING_EVENT_ID) }}>함께 갈 사람 고르기 <b>→</b></button>
         </section>
       )}
 
@@ -221,7 +256,7 @@ export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
             <p>오늘은 평소의 외출을 쉬고, 한 사람과 강변 불꽃축제의 가장 밝은 밤을 보냅니다.</p>
             <small>동행 가능 {seasonalEligibleCharacters.length}명 · 불꽃 아래에서 둘만의 여름 기록이 남아요.</small>
           </div>
-          <button type="button" className="summer-special-home-button" onClick={() => onStartSeasonalEvent(SUMMER_EVENT_ID)}>함께 불꽃 볼 사람 고르기 <b>→</b></button>
+          <button type="button" className="summer-special-home-button" onClick={() => { playUiSound('special', soundEnabled); onStartSeasonalEvent(SUMMER_EVENT_ID) }}>함께 불꽃 볼 사람 고르기 <b>→</b></button>
         </section>
       )}
 
@@ -236,7 +271,7 @@ export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
             <p>오늘은 평소의 외출을 쉬고, 한 사람과 조용한 늦가을 정원을 천천히 걷습니다.</p>
             <small>동행 가능 {seasonalEligibleCharacters.length}명 · 익숙한 얼굴과도 잠깐 스쳐 지나갈 수 있어요.</small>
           </div>
-          <button type="button" className="autumn-special-home-button" onClick={() => onStartSeasonalEvent(AUTUMN_EVENT_ID)}>함께 걸을 사람 고르기 <b>→</b></button>
+          <button type="button" className="autumn-special-home-button" onClick={() => { playUiSound('special', soundEnabled); onStartSeasonalEvent(AUTUMN_EVENT_ID) }}>함께 걸을 사람 고르기 <b>→</b></button>
         </section>
       )}
 
@@ -251,7 +286,7 @@ export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
             <p>오늘은 평소의 외출을 쉬고, 한 사람과 편백 향이 나는 산장으로 겨울 나들이를 갑니다.</p>
             <small>동행 가능 {seasonalEligibleCharacters.length}명 · 돌아갈 시간이 늦어진 만큼 둘만의 겨울이 길어져요.</small>
           </div>
-          <button type="button" className="winter-special-home-button" onClick={() => onStartSeasonalEvent(WINTER_EVENT_ID)}>함께 눈 보러 갈 사람 고르기 <b>→</b></button>
+          <button type="button" className="winter-special-home-button" onClick={() => { playUiSound('special', soundEnabled); onStartSeasonalEvent(WINTER_EVENT_ID) }}>함께 눈 보러 갈 사람 고르기 <b>→</b></button>
         </section>
       )}
 
@@ -268,7 +303,7 @@ export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
             </div>
           )}
         </div>
-        <button type="button" className="next-step-go" onClick={() => recommendedPlace ? enterPlace(recommendedPlace.id) : onNavigate('characters')} disabled={!recommendedPlace || progress.actionsLeft <= 0}>
+        <button type="button" className="next-step-go" onClick={() => { playUiSound(recommendedPlace ? 'travel' : 'tap', soundEnabled); recommendedPlace ? enterPlace(recommendedPlace.id) : onNavigate('characters') }} disabled={!recommendedPlace || progress.actionsLeft <= 0}>
           {recommendedPlace ? (readyEvents.length > 0 ? '이벤트 장소' : '장소 보기') : '도감 보기'}
         </button>
       </section>
@@ -282,7 +317,7 @@ export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
           <button
             type="button"
             className={`next-day-button${progress.actionsLeft === 0 ? ' is-ready' : ''}`}
-            onClick={() => setShowDayEndModal(true)}
+            onClick={() => { playUiSound('tap', soundEnabled); setShowDayEndModal(true) }}
           >
             <span>{progress.actionsLeft === 0 ? 'DAY COMPLETE' : `외출 ${3 - progress.actionsLeft} / 3`}</span>
             <strong>다음 날 <b>→</b></strong>
@@ -292,8 +327,8 @@ export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
         {progress.actionsLeft > 0 ? (
           <>
             <div className="place-view-switch" role="tablist" aria-label="장소 보기 방식">
-              <button type="button" className={placeView === 'map' ? 'is-active' : ''} onClick={() => setPlaceView('map')}>지도</button>
-              <button type="button" className={placeView === 'list' ? 'is-active' : ''} onClick={() => setPlaceView('list')}>목록</button>
+              <button type="button" className={placeView === 'map' ? 'is-active' : ''} onClick={() => { playUiSound('tap', soundEnabled); setPlaceView('map') }}>지도</button>
+              <button type="button" className={placeView === 'list' ? 'is-active' : ''} onClick={() => { playUiSound('tap', soundEnabled); setPlaceView('list') }}>목록</button>
             </div>
 
             {placeView === 'map' ? (
@@ -316,7 +351,7 @@ export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
                       type="button"
                       className={`city-map-pin${available ? ' is-available' : ''}${today ? ' is-today' : ''}${!unlocked ? ' is-locked' : ''}${nightLocked ? ' is-night-locked' : ''}`}
                       style={{ left: `${position.x}%`, top: `${position.y}%` }}
-                      onClick={() => setSelectedMapPlaceId(placeId)}
+                      onClick={() => { playUiSound('map', soundEnabled); setSelectedMapPlaceId(placeId) }}
                       aria-label={`${place.name}${available ? ', 오늘 방문 가능' : ', 현재 방문 불가'}`}
                     >
                       <span className="city-map-pin-icon"><PlaceIcon placeId={place.id} size={18} /></span>
@@ -348,7 +383,7 @@ export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
                       type="button"
                       className={`place-card${isNightLocked || isUnavailable ? ' is-time-locked' : ''}`}
                       disabled={isNightLocked || isUnavailable}
-                      onClick={() => enterPlace(place.id)}
+                      onClick={() => { playUiSound('travel', soundEnabled); enterPlace(place.id) }}
                     >
                       <span className="place-icon-box"><PlaceIcon placeId={place.id} size={22} /></span>
                       <span className="place-copy">
@@ -401,7 +436,7 @@ export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
               type="button"
               className="primary-button map-place-go"
               disabled={!isMapPlaceAvailable(selectedMapPlace.id)}
-              onClick={() => { if (isMapPlaceAvailable(selectedMapPlace.id)) { setSelectedMapPlaceId(null); enterPlace(selectedMapPlace.id) } }}
+              onClick={() => { if (isMapPlaceAvailable(selectedMapPlace.id)) { playUiSound('travel', soundEnabled); setSelectedMapPlaceId(null); enterPlace(selectedMapPlace.id) } }}
             >
               {isMapPlaceAvailable(selectedMapPlace.id) ? '이곳으로 간다' : !progress.unlockedPlaceIds.includes(selectedMapPlace.id) ? '아직 갈 수 없는 장소' : !todayPlaceIds.has(selectedMapPlace.id) ? '오늘은 다른 곳으로 가보자' : !canEncounterAtPlace(selectedMapPlace.id) ? '지금은 특별한 기척이 없다' : '지금은 갈 수 없음'}
             </button>
@@ -421,13 +456,13 @@ export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
                 <div key={character!.id}><strong>{character!.name}</strong><small>{getPlace(meeting.placeId)?.name ?? '어딘가'} · {meeting.title}</small></div>
               )) : <small>오늘은 아직 아무도 만나지 않았어요.</small>}
             </div>
-            <div className="modal-actions"><button type="button" className="secondary-button" onClick={() => setShowDayEndModal(false)}>조금 더 둘러본다</button><button type="button" className="primary-button" onClick={() => { nextDay(); setShowDayEndModal(false); setShowDayTransition(true) }}>오늘을 마친다</button></div>
+            <div className="modal-actions"><button type="button" className="secondary-button" onClick={() => { playUiSound('tap', soundEnabled); setShowDayEndModal(false) }}>조금 더 둘러본다</button><button type="button" className="primary-button" onClick={() => { playUiSound('day', soundEnabled); nextDay(); setShowDayEndModal(false); setShowDayTransition(true) }}>오늘을 마친다</button></div>
           </section>
         </div>
       )}
 
       {showDayTransition && (
-        <div className="day-transition-overlay" aria-live="polite"><span>D + 1</span><strong>DAY {String(progress.day).padStart(2, '0')}</strong><small>{weatherMark[progress.weather]} {progress.weather}</small></div>
+        <div className="day-transition-overlay" aria-live="polite"><span>NEW DAY</span><strong>DAY {String(progress.day).padStart(2, '0')}</strong><small>{weatherMark[progress.weather]} {progress.weather} · 새로운 하루가 시작되었습니다.</small></div>
       )}
 
       <BottomNav active="outing" onNavigate={onNavigate} />

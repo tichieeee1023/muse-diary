@@ -43,7 +43,23 @@ export function SceneBanner({
   }, [candidates])
 
   const activeAsset = candidates[candidateIndex] ?? ''
-  const atmosphere = activeAsset.includes('rain') ? 'rain' : activeAsset.includes('snow') || activeAsset.includes('winter') ? 'snow' : activeAsset.includes('night') ? 'sparkle' : 'dust'
+  const isNight = timeOfDay === '밤' || activeAsset.includes('night')
+  const primaryAtmosphere = weather === '비' || activeAsset.includes('rain')
+    ? 'rain'
+    : weather === '눈' || activeAsset.includes('snow') || activeAsset.includes('winter')
+      ? 'snow'
+      : placeId === 'aquarium'
+        ? 'sparkle'
+        : isNight
+          ? 'bokeh'
+          : 'dust'
+  const secondaryAtmosphere = (weather === '비' || weather === '눈' || (placeId === 'old-street' && isNight))
+    ? 'mist'
+    : placeId === 'aquarium'
+      ? 'bokeh'
+      : (placeId === 'night-market' || placeId === 'rooftop') && isNight
+        ? 'sparkle'
+        : null
 
   const handleImageError = () => {
     if (candidateIndex < candidates.length - 1) setCandidateIndex((index) => index + 1)
@@ -61,7 +77,8 @@ export function SceneBanner({
         />
       )}
       <div className="scene-banner-fallback" aria-hidden={!imageUnavailable} />
-      <AmbientCanvas effect={atmosphere} density={atmosphere === 'rain' ? 'medium' : 'low'} />
+      {secondaryAtmosphere && <AmbientCanvas effect={secondaryAtmosphere} density="low" className="ambient-rear" />}
+      <AmbientCanvas effect={primaryAtmosphere} density={primaryAtmosphere === 'rain' || primaryAtmosphere === 'snow' ? 'medium' : 'low'} className="ambient-front" />
       <figcaption>
         <span className="scene-place-icon"><PlaceIcon placeId={placeId} size={19} /></span>
         <span className="scene-caption-copy">

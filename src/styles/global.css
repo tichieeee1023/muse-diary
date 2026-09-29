@@ -5,6 +5,7 @@
   font-family: "Pretendard Variable", Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif;
   --font-ui: "Pretendard Variable", Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif;
   --font-novel: "Noto Sans KR", "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", sans-serif;
+  --font-display: "S-Core Dream", "Pretendard Variable", Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif;
   color: #2d2523;
   background: #d9d2c6;
   font-synthesis: none;
@@ -4678,4 +4679,283 @@ h1, h2 { font-family:var(--font-ui); font-weight:800; letter-spacing:-.035em; }
 }
 @media (prefers-reduced-motion:reduce) {
   .title-prologue-scene,.title-prologue-cursor,.title-prologue-finale { animation:none !important; }
+}
+
+/* STEP 7-B1A: richer, still-lightweight scene atmosphere */
+.ambient-canvas { contain:strict; }
+.ambient-rear { z-index:1; mix-blend-mode:screen; }
+.ambient-front { z-index:2; }
+.ambient-petals { opacity:.7; mix-blend-mode:normal; }
+.ambient-leaves { opacity:.62; mix-blend-mode:normal; }
+.ambient-mist { opacity:.48; filter:blur(2px); mix-blend-mode:screen; }
+.ambient-bokeh { opacity:.28; filter:blur(1.4px); }
+.ambient-sparkle { opacity:.46; }
+.seasonal-ambient { z-index:2; }
+.seasonal-ambient-soft { z-index:1; }
+.spring-event-hero,.summer-event-hero,.autumn-event-hero,.winter-event-hero { isolation:isolate; overflow:hidden; }
+.spring-event-hero > img,.summer-event-hero > img,.autumn-event-hero > img,.winter-event-hero > img { position:relative; z-index:0; }
+.spring-event-hero figcaption,.summer-event-hero figcaption,.autumn-event-hero figcaption,.winter-event-hero figcaption { position:relative; z-index:4; }
+.scene-banner::before { content:""; position:absolute; z-index:1; inset:0; pointer-events:none; background:radial-gradient(circle at 50% 8%,rgba(255,255,255,.10),transparent 44%),linear-gradient(180deg,transparent 35%,rgba(20,16,17,.05)); }
+.scene-aquarium::before { background:linear-gradient(115deg,rgba(87,170,193,.10),transparent 42%),radial-gradient(circle at 72% 24%,rgba(145,226,239,.10),transparent 35%); }
+.scene-old-street::before { background:linear-gradient(180deg,rgba(218,205,187,.07),transparent 45%,rgba(33,26,29,.08)); }
+@media (max-width:520px) {
+  .ambient-mist { opacity:.34; filter:blur(1.5px); }
+  .ambient-bokeh { opacity:.22; }
+  .ambient-petals,.ambient-leaves { opacity:.56; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .ambient-canvas { display:none !important; }
+}
+
+
+/* STEP 7-B2A: title / intro hierarchy, save split, time + season mood */
+.title-page.title-day .title-scene {
+  background:
+    linear-gradient(180deg,rgba(36,27,25,.08),rgba(37,25,24,.72)),
+    url('/assets/backgrounds/studio/day.webp') center/cover;
+}
+.title-page.title-night .title-scene {
+  background:
+    linear-gradient(180deg,rgba(20,15,16,.28),rgba(25,17,18,.9)),
+    url('/assets/backgrounds/studio/night.webp') center/cover;
+}
+.title-vignette {
+  position:absolute;
+  z-index:-1;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 76% 44%, transparent 0 21%, rgba(31,20,20,.16) 63%, rgba(19,13,14,.42) 100%),
+    linear-gradient(180deg,rgba(17,12,13,.08),transparent 34%,rgba(17,12,13,.24));
+}
+.title-page[data-season="spring"] > .ambient-canvas { opacity:.42; }
+.title-page[data-season="summer"] > .ambient-canvas { opacity:.24; }
+.title-page[data-season="autumn"] > .ambient-canvas { opacity:.35; }
+.title-page[data-season="winter"] > .ambient-canvas { opacity:.42; }
+.title-season-line {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:17px;
+  color:rgba(255,245,232,.68);
+  font-family:var(--font-ui);
+  font-size:8px;
+  font-weight:850;
+  letter-spacing:.15em;
+}
+.title-season-line i { width:20px; height:1px; margin:0; background:rgba(229,181,140,.62); }
+.title-diary-card {
+  width:min(100%,292px);
+  border-radius:2px;
+  background:linear-gradient(145deg,rgba(53,37,34,.76),rgba(36,26,27,.63));
+}
+.title-diary-meta {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding-left:12px;
+  color:#e5b58c;
+  font-family:var(--font-ui);
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.1em;
+}
+.title-diary-meta b { color:rgba(255,245,232,.68); font-size:9px; font-weight:650; letter-spacing:.02em; }
+.title-diary-card p {
+  font-family:var(--font-display);
+  font-weight:650;
+  letter-spacing:-.025em;
+}
+.title-save-summary { display:grid; gap:4px; margin-top:11px; padding-left:12px; }
+.title-save-summary strong { color:#fff8ed; font-family:var(--font-display); font-size:12px; font-weight:700; }
+.title-save-summary small { margin:0; padding:0; color:rgba(255,245,232,.62); font-family:var(--font-ui); font-size:8px; font-weight:750; letter-spacing:.08em; }
+.title-actions.has-save { gap:9px; }
+.title-start-button,
+.title-new-game-button { font-family:var(--font-display); }
+.title-new-game-button {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+  min-height:48px;
+  padding:0 17px;
+  border:1px solid rgba(255,245,232,.52);
+  background:rgba(31,23,24,.32);
+  color:#fff8ed;
+  backdrop-filter:blur(4px);
+  font-size:11px;
+  font-weight:750;
+  letter-spacing:.12em;
+}
+.title-new-game-button small { color:rgba(255,245,232,.61); font-family:var(--font-ui); font-size:8px; font-weight:650; letter-spacing:0; }
+.title-start-button:active,
+.title-new-game-button:active { transform:translateY(1px); }
+
+@media (max-width:359px) {
+  .title-page { padding-inline:20px; }
+  .title-diary-card { width:min(100%,268px); padding-inline:18px; }
+  .title-diary-card p { font-size:18px; }
+  .title-new-game-button { padding-inline:14px; }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .title-page > .ambient-canvas { display:none; }
+}
+
+/* STEP 7-B2B: rotating workroom messages */
+.workroom-message {
+  position: relative;
+  display: grid;
+  grid-template-columns: 68px minmax(0, 1fr);
+  align-items: center;
+  gap: 13px;
+  margin: -12px 0 28px;
+  padding: 13px 14px 13px 10px;
+  overflow: hidden;
+  border: 1px solid rgba(109,38,51,.14);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255,250,241,.92), rgba(248,238,226,.78));
+  box-shadow: 0 9px 24px rgba(69,45,35,.055);
+  animation: paper-enter .42s .15s ease both;
+}
+.workroom-message::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto auto;
+  width: 72px;
+  height: 72px;
+  background: radial-gradient(circle at 100% 0, rgba(109,38,51,.08), transparent 68%);
+  pointer-events: none;
+}
+.workroom-message.is-complete {
+  border-color: rgba(109,38,51,.23);
+  background: linear-gradient(135deg, rgba(255,248,239,.96), rgba(244,227,217,.9));
+}
+.workroom-message-sd {
+  width: 62px;
+  height: 62px;
+  align-self: end;
+}
+.workroom-message-sd img { object-fit: contain; object-position: center bottom; }
+.workroom-message-copy { min-width: 0; display: grid; gap: 4px; }
+.workroom-message-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.workroom-message-meta span { color: var(--wine); font-size: 8px; font-weight: 900; letter-spacing: .13em; }
+.workroom-message-meta small { color: #a08d80; font-size: 8px; font-weight: 800; letter-spacing: .06em; }
+.workroom-message-copy > strong { font-family: var(--font-novel); font-size: 13px; }
+.workroom-message-copy > p { margin: 0; color: #64564e; font-family: var(--font-novel); font-size: 13px; line-height: 1.62; word-break: keep-all; }
+
+@media (max-width: 430px) {
+  .workroom-message { grid-template-columns: 56px minmax(0, 1fr); gap: 10px; margin-top: -13px; padding: 11px 12px 11px 8px; }
+  .workroom-message-sd { width: 52px; height: 52px; }
+  .workroom-message-copy > p { font-size: 12px; line-height: 1.58; }
+  .workroom-message-meta small { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workroom-message { animation: none !important; }
+}
+
+
+/* V2 STEP 7-D: MY ROOM — completed-route visitors, MUSE DOLL shelf, seasonal keepsakes */
+.bottom-nav { grid-template-columns: repeat(5, 1fr); }
+
+.my-room-page { padding-bottom: 112px; }
+.my-room-header { align-items: flex-end; }
+.my-room-day { min-width: 58px; display:grid; justify-items:end; gap:1px; color:var(--muted); }
+.my-room-day span { font-size:8px; font-weight:900; letter-spacing:.16em; }
+.my-room-day strong { color:var(--wine); font-family:Georgia, "Noto Serif KR", serif; font-size:20px; }
+
+.my-room-stage {
+  position:relative;
+  overflow:hidden;
+  min-height:330px;
+  margin: 4px 0 14px;
+  border:1px solid #d8cbc2;
+  border-radius:22px;
+  background:#2d2927;
+  box-shadow:0 14px 32px rgba(57,38,33,.10);
+}
+.my-room-stage-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.my-room-stage-shade { position:absolute; inset:0; background:linear-gradient(180deg,rgba(34,27,25,.08) 25%,rgba(29,22,21,.08) 54%,rgba(28,20,19,.48) 100%); pointer-events:none; }
+.my-room-stage-label { position:absolute; z-index:3; left:16px; top:15px; display:grid; gap:3px; padding:8px 10px; border:1px solid rgba(255,255,255,.28); border-radius:10px; background:rgba(43,32,30,.48); color:#fff; backdrop-filter:blur(5px); }
+.my-room-stage-label span { font-size:8px; font-weight:900; letter-spacing:.15em; opacity:.76; }
+.my-room-stage-label strong { font-size:12px; }
+
+.my-room-visitors { position:absolute; z-index:4; inset:auto 12px 12px; height:235px; display:flex; align-items:flex-end; justify-content:center; gap:2px; pointer-events:none; }
+.my-room-visitor { position:relative; min-width:0; flex:1; height:100%; display:flex; align-items:flex-end; justify-content:center; border:0; background:transparent; padding:0 0 24px; cursor:pointer; pointer-events:auto; filter:drop-shadow(0 8px 9px rgba(30,22,20,.28)); transition:transform .16s ease, filter .16s ease; }
+.my-room-visitor span:last-child { position:absolute; left:50%; bottom:0; transform:translateX(-50%); max-width:90%; padding:4px 8px; border-radius:999px; background:rgba(255,250,245,.92); color:#51383a; font-size:9px; font-weight:900; white-space:nowrap; box-shadow:0 3px 10px rgba(39,28,24,.12); }
+.my-room-visitor-sd { width:min(118px, 100%); height:205px; display:flex; align-items:flex-end; justify-content:center; }
+.my-room-visitor-sd img { display:block; max-width:100%; max-height:100%; object-fit:contain; object-position:center bottom; }
+.my-room-visitor.is-selected { transform:translateY(-5px) scale(1.035); filter:drop-shadow(0 10px 12px rgba(54,30,31,.32)); }
+.my-room-visitor.is-selected::after { content:"♥"; position:absolute; top:22px; right:10%; color:#8b3040; font-size:14px; text-shadow:0 1px 8px rgba(255,255,255,.9); }
+.my-room-visitors.visitors-1 .my-room-visitor { max-width:170px; }
+.my-room-visitors.visitors-1 .my-room-visitor-sd { width:145px; height:220px; }
+.my-room-visitors.visitors-2 { padding-inline:28px; gap:8px; }
+
+.my-room-empty-stage { position:absolute; z-index:4; left:50%; bottom:44px; transform:translateX(-50%); width:80%; padding:16px; text-align:center; color:#fff; border:1px dashed rgba(255,255,255,.4); border-radius:14px; background:rgba(44,33,31,.42); backdrop-filter:blur(4px); }
+.my-room-empty-stage span { font-size:9px; font-weight:900; letter-spacing:.14em; opacity:.75; }
+.my-room-empty-stage p { margin:7px 0 0; font-size:12px; line-height:1.65; }
+
+.my-room-visitor-message { margin-bottom:14px; padding:16px 17px; border:1px solid #e2d4cc; border-radius:16px; background:linear-gradient(135deg,#fffaf6,#f9efea); box-shadow:0 7px 20px rgba(58,39,34,.045); }
+.my-room-message-meta { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:9px; }
+.my-room-message-meta span { color:#a16d72; font-size:8px; font-weight:900; letter-spacing:.12em; }
+.my-room-message-meta strong { color:var(--wine); font-size:12px; }
+.my-room-visitor-message > p { margin:0; color:#332a28; font-family:var(--font-novel); font-size:15px; line-height:1.75; }
+.my-room-visitor-message > small { display:block; margin-top:10px; padding-top:9px; border-top:1px dashed #dfd0c7; color:#877870; font-size:10px; line-height:1.55; }
+
+.my-room-summary { display:grid; grid-template-columns:repeat(3,1fr); margin:0 0 26px; border:1px solid #e0d5ce; border-radius:14px; background:#fffaf6; }
+.my-room-summary div { display:grid; gap:3px; padding:11px 8px; text-align:center; border-right:1px solid #e8ddd6; }
+.my-room-summary div:last-child { border-right:0; }
+.my-room-summary span { color:#998981; font-size:8px; }
+.my-room-summary strong { color:#443432; font-family:Georgia,"Noto Serif KR",serif; font-size:13px; }
+
+.my-room-shelf-section, .my-room-keepsake-section { margin-bottom:28px; }
+.my-room-section-note { margin:-3px 0 13px; color:#8f7f77; font-size:10px; line-height:1.65; }
+.my-room-doll-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+.my-room-doll-card { overflow:hidden; min-width:0; padding:0; border:1px solid #ded2ca; border-radius:15px; background:#fffaf5; text-align:left; box-shadow:0 5px 16px rgba(58,38,32,.045); }
+.my-room-doll-card img { display:block; width:100%; aspect-ratio:1.55/1; object-fit:cover; object-position:left center; background:#ede5dc; }
+.my-room-doll-card > div:last-child { display:grid; gap:3px; padding:10px 11px 12px; }
+.my-room-doll-card strong { color:#443332; font-size:12px; }
+.my-room-doll-card small { overflow:hidden; color:#94857c; font-size:9px; text-overflow:ellipsis; white-space:nowrap; }
+.my-room-doll-card.is-unlocked { cursor:pointer; }
+.my-room-doll-card.is-locked { opacity:.66; }
+.my-room-doll-lock { display:grid; place-items:center; width:100%; aspect-ratio:1.55/1; background:repeating-linear-gradient(135deg,#f0e9e3 0,#f0e9e3 10px,#ebe2dc 10px,#ebe2dc 20px); }
+.my-room-doll-lock span { display:grid; place-items:center; width:38px; height:38px; border:1px dashed #b9a9a0; border-radius:50%; color:#ab9a91; font-family:Georgia,serif; font-size:17px; }
+
+.my-room-keepsake-list { display:grid; gap:9px; }
+.my-room-keepsake { display:grid; grid-template-columns:42px minmax(0,1fr); align-items:center; gap:11px; padding:13px 14px; border:1px solid #dfd4cc; border-radius:14px; background:#fffaf5; }
+.my-room-keepsake-mark { display:grid; place-items:center; width:38px; height:38px; border-radius:50%; background:#f4e8e4; color:#88404c; font-size:18px; }
+.my-room-keepsake > div { min-width:0; display:grid; gap:3px; }
+.my-room-keepsake small { color:#a08e84; font-size:8px; font-weight:800; letter-spacing:.08em; }
+.my-room-keepsake strong { color:#3f302d; font-size:13px; }
+.my-room-keepsake p { margin:0; color:#897a72; font-size:10px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.my-room-keepsake.season-summer .my-room-keepsake-mark { background:#edf0f4; color:#68788a; }
+.my-room-keepsake.season-autumn .my-room-keepsake-mark { background:#f0e8db; color:#8a6b50; }
+.my-room-keepsake.season-winter .my-room-keepsake-mark { background:#eaf1f4; color:#6f8490; }
+.my-room-keepsake-empty { padding:23px 16px; border:1px dashed #d8cac2; border-radius:14px; background:#fbf7f2; text-align:center; color:#98877e; }
+.my-room-keepsake-empty span { font-size:9px; font-weight:900; letter-spacing:.14em; }
+.my-room-keepsake-empty p { margin:7px 0 0; font-size:11px; line-height:1.6; }
+
+.my-room-doll-lightbox { position:fixed; z-index:120; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:24px; background:rgba(31,24,23,.86); }
+.my-room-doll-lightbox > button { position:absolute; top:max(18px,env(safe-area-inset-top)); right:18px; width:40px; height:40px; border:1px solid rgba(255,255,255,.35); border-radius:50%; background:rgba(255,255,255,.09); color:#fff; font-size:24px; }
+.my-room-doll-lightbox > span { color:#eadbd5; font-size:9px; font-weight:900; letter-spacing:.15em; }
+.my-room-doll-lightbox > img { display:block; width:min(100%,760px); max-height:66vh; object-fit:contain; border-radius:12px; box-shadow:0 18px 45px rgba(0,0,0,.36); }
+.my-room-doll-lightbox > div { width:min(100%,760px); padding:12px 14px; border-radius:12px; background:rgba(255,250,246,.96); }
+.my-room-doll-lightbox strong { color:#482f32; font-size:13px; }
+.my-room-doll-lightbox p { margin:5px 0 0; color:#74645d; font-size:10px; line-height:1.55; }
+
+@media (hover:hover) and (pointer:fine) {
+  .my-room-visitor:hover { transform:translateY(-4px); }
+  .my-room-doll-card.is-unlocked:hover { transform:translateY(-2px); border-color:#b98f91; box-shadow:0 9px 20px rgba(74,44,43,.09); }
+}
+@media (max-width:359px) {
+  .nav-item { font-size:9px; }
+  .my-room-stage { min-height:300px; }
+  .my-room-visitors { height:212px; }
+  .my-room-visitor-sd { height:185px; }
+  .my-room-doll-grid { gap:8px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .my-room-visitor, .my-room-doll-card { transition:none !important; }
 }

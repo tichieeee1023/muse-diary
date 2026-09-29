@@ -47,7 +47,7 @@ export function AchievementToast() {
     fresh.forEach((item) => seen.add(item.id))
     saveSeen(seen)
     setToast(fresh[0])
-    playUiSound('new', soundEnabled)
+    playUiSound('unlock', soundEnabled)
   }, [achievements, soundEnabled])
 
   useEffect(() => {

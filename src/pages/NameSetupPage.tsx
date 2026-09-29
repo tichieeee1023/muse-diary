@@ -1,10 +1,12 @@
 import { FormEvent, useMemo, useState } from 'react'
+import { playUiSound, unlockAudioContext } from '../engine/soundEngine'
 import { useGameStore } from '../store/useGameStore'
 
 const koreanNameRegex = /^[가-힣]{1,8}$/
 
 export function NameSetupPage() {
   const setPlayerName = useGameStore((state) => state.setPlayerName)
+  const soundEnabled = useGameStore((state) => state.settings.soundEnabled)
   const [name, setName] = useState('')
   const [touched, setTouched] = useState(false)
 
@@ -14,6 +16,8 @@ export function NameSetupPage() {
     event.preventDefault()
     setTouched(true)
     if (!isValid) return
+    unlockAudioContext()
+    playUiSound('new', soundEnabled)
     setPlayerName(name.trim())
   }
 

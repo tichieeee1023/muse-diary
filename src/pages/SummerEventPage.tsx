@@ -11,6 +11,7 @@ import { withJosa } from '../engine/textFormatter'
 import { getSummerAffectionTier, getSummerBranch, summerEvent } from '../data/seasonalEvents'
 import { useGameStore } from '../store/useGameStore'
 import type { CharacterDefinition } from '../types/game'
+import { AmbientCanvas } from '../components/AmbientCanvas'
 
 interface SummerEventPageProps {
   onClose: () => void
@@ -83,14 +84,15 @@ export function SummerEventPage({ onClose }: SummerEventPageProps) {
     })
     setBaseReward(Math.max(0, after - before))
     setStep('complete')
-    playUiSound('new', soundEnabled)
+    playUiSound('special', soundEnabled)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const hero = (
     <figure className="summer-event-hero">
       <img src={getSeasonalEventBackground('SUMMER', step, companionId)} alt="여름 불꽃축제가 열린 강변" />
-      <div className="summer-firework-layer" aria-hidden="true"><i>✦</i><i>✹</i><i>✦</i><i>✺</i><i>✦</i></div>
+      <AmbientCanvas effect="bokeh" density="medium" className="seasonal-ambient-soft" />
+      <AmbientCanvas effect="sparkle" density="low" className="seasonal-ambient" />
       <figcaption><span>SUMMER SPECIAL DAY</span><strong>{summerEvent.title}</strong><small>{summerEvent.placeName}</small></figcaption>
     </figure>
   )

@@ -11,6 +11,7 @@ import { withJosa } from '../engine/textFormatter'
 import { autumnEvent, getAutumnAffectionTier, getAutumnBranch } from '../data/seasonalEvents'
 import { useGameStore } from '../store/useGameStore'
 import type { CharacterDefinition } from '../types/game'
+import { AmbientCanvas } from '../components/AmbientCanvas'
 
 interface AutumnEventPageProps {
   onClose: () => void
@@ -84,14 +85,15 @@ export function AutumnEventPage({ onClose }: AutumnEventPageProps) {
     })
     setBaseReward(Math.max(0, after - before))
     setStep('complete')
-    playUiSound('new', soundEnabled)
+    playUiSound('special', soundEnabled)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const hero = (
     <figure className="autumn-event-hero">
       <img src={getSeasonalEventBackground('AUTUMN', step, companionId)} alt="늦가을 특별 개방 중인 수변 정원" />
-      <div className="autumn-leaf-layer" aria-hidden="true"><i>❧</i><i>◆</i><i>❧</i><i>◆</i><i>❧</i></div>
+      <AmbientCanvas effect="leaves" density="medium" className="seasonal-ambient" />
+      <AmbientCanvas effect="dust" density="low" className="seasonal-ambient-soft" />
       <figcaption><span>AUTUMN SPECIAL DAY</span><strong>{autumnEvent.title}</strong><small>{autumnEvent.placeName}</small></figcaption>
     </figure>
   )

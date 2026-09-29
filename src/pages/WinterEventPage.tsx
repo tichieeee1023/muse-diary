@@ -11,6 +11,7 @@ import { withJosa } from '../engine/textFormatter'
 import { getWinterAffectionTier, getWinterBranch, winterEvent } from '../data/seasonalEvents'
 import { useGameStore } from '../store/useGameStore'
 import type { CharacterDefinition } from '../types/game'
+import { AmbientCanvas } from '../components/AmbientCanvas'
 
 interface WinterEventPageProps {
   onClose: () => void
@@ -83,16 +84,15 @@ export function WinterEventPage({ onClose }: WinterEventPageProps) {
     })
     setBaseReward(Math.max(0, after - before))
     setStep('complete')
-    playUiSound('new', soundEnabled)
+    playUiSound('special', soundEnabled)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const hero = (
     <figure className="winter-event-hero">
       <img src={getSeasonalEventBackground('WINTER', step, companionId)} alt="눈 내리는 산림 편백 휴양관" />
-      <div className="winter-snow-layer" aria-hidden="true">
-        <i>❄</i><i>·</i><i>❅</i><i>·</i><i>❄</i><i>·</i><i>❅</i><i>·</i><i>❄</i>
-      </div>
+      <AmbientCanvas effect="snow" density="medium" className="seasonal-ambient" />
+      <AmbientCanvas effect="mist" density="low" className="seasonal-ambient-soft" />
       <figcaption><span>WINTER SPECIAL DAY</span><strong>{winterEvent.title}</strong><small>{winterEvent.placeName}</small></figcaption>
     </figure>
   )

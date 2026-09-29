@@ -36,6 +36,7 @@ export function SettingsPage({ onNavigate }: SettingsPageProps) {
   const setTextSpeed = useGameStore((state) => state.setTextSpeed)
   const nextDay = useGameStore((state) => state.nextDay)
   const resetCollectionOnly = useGameStore((state) => state.resetCollectionOnly)
+  const restartGame = useGameStore((state) => state.restartGame)
   const resetCharacter = useGameStore((state) => state.resetCharacter)
   const characterMap = useMemo(() => new Map(getAllCharacters().map((character) => [character.id, character])), [])
 
@@ -118,8 +119,13 @@ export function SettingsPage({ onNavigate }: SettingsPageProps) {
       </section>
 
       <section className="settings-group danger-zone">
-        <div className="setting-copy"><span>RESET</span><strong>수집 기록 전체 초기화</strong><p>{player?.name}의 이름과 현재 DAY, 장소 해금은 유지하고 인물 발견·호감도·비설·완료 기록만 지웁니다.</p></div>
-        <button type="button" className="danger-button full-button" onClick={() => { if (window.confirm('인물 수집 기록을 전부 초기화할까요? 이 작업은 되돌릴 수 없습니다.')) resetCollectionOnly() }}>수집 기록 초기화</button>
+        <div className="setting-copy"><span>RESET ROUTES</span><strong>공략 기록만 초기화</strong><p>현재 DAY와 해금된 장소는 유지하고, 인물 발견·호감도·비설·엔딩·계절 동행 기록만 지웁니다.</p></div>
+        <button type="button" className="danger-button full-button" onClick={() => { if (window.confirm('공략 기록만 초기화할까요? 현재 DAY와 장소 해금은 그대로 유지됩니다.')) resetCollectionOnly() }}>공략 기록만 지우기</button>
+      </section>
+
+      <section className="settings-group danger-zone new-game-reset-zone">
+        <div className="setting-copy"><span>NEW GAME RESET</span><strong>처음부터 다시 시작</strong><p>DAY 1, 장소 해금, 방문 기록, 계절 이벤트, 인물 발견·호감도·엔딩을 모두 초기 상태로 되돌립니다. {player?.name ? `${player.name}의 이름` : '플레이어 이름'}과 읽기·효과음 설정은 유지됩니다.</p></div>
+        <button type="button" className="danger-button full-button" onClick={() => { if (window.confirm('게임 진행을 DAY 1부터 완전히 다시 시작할까요? 이름과 설정만 남고 모든 진행 기록이 지워집니다. 이 작업은 되돌릴 수 없습니다.')) { restartGame(); onNavigate('outing') } }}>DAY 1부터 새로 시작</button>
       </section>
 
       {collection.discoveredCharacterIds.length > 0 && (

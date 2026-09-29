@@ -1,4 +1,9 @@
-export type MainSection = 'outing' | 'characters' | 'records' | 'settings'
+import { getAllCharacters } from '../engine/encounterEngine'
+import { playUiSound } from '../engine/soundEngine'
+import { isAffinityEventReady } from '../engine/storyEngine'
+import { useGameStore } from '../store/useGameStore'
+
+export type MainSection = 'outing' | 'characters' | 'room' | 'records' | 'settings'
 
 interface BottomNavProps {
   active: MainSection
@@ -8,12 +13,14 @@ interface BottomNavProps {
 const items: Array<{ icon: string; label: string; section: MainSection }> = [
   { icon: '⌂', label: '외출', section: 'outing' },
   { icon: '♧', label: '인물', section: 'characters' },
+  { icon: '▦', label: '마이룸', section: 'room' },
   { icon: '▤', label: '기록', section: 'records' },
   { icon: '⚙', label: '설정', section: 'settings' },
 ]
 
 export function BottomNav({ active, onNavigate }: BottomNavProps) {
   const collection = useGameStore((state) => state.collection)
+  const soundEnabled = useGameStore((state) => state.settings.soundEnabled)
   const hasCharacterUpdate = getAllCharacters().some((character) => collection.discoveredCharacterIds.includes(character.id) && isAffinityEventReady(character.id, collection))
 
   return (
@@ -24,7 +31,10 @@ export function BottomNav({ active, onNavigate }: BottomNavProps) {
           type="button"
           className={`nav-item${active === item.section ? ' is-active' : ''}`}
           aria-current={active === item.section ? 'page' : undefined}
-          onClick={() => onNavigate(item.section)}
+          onClick={() => {
+            if (active !== item.section) playUiSound('tap', soundEnabled)
+            onNavigate(item.section)
+          }}
         >
           <span className="nav-icon" aria-hidden="true">{item.icon}{item.section === 'characters' && hasCharacterUpdate && <i className="nav-update-dot" />}</span>
           <span>{item.label}</span>
@@ -34,6 +44,3 @@ export function BottomNav({ active, onNavigate }: BottomNavProps) {
     </nav>
   )
 }
-import { getAllCharacters } from '../engine/encounterEngine'
-import { isAffinityEventReady } from '../engine/storyEngine'
-import { useGameStore } from '../store/useGameStore'

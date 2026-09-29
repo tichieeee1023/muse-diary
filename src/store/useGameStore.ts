@@ -32,6 +32,7 @@ interface GameState extends PersistedState {
   completeCharacter: (characterId: string) => void
   markSecretRead: (characterId: string) => void
   resetCollectionOnly: () => void
+  restartGame: () => void
   resetCharacter: (characterId: string) => void
   toggleSound: () => void
   setFontFamily: (fontFamily: FontFamilySetting) => void
@@ -338,6 +339,20 @@ export const useGameStore = create<GameState>((set) => ({
       const next: PersistedState = {
         player: state.player,
         progress: { ...state.progress, ssrMissStreak: 0 },
+        collection: createCollection(),
+        settings: state.settings,
+      }
+      persist(next)
+      return { ...next, activePlaceId: null }
+    }),
+
+  restartGame: () =>
+    set((state) => {
+      try { localStorage.removeItem('muse-diary-achievement-toast-seen-v1') } catch { /* ignore */ }
+      const next: PersistedState = {
+        // 이름/읽기/효과음 설정은 유지하고 게임 진행만 DAY 1로 완전히 되돌립니다.
+        player: state.player,
+        progress: createProgress(1),
         collection: createCollection(),
         settings: state.settings,
       }

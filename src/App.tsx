@@ -5,6 +5,7 @@ import { CharacterDiaryPage } from './pages/CharacterDiaryPage'
 import { AchievementToast } from './components/AchievementToast'
 import { HomePage } from './pages/HomePage'
 import { LocationPage } from './pages/LocationPage'
+import { MyRoomPage } from './pages/MyRoomPage'
 import { NameSetupPage } from './pages/NameSetupPage'
 import { RecordsPage } from './pages/RecordsPage'
 import { SettingsPage } from './pages/SettingsPage'
@@ -33,6 +34,7 @@ export default function App() {
   else if (seasonalEventId === 'winter-hinoki-lodge') content = <WinterEventPage onClose={() => setSeasonalEventId(null)} />
   else if (activePlaceId) content = <LocationPage />
   else if (section === 'characters') content = <CharacterDiaryPage onNavigate={navigate} />
+  else if (section === 'room') content = <MyRoomPage onNavigate={navigate} />
   else if (section === 'records') content = <RecordsPage onNavigate={navigate} />
   else if (section === 'settings') content = <SettingsPage onNavigate={navigate} />
   else content = <HomePage onNavigate={navigate} onStartSeasonalEvent={(eventId) => setSeasonalEventId(eventId)} />

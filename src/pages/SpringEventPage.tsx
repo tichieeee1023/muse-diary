@@ -11,6 +11,7 @@ import { withJosa } from '../engine/textFormatter'
 import { getSpringAffectionTier, getSpringBranch, springEvent } from '../data/seasonalEvents'
 import { useGameStore } from '../store/useGameStore'
 import type { CharacterDefinition } from '../types/game'
+import { AmbientCanvas } from '../components/AmbientCanvas'
 
 interface SpringEventPageProps {
   onClose: () => void
@@ -83,14 +84,15 @@ export function SpringEventPage({ onClose }: SpringEventPageProps) {
     })
     setBaseReward(Math.max(0, after - before))
     setStep('complete')
-    playUiSound('new', soundEnabled)
+    playUiSound('special', soundEnabled)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const hero = (
     <figure className="spring-event-hero">
       <img src={getSeasonalEventBackground('SPRING', step, companionId)} alt="봄꽃 야간 개장이 열린 강변" />
-      <div className="spring-petal-layer" aria-hidden="true"><i>✿</i><i>·</i><i>✿</i><i>·</i><i>✿</i></div>
+      <AmbientCanvas effect="petals" density="medium" className="seasonal-ambient" />
+      <AmbientCanvas effect="bokeh" density="low" className="seasonal-ambient-soft" />
       <figcaption><span>SPRING SPECIAL DAY</span><strong>{springEvent.title}</strong><small>{springEvent.placeName}</small></figcaption>
     </figure>
   )
