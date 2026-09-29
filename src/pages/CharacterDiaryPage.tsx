@@ -4,6 +4,7 @@ import { HeartMeter, HeartRow } from '../components/HeartMeter'
 import { CharacterIcon } from '../components/CharacterIcon'
 import { MuseDollIcon } from '../components/MuseDollIcon'
 import { CharacterPortrait } from '../components/CharacterPortrait'
+import { getExtraExpressionArchive } from '../data/portraitExpressions'
 import { CharacterSD } from '../components/CharacterSD'
 import { CollectionArt } from '../components/CollectionArt'
 import { getCharacterRouteProfile } from '../data/characters/index'
@@ -153,13 +154,27 @@ export function CharacterDiaryPage({ onNavigate }: CharacterDiaryPageProps) {
             <p className="eyebrow">VISUAL ARCHIVE</p>
             <h2>일러스트 기록</h2>
           </div>
-          {routeProfile && <div className="visual-archive-grid">
-            {([['main','MAIN'],['smile','SMILE'],['troubled','TROUBLED'],['hmm','HMM']] as const).map(([expression, label]) => (
-              <button type="button" className="gallery-thumb" key={expression} onClick={() => setGalleryPreview({ src: routeProfile.visuals[expression], alt: `${selected.name} ${label} 일러스트`, label })}>
-                <CharacterPortrait characterId={selected.id} name={selected.name} symbol={selected.symbol} expression={expression} className="archive-portrait" /><span>{label}</span>
-              </button>
-            ))}
-          </div>}
+          {routeProfile && <>
+            <div className="visual-archive-grid">
+              {([['main','MAIN'],['smile','SMILE'],['troubled','TROUBLED'],['hmm','HMM']] as const).map(([expression, label]) => (
+                <button type="button" className="gallery-thumb" key={expression} onClick={() => setGalleryPreview({ src: routeProfile.visuals[expression], alt: `${selected.name} ${label} 일러스트`, label })}>
+                  <CharacterPortrait characterId={selected.id} name={selected.name} symbol={selected.symbol} expression={expression} className="archive-portrait" /><span>{label}</span>
+                </button>
+              ))}
+            </div>
+            {isCompleted && getExtraExpressionArchive(selected.id).length > 0 && <div className="extra-expression-archive">
+              <div className="expression-archive-label"><span>ROUTE EXPRESSIONS</span><small>공략 완료 후 열린 감정 기록</small></div>
+              <div className="visual-archive-grid extra-expression-grid">
+                {getExtraExpressionArchive(selected.id).map(([expression, label]) => {
+                  const src = routeProfile.visuals[expression]
+                  if (!src) return null
+                  return <button type="button" className="gallery-thumb" key={expression} onClick={() => setGalleryPreview({ src, alt: `${selected.name} ${label} 일러스트`, label })}>
+                    <CharacterPortrait characterId={selected.id} name={selected.name} symbol={selected.symbol} expression={expression} className="archive-portrait" /><span>{label}</span>
+                  </button>
+                })}
+              </div>
+            </div>}
+          </>}
           <div className="ending-gallery-grid">
             {isCompleted && routeProfile ? <button type="button" className="gallery-art-button" onClick={() => setGalleryPreview({ src: routeProfile.visuals.endingCg, alt: `${selected.name} 엔딩 풀 일러스트`, label: 'ENDING CG' })}><CollectionArt src={routeProfile.visuals.endingCg} alt={`${selected.name} 엔딩 풀 일러스트`} label="ENDING CG" symbol={selected.symbol} className="ending-gallery-art" /></button> : <div className="gallery-locked"><strong>ENDING CG</strong><span>공략 완료 후 해금</span></div>}
             {secretRead && routeProfile ? <button type="button" className="gallery-art-button" onClick={() => setGalleryPreview({ src: routeProfile.visuals.endingDoll, alt: `${selected.name} MUSE DOLL`, label: 'MUSE DOLL' })}><CollectionArt src={routeProfile.visuals.endingDoll} alt={`${selected.name} MUSE DOLL`} label="MUSE DOLL" symbol={selected.symbol} className="ending-gallery-art" /></button> : <div className="gallery-locked"><strong>MUSE DOLL</strong><span>비설 감상 후 해금</span></div>}

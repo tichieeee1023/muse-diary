@@ -1,12 +1,18 @@
 {
   "id": "char_004_casual_02",
   "kind": "casual",
+  "times": [
+    "밤"
+  ],
   "title": "마감 후의 컵라면",
   "minAffection": 0,
   "maxAffection": 49,
   "defaultPortrait": "main",
-  "completionAffection": 5,
+  "completionAffection": 8,
   "repeatable": true,
+  "placeIds": [
+    "convenience"
+  ],
   "sections": [
     {
       "blocks": [

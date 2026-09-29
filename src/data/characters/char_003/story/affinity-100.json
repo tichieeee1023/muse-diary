@@ -3,19 +3,19 @@
   "kind": "story",
   "title": "종착역 이후",
   "threshold": 100,
-  "purpose": "해준이 사랑을 보호와 통제가 아니라 함께 기다리고 함께 돌아오는 관계로 받아들인다",
-  "defaultPortrait": "main",
+  "purpose": "항상 누군가의 무사한 도착을 확인하던 해준이 주인공을 통제하거나 보내는 대신 기다리고 함께 돌아갈 사람으로 선택하며 감정을 분명히 고백한다. 비 오는 빈 플랫폼의 엔딩 CG로 이어진다.",
+  "defaultPortrait": "troubled",
   "completionAffection": 0,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "운행이 끝난 자정의 빈 플랫폼. 전광판 숫자가 00:00으로 바뀌는 순간 {name}{이가} 계단을 내려왔다."
+          "text": "비가 쏟아지는 밤이었다. 마지막 운행이 끝난 플랫폼에는 물기 어린 불빛만 길게 번지고 있었다. 전광판 숫자가 00:00으로 바뀌는 순간 {name}{이가} 계단을 내려왔다."
         },
         {
           "type": "narration",
-          "text": "해준은 제복이 아닌 사복 차림으로 의자 옆에 서 있었다."
+          "text": "해준은 제복이 아닌 검은 사복 차림으로 플랫폼 의자 옆에 서 있었다. 이미 퇴근한 뒤였다."
         },
         {
           "type": "dialogue",
@@ -25,50 +25,81 @@
         },
         {
           "type": "narration",
-          "text": "말과 달리 표정에는 재촉도 불안도 없었다."
+          "text": "말은 그렇게 했지만 얼굴에는 재촉도 불안도 없었다. 젖은 {name}{을를} 보고 눈썹만 조금 찌푸렸다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
           "text": "뛰어왔습니까? 안 뛰어도 됐는데.",
           "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "그가 수건 대신 자기 재킷 소매로 {name}의 어깨에 맺힌 빗물을 털어냈다. 동작은 조심스러웠고, 손은 생각보다 오래 머물렀다."
         }
       ]
     },
     {
-      "blocks": [],
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "{name}{이가} 왜 아직 여기 있냐고 묻자 해준은 잠깐 선로 쪽을 봤다. 예전 같으면 ‘안전 때문에’라고 대답했을 것이다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "기다렸습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "짧고 단정한 대답이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "도착했는지 확인하려고 기다린 건 아닙니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "보고 싶어서 기다렸습니다.",
+          "portrait": "troubled"
+        }
+      ],
       "choice": {
-        "id": "aff_100_choice",
+        "id": "haejun_100_choice_1",
         "options": [
           {
             "id": "a",
-            "text": "“기다렸어요?”",
-            "affection": 7,
-            "memoryKey": "a100_wait",
+            "text": "“많이 기다렸어요?”",
+            "affection": 8,
+            "memoryKey": "haejun_100_long_wait",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "네.",
+                "text": "조금요.",
                 "portrait": "main"
               },
               {
                 "type": "narration",
-                "text": "이번에는 둘러대지 않았다."
+                "text": "해준은 시간을 확인하지 않았다."
               },
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "기다릴 수 있으니까 기다렸습니다.",
+                "text": "그래도 괜찮았습니다. 올 거라고 알고 있었으니까요.",
                 "portrait": "smile"
               }
             ]
           },
           {
             "id": "b",
-            "text": "“오늘도 도착하면 연락해야 해요?”",
-            "affection": 7,
-            "memoryKey": "a100_arrive",
+            "text": "“오늘은 도착하면 연락 안 해도 되겠네요.”",
+            "affection": 8,
+            "memoryKey": "haejun_100_no_text",
             "response": [
               {
                 "type": "narration",
@@ -77,38 +108,32 @@
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "오늘은 같이 갈 겁니다.",
-                "portrait": "main"
-              },
-              {
-                "type": "dialogue",
-                "speaker": "문해준",
-                "text": "그러니까 확인할 필요 없겠네요.",
+                "text": "네. 오늘은 같이 갈 겁니다.",
                 "portrait": "smile"
               }
             ]
           },
           {
             "id": "c",
-            "text": "“해준 씨도 무사히 도착했네요.”",
-            "affection": 7,
-            "memoryKey": "a100_him",
+            "text": "“해준 씨도 무사히 와 있었네요.”",
+            "affection": 9,
+            "memoryKey": "haejun_100_you_arrived",
             "response": [
               {
                 "type": "narration",
-                "text": "그가 잠깐 눈을 내렸다."
+                "text": "해준이 잠깐 눈을 내렸다."
               },
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "……그 말, 생각보다 좋네요.",
+                "text": "…그 말, 여전히 좋네요.",
                 "portrait": "troubled"
               },
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "앞으로는 저도 알려드리겠습니다.",
-                "portrait": "main"
+                "text": "앞으로도 서로 확인합시다. 의무 말고, 하고 싶을 때요.",
+                "portrait": "smile"
               }
             ]
           }
@@ -119,20 +144,127 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "플랫폼을 나가는 동안 해준은 반걸음 앞서 걷지 않았다. {name}{이가} 천천히 걸으면 같이 느려졌고, 계단 앞에서도 먼저 올라가지 않았다."
+          "text": "플랫폼 끝에서 빗물이 선로로 떨어지는 소리가 났다. 해준은 {name}의 어깨에 손을 얹은 채 한동안 놓지 않았다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "제가 기다릴 테니까 천천히 오세요.",
+          "text": "저는 계속 도착하는 것만 중요하다고 생각했습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "어디로 가는지, 누구랑 가는지는 그다음이라고요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "그의 손가락에 조금 힘이 들어갔다. 붙잡는 힘이 아니라, 존재를 확인하는 정도의 힘이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "그런데 요즘은 목적지가 같지 않아도 같이 걷고 싶다는 생각을 합니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "{name} 씨랑요.",
+          "portrait": "troubled"
+        }
+      ],
+      "choice": {
+        "id": "haejun_100_choice_2",
+        "options": [
+          {
+            "id": "a",
+            "text": "“그럼 천천히 같이 가요.”",
+            "affection": 8,
+            "memoryKey": "haejun_100_slow",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "네. 천천히 갑시다.",
+                "portrait": "smile"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "제가 기다릴 테니까요.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“나도 해준 씨랑 같이 가고 싶어요.”",
+            "affection": 9,
+            "memoryKey": "haejun_100_same",
+            "response": [
+              {
+                "type": "narration",
+                "text": "해준은 숨을 한 번 짧게 내쉬었다. 긴장이 풀릴 때 나오는 버릇이었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "그 말이면 충분합니다.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "그의 손 위에 손을 겹친다.",
+            "affection": 9,
+            "memoryKey": "haejun_100_touch",
+            "response": [
+              {
+                "type": "narration",
+                "text": "해준은 놀라 손을 떼지 않았다. 오히려 손바닥을 돌려 {name}의 손을 제대로 잡았다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "…놓치지 않겠습니다. 다만 끌고 가지도 않겠습니다.",
+                "portrait": "troubled"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "역을 나설 때 두 사람은 같은 속도로 걸었다. 해준은 반걸음 앞서지 않았고, 계단에서도 먼저 올라가지 않았다."
+        },
+        {
+          "type": "narration",
+          "text": "밖에는 여전히 비가 내렸다. 해준이 우산을 펴고 자연스럽게 {name} 쪽으로 조금 더 기울였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "집까지 얼마나 걸리든 상관없습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "오늘은 도착이 늦어도 괜찮으니까요.",
           "portrait": "smile"
         },
         {
           "type": "narration",
-          "text": "누군가를 무사히 보내는 일만 알던 사람이 이제는 같은 방향으로 함께 돌아가는 법을 배우고 있었다."
+          "text": "무사히 도착하는 것만 중요했던 사람은 처음으로 그 사이의 시간을 좋아하게 되었다."
         }
       ]
     }
   ],
-  "closing": "문해준의 COMPLETE — 기다림을 불안이 아니라 믿음으로 선택했다."
+  "closing": "해준은 기다림을 불안이 아니라 믿음으로 선택했다. 종착역 이후에도 함께 걸어갈 사람이 생겼다."
 }

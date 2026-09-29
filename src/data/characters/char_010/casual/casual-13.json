@@ -1,0 +1,53 @@
+{
+  "id": "char_010_casual_13",
+  "kind": "casual",
+  "title": "출구를 세지 않는 밤",
+  "minAffection": 0,
+  "maxAffection": 45,
+  "defaultPortrait": "main",
+  "completionAffection": 7,
+  "repeatable": false,
+  "placeIds": [
+    "rooftop"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "재하는 루프탑에 올라오자마자 비상계단과 출입문을 한 번씩 확인했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "두 곳. 문제 없습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 여기서까지 출구를 세느냐고 묻자 그가 아주 잠깐 굳었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "습관입니다. 고치기 어렵습니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "잠시 후 {name}{이가 일부러 다른 이야기를 꺼냈다. 재하는 더 이상 문 쪽을 돌아보지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "...오늘은 두 번이면 충분하겠군요.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "세 번째 확인을 하지 않은 것만으로도 작은 변화가 남았다."
+}

@@ -3,25 +3,19 @@
   "kind": "story",
   "title": "돌아온 책",
   "threshold": 60,
-  "defaultPortrait": "main",
-  "completionAffection": 2,
-  "purpose": "현실계인 도윤이 기록을 통해 비일상의 틈을 처음 분명하게 목격한다",
+  "purpose": "현실계인 도윤이 기록과 기억을 통해 비일상의 틈을 분명하게 목격하고, 혼자 검증하는 대신 주인공과 함께 진실을 확인하기로 한다.",
+  "defaultPortrait": "hmm",
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "폐점 직전, 도윤에게서 드물게 먼저 연락이 왔다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "서도윤",
-          "text": "혹시 지금 근처입니까?",
-          "portrait": "main"
+          "text": "폐점 무렵, 도윤에게서 드물게 먼저 연락이 왔다. 메시지는 짧았다. “혹시 지금 근처입니까?”"
         },
         {
           "type": "narration",
-          "text": "서점에 도착하자 카운터 위에 낡은 책 한 권과 장부가 나란히 놓여 있었다."
+          "text": "서점에 도착하자 카운터 위에 낡은 책 한 권과 오래된 재고 장부가 나란히 놓여 있었다."
         },
         {
           "type": "dialogue",
@@ -31,7 +25,13 @@
         },
         {
           "type": "narration",
-          "text": "장부에는 폐기 날짜와 이유까지 적혀 있었다. 침수로 복구 불가. 그런데 눈앞의 책은 그때 기록된 얼룩을 그대로 가진 채 돌아와 있었다."
+          "text": "장부에는 제목, 입고 번호, 폐기 날짜, 이유까지 도윤의 글씨로 적혀 있었다. 침수. 복구 불가. 그런데 눈앞의 책에는 그날 기록된 물 얼룩이 똑같이 남아 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "제가 직접 포장해서 폐기 업체에 넘겼습니다. 기억만 그런 게 아니라 서명도 남아 있고요.",
+          "portrait": "main"
         }
       ]
     },
@@ -39,63 +39,75 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "도윤은 겁먹기보다 페이지 번호와 장부 기록을 대조했다. 손끝만 평소보다 조금 느렸다."
+          "text": "도윤은 겁을 먹기보다 페이지 번호와 장부를 하나씩 대조했다. 다만 종이를 넘기는 손끝이 평소보다 느렸다."
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "제가 잘못 기억한 게 아니라면 설명이 안 됩니다.",
-          "portrait": "main"
+          "text": "이상한 건 책이 돌아온 것보다… 제가 틀렸을 가능성을 먼저 생각했다는 겁니다.",
+          "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "기억을 믿는 사람에게 '기억이 틀렸을지도 모른다'는 가능성은 꽤 큰 균열처럼 보였다."
+          "text": "기억을 믿어온 사람에게 자신의 기억이 흔들리는 일은 단순한 착각보다 훨씬 큰 문제처럼 보였다."
         }
       ],
       "choice": {
-        "id": "a60",
+        "id": "doyun_60_choice_1",
         "options": [
           {
             "id": "a",
             "text": "“도윤 씨 기억을 믿어요.”",
-            "affection": 7,
-            "memoryKey": "a60_trust_memory",
+            "affection": 9,
+            "memoryKey": "doyun_60_trust",
             "response": [
               {
                 "type": "narration",
-                "text": "그가 바로 고개를 들었다."
+                "text": "도윤이 바로 고개를 들었다."
               },
               {
                 "type": "dialogue",
                 "speaker": "서도윤",
                 "text": "…그 말, 생각보다 든든하네요.",
                 "portrait": "smile"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "그럼 제 기억이 맞다는 전제로 다시 보겠습니다.",
+                "portrait": "main"
               }
             ]
           },
           {
             "id": "b",
-            "text": "“같이 확인해봐요.”",
-            "affection": 6,
-            "memoryKey": "a60_together",
+            "text": "“기억 말고 기록부터 같이 확인해봐요.”",
+            "affection": 8,
+            "memoryKey": "doyun_60_records",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "서도윤",
-                "text": "네. 혼자 보는 것보다 낫겠습니다.",
+                "text": "좋습니다. 그게 제일 정확하겠네요.",
                 "portrait": "main"
               },
               {
                 "type": "narration",
-                "text": "처음으로 그는 이상한 일에서 {name}{을를} 밀어내지 않았다."
+                "text": "그는 장부를 {name} 쪽으로 반쯤 밀었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "혼자 보는 것보다 낫겠습니다. 놓치는 게 있으면 말씀해주세요.",
+                "portrait": "main"
               }
             ]
           },
           {
             "id": "c",
             "text": "“무서워요?”",
-            "affection": 4,
-            "memoryKey": "a60_fear",
+            "affection": 7,
+            "memoryKey": "doyun_60_fear",
             "response": [
               {
                 "type": "dialogue",
@@ -110,7 +122,7 @@
               {
                 "type": "dialogue",
                 "speaker": "서도윤",
-                "text": "기록이 틀리는 것보다, 제가 기억을 틀리게 붙잡고 있는 게 더 싫습니다.",
+                "text": "책보다, 제가 확신하던 것들이 틀릴 수 있다는 게 더 싫습니다.",
                 "portrait": "main"
               }
             ]
@@ -122,20 +134,155 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "결국 그날 책의 출처는 밝혀지지 않았다. 도윤은 책을 폐기하지 않고 별도 상자에 보관했다."
+          "text": "두 사람은 전 주인이 남긴 낡은 장부까지 꺼냈다. 그 책의 제목은 십여 년 전 기록에도 한 번 등장했다가, 이유 없이 붉은 선으로 지워져 있었다."
+        },
+        {
+          "type": "narration",
+          "text": "더 이상한 건 그 옆의 메모였다. “다시 들어오면 따로 보관할 것.”"
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "없던 일로 만들지는 않겠습니다.",
+          "text": "다시 들어오면.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "도윤은 같은 문장을 두 번 읽었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "전 주인도 한 번 겪었다는 뜻처럼 보입니다.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "그 말은 책에 대한 이야기 같으면서도, 다른 무언가에 대한 다짐처럼 들렸다."
+          "text": "그 순간 책 사이에서 오래된 대출 카드 한 장이 미끄러져 나왔다. 날짜는 폐기 이후였다."
+        }
+      ],
+      "choice": {
+        "id": "doyun_60_choice_2",
+        "options": [
+          {
+            "id": "a",
+            "text": "“이 책, 없던 일로 하지 말아요.”",
+            "affection": 9,
+            "memoryKey": "doyun_60_keep_evidence",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "네. 저도 그럴 생각입니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "도윤은 새 봉투를 꺼내 책과 장부 사본을 함께 넣었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "설명할 수 없다고 버리면, 나중에는 정말 없던 일이 되니까요.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“우리 둘이 본 걸 오늘 날짜로 남겨요.”",
+            "affection": 9,
+            "memoryKey": "doyun_60_new_record",
+            "response": [
+              {
+                "type": "narration",
+                "text": "도윤은 잠깐 멈췄다가 새 기록지를 꺼냈다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "좋네요. 이번에는 남의 기록만 믿지 않아도 되니까.",
+                "portrait": "main"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "목격자 두 명. 오늘 날짜. 그렇게 적겠습니다.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“이상한 책보다 도윤 씨가 더 걱정돼요.”",
+            "affection": 8,
+            "memoryKey": "doyun_60_worry",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "저는 괜찮습니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "늘 하던 대답이었다. 하지만 잠시 뒤 그가 고쳐 말했다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "…아니, 아직은 잘 모르겠습니다. 그래도 혼자는 아니니까 괜찮을 것 같습니다.",
+                "portrait": "troubled"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날 밤 책의 출처는 끝내 밝혀지지 않았다. 도윤은 책을 폐기하지 않고 별도 상자에 보관했다. 상자 겉면에는 새 라벨이 붙었다."
+        },
+        {
+          "type": "narration",
+          "text": "제목도 분류 번호도 아닌, 오늘의 날짜와 두 사람의 이름."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "이상한 걸 믿겠다는 뜻은 아닙니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "다만… 본 걸 지워버리지는 않겠습니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "서점을 나서려는데 도윤이 문 앞까지 따라 나왔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "다음에 또 비슷한 걸 보시면 혼자 확인하지 마세요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그는 아주 잠깐 말을 골랐다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "저도 부르세요. 같이 기억하면 되니까.",
+          "portrait": "smile"
         }
       ]
     }
   ],
-  "closing": "도윤은 이상한 일을 믿지 않았지만, 이상한 일을 지워버리려고도 하지 않았다."
+  "closing": "도윤은 설명할 수 없는 것을 믿기 전에 기록했다. 그리고 처음으로 그 기록의 옆자리를 {name}에게 내주었다."
 }

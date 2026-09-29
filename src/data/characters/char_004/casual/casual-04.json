@@ -1,12 +1,18 @@
 {
   "id": "char_004_casual_04",
   "kind": "casual",
+  "times": [
+    "밤"
+  ],
   "title": "늦게 따라오는 것",
   "minAffection": 20,
   "maxAffection": 69,
   "defaultPortrait": "hmm",
-  "completionAffection": 5,
+  "completionAffection": 8,
   "repeatable": true,
+  "placeIds": [
+    "cafe"
+  ],
   "sections": [
     {
       "blocks": [

@@ -1,33 +1,31 @@
 {
   "id": "char_009_affinity_60",
   "kind": "story",
-  "title": "비 오는 날의 꽃",
+  "title": "먹꽃이 번지는 밤",
   "threshold": 60,
-  "purpose": "봉인을 명확히 공개하지만 정체와 과거는 일부만 설명한다.",
+  "purpose": "비 오는 밤 검은 꽃 봉인을 본격 공개하고, 이겸의 침착함이 성격이 아니라 생존을 위해 익힌 통제였음을 체감시키며 주인공에게 처음 도움을 요청하게 한다.",
   "defaultPortrait": "hmm",
-  "completionAffection": 3,
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "비가 거세지자 이겸의 손목 아래 검은 꽃 문양이 피부를 따라 번졌다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "차이겸",
-          "text": "가까이 오지 마십시오.",
-          "portrait": "hmm"
+          "text": "비가 갑자기 굵어졌다. 오래된 상가거리의 기와 처마 끝에서 물줄기가 길게 떨어지고, 젖은 돌바닥 위로 간판 불빛이 먹물처럼 번졌다."
         },
         {
           "type": "narration",
-          "text": "목소리는 차분했지만 숨은 평소보다 짧았다."
+          "text": "이겸은 처마 아래에 들어선 뒤에도 한동안 소매를 움켜쥐고 있었다. 목 옆으로 젖은 긴 머리가 붙었고, 평소보다 호흡이 짧았다."
         },
         {
           "type": "dialogue",
           "speaker": "차이겸",
-          "text": "문신이 아닙니다. 봉인입니다.",
-          "portrait": "main"
+          "text": "오늘은 여기서 헤어지는 편이 좋겠습니다.",
+          "portrait": "serious"
+        },
+        {
+          "type": "narration",
+          "text": "그가 소매를 더 끌어내리는 순간 손목 위로 검은 선 하나가 스쳤다. 문신처럼 선명한데, 방금 전까지 없던 선이었다."
         }
       ]
     },
@@ -35,63 +33,212 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "그는 소매를 포기하고 손목을 드러냈다."
+          "text": "검은 선은 물을 먹은 먹처럼 번졌다. 손목에서 팔을 타고 올라온 꽃잎 모양이 피부 위에서 천천히 피어났다. 장식이라고 보기에는 지나치게 살아 있는 움직임이었다."
         },
         {
           "type": "dialogue",
           "speaker": "차이겸",
-          "text": "제 안에 인간이 감당하기 어려운 것이 있습니다. 감정이 크게 흔들리면 봉인도 영향을 받습니다.",
-          "portrait": "troubled"
+          "text": "가까이 오지 마십시오.",
+          "portrait": "serious"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "이건 문신이 아닙니다. 봉인입니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그는 더 숨기는 것이 의미 없다고 판단한 듯 소매를 천천히 걷었다. 먹빛 꽃은 손목 안쪽에서 여러 겹 겹쳐져 있었다."
         }
       ],
       "choice": {
-        "id": "aff_60_choice",
+        "id": "aff_60_choice_1",
         "options": [
           {
             "id": "a",
-            "text": "“그래서 늘 감정을 눌렀군요.”",
-            "affection": 7,
+            "text": "“아픈 거예요?”",
+            "affection": 8,
+            "memoryKey": "igyeom_60_pain",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "차이겸",
-                "text": "네. 성격이라고 생각했는데, 대부분은 훈련이었습니다.",
-                "portrait": "main"
+                "text": "통증보다 압박에 가깝습니다. 안쪽에서 무언가 밀어내는 느낌이 납니다.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "걱정해주셔서… 감사합니다. 지금은 그 말도 꽤 크게 느껴지는군요.",
+                "portrait": "troubled"
               }
-            ],
-            "memoryKey": "igyeom_60_control"
+            ]
           },
           {
             "id": "b",
-            "text": "“지금 내가 뭘 하면 돼요?”",
+            "text": "“그래도 설명은 듣고 갈게요.”",
             "affection": 8,
+            "memoryKey": "igyeom_60_explain",
             "response": [
+              {
+                "type": "narration",
+                "text": "이겸은 빗소리 너머로 {name}{을를} 오래 바라봤다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "차이겸",
-                "text": "그 자리에 있어주십시오. 그 정도면 됩니다.",
+                "text": "당신은 제가 예상한 것보다 고집이 세군요.",
+                "portrait": "main"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "…다행입니다.",
                 "portrait": "troubled"
               }
-            ],
-            "memoryKey": "igyeom_60_stay"
+            ]
           },
           {
             "id": "c",
-            "text": "“무섭긴 하지만 안 갈게요.”",
+            "text": "한 걸음 물러나되 자리를 떠나지 않는다.",
             "affection": 7,
+            "memoryKey": "igyeom_60_give_space",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "차이겸",
-                "text": "…그 말이 더 어렵게 만듭니다. 기쁘다는 뜻입니다.",
+                "text": "그 정도 거리가 좋습니다. 떠나지는 말아주십시오.",
                 "portrait": "troubled"
               }
-            ],
-            "memoryKey": "igyeom_60_afraid_stay"
+            ]
           }
         ]
       }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이겸은 근처의 한옥을 개조한 찻집 별실을 빌렸다. 영업이 거의 끝난 시간이라 창호 너머에는 빗소리와 낮은 조명뿐이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "제 안에는 인간이 감당하기 어려운 것이 일부 봉인되어 있습니다. 완전히 떼어낼 수도 없습니다. 그렇게 하면 저도 무사하지 못합니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그는 찻잔을 잡지 않았다. 대신 손바닥을 무릎 위에 펴고, 번지는 문양을 직접 바라봤다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "감정이 크게 흔들리면 봉인도 흔들립니다. 그래서 저는 감정을 느끼기 전에 정리하는 법부터 배웠습니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "침착한 게 아니라, 침착해야 했던 겁니다.",
+          "portrait": "sorrowful"
+        }
+      ],
+      "choice": {
+        "id": "aff_60_choice_2",
+        "options": [
+          {
+            "id": "a",
+            "text": "“지금은 뭘 하면 돼요?”",
+            "affection": 8,
+            "memoryKey": "igyeom_60_what_to_do",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "아무것도 하지 않으셔도 됩니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "그 자리에 있어주십시오. 제가 지금 부탁할 수 있는 건 그겁니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“무서워도 안 갈게요.”",
+            "affection": 8,
+            "memoryKey": "igyeom_60_afraid_stay",
+            "response": [
+              {
+                "type": "narration",
+                "text": "이겸의 눈빛이 아주 잠깐 흔들렸다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "무섭다는 말까지 솔직히 해주시는군요.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "…그래서 더 믿을 수 있을 것 같습니다.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“혼자 견디는 게 익숙하다고 계속 혼자일 필요는 없어요.”",
+            "affection": 8,
+            "memoryKey": "igyeom_60_not_alone",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "그 문장은… 조금 오래 생각해봐야겠습니다.",
+                "portrait": "hmm"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "오늘은 반박할 말이 없군요.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "한참 뒤 검은 꽃은 완전히 사라지지는 않았지만 다시 손목 안쪽으로 잦아들었다. 창호에 맺힌 빗물이 가느다란 선을 만들었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "이상합니다. 보통은 혼자 있을 때가 가장 빨리 가라앉습니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "그는 잠시 생각하다가 스스로 정정했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "아니군요. 오늘은 당신이 있어서 빨랐던 것 같습니다.",
+          "portrait": "smile"
+        }
+      ]
     }
   ],
-  "closing": "이겸의 침착함은 타고난 미덕이 아니라 오래 익힌 생존 방식이었다."
+  "closing": "먹빛 꽃이 번진 밤, 이겸은 처음으로 자신의 위험을 숨기지 않았다. 그리고 처음으로 누군가에게 곁에 있어달라고 부탁했다."
 }

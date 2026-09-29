@@ -1,12 +1,14 @@
 {
   "id": "char_003_casual_10",
   "kind": "casual",
-  "times": ["밤"],
+  "times": [
+    "밤"
+  ],
   "title": "마지막 불빛",
   "minAffection": 0,
   "maxAffection": 100,
   "defaultPortrait": "smile",
-  "completionAffection": 5,
+  "completionAffection": 8,
   "repeatable": true,
   "placeIds": [
     "rooftop"

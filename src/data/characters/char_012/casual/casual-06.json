@@ -5,8 +5,11 @@
   "minAffection": 40,
   "maxAffection": 89,
   "defaultPortrait": "hmm",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
+  "placeIds": [
+    "old-street"
+  ],
   "sections": [
     {
       "blocks": [

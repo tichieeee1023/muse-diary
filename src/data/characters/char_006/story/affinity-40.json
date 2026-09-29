@@ -3,31 +3,35 @@
   "kind": "story",
   "title": "뜨거운 어묵",
   "threshold": 40,
-  "purpose": "가벼운 갭모에를 통해 친밀도를 쌓고, 시온이 주인공 앞에서 허술한 모습을 숨기지 않게 되는 변화를 보여준다.",
+  "purpose": "물에서는 완벽하게 자신감 넘치는 시온이 육지의 사소한 일에는 허술한 갭을 보여주고, 주인공에게만 그런 모습을 숨기지 않는 관계 변화를 만든다.",
   "defaultPortrait": "troubled",
-  "completionAffection": 3,
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "겨울 강변. 시온이 호기롭게 어묵을 받아 들었다가 한입도 못 먹고 있었다."
+          "text": "추운 날 강변 포장마차 앞에서 시온은 어묵 국물 컵을 들고 꼼짝도 하지 못하고 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "왜 김이 계속 나죠? 식을 생각이 없네.",
+          "text": "이거 왜 아직도 뜨거워요? 받은 지 꽤 됐는데.",
           "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "{name}{이가} 웃자 시온이 억울한 얼굴을 했다."
+          "text": "수상레저 장비를 다루는 손으로 종이컵 하나를 난처하게 돌려보는 모습이 묘하게 어울리지 않았다."
         },
         {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "물 좋아한다고 뜨거운 물까지 좋아하는 건 아니거든요.",
+          "text": "웃지 마요. 물 좋아한다고 뜨거운 물까지 좋아하는 건 아니거든요.",
           "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "결국 그는 어묵보다 단무지를 먼저 집어먹었다."
         }
       ]
     },
@@ -35,12 +39,28 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "결국 반쯤 식은 어묵을 먹으며 시온은 혼잣말처럼 덧붙였다."
+          "text": "{name}이 국물을 식히는 동안 시온은 강 건너를 보며 시답잖은 이야기를 계속했다. 오늘 손님이 몇 명이었는지, 초보자가 패들을 거꾸로 잡았는지, 갈매기가 간식을 훔쳐갔는지."
         },
         {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "이런 꼴 남들한텐 잘 안 보여주는데. 뭐, 이제 상관없나.",
+          "text": "저 원래 이런 얘기 잘 안 해요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "뜬금없는 고백이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "물에 있을 때 얘기는 해도, 하루가 어땠는지는 별로 안 말하거든요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "근데 {name}한테는 자꾸 말하게 되네요.",
           "portrait": "main"
         }
       ],
@@ -49,49 +69,97 @@
         "options": [
           {
             "id": "a",
-            "text": "“다음엔 식혀줄게요.”",
-            "affection": 6,
+            "text": "“다음엔 제가 식혀줄게요.”",
+            "affection": 7,
+            "memoryKey": "sion_40_cool",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "백시온",
                 "text": "그거 꽤 좋은 약속인데요.",
                 "portrait": "smile"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "그럼 다음에도 같이 먹어야겠네.",
+                "portrait": "main"
               }
-            ],
-            "memoryKey": "sion_40_cool"
+            ]
           },
           {
             "id": "b",
             "text": "“물에서는 그렇게 멋있더니.”",
-            "affection": 5,
+            "affection": 6,
+            "memoryKey": "sion_40_tease",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "백시온",
                 "text": "육지 버전은 옵션이 좀 다릅니다.",
                 "portrait": "smile"
+              },
+              {
+                "type": "narration",
+                "text": "시온은 웃으며 드디어 미지근해진 국물을 한 모금 마셨다."
               }
-            ],
-            "memoryKey": "sion_40_tease"
+            ]
           },
           {
             "id": "c",
-            "text": "“남들한테도 보여줘요. 귀여운데.”",
-            "affection": 4,
+            "text": "“그런 얘기 계속 해줘도 돼요.”",
+            "affection": 7,
+            "memoryKey": "sion_40_daily",
             "response": [
+              {
+                "type": "narration",
+                "text": "시온의 장난스러운 표정이 잠깐 잦아들었다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "백시온",
-                "text": "그건 싫어요. 딱 여기까지만.",
+                "text": "그럼 진짜 별거 아닌 얘기까지 할 겁니다.",
                 "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "나중에 지루하다고 하지 마요.",
+                "portrait": "smile"
               }
-            ],
-            "memoryKey": "sion_40_only_here"
+            ]
           }
         ]
       }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "헤어질 때 시온은 빈 컵을 버리러 갔다가 다시 돌아왔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "아, 다음에는 뜨거운 거 말고 차가운 거 먹죠.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그는 이미 '다음'이 있을 거라고 자연스럽게 말하고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "제가 육지에서 실패할 확률도 좀 줄고요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "물가에서만 자신만만하던 사람이 육지의 허술함까지 보여주는 사이가 되어 있었다."
+        }
+      ]
     }
   ],
-  "closing": "완벽해서 가까워진 게 아니라, 허술한 모습을 숨기지 않게 되면서 거리가 줄었다."
+  "closing": "시온은 완벽한 모습을 보여줘서 가까워진 것이 아니라, 허술한 하루를 굳이 숨기지 않으면서 가까워졌다."
 }

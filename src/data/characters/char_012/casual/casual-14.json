@@ -1,0 +1,53 @@
+{
+  "id": "char_012_casual_14",
+  "kind": "casual",
+  "title": "멈춘 광고판",
+  "minAffection": 0,
+  "maxAffection": 50,
+  "defaultPortrait": "main",
+  "completionAffection": 7,
+  "repeatable": false,
+  "placeIds": [
+    "rooftop"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "루프탑 맞은편 건물의 대형 광고판이 정확히 한 장면에서 멈춰 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "저건 기계 고장일까요, 시간 고장일까요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 둘 중 어느 쪽이냐고 되묻자 이현은 손목시계를 확인했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "오늘은 기계 쪽이었으면 좋겠습니다. 제가 퇴근한 뒤라서요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "몇 초 뒤 광고판이 다시 움직이자 그는 눈에 띄게 어깨의 힘을 뺐다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "다행이네요. 야근은 싫습니다.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "시간의 이상조차 퇴근 뒤에는 평범한 고장으로 끝나길 바라는 사람이었다."
+}

@@ -1,0 +1,50 @@
+{
+  "id": "char_009_casual_11",
+  "kind": "casual",
+  "title": "환승 통로의 소음",
+  "minAffection": 0,
+  "maxAffection": 45,
+  "defaultPortrait": "main",
+  "completionAffection": 7,
+  "repeatable": false,
+  "placeIds": [
+    "subway"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "환승 통로가 유난히 붐비는 날이었다. 이겸은 사람 흐름에서 한 발 비켜난 기둥 옆에 서 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "오늘은 소리가 조금 많군요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 피곤해 보인다고 하자 그는 잠시 자신의 상태를 점검하듯 눈을 내리깔았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "피곤함보다는... 예민해진 쪽에 가깝겠습니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "그는 소매를 한 번 아래로 당기고 출구 방향을 확인했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "이런 날은 감정을 구분하기가 더 어렵습니다. 제 것과 남의 것을요.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "남의 감정을 읽는 사람에게 붐비는 역은 생각보다 피곤한 장소였다."
+}

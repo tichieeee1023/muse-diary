@@ -1,13 +1,18 @@
 {
   "id": "char_005_casual_01",
   "kind": "casual",
-  "times": ["밤"],
+  "times": [
+    "밤"
+  ],
   "title": "화분에 물 주는 사람",
   "minAffection": 0,
   "maxAffection": 39,
   "defaultPortrait": "troubled",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
+  "placeIds": [
+    "convenience"
+  ],
   "sections": [
     {
       "blocks": [

@@ -3,9 +3,9 @@
   "kind": "story",
   "title": "달지 않은 사람",
   "threshold": 40,
-  "purpose": "달콤한 파티시에가 단 음식을 싫어하는 갭을 본격적으로 드러내고, 타인의 감정을 잘 읽으면서 자기 취향을 숨기는 습관을 보여준다.",
+  "purpose": "달콤한 파티시에가 단 음식을 싫어하는 갭을 본격적으로 드러내고, 남의 취향은 즉시 읽으면서 자기 취향은 좀처럼 말하지 않는 습관을 깨기 시작한다.",
   "defaultPortrait": "troubled",
-  "completionAffection": 3,
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
@@ -45,28 +45,32 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "왜 지금까지 말하지 않았냐고 묻자 로운은 어깨를 으쓱했다."
+          "text": "로운은 남은 케이크를 정리하다가 잠시 멈췄다."
         },
         {
           "type": "dialogue",
           "speaker": "이로운",
-          "text": "손님들이 좋아하는 걸 맞히는 게 일이잖아요. 제 취향은 굳이 필요 없으니까.",
+          "text": "생각해보면 이상하죠. 남이 뭘 좋아하는지는 금방 아는데, 제가 뭘 좋아하는지는 질문받아야 생각하니까.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "그는 좋아하는 음식 말고 다른 걸 물어보라고 했다. 좋아하는 계절, 쉬는 날 하고 싶은 일, 듣기 좋은 소리 같은 사소한 것들."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "비 오기 직전 냄새. 사람 없는 주방. 매운 국물 첫 숟갈. 그리고…",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "그 말이 디저트 얘기만은 아닌 것처럼 들렸다."
+          "text": "로운의 시선이 {name} 쪽에 잠깐 머물렀다가 피했다."
         },
         {
           "type": "dialogue",
           "speaker": "이로운",
-          "text": "남이 뭘 좋아하는지는 쉬워요. 얼굴 보면 대충 보이거든요.",
-          "portrait": "hmm"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "이로운",
-          "text": "근데 제가 뭘 좋아하는지는… 생각해보면 별로 말 안 해봤네.",
+          "text": "마지막 건 아직 말 안 할래요.",
           "portrait": "troubled"
         }
       ],
@@ -76,7 +80,7 @@
           {
             "id": "a",
             "text": "“그럼 하나씩 알려줘요.”",
-            "affection": 6,
+            "affection": 7,
             "memoryKey": "rowoon_40_tell_me",
             "response": [
               {
@@ -87,14 +91,14 @@
               },
               {
                 "type": "narration",
-                "text": "거절은 아니었다."
+                "text": "거절은 아니었다. 오히려 오래 걸린다는 말을 꽤 마음에 들어 하는 얼굴이었다."
               }
             ]
           },
           {
             "id": "b",
             "text": "“매운 국물부터 기억할게요.”",
-            "affection": 5,
+            "affection": 7,
             "memoryKey": "rowoon_40_spicy",
             "response": [
               {
@@ -107,21 +111,53 @@
           },
           {
             "id": "c",
-            "text": "“파티시에 이미지 망가지겠네요.”",
-            "affection": 4,
-            "memoryKey": "rowoon_40_image",
+            "text": "“마지막 건 나중에 꼭 물어볼게요.”",
+            "affection": 6,
+            "memoryKey": "rowoon_40_last_one",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "이로운",
-                "text": "쉿. 손님들 환상은 지켜드려야죠.",
-                "portrait": "smile"
+                "text": "그때까지 안 바뀌면요.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "무엇이 바뀔 수 있다는 건지는 설명하지 않았다."
               }
             ]
           }
         ]
       }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "카페 문을 잠근 뒤 로운은 근처 분식집으로 {name}을 데려갔다. 김이 오르는 붉은 국물을 앞에 두자 표정부터 달라졌다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "이게 진짜 디저트죠.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "터무니없는 선언을 하면서도 로운은 평소보다 훨씬 편해 보였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "이상하네요. 손님한테는 제가 골라주는 게 익숙한데, 오늘은 제가 좋아하는 데로 데려왔네.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "남의 취향을 맞히는 대신 자기 취향을 내어놓는 일은 그에게 생각보다 큰 변화였다."
+        }
+      ]
     }
   ],
-  "closing": "달콤한 것을 만드는 사람의 입맛은 맵고 뜨거웠다. 그리고 남의 취향은 잘 맞히는 사람이 자기 취향을 말할 때는 이상할 만큼 서툴렀다."
+  "closing": "달콤한 것을 만드는 사람의 입맛은 맵고 뜨거웠다. 그날 {name}은 로운이 남에게 맞춘 모습이 아니라, 로운이 스스로 좋아하는 것 하나를 처음 제대로 알게 됐다."
 }

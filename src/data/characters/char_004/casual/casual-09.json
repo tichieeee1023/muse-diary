@@ -1,11 +1,14 @@
 {
   "id": "char_004_casual_09",
   "kind": "casual",
+  "times": [
+    "밤"
+  ],
   "title": "매운 걸 고르는 손",
   "minAffection": 0,
   "maxAffection": 100,
   "defaultPortrait": "smile",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
   "placeIds": [
     "night-market"

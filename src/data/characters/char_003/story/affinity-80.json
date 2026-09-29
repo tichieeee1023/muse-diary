@@ -1,107 +1,133 @@
 {
   "id": "char_003_affinity_80",
   "kind": "story",
-  "times": ["밤"],
   "title": "같이 가는 밤",
   "threshold": 80,
-  "purpose": "보호해야 할 대상이 아니라 함께 판단할 사람으로 {name}{을를} 대하기 시작한다",
-  "defaultPortrait": "main",
-  "completionAffection": 3,
+  "purpose": "존재하지 않는 승객과 비정상적인 승강장 사건을 주인공과 함께 겪으며, 해준이 보호를 이유로 혼자 앞서가는 대신 위험과 판단을 공유하는 사람으로 변한다.",
+  "defaultPortrait": "hmm",
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "마지막 열차에서 또 회색 코트의 승객이 나타났다. 이번에는 {name}도 분명히 봤다."
+          "text": "마지막 열차가 플랫폼에 들어오던 순간, {name}{도} 회색 코트의 남자를 분명히 봤다. 그는 승객들 사이에 섞여 있었지만 누구와도 닿지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "보이죠?",
+          "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "다음 역에서 문이 열리자 그 사람은 내렸지만, 승강장에는 발자국도 그림자도 남지 않았다."
+          "text": "열차 문이 열리자 남자는 사람이 없는 반대편 승강장으로 걸어갔다. 출입이 막힌 곳이었다."
+        },
+        {
+          "type": "narration",
+          "text": "해준이 반사적으로 앞으로 나섰다. 두 걸음. 그리고 멈췄다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
           "text": "여기 계세요.",
-          "portrait": "hmm"
-        },
-        {
-          "type": "narration",
-          "text": "해준이 반사적으로 앞으로 나섰다가 멈췄다. 예전 같으면 그대로 혼자 확인하러 갔을 것이다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "문해준",
-          "text": "……아니요. 같이 갑시다.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "말을 고쳐 한 뒤 그는 {name}{과와} 보폭을 맞췄다."
+          "text": "늘 하던 말이었다. 하지만 이번에는 해준 자신이 그 말을 듣고 표정을 굳혔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "…아니요. 같이 갑시다. 대신 제 옆에서 움직이세요.",
+          "portrait": "hmm"
         }
       ]
     },
     {
-      "blocks": [],
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "폐쇄 통로 끝에는 아무도 없었다. 대신 오래된 승차권 한 장이 바닥에 놓여 있었다. 지금은 사라진 역 이름과 수십 년 전 날짜가 찍혀 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "이 노선에 이런 역은 없습니다. 적어도 지금은요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "멀리서 열차가 들어오는 소리가 났다. 운행이 끝났는데도 레일이 울렸다. 해준은 {name} 앞을 완전히 막는 대신 팔 하나만 뻗어 거리를 확인했다."
+        }
+      ],
       "choice": {
-        "id": "aff_80_choice",
+        "id": "haejun_80_choice_1",
         "options": [
           {
             "id": "a",
-            "text": "“이제 안 말리네요.”",
-            "affection": 7,
-            "memoryKey": "a80_trust",
+            "text": "“나도 같이 봤어요. 혼자 판단하지 마요.”",
+            "affection": 9,
+            "memoryKey": "haejun_80_witness",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "말려도 올 것 같아서요.",
+                "text": "네. 이번엔 같이 본 겁니다.",
                 "portrait": "main"
               },
               {
                 "type": "narration",
-                "text": "해준이 짧게 웃었다."
+                "text": "해준은 승차권을 혼자 챙기지 않고 {name}에게 먼저 보여줬다."
               },
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "그럼 차라리 제 옆에 있는 게 낫습니다.",
+                "text": "그러니까 결론도 같이 내리죠.",
                 "portrait": "smile"
               }
             ]
           },
           {
             "id": "b",
-            "text": "“무서우면 손 잡아도 돼요.”",
-            "affection": 6,
-            "memoryKey": "a80_hand",
+            "text": "“무서워요?”",
+            "affection": 8,
+            "memoryKey": "haejun_80_scared",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "제가 할 말 아닙니까, 그건.",
+                "text": "네. 꽤요.",
                 "portrait": "troubled"
               },
               {
-                "type": "narration",
-                "text": "그러면서도 손을 피하지는 않았다."
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "그래도 이번엔 혼자가 아니라서 판단하기는 낫습니다.",
+                "portrait": "main"
               }
             ]
           },
           {
             "id": "c",
-            "text": "“이번엔 같이 확인해요.”",
-            "affection": 7,
-            "memoryKey": "a80_together",
+            "text": "해준의 소매를 잡는다.",
+            "affection": 9,
+            "memoryKey": "haejun_80_sleeve",
             "response": [
+              {
+                "type": "narration",
+                "text": "해준이 잡힌 소매를 내려다봤다. 떼어내지 않았다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "네.",
-                "portrait": "main"
+                "text": "놓치지 마세요.",
+                "portrait": "troubled"
               },
               {
                 "type": "narration",
-                "text": "간단한 대답이었다. 그런데 그 한마디에 이전과 다른 신뢰가 있었다."
+                "text": "그 말은 평소보다 훨씬 낮았다."
               }
             ]
           }
@@ -112,26 +138,131 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "회색 코트의 흔적은 찾지 못했다. 대신 폐쇄된 승강장 끝에서 오래된 승차권 하나를 발견했다."
+          "text": "소리는 가까워졌지만 열차는 나타나지 않았다. 대신 플랫폼의 전광판이 오래된 역 이름을 몇 초간 표시했다."
+        },
+        {
+          "type": "narration",
+          "text": "그 순간 회색 코트의 남자가 반대편에 다시 서 있었다. 얼굴은 보이지 않았다. 그는 마치 누군가의 도착을 기다리는 사람처럼 시계만 내려다봤다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "혼자 봤으면 또 피곤해서 그랬다고 넘겼을 겁니다.",
+          "text": "저 사람도 기다리는 걸까요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "처음으로 해준의 말에 ‘위험’보다 다른 감정이 섞였다. 이해하지 못하는 것에 대한 경계와, 이상할 만큼 깊은 연민이었다."
+        },
+        {
+          "type": "narration",
+          "text": "잠시 뒤 전광판이 정상으로 돌아오자 남자도 사라졌다. 승차권만 두 사람 손에 남았다."
+        }
+      ],
+      "choice": {
+        "id": "haejun_80_choice_2",
+        "options": [
+          {
+            "id": "a",
+            "text": "“언젠가 저 사람도 도착했으면 좋겠네요.”",
+            "affection": 8,
+            "memoryKey": "haejun_80_arrival",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "저도 그렇게 생각합니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "기다리는 사람이 있다면 더더욱요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“오늘은 내가 해준 씨 데려다줄게요.”",
+            "affection": 9,
+            "memoryKey": "haejun_80_escort",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "제가 더 익숙한 길입니다.",
+                "portrait": "hmm"
+              },
+              {
+                "type": "narration",
+                "text": "{name}{이가} 그래도 같이 간다고 하자 그가 결국 웃었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "그럼 데려다주는 게 아니라 같이 가는 걸로 하죠.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“앞으로도 이상한 일 있으면 같이 확인해요.”",
+            "affection": 9,
+            "memoryKey": "haejun_80_partner",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "알겠습니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "그는 잠깐 망설이다 한 문장을 더 붙였다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "제가 먼저 혼자 가려고 하면 말려주시고요.",
+                "portrait": "troubled"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "역 밖으로 나왔을 때 해준은 평소보다 천천히 걸었다. 앞서가서 길을 확인하지도, 뒤에서 재촉하지도 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "이상한 얘기 하나 해도 됩니까.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "오늘은 위험한 일을 같이 겪었는데… 오히려 전보다 마음이 편합니다.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "해준은 승차권을 봉투에 넣고 {name}에게 보여줬다."
+          "text": "해준은 스스로도 그 이유를 알고 있는 듯했다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "이번에는 같이 본 거니까, 없던 일은 아니겠네요.",
+          "text": "제가 다 보고, 다 막고, 다 결정하지 않아도 된다는 걸 조금 알겠습니다.",
           "portrait": "smile"
         }
       ]
     }
   ],
-  "closing": "같이 가는 밤 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "해준은 위험 앞에서 처음으로 혼자가 아니라 ‘둘’을 기준으로 판단했다. 같이 간다는 말의 의미가 달라졌다."
 }

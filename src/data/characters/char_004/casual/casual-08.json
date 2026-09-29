@@ -5,14 +5,14 @@
   "minAffection": 75,
   "maxAffection": 100,
   "defaultPortrait": "smile",
-  "completionAffection": 6,
+  "completionAffection": 9,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "로운은 접시에 케이크 한 조각을 올리고 포크를 두 개 가져왔다."
+          "text": "로운은 포장 상자에서 케이크 한 조각을 꺼내고 포크를 두 개 건넸다."
         },
         {
           "type": "dialogue",

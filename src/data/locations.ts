@@ -122,8 +122,13 @@ export const places: PlaceDefinition[] = [
 
 export const initialUnlockedPlaceIds = places.filter((place) => !place.locked).map((place) => place.id)
 export function getPlace(placeId: string) { return places.find((place) => place.id === placeId) }
+const featuredUnlockedPlaceIds = new Set(['convenience', 'aquarium', 'rooftop', 'night-market'])
+
 export function getWeightedDailyPlaces(weather: Weather, unlockedPlaceIds: string[], count: number): string[] {
-  const pool = places.filter((place) => unlockedPlaceIds.includes(place.id)).map((place) => ({ place, weight: place.weatherWeights[weather] }))
+  const pool = places.filter((place) => unlockedPlaceIds.includes(place.id)).map((place) => ({
+    place,
+    weight: place.weatherWeights[weather] * (featuredUnlockedPlaceIds.has(place.id) ? 1.3 : 1),
+  }))
   const selected: string[] = []; const mutable = [...pool]
   while (mutable.length > 0 && selected.length < count) {
     const total = mutable.reduce((sum, item) => sum + item.weight, 0); let cursor = Math.random() * total; let index = 0

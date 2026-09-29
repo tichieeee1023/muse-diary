@@ -3,95 +3,66 @@
   "kind": "story",
   "title": "꺼지지 않는 빛",
   "threshold": 60,
-  "purpose": "진짜 마법을 공개하고 “마술로 숨기기”라는 생존 방식을 드러낸다.",
+  "purpose": "유리안이 실제 마법을 자발적으로 공개하고, 마술이라는 무대가 능력을 숨기는 가장 안전한 위장이었다는 사실을 밝힌다.",
   "defaultPortrait": "hmm",
-  "completionAffection": 3,
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
-        {
-          "type": "narration",
-          "text": "모든 장비가 꺼진 빈 무대. 유리안이 손을 펴자 작은 빛 하나가 공중에 떠올랐다."
-        },
-        {
-          "type": "narration",
-          "text": "전선도 반사판도 없었다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "유리안",
-          "text": "이건 장치 아닙니다.",
-          "portrait": "hmm"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "유리안",
-          "text": "진짜예요. 작고 별거 없지만.",
-          "portrait": "main"
-        }
+        {"type":"narration","text":"늦은 리허설이 끝난 뒤, 유리안은 {name}{을를} 아무도 없는 소극장으로 다시 불렀다."},
+        {"type":"dialogue","speaker":"유리안","text":"오늘은 관객 한 명짜리 공연입니다. 대신 박수는 없어도 돼요.","portrait":"main"},
+        {"type":"narration","text":"무대 조명도, 프로젝터도, 마술 장치도 모두 꺼져 있었다."},
+        {"type":"dialogue","speaker":"유리안","text":"확인하셨죠? 전기 다 내려갔습니다.","portrait":"hmm"}
       ]
     },
     {
       "blocks": [
-        {
-          "type": "narration",
-          "text": "빛이 손바닥 위에서 천천히 돌았다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "유리안",
-          "text": "마술 공연이 제일 안전해요. 진짜 마법을 써도 아무도 진짜라고 생각하지 않거든요.",
-          "portrait": "troubled"
-        }
+        {"type":"narration","text":"유리안이 빈 손을 천천히 펼쳤다. 손바닥 위로 작은 금빛 점 하나가 피어났다."},
+        {"type":"narration","text":"빛은 불꽃처럼 흔들리지 않았다. 작은 별가루들이 서로를 따라 돌더니 허공에 얇은 별자리를 만들었다."},
+        {"type":"narration","text":"바닥에 흩어져 있던 종이별 몇 장도 아주 조금 떠올라 빛을 따라 움직였다."},
+        {"type":"dialogue","speaker":"유리안","text":"이게 진짜입니다.","portrait":"troubled"},
+        {"type":"dialogue","speaker":"유리안","text":"화려해 보이지만 할 수 있는 건 이 정도예요. 빛, 조금 띄우기, 잠깐 없는 걸 보여주기.","portrait":"main"}
       ],
       "choice": {
-        "id": "aff_60_choice",
+        "id": "yurian_60_choice_1",
         "options": [
-          {
-            "id": "a",
-            "text": "“예쁘다.”",
-            "affection": 7,
-            "response": [
-              {
-                "type": "dialogue",
-                "speaker": "유리안",
-                "text": "…그 반응이 제일 좋네요. 무섭다가 아니라.",
-                "portrait": "smile"
-              }
-            ],
-            "memoryKey": "yurian_60_pretty"
-          },
-          {
-            "id": "b",
-            "text": "“그래서 공연을 시작했구나.”",
-            "affection": 6,
-            "response": [
-              {
-                "type": "dialogue",
-                "speaker": "유리안",
-                "text": "네. 숨기기 제일 좋은 방법이라서.",
-                "portrait": "main"
-              }
-            ],
-            "memoryKey": "yurian_60_reason"
-          },
-          {
-            "id": "c",
-            "text": "“나한테 보여줘도 괜찮아요?”",
-            "affection": 8,
-            "response": [
-              {
-                "type": "dialogue",
-                "speaker": "유리안",
-                "text": "괜찮고 싶어서 보여드린 겁니다.",
-                "portrait": "troubled"
-              }
-            ],
-            "memoryKey": "yurian_60_trust"
-          }
+          {"id":"a","text":"“예뻐요.”","affection":9,"memoryKey":"yurian_60_pretty","response":[{"type":"narration","text":"유리안의 표정이 아주 잠깐 멈췄다."},{"type":"dialogue","speaker":"유리안","text":"그 반응이 제일 좋습니다. 무섭다도 아니고, 어떻게 했냐도 아니고.","portrait":"smile"}]},
+          {"id":"b","text":"“그래서 마술 공연을 하는 거군요.”","affection":8,"memoryKey":"yurian_60_cover","response":[{"type":"dialogue","speaker":"유리안","text":"정답입니다. 진짜를 가장 안전하게 숨기는 방법은 모두가 가짜라고 믿는 무대 위에 올리는 거였어요.","portrait":"hmm"}]},
+          {"id":"c","text":"“나한테 보여주는 건 안전해요?”","affection":9,"memoryKey":"yurian_60_safe_with_me","response":[{"type":"dialogue","speaker":"유리안","text":"모르겠습니다.","portrait":"troubled"},{"type":"dialogue","speaker":"유리안","text":"그래도 안전하고 싶어서 보여드리는 겁니다.","portrait":"main"}]}
         ]
       }
+    },
+    {
+      "blocks": [
+        {"type":"narration","text":"별빛 하나가 유리안의 손끝을 벗어나 {name} 가까이로 날아왔다. 닿기 직전 사라지는 대신 아주 희미한 온기만 남았다."},
+        {"type":"dialogue","speaker":"유리안","text":"사람 마음을 바꾸는 마법 같은 건 못 합니다. 다행이죠.","portrait":"main"},
+        {"type":"dialogue","speaker":"유리안","text":"할 수 있었다면 제가 받는 호감이 진짜인지 더 못 믿었을 테니까.","portrait":"troubled"},
+        {"type":"narration","text":"유리안은 웃으려다 멈췄다. 이번에는 억지로 분위기를 가볍게 만들지 않았다."}
+      ]
+    },
+    {
+      "blocks": [
+        {"type":"narration","text":"갑자기 무대 위 별빛이 한꺼번에 흔들렸다. 유리안의 손끝도 미세하게 떨렸다."},
+        {"type":"dialogue","speaker":"유리안","text":"감정이 커지면 가끔 말을 안 듣습니다. 그래서 더 숨겼어요.","portrait":"hmm"},
+        {"type":"narration","text":"몇 개의 빛이 꺼졌지만 마지막 하나는 유리안 곁에 남아 있었다."}
+      ],
+      "choice": {
+        "id": "yurian_60_choice_2",
+        "options": [
+          {"id":"a","text":"그 빛이 꺼질 때까지 곁에 있는다.","affection":9,"memoryKey":"yurian_60_stay","response":[{"type":"narration","text":"유리안은 아무 말도 하지 않았다. 마지막 빛이 사라진 뒤에야 천천히 숨을 내쉬었다."},{"type":"dialogue","speaker":"유리안","text":"아무것도 안 했는데 도움이 됐습니다.","portrait":"smile"}]},
+          {"id":"b","text":"“안 숨겨도 돼요. 적어도 내 앞에서는.”","affection":10,"memoryKey":"yurian_60_no_hide","response":[{"type":"dialogue","speaker":"유리안","text":"그 말대로 되는 데는 좀 오래 걸릴 것 같은데요.","portrait":"troubled"},{"type":"dialogue","speaker":"유리안","text":"…그래도 연습해보겠습니다.","portrait":"main"}]},
+          {"id":"c","text":"“다음에는 더 큰 것도 보여줘요.”","affection":8,"memoryKey":"yurian_60_more_magic","response":[{"type":"dialogue","speaker":"유리안","text":"겁이 없으시네요.","portrait":"smile"},{"type":"dialogue","speaker":"유리안","text":"좋아요. 다음에는 조금 더 욕심내보죠.","portrait":"main"}]}
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {"type":"narration","text":"극장을 나서기 전 유리안은 객석을 한 번 돌아봤다."},
+        {"type":"dialogue","speaker":"유리안","text":"이 무대에서는 몇 년이나 진짜를 가짜라고 소개했습니다.","portrait":"main"},
+        {"type":"narration","text":"그가 {name}{을를} 바라봤다."},
+        {"type":"dialogue","speaker":"유리안","text":"오늘은 반대로 했네요. 처음으로 진짜라고 말했습니다.","portrait":"smile"}
+      ]
     }
   ],
-  "closing": "유리안의 가장 화려한 비밀은 오히려 숨기기 위해 선택한 직업 안에 있었다."
+  "closing": "유리안은 자신의 가장 화려한 비밀을 보여줬지만, 그날 가장 중요한 변화는 마법보다 ‘진짜’라고 말한 일이었다."
 }

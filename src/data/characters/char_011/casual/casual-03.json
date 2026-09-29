@@ -5,8 +5,12 @@
   "minAffection": 10,
   "maxAffection": 59,
   "defaultPortrait": "main",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
+  "placeIds": [
+    "mall",
+    "night-market"
+  ],
   "sections": [
     {
       "blocks": [

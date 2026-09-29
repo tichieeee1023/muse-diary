@@ -15,6 +15,14 @@
     "troubled": "/assets/characters/char_012/troubled.webp",
     "hmm": "/assets/characters/char_012/hmm.webp",
     "endingCg": "/assets/characters/char_012/ending-cg.webp",
-    "endingDoll": "/assets/characters/char_012/ending-doll.webp"
+    "endingDoll": "/assets/characters/char_012/ending-doll.webp",
+    "blank": "/assets/characters/char_012/blank.webp",
+    "desolate": "/assets/characters/char_012/desolate.webp",
+    "tearful": "/assets/characters/char_012/tearful.webp",
+    "love": "/assets/characters/char_012/love.webp",
+    "sad": "/assets/characters/char_012/sad.webp",
+    "shy": "/assets/characters/char_012/shy.webp",
+    "sorrowful": "/assets/characters/char_012/sorrowful.webp",
+    "eyesClosedSad": "/assets/characters/char_012/eyes-closed-sad.webp"
   }
 }

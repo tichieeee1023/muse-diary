@@ -1,0 +1,50 @@
+{
+  "id": "char_003_casual_11",
+  "kind": "casual",
+  "title": "강변의 보폭",
+  "minAffection": 0,
+  "maxAffection": 45,
+  "defaultPortrait": "main",
+  "completionAffection": 7,
+  "repeatable": false,
+  "placeIds": [
+    "riverside"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "강변 산책로에서 해준은 걷는 속도를 일정하게 유지하고 있었다. 신호도 없는 길인데 이상할 만큼 정확했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "제가 너무 빠릅니까?",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 괜찮다고 하자 그는 고개를 끄덕였지만, 이후 보폭은 아주 조금 짧아졌다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "직업병 비슷한 겁니다. 시간 맞추는 게 편해서요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "잠시 뒤 자전거가 빠르게 지나가자 해준이 자연스럽게 물가 쪽이 아닌 안쪽으로 자리를 바꿨다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "이쪽으로 걸으시죠. 바람도 덜 붑니다.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "안전을 챙기는 습관은 퇴근 뒤에도 쉽게 사라지지 않았다."
+}

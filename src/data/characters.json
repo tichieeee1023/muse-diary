@@ -10,6 +10,12 @@
     "firstImpression": "말수가 적고 차분한 인상. 손에는 늘 종이 냄새가 밴 듯하다.",
     "introNarration": "낮은 책장 사이를 돌자 종이와 나무 냄새가 한층 짙어졌다. 책을 몇 권 품에 안은 남자가 당신과 부딪힐 듯하다가 먼저 한 발 비켜선다. 손등에 남은 잉크 자국이 묘하게 눈에 들어온다.",
     "introLine": "찾는 책이 있습니까? 이쪽 선반은 조금 복잡해서요.",
+    "firstEncounterRule": {
+      "placeId": "bookstore",
+      "weather": [
+        "비"
+      ]
+    },
     "spawnRules": [
       {
         "placeId": "bookstore",
@@ -109,6 +115,9 @@
     "firstImpression": "단정한 셔츠 소매를 걷어 올린 남자. 주변을 보는 눈이 유난히 빠르다.",
     "introNarration": "쇼핑몰 한복판인데도 그는 쇼윈도 앞에서 혼자 다른 속도로 움직이고 있었다. 진열된 소품 하나를 눈으로 재듯 살피던 남자가 당신이 같은 곳을 보고 있다는 걸 알아차리고 고개를 기울인다.",
     "introLine": "저 인형 배치, 조금 아쉽지 않습니까? ...아, 직업병입니다.",
+    "firstEncounterRule": {
+      "placeId": "mall"
+    },
     "spawnRules": [
       {
         "placeId": "mall",
@@ -160,7 +169,7 @@
           "비",
           "눈"
         ],
-        "weight": 0.85,
+        "weight": 1.25,
         "secondaryOnly": true
       },
       {
@@ -229,6 +238,12 @@
     "firstImpression": "피곤해 보이지만 자세는 흐트러지지 않았다. 목소리는 생각보다 부드럽다.",
     "introNarration": "퇴근 인파가 한 번 휩쓸고 지나간 승강장 끝은 이상하리만큼 조용했다. 제복 차림의 남자가 노선도를 확인하다 길을 헤매는 당신을 보고 먼저 다가온다. 피곤한 얼굴인데 목소리는 뜻밖에도 부드럽다.",
     "introLine": "이쪽으로 가시면 한참 돌아갑니다. 다른 출구 알려드릴까요?",
+    "firstEncounterRule": {
+      "placeId": "subway",
+      "times": [
+        "밤"
+      ]
+    },
     "spawnRules": [
       {
         "placeId": "subway",
@@ -278,7 +293,7 @@
           "비",
           "눈"
         ],
-        "weight": 0.95,
+        "weight": 1.25,
         "secondaryOnly": true
       },
       {
@@ -347,6 +362,9 @@
     "firstImpression": "밝게 웃는 얼굴과 달리, 그림자 끝이 아주 잠깐 이상하게 흔들린다.",
     "introNarration": "문을 열자 버터와 설탕 냄새가 먼저 밀려왔다. 카운터 안쪽에서 접시를 정리하던 남자가 고개를 드는 순간, 그의 발밑 그림자가 조명과 맞지 않게 한 박자 늦게 따라 움직인다. 그는 아무 일도 없었다는 듯 환하게 웃는다.",
     "introLine": "오늘은 단 걸 먹는 편이 좋겠네요. 그냥... 그런 날처럼 보여서요.",
+    "firstEncounterRule": {
+      "placeId": "cafe"
+    },
     "spawnRules": [
       {
         "placeId": "cafe",
@@ -394,7 +412,7 @@
           "비",
           "눈"
         ],
-        "weight": 0.95,
+        "weight": 1.3,
         "secondaryOnly": true
       },
       {
@@ -463,6 +481,9 @@
     "firstImpression": "검은 장갑을 낀 손으로 바닥의 자국을 지우고 있다. 이상하게도 그 자국은 빛을 피한다.",
     "introNarration": "폐점 방송이 끝난 쇼핑몰 복도에 청소 기계 소리만 길게 울렸다. 검은 장갑을 낀 남자가 바닥의 얼룩을 닦고 있었는데, 가까이 갈수록 그 얼룩이 빛을 피하듯 가장자리로 밀려난다. 남자가 당신을 발견하고 빗자루를 멈춘다.",
     "introLine": "여긴 오래 서 있지 않는 게 좋습니다. 이유는... 나중에 말씀드리죠.",
+    "firstEncounterRule": {
+      "placeId": "old-street"
+    },
     "spawnRules": [
       {
         "placeId": "old-street",
@@ -512,7 +533,7 @@
           "비",
           "눈"
         ],
-        "weight": 0.8,
+        "weight": 1.3,
         "secondaryOnly": true
       },
       {
@@ -581,6 +602,9 @@
     "firstImpression": "물기 하나 없는데도 머리끝에서 물방울이 떨어진 것처럼 보인다.",
     "introNarration": "강변에는 바람이 제법 세게 불고 있었다. 난간에 기대 물을 내려다보던 남자는 비 한 방울 오지 않았는데도 머리끝이 젖어 보였다. 당신의 발소리에 그가 돌아보며 먼저 웃는다.",
     "introLine": "오늘 물은 기분이 별로네요. 가까이 가지 않는 게 좋겠어요.",
+    "firstEncounterRule": {
+      "placeId": "riverside"
+    },
     "spawnRules": [
       {
         "placeId": "riverside",
@@ -631,7 +655,7 @@
           "비",
           "눈"
         ],
-        "weight": 1.2,
+        "weight": 1.35,
         "secondaryOnly": true
       },
       {
@@ -700,11 +724,15 @@
     "firstImpression": "교복 차림인데 낡은 역사책을 읽는 자세가 이상할 만큼 익숙하다.",
     "introNarration": "역사 자료실 깊숙한 자리에서 교복 차림의 학생 하나가 낡은 기록집을 펼쳐놓고 있었다. 수험 참고서보다 오래된 책이 더 익숙한 사람처럼 손놀림이 자연스럽다. 당신이 같은 책장 앞에 멈추자 그가 먼저 페이지 한쪽을 짚는다.",
     "introLine": "이 기록, 틀린 부분이 많아요. ...아뇨, 그냥 제가 좀 잘 알아서요.",
+    "firstEncounterRule": {
+      "placeId": "library"
+    },
     "spawnRules": [
       {
         "placeId": "library",
         "routeIds": [
-          "history-floor"
+          "history-floor",
+          "window-seat"
         ],
         "times": [
           "낮"
@@ -715,7 +743,7 @@
           "비",
           "눈"
         ],
-        "weight": 1.4
+        "weight": 1.5
       },
       {
         "placeId": "museum",
@@ -748,13 +776,14 @@
           "비",
           "눈"
         ],
-        "weight": 0.8,
+        "weight": 1.0,
         "secondaryOnly": true
       },
       {
         "placeId": "convenience",
         "routeIds": [
-          "drink-aisle"
+          "drink-aisle",
+          "window-table"
         ],
         "times": [
           "낮",
@@ -766,7 +795,7 @@
           "비",
           "눈"
         ],
-        "weight": 0.7,
+        "weight": 1.35,
         "secondaryOnly": true
       }
     ],
@@ -818,6 +847,9 @@
     "firstImpression": "친절한데 어딘가 지나치게 솔직하다. 작품보다 관람객을 더 잘 기억하는 타입 같다.",
     "introNarration": "전시장 한가운데서 설명문 하나가 삐뚤어져 있었다. 사원증을 목에 건 남자가 그것을 반듯하게 고치다가, 작품보다 오래 한 자리에 서 있던 당신을 먼저 기억해낸 듯 웃는다.",
     "introLine": "혹시 세 번째 방 보셨어요? 오늘은 거기서 제일 오래 머무는 사람이 많더라고요.",
+    "firstEncounterRule": {
+      "placeId": "museum"
+    },
     "spawnRules": [
       {
         "placeId": "museum",
@@ -867,7 +899,7 @@
           "비",
           "눈"
         ],
-        "weight": 0.85,
+        "weight": 1.35,
         "secondaryOnly": true
       },
       {
@@ -936,6 +968,9 @@
     "firstImpression": "정중하고 무해해 보인다. 다만 손목 안쪽에 지워지지 않는 검은 문양이 있다.",
     "introNarration": "사람이 적은 산책로 쪽으로 발을 옮기려던 순간, 앞서 걷던 남자가 갑자기 멈춰 섰다. 정중한 인상과 달리 손목 안쪽의 검은 문양이 소매 아래에서 잠깐 드러난다. 그는 주변을 한 번 확인한 뒤 당신에게 낮게 말을 건다.",
     "introLine": "잠깐만요. 지금은 저쪽보다 이 길이 안전합니다.",
+    "firstEncounterRule": {
+      "placeId": "cafe"
+    },
     "spawnRules": [
       {
         "placeId": "subway",
@@ -1014,6 +1049,24 @@
         ],
         "weight": 0.8,
         "secondaryOnly": true
+      },
+      {
+        "placeId": "cafe",
+        "routeIds": [
+          "old-cafe"
+        ],
+        "times": [
+          "낮",
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 0.7,
+        "secondaryOnly": true
       }
     ],
     "secondRunHint": "사람이 적은 길을 먼저 고르는 정중한 남자. 비 오는 밤에 목격담이 많다.",
@@ -1064,6 +1117,12 @@
     "firstImpression": "말끔한 차림인데 손등에 오래된 상처가 많다. 주위를 경계하는 습관이 몸에 밴 사람이다.",
     "introNarration": "폐점 안내가 나오자 사람들은 모두 출구 쪽으로 움직였지만, 한 남자만 반대편 어둑한 통로를 보고 있었다. 말끔한 검은 차림과 달리 손등에는 오래된 상처가 겹겹이 남아 있다. 당신이 그쪽으로 발을 옮기자 그가 즉시 앞을 막는다.",
     "introLine": "지금은 저쪽으로 가지 마십시오. 설명은 나중에 하죠.",
+    "firstEncounterRule": {
+      "placeId": "mall",
+      "times": [
+        "밤"
+      ]
+    },
     "spawnRules": [
       {
         "placeId": "mall",
@@ -1133,7 +1192,8 @@
       {
         "placeId": "rooftop",
         "routeIds": [
-          "railing"
+          "railing",
+          "bench"
         ],
         "times": [
           "밤"
@@ -1144,7 +1204,7 @@
           "비",
           "눈"
         ],
-        "weight": 0.75,
+        "weight": 1.35,
         "secondaryOnly": true
       }
     ],
@@ -1196,11 +1256,18 @@
     "firstImpression": "잘 웃고 가벼워 보이지만, 손끝에 남은 희미한 빛은 조명으로 설명하기 어렵다.",
     "introNarration": "팝업 무대 뒤편은 공연이 끝난 뒤라 한산했다. 반짝이 망토를 접던 남자가 당신과 눈이 마주치자 지나치게 자연스럽게 웃는다. 바로 그때 손끝에서 조명으로는 설명하기 어려운 작은 빛이 한 번 튄다.",
     "introLine": "비밀 하나 지켜주실래요? 오늘은 제가 마법 같은 걸 한 적이 없는 걸로.",
+    "firstEncounterRule": {
+      "placeId": "mall",
+      "times": [
+        "낮"
+      ]
+    },
     "spawnRules": [
       {
         "placeId": "mall",
         "routeIds": [
-          "popup-floor"
+          "popup-floor",
+          "living-floor"
         ],
         "times": [
           "낮"
@@ -1211,7 +1278,7 @@
           "비",
           "눈"
         ],
-        "weight": 0.9
+        "weight": 1.5
       },
       {
         "placeId": "cafe",
@@ -1223,9 +1290,12 @@
           "밤"
         ],
         "weather": [
+          "맑음",
+          "흐림",
+          "비",
           "눈"
         ],
-        "weight": 1.0
+        "weight": 0.75
       },
       {
         "placeId": "bar",
@@ -1241,7 +1311,7 @@
           "비",
           "눈"
         ],
-        "weight": 0.5
+        "weight": 0.8
       },
       {
         "placeId": "night-market",
@@ -1258,7 +1328,7 @@
           "비",
           "눈"
         ],
-        "weight": 1.05,
+        "weight": 2.0,
         "secondaryOnly": true
       },
       {
@@ -1276,7 +1346,7 @@
           "비",
           "눈"
         ],
-        "weight": 0.65,
+        "weight": 0.9,
         "secondaryOnly": true
       }
     ],
@@ -1328,7 +1398,28 @@
     "firstImpression": "낡은 손목시계를 찬 남자. 그가 지나가면 주변 전광판 시간이 잠깐씩 어긋난다.",
     "introNarration": "분명 조금 전까지 비어 있던 벤치였다. 잠깐 시선을 돌렸다 돌아오자 낡은 손목시계를 찬 남자가 앉아 있었고, 주변 전광판 숫자가 아주 미세하게 어긋나 있었다. 그는 당신을 오래 기다렸다는 사람처럼 고개를 든다.",
     "introLine": "오늘은 조금 늦게 오셨네요. ...아, 처음 뵙는 거였습니까?",
+    "firstEncounterRule": {
+      "placeId": "old-street"
+    },
     "spawnRules": [
+      {
+        "placeId": "old-street",
+        "routeIds": [
+          "inner-alley",
+          "old-shops"
+        ],
+        "times": [
+          "낮",
+          "밤"
+        ],
+        "weather": [
+          "맑음",
+          "흐림",
+          "비",
+          "눈"
+        ],
+        "weight": 1.35
+      },
       {
         "placeId": "subway",
         "routeIds": [
@@ -1405,7 +1496,7 @@
           "비",
           "눈"
         ],
-        "weight": 0.85,
+        "weight": 1.8,
         "secondaryOnly": true
       }
     ],

@@ -1,0 +1,53 @@
+{
+  "id": "char_007_casual_13",
+  "kind": "casual",
+  "title": "틀린 각주",
+  "minAffection": 20,
+  "maxAffection": 69,
+  "defaultPortrait": "main",
+  "completionAffection": 8,
+  "repeatable": false,
+  "placeIds": [
+    "library"
+  ],
+  "times": [
+    "낮"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "자료실에서 책을 읽던 휘람의 손가락이 한 각주에서 멈췄다. 눈썹이 미세하게 찌푸려졌다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "이건... 조금 다릅니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 무엇이 다르냐고 묻자 그는 설명을 시작하려다 입을 다물었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "아니요. 그냥 다른 기록에서 본 적이 있어서요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "말은 얼버무렸지만 그는 메모지에 정확한 지명과 오래된 인명 하나를 적었다가 곧 지웠다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "기록이 틀릴 수도 있죠. 사람 기억도 그렇고요.",
+          "portrait": "main"
+        }
+      ]
+    }
+  ],
+  "closing": "휘람이 아는 과거와 책에 적힌 과거 사이에는 작은 틈이 있었다."
+}

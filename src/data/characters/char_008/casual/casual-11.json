@@ -1,0 +1,53 @@
+{
+  "id": "char_008_casual_11",
+  "kind": "casual",
+  "title": "카페의 사람 구경",
+  "minAffection": 0,
+  "maxAffection": 45,
+  "defaultPortrait": "main",
+  "completionAffection": 7,
+  "repeatable": false,
+  "placeIds": [
+    "cafe"
+  ],
+  "times": [
+    "낮"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "카페 창가에 앉은 세현은 메뉴보다 지나가는 사람들을 오래 보고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "저 사람은 왜 저 자리에 앉았을까요? 창문도 안 보이는데.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 또 질문이냐고 하자 그는 웃으며 빨대를 굴렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "사람이 어디를 고르는지 보면 취향이 좀 보여요. 재밌잖아요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "그러다 세현이 이번에는 질문을 삼키고 자기 자리를 가리켰다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "저는 출구랑 창문 둘 다 보이는 자리가 좋아요. ...이건 안 물어봐도 말할 수 있네요.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "남의 취향만 묻던 사람이 자기 취향을 하나 먼저 말했다."
+}

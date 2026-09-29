@@ -1,12 +1,18 @@
 {
   "id": "char_001_casual_03",
   "kind": "casual",
+  "weather": [
+    "비"
+  ],
   "title": "오른쪽 어깨",
   "minAffection": 0,
   "maxAffection": 39,
   "defaultPortrait": "main",
-  "completionAffection": 5,
+  "completionAffection": 8,
   "repeatable": true,
+  "placeIds": [
+    "bookstore"
+  ],
   "sections": [
     {
       "blocks": [

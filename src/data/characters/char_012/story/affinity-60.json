@@ -1,34 +1,37 @@
 {
   "id": "char_012_affinity_60",
   "kind": "story",
-  "times": ["밤"],
   "title": "다른 시간을 가리키는 시계들",
   "threshold": 60,
-  "purpose": "이현의 능력과 기억 소실 대가를 공개한다.",
+  "purpose": "이현의 시간 감지와 제한적 되돌리기, 그 대가인 기억 소실을 공개한다. 감정이 흔들릴 때 반존대가 무너지는 현상을 능력의 비밀과 연결한다.",
   "defaultPortrait": "hmm",
-  "completionAffection": 3,
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "수리점 문이 닫힌 밤, 벽의 시계들이 동시에 다른 소리를 냈다."
+          "text": "수리점의 마지막 손님이 돌아간 뒤였다. 벽에 걸린 시계 하나가 갑자기 열세 번 울렸다."
+        },
+        {
+          "type": "narration",
+          "text": "곧 다른 시계들이 제각기 다른 시각을 가리키기 시작했다. 초침이 앞으로 뛰는 것, 거꾸로 도는 것, 완전히 멈춘 것까지 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "진이현",
-          "text": "저 시계들은 각각 다른 시간축의 현재를 가리킵니다.",
+          "text": "여기 있어. 움직이지 마.",
           "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "이현이 하나씩 시간을 읽었다."
+          "text": "이현은 너무 자연스럽게 {name}{의} 앞을 막아섰다."
         },
         {
           "type": "dialogue",
           "speaker": "진이현",
-          "text": "저는 시간의 이상을 감지하고, 제한적으로 되돌릴 수 있습니다.",
-          "portrait": "main"
+          "text": "……여기 계세요. 지금 밖으로 나가면 안 됩니다.",
+          "portrait": "troubled"
         }
       ]
     },
@@ -36,67 +39,250 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "그는 잠시 침묵한 뒤 가장 중요한 말을 덧붙였다."
+          "text": "창밖의 간판 불빛이 한 번 꺼졌다가, 조금 전과 똑같은 방식으로 다시 켜졌다. 지나간 자동차도 같은 자리로 되돌아왔다."
         },
         {
           "type": "dialogue",
           "speaker": "진이현",
-          "text": "대신 되돌릴 때마다 제 기억도 조금씩 사라집니다.",
+          "text": "시간 이상입니다. 저는 이런 틈을 감지할 수 있습니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "그리고 아주 제한적으로……되돌릴 수도 있고요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "말투는 침착했지만, 이현의 손은 손목시계를 너무 세게 쥐고 있었다."
+        }
+      ],
+      "choice": {
+        "id": "ihyeon_60_choice_1",
+        "options": [
+          {
+            "id": "a",
+            "text": "“지금도 되돌릴 수 있어요?”",
+            "affection": 8,
+            "memoryKey": "ihyeon_60_can_reverse",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "할 수는 있습니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "하지만 가능하다고 해서 해도 되는 건 아닙니다. 이제는 그걸 압니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“왜 그렇게 무서운 얼굴이에요?”",
+            "affection": 9,
+            "memoryKey": "ihyeon_60_scared_face",
+            "response": [
+              {
+                "type": "narration",
+                "text": "이현이 대답하려다 입을 다물었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "당신이 이런 현상 안에 있는 걸……별로 좋아하지 않습니다.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "아니. 싫어. 많이.",
+                "portrait": "hmm"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "그가 쥔 손목시계 위에 손을 얹는다.",
+            "affection": 10,
+            "memoryKey": "ihyeon_60_touch_watch",
+            "response": [
+              {
+                "type": "narration",
+                "text": "이현의 손에 들어간 힘이 아주 조금 풀렸다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "괜찮습니다.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "……그러니까 겁먹지 마. 내가 보고 있으니까.",
+                "portrait": "main"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이현은 작업대 아래에서 여러 권의 수첩을 꺼냈다. 날짜가 중복되거나, 존재하지 않는 날짜가 적힌 것도 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "시간을 되돌릴 때마다 제 기억 일부가 사라집니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "그래서 적어둡니다. 이름, 장소, 제가 반드시 기억해야 하는 것들.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "몇 페이지에는 문장이 중간에서 끊겨 있었고, 어떤 페이지에는 같은 이름만 여러 번 적혀 있었다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "{name}{이가} 한 권을 넘기려 하자 이현이 손을 뻗었다가 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "그건 보지 마.",
           "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "그래서 그는 수첩을 쓰고, 물건을 남기고, 멈춘 시계를 버리지 않았다."
+          "text": "이번에도 존댓말로 고치지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "……미안합니다. 아직은 제가 직접 말하고 싶습니다. 기록으로 먼저 알게 하고 싶지 않아요.",
+          "portrait": "main"
         }
       ],
       "choice": {
-        "id": "aff_60_choice",
+        "id": "ihyeon_60_choice_2",
         "options": [
           {
             "id": "a",
-            "text": "“얼마나 많이 잊었어요?”",
-            "affection": 6,
+            "text": "“그럼 이현 씨가 말할 때까지 안 볼게요.”",
+            "affection": 10,
+            "memoryKey": "ihyeon_60_wait_for_words",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "진이현",
-                "text": "모릅니다. 모른다는 사실 자체가 답이겠죠.",
+                "text": "고맙습니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "잠시 뒤 아주 작은 목소리가 이어졌다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "……기다려줘서.",
                 "portrait": "troubled"
               }
-            ],
-            "memoryKey": "ihyeon_60_forgot"
+            ]
           },
           {
             "id": "b",
-            "text": "“왜 그렇게까지 돌렸어요?”",
-            "affection": 7,
+            "text": "“잊은 건 같이 다시 만들면 되잖아요.”",
+            "affection": 10,
+            "memoryKey": "ihyeon_60_make_new_memories",
             "response": [
+              {
+                "type": "narration",
+                "text": "이현이 처음 듣는 말처럼 {name}{을를} 바라봤다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "진이현",
-                "text": "그건 다음 이야기에 답이 있습니다. 아직은… 조금 어렵습니다.",
-                "portrait": "hmm"
+                "text": "저는 늘 잊지 않는 방법만 생각했습니다.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "다시 만들면 된다는 생각은……못 했네요.",
+                "portrait": "smile"
               }
-            ],
-            "memoryKey": "ihyeon_60_why"
+            ]
           },
           {
             "id": "c",
-            "text": "“앞으로 기억할 건 같이 남겨요.”",
-            "affection": 8,
+            "text": "“나에 대한 것도 많이 잊었어요?”",
+            "affection": 9,
+            "memoryKey": "ihyeon_60_forgot_me",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "진이현",
-                "text": "그 제안은… 받아두겠습니다.",
-                "portrait": "smile"
+                "text": "네.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "그래서 더 이상합니다. 기억은 없는데, 당신 앞에서는 말투부터 자꾸 예전으로 돌아가서.",
+                "portrait": "hmm"
               }
-            ],
-            "memoryKey": "ihyeon_60_record"
+            ]
           }
         ]
       }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "시간 이상이 가라앉자 벽의 시계들도 하나씩 정상으로 돌아왔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "이제 가셔도 됩니다. 제가 데려다드리겠습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "문 앞에서 이현이 잠시 망설였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "오늘 일은……무서웠지.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "미안합니다. 이건 고치기가 어렵네요. 당신한테는 자꾸 이렇게 말하게 됩니다.",
+          "portrait": "main"
+        }
+      ]
     }
   ],
-  "closing": "이현은 시간을 다루는 사람이 아니라, 시간을 되돌릴 때마다 자신을 조금씩 잃는 사람이었다."
+  "closing": "이현의 반말은 무례함이 아니라 기억보다 오래 남은 관계의 습관이었다. 그리고 그는 그 습관조차 현재의 주인공에게 강요하지 않으려 애쓰고 있었다."
 }

@@ -1,0 +1,53 @@
+{
+  "id": "char_011_casual_12",
+  "kind": "casual",
+  "title": "박수 없는 자리",
+  "minAffection": 45,
+  "maxAffection": 90,
+  "defaultPortrait": "main",
+  "completionAffection": 8,
+  "repeatable": false,
+  "placeIds": [
+    "bar"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "늦은 밤 바의 안쪽 자리에서 유리안은 모자를 벗고 손끝으로 잔의 물방울만 굴리고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "여긴 좋은 게, 아무도 저한테 뭘 보여달라고 안 해요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 오늘은 마술 안 하느냐고 묻자 그는 손바닥을 펼쳤다가 그냥 빈손으로 다시 내려놓았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "오늘은 안 해도 되잖아요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "잠깐의 침묵 뒤 잔 바닥에 아주 작은 빛점 하나가 반짝였다. 유리안은 굳이 감추지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "...이 정도는 그냥 있어도 괜찮겠죠.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "박수도 설명도 없는 자리에서 작은 빛 하나만 남았다."
+}

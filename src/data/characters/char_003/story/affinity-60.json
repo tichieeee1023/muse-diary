@@ -3,68 +3,71 @@
   "kind": "story",
   "title": "기다리는 쪽",
   "threshold": 60,
-  "purpose": "신입 시절 사고 직전의 기억과 해준의 과한 책임감이 연결되어 있음을 밝힌다",
-  "defaultPortrait": "main",
-  "completionAffection": 3,
+  "purpose": "신입 시절 사고 직전의 기억과 해준의 과도한 책임감을 깊게 드러내고, 주인공이 그의 안전과 귀가도 기다리는 사람이 되면서 관계의 방향을 양방향으로 바꾼다.",
+  "defaultPortrait": "troubled",
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "열차 운행이 한동안 멈춘 날, 해준은 평소보다 말이 없었다. 인명 피해도 사고도 없었지만 손끝이 아주 미세하게 굳어 있었다."
+          "text": "운행 중 신호 장애가 발생한 날이었다. 사고도 부상자도 없었지만 복구가 끝난 뒤 해준은 빈 휴게실에 한참 앉아 있었다."
+        },
+        {
+          "type": "narration",
+          "text": "탁자 위의 종이컵은 손도 대지 않은 채 식어 있었다. 해준은 손바닥을 펴고 접기를 반복하다가 {name}{을를} 보고서야 움직임을 멈췄다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "예전에 비슷한 일이 있었습니다.",
+          "text": "예전에 비슷한 일이 있었습니다. 신입 때요.",
           "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "신입 시절, 작은 판단 하나가 조금만 늦었으면 큰 사고로 이어질 뻔했다고 했다."
+          "text": "설비 문제와 신호 착오가 겹쳤고, 해준은 몇 초 안에 정차 여부를 판단해야 했다. 결국 사고는 나지 않았다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "제 잘못은 아니었습니다. 조사 결과도 그랬고요.",
+          "text": "조사 결과 제 잘못은 아니었습니다. 판단도 맞았고요.",
           "portrait": "main"
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "그런데 그 말이 별로 도움이 안 되더군요.",
+          "text": "그런데 몇 초 늦었으면 어떻게 됐을지는 아직도 계산됩니다.",
           "portrait": "troubled"
         }
       ]
     },
     {
-      "blocks": [],
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날 열차에 타고 있던 사람들의 얼굴을 기억하지는 못한다고 했다. 대신 사고가 났다면 돌아가지 못했을 사람의 수를 기억했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "누군가 기다리고 있었을 겁니다. 집에서, 역에서, 어디든.",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "그래서 도착을 확인합니다. 별일 없다는 걸 확인해야 머릿속 계산이 끝납니다.",
+          "portrait": "hmm"
+        }
+      ],
       "choice": {
-        "id": "aff_60_choice",
+        "id": "haejun_60_choice_1",
         "options": [
           {
             "id": "a",
-            "text": "“그래서 항상 무사히 도착했는지 확인하는 거구나.”",
-            "affection": 7,
-            "memoryKey": "a60_understand",
-            "response": [
-              {
-                "type": "narration",
-                "text": "해준이 천천히 고개를 끄덕였다."
-              },
-              {
-                "type": "dialogue",
-                "speaker": "문해준",
-                "text": "누군가 기다리고 있는데 안 돌아오면…… 그 뒤를 너무 많이 생각하게 됩니다.",
-                "portrait": "main"
-              }
-            ]
-          },
-          {
-            "id": "b",
-            "text": "“해준 씨가 다 책임질 수는 없어요.”",
-            "affection": 6,
-            "memoryKey": "a60_limit",
+            "text": "“해준 씨가 모두의 도착을 책임질 수는 없어요.”",
+            "affection": 8,
+            "memoryKey": "haejun_60_limit",
             "response": [
               {
                 "type": "dialogue",
@@ -74,36 +77,60 @@
               },
               {
                 "type": "narration",
-                "text": "알고 있다는 사람의 얼굴이 전혀 편하지 않았다."
+                "text": "그는 잠시 있다가 낮게 덧붙였다."
               },
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "아는 것과 멈출 수 있는 건 좀 다르네요.",
-                "portrait": "main"
+                "text": "아는 것과 멈추는 건 다른 문제더군요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“그날 해준 씨가 제대로 판단해서 다들 돌아간 거잖아요.”",
+            "affection": 9,
+            "memoryKey": "haejun_60_credit",
+            "response": [
+              {
+                "type": "narration",
+                "text": "해준은 바로 대답하지 못했다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "그렇게 생각해본 적은 없습니다.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "…이상하네요. 그 말은 조금 기억해두고 싶습니다.",
+                "portrait": "smile"
               }
             ]
           },
           {
             "id": "c",
-            "text": "“그때 해준 씨가 잘한 판단도 있었잖아요.”",
-            "affection": 6,
-            "memoryKey": "a60_credit",
+            "text": "“그래서 나한테도 자꾸 도착했냐고 묻는 거예요?”",
+            "affection": 9,
+            "memoryKey": "haejun_60_me",
             "response": [
               {
                 "type": "narration",
-                "text": "그가 잠깐 시선을 내렸다."
+                "text": "해준의 시선이 잠깐 멈췄다."
               },
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "그 말은 처음 듣습니다.",
+                "text": "처음에는 그런 이유였습니다.",
                 "portrait": "main"
               },
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "……고맙습니다.",
+                "text": "지금은… 그 이유만은 아닙니다.",
                 "portrait": "troubled"
               }
             ]
@@ -115,7 +142,7 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "헤어질 때 해준은 привыч관처럼 '도착하면 연락 주세요'라고 하려다 멈췄다."
+          "text": "휴게실을 나왔을 때는 이미 늦은 밤이었다. 해준은 늘 하던 말처럼 ‘도착하면 연락 주세요’라고 하려다 입을 다물었다."
         },
         {
           "type": "dialogue",
@@ -125,10 +152,119 @@
         },
         {
           "type": "narration",
-          "text": "누군가를 확인하는 사람에서, 자신의 도착도 알려주는 사람으로 아주 작은 방향 전환이 생겼다."
+          "text": "{name}{이가} 의아하게 보자 그가 시선을 피하지 않고 설명했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "늘 저만 확인하는 건 이상하지 않습니까. 저도 무사히 들어갔는지 알려드리겠습니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "말은 논리적인 척했지만 귀가 조금 붉었다."
+        }
+      ],
+      "choice": {
+        "id": "haejun_60_choice_2",
+        "options": [
+          {
+            "id": "a",
+            "text": "“그럼 나도 기다릴게요.”",
+            "affection": 9,
+            "memoryKey": "haejun_60_wait_you",
+            "response": [
+              {
+                "type": "narration",
+                "text": "해준이 아주 천천히 눈을 깜빡였다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "…누가 기다리는 쪽이 되는 건 생각 못 했네요.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "좋습니다. 도착하면 바로 연락하겠습니다.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“연락 안 하면 내가 잔소리할 거예요.”",
+            "affection": 8,
+            "memoryKey": "haejun_60_nag",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "제가 하던 말을 그대로 돌려받는군요.",
+                "portrait": "hmm"
+              },
+              {
+                "type": "narration",
+                "text": "말끝에 아주 작은 웃음이 묻었다."
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“오늘은 같이 조금 걷다가 가요.”",
+            "affection": 8,
+            "memoryKey": "haejun_60_walk",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "막차는 끝났습니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "{name}{이가} 그래서 좋다고 하자 해준이 잠시 멈췄다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "…그럼 천천히 갑시다.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "그날 밤 해준에게서 메시지가 왔다. ‘도착했습니다.’ 평소 자신이 받던 것보다 한 글자 더 짧은 문장이었다."
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가} ‘확인했습니다. 쉬세요.’라고 그대로 돌려보내자 잠시 뒤 답장이 하나 더 왔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "이 말 받는 기분이 이런 거였군요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "그리고 조금 뒤, 아주 해준답지 않은 문장이 따라왔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "나쁘지 않습니다.",
+          "portrait": "smile"
         }
       ]
     }
   ],
-  "closing": "기다리는 쪽 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "누군가를 무사히 보내는 일만 중요했던 해준은 처음으로 자신의 귀가를 기다려주는 사람을 받아들였다."
 }

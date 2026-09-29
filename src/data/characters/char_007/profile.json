@@ -15,6 +15,9 @@
     "troubled": "/assets/characters/char_007/troubled.webp",
     "hmm": "/assets/characters/char_007/hmm.webp",
     "endingCg": "/assets/characters/char_007/ending-cg.webp",
-    "endingDoll": "/assets/characters/char_007/ending-doll.webp"
+    "endingDoll": "/assets/characters/char_007/ending-doll.webp",
+    "confident": "/assets/characters/char_007/confident.webp",
+    "desolate": "/assets/characters/char_007/desolate.webp",
+    "love": "/assets/characters/char_007/love.webp"
   }
 }

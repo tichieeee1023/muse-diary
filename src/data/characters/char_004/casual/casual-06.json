@@ -1,12 +1,18 @@
 {
   "id": "char_004_casual_06",
   "kind": "casual",
+  "times": [
+    "밤"
+  ],
   "title": "웃지 않는 얼굴",
   "minAffection": 45,
   "maxAffection": 89,
   "defaultPortrait": "troubled",
-  "completionAffection": 5,
+  "completionAffection": 8,
   "repeatable": true,
+  "placeIds": [
+    "cafe"
+  ],
   "sections": [
     {
       "blocks": [

@@ -1,0 +1,53 @@
+{
+  "id": "char_011_casual_11",
+  "kind": "casual",
+  "title": "카페 구석의 후드",
+  "minAffection": 0,
+  "maxAffection": 45,
+  "defaultPortrait": "main",
+  "completionAffection": 7,
+  "repeatable": false,
+  "placeIds": [
+    "cafe"
+  ],
+  "times": [
+    "낮"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "공연 포스터 속 화려한 모습과 달리 유리안은 카페 구석에서 후드를 눌러쓰고 샌드위치를 먹고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "오늘은 박수 금지입니다. 휴무 모드라서요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "말은 장난스러웠지만 목소리는 무대 위보다 훨씬 낮았다. 컵 뚜껑에는 아이가 붙인 듯한 별 스티커가 하나 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "이거요? 안 떨어져서 그냥 둔 겁니다. 정말입니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 믿는 척 고개를 끄덕이자 그가 작게 웃고 다시 샌드위치를 한 입 베어 문다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "유리안",
+          "text": "이렇게 조용한 것도 나쁘진 않죠?",
+          "portrait": "main"
+        }
+      ]
+    }
+  ],
+  "closing": "빛나는 무대가 없어도 유리안은 생각보다 편안해 보였다."
+}

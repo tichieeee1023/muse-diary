@@ -1,12 +1,15 @@
 {
   "id": "char_007_casual_09",
   "kind": "casual",
+  "times": [
+    "밤"
+  ],
   "title": "폐관 방송 뒤",
   "minAffection": 0,
   "maxAffection": 100,
   "defaultPortrait": "hmm",
-  "completionAffection": 4,
-  "repeatable": true,
+  "completionAffection": 7,
+  "repeatable": false,
   "placeIds": [
     "library"
   ],

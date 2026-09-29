@@ -1,11 +1,14 @@
 {
   "id": "char_002_casual_10",
   "kind": "casual",
+  "times": [
+    "밤"
+  ],
   "title": "쓸데없이 진심인 게임",
   "minAffection": 0,
   "maxAffection": 100,
   "defaultPortrait": "troubled",
-  "completionAffection": 5,
+  "completionAffection": 8,
   "repeatable": true,
   "placeIds": [
     "night-market"

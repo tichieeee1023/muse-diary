@@ -5,8 +5,11 @@
   "minAffection": 30,
   "maxAffection": 79,
   "defaultPortrait": "hmm",
-  "completionAffection": 5,
+  "completionAffection": 8,
   "repeatable": true,
+  "placeIds": [
+    "cafe"
+  ],
   "sections": [
     {
       "blocks": [

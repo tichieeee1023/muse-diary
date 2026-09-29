@@ -1,19 +1,24 @@
 {
   "id": "char_011_casual_01",
   "kind": "casual",
-  "times": ["낮"],
+  "times": [
+    "낮"
+  ],
   "title": "삼각김밥",
   "minAffection": 0,
   "maxAffection": 39,
   "defaultPortrait": "main",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
+  "placeIds": [
+    "mall"
+  ],
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "공연이 끝난 뒤 유리안은 후드 모자를 눌러쓰고 편의점 구석에서 삼각김밥을 먹고 있었다."
+          "text": "공연이 끝난 뒤 유리안은 후드 모자를 눌러쓰고 쇼핑몰 행사장 뒤 휴게 공간에서 삼각김밥을 먹고 있었다."
         },
         {
           "type": "dialogue",

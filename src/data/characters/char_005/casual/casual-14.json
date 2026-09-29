@@ -1,0 +1,53 @@
+{
+  "id": "char_005_casual_14",
+  "kind": "casual",
+  "title": "장갑 없는 오 분",
+  "minAffection": 45,
+  "maxAffection": 90,
+  "defaultPortrait": "main",
+  "completionAffection": 8,
+  "repeatable": false,
+  "placeIds": [
+    "rooftop"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "태겸은 루프탑 벤치에 앉아 검은 장갑을 벗어 옆에 두고 있었다. 맨손을 보는 건 드문 일이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "오늘은 손에 묻은 게 없습니다. 그래서 괜찮습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 그럼 잠깐 쉬라고 하자 그는 손바닥을 펴 바람을 맞았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "맨손으로 바람 맞는 게 이렇게 별일이었나 싶네요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "잠시 뒤 그는 장갑을 다시 집었지만 바로 끼지는 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "오 분만 더 있다 갑시다.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "아무것도 지우지 않아도 되는 오 분이 생각보다 길게 이어졌다."
+}

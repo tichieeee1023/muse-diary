@@ -1,0 +1,53 @@
+{
+  "id": "char_007_casual_11",
+  "kind": "casual",
+  "title": "대출증 만드는 날",
+  "minAffection": 0,
+  "maxAffection": 35,
+  "defaultPortrait": "main",
+  "completionAffection": 7,
+  "repeatable": false,
+  "placeIds": [
+    "library"
+  ],
+  "times": [
+    "낮"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "휘람은 무인 대출기 앞에서 학생증과 도서관 카드를 번갈아 들고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "분명 둘 다 제 이름이 적혀 있는데 왜 하나는 안 되는 겁니까?",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 회원 등록 화면을 가리키자 그는 아주 진지하게 순서를 외우기 시작했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "인증하고, 번호를 넣고... 예. 전투 절차보다 단계가 많네요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "등록이 끝나자 화면에 대출 가능 권수가 떴다. 휘람의 얼굴이 또래답게 밝아졌다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "열 권이나 된답니다. 이건 꽤 좋은 제도네요.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "오래된 기억보다 오늘 만든 도서관 카드가 더 중요해 보이는 순간이었다."
+}

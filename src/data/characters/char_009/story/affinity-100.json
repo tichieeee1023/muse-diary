@@ -1,18 +1,31 @@
 {
   "id": "char_009_affinity_100",
   "kind": "story",
-  "times": ["밤"],
-  "title": "도망가지 않은 사람",
+  "title": "비를 맞는 법",
   "threshold": 100,
-  "purpose": "봉인이 흔들리는 실제 위기에서 주인공이 남고, 이겸이 감정을 숨기지 않는 선택을 한다.",
-  "defaultPortrait": "smile",
-  "completionAffection": 3,
+  "purpose": "봉인이 흔들리는 실제 위기에서 이겸이 감정을 억누르는 대신 정확히 인정하고, 주인공에게 남아달라고 스스로 선택하며 사랑을 명확히 말한다. 엔딩 CG의 비 오는 동양풍 골목과 자연스럽게 이어진다.",
+  "defaultPortrait": "troubled",
+  "completionAffection": 0,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "비 오는 밤, 검은 꽃 문양이 목까지 번졌다. 이겸은 평소처럼 나가라고 말하려다 멈췄다."
+          "text": "밤비가 오래된 골목을 완전히 적셨다. 검은 기와 끝에서 물방울이 연달아 떨어지고, 나무 살창 너머의 주황빛 등불이 젖은 돌길 위에서 흔들렸다."
+        },
+        {
+          "type": "narration",
+          "text": "처마 아래 선 이겸의 목과 손목에는 검은 꽃 문양이 평소보다 짙게 피어 있었다. 젖은 긴 머리가 목선을 따라 내려왔지만 그는 소매를 끌어내리지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "오늘은 좋지 않습니다. 봉인이 많이 흔들리고 있습니다.",
+          "portrait": "serious"
+        },
+        {
+          "type": "narration",
+          "text": "예전의 이겸이라면 이미 {name}{을를} 돌려보냈을 것이다. 하지만 그는 한참 입을 다문 뒤, 전혀 다른 말을 했다."
         },
         {
           "type": "dialogue",
@@ -21,14 +34,10 @@
           "portrait": "troubled"
         },
         {
-          "type": "narration",
-          "text": "그런데 그는 그 말을 끝내지 않았다."
-        },
-        {
           "type": "dialogue",
           "speaker": "차이겸",
-          "text": "하지만 가지 않았으면 합니다. 이건 제 욕심입니다.",
-          "portrait": "main"
+          "text": "하지만 가지 않았으면 합니다. 이건 판단이 아니라 제 욕심입니다.",
+          "portrait": "troubled"
         }
       ]
     },
@@ -36,69 +45,232 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "한참 뒤 봉인이 가라앉았을 때 이겸은 우산도 쓰지 않은 채 비를 맞고 있었다."
+          "text": "문양은 목 아래까지 번졌다가 잠시 멈췄다. 이겸은 눈을 감고 호흡을 세었다. 하나, 둘, 셋. 오래 익힌 통제의 방식이었다."
         },
         {
           "type": "dialogue",
           "speaker": "차이겸",
-          "text": "지금 기쁩니다. 그리고 무섭습니다. 둘 다 맞습니다.",
-          "portrait": "smile"
+          "text": "두렵습니다.",
+          "portrait": "sorrowful"
+        },
+        {
+          "type": "narration",
+          "text": "그가 처음으로 감정을 눌러 없애지 않고 그대로 말했다."
         },
         {
           "type": "dialogue",
           "speaker": "차이겸",
-          "text": "그래도 이번에는 둘 다 숨기지 않겠습니다.",
+          "text": "당신이 다칠까 봐 두렵고, 당신이 남아 있어서 안심되고, 이런 상황에서도 기쁩니다.",
           "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "서로 모순되지만 전부 제 감정입니다.",
+          "portrait": "serious"
         }
       ],
       "choice": {
-        "id": "aff_100_choice",
+        "id": "aff_100_choice_1",
         "options": [
           {
             "id": "a",
             "text": "“그럼 나도 여기 있을게요.”",
             "affection": 8,
+            "memoryKey": "igyeom_100_stay",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "차이겸",
-                "text": "네. 부탁드립니다.",
+                "text": "네.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "짧은 대답 뒤에 그가 숨을 길게 내쉬었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "그 말을 듣고 싶었습니다.",
                 "portrait": "smile"
               }
-            ],
-            "memoryKey": "igyeom_100_stay"
+            ]
           },
           {
             "id": "b",
-            "text": "그의 손목 대신 손을 잡는다.",
+            "text": "“무서우면 무섭다고 계속 말해줘요.”",
             "affection": 8,
+            "memoryKey": "igyeom_100_say_it",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "차이겸",
-                "text": "…그쪽이 훨씬 낫군요.",
+                "text": "알겠습니다. 숨기지 않겠습니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "지금도 무섭습니다. 그런데 전보다 견딜 만합니다.",
                 "portrait": "troubled"
               }
-            ],
-            "memoryKey": "igyeom_100_hand"
+            ]
           },
           {
             "id": "c",
-            "text": "“다음엔 화나면 더 빨리 알려줘요.”",
+            "text": "그의 손목 가까이에 손을 내민다.",
+            "affection": 8,
+            "memoryKey": "igyeom_100_reach",
+            "response": [
+              {
+                "type": "narration",
+                "text": "이겸은 먼저 닿지 않았다. {name}{이가} 기다리자, 잠시 뒤 그의 손이 천천히 다가왔다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "이번에는 제가 잡겠습니다.",
+                "portrait": "troubled"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "비는 약해지지 않았다. 그런데 이겸은 갑자기 처마 밖으로 한 걸음 나갔다. 차가운 빗물이 얼굴과 머리카락, 먹빛 옷깃을 순식간에 적셨다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "어릴 때부터 비 오는 날을 싫어했습니다. 봉인이 가장 선명해지는 날이라서요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "목 옆의 꽃 문양은 여전히 남아 있었다. 완전히 사라지지 않았다. 대신 전처럼 목을 조르듯 짙어지지도 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "없애는 게 답이라고 생각했습니다. 문양도, 두려움도, 화도, 좋아하는 마음도.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "그런데 이제는 조금 다르게 생각합니다. 남아 있어도 제가 선택할 수 있다면, 그것도 괜찮을 것 같습니다.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "aff_100_choice_2",
+        "options": [
+          {
+            "id": "a",
+            "text": "우산을 접고 그의 옆으로 나간다.",
+            "affection": 8,
+            "memoryKey": "igyeom_100_rain",
+            "response": [
+              {
+                "type": "narration",
+                "text": "이겸은 비를 맞고 선 {name}{을를} 보고 아주 잠깐 말문을 잃었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "굳이 같이 젖으실 필요는 없었습니다.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "…그래도 좋군요.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“그럼 지금 마음도 이름 붙여봐요.”",
+            "affection": 8,
+            "memoryKey": "igyeom_100_name_feeling",
+            "response": [
+              {
+                "type": "narration",
+                "text": "이겸은 이번에는 오래 생각하지 않았다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "당신을 좋아합니다.",
+                "portrait": "smile"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "이건 이제 꽤 정확히 압니다.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“오늘은 통제하지 않아도 괜찮아요.”",
             "affection": 7,
+            "memoryKey": "igyeom_100_no_control",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "차이겸",
-                "text": "노력하겠습니다. 아직 발견이 늦어서.",
+                "text": "전부 놓아버리지는 않겠습니다. 그건 저답지 않으니까요.",
+                "portrait": "main"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "다만 당신 앞에서는 조금 덜 숨기겠습니다.",
                 "portrait": "smile"
               }
-            ],
-            "memoryKey": "igyeom_100_emotion"
+            ]
           }
         ]
       }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "둘은 다시 처마 아래로 돌아왔다. 창호 너머 따뜻한 불빛과 젖은 골목의 푸른 밤이 한 화면처럼 겹쳤다. 탁자 위에는 마시다 만 차가 아직 미지근하게 남아 있었다."
+        },
+        {
+          "type": "narration",
+          "text": "이겸은 {name}의 손목을 조심스럽게 잡았다. 위험을 막기 위한 동작도, 맥박을 확인하는 습관도 아니었다. 그냥 잡고 싶어서 한 행동이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "지금 기쁩니다. 조금 민망하고, 여전히 두렵고요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "그리고 당신을 좋아합니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "이번에는 발견이 늦지 않았습니다.",
+          "portrait": "smile"
+        }
+      ]
     }
   ],
-  "closing": "감정을 억누르며 살아온 사람은 처음으로 통제하지 못한 순간에도 버려지지 않는 경험을 얻었다."
+  "closing": "먹빛 꽃은 사라지지 않았다. 대신 이겸은 더 이상 그것과 자신의 감정을 같은 방식으로 봉인하지 않았다. 비 오는 밤, 그는 처음으로 숨기지 않은 마음을 스스로 선택했다."
 }

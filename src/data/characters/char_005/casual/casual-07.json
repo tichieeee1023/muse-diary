@@ -1,19 +1,24 @@
 {
   "id": "char_005_casual_07",
   "kind": "casual",
-  "times": ["밤"],
+  "times": [
+    "밤"
+  ],
   "title": "새벽의 물주기",
   "minAffection": 60,
   "maxAffection": 99,
   "defaultPortrait": "smile",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
+  "placeIds": [
+    "old-street"
+  ],
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "새벽 네 시. 일을 마친 태겸이 창가의 화분들에 차례로 물을 줬다."
+          "text": "새벽 네 시. 일을 마친 태겸이 작업장 창가의 화분들에 차례로 물을 줬다."
         },
         {
           "type": "dialogue",

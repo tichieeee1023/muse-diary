@@ -1,9 +1,9 @@
 import { create } from 'zustand'
 import { getPlace, getWeightedDailyPlaces, initialUnlockedPlaceIds } from '../data/locations'
-import type { CollectionProgress, FontFamilySetting, GameProgress, GameSettings, PlayerProfile, Rarity, TextSizeSetting, TextSpeedSetting, Weather } from '../types/game'
+import type { CollectionProgress, FontFamilySetting, GameProgress, GameSettings, PlayerProfile, Rarity, SeasonKey, TextSizeSetting, TextSpeedSetting, Weather } from '../types/game'
 
-const STORAGE_KEY = 'muse-diary-save-v8'
-const LEGACY_STORAGE_KEYS = ['muse-diary-save-v7','muse-diary-save-v6', 'muse-diary-save-v5', 'muse-diary-save-v4', 'muse-diary-save-v3', 'muse-diary-save-v2', 'muse-diary-save-v1']
+const STORAGE_KEY = 'muse-diary-save-v12'
+const LEGACY_STORAGE_KEYS = ['muse-diary-save-v11','muse-diary-save-v10','muse-diary-save-v9','muse-diary-save-v8','muse-diary-save-v7','muse-diary-save-v6', 'muse-diary-save-v5', 'muse-diary-save-v4', 'muse-diary-save-v3', 'muse-diary-save-v2', 'muse-diary-save-v1']
 const BAR_UNLOCK_VISITS = 3
 const CHARACTER_PLACE_UNLOCKS: Record<string, string[]> = {
   char_003: ['convenience'], char_007: ['convenience'],
@@ -37,6 +37,7 @@ interface GameState extends PersistedState {
   setFontFamily: (fontFamily: FontFamilySetting) => void
   setTextSize: (textSize: TextSizeSetting) => void
   setTextSpeed: (textSpeed: TextSpeedSetting) => void
+  completeSeasonalEvent: (event: { eventId: string; companionId: string; title: string; season: SeasonKey; souvenir: string; souvenirNote: string; affectionGain: number; memoryKey?: string }) => number
 }
 
 const weatherPool: Weather[] = ['맑음', '흐림', '비', '눈']
@@ -63,6 +64,7 @@ function createCollection(): CollectionProgress {
   return {
     discoveredCharacterIds: [],
     lastEncounterCharacterId: null,
+    recentEncounterCharacterIds: [],
     affectionByCharacterId: {},
     encounterCounts: {},
     importantMemories: {},
@@ -70,7 +72,9 @@ function createCollection(): CollectionProgress {
     secretReadCharacterIds: [],
     seenEpisodeIdsByCharacterId: {},
     completedStoryEpisodeIdsByCharacterId: {},
+    recentCasualEpisodeIdsByCharacterId: {},
     lastMeetingByCharacterId: {},
+    seasonalEventRecords: {},
   }
 }
 
@@ -102,6 +106,9 @@ function normalizeCollection(collection?: Partial<CollectionProgress>): Collecti
   return {
     discoveredCharacterIds: Array.isArray(collection?.discoveredCharacterIds) ? [...new Set(collection.discoveredCharacterIds)] : [],
     lastEncounterCharacterId: collection?.lastEncounterCharacterId ?? null,
+    recentEncounterCharacterIds: Array.isArray(collection?.recentEncounterCharacterIds)
+      ? [...new Set(collection.recentEncounterCharacterIds)].slice(-4)
+      : collection?.lastEncounterCharacterId ? [collection.lastEncounterCharacterId] : [],
     affectionByCharacterId: collection?.affectionByCharacterId ?? {},
     encounterCounts: collection?.encounterCounts ?? {},
     importantMemories: collection?.importantMemories ?? {},
@@ -109,7 +116,9 @@ function normalizeCollection(collection?: Partial<CollectionProgress>): Collecti
     secretReadCharacterIds: Array.isArray(collection?.secretReadCharacterIds) ? [...new Set(collection.secretReadCharacterIds)] : [],
     seenEpisodeIdsByCharacterId: collection?.seenEpisodeIdsByCharacterId ?? {},
     completedStoryEpisodeIdsByCharacterId: collection?.completedStoryEpisodeIdsByCharacterId ?? {},
+    recentCasualEpisodeIdsByCharacterId: collection?.recentCasualEpisodeIdsByCharacterId ?? {},
     lastMeetingByCharacterId: collection?.lastMeetingByCharacterId ?? {},
+    seasonalEventRecords: collection?.seasonalEventRecords ?? {},
   }
 }
 
@@ -225,10 +234,15 @@ export const useGameStore = create<GameState>((set) => ({
       const isNew = !state.collection.discoveredCharacterIds.includes(characterId)
       const encounterCount = (state.collection.encounterCounts[characterId] ?? 0) + 1
       result = { isNew, encounterCount }
+      const recentEncounterCharacterIds = [
+        ...state.collection.recentEncounterCharacterIds.filter((id) => id !== characterId),
+        characterId,
+      ].slice(-4)
       const nextCollection: CollectionProgress = {
         ...state.collection,
         discoveredCharacterIds: isNew ? [...state.collection.discoveredCharacterIds, characterId] : state.collection.discoveredCharacterIds,
         lastEncounterCharacterId: characterId,
+        recentEncounterCharacterIds,
         encounterCounts: { ...state.collection.encounterCounts, [characterId]: encounterCount },
       }
       const newlyUnlocked = isNew ? (CHARACTER_PLACE_UNLOCKS[characterId] ?? []) : []
@@ -271,6 +285,8 @@ export const useGameStore = create<GameState>((set) => ({
       nextAffection = Math.min(100, Math.max(0, current + Math.max(0, affectionGain)))
       const seen = state.collection.seenEpisodeIdsByCharacterId[characterId] ?? []
       const storyDone = state.collection.completedStoryEpisodeIdsByCharacterId[characterId] ?? []
+      const recentCasual = state.collection.recentCasualEpisodeIdsByCharacterId[characterId] ?? []
+      const nextRecentCasual = kind === 'casual' ? [...recentCasual, episodeId].slice(-3) : recentCasual
       const nextCollection: CollectionProgress = {
         ...state.collection,
         affectionByCharacterId: { ...state.collection.affectionByCharacterId, [characterId]: nextAffection },
@@ -281,6 +297,10 @@ export const useGameStore = create<GameState>((set) => ({
         completedStoryEpisodeIdsByCharacterId: {
           ...state.collection.completedStoryEpisodeIdsByCharacterId,
           [characterId]: kind === 'story' && !storyDone.includes(episodeId) ? [...storyDone, episodeId] : storyDone,
+        },
+        recentCasualEpisodeIdsByCharacterId: {
+          ...state.collection.recentCasualEpisodeIdsByCharacterId,
+          [characterId]: nextRecentCasual,
         },
         lastMeetingByCharacterId: meeting ? {
           ...state.collection.lastMeetingByCharacterId,
@@ -333,23 +353,31 @@ export const useGameStore = create<GameState>((set) => ({
       const importantMemories = { ...state.collection.importantMemories }
       const seenEpisodeIdsByCharacterId = { ...state.collection.seenEpisodeIdsByCharacterId }
       const completedStoryEpisodeIdsByCharacterId = { ...state.collection.completedStoryEpisodeIdsByCharacterId }
+      const recentCasualEpisodeIdsByCharacterId = { ...state.collection.recentCasualEpisodeIdsByCharacterId }
       const lastMeetingByCharacterId = { ...state.collection.lastMeetingByCharacterId }
+      const seasonalEventRecords = Object.fromEntries(
+        Object.entries(state.collection.seasonalEventRecords).filter(([, record]) => record.companionId !== characterId),
+      )
       delete affectionByCharacterId[characterId]
       delete encounterCounts[characterId]
       delete importantMemories[characterId]
       delete seenEpisodeIdsByCharacterId[characterId]
       delete completedStoryEpisodeIdsByCharacterId[characterId]
+      delete recentCasualEpisodeIdsByCharacterId[characterId]
       delete lastMeetingByCharacterId[characterId]
       const nextCollection: CollectionProgress = {
         ...state.collection,
         discoveredCharacterIds: without(state.collection.discoveredCharacterIds),
         lastEncounterCharacterId: state.collection.lastEncounterCharacterId === characterId ? null : state.collection.lastEncounterCharacterId,
+        recentEncounterCharacterIds: without(state.collection.recentEncounterCharacterIds),
         affectionByCharacterId,
         encounterCounts,
         importantMemories,
         seenEpisodeIdsByCharacterId,
         completedStoryEpisodeIdsByCharacterId,
+        recentCasualEpisodeIdsByCharacterId,
         lastMeetingByCharacterId,
+        seasonalEventRecords,
         completedCharacterIds: without(state.collection.completedCharacterIds),
         secretReadCharacterIds: without(state.collection.secretReadCharacterIds),
       }
@@ -357,6 +385,38 @@ export const useGameStore = create<GameState>((set) => ({
       persist(next)
       return { ...next }
     }),
+
+  completeSeasonalEvent: ({ eventId, companionId, title, season, souvenir, souvenirNote, affectionGain, memoryKey }) => {
+    let nextAffection = 0
+    set((state) => {
+      if (state.collection.seasonalEventRecords[eventId]) {
+        nextAffection = state.collection.affectionByCharacterId[companionId] ?? 0
+        return state
+      }
+      const current = state.collection.affectionByCharacterId[companionId] ?? 0
+      nextAffection = Math.min(100, Math.max(0, current + Math.max(0, affectionGain)))
+      const existingMemories = state.collection.importantMemories[companionId] ?? []
+      const nextMemories = memoryKey && !existingMemories.includes(memoryKey) ? [...existingMemories, memoryKey] : existingMemories
+      const nextCollection: CollectionProgress = {
+        ...state.collection,
+        affectionByCharacterId: { ...state.collection.affectionByCharacterId, [companionId]: nextAffection },
+        importantMemories: { ...state.collection.importantMemories, [companionId]: nextMemories },
+        seasonalEventRecords: {
+          ...state.collection.seasonalEventRecords,
+          [eventId]: { eventId, companionId, day: state.progress.day, title, season, souvenir, souvenirNote },
+        },
+      }
+      const next: PersistedState = {
+        player: state.player,
+        progress: { ...state.progress, actionsLeft: 0 },
+        collection: nextCollection,
+        settings: state.settings,
+      }
+      persist(next)
+      return { ...next }
+    })
+    return nextAffection
+  },
 
   toggleSound: () =>
     set((state) => {

@@ -1,0 +1,50 @@
+{
+  "id": "char_006_casual_11",
+  "kind": "casual",
+  "title": "유리 터널의 방향",
+  "minAffection": 0,
+  "maxAffection": 45,
+  "defaultPortrait": "main",
+  "completionAffection": 7,
+  "repeatable": false,
+  "placeIds": [
+    "aquarium"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "수중 터널에 들어서자 시온은 관람객보다 물고기 떼를 먼저 따라 고개를 돌렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "지금 저쪽으로 몰리죠? 조금 있으면 반대로 갈 거예요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "잠시 뒤 정말로 떼가 방향을 바꾸자 {name}{이가 놀랐다. 시온은 대수롭지 않게 어깨를 으쓱한다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "물 안에서는 다 보여요. 흐름 타는 쪽이 편하거든요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그러다 유리 벽에 손을 대려다 멈췄다. 아주 가까운데도 닿을 수 없는 물을 보는 표정이 묘했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "근데 이런 데 물은 좀 답답하네요. 예쁘긴 한데.",
+          "portrait": "hmm"
+        }
+      ]
+    }
+  ],
+  "closing": "물과 가장 가까운 장소에서 오히려 시온은 물 밖의 사람처럼 보였다."
+}

@@ -11,7 +11,7 @@ import { getEndingContent } from '../engine/endingEngine'
 import { selectEncounter } from '../engine/encounterEngine'
 import { formatGameText } from '../engine/textFormatter'
 import { playUiSound } from '../engine/soundEngine'
-import { getLatestPortrait, getStoryProgress, isFinalStoryEpisode, selectCharacterEpisode } from '../engine/storyEngine'
+import { getLatestPortrait, getStoryProgress, hasCompletedFirstEncounter, isFinalStoryEpisode, selectCharacterEpisode } from '../engine/storyEngine'
 import { useGameStore } from '../store/useGameStore'
 import type { CharacterDefinition, StoryBlock, StoryChoiceOption, StoryEpisode, TimeOfDay } from '../types/game'
 
@@ -67,6 +67,9 @@ export function LocationPage() {
   const [showEpisodeTitle, setShowEpisodeTitle] = useState(false)
   const [choiceAffection, setChoiceAffection] = useState<number | null>(null)
 
+  const firstEncounterCompletedCharacterIds = Object.keys(collection.seenEpisodeIdsByCharacterId)
+    .filter((characterId) => hasCompletedFirstEncounter(characterId, collection))
+
   if (!activePlaceId || !player) return null
   const place = getPlace(activePlaceId)
   if (!place) return null
@@ -79,13 +82,16 @@ export function LocationPage() {
       timeOfDay: visitTime,
       weather: progress.weather,
       lastCharacterId: collection.lastEncounterCharacterId,
+      recentEncounterCharacterIds: collection.recentEncounterCharacterIds,
       completedCharacterIds: collection.completedCharacterIds,
       ssrMissStreak: progress.ssrMissStreak,
       discoveredCharacterIds: collection.discoveredCharacterIds,
+      firstEncounterCompletedCharacterIds,
+      seenEpisodeIdsByCharacterId: collection.seenEpisodeIdsByCharacterId,
     })
     if (!character) return
 
-    const episode = selectCharacterEpisode(character.id, collection, place.id, visitTime)
+    const episode = selectCharacterEpisode(character.id, collection, place.id, visitTime, progress.weather)
     if (!episode) return
     const affectionAtStart = collection.affectionByCharacterId[character.id] ?? 0
     const completedAtStart = collection.completedCharacterIds.includes(character.id)
@@ -161,7 +167,7 @@ export function LocationPage() {
     const routeProfile = getCharacterRouteProfile(character.id)
     const ending = getEndingContent(character.id)
     const visualBlocks = [...(section?.blocks ?? []), ...(choiceResponse ?? [])]
-    const portrait = getLatestPortrait(visualBlocks, episode.defaultPortrait)
+    const portrait = getLatestPortrait(character.id, visualBlocks, episode.defaultPortrait, { kind: episode.kind, threshold: episode.threshold })
 
     if (encounter.isNew && !revealAcknowledged) {
       return (
@@ -245,7 +251,7 @@ export function LocationPage() {
       const gained = Math.max(0, (collection.affectionByCharacterId[character.id] ?? affection) - encounter.affectionAtStart)
       return (
         <div className={`page encounter-close-page rarity-${character.rarity.toLowerCase()}`}>
-          <SceneBanner placeId={place.id} placeName={place.name} timeOfDay={encounter.visitTime} weather={progress.weather} routeId={route?.id} routeTitle={route?.title} />
+          <SceneBanner placeId={place.id} placeName={place.name} timeOfDay={encounter.visitTime} weather={progress.weather} routeId={route?.id} routeTitle={route?.title} characterId={character.id} episodeKind={episode.kind} />
           <section className="encounter-close-sheet">
             <p className="eyebrow">{episode.kind === 'story' ? 'AFFINITY EVENT COMPLETE' : 'MEETING RECORDED'}</p>
             <h1>{episode.title}</h1>
@@ -272,7 +278,7 @@ export function LocationPage() {
     const label = episodeLabel(episode, storyProgress.completed)
 
     return (
-      <div className={`page story-page rarity-${character.rarity.toLowerCase()}`} data-character={character.id}>
+      <div className={`page story-page story-page-${episode.kind} rarity-${character.rarity.toLowerCase()}`} data-character={character.id}>
         <header className="story-topbar">
           <div>
             <p className="eyebrow">{label}</p>
@@ -281,7 +287,7 @@ export function LocationPage() {
           <HeartMeter value={affection} compact />
         </header>
 
-        <SceneBanner placeId={place.id} placeName={place.name} timeOfDay={encounter.visitTime} weather={progress.weather} routeId={route?.id} routeTitle={route?.title} />
+        <SceneBanner placeId={place.id} placeName={place.name} timeOfDay={encounter.visitTime} weather={progress.weather} routeId={route?.id} routeTitle={route?.title} characterId={character.id} episodeKind={episode.kind} />
 
         <section className={`story-character-stage story-character-stage-${episode.kind}`} data-expression={portrait}>
           <CharacterPortrait characterId={character.id} name={character.name} symbol={character.symbol} expression={portrait} className="story-portrait" />

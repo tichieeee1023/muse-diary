@@ -3,75 +3,71 @@
   "kind": "story",
   "title": "다음 장의 날짜",
   "threshold": 100,
+  "purpose": "잃을 가능성을 감수하고도 현재의 관계를 선택하는 도윤이, 기록이 아니라 미래의 약속을 남기는 방식으로 고백한다.",
   "defaultPortrait": "main",
   "completionAffection": 0,
-  "purpose": "잃을 가능성을 감수하고도 현재의 관계를 선택하는 도윤의 고백",
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "폐점 후의 서점은 평소보다 조용했다. 도윤이 카운터 아래에서 얇은 책갈피 하나를 꺼내 건넸다."
+          "text": "폐점 후의 서점은 낮보다 훨씬 넓어 보였다. 마지막 손님이 나간 뒤 도윤은 셔터를 반쯤 내리고, 평소 {name}{이가} 앉던 자리에 책 두 권을 놓았다."
         },
         {
           "type": "narration",
-          "text": "크림색 종이에 날짜 하나만 적혀 있었다. 오늘의 날짜였다."
+          "text": "그중 한 권 사이에 크림색 책갈피가 끼워져 있었다. 앞면에는 아무 장식도 없고, 뒷면에는 오늘 날짜만 적혀 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "예전에는 날짜를 적어두는 게 싫었습니다.",
+          "text": "예전에는 날짜 적는 걸 별로 안 좋아했습니다.",
           "portrait": "main"
-        },
-        {
-          "type": "narration",
-          "text": "도윤은 책갈피 뒷면을 엄지로 천천히 쓸었다."
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
           "text": "나중에 보면 전부 지나간 날이 되니까요.",
           "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "그는 책갈피 끝을 천천히 만지다가 이번에는 피하지 않고 {name}{을를} 바라봤다."
         }
       ]
     },
     {
       "blocks": [
         {
-          "type": "narration",
-          "text": "잠시 침묵이 이어졌다. 그는 준비해온 말을 외우는 사람이 아니라, 지금 처음 정리하는 사람처럼 천천히 말했다."
-        },
-        {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "그런데 요즘은 생각이 조금 바뀌었습니다.",
+          "text": "그런데 지나간다고 없어지는 건 아니더군요.",
           "portrait": "main"
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "지나간다고 해서 없어지는 건 아니더군요.",
-          "portrait": "main"
+          "text": "그리고… 아직 오지 않은 날도 미리 포기할 필요는 없고요.",
+          "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "도윤이 {name}{을를} 똑바로 바라봤다."
+          "text": "도윤이 빈 책갈피 하나를 더 꺼냈다. 이번 것은 날짜칸이 비어 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "그리고… 아직 오지 않은 날도 남겨두고 싶습니다.",
-          "portrait": "smile"
+          "text": "이건 다음에 쓰려고 합니다. 언제가 될지는 아직 모르지만.",
+          "portrait": "main"
         }
       ],
       "choice": {
-        "id": "a100",
+        "id": "doyun_100_choice_1",
         "options": [
           {
             "id": "a",
-            "text": "“그럼 다음 날짜도 같이 적어요.”",
-            "affection": 7,
-            "memoryKey": "a100_future_dates",
+            "text": "“그럼 다음 날짜도 같이 정해요.”",
+            "affection": 9,
+            "memoryKey": "doyun_100_next_date",
             "response": [
               {
                 "type": "narration",
@@ -80,16 +76,22 @@
               {
                 "type": "dialogue",
                 "speaker": "서도윤",
-                "text": "네. 다음 것도, 그다음 것도요.",
+                "text": "좋습니다. 그다음 것도요.",
                 "portrait": "smile"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "가능하면 꽤 많이 남겨두고 싶네요.",
+                "portrait": "main"
               }
             ]
           },
           {
             "id": "b",
             "text": "“나를 잃을까 봐 아직도 무서워요?”",
-            "affection": 5,
-            "memoryKey": "a100_still_afraid",
+            "affection": 8,
+            "memoryKey": "doyun_100_afraid",
             "response": [
               {
                 "type": "dialogue",
@@ -99,7 +101,7 @@
               },
               {
                 "type": "narration",
-                "text": "이번에는 숨기지 않았다."
+                "text": "이번에는 망설이지 않았다."
               },
               {
                 "type": "dialogue",
@@ -112,8 +114,8 @@
           {
             "id": "c",
             "text": "“이거 고백 맞죠?”",
-            "affection": 6,
-            "memoryKey": "a100_confirm_confession",
+            "affection": 8,
+            "memoryKey": "doyun_100_confession",
             "response": [
               {
                 "type": "narration",
@@ -126,13 +128,9 @@
                 "portrait": "troubled"
               },
               {
-                "type": "narration",
-                "text": "그리고 아주 짧게 숨을 내쉰다."
-              },
-              {
                 "type": "dialogue",
                 "speaker": "서도윤",
-                "text": "제가 해놓고도 확인받으니 민망하네요.",
+                "text": "제가 해놓고 확인받으니 생각보다 민망하네요.",
                 "portrait": "main"
               }
             ]
@@ -144,21 +142,142 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "도윤은 {name}{이가} 읽던 책을 받아 마지막 페이지가 아니라 중간쯤에 책갈피를 끼웠다."
+          "text": "도윤은 {name}{이가} 읽던 책을 받아 마지막 페이지가 아니라 중간쯤을 펼쳤다."
         },
         {
           "type": "dialogue",
           "speaker": "서도윤",
-          "text": "여기서부터 다음에 같이 읽죠.",
+          "text": "여기까지 읽으셨죠.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "끝까지 읽지 않았다는 사실이 이번에는 미련처럼 느껴지지 않았다."
+          "text": "몇 주 전 아무렇지 않게 덮어둔 페이지였다. 도윤은 역시 정확히 기억하고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "예전에는 끝까지 읽은 책만 보관했습니다. 끝난 게 분명해서 편했거든요.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "아직 남은 페이지가 있다는 뜻이었다."
+          "text": "그가 빈 책갈피를 그 다음 장에 끼웠다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "이제는 중간인 것도 괜찮습니다. 다음이 있다는 뜻이니까.",
+          "portrait": "main"
+        }
+      ],
+      "choice": {
+        "id": "doyun_100_choice_2",
+        "options": [
+          {
+            "id": "a",
+            "text": "“도윤 씨도 내가 기억할게요.”",
+            "affection": 9,
+            "memoryKey": "doyun_100_remember_him",
+            "response": [
+              {
+                "type": "narration",
+                "text": "도윤이 말없이 눈을 깜빡였다. 사람을 기억하는 데 익숙한 얼굴이 또다시 당황했다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "그 말은… 여전히 약하네요.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "그래도 좋습니다. 서로 기억합시다. 오래.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“기억만 하지 말고 자주 만나면 되죠.”",
+            "affection": 9,
+            "memoryKey": "doyun_100_meet_often",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "그게 더 좋겠네요.",
+                "portrait": "smile"
+              },
+              {
+                "type": "narration",
+                "text": "도윤은 아주 평범한 대답처럼 말했지만, 이번에는 먼저 다음 휴무일을 물었다."
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“책 다 읽으면 또 추천해줘요.”",
+            "affection": 8,
+            "memoryKey": "doyun_100_more_books",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "한 권으로 끝낼 생각은 없었습니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "그가 카운터 아래에서 이미 골라둔 책 한 권을 더 꺼냈다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "서도윤",
+                "text": "이건 다음 후보입니다. 너무 빨랐습니까?",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "둘은 폐점한 서점 바닥에 기대 앉아 같은 책의 서로 다른 페이지를 읽었다. 아무 사건도 일어나지 않았고, 돌아온 책도 이상한 장부도 없었다."
+        },
+        {
+          "type": "narration",
+          "text": "그래서 오히려 도윤에게는 더 낯선 밤이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "오늘은 기록할 만한 일이 없네요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가} 웃자 도윤도 따라 아주 작게 웃었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "…아니. 있군요.",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "다음에 또 보기로 했으니까.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "날짜가 적히지 않은 책갈피는 아직 빈 채였다. 이번에는 그 빈칸이 불안하지 않았다."
         }
       ]
     }

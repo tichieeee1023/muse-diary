@@ -15,7 +15,7 @@ interface CharacterPortraitProps {
 export function CharacterPortrait({ characterId, name, symbol, expression = 'main', className = '', alt }: CharacterPortraitProps) {
   const [failed, setFailed] = useState(false)
   const profile = getCharacterRouteProfile(characterId)
-  const src = profile?.visuals[expression]
+  const src = profile?.visuals[expression] ?? profile?.visuals.main
 
   useEffect(() => {
     setFailed(false)

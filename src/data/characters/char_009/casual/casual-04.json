@@ -1,12 +1,14 @@
 {
   "id": "char_009_casual_04",
   "kind": "casual",
-  "times": ["낮"],
+  "times": [
+    "낮"
+  ],
   "title": "긴 소매",
   "minAffection": 20,
   "maxAffection": 69,
   "defaultPortrait": "hmm",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
   "sections": [
     {

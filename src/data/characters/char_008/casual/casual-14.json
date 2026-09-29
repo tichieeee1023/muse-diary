@@ -1,0 +1,54 @@
+{
+  "id": "char_008_casual_14",
+  "kind": "casual",
+  "title": "끝까지 그린 해파리",
+  "minAffection": 45,
+  "maxAffection": 90,
+  "defaultPortrait": "main",
+  "completionAffection": 8,
+  "repeatable": false,
+  "placeIds": [
+    "aquarium"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "해파리 전시실 구석에서 세현은 작은 스케치북을 무릎 위에 올려두고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "여기까지만 하면 예쁜데, 더 그리면 망칠 것 같죠?",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 그래도 끝까지 해보라고 하자 세현은 펜 끝을 종이에 대고 한참 멈췄다."
+        },
+        {
+          "type": "narration",
+          "text": "몇 분 뒤 그는 평소라면 비워뒀을 그림자와 배경까지 천천히 채웠다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "...망치진 않았네요. 생각보다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "그는 완성된 페이지를 덮지 않고 {name} 쪽으로 돌려 보여줬다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "이건 보여드릴게요. 처음부터 끝까지 제가 그린 거니까.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "미완성으로 남겨두지 않은 작은 그림 한 장이 조용히 기록되었다."
+}

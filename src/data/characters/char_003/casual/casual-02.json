@@ -1,13 +1,21 @@
 {
   "id": "char_003_casual_02",
   "kind": "casual",
-  "times": ["밤"],
+  "times": [
+    "밤"
+  ],
+  "weather": [
+    "비"
+  ],
   "title": "플랫폼의 우산",
   "minAffection": 0,
   "maxAffection": 49,
   "defaultPortrait": "main",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": false,
+  "placeIds": [
+    "subway"
+  ],
   "sections": [
     {
       "blocks": [

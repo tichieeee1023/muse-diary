@@ -5,14 +5,14 @@
   "minAffection": 40,
   "maxAffection": 79,
   "defaultPortrait": "main",
-  "completionAffection": 5,
+  "completionAffection": 8,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "물을 찾으러 연 주원의 냉장고에는 생수와 캔 음료, 소스 몇 개밖에 없었다."
+          "text": "끼니 이야기가 나오자 주원이 잠깐 망설이다 자기 냉장고 사진을 보여줬다. 생수와 캔 음료, 소스 몇 개밖에 없었다."
         },
         {
           "type": "dialogue",

@@ -5,8 +5,11 @@
   "minAffection": 20,
   "maxAffection": 69,
   "defaultPortrait": "main",
-  "completionAffection": 5,
+  "completionAffection": 8,
   "repeatable": false,
+  "placeIds": [
+    "subway"
+  ],
   "sections": [
     {
       "blocks": [

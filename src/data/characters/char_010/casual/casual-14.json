@@ -1,0 +1,53 @@
+{
+  "id": "char_010_casual_14",
+  "kind": "casual",
+  "title": "난간과 같은 높이",
+  "minAffection": 45,
+  "maxAffection": 90,
+  "defaultPortrait": "main",
+  "completionAffection": 8,
+  "repeatable": false,
+  "placeIds": [
+    "rooftop"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "재하는 평소처럼 반걸음 앞서 걷다가 루프탑 난간 앞에서 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "여긴 시야가 좋습니다. 위험한 곳도 잘 보이고요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 좋은 풍경도 보이냐고 묻자 그는 한동안 도시 불빛을 바라봤다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "보입니다. 예전에는 그걸 볼 여유가 없었을 뿐입니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "그는 이번에는 앞을 막지 않고 {name}와 같은 선에 섰다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "이 정도 거리는 괜찮습니다.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "보호해야 할 거리 대신 나란히 설 수 있는 거리가 조금씩 익숙해졌다."
+}

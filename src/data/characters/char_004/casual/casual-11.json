@@ -1,0 +1,57 @@
+{
+  "id": "char_004_casual_11",
+  "kind": "casual",
+  "title": "닫힌 제과점 앞",
+  "minAffection": 0,
+  "maxAffection": 45,
+  "defaultPortrait": "main",
+  "completionAffection": 7,
+  "repeatable": false,
+  "placeIds": [
+    "old-street"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "오래된 상가거리의 셔터 사이에 유독 낡은 제과점 간판 하나가 남아 있었다. 로운이 걸음을 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "여기, 예전에는 버터 냄새가 골목 끝까지 났을 것 같아요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "문은 오래전에 닫힌 듯했지만 그는 쇼윈도에 남은 케이크 받침을 한참 들여다봤다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "맛은 사라져도 가게 분위기는 오래 남네요. 이상하죠?",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 감상적이라고 놀리자 로운이 웃으며 고개를 젓는다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "저 감상적인 사람 아닙니다. 그냥... 남는 게 뭔지 보는 걸 좋아해서요.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "닫힌 가게 앞에서도 로운은 사라진 맛보다 남은 기분을 먼저 읽었다.",
+  "weather": [
+    "흐림",
+    "비"
+  ]
+}

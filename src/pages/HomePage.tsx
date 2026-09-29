@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react'
 import { BottomNav, type MainSection } from '../components/BottomNav'
 import { CharacterSD } from '../components/CharacterSD'
-import { MuseDollIcon } from '../components/MuseDollIcon'
 import { PlaceIcon } from '../components/PlaceIcon'
-import { getAllCharacters } from '../engine/encounterEngine'
-import { isAffinityEventReady } from '../engine/storyEngine'
-import { getPostRouteLine } from '../data/characterFlavor'
+import { getAllCharacters, hasEncounterCandidate, isFirstEncounterAvailable } from '../engine/encounterEngine'
+import { hasCompletedFirstEncounter, isAffinityEventReady } from '../engine/storyEngine'
 import { getPlace } from '../data/locations'
+import { AUTUMN_EVENT_DAY, AUTUMN_EVENT_ID, SPRING_EVENT_DAY, SPRING_EVENT_ID, SUMMER_EVENT_DAY, SUMMER_EVENT_ID, WINTER_EVENT_DAY, WINTER_EVENT_ID, autumnEvent, springEvent, summerEvent, winterEvent } from '../data/seasonalEvents'
 import { useGameStore } from '../store/useGameStore'
 
 const weatherCopy = {
@@ -25,9 +24,10 @@ const weatherMark = {
 
 interface HomePageProps {
   onNavigate: (section: MainSection) => void
+  onStartSeasonalEvent: (eventId: string) => void
 }
 
-export function HomePage({ onNavigate }: HomePageProps) {
+export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
   const player = useGameStore((state) => state.player)
   const progress = useGameStore((state) => state.progress)
   const nextDay = useGameStore((state) => state.nextDay)
@@ -46,12 +46,75 @@ export function HomePage({ onNavigate }: HomePageProps) {
   const oldStreetVisits = progress.placeVisits['old-street'] ?? 0
   const barUnlocked = progress.unlockedPlaceIds.includes('bar')
   const characters = getAllCharacters()
+  const firstEncounterCompletedCharacterIds = characters
+    .filter((character) => hasCompletedFirstEncounter(character.id, collection))
+    .map((character) => character.id)
+  const seasonalEligibleCharacters = characters.filter((character) =>
+    collection.discoveredCharacterIds.includes(character.id) && hasCompletedFirstEncounter(character.id, collection),
+  )
+  const springRecord = collection.seasonalEventRecords[SPRING_EVENT_ID]
+  const summerRecord = collection.seasonalEventRecords[SUMMER_EVENT_ID]
+  const autumnRecord = collection.seasonalEventRecords[AUTUMN_EVENT_ID]
+  const winterRecord = collection.seasonalEventRecords[WINTER_EVENT_ID]
+  const springEventComplete = Boolean(springRecord)
+  const summerEventComplete = Boolean(summerRecord)
+  const autumnEventComplete = Boolean(autumnRecord)
+  const winterEventComplete = Boolean(winterRecord)
+  const isSpringSpecialDay = progress.day >= SPRING_EVENT_DAY && !springEventComplete && seasonalEligibleCharacters.length > 0
+  const isSummerSpecialDay = progress.day >= SUMMER_EVENT_DAY
+    && springEventComplete
+    && !summerEventComplete
+    && seasonalEligibleCharacters.length > 0
+    && (springRecord?.day ?? 0) < progress.day
+  const isAutumnSpecialDay = progress.day >= AUTUMN_EVENT_DAY
+    && summerEventComplete
+    && !autumnEventComplete
+    && seasonalEligibleCharacters.length > 0
+    && (summerRecord?.day ?? 0) < progress.day
+  const isWinterSpecialDay = progress.day >= WINTER_EVENT_DAY
+    && autumnEventComplete
+    && !winterEventComplete
+    && seasonalEligibleCharacters.length > 0
+    && (autumnRecord?.day ?? 0) < progress.day
+
+  const canEncounterAtPlace = (placeId: string) => {
+    const place = getPlace(placeId)
+    if (!place) return false
+    if (place.nightOnly && timeOfDay !== '밤') return false
+    return hasEncounterCandidate({
+      placeId,
+      routeId: place.routes[0]?.id ?? '',
+      timeOfDay,
+      weather: progress.weather,
+      lastCharacterId: collection.lastEncounterCharacterId,
+      recentEncounterCharacterIds: collection.recentEncounterCharacterIds,
+      completedCharacterIds: collection.completedCharacterIds,
+      ssrMissStreak: progress.ssrMissStreak,
+      discoveredCharacterIds: collection.discoveredCharacterIds,
+      firstEncounterCompletedCharacterIds,
+      seenEpisodeIdsByCharacterId: collection.seenEpisodeIdsByCharacterId,
+    })
+  }
+
   const readyEvents = characters.filter((character) => collection.discoveredCharacterIds.includes(character.id) && isAffinityEventReady(character.id, collection))
-  const recommendedCharacter = readyEvents[0]
-  const recommendedPlaceId = recommendedCharacter?.spawnRules.find((rule) => todayPlaces.some((place) => place?.id === rule.placeId) && progress.unlockedPlaceIds.includes(rule.placeId))?.placeId
-  const recommendedPlace = recommendedPlaceId ? getPlace(recommendedPlaceId) : todayPlaces.find((place) => place && progress.unlockedPlaceIds.includes(place.id)) ?? null
-  const guestId = collection.completedCharacterIds.length ? collection.completedCharacterIds[(progress.day - 1) % collection.completedCharacterIds.length] : null
-  const guest = guestId ? characters.find((character) => character.id === guestId) ?? null : null
+  const recommendedReadyCharacter = readyEvents[0]
+  const recommendedReadyPlaceId = recommendedReadyCharacter?.spawnRules.find((rule) =>
+    todayPlaces.some((place) => place?.id === rule.placeId)
+    && progress.unlockedPlaceIds.includes(rule.placeId)
+    && canEncounterAtPlace(rule.placeId),
+  )?.placeId
+
+  const recommendedFirstCharacter = characters.find((character) =>
+    !hasCompletedFirstEncounter(character.id, collection)
+    && todayPlaces.some((place) => place?.id === character.firstEncounterRule.placeId)
+    && progress.unlockedPlaceIds.includes(character.firstEncounterRule.placeId)
+    && isFirstEncounterAvailable(character, { placeId: character.firstEncounterRule.placeId, timeOfDay, weather: progress.weather }),
+  )
+
+  const recommendedPlaceId = recommendedReadyPlaceId ?? recommendedFirstCharacter?.firstEncounterRule.placeId
+  const recommendedPlace = recommendedPlaceId
+    ? getPlace(recommendedPlaceId)
+    : todayPlaces.find((place) => place && progress.unlockedPlaceIds.includes(place.id) && canEncounterAtPlace(place.id)) ?? null
   const todayMeetings = Object.entries(collection.lastMeetingByCharacterId)
     .filter(([, meeting]) => meeting.day === progress.day)
     .map(([characterId, meeting]) => ({ character: characters.find((character) => character.id === characterId), meeting }))
@@ -80,18 +143,24 @@ export function HomePage({ onNavigate }: HomePageProps) {
     if (!place || !todayPlaceIds.has(placeId) || progress.actionsLeft <= 0) return false
     if (!progress.unlockedPlaceIds.includes(placeId)) return false
     if (place.nightOnly && timeOfDay !== '밤') return false
-    return true
+    return canEncounterAtPlace(placeId)
   }
 
   const getPlaceSignal = (placeId: string) => {
     if (readyEvents.some((character) => character.spawnRules.some((rule) => rule.placeId === placeId))) return 'NEW EVENT'
-    if (characters.some((character) => !collection.discoveredCharacterIds.includes(character.id) && character.spawnRules.some((rule) => rule.placeId === placeId && !rule.secondaryOnly))) return '낯선 기척'
-    if (characters.some((character) => collection.discoveredCharacterIds.includes(character.id) && character.spawnRules.some((rule) => rule.placeId === placeId))) return '익숙한 기척'
+    if (characters.some((character) =>
+      !hasCompletedFirstEncounter(character.id, collection)
+      && isFirstEncounterAvailable(character, { placeId, timeOfDay, weather: progress.weather }),
+    )) return '낯선 기척'
+    if (characters.some((character) =>
+      hasCompletedFirstEncounter(character.id, collection)
+      && character.spawnRules.some((rule) => rule.placeId === placeId),
+    )) return '익숙한 기척'
     return '오늘의 영감'
   }
 
   return (
-    <div className="page home-page">
+    <div className={`page home-page${isSpringSpecialDay || isSummerSpecialDay || isAutumnSpecialDay || isWinterSpecialDay ? ' is-special-day' : ''}`}>
       <header className="day-header">
         <div>
           <p className="eyebrow">WORK DIARY</p>
@@ -126,32 +195,83 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
-      <section className="next-step-card">
-        <div className="next-step-icon" aria-hidden="true">✦</div>
+      {isSpringSpecialDay && (
+        <section className="spring-special-home">
+          <div className="spring-special-home-petals" aria-hidden="true">✿ · ✿ · ✿</div>
+          <div className="spring-special-home-copy">
+            <p className="eyebrow">SPECIAL DAY · SPRING</p>
+            <span>SEASON 01</span>
+            <h2>{springEvent.title}</h2>
+            <strong>{springEvent.subtitle}</strong>
+            <p>오늘은 평소의 외출을 쉬고, 지금까지 만난 사람 중 한 명과 봄꽃 야간 개장에 갑니다.</p>
+            <small>동행 가능 {seasonalEligibleCharacters.length}명 · 선택한 사람과 특별한 봄 기록이 남아요.</small>
+          </div>
+          <button type="button" className="spring-special-home-button" onClick={() => onStartSeasonalEvent(SPRING_EVENT_ID)}>함께 갈 사람 고르기 <b>→</b></button>
+        </section>
+      )}
+
+      {isSummerSpecialDay && (
+        <section className="summer-special-home">
+          <div className="summer-special-home-sparks" aria-hidden="true">✦ · ✹ · ✦</div>
+          <div className="summer-special-home-copy">
+            <p className="eyebrow">SPECIAL DAY · SUMMER</p>
+            <span>SEASON 02</span>
+            <h2>{summerEvent.title}</h2>
+            <strong>{summerEvent.subtitle}</strong>
+            <p>오늘은 평소의 외출을 쉬고, 한 사람과 강변 불꽃축제의 가장 밝은 밤을 보냅니다.</p>
+            <small>동행 가능 {seasonalEligibleCharacters.length}명 · 불꽃 아래에서 둘만의 여름 기록이 남아요.</small>
+          </div>
+          <button type="button" className="summer-special-home-button" onClick={() => onStartSeasonalEvent(SUMMER_EVENT_ID)}>함께 불꽃 볼 사람 고르기 <b>→</b></button>
+        </section>
+      )}
+
+      {isAutumnSpecialDay && (
+        <section className="autumn-special-home">
+          <div className="autumn-special-home-leaves" aria-hidden="true">❧ · ◆ · ❧</div>
+          <div className="autumn-special-home-copy">
+            <p className="eyebrow">SPECIAL DAY · AUTUMN</p>
+            <span>SEASON 03</span>
+            <h2>{autumnEvent.title}</h2>
+            <strong>{autumnEvent.subtitle}</strong>
+            <p>오늘은 평소의 외출을 쉬고, 한 사람과 조용한 늦가을 정원을 천천히 걷습니다.</p>
+            <small>동행 가능 {seasonalEligibleCharacters.length}명 · 익숙한 얼굴과도 잠깐 스쳐 지나갈 수 있어요.</small>
+          </div>
+          <button type="button" className="autumn-special-home-button" onClick={() => onStartSeasonalEvent(AUTUMN_EVENT_ID)}>함께 걸을 사람 고르기 <b>→</b></button>
+        </section>
+      )}
+
+      {isWinterSpecialDay && (
+        <section className="winter-special-home">
+          <div className="winter-special-home-snow" aria-hidden="true">❄ · ❅ · ❄</div>
+          <div className="winter-special-home-copy">
+            <p className="eyebrow">SPECIAL DAY · WINTER</p>
+            <span>SEASON 04</span>
+            <h2>{winterEvent.title}</h2>
+            <strong>{winterEvent.subtitle}</strong>
+            <p>오늘은 평소의 외출을 쉬고, 한 사람과 편백 향이 나는 산장으로 겨울 나들이를 갑니다.</p>
+            <small>동행 가능 {seasonalEligibleCharacters.length}명 · 돌아갈 시간이 늦어진 만큼 둘만의 겨울이 길어져요.</small>
+          </div>
+          <button type="button" className="winter-special-home-button" onClick={() => onStartSeasonalEvent(WINTER_EVENT_ID)}>함께 눈 보러 갈 사람 고르기 <b>→</b></button>
+        </section>
+      )}
+
+      <section className={`next-step-card${readyEvents.length > 0 ? ' has-ready-event' : ''}`}>
+        <div className="next-step-icon" aria-hidden="true">{readyEvents.length > 0 ? '♥' : '✦'}</div>
         <div>
-          <p className="eyebrow">오늘의 추천</p>
-          <strong>{recommendedCharacter ? `${recommendedCharacter.name}와의 다음 기록` : '오늘의 영감을 찾아 떠나기'}</strong>
-          <small>{recommendedPlace ? `${recommendedPlace.name}에서 새로운 장면을 발견할 수 있어요.` : '지도를 열고 오늘 갈 수 있는 장소를 골라보세요.'}</small>
+          <p className="eyebrow">{readyEvents.length > 0 ? 'NEW AFFINITY EVENT' : '오늘의 추천'}</p>
+          <strong>{recommendedReadyCharacter ? `${recommendedReadyCharacter.name}와의 다음 기록` : recommendedFirstCharacter ? '낯선 인연의 기척' : '오늘의 영감을 찾아 떠나기'}</strong>
+          <small>{recommendedPlace ? `${recommendedPlace.name}에서 ${recommendedFirstCharacter && !recommendedReadyCharacter ? '새로운 만남을' : '새로운 장면을'} 발견할 수 있어요.` : '지도를 열고 오늘 갈 수 있는 장소를 골라보세요.'}</small>
+          {readyEvents.length > 0 && (
+            <div className="next-step-event-chips" aria-label="열린 호감도 이벤트">
+              {readyEvents.slice(0, 4).map((character) => <span key={character.id}><CharacterSD characterId={character.id} name={character.name} symbol={character.symbol} decorative className="new-event-chip-sd" />{character.name}</span>)}
+              {readyEvents.length > 4 && <em>+{readyEvents.length - 4}</em>}
+            </div>
+          )}
         </div>
         <button type="button" className="next-step-go" onClick={() => recommendedPlace ? enterPlace(recommendedPlace.id) : onNavigate('characters')} disabled={!recommendedPlace || progress.actionsLeft <= 0}>
-          {recommendedPlace ? '장소 보기' : '도감 보기'}
+          {recommendedPlace ? (readyEvents.length > 0 ? '이벤트 장소' : '장소 보기') : '도감 보기'}
         </button>
       </section>
-
-
-      {readyEvents.length > 0 && (
-        <section className="new-event-board">
-          <div><span>NEW EVENT</span><strong>새로운 호감도 이벤트가 열렸어요.</strong></div>
-          <div className="new-event-chips">{readyEvents.slice(0, 4).map((character) => <span key={character.id}><CharacterSD characterId={character.id} name={character.name} symbol={character.symbol} decorative className="new-event-chip-sd" />{character.name}</span>)}</div>
-        </section>
-      )}
-
-      {guest && (
-        <section className="post-route-visit">
-          <CharacterSD characterId={guest.id} name={guest.name} symbol={guest.symbol} className="post-route-sd" />
-          <div><span>POST ROUTE VISIT · NO ACTION</span><strong>{guest.name}<MuseDollIcon size={16} /></strong><p>{getPostRouteLine(guest.id, progress.day)}</p></div>
-        </section>
-      )}
 
       <section className="place-section" aria-labelledby="place-title">
         <div className="section-heading">
@@ -161,10 +281,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </div>
           <button
             type="button"
-            className="text-button"
-onClick={() => setShowDayEndModal(true)}
+            className={`next-day-button${progress.actionsLeft === 0 ? ' is-ready' : ''}`}
+            onClick={() => setShowDayEndModal(true)}
           >
-            다음 날 →
+            <span>{progress.actionsLeft === 0 ? 'DAY COMPLETE' : `외출 ${3 - progress.actionsLeft} / 3`}</span>
+            <strong>다음 날 <b>→</b></strong>
           </button>
         </div>
 
@@ -215,19 +336,21 @@ onClick={() => setShowDayEndModal(true)}
                 {todayPlaces.map((place, index) => {
                   if (!place) return null
                   const isNightLocked = Boolean(place.nightOnly && timeOfDay !== '밤')
+                  const hasEncounter = canEncounterAtPlace(place.id)
+                  const isUnavailable = !isNightLocked && !hasEncounter
                   return (
                     <button
                       key={place.id}
                       type="button"
-                      className={`place-card${isNightLocked ? ' is-time-locked' : ''}`}
-                      disabled={isNightLocked}
+                      className={`place-card${isNightLocked || isUnavailable ? ' is-time-locked' : ''}`}
+                      disabled={isNightLocked || isUnavailable}
                       onClick={() => enterPlace(place.id)}
                     >
                       <span className="place-icon-box"><PlaceIcon placeId={place.id} size={22} /></span>
                       <span className="place-copy">
                         <span className="place-card-kicker">0{index + 1} · {place.mark}</span><em className="place-signal">{getPlaceSignal(place.id)}</em>
                         <strong>{place.name}</strong>
-                        <small>{isNightLocked ? '밤이 되어야 문이 열린다.' : place.note}</small>
+                        <small>{isNightLocked ? '밤이 되어야 문이 열린다.' : isUnavailable ? '지금은 특별한 기척이 없다.' : place.note}</small>
                       </span>
                       <span className="place-card-arrow">→</span>
                     </button>
@@ -269,14 +392,14 @@ onClick={() => setShowDayEndModal(true)}
             <div className="map-place-sheet-head"><span className="place-icon-box"><PlaceIcon placeId={selectedMapPlace.id} size={24} /></span><div><p>{selectedMapPlace.mark}</p><h3>{selectedMapPlace.name}</h3></div></div>
             <span className="map-place-sheet-signal">{todayPlaceIds.has(selectedMapPlace.id) ? getPlaceSignal(selectedMapPlace.id) : '오늘의 외출 후보가 아님'}</span>
             <p>{selectedMapPlace.note}</p>
-            <small>{selectedMapPlace.nightOnly ? '밤에만 갈 수 있는 장소' : `${timeOfDay}에도 방문 가능`}</small>
+            <small>{selectedMapPlace.nightOnly && timeOfDay !== '밤' ? '밤에만 갈 수 있는 장소' : !canEncounterAtPlace(selectedMapPlace.id) ? '지금은 특별한 기척이 없다.' : `${timeOfDay}에도 방문 가능`}</small>
             <button
               type="button"
               className="primary-button map-place-go"
               disabled={!isMapPlaceAvailable(selectedMapPlace.id)}
               onClick={() => { if (isMapPlaceAvailable(selectedMapPlace.id)) { setSelectedMapPlaceId(null); enterPlace(selectedMapPlace.id) } }}
             >
-              {isMapPlaceAvailable(selectedMapPlace.id) ? '이곳으로 간다' : !progress.unlockedPlaceIds.includes(selectedMapPlace.id) ? '아직 갈 수 없는 장소' : !todayPlaceIds.has(selectedMapPlace.id) ? '오늘은 다른 곳으로 가보자' : '지금은 갈 수 없음'}
+              {isMapPlaceAvailable(selectedMapPlace.id) ? '이곳으로 간다' : !progress.unlockedPlaceIds.includes(selectedMapPlace.id) ? '아직 갈 수 없는 장소' : !todayPlaceIds.has(selectedMapPlace.id) ? '오늘은 다른 곳으로 가보자' : !canEncounterAtPlace(selectedMapPlace.id) ? '지금은 특별한 기척이 없다' : '지금은 갈 수 없음'}
             </button>
           </section>
         </div>

@@ -1,11 +1,14 @@
 {
   "id": "char_009_casual_06",
   "kind": "casual",
+  "weather": [
+    "비"
+  ],
   "title": "우산 없는 날",
   "minAffection": 40,
   "maxAffection": 89,
   "defaultPortrait": "troubled",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
   "sections": [
     {

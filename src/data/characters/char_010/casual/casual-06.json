@@ -1,12 +1,14 @@
 {
   "id": "char_010_casual_06",
   "kind": "casual",
-  "times": ["밤"],
+  "times": [
+    "밤"
+  ],
   "title": "빛나는 흉터",
   "minAffection": 40,
   "maxAffection": 89,
   "defaultPortrait": "hmm",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
   "sections": [
     {

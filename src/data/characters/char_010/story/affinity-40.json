@@ -3,25 +3,29 @@
   "kind": "story",
   "title": "푸딩",
   "threshold": 40,
-  "purpose": "가벼운 갭모에와 사적인 시간을 통해 관계를 인간적으로 풀어준다.",
-  "defaultPortrait": "smile",
-  "completionAffection": 3,
+  "purpose": "항상 위험을 먼저 계산하는 재하에게 아무 목적도 없는 사적인 시간이 생기고, 주인공 앞에서 경계가 풀리는 일상적 갭을 충분히 보여준다.",
+  "defaultPortrait": "main",
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "경호 업무가 끝난 뒤 재하는 편의점 푸딩을 들고 옥상 계단에 앉았다."
+          "text": "경호 업무가 끝난 저녁, 재하는 쇼핑몰 옥상 계단참에 앉아 있었다. 손에는 편의점 봉투 하나가 들려 있었다."
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가} 다가가자 재하는 주변 출입구부터 한 번 확인한 뒤 옆자리를 비켰다. 봉투 안에는 작은 푸딩 두 개가 들어 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "이 시간엔 사람이 적어서 좋습니다.",
+          "text": "왜 그렇게 보십니까.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "그는 푸딩 뚜껑을 아주 깔끔하게 뜯었다."
+          "text": "그는 푸딩 뚜껑을 군더더기 없이 깨끗하게 뜯었다. 첫 숟갈을 먹은 뒤에야 눈매가 아주 미세하게 풀렸다."
         },
         {
           "type": "dialogue",
@@ -35,63 +39,117 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "한 숟갈 먹고 난 뒤, 평소보다 눈매가 아주 조금 풀렸다."
+          "text": "재하는 단 음식 취향을 숨길 생각은 없으면서도, 왜 의외라는 반응을 듣는지는 이해하지 못하는 것 같았다."
         },
         {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "…하나 드시겠습니까.",
-          "portrait": "smile"
+          "text": "근무 중에는 안 먹습니다. 집중이 흐트러져서가 아니라… 천천히 먹고 싶어서요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그 말이 이상하게 마음에 남았다. 늘 서두르고 먼저 움직이던 사람이 일부러 천천히 하는 일이 있다는 것."
         }
       ],
       "choice": {
-        "id": "aff_40_choice",
+        "id": "jaeha_40_choice",
         "options": [
           {
             "id": "a",
-            "text": "“한 입만.”",
-            "affection": 6,
+            "text": "“한 입만 줘요.”",
+            "affection": 8,
+            "memoryKey": "jaeha_40_share",
             "response": [
+              {
+                "type": "narration",
+                "text": "재하는 잠깐 숟가락과 {name}{을를} 번갈아 봤다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "권재하",
-                "text": "한 입 기준이 큽니다.",
-                "portrait": "troubled"
+                "text": "새 숟가락 가져오겠습니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "지나치게 원칙적인 대답에 웃음이 터지자 재하가 이해 못 한 얼굴을 했다."
               }
-            ],
-            "memoryKey": "jaeha_40_share"
+            ]
           },
           {
             "id": "b",
             "text": "“다음엔 내가 사줄게요.”",
-            "affection": 7,
+            "affection": 9,
+            "memoryKey": "jaeha_40_next",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "권재하",
                 "text": "그건… 기대하겠습니다.",
                 "portrait": "smile"
+              },
+              {
+                "type": "narration",
+                "text": "‘기대’라는 말이 재하 입에서 나오자 그것만으로 꽤 큰 변화처럼 들렸다."
               }
-            ],
-            "memoryKey": "jaeha_40_next"
+            ]
           },
           {
             "id": "c",
             "text": "“이런 취향 진짜 의외예요.”",
-            "affection": 5,
+            "affection": 7,
+            "memoryKey": "jaeha_40_gap",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "권재하",
-                "text": "자주 듣습니다. 이해는 안 됩니다.",
+                "text": "자주 듣습니다. 아직도 이유는 모르겠습니다.",
+                "portrait": "hmm"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "푸딩은 그냥 맛있습니다.",
                 "portrait": "main"
               }
-            ],
-            "memoryKey": "jaeha_40_gap"
+            ]
           }
         ]
       }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "두 번째 푸딩은 결국 {name} 몫이었다. 재하는 억지로 권하지도, 먹는 속도를 확인하지도 않았다."
+        },
+        {
+          "type": "narration",
+          "text": "잠시 뒤 멀리서 큰 소리가 나자 재하의 손이 반사적으로 움직였다가 멈췄다. 출입구를 확인하고 나서야 단순한 공사 소리라는 걸 알아챘다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "습관입니다. 신경 쓰지 마십시오.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가} 다시 푸딩을 먹자고 하자 재하는 잠깐 입을 다물었다가 고개를 끄덕였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "네. 지금은 이쪽이 더 중요하겠습니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "아무도 지키지 않아도 되는 십여 분을 그는 처음으로 끝까지 앉아서 보냈다."
+        }
+      ]
     }
   ],
-  "closing": "재하에게도 위험과 상관없는 아주 사소한 즐거움이 있었다."
+  "closing": "재하에게도 위험과 상관없는 시간이 생겼다. 그리고 그 시간에 {name}{이} 자연스럽게 포함되기 시작했다."
 }

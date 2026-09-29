@@ -1,0 +1,53 @@
+{
+  "id": "char_012_casual_15",
+  "kind": "casual",
+  "title": "같은 시각의 창들",
+  "minAffection": 50,
+  "maxAffection": 95,
+  "defaultPortrait": "main",
+  "completionAffection": 8,
+  "repeatable": false,
+  "placeIds": [
+    "rooftop"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이현은 도시의 수많은 창문을 보며 하나씩 시간을 세는 듯했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "이상하죠. 저 안의 사람들은 모두 같은 밤을 보내는데, 체감하는 시간은 전부 다를 겁니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 지금 이 순간은 어떠냐고 묻자 그의 시선이 천천히 돌아왔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "지금은... 꽤 정확한 편입니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그는 오래된 손목시계를 가리지 않았다. 바늘은 조용히 움직이고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "당신이 같이 보고 있으니까요.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "같은 시간을 함께 보고 있다는 사실이 이현에게는 특별한 확인처럼 들렸다."
+}

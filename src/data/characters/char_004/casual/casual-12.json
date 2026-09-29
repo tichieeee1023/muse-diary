@@ -1,0 +1,53 @@
+{
+  "id": "char_004_casual_12",
+  "kind": "casual",
+  "title": "달지 않은 골목",
+  "minAffection": 35,
+  "maxAffection": 90,
+  "defaultPortrait": "main",
+  "completionAffection": 8,
+  "repeatable": false,
+  "placeIds": [
+    "old-street"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "밤의 상가거리 끝에서 매운 국물 냄새가 올라왔다. 로운은 평소보다 훨씬 빠르게 고개를 돌렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "저건 가야 합니다. 무조건.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "뜨거운 국물 앞에서는 디저트를 설명할 때보다 표정이 솔직했다. 네온 아래로 그의 그림자가 반 박자 늦게 의자를 따라 움직였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "왜 그렇게 봐요? 제 취향이 의외라서?",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 그림자 쪽을 보자 로운의 웃음이 아주 잠깐 멈췄다가 다시 돌아왔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "...오늘은 음식 얘기만 합시다. 이 집 진짜 맛있거든요.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "매운 국물보다 더 오래 남는 이상한 한 박자가 있었다."
+}

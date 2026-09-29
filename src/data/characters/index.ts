@@ -18,6 +18,8 @@ import c_char001_7 from './char_001/casual/casual-07.json'
 import c_char001_8 from './char_001/casual/casual-08.json'
 import c_char001_9 from './char_001/casual/casual-09.json'
 import c_char001_10 from './char_001/casual/casual-10.json'
+import c_char001_11 from './char_001/casual/casual-11.json'
+import c_char001_12 from './char_001/casual/casual-12.json'
 import p_char002 from './char_002/profile.json'
 import r_char002 from './char_002/route.json'
 import f_char002 from './char_002/first.json'
@@ -36,6 +38,10 @@ import c_char002_7 from './char_002/casual/casual-07.json'
 import c_char002_8 from './char_002/casual/casual-08.json'
 import c_char002_9 from './char_002/casual/casual-09.json'
 import c_char002_10 from './char_002/casual/casual-10.json'
+import c_char002_11 from './char_002/casual/casual-11.json'
+import c_char002_12 from './char_002/casual/casual-12.json'
+import c_char002_13 from './char_002/casual/casual-13.json'
+import c_char002_14 from './char_002/casual/casual-14.json'
 import p_char003 from './char_003/profile.json'
 import r_char003 from './char_003/route.json'
 import f_char003 from './char_003/first.json'
@@ -54,6 +60,9 @@ import c_char003_7 from './char_003/casual/casual-07.json'
 import c_char003_8 from './char_003/casual/casual-08.json'
 import c_char003_9 from './char_003/casual/casual-09.json'
 import c_char003_10 from './char_003/casual/casual-10.json'
+import c_char003_11 from './char_003/casual/casual-11.json'
+import c_char003_12 from './char_003/casual/casual-12.json'
+import c_char003_13 from './char_003/casual/casual-13.json'
 import p_char004 from './char_004/profile.json'
 import r_char004 from './char_004/route.json'
 import f_char004 from './char_004/first.json'
@@ -72,6 +81,10 @@ import c_char004_7 from './char_004/casual/casual-07.json'
 import c_char004_8 from './char_004/casual/casual-08.json'
 import c_char004_9 from './char_004/casual/casual-09.json'
 import c_char004_10 from './char_004/casual/casual-10.json'
+import c_char004_11 from './char_004/casual/casual-11.json'
+import c_char004_12 from './char_004/casual/casual-12.json'
+import c_char004_13 from './char_004/casual/casual-13.json'
+import c_char004_14 from './char_004/casual/casual-14.json'
 import p_char005 from './char_005/profile.json'
 import r_char005 from './char_005/route.json'
 import f_char005 from './char_005/first.json'
@@ -90,6 +103,10 @@ import c_char005_7 from './char_005/casual/casual-07.json'
 import c_char005_8 from './char_005/casual/casual-08.json'
 import c_char005_9 from './char_005/casual/casual-09.json'
 import c_char005_10 from './char_005/casual/casual-10.json'
+import c_char005_11 from './char_005/casual/casual-11.json'
+import c_char005_12 from './char_005/casual/casual-12.json'
+import c_char005_13 from './char_005/casual/casual-13.json'
+import c_char005_14 from './char_005/casual/casual-14.json'
 import p_char006 from './char_006/profile.json'
 import r_char006 from './char_006/route.json'
 import f_char006 from './char_006/first.json'
@@ -108,6 +125,8 @@ import c_char006_7 from './char_006/casual/casual-07.json'
 import c_char006_8 from './char_006/casual/casual-08.json'
 import c_char006_9 from './char_006/casual/casual-09.json'
 import c_char006_10 from './char_006/casual/casual-10.json'
+import c_char006_11 from './char_006/casual/casual-11.json'
+import c_char006_12 from './char_006/casual/casual-12.json'
 import p_char007 from './char_007/profile.json'
 import r_char007 from './char_007/route.json'
 import f_char007 from './char_007/first.json'
@@ -126,6 +145,11 @@ import c_char007_7 from './char_007/casual/casual-07.json'
 import c_char007_8 from './char_007/casual/casual-08.json'
 import c_char007_9 from './char_007/casual/casual-09.json'
 import c_char007_10 from './char_007/casual/casual-10.json'
+import c_char007_11 from './char_007/casual/casual-11.json'
+import c_char007_12 from './char_007/casual/casual-12.json'
+import c_char007_13 from './char_007/casual/casual-13.json'
+import c_char007_14 from './char_007/casual/casual-14.json'
+import c_char007_15 from './char_007/casual/casual-15.json'
 import p_char008 from './char_008/profile.json'
 import r_char008 from './char_008/route.json'
 import f_char008 from './char_008/first.json'
@@ -144,6 +168,10 @@ import c_char008_7 from './char_008/casual/casual-07.json'
 import c_char008_8 from './char_008/casual/casual-08.json'
 import c_char008_9 from './char_008/casual/casual-09.json'
 import c_char008_10 from './char_008/casual/casual-10.json'
+import c_char008_11 from './char_008/casual/casual-11.json'
+import c_char008_12 from './char_008/casual/casual-12.json'
+import c_char008_13 from './char_008/casual/casual-13.json'
+import c_char008_14 from './char_008/casual/casual-14.json'
 import p_char009 from './char_009/profile.json'
 import r_char009 from './char_009/route.json'
 import f_char009 from './char_009/first.json'
@@ -162,6 +190,9 @@ import c_char009_7 from './char_009/casual/casual-07.json'
 import c_char009_8 from './char_009/casual/casual-08.json'
 import c_char009_9 from './char_009/casual/casual-09.json'
 import c_char009_10 from './char_009/casual/casual-10.json'
+import c_char009_11 from './char_009/casual/casual-11.json'
+import c_char009_12 from './char_009/casual/casual-12.json'
+import c_char009_13 from './char_009/casual/casual-13.json'
 import p_char010 from './char_010/profile.json'
 import r_char010 from './char_010/route.json'
 import f_char010 from './char_010/first.json'
@@ -180,6 +211,10 @@ import c_char010_7 from './char_010/casual/casual-07.json'
 import c_char010_8 from './char_010/casual/casual-08.json'
 import c_char010_9 from './char_010/casual/casual-09.json'
 import c_char010_10 from './char_010/casual/casual-10.json'
+import c_char010_11 from './char_010/casual/casual-11.json'
+import c_char010_12 from './char_010/casual/casual-12.json'
+import c_char010_13 from './char_010/casual/casual-13.json'
+import c_char010_14 from './char_010/casual/casual-14.json'
 import p_char011 from './char_011/profile.json'
 import r_char011 from './char_011/route.json'
 import f_char011 from './char_011/first.json'
@@ -198,6 +233,8 @@ import c_char011_7 from './char_011/casual/casual-07.json'
 import c_char011_8 from './char_011/casual/casual-08.json'
 import c_char011_9 from './char_011/casual/casual-09.json'
 import c_char011_10 from './char_011/casual/casual-10.json'
+import c_char011_11 from './char_011/casual/casual-11.json'
+import c_char011_12 from './char_011/casual/casual-12.json'
 import p_char012 from './char_012/profile.json'
 import r_char012 from './char_012/route.json'
 import f_char012 from './char_012/first.json'
@@ -216,21 +253,25 @@ import c_char012_7 from './char_012/casual/casual-07.json'
 import c_char012_8 from './char_012/casual/casual-08.json'
 import c_char012_9 from './char_012/casual/casual-09.json'
 import c_char012_10 from './char_012/casual/casual-10.json'
+import c_char012_11 from './char_012/casual/casual-11.json'
+import c_char012_12 from './char_012/casual/casual-12.json'
+import c_char012_13 from './char_012/casual/casual-13.json'
+import c_char012_14 from './char_012/casual/casual-14.json'
+import c_char012_15 from './char_012/casual/casual-15.json'
 
-export interface CharacterStoryBundle { profile: CharacterRouteProfile; route: { characterId: string; storyThresholds: number[]; designRules: string[]; mainEventTitles: string[]; casualEventCount: number }; first: StoryEpisode; story: StoryEpisode[]; casual: StoryEpisode[] }
-export const characterStories: Record<string, CharacterStoryBundle> = {
-  'char_001': { profile: p_char001 as CharacterRouteProfile, route: r_char001, first: f_char001 as StoryEpisode, story: [s_char001_20, s_char001_40, s_char001_60, s_char001_80, s_char001_100] as StoryEpisode[], casual: [c_char001_1, c_char001_2, c_char001_3, c_char001_4, c_char001_5, c_char001_6, c_char001_7, c_char001_8, c_char001_9, c_char001_10] as StoryEpisode[] },
-  'char_002': { profile: p_char002 as CharacterRouteProfile, route: r_char002, first: f_char002 as StoryEpisode, story: [s_char002_20, s_char002_40, s_char002_60, s_char002_80, s_char002_100] as StoryEpisode[], casual: [c_char002_1, c_char002_2, c_char002_3, c_char002_4, c_char002_5, c_char002_6, c_char002_7, c_char002_8, c_char002_9, c_char002_10] as StoryEpisode[] },
-  'char_003': { profile: p_char003 as CharacterRouteProfile, route: r_char003, first: f_char003 as StoryEpisode, story: [s_char003_20, s_char003_40, s_char003_60, s_char003_80, s_char003_100] as StoryEpisode[], casual: [c_char003_1, c_char003_2, c_char003_3, c_char003_4, c_char003_5, c_char003_6, c_char003_7, c_char003_8, c_char003_9, c_char003_10] as StoryEpisode[] },
-  'char_004': { profile: p_char004 as CharacterRouteProfile, route: r_char004, first: f_char004 as StoryEpisode, story: [s_char004_20, s_char004_40, s_char004_60, s_char004_80, s_char004_100] as StoryEpisode[], casual: [c_char004_1, c_char004_2, c_char004_3, c_char004_4, c_char004_5, c_char004_6, c_char004_7, c_char004_8, c_char004_9, c_char004_10] as StoryEpisode[] },
-  'char_005': { profile: p_char005 as CharacterRouteProfile, route: r_char005, first: f_char005 as StoryEpisode, story: [s_char005_20, s_char005_40, s_char005_60, s_char005_80, s_char005_100] as StoryEpisode[], casual: [c_char005_1, c_char005_2, c_char005_3, c_char005_4, c_char005_5, c_char005_6, c_char005_7, c_char005_8, c_char005_9, c_char005_10] as StoryEpisode[] },
-  'char_006': { profile: p_char006 as CharacterRouteProfile, route: r_char006, first: f_char006 as StoryEpisode, story: [s_char006_20, s_char006_40, s_char006_60, s_char006_80, s_char006_100] as StoryEpisode[], casual: [c_char006_1, c_char006_2, c_char006_3, c_char006_4, c_char006_5, c_char006_6, c_char006_7, c_char006_8, c_char006_9, c_char006_10] as StoryEpisode[] },
-  'char_007': { profile: p_char007 as CharacterRouteProfile, route: r_char007, first: f_char007 as StoryEpisode, story: [s_char007_20, s_char007_40, s_char007_60, s_char007_80, s_char007_100] as StoryEpisode[], casual: [c_char007_1, c_char007_2, c_char007_3, c_char007_4, c_char007_5, c_char007_6, c_char007_7, c_char007_8, c_char007_9, c_char007_10] as StoryEpisode[] },
-  'char_008': { profile: p_char008 as CharacterRouteProfile, route: r_char008, first: f_char008 as StoryEpisode, story: [s_char008_20, s_char008_40, s_char008_60, s_char008_80, s_char008_100] as StoryEpisode[], casual: [c_char008_1, c_char008_2, c_char008_3, c_char008_4, c_char008_5, c_char008_6, c_char008_7, c_char008_8, c_char008_9, c_char008_10] as StoryEpisode[] },
-  'char_009': { profile: p_char009 as CharacterRouteProfile, route: r_char009, first: f_char009 as StoryEpisode, story: [s_char009_20, s_char009_40, s_char009_60, s_char009_80, s_char009_100] as StoryEpisode[], casual: [c_char009_1, c_char009_2, c_char009_3, c_char009_4, c_char009_5, c_char009_6, c_char009_7, c_char009_8, c_char009_9, c_char009_10] as StoryEpisode[] },
-  'char_010': { profile: p_char010 as CharacterRouteProfile, route: r_char010, first: f_char010 as StoryEpisode, story: [s_char010_20, s_char010_40, s_char010_60, s_char010_80, s_char010_100] as StoryEpisode[], casual: [c_char010_1, c_char010_2, c_char010_3, c_char010_4, c_char010_5, c_char010_6, c_char010_7, c_char010_8, c_char010_9, c_char010_10] as StoryEpisode[] },
-  'char_011': { profile: p_char011 as CharacterRouteProfile, route: r_char011, first: f_char011 as StoryEpisode, story: [s_char011_20, s_char011_40, s_char011_60, s_char011_80, s_char011_100] as StoryEpisode[], casual: [c_char011_1, c_char011_2, c_char011_3, c_char011_4, c_char011_5, c_char011_6, c_char011_7, c_char011_8, c_char011_9, c_char011_10] as StoryEpisode[] },
-  'char_012': { profile: p_char012 as CharacterRouteProfile, route: r_char012, first: f_char012 as StoryEpisode, story: [s_char012_20, s_char012_40, s_char012_60, s_char012_80, s_char012_100] as StoryEpisode[], casual: [c_char012_1, c_char012_2, c_char012_3, c_char012_4, c_char012_5, c_char012_6, c_char012_7, c_char012_8, c_char012_9, c_char012_10] as StoryEpisode[] },
+export const characterStories = {
+  'char_001': { profile: p_char001 as CharacterRouteProfile, route: r_char001, first: f_char001 as StoryEpisode, story: [s_char001_20, s_char001_40, s_char001_60, s_char001_80, s_char001_100] as StoryEpisode[], casual: [c_char001_1, c_char001_2, c_char001_3, c_char001_4, c_char001_5, c_char001_6, c_char001_7, c_char001_8, c_char001_9, c_char001_10, c_char001_11, c_char001_12] as StoryEpisode[] },
+  'char_002': { profile: p_char002 as CharacterRouteProfile, route: r_char002, first: f_char002 as StoryEpisode, story: [s_char002_20, s_char002_40, s_char002_60, s_char002_80, s_char002_100] as StoryEpisode[], casual: [c_char002_1, c_char002_2, c_char002_3, c_char002_4, c_char002_5, c_char002_6, c_char002_7, c_char002_8, c_char002_9, c_char002_10, c_char002_11, c_char002_12, c_char002_13, c_char002_14] as StoryEpisode[] },
+  'char_003': { profile: p_char003 as CharacterRouteProfile, route: r_char003, first: f_char003 as StoryEpisode, story: [s_char003_20, s_char003_40, s_char003_60, s_char003_80, s_char003_100] as StoryEpisode[], casual: [c_char003_1, c_char003_2, c_char003_3, c_char003_4, c_char003_5, c_char003_6, c_char003_7, c_char003_8, c_char003_9, c_char003_10, c_char003_11, c_char003_12, c_char003_13] as StoryEpisode[] },
+  'char_004': { profile: p_char004 as CharacterRouteProfile, route: r_char004, first: f_char004 as StoryEpisode, story: [s_char004_20, s_char004_40, s_char004_60, s_char004_80, s_char004_100] as StoryEpisode[], casual: [c_char004_1, c_char004_2, c_char004_3, c_char004_4, c_char004_5, c_char004_6, c_char004_7, c_char004_8, c_char004_9, c_char004_10, c_char004_11, c_char004_12, c_char004_13, c_char004_14] as StoryEpisode[] },
+  'char_005': { profile: p_char005 as CharacterRouteProfile, route: r_char005, first: f_char005 as StoryEpisode, story: [s_char005_20, s_char005_40, s_char005_60, s_char005_80, s_char005_100] as StoryEpisode[], casual: [c_char005_1, c_char005_2, c_char005_3, c_char005_4, c_char005_5, c_char005_6, c_char005_7, c_char005_8, c_char005_9, c_char005_10, c_char005_11, c_char005_12, c_char005_13, c_char005_14] as StoryEpisode[] },
+  'char_006': { profile: p_char006 as CharacterRouteProfile, route: r_char006, first: f_char006 as StoryEpisode, story: [s_char006_20, s_char006_40, s_char006_60, s_char006_80, s_char006_100] as StoryEpisode[], casual: [c_char006_1, c_char006_2, c_char006_3, c_char006_4, c_char006_5, c_char006_6, c_char006_7, c_char006_8, c_char006_9, c_char006_10, c_char006_11, c_char006_12] as StoryEpisode[] },
+  'char_007': { profile: p_char007 as CharacterRouteProfile, route: r_char007, first: f_char007 as StoryEpisode, story: [s_char007_20, s_char007_40, s_char007_60, s_char007_80, s_char007_100] as StoryEpisode[], casual: [c_char007_1, c_char007_2, c_char007_3, c_char007_4, c_char007_5, c_char007_6, c_char007_7, c_char007_8, c_char007_9, c_char007_10, c_char007_11, c_char007_12, c_char007_13, c_char007_14, c_char007_15] as StoryEpisode[] },
+  'char_008': { profile: p_char008 as CharacterRouteProfile, route: r_char008, first: f_char008 as StoryEpisode, story: [s_char008_20, s_char008_40, s_char008_60, s_char008_80, s_char008_100] as StoryEpisode[], casual: [c_char008_1, c_char008_2, c_char008_3, c_char008_4, c_char008_5, c_char008_6, c_char008_7, c_char008_8, c_char008_9, c_char008_10, c_char008_11, c_char008_12, c_char008_13, c_char008_14] as StoryEpisode[] },
+  'char_009': { profile: p_char009 as CharacterRouteProfile, route: r_char009, first: f_char009 as StoryEpisode, story: [s_char009_20, s_char009_40, s_char009_60, s_char009_80, s_char009_100] as StoryEpisode[], casual: [c_char009_1, c_char009_2, c_char009_3, c_char009_4, c_char009_5, c_char009_6, c_char009_7, c_char009_8, c_char009_9, c_char009_10, c_char009_11, c_char009_12, c_char009_13] as StoryEpisode[] },
+  'char_010': { profile: p_char010 as CharacterRouteProfile, route: r_char010, first: f_char010 as StoryEpisode, story: [s_char010_20, s_char010_40, s_char010_60, s_char010_80, s_char010_100] as StoryEpisode[], casual: [c_char010_1, c_char010_2, c_char010_3, c_char010_4, c_char010_5, c_char010_6, c_char010_7, c_char010_8, c_char010_9, c_char010_10, c_char010_11, c_char010_12, c_char010_13, c_char010_14] as StoryEpisode[] },
+  'char_011': { profile: p_char011 as CharacterRouteProfile, route: r_char011, first: f_char011 as StoryEpisode, story: [s_char011_20, s_char011_40, s_char011_60, s_char011_80, s_char011_100] as StoryEpisode[], casual: [c_char011_1, c_char011_2, c_char011_3, c_char011_4, c_char011_5, c_char011_6, c_char011_7, c_char011_8, c_char011_9, c_char011_10, c_char011_11, c_char011_12] as StoryEpisode[] },
+  'char_012': { profile: p_char012 as CharacterRouteProfile, route: r_char012, first: f_char012 as StoryEpisode, story: [s_char012_20, s_char012_40, s_char012_60, s_char012_80, s_char012_100] as StoryEpisode[], casual: [c_char012_1, c_char012_2, c_char012_3, c_char012_4, c_char012_5, c_char012_6, c_char012_7, c_char012_8, c_char012_9, c_char012_10, c_char012_11, c_char012_12, c_char012_13, c_char012_14, c_char012_15] as StoryEpisode[] },
 }
-export function getCharacterStoryBundle(characterId: string) { return characterStories[characterId] ?? null }
-export function getCharacterRouteProfile(characterId: string) { return characterStories[characterId]?.profile ?? null }
+export function getCharacterStoryBundle(characterId: string) { return characterStories[characterId as keyof typeof characterStories] ?? null }
+export function getCharacterRouteProfile(characterId: string) { return characterStories[characterId as keyof typeof characterStories]?.profile ?? null }

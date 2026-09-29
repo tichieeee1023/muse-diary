@@ -3,31 +3,35 @@
   "kind": "story",
   "title": "버리지 않는 사람",
   "threshold": 40,
-  "purpose": "갭모에와 태겸의 가치관을 메인 서사에 연결한다. 지우는 직업과 남겨두는 성향의 모순을 보여준다.",
+  "purpose": "낡은 물건과 작은 화분을 통해 태겸의 갭모에를 보여주고, 흔적을 지우는 직업과 흔적을 남기려는 개인적 성향의 모순을 관계의 단서로 만든다.",
   "defaultPortrait": "main",
-  "completionAffection": 3,
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "태겸의 작업실 한쪽에는 낡은 의자, 고장 난 손전등, 오래된 작업복이 차곡차곡 쌓여 있었다."
+          "text": "비가 잠깐 그친 날, 태겸은 작업 차량 뒤편을 정리하고 있었다. 청소 도구 사이에 어울리지 않게 작은 화분들이 줄지어 놓여 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "강태겸",
-          "text": "쓸모없어 보입니까?",
+          "text": "건드리셔도 됩니다. 저쪽 선인장만 빼고요.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "그는 버릴 물건을 고르라는 말에 한참 대답하지 않았다."
+          "text": "잎이 두 장뿐인 화분, 금이 간 토분, 줄기가 한쪽으로 기운 허브까지. 상태는 제각각인데 전부 정성스럽게 이름표가 붙어 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "강태겸",
-          "text": "흔적은 생각보다 쉽게 없어집니다. 한 번 없어지면 다시 만들 수 없는 것도 많고요.",
-          "portrait": "hmm"
+          "text": "현장에서 버려질 뻔한 것들입니다. 살아 있길래 가져왔습니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "무서운 얼룩을 맨손처럼 다루던 사람에게서 나온 말치고는 지나치게 소박했다."
         }
       ]
     },
@@ -35,13 +39,29 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "그가 작은 금속 명찰 하나를 손바닥에 올렸다. 이름 부분은 심하게 긁혀 읽을 수 없었다."
+          "text": "차량 안쪽에는 더 오래된 물건들이 있었다. 고장 난 손전등, 해진 작업복, 글자가 거의 지워진 명찰 하나."
         },
         {
           "type": "dialogue",
           "speaker": "강태겸",
-          "text": "그래서 저는… 가능한 건 남겨두는 편입니다.",
-          "portrait": "troubled"
+          "text": "정리하라고 하면 다들 저걸 먼저 버리라고 합니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "명찰의 이름 부분은 긁혀 읽을 수 없었다. 태겸은 그 물건만큼은 손에 들지 않고 눈으로만 확인했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "흔적은 생각보다 쉽게 없어집니다. 없애는 건 제가 잘 압니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "그래서 없애지 않아도 되는 것까지 없애고 싶지는 않습니다.",
+          "portrait": "main"
         }
       ],
       "choice": {
@@ -49,49 +69,101 @@
         "options": [
           {
             "id": "a",
-            "text": "“그 명찰도 중요한 거예요?”",
-            "affection": 5,
+            "text": "“그 명찰도 남겨야 하는 이유가 있어요?”",
+            "affection": 6,
+            "memoryKey": "taegyeom_40_tag",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "강태겸",
-                "text": "네. 아직은 설명하기 어렵지만.",
+                "text": "있습니다.",
                 "portrait": "hmm"
+              },
+              {
+                "type": "narration",
+                "text": "짧은 대답 뒤에 긴 침묵이 붙었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "강태겸",
+                "text": "아직 말할 수 있을 만큼 정리가 되지는 않았습니다. 그래도 언젠가는 말씀드리겠습니다.",
+                "portrait": "troubled"
               }
-            ],
-            "memoryKey": "taegyeom_40_tag"
+            ]
           },
           {
             "id": "b",
-            "text": "“남겨두는 것도 일이네요.”",
-            "affection": 6,
+            "text": "“남겨두는 것도 태겸 씨가 하는 일 같네요.”",
+            "affection": 7,
+            "memoryKey": "taegyeom_40_keep",
             "response": [
+              {
+                "type": "narration",
+                "text": "태겸이 예상하지 못한 말을 들은 사람처럼 눈을 한 번 깜빡였다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "강태겸",
-                "text": "그렇게 생각해본 적은 없는데… 맞을지도 모르겠습니다.",
+                "text": "지우는 것만 일이라고 생각했는데… 그럴 수도 있겠군요.",
                 "portrait": "smile"
               }
-            ],
-            "memoryKey": "taegyeom_40_keep"
+            ]
           },
           {
             "id": "c",
-            "text": "“화분도 그래서 많은 거예요?”",
-            "affection": 4,
+            "text": "“화분은 이름까지 붙여줘요?”",
+            "affection": 5,
+            "memoryKey": "taegyeom_40_plants",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "강태겸",
-                "text": "그건 그냥 살아 있어서입니다.",
+                "text": "구분하려고 붙인 겁니다.",
                 "portrait": "troubled"
+              },
+              {
+                "type": "narration",
+                "text": "화분 하나의 이름표에는 '작은 잎 셋'이라고 적혀 있었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "강태겸",
+                "text": "…작명은 제 담당이 아닙니다.",
+                "portrait": "main"
               }
-            ],
-            "memoryKey": "taegyeom_40_plants"
+            ]
           }
         ]
       }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "헤어지기 전 태겸은 가장 작은 화분 하나를 창가 쪽으로 옮겼다. 아까보다 햇빛이 조금 더 드는 자리였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "사람이든 물건이든, 남아 있을 수 있으면 남는 편이 낫습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그는 말하고 나서 스스로 너무 많은 말을 했다는 듯 장갑 끝을 당겼다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "오늘 본 건… 굳이 잊지 않으셔도 됩니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "그 말은 지난번의 '잊는 게 좋습니다'와 정반대였다."
+        }
+      ]
     }
   ],
-  "closing": "태겸에게 남긴다는 건 취향이 아니라 거의 원칙에 가까웠다."
+  "closing": "태겸에게 남겨둔다는 건 단순한 취향이 아니었다. 그가 무엇을 지우고 무엇을 지키는 사람인지 조금씩 보이기 시작했다."
 }

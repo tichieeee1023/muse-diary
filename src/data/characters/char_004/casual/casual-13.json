@@ -1,0 +1,53 @@
+{
+  "id": "char_004_casual_13",
+  "kind": "casual",
+  "title": "솜사탕은 관상용",
+  "minAffection": 0,
+  "maxAffection": 45,
+  "defaultPortrait": "main",
+  "completionAffection": 7,
+  "repeatable": false,
+  "placeIds": [
+    "night-market"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "야시장 한쪽에서 로운이 커다란 솜사탕을 들고 심각한 표정을 짓고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "예쁘긴 한데요. 먹고 싶지는 않아요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 파티시에가 단 걸 싫어하는 게 아직도 이상하다고 하자 그가 솜사탕을 빙글 돌렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "만드는 거랑 먹는 건 완전히 다른 취미예요. 저는 매운 쪽이 더 정직해서 좋아요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "결국 솜사탕은 지나가던 아이에게 건네고, 로운의 손에는 빨간 양념 꼬치가 남았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "이쪽이 훨씬 제 취향이네요.",
+          "portrait": "main"
+        }
+      ]
+    }
+  ],
+  "closing": "달콤한 얼굴로 가장 매운 노점을 찾는 사람이 야시장과 묘하게 잘 어울렸다."
+}

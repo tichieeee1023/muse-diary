@@ -1,13 +1,18 @@
 {
   "id": "char_005_casual_03",
   "kind": "casual",
-  "times": ["밤"],
+  "times": [
+    "밤"
+  ],
   "title": "야간 간식",
   "minAffection": 10,
   "maxAffection": 59,
   "defaultPortrait": "main",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
+  "placeIds": [
+    "convenience"
+  ],
   "sections": [
     {
       "blocks": [

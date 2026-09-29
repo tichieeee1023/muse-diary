@@ -1,0 +1,53 @@
+{
+  "id": "char_003_casual_12",
+  "kind": "casual",
+  "title": "시간표 없는 저녁",
+  "minAffection": 30,
+  "maxAffection": 80,
+  "defaultPortrait": "main",
+  "completionAffection": 8,
+  "repeatable": false,
+  "placeIds": [
+    "convenience"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "편의점 창가에서 해준은 컵라면의 조리 시간을 확인하다가 문득 웃었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "이것까지 시간을 보고 있네요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "그는 휴대전화를 뒤집어 놓고 타이머를 켜지 않았다. 대신 김이 오르는 컵을 가만히 바라본다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "오늘은 조금 늦어도 되겠습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 정말 괜찮냐고 묻자 그가 잠시 생각한 뒤 고개를 끄덕였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "네. 내일 첫 운행은 제 담당이 아닙니다.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "몇 분쯤 어긋나도 아무 일도 일어나지 않는 저녁이었다."
+}

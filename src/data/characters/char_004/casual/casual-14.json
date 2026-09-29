@@ -1,0 +1,53 @@
+{
+  "id": "char_004_casual_14",
+  "kind": "casual",
+  "title": "사람이 남긴 온도",
+  "minAffection": 45,
+  "maxAffection": 90,
+  "defaultPortrait": "main",
+  "completionAffection": 8,
+  "repeatable": false,
+  "placeIds": [
+    "night-market"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "사람이 붐비는 야시장에서 로운은 음식보다 지나가는 사람들의 표정을 오래 보고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "여긴 감정 냄새가 너무 섞여요. 신난 사람, 지친 사람, 싸운 사람... 다 같이 지나가니까.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 그럼 힘들지 않느냐고 묻자 그는 잠시 생각하다 고개를 저었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "예전엔 구분하려고 했는데, 요즘은 그냥 두는 연습 중이에요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그가 시선을 거두고 {name}에게 따뜻한 어묵 국물 컵을 건넸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "이로운",
+          "text": "당신 기분까지 맞히는 건 오늘은 쉬려고요. 직접 말해줘요.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "남의 감정을 읽는 대신 묻는 쪽을 선택한 밤이었다."
+}

@@ -5,7 +5,7 @@
   "minAffection": 30,
   "maxAffection": 79,
   "defaultPortrait": "troubled",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
   "sections": [
     {

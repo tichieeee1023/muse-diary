@@ -1,12 +1,18 @@
 {
   "id": "char_010_casual_07",
   "kind": "casual",
+  "times": [
+    "밤"
+  ],
   "title": "보호받는 쪽",
   "minAffection": 60,
   "maxAffection": 99,
   "defaultPortrait": "troubled",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
+  "placeIds": [
+    "mall"
+  ],
   "sections": [
     {
       "blocks": [

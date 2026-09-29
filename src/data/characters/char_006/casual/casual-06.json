@@ -1,12 +1,18 @@
 {
   "id": "char_006_casual_06",
   "kind": "casual",
+  "times": [
+    "낮"
+  ],
   "title": "도시 안쪽",
   "minAffection": 40,
   "maxAffection": 89,
   "defaultPortrait": "troubled",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
+  "placeIds": [
+    "mall"
+  ],
   "sections": [
     {
       "blocks": [

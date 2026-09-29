@@ -3,99 +3,224 @@
   "kind": "story",
   "title": "낡은 매듭",
   "threshold": 60,
-  "purpose": "유물이 과거 인격과 기억을 강하게 깨우는 장면. 현재와 과거의 경계가 흔들리는 것을 보여준다.",
+  "purpose": "특정 유물이 과거의 기억을 강하게 깨우며 휘람의 현재와 과거 인격의 경계가 흔들린다. 주인공은 어느 한쪽을 정답으로 정해주기보다 지금의 선택을 붙잡게 한다.",
   "defaultPortrait": "hmm",
-  "completionAffection": 3,
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "박물관 특별전에서 휘람이 낡은 검술 매듭 앞에 멈춰 섰다."
+          "text": "며칠 뒤 휘람이 먼저 연락해왔다. 시립 전시관에 들어온 유물 하나를 같이 봐달라는 부탁이었다."
         },
         {
           "type": "narration",
-          "text": "얼굴에서 현대의 표정이 사라졌다."
+          "text": "작은 유리 진열장 안에는 빛이 거의 빠진 낡은 검술 매듭이 놓여 있었다. 휘람은 몇 걸음 전부터 말을 잃었다."
         },
         {
           "type": "dialogue",
           "speaker": "김휘람",
-          "text": "이건… 저기에 있을 물건이 아닌데.",
+          "text": "이건 여기 있을 물건이 아닙니다.",
           "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "휘람의 손이 떨렸다. 그는 전시장을 보지 않고 아주 먼 곳을 보는 사람처럼 서 있었다."
+          "text": "그의 손이 유리 위에 닿기 직전 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "매듭을 두 번 감고 마지막에 안쪽으로 꺾었어요. 비 오던 날이라 끈이 잘 미끄러졌고…"
+        },
+        {
+          "type": "narration",
+          "text": "휘람의 눈이 흔들렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "제가 했습니다. 아니… 그 사람이.",
+          "portrait": "troubled"
+        }
+      ],
+      "choice": {
+        "id": "aff_60_choice_1",
+        "options": [
+          {
+            "id": "a",
+            "text": "“천천히 해요. 지금 여기부터 봐요.”",
+            "affection": 6,
+            "memoryKey": "hwiram_60_ground",
+            "response": [
+              {
+                "type": "narration",
+                "text": "{name}{이가} 전시장 바닥과 진열장 번호를 하나씩 짚어주자 휘람의 호흡이 조금씩 돌아왔다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "김휘람",
+                "text": "네. 지금은 여기. 기억하겠습니다.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“손 잡아도 돼요?”",
+            "affection": 7,
+            "memoryKey": "hwiram_60_hand",
+            "response": [
+              {
+                "type": "narration",
+                "text": "휘람은 잠깐 놀랐지만 고개를 끄덕였다. 손끝의 떨림이 금방 멎지는 않았어도 혼자 버티지는 않았다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "김휘람",
+                "text": "…놓지 말아주세요. 잠깐만.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“밖에 나갈까요?”",
+            "affection": 6,
+            "memoryKey": "hwiram_60_exit",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "김휘람",
+                "text": "아뇨. 도망가면 또 과거가 이긴 것 같을 것 같습니다. 조금만 같이 있어주세요.",
+                "portrait": "hmm"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "전시관 벤치에 앉은 뒤에도 휘람은 한동안 자기 손을 바라봤다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "가끔은 제가 기억을 가진 건지, 기억이 저를 가지고 있는 건지 모르겠습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "옛날 이름으로 불리면 돌아볼 것 같고, 처음 보는 물건을 그리워하고… 그런데 학교에 가면 급식 메뉴 가지고 친구들이랑 떠들어요. 둘 다 너무 진짜라서요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "그는 웃으려다 실패했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "어느 쪽이 진짜냐고 물으면, 전 아직 대답을 못 하겠습니다."
         }
       ]
     },
     {
       "blocks": [
         {
-          "type": "dialogue",
-          "speaker": "김휘람",
-          "text": "제가 그때 이걸 묶었습니다. 아니… 그 사람이.",
-          "portrait": "troubled"
-        },
-        {
           "type": "narration",
-          "text": "주어가 두 번 바뀌었다."
+          "text": "{name}{이가} 잠시 생각하는 동안 휘람은 재촉하지 않았다. 이 질문만큼은 누구에게도 쉽게 던지지 않았던 것 같았다."
         },
         {
           "type": "dialogue",
           "speaker": "김휘람",
-          "text": "저도 제가 누구인지 가끔 모르겠습니다.",
-          "portrait": "main"
+          "text": "당신은 어떻게 생각해요? 과거의 그 사람과 지금의 제가 다르면… 어느 쪽이 저입니까?",
+          "portrait": "hmm"
         }
       ],
       "choice": {
-        "id": "aff_60_choice",
+        "id": "aff_60_choice_2",
         "options": [
           {
             "id": "a",
-            "text": "“지금 내 앞에 있는 건 김휘람이에요.”",
-            "affection": 8,
+            "text": "“지금 내 앞에 있는 사람이 휘람이에요.”",
+            "affection": 7,
+            "memoryKey": "hwiram_60_now",
             "response": [
+              {
+                "type": "narration",
+                "text": "휘람이 눈을 내리깔았다가 아주 천천히 웃었다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "김휘람",
-                "text": "…그 말은 좀 반칙 같습니다. 듣고 싶었던 말이라.",
+                "text": "…그 말은 좀 반칙 같습니다. 제가 듣고 싶었던 말이라.",
                 "portrait": "troubled"
               }
-            ],
-            "memoryKey": "hwiram_60_now"
+            ]
           },
           {
             "id": "b",
-            "text": "“둘 다 휘람일 수도 있잖아요.”",
+            "text": "“둘 다 휘람의 일부일 수도 있죠.”",
             "affection": 7,
+            "memoryKey": "hwiram_60_both",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "김휘람",
-                "text": "둘 다라… 그건 생각 못 했네요.",
+                "text": "일부… 그러면 둘 중 하나를 지우지 않아도 되겠네요.",
                 "portrait": "hmm"
               }
-            ],
-            "memoryKey": "hwiram_60_both"
+            ]
           },
           {
             "id": "c",
-            "text": "“정답을 지금 정할 필요 없어요.”",
-            "affection": 7,
+            "text": "“정답은 휘람이 나중에 정해도 돼요.”",
+            "affection": 6,
+            "memoryKey": "hwiram_60_no_answer",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "김휘람",
-                "text": "시간을 좀 써도 되는 거군요.",
+                "text": "시간을 써도 되는 거군요. 이번에는.",
                 "portrait": "main"
               }
-            ],
-            "memoryKey": "hwiram_60_no_answer"
+            ]
           }
         ]
       }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "돌아가기 전 휘람은 다시 한 번 진열장을 봤다. 이번에는 손을 뻗지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "저 매듭을 기억합니다. 하지만 오늘 보고 싶다고 한 건 지금의 저예요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그가 휴대폰을 꺼내 전시 안내문을 찍었다. 초점이 흔들려 다시 한 번 찍었고, 이번에는 제대로 저장됐다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "사진은… 현재 기록이니까요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "오래된 기억 옆에 새로운 기록 하나가 생겼다."
+        }
+      ]
     }
   ],
-  "closing": "과거가 현재를 삼키는 게 아니라, 둘 사이에서 휘람이 버티고 있었다."
+  "closing": "휘람은 과거를 부정하지도, 과거에게 자신을 전부 내주지도 않았다. 낡은 매듭을 본 날의 기억 위에 오늘의 사진 한 장이 새로 쌓였다."
 }

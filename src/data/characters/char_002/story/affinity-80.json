@@ -3,15 +3,15 @@
   "kind": "story",
   "title": "버리지 못한 시안",
   "threshold": 80,
-  "defaultPortrait": "main",
-  "completionAffection": 2,
-  "purpose": "주원이 커리어 실패와 통제 집착의 원인을 처음 직접 말하고, {name} 앞에서 실패를 정리된 결과가 아닌 상처로 보여준다",
+  "purpose": "주원이 커리어 실패와 통제 집착의 원인을 숨김없이 말하고, 위로나 면죄부가 아니라 솔직한 평가까지 받아들이며 실패와 함께 다음 선택을 하는 법을 배운다.",
+  "defaultPortrait": "troubled",
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "주원의 집에서 오래된 파일을 정리하던 날, 유독 두꺼운 봉투 하나가 나왔다. 프로젝트명은 검은 펜으로 지워져 있었다."
+          "text": "주원의 집에서 자료를 찾던 날, 책장 뒤편에서 유독 두꺼운 검은 봉투 하나가 나왔다. 프로젝트명은 마커로 여러 번 덧칠해 지워져 있었다."
         },
         {
           "type": "dialogue",
@@ -21,13 +21,17 @@
         },
         {
           "type": "narration",
-          "text": "목소리는 차분했지만 손이 먼저 봉투를 가져갔다."
+          "text": "목소리는 평소처럼 차분했지만 손이 먼저 봉투를 가져갔다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
           "text": "제가 제일 아끼던 프로젝트였습니다. 그리고 제일 크게 실패했죠.",
           "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "그가 봉투를 다시 숨기지 않고 테이블 위에 올려두었다. 그 행동 자체가 설명을 계속하겠다는 뜻처럼 보였다."
         }
       ]
     },
@@ -35,84 +39,106 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "외부 사정만으로 망한 일이 아니었다. 주원은 자신의 판단을 끝까지 밀어붙였고, 팀원 한 명이 결국 회사를 떠났다."
+          "text": "브랜드 방향 변경과 일정 압박도 원인이었지만 그게 전부는 아니었다. 주원은 자신의 콘셉트를 끝까지 밀어붙였고, 반대 의견을 “완성도를 이해하지 못한 것”으로 취급했다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "틀릴 가능성을 인정하면 흔들릴 것 같았습니다.",
+          "text": "제가 틀릴 가능성을 인정하면 전체가 흔들릴 것 같았습니다.",
           "portrait": "main"
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "그래서 더 세게 밀었고요. 결과는 보시는 대로입니다.",
-          "portrait": "troubled"
+          "text": "그래서 더 세게 밀었습니다. 한 사람이 결국 팀을 나갔고요.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "그가 실패를 이렇게 평평한 문장으로 말할 수 있기까지 오래 걸렸을 것 같았다."
+          "text": "변명할 수도 있는 대목에서 그는 변명하지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "결과만 실패한 게 아닙니다. 과정에서도 제가 잘못했습니다.",
+          "portrait": "main"
         }
       ],
       "choice": {
-        "id": "a80",
+        "id": "joowon_80_choice_1",
         "options": [
           {
             "id": "a",
-            "text": "“그때의 잘못이 지금의 주원 씨 전부는 아니잖아요.”",
-            "affection": 7,
-            "memoryKey": "a80_not_whole_self",
+            "text": "“그때 주원 씨는 틀렸어요.”",
+            "affection": 9,
+            "memoryKey": "joowon_80_wrong",
             "response": [
               {
                 "type": "narration",
-                "text": "주원이 시선을 들었다."
+                "text": "주원의 눈이 가늘어졌다. 하지만 화난 표정은 아니었다."
               },
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "그 말을 믿기까지 시간이 좀 걸릴 것 같습니다.",
-                "portrait": "troubled"
+                "text": "네.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "짧고 명확한 인정이었다."
               },
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "그래도… 기억해두죠.",
+                "text": "이상하네요. 예전엔 그 말을 들으면 바로 반박했을 텐데.",
                 "portrait": "main"
               }
             ]
           },
           {
             "id": "b",
-            "text": "“그래서 모든 걸 미리 통제하려고 했구나.”",
-            "affection": 6,
-            "memoryKey": "a80_understood_control",
+            "text": "“그 잘못이 지금의 주원 씨 전부는 아니잖아요.”",
+            "affection": 8,
+            "memoryKey": "joowon_80_not_all",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "네. 알아차리셨네요.",
+                "text": "그 말로 없던 일이 되지는 않겠죠.",
                 "portrait": "main"
               },
               {
                 "type": "narration",
-                "text": "비꼬지 않았다. 인정하는 데 힘이 드는 얼굴이었다."
+                "text": "주원은 봉투를 내려다보다가 고개를 들었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "그래서 오히려 듣기 좋습니다. 면죄부처럼 들리지 않아서.",
+                "portrait": "troubled"
               }
             ]
           },
           {
             "id": "c",
-            "text": "“그 시안, 이제 버릴 수 있어요?”",
-            "affection": 5,
-            "memoryKey": "a80_throw_away",
+            "text": "“그래서 모든 변수를 미리 통제하려고 했구나.”",
+            "affection": 8,
+            "memoryKey": "joowon_80_control",
             "response": [
               {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "네. 같은 실패를 다시 안 보겠다는 핑계로요.",
+                "portrait": "main"
+              },
+              {
                 "type": "narration",
-                "text": "주원은 한참 봉투를 바라보다 고개를 저었다."
+                "text": "그가 씁쓸하게 웃었다."
               },
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "아직은요. 다만 숨겨둘 필요는 없을 것 같습니다.",
+                "text": "통제하면 실수하지 않을 줄 알았습니다. 사람까지 통제하게 될 줄은 몰랐고요.",
                 "portrait": "main"
               }
             ]
@@ -124,7 +150,132 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "주원은 봉투를 가장 깊은 서랍이 아니라 책장 한쪽에 꽂았다."
+          "text": "봉투 안에는 초기 시안부터 폐기안까지 모든 버전이 들어 있었다. 가장 마지막 장에는 팀원이 적은 수정 의견이 붉은 펜으로 남아 있었다."
+        },
+        {
+          "type": "narration",
+          "text": "주원은 그 문장을 손가락으로 따라가다 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "지금 보면 맞는 말이 많습니다. 그때는 한 줄도 듣기 싫었는데.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그는 파일 하나를 꺼내 {name} 앞에 놓았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "이 시안은 어떻게 보입니까? 이번에는 제 설명 없이.",
+          "portrait": "main"
+        }
+      ],
+      "choice": {
+        "id": "joowon_80_choice_2",
+        "options": [
+          {
+            "id": "a",
+            "text": "“예쁜데 너무 꽉 차 있어요.”",
+            "affection": 9,
+            "memoryKey": "joowon_80_critique_full",
+            "response": [
+              {
+                "type": "narration",
+                "text": "주원이 시안을 다시 봤다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "…맞네요. 숨 쉴 자리가 없습니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "예전 같으면 이유를 반박했을 사람이 메모지에 그대로 적었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "좋습니다. 그 의견 쓰죠.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“주원 씨답긴 한데, 지금의 주원 씨 같진 않아요.”",
+            "affection": 9,
+            "memoryKey": "joowon_80_past_self",
+            "response": [
+              {
+                "type": "narration",
+                "text": "주원이 한참 말이 없었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "그게 제일 아프네요.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "그리고 제일 정확한 것 같습니다.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“내가 평가해도 괜찮겠어요?”",
+            "affection": 8,
+            "memoryKey": "joowon_80_permission",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "제가 물었습니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "주원이 의자에 등을 기대며 시선을 맞췄다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "좋은 말만 하라는 뜻도 아닙니다. 이제 그 정도는 압니다.",
+                "portrait": "main"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "정리를 마친 뒤 주원은 검은 봉투를 가장 깊은 서랍에 넣지 않았다. 책장 한 칸을 비우고 실패한 프로젝트를 그대로 꽂았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "버리진 않을 겁니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "대신 숨겨둘 필요도 없을 것 같네요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그는 책장 한쪽의 빈 공간을 보다가 {name}에게 시선을 돌렸다."
         },
         {
           "type": "dialogue",
@@ -134,16 +285,20 @@
         },
         {
           "type": "narration",
-          "text": "그가 희미하게 웃었다."
+          "text": "입꼬리가 아주 조금 올라갔다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "대신 틀리면 좀 빨리 인정해보죠. 옆에서 지적해주시든가.",
+          "text": "틀리면 빨리 말해주세요. 제가 또 고집부리면 더 빨리.",
           "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "완벽주의자가 부탁한 것은 칭찬도 동의도 아니었다. 자신이 틀렸을 때 옆에서 말해줄 사람의 자리였다."
         }
       ]
     }
   ],
-  "closing": "주원은 실패를 없애는 대신, 실패가 있는 채로 다음 선택을 하는 법을 배우고 있었다."
+  "closing": "주원은 실패를 지우지 않았다. 대신 그것을 숨기지 않은 채, 다른 사람의 시선이 들어올 자리를 처음 만들었다."
 }

@@ -1,0 +1,53 @@
+{
+  "id": "char_006_casual_12",
+  "kind": "casual",
+  "title": "해파리 앞에서는",
+  "minAffection": 40,
+  "maxAffection": 90,
+  "defaultPortrait": "main",
+  "completionAffection": 8,
+  "repeatable": false,
+  "placeIds": [
+    "aquarium"
+  ],
+  "times": [
+    "낮"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "해파리 전시실의 푸른 빛 아래에서 시온은 평소답지 않게 오래 조용했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "여긴 아무도 빨리 안 움직이네요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 조용한 게 어색하냐고 묻자 그는 웃지 않고 유리 너머를 봤다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "아뇨. 가끔은 이런 것도 좋아요. 말 안 해도 되는 거.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "잠시 뒤 시온이 먼저 벤치 끝을 손으로 두드렸다. 물가가 아닌 곳에서 먼저 자리를 내주는 건 드문 일이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "조금 더 있다 갈래요? 오늘은 제가 안 재촉할게요.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "빠르게 흐르던 사람이 잠시 한곳에 머무르기로 했다."
+}

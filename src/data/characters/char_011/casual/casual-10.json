@@ -1,12 +1,14 @@
 {
   "id": "char_011_casual_10",
   "kind": "casual",
-  "times": ["낮"],
+  "times": [
+    "낮"
+  ],
   "title": "빛나지 않는 방",
   "minAffection": 0,
   "maxAffection": 100,
   "defaultPortrait": "main",
-  "completionAffection": 5,
+  "completionAffection": 8,
   "repeatable": true,
   "placeIds": [
     "aquarium"

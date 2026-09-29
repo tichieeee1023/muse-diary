@@ -5,8 +5,12 @@
   "minAffection": 30,
   "maxAffection": 79,
   "defaultPortrait": "main",
-  "completionAffection": 5,
+  "completionAffection": 8,
   "repeatable": false,
+  "placeIds": [
+    "riverside",
+    "subway"
+  ],
   "sections": [
     {
       "blocks": [

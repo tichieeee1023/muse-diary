@@ -5,8 +5,11 @@
   "minAffection": 60,
   "maxAffection": 99,
   "defaultPortrait": "main",
-  "completionAffection": 6,
+  "completionAffection": 9,
   "repeatable": true,
+  "placeIds": [
+    "mall"
+  ],
   "sections": [
     {
       "blocks": [

@@ -1,32 +1,32 @@
 {
   "id": "char_009_affinity_20",
   "kind": "story",
-  "title": "잘 듣는 사람",
+  "title": "차향이 식는 동안",
   "threshold": 20,
-  "purpose": "이겸의 전문성과 타인 중심적 태도를 보여주되 자신을 숨기는 문제를 드러낸다.",
+  "purpose": "이겸의 정중한 거리감과 남의 감정만 돌보는 습관을 동양적인 찻집 풍경 속에서 보여주고, 처음으로 자신의 취향을 말하게 한다.",
   "defaultPortrait": "main",
-  "completionAffection": 3,
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "우연히 상담실 정리 시간에 마주쳤다. 이겸은 하루 종일 남의 이야기를 들은 뒤에도 자세가 흐트러지지 않았다."
+          "text": "상담이 끝난 늦은 오후, 이겸은 오래된 상가거리 안쪽의 작은 찻집으로 {name}{을를} 데려갔다. 유리문 안쪽에는 나무 살창이 덧대어져 있었고, 낮은 선반 위 찻잔에서 희미한 김이 올랐다."
         },
         {
           "type": "dialogue",
           "speaker": "차이겸",
-          "text": "사람은 말하면서 자기가 뭘 느끼는지 알게 되기도 합니다.",
+          "text": "이곳은 조용해서 좋습니다. 차도 너무 뜨겁게 내지 않고요.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "{name}{이가} 그럼 이겸은 누구에게 말하냐고 묻자 처음으로 답이 늦었다."
+          "text": "그는 주전자 손잡이를 천으로 감싸 쥐고 먼저 {name}의 잔을 채웠다. 차향이 잔 가장자리에서 천천히 퍼졌다."
         },
         {
           "type": "dialogue",
           "speaker": "차이겸",
-          "text": "저는… 정리해서 처리하는 편입니다.",
+          "text": "오늘은 어떤 맛이 당깁니까. 떫은 쪽, 향이 가벼운 쪽, 단맛이 남는 쪽.",
           "portrait": "hmm"
         }
       ]
@@ -35,13 +35,27 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "“말한다”는 동사가 빠져 있었다."
+          "text": "추천을 들은 뒤 {name}{이가} 되물었다. 그러면 이겸은 어떤 차를 좋아하냐고."
         },
         {
           "type": "dialogue",
           "speaker": "차이겸",
-          "text": "문제가 있습니까?",
+          "text": "저는 아무거나 괜찮습니다.",
           "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "대답은 너무 빨랐다. 마치 오래 연습한 문장처럼."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "…지금 표정을 보니, 좋은 답은 아니었던 모양이군요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "창호 무늬 그림자가 그의 손등을 가로질렀다. 이겸은 잠시 잔을 내려다보다가, 이번에는 답을 고르듯 천천히 입을 열었다."
         }
       ],
       "choice": {
@@ -49,49 +63,77 @@
         "options": [
           {
             "id": "a",
-            "text": "“자기 얘기는 잘 안 하네요.”",
-            "affection": 6,
+            "text": "“아무거나 말고, 진짜 좋아하는 거요.”",
+            "affection": 7,
+            "memoryKey": "igyeom_20_preference",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "차이겸",
-                "text": "그런 편입니다. 필요성을 잘 못 느껴서.",
+                "text": "향이 오래 남지 않는 차를 좋아합니다. 마시고 난 뒤 입안이 조용해지는 종류요.",
                 "portrait": "hmm"
+              },
+              {
+                "type": "narration",
+                "text": "아주 작은 취향 하나를 말했을 뿐인데, 이겸은 이상할 만큼 신중한 얼굴이었다."
               }
-            ],
-            "memoryKey": "igyeom_20_self"
+            ]
           },
           {
             "id": "b",
-            "text": "“듣는 사람도 들을 사람이 필요해요.”",
-            "affection": 6,
+            "text": "“그럼 오늘은 제가 골라줄게요.”",
+            "affection": 7,
+            "memoryKey": "igyeom_20_choose_for_him",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "차이겸",
-                "text": "…기억해두겠습니다.",
+                "text": "남이 정해주는 건 익숙합니다만… 취향을 맡기는 건 조금 다르군요.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "차이겸",
+                "text": "그래도 오늘은 부탁드리겠습니다.",
                 "portrait": "main"
               }
-            ],
-            "memoryKey": "igyeom_20_listener"
+            ]
           },
           {
             "id": "c",
-            "text": "“괜찮다면 언젠가 들어줄게요.”",
-            "affection": 5,
+            "text": "“말하기 싫으면 천천히 생각해도 돼요.”",
+            "affection": 6,
+            "memoryKey": "igyeom_20_take_time",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "차이겸",
-                "text": "그 제안은 조금 낯설군요.",
+                "text": "…이상하군요. 재촉받지 않으니 오히려 말하고 싶어집니다.",
                 "portrait": "troubled"
               }
-            ],
-            "memoryKey": "igyeom_20_offer"
+            ]
           }
         ]
       }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "차가 절반쯤 식었을 때 이겸은 자신의 잔을 한 모금 마셨다. 그리고 아주 미세하게 눈썹을 풀었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "생각보다 좋습니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "무엇이 좋다는 말인지는 굳이 묻지 않았다. 차향도, 조용한 찻집도, 자기 취향을 기다려준 사람도 전부 그 안에 들어 있는 것 같았다."
+        }
+      ]
     }
   ],
-  "closing": "이겸은 감정을 다루는 법은 알지만 나누는 법은 모르는 사람 같았다."
+  "closing": "남의 마음을 정리하는 데 익숙한 사람은 자기 취향 하나를 말하는 데도 오래 걸렸다. 그래도 처음으로, 자신의 쪽에서 한 가지를 내어주었다."
 }

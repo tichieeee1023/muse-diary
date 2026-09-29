@@ -1,12 +1,18 @@
 {
   "id": "char_011_casual_04",
   "kind": "casual",
+  "times": [
+    "낮"
+  ],
   "title": "아이의 그림",
   "minAffection": 20,
   "maxAffection": 69,
   "defaultPortrait": "smile",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
+  "placeIds": [
+    "mall"
+  ],
   "sections": [
     {
       "blocks": [

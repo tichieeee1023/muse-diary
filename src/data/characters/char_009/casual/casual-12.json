@@ -1,0 +1,53 @@
+{
+  "id": "char_009_casual_12",
+  "kind": "casual",
+  "title": "골목의 꽃집",
+  "minAffection": 20,
+  "maxAffection": 70,
+  "defaultPortrait": "main",
+  "completionAffection": 8,
+  "repeatable": false,
+  "placeIds": [
+    "old-street"
+  ],
+  "times": [
+    "낮"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "오래된 상가거리의 작은 꽃집 앞에서 이겸이 걸음을 멈췄다. 진열대에는 짙은 보랏빛 꽃이 놓여 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "색이 꽤 선명하군요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그는 무심한 척했지만 손목의 소매를 평소보다 더 아래로 끌어내렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "꽃을 싫어하는 건 아닙니다. 특정 모양을 오래 보는 게 조금 불편할 뿐입니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 이유를 묻지 않자 이겸이 오히려 한 번 바라본다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "묻지 않으시는군요. ...감사합니다.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "말하지 않아도 되는 거리가 그에게는 드문 배려였다."
+}

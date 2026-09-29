@@ -1,18 +1,24 @@
 {
   "id": "char_010_casual_03",
   "kind": "casual",
+  "times": [
+    "밤"
+  ],
   "title": "연한 커피",
   "minAffection": 10,
   "maxAffection": 59,
   "defaultPortrait": "main",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
+  "placeIds": [
+    "mall"
+  ],
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "재하의 커피는 거의 우유처럼 연했다."
+          "text": "쇼핑몰 라운지에서 주문한 재하의 커피는 거의 우유처럼 연했다."
         },
         {
           "type": "dialogue",

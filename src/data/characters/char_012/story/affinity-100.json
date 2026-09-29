@@ -1,33 +1,36 @@
 {
   "id": "char_012_affinity_100",
   "kind": "story",
-  "times": ["밤"],
   "title": "돌아가지 말아요",
   "threshold": 100,
-  "purpose": "다시 시간을 되돌릴 기회 앞에서 불완전한 현재를 함께 살아가는 선택으로 루트를 완성한다.",
-  "defaultPortrait": "smile",
-  "completionAffection": 3,
+  "purpose": "다시 시간을 되돌릴 기회 앞에서 이현이 혼자 결말을 고르는 습관을 버리고 현재의 주인공과 불완전한 미래를 선택한다. 마지막에는 반말이 과거의 실수가 아니라 현재 관계에서 다시 얻은 친밀함이 된다.",
+  "defaultPortrait": "troubled",
+  "completionAffection": 0,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "수리점의 모든 시계가 불규칙하게 흔들렸다. 또 한 번 시간을 되돌릴 수 있는 이상이 열린 밤이었다."
+          "text": "그날 밤 수리점의 모든 시계가 동시에 멈췄다."
+        },
+        {
+          "type": "narration",
+          "text": "잠시 뒤 초침들이 서로 다른 방향으로 미친 듯이 움직이기 시작했다. 창밖의 밤도 몇 초 간격으로 색을 바꿨다. 해 질 녘, 한밤, 새벽이 같은 유리창 위에서 겹쳤다."
         },
         {
           "type": "dialogue",
           "speaker": "진이현",
-          "text": "이번 시간축도 완벽하지 않습니다. 위험은 남아 있습니다.",
+          "text": "왔군요.",
           "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "이현은 손목시계를 쥐었다."
+          "text": "이현은 놀라지 않았다. 오히려 오래 기다리던 일이 결국 온 사람처럼 창백해졌다."
         },
         {
           "type": "dialogue",
           "speaker": "진이현",
-          "text": "예전 같았으면 이미 돌렸을 겁니다. 당신이 죽을 가능성이 조금이라도 있으면.",
+          "text": "다시 돌릴 수 있는 틈이 열렸습니다.",
           "portrait": "troubled"
         }
       ]
@@ -36,71 +39,332 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "하지만 이번에는 손이 움직이지 않았다."
+          "text": "작업대 위에는 멈춘 손목시계와 수십 장의 메모가 펼쳐져 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "진이현",
-          "text": "이번엔 묻겠습니다. 돌아갈까요?",
+          "text": "이번 시간도 완벽하지 않습니다. 아직 위험은 남아 있고, 앞으로 무슨 일이 생길지도 모릅니다.",
           "portrait": "main"
         },
         {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "예전 같았으면 이미 돌렸을 겁니다. 당신에게 묻지도 않고.",
+          "portrait": "hmm"
+        },
+        {
           "type": "narration",
-          "text": "{name}의 대답을 기다리는 동안, 이현은 처음으로 미래를 자기 혼자 결정하지 않았다."
+          "text": "이현의 손이 시계 위에서 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "그게 당신을 살리는 일이라고 믿었으니까.",
+          "portrait": "troubled"
         }
       ],
       "choice": {
-        "id": "aff_100_choice",
+        "id": "ihyeon_100_choice_1",
         "options": [
           {
             "id": "a",
             "text": "“이번에는 돌아가지 말아요.”",
-            "affection": 9,
+            "affection": 10,
+            "memoryKey": "ihyeon_100_dont_go_back",
             "response": [
+              {
+                "type": "narration",
+                "text": "이현이 눈을 감았다. 가장 듣고 싶었지만 가장 무서워했던 대답을 들은 얼굴이었다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "진이현",
-                "text": "…네. 그럼 여기 있겠습니다. 당신과.",
-                "portrait": "smile"
+                "text": "……알겠습니다.",
+                "portrait": "eyesClosedSad"
               }
-            ],
-            "memoryKey": "ihyeon_100_stay"
+            ]
           },
           {
             "id": "b",
-            "text": "“완벽하지 않아도 같이 살아요.”",
-            "affection": 9,
+            "text": "“완벽하지 않아도 같이 살아봐요.”",
+            "affection": 10,
+            "memoryKey": "ihyeon_100_live_imperfect",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "진이현",
-                "text": "완벽하지 않은 현재라… 처음으로 기대됩니다.",
-                "portrait": "smile"
-              }
-            ],
-            "memoryKey": "ihyeon_100_imperfect"
-          },
-          {
-            "id": "c",
-            "text": "그의 멈춘 손목시계를 내려놓는다.",
-            "affection": 8,
-            "response": [
-              {
-                "type": "dialogue",
-                "speaker": "진이현",
-                "text": "이제 필요 없겠군요. 시간을 확인하는 용도로는 특히.",
+                "text": "완벽하지 않은 미래를 제가 선택해도 되는지 오래 몰랐습니다.",
                 "portrait": "troubled"
               },
               {
-                "type": "narration",
-                "text": "아주 작게 웃었다."
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "이제는……조금 기대해보고 싶네요.",
+                "portrait": "smile"
               }
-            ],
-            "memoryKey": "ihyeon_100_watch"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“무섭다고 말해도 돼요. 나를 또 잃을까 봐.”",
+            "affection": 10,
+            "memoryKey": "ihyeon_100_say_scared",
+            "response": [
+              {
+                "type": "narration",
+                "text": "이현은 바로 대답하지 못했다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "무서워.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "……정말 많이. 그래서 자꾸 시간을 고치고 싶어져.",
+                "portrait": "troubled"
+              }
+            ]
           }
         ]
       }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "수리점 안쪽에서 유리 깨지는 듯한 소리가 났다. 오래된 괘종시계 하나가 거꾸로 움직이며 시간을 끌어당기기 시작했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "뒤로 가세요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "이현이 본능적으로 한 걸음 앞을 막았다. 그러나 곧 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "……아니. 같이 있어.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "처음으로 그는 주인공을 위험에서 밀어내는 대신, 상황을 전부 설명하고 곁에 남게 했다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "저 시계가 멈추면 되돌릴 기회도 사라집니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "다시는 같은 선택지가 오지 않을 수도 있어요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가} 그의 손목을 잡자 이현은 움찔했지만 놓지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "정말 괜찮겠습니까.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "정중한 질문이었다. 그러나 다음 말은 아니었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "나, 이번에는 네가 죽어도 시간을 못 돌릴 수 있어.",
+          "portrait": "troubled"
+        }
+      ],
+      "choice": {
+        "id": "ihyeon_100_choice_2",
+        "options": [
+          {
+            "id": "a",
+            "text": "“그러니까 살아 있는 동안 같이 있어요.”",
+            "affection": 10,
+            "memoryKey": "ihyeon_100_while_alive",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "……응.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "이번에는 그렇게 할게.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“내 삶의 결말도 내가 같이 고를게요.”",
+            "affection": 10,
+            "memoryKey": "ihyeon_100_choose_together",
+            "response": [
+              {
+                "type": "narration",
+                "text": "이현이 한참 {name}{을를} 바라봤다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "알겠어.",
+                "portrait": "main"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "다시는 혼자 정하지 않을게.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“그럼 지금부터는 미래 얘기만 해요.”",
+            "affection": 10,
+            "memoryKey": "ihyeon_100_future_only",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "미래라.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "이현이 아주 천천히 웃었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "그 단어를 당신이랑 말하는 건 아직도 이상하게 좋네.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이현은 손목시계를 풀어 작업대 위에 내려놓았다. 그리고 되돌림을 위한 장치를 하나씩 멈췄다."
+        },
+        {
+          "type": "narration",
+          "text": "벽의 시계들이 거칠게 흔들리다가, 어느 순간 하나의 시간으로 맞춰지기 시작했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "이상하네요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "이렇게 무서운데도……후회는 안 합니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "마지막으로 그의 손목시계만 멈춘 채 남았다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이현은 멈춘 시계를 두 사람 사이에 올려놓고 {name}{의} 손을 조심스럽게 감쌌다. 수리점의 수십 개 시계가 같은 시각을 가리키는 가운데, 그 하나만 과거에 남아 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "예전의 당신이 이걸 줬을 때 제가 뭐라고 했는지는 기억이 안 납니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "그런데 지금은 말할 수 있어요.",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "좋아합니다. 과거에 사랑했던 사람이라서가 아니라, 지금 다시 좋아하게 된 당신을.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "이현이 손을 조금 더 단단히 감쌌다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "그리고 하나만 더.",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "앞으로는 존댓말……굳이 안 해도 됩니까?",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "웃음이 나올 만큼 뒤늦은 허락이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "사실 이쪽이 더 익숙해. 계속 고치는 게 힘들었어.",
+          "portrait": "smile"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "그러니까 이제는 그냥 이렇게 말할게.",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "내일도 와. 내가 기다릴게.",
+          "portrait": "smile"
+        }
+      ]
     }
   ],
-  "closing": "벽의 수십 개 시계가 처음으로 같은 시간을 가리켰다. 이현의 손목시계만 멈춘 채였다. 더 이상 돌아가기 위한 표식이 필요하지 않았다."
+  "closing": "진이현의 COMPLETE — 과거의 친밀함이 자꾸 새어 나오던 반말은, 마지막에야 현재의 두 사람이 새로 허락한 말투가 되었다. 모든 시계는 같은 현재를 가리켰고, 둘은 더 이상 다음 시간축을 기다리지 않았다."
 }

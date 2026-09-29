@@ -1,0 +1,50 @@
+{
+  "id": "char_012_casual_13",
+  "kind": "casual",
+  "title": "강물의 초침",
+  "minAffection": 45,
+  "maxAffection": 90,
+  "defaultPortrait": "main",
+  "completionAffection": 8,
+  "repeatable": false,
+  "placeIds": [
+    "riverside"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "강변 난간에 기대 선 이현은 손목시계보다 흐르는 물을 오래 보고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "물은 편합니다. 같은 곳으로 돌아오는 척하지 않으니까요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 시계 수리공답지 않은 말이라고 하자 그가 아주 작게 웃었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "그래서 시계를 좋아하는지도 모르겠습니다. 멈추거나 틀리면 고칠 수 있으니까.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "그는 손목시계의 용두에 손을 댔다가 결국 돌리지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "하지만 전부 고칠 필요는 없겠죠. 아마도요.",
+          "portrait": "hmm"
+        }
+      ]
+    }
+  ],
+  "closing": "흐르는 것을 그대로 두는 연습을 이현은 아직 배우는 중이었다."
+}

@@ -5,14 +5,14 @@
   "minAffection": 60,
   "maxAffection": 100,
   "defaultPortrait": "smile",
-  "completionAffection": 5,
+  "completionAffection": 8,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "로운이 신메뉴 후보 두 개를 꺼내놓았다. 평소라면 {name}의 취향부터 물었을 텐데 오늘은 한쪽을 먼저 가리켰다."
+          "text": "로운이 작은 포장 상자 두 개를 꺼냈다. 안에는 신메뉴 후보가 하나씩 들어 있었다. 평소라면 {name}의 취향부터 물었을 텐데 오늘은 한쪽을 먼저 가리켰다."
         },
         {
           "type": "dialogue",

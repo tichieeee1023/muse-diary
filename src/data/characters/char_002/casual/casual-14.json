@@ -1,0 +1,53 @@
+{
+  "id": "char_002_casual_14",
+  "kind": "casual",
+  "title": "불 꺼진 창 하나",
+  "minAffection": 45,
+  "maxAffection": 90,
+  "defaultPortrait": "main",
+  "completionAffection": 8,
+  "repeatable": false,
+  "placeIds": [
+    "rooftop"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "야경을 내려다보던 주원이 유난히 어두운 건물 한 칸을 가리켰다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "저기만 비어 있죠. 이상하게 저런 데가 먼저 보여요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 비어 있는 곳을 싫어하느냐고 묻자 그는 뜻밖에 바로 답하지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "예전에는요. 지금은... 꼭 채워야 하는 건 아닌 것 같기도 합니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "바람이 불자 주원은 난간에서 한 걸음 물러나 {name} 옆에 섰다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "남겨두면 나중에 다른 게 들어올 수도 있으니까.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "비어 있는 창 하나를 두고도 주원의 말은 예전보다 덜 단정적이었다."
+}

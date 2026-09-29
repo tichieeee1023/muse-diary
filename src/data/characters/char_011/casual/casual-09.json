@@ -1,11 +1,14 @@
 {
   "id": "char_011_casual_09",
   "kind": "casual",
+  "times": [
+    "밤"
+  ],
   "title": "별 스티커 하나",
   "minAffection": 0,
   "maxAffection": 100,
   "defaultPortrait": "smile",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
   "placeIds": [
     "night-market"

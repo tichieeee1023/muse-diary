@@ -15,6 +15,9 @@
     "troubled": "/assets/characters/char_005/troubled.webp",
     "hmm": "/assets/characters/char_005/hmm.webp",
     "endingCg": "/assets/characters/char_005/ending-cg.webp",
-    "endingDoll": "/assets/characters/char_005/ending-doll.webp"
+    "endingDoll": "/assets/characters/char_005/ending-doll.webp",
+    "faintSmile": "/assets/characters/char_005/faint-smile.webp",
+    "sly": "/assets/characters/char_005/sly.webp",
+    "shy": "/assets/characters/char_005/shy.webp"
   }
 }

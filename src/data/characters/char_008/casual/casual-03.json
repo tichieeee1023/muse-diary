@@ -5,8 +5,11 @@
   "minAffection": 10,
   "maxAffection": 59,
   "defaultPortrait": "smile",
-  "completionAffection": 5,
+  "completionAffection": 8,
   "repeatable": true,
+  "placeIds": [
+    "museum"
+  ],
   "sections": [
     {
       "blocks": [

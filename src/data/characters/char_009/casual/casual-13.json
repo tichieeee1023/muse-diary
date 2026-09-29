@@ -1,0 +1,53 @@
+{
+  "id": "char_009_casual_13",
+  "kind": "casual",
+  "title": "한 잔의 간격",
+  "minAffection": 45,
+  "maxAffection": 90,
+  "defaultPortrait": "main",
+  "completionAffection": 8,
+  "repeatable": false,
+  "placeIds": [
+    "bar"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "이겸은 바의 가장 안쪽 자리에 앉아 잔보다 출입문을 먼저 확인했다. 주문한 것은 향이 약한 무알코올 음료였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "술은 감정 구분을 흐리게 해서 선호하지 않습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "잠시 뒤 옆자리의 큰 웃음소리에 그의 미간이 아주 조금 좁아졌다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "제가 지금 불편한 것 같군요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 이제는 바로 아는 거냐고 묻자 그가 잠깐 웃었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "차이겸",
+          "text": "연습 중입니다. 예전보다는 빨라졌습니다.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "자기 감정을 알아차리는 속도가 아주 조금 빨라지고 있었다."
+}

@@ -1,0 +1,53 @@
+{
+  "id": "char_010_casual_11",
+  "kind": "casual",
+  "title": "닫힌 셔터 앞",
+  "minAffection": 0,
+  "maxAffection": 45,
+  "defaultPortrait": "main",
+  "completionAffection": 7,
+  "repeatable": false,
+  "placeIds": [
+    "old-street"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "오래된 상가거리의 셔터가 하나씩 내려가는 밤, 재하는 골목 끝을 한 번 확인하고 걸음을 늦췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "이쪽은 조명이 약합니다. 큰길로 가십시오.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 같이 가면 되지 않느냐고 하자 그는 바로 대답하지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "제가 있어서 안전한 것과 원래 안전한 건 다릅니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "멀리서 병이 굴러가는 소리가 나자 재하의 손이 반사적으로 들렸다가, 아무것도 아닌 걸 확인하고 내려갔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "...괜찮습니다. 가시죠.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "경계는 과해 보여도 그의 기준에서는 늘 이유가 있었다."
+}

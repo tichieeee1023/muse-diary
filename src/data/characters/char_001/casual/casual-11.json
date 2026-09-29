@@ -1,0 +1,53 @@
+{
+  "id": "char_001_casual_11",
+  "kind": "casual",
+  "title": "영수증 뒷면",
+  "minAffection": 0,
+  "maxAffection": 45,
+  "defaultPortrait": "main",
+  "completionAffection": 7,
+  "repeatable": false,
+  "placeIds": [
+    "convenience"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "서점 문을 닫은 뒤인지 도윤은 편의점 창가에 앉아 새로 들어온 책 목록을 확인하고 있었다. 휴대전화 배터리가 꺼지자 잠깐 난처한 얼굴이 된다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "펜 있으십니까? 제목 하나만 적어두면 됩니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가} 건넨 펜으로 그는 영수증 뒷면에 책 제목을 적었다. 그러고는 종이를 접지 않고 반듯하게 펴 둔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "이런 건 이상하게 안 버리게 되더군요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "잠시 뒤 그는 같은 영수증 아래에 {name}{이가} 전에 찾던 책 제목까지 덧붙였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "생각난 김에요. 다음에 들어오면 말씀드리겠습니다.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "사소한 메모 하나가 다음 만남의 약속처럼 남았다."
+}

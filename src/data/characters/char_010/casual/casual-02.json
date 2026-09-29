@@ -1,18 +1,24 @@
 {
   "id": "char_010_casual_02",
   "kind": "casual",
+  "times": [
+    "밤"
+  ],
   "title": "출입구 세기",
   "minAffection": 0,
   "maxAffection": 49,
   "defaultPortrait": "hmm",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
+  "placeIds": [
+    "bar"
+  ],
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "재하는 카페에 들어오자마자 출입구와 비상구 위치를 확인했다."
+          "text": "재하는 BAR에 들어오자마자 출입구와 비상구 위치를 확인했다."
         },
         {
           "type": "dialogue",
@@ -22,7 +28,7 @@
         },
         {
           "type": "narration",
-          "text": "창가보다 벽을 등질 수 있는 자리를 골랐다."
+          "text": "바 테이블보다 벽을 등질 수 있는 안쪽 자리를 골랐다."
         },
         {
           "type": "dialogue",

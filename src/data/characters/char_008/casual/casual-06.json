@@ -1,13 +1,18 @@
 {
   "id": "char_008_casual_06",
   "kind": "casual",
-  "times": ["밤"],
+  "times": [
+    "밤"
+  ],
   "title": "좋아하는 작품",
   "minAffection": 40,
   "maxAffection": 89,
   "defaultPortrait": "main",
-  "completionAffection": 5,
+  "completionAffection": 8,
   "repeatable": true,
+  "placeIds": [
+    "museum"
+  ],
   "sections": [
     {
       "blocks": [

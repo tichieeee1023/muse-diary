@@ -1,13 +1,18 @@
 {
   "id": "char_003_casual_07",
   "kind": "casual",
-  "times": ["밤"],
+  "times": [
+    "밤"
+  ],
   "title": "잠든 사람",
   "minAffection": 60,
   "maxAffection": 99,
   "defaultPortrait": "main",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": false,
+  "placeIds": [
+    "subway"
+  ],
   "sections": [
     {
       "blocks": [

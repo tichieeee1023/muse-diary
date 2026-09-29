@@ -1,0 +1,53 @@
+{
+  "id": "char_001_casual_12",
+  "kind": "casual",
+  "title": "먼저 잡아둔 자리",
+  "minAffection": 35,
+  "maxAffection": 90,
+  "defaultPortrait": "main",
+  "completionAffection": 8,
+  "repeatable": false,
+  "placeIds": [
+    "cafe"
+  ],
+  "times": [
+    "낮"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "조용한 카페에 들어서자 도윤이 창가의 두 자리 중 한쪽에 책을 올려두고 있었다. 맞은편은 비어 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "여기 앉으셔도 됩니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "우연이라고 하기엔 테이블 위에 {name} 취향의 음료가 이미 놓여 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "제가 마시려고 산 건 아닙니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가} 아무 말 없이 바라보자 그가 책장을 한 장 넘겼다. 평소보다 조금 빠른 손놀림이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "서도윤",
+          "text": "...지난번에 이걸 드셨으니까요. 그 정도는 기억합니다.",
+          "portrait": "hmm"
+        }
+      ]
+    }
+  ],
+  "closing": "기다렸다는 말 대신 비워둔 자리가 먼저 대답했다."
+}

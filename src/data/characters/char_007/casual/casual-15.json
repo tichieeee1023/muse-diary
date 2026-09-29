@@ -1,0 +1,50 @@
+{
+  "id": "char_007_casual_15",
+  "kind": "casual",
+  "title": "봉투는 필요 없습니다",
+  "minAffection": 0,
+  "maxAffection": 55,
+  "defaultPortrait": "main",
+  "completionAffection": 7,
+  "repeatable": false,
+  "placeIds": [
+    "convenience"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "휘람은 계산대 앞에서 작은 과자 두 봉지와 음료 하나를 들고 직원의 질문을 심각하게 듣고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "봉투가 유료라는 건 압니다. 오늘은 준비했습니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "그가 자랑스럽게 꺼낸 것은 반듯하게 접힌 장바구니였다. 다만 펴는 방향을 몰라 한참 씨름한다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "이 물건은 왜 펼칠 때마다 모양이 달라집니까?",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 손잡이를 잡아주자 휘람은 금세 웃으며 물건을 담았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "좋네요. 다음에는 혼자 해낼 수 있겠습니다. 아마도요.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "과거의 검술보다 오늘의 장바구니 사용법이 더 진지한 과제였다."
+}

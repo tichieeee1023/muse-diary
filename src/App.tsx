@@ -8,6 +8,10 @@ import { LocationPage } from './pages/LocationPage'
 import { NameSetupPage } from './pages/NameSetupPage'
 import { RecordsPage } from './pages/RecordsPage'
 import { SettingsPage } from './pages/SettingsPage'
+import { SpringEventPage } from './pages/SpringEventPage'
+import { SummerEventPage } from './pages/SummerEventPage'
+import { AutumnEventPage } from './pages/AutumnEventPage'
+import { WinterEventPage } from './pages/WinterEventPage'
 import { TitlePage } from './pages/TitlePage'
 import { useGameStore } from './store/useGameStore'
 
@@ -16,17 +20,22 @@ export default function App() {
   const activePlaceId = useGameStore((state) => state.activePlaceId)
   const [section, setSection] = useState<MainSection>('outing')
   const [showTitle, setShowTitle] = useState(true)
+  const [seasonalEventId, setSeasonalEventId] = useState<string | null>(null)
 
   const navigate = (next: MainSection) => setSection(next)
 
   let content
   if (showTitle) content = <TitlePage onEnter={() => setShowTitle(false)} />
   else if (!player) content = <NameSetupPage />
+  else if (seasonalEventId === 'spring-night-bloom') content = <SpringEventPage onClose={() => setSeasonalEventId(null)} />
+  else if (seasonalEventId === 'summer-fireworks-night') content = <SummerEventPage onClose={() => setSeasonalEventId(null)} />
+  else if (seasonalEventId === 'autumn-late-garden') content = <AutumnEventPage onClose={() => setSeasonalEventId(null)} />
+  else if (seasonalEventId === 'winter-hinoki-lodge') content = <WinterEventPage onClose={() => setSeasonalEventId(null)} />
   else if (activePlaceId) content = <LocationPage />
   else if (section === 'characters') content = <CharacterDiaryPage onNavigate={navigate} />
   else if (section === 'records') content = <RecordsPage onNavigate={navigate} />
   else if (section === 'settings') content = <SettingsPage onNavigate={navigate} />
-  else content = <HomePage onNavigate={navigate} />
+  else content = <HomePage onNavigate={navigate} onStartSeasonalEvent={(eventId) => setSeasonalEventId(eventId)} />
 
   return <GameShell>{content}<AchievementToast /></GameShell>
 }

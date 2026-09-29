@@ -5,14 +5,14 @@
   "minAffection": 40,
   "maxAffection": 79,
   "defaultPortrait": "main",
-  "completionAffection": 6,
+  "completionAffection": 9,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "자료를 전달하러 들른 주원의 집은 예상과 너무 달랐다. 현관 한쪽에 배송 상자가 세 개, 거실에는 기획서 더미가 층층이 쌓여 있었다."
+          "text": "주원이 태블릿에서 자료 사진을 찾다가 실수로 집 사진 한 장을 넘겨 보였다. 현관 한쪽에는 배송 상자가 세 개, 거실에는 기획서 더미가 층층이 쌓여 있었다."
         },
         {
           "type": "dialogue",

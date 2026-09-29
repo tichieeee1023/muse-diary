@@ -3,99 +3,80 @@
   "kind": "story",
   "title": "이건 진짜예요",
   "threshold": 100,
-  "purpose": "빈 무대에서 꾸미지 않은 모습과 진짜 마법을 동시에 보여주며 관계를 완성한다.",
+  "purpose": "화려한 무대와 진짜 마법을 더 이상 숨기기 위한 장치가 아니라 자신이 좋아서 선택한 것으로 되찾고, 주인공에게 꾸미지 않은 고백을 건넨다. 엔딩 CG의 풍선과 조명, 손을 맞잡는 장면으로 직접 이어진다.",
   "defaultPortrait": "smile",
-  "completionAffection": 3,
+  "completionAffection": 0,
   "sections": [
     {
       "blocks": [
-        {
-          "type": "narration",
-          "text": "공연이 끝난 빈 무대. 조명은 모두 꺼져 있었다."
-        },
-        {
-          "type": "narration",
-          "text": "유리안은 무대 의상도 없이 평범한 셔츠 차림으로 서 있었다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "유리안",
-          "text": "오늘은 보여드릴 게 하나 있습니다. 공연용 아닙니다.",
-          "portrait": "main"
-        },
-        {
-          "type": "narration",
-          "text": "그가 손을 펴자 작은 별 하나가 떠올랐다."
-        }
+        {"type":"narration","text":"아이들을 위한 특별 공연이 끝난 밤이었다. 객석은 비었지만 무대에는 아직 수십 개의 흰색과 연보라색 풍선, 금빛 별 장식과 가느다란 리본이 가득 남아 있었다."},
+        {"type":"narration","text":"스태프들이 마지막 장비를 들고 나가자 유리안이 {name}{을를} 붙잡았다."},
+        {"type":"dialogue","speaker":"유리안","text":"조금만 더 있다 가실래요?","portrait":"main"},
+        {"type":"narration","text":"아직 공연 의상을 입은 채였지만 목소리는 무대 위보다 훨씬 조용했다."},
+        {"type":"dialogue","speaker":"유리안","text":"오늘은 막이 내린 뒤가 본편이라서요.","portrait":"smile"}
       ]
     },
     {
       "blocks": [
-        {
-          "type": "dialogue",
-          "speaker": "유리안",
-          "text": "이건 진짜예요.",
-          "portrait": "smile"
-        },
-        {
-          "type": "narration",
-          "text": "별빛보다 유리안의 작은 미소가 더 조용했다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "유리안",
-          "text": "그리고 이것도요. 지금 웃는 거. 당신 앞이라서 웃는 겁니다.",
-          "portrait": "troubled"
-        }
+        {"type":"narration","text":"유리안이 무대 중앙으로 걸어가 손을 들었다. 이미 꺼진 조명 사이에서 작은 빛들이 하나둘 켜졌다."},
+        {"type":"narration","text":"전구가 아니었다. 별빛 같은 금색 점들이 풍선 사이를 천천히 헤엄치자, 매달린 리본과 투명 풍선 안의 별 장식이 함께 반짝였다."},
+        {"type":"narration","text":"몇 개의 풍선은 줄이 느슨해진 것처럼 아주 조금 떠올랐다. 유리안은 그 광경을 보며 이번에는 먼저 웃지 않았다."},
+        {"type":"dialogue","speaker":"유리안","text":"예전에는 이런 걸 보여줄 때 꼭 설명부터 준비했습니다. 마술입니다, 장치입니다, 놀라지 마세요.","portrait":"hmm"},
+        {"type":"dialogue","speaker":"유리안","text":"오늘은 설명 안 하려고요.","portrait":"main"}
       ],
       "choice": {
-        "id": "aff_100_choice",
+        "id": "yurian_100_choice_1",
         "options": [
-          {
-            "id": "a",
-            "text": "“둘 다 예뻐요.”",
-            "affection": 8,
-            "response": [
-              {
-                "type": "dialogue",
-                "speaker": "유리안",
-                "text": "마법이랑 저를 한꺼번에 칭찬하네요. 반칙입니다.",
-                "portrait": "smile"
-              }
-            ],
-            "memoryKey": "yurian_100_both"
-          },
-          {
-            "id": "b",
-            "text": "“오늘은 안 웃어도 돼요.”",
-            "affection": 8,
-            "response": [
-              {
-                "type": "dialogue",
-                "speaker": "유리안",
-                "text": "알아요. 그래서 웃는 거예요.",
-                "portrait": "smile"
-              }
-            ],
-            "memoryKey": "yurian_100_free"
-          },
-          {
-            "id": "c",
-            "text": "그의 손바닥 위 별을 가까이 본다.",
-            "affection": 7,
-            "response": [
-              {
-                "type": "dialogue",
-                "speaker": "유리안",
-                "text": "가까이 와도 안 사라집니다. 이번엔.",
-                "portrait": "main"
-              }
-            ],
-            "memoryKey": "yurian_100_star"
-          }
+          {"id":"a","text":"“그럼 그냥 볼게요.”","affection":9,"memoryKey":"yurian_100_just_watch","response":[{"type":"dialogue","speaker":"유리안","text":"네. 그게 제일 좋습니다.","portrait":"smile"},{"type":"narration","text":"유리안은 안도한 사람처럼 아주 작게 웃었다."}]},
+          {"id":"b","text":"“진짜 마법이라고 알고 보고 있어요.”","affection":10,"memoryKey":"yurian_100_real_magic","response":[{"type":"dialogue","speaker":"유리안","text":"그 말을 이렇게 편하게 듣는 날이 오네요.","portrait":"troubled"},{"type":"dialogue","speaker":"유리안","text":"네. 진짜입니다.","portrait":"main"}]},
+          {"id":"c","text":"“오늘은 유리안이 좋아서 보여주는 거죠?”","affection":10,"memoryKey":"yurian_100_his_choice","response":[{"type":"dialogue","speaker":"유리안","text":"맞습니다.","portrait":"main"},{"type":"dialogue","speaker":"유리안","text":"숨기려고 만든 무대 말고, 제가 좋아서 만든 걸 보여주고 싶었어요.","portrait":"smile"}]}
         ]
       }
+    },
+    {
+      "blocks": [
+        {"type":"narration","text":"빛이 풍선 사이로 번지는 동안 유리안은 무대 가장자리의 낮은 테이블에 기대 앉았다."},
+        {"type":"dialogue","speaker":"유리안","text":"사실 오늘 공연 내내 신경 쓰인 사람이 한 명 있었습니다.","portrait":"main"},
+        {"type":"narration","text":"관객석이 비었는데도 그는 정확히 {name}{을를} 바라봤다."},
+        {"type":"dialogue","speaker":"유리안","text":"아이들이 웃는지보다, 당신이 어디 있는지를 더 많이 봤어요.","portrait":"troubled"},
+        {"type":"dialogue","speaker":"유리안","text":"공연자로서는 감점이겠죠.","portrait":"smile"}
+      ]
+    },
+    {
+      "blocks": [
+        {"type":"narration","text":"유리안이 손을 내밀었다. 마술을 시작할 때의 과장된 동작이 아니라, 상대가 받아줄지 기다리는 평범한 손이었다."},
+        {"type":"dialogue","speaker":"유리안","text":"저는 아직도 가끔 헷갈릴 겁니다. 당신이 저를 좋아하는 이유도 확인하고 싶어질 거고요.","portrait":"troubled"},
+        {"type":"dialogue","speaker":"유리안","text":"그래도 이제는 제멋대로 답을 정하지 않겠습니다.","portrait":"main"}
+      ],
+      "choice": {
+        "id": "yurian_100_choice_2",
+        "options": [
+          {"id":"a","text":"그의 손을 잡는다.","affection":10,"memoryKey":"yurian_100_hold_hand","response":[{"type":"narration","text":"손이 맞닿는 순간 주변의 빛들이 잠깐 크게 흔들렸다."},{"type":"dialogue","speaker":"유리안","text":"…이럴 때 마법이 말을 안 듣습니다.","portrait":"troubled"},{"type":"dialogue","speaker":"유리안","text":"이번에는 숨길 생각 없지만요.","portrait":"smile"}]},
+          {"id":"b","text":"“확인하고 싶으면 나한테 물어봐요.”","affection":10,"memoryKey":"yurian_100_ask_me","response":[{"type":"dialogue","speaker":"유리안","text":"그럼 지금 물어보겠습니다.","portrait":"main"},{"type":"dialogue","speaker":"유리안","text":"저 좋아합니까? 무대가 아니라 저요.","portrait":"troubled"},{"type":"narration","text":"대답을 들은 뒤에야 그가 손을 내밀었다."}]},
+          {"id":"c","text":"“공연 끝난 뒤의 유리안을 제일 오래 봤잖아요.”","affection":10,"memoryKey":"yurian_100_after_show","response":[{"type":"dialogue","speaker":"유리안","text":"그렇네요.","portrait":"main"},{"type":"dialogue","speaker":"유리안","text":"가장 재미없는 시간을 제일 오래 보여드렸는데도 여기 계시네요.","portrait":"smile"}]}
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {"type":"narration","text":"유리안이 맞잡은 손을 놓지 않은 채 몸을 조금 기울였다. 금빛 조명과 진짜 별빛이 겹쳐 어느 쪽이 마법인지 구분할 수 없었다."},
+        {"type":"dialogue","speaker":"유리안","text":"처음 만났을 때 비밀 하나 지켜달라고 했던 거 기억합니까?","portrait":"smile"},
+        {"type":"narration","text":"별 스티커를 좋아한다는 시시한 비밀이었다."},
+        {"type":"dialogue","speaker":"유리안","text":"그때는 진짜 비밀을 농담 뒤에 숨겼습니다.","portrait":"main"},
+        {"type":"dialogue","speaker":"유리안","text":"이제는 반대로 할게요. 농담 없이 말하겠습니다.","portrait":"hmm"},
+        {"type":"dialogue","speaker":"유리안","text":"좋아합니다. 공연이 끝나도 보고 싶은 사람은 당신이 처음이에요.","portrait":"troubled"}
+      ]
+    },
+    {
+      "blocks": [
+        {"type":"narration","text":"대답이 돌아온 순간, 무대 가득한 풍선 사이에서 작은 별빛이 한꺼번에 피어났다."},
+        {"type":"narration","text":"유리안은 그제야 웃었다. 아이들에게 보여주던 환한 미소보다 작고, 그래서 훨씬 선명한 웃음이었다."},
+        {"type":"dialogue","speaker":"유리안","text":"이건 진짜예요.","portrait":"smile"},
+        {"type":"narration","text":"그 말이 마법을 뜻하는지, 미소를 뜻하는지, 맞잡은 손을 뜻하는지는 굳이 묻지 않았다."},
+        {"type":"dialogue","speaker":"유리안","text":"아, 그리고 다음 공연 때도 와주세요. 연애한다고 관객 한 명 잃을 생각은 없습니다.","portrait":"smile"},
+        {"type":"narration","text":"끝까지 유리안다운 말이었다. 이번에는 그 뒤에 숨긴 것이 없었다."}
+      ]
     }
   ],
-  "closing": "늘 먼저 웃어야 했던 사람은 처음으로 웃지 않아도 사랑받는 자리에서, 자기 의지로 웃었다."
+  "closing": "유리안의 COMPLETE — 진짜를 숨기기 위해 빛나던 사람은, 이제 좋아서 빛나는 무대와 사랑을 스스로 선택한다."
 }

@@ -1,11 +1,14 @@
 {
   "id": "char_010_casual_10",
   "kind": "casual",
+  "times": [
+    "밤"
+  ],
   "title": "반걸음의 거리",
   "minAffection": 0,
   "maxAffection": 100,
   "defaultPortrait": "smile",
-  "completionAffection": 5,
+  "completionAffection": 8,
   "repeatable": true,
   "placeIds": [
     "rooftop"

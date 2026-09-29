@@ -3,38 +3,42 @@
   "kind": "story",
   "title": "보여주지 않는 그림",
   "threshold": 40,
-  "purpose": "사교적이고 솔직한 세현이 자기 창작 앞에서만 도망치는 갭을 본격적으로 드러낸다.",
+  "purpose": "사교적이고 솔직한 세현이 자기 창작 이야기만 나오면 지나치게 능숙하게 도망치는 갭을 본격적으로 보여준다. 평가받기 전 가능성으로 남아 있고 싶은 두려움을 처음 입 밖에 낸다.",
   "defaultPortrait": "troubled",
-  "completionAffection": 3,
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "미술관 교육 프로그램 준비 중, 직원들이 즉석에서 작은 그림을 그리는 시간이 생겼다."
+          "text": "미술관 교육 프로그램 준비 날, 직원들이 시범용으로 작은 엽서 그림을 하나씩 그리게 됐다."
         },
         {
           "type": "narration",
-          "text": "세현은 사람들에게 종이와 펜을 나눠주면서도 자기 자리만 비워뒀다."
+          "text": "세현은 누구보다 신나게 종이와 펜을 나눠주면서 자기 자리만 비워뒀다."
         },
         {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "저는 진행 담당이니까요. 빠지는 게 맞죠.",
+          "text": "저는 진행 담당이니까 빠지는 게 맞죠.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "너무 빠른 대답이었다. 동료가 “미대생이면서”라고 웃자 세현은 더 환하게 웃으며 다른 이야기를 꺼냈다."
+          "text": "동료가 “미대생이면서 왜 또 빠져”라고 웃자 세현은 물을 가지러 간다며 바로 자리에서 일어났다."
         },
         {
           "type": "narration",
-          "text": "사람이 화제를 피하는 방식에도 성격이 묻어난다. 세현은 침묵하는 대신 더 많이 말해버리는 쪽이었다."
+          "text": "사람이 화제를 피하는 방식에도 성격이 묻어난다. 세현은 조용해지는 대신 더 바빠지는 쪽이었다."
         }
       ]
     },
     {
       "blocks": [
+        {
+          "type": "narration",
+          "text": "{name}{이가} 복도까지 따라가자 세현은 종이컵 두 개를 들고 어색하게 웃었다."
+        },
         {
           "type": "dialogue",
           "speaker": "오세현",
@@ -42,28 +46,25 @@
           "portrait": "troubled"
         },
         {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "남의 건 괜찮아요. 미완성이어도 왜 그렇게 했는지 물어보면 되니까."
+        },
+        {
           "type": "narration",
-          "text": "그 말이 이상했다. 남의 미완성 작품에는 그렇게 너그러웠던 사람이 자기 것에는 완성품만 허락하는 것처럼."
+          "text": "그는 자기 얘기만 나오면 문장을 짧게 잘랐다."
         },
         {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "완성하면요.",
+          "text": "근데 제 건… 완성하면 핑계가 없어지잖아요.",
           "portrait": "hmm"
         },
         {
-          "type": "narration",
-          "text": "세현이 한참 뒤에야 덧붙였다."
-        },
-        {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "완성했는데 별로면, 그다음엔 핑계가 없잖아요.",
+          "text": "완성했는데 별로면 “아직 덜 해서 그래”라는 말도 못 하고요.",
           "portrait": "troubled"
-        },
-        {
-          "type": "narration",
-          "text": "처음으로 질문이 아니라 대답이 길어진 날이었다."
         }
       ],
       "choice": {
@@ -71,8 +72,8 @@
         "options": [
           {
             "id": "a",
-            "text": "“안 보여줘도 돼요. 대신 도망가진 마요.”",
-            "affection": 6,
+            "text": "“안 보여줘도 돼요. 대신 도망가지는 마요.”",
+            "affection": 7,
             "memoryKey": "sehyun_40_dont_run",
             "response": [
               {
@@ -89,22 +90,22 @@
           },
           {
             "id": "b",
-            "text": "“별로여도 좋아하는 사람은 있을 텐데.”",
-            "affection": 5,
-            "memoryKey": "sehyun_40_audience",
+            "text": "“별로여도 다음 걸 만들 수 있잖아요.”",
+            "affection": 6,
+            "memoryKey": "sehyun_40_next",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "오세현",
-                "text": "그게 제일 무서운 말이에요. 기대하게 되니까.",
-                "portrait": "troubled"
+                "text": "다음 거요? 저는 자꾸 하나가 끝나면 다 끝나는 것처럼 생각하나 봐요.",
+                "portrait": "hmm"
               }
             ]
           },
           {
             "id": "c",
             "text": "“그럼 완성할 때까지 기다릴게요.”",
-            "affection": 4,
+            "affection": 6,
             "memoryKey": "sehyun_40_wait",
             "response": [
               {
@@ -115,13 +116,41 @@
               },
               {
                 "type": "narration",
-                "text": "농담처럼 말했지만, 이번에는 화제를 바꾸지 않았다."
+                "text": "농담처럼 말했지만 이번에는 화제를 돌리지 않았다."
               }
             ]
           }
         ]
       }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "돌아오자 직원 한 명이 세현 자리에도 빈 엽서 한 장을 남겨두고 갔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "이 사람들 진짜 집요하네.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "세현은 한참 펜을 굴리다가 결국 작은 선 하나를 그었다. 그리고 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "오늘은 여기까지. 이것도 발전 맞죠?",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가} 고개를 끄덕이자 그는 엽서를 버리지 않고 명찰 뒤에 끼워두었다."
+        }
+      ]
     }
   ],
-  "closing": "세현의 다이어리에 처음으로 작품이 아니라 “작품을 만들던 사람”에 대한 기록이 남았다."
+  "closing": "세현은 아직 자기 그림을 보여주지 않았다. 그래도 처음으로 빈 종이에 선 하나를 남겼고, 그걸 버리지 않았다."
 }

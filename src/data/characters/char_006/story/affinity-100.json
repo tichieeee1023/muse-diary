@@ -3,30 +3,34 @@
   "kind": "story",
   "title": "육지 쪽으로 한 걸음",
   "threshold": 100,
-  "purpose": "시온이 관계의 끝을 두려워하면서도 주인공의 생활권으로 들어오기로 선택한다.",
+  "purpose": "시온이 물가에서만 관계를 유지하던 방식을 버리고 주인공의 생활권으로 직접 들어오며, 유한한 관계의 현재를 선택하는 결말을 만든다.",
   "defaultPortrait": "smile",
-  "completionAffection": 3,
+  "completionAffection": 0,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "시온이 먼저 도시 한복판의 약속 장소를 정했다. 강 소리도 물 냄새도 없는 곳이었다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "백시온",
-          "text": "오늘은 제가 왔어요.",
-          "portrait": "smile"
+          "text": "시온이 먼저 보낸 약속 장소는 강변도 수영장도 아니었다. 도시 한복판의 평범한 쇼핑몰 입구였다."
         },
         {
           "type": "narration",
-          "text": "그는 주변을 조금 불편해하면서도 돌아갈 생각은 없어 보였다."
+          "text": "약속 시간보다 일찍 도착한 그는 전광판 앞에서 길 안내 지도를 지나치게 진지하게 보고 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "늘 물가에서만 만나면 결국 {name}만 제 쪽으로 오는 거잖아요. 그건 좀 비겁하더라고요.",
+          "text": "웃지 마요. 물길은 읽어도 쇼핑몰 동선은 어렵습니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "그는 불편해 보였지만 돌아갈 생각은 없어 보였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "오늘은 제가 왔어요. 늘 {name}만 제 쪽으로 오는 건 좀 비겁하더라고요.",
           "portrait": "main"
         }
       ]
@@ -35,63 +39,228 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "시온이 손을 내밀었다. 평소처럼 장난스럽게 흔들지 않았다."
+          "text": "둘은 별것 없는 시간을 보냈다. 서점에 들르고, 음료를 사고, 사람이 많은 층에서는 잠깐 길을 잘못 들었다."
         },
         {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "끝이 있다는 건 알아요. 그래도 이번엔, 중간을 길게 살아보고 싶습니다. 같이.",
+          "text": "이상하네요. 이런 건 기억에 남을 일이 아닌데.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "시온은 차가운 음료 컵을 손바닥 사이에서 굴렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "저는 늘 특별한 순간보다 마지막 순간을 오래 기억했거든요.",
           "portrait": "troubled"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "근데 오늘은 그냥… 오늘이라서 기억하고 싶어요.",
+          "portrait": "smile"
         }
       ],
       "choice": {
-        "id": "aff_100_choice",
+        "id": "aff_100_choice_1",
+        "options": [
+          {
+            "id": "a",
+            "text": "“그럼 평범한 날을 많이 만들어요.”",
+            "affection": 8,
+            "memoryKey": "sion_100_ordinary",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "그거 좋네요. 특별하지 않은 날을 일부러 약속하는 거.",
+                "portrait": "smile"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "생각보다 제가 그런 걸 원했나 봐요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“갈 데 엄청 많아요. 강변 말고도.”",
+            "affection": 8,
+            "memoryKey": "sion_100_places",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "그게 제일 무서운 말인데요.",
+                "portrait": "smile"
+              },
+              {
+                "type": "narration",
+                "text": "시온은 웃으며 도시 안내판을 다시 봤다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "그래도 하나씩 가보죠.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“천천히 와도 돼요. 계속 오기만 하면.”",
+            "affection": 8,
+            "memoryKey": "sion_100_slow",
+            "response": [
+              {
+                "type": "narration",
+                "text": "시온의 표정이 잠시 조용해졌다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "이번엔 제가 갈게요. 천천히라도, 계속.",
+                "portrait": "main"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "해가 기울 무렵 시온은 먼저 돌아가자는 말을 하지 않았다. 대신 도시 불빛이 켜지는 걸 한참 바라봤다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "끝이 있다는 건 여전히 싫어요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "아마 나중에도 싫을 겁니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그는 피하지 않고 그 말을 끝까지 했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "그래도 끝이 무서워서 중간을 버리는 건 더 싫어졌어요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "{name}이랑은 그 중간을 길게 살아보고 싶습니다.",
+          "portrait": "smile"
+        }
+      ],
+      "choice": {
+        "id": "aff_100_choice_2",
         "options": [
           {
             "id": "a",
             "text": "그의 손을 잡는다.",
             "affection": 8,
+            "memoryKey": "sion_100_hand",
             "response": [
+              {
+                "type": "narration",
+                "text": "시온이 손을 내려다보다가 손가락을 단단히 맞잡았다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "백시온",
-                "text": "좋아요. 그럼 오늘은 육지 코스부터 배워볼게요.",
+                "text": "좋아요. 오늘 육지 코스는 성공이네요.",
                 "portrait": "smile"
               }
-            ],
-            "memoryKey": "sion_100_hand"
+            ]
           },
           {
             "id": "b",
-            "text": "“강변 말고 갈 데 엄청 많아요.”",
-            "affection": 8,
+            "text": "“다음 약속도 시온 씨가 정해요.”",
+            "affection": 7,
+            "memoryKey": "sion_100_next",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "백시온",
-                "text": "그게 제일 무서운 말인데요. 기대되기도 하고.",
+                "text": "또 육지입니까?",
+                "portrait": "troubled"
+              },
+              {
+                "type": "narration",
+                "text": "잠깐 고민하더니 웃었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "좋아요. 이번엔 길도 미리 공부해올게요.",
                 "portrait": "smile"
               }
-            ],
-            "memoryKey": "sion_100_places"
+            ]
           },
           {
             "id": "c",
-            "text": "“천천히 와도 돼요.”",
+            "text": "“끝 얘기는 나중에 해요. 지금은 저녁부터.”",
             "affection": 7,
+            "memoryKey": "sion_100_present",
             "response": [
+              {
+                "type": "narration",
+                "text": "시온이 소리 내 웃었다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "백시온",
-                "text": "이번엔 제가 갈게요. 천천히라도.",
-                "portrait": "main"
+                "text": "네. 인간식으로 아주 마음에 드는 답입니다.",
+                "portrait": "smile"
               }
-            ],
-            "memoryKey": "sion_100_slow"
+            ]
           }
         ]
       }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "돌아가는 길에 비가 아주 조금 내리기 시작했다. 시온의 머리끝에 맺힌 물방울이 빗물인지, 원래 그의 것인지 구분할 수 없었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "이 정도 비는 기분 좋네요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "예전 같으면 그는 강 쪽으로 방향을 틀었을 것이다. 오늘은 그러지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "역까지 같이 갈게요.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "물의 사람은 처음으로 자신의 영역으로 돌아가기보다, 누군가의 귀가길을 따라 육지에 조금 더 남았다."
+        }
+      ]
     }
   ],
-  "closing": "물의 사람은 처음으로 육지에 머무는 쪽을 선택했다."
+  "closing": "물의 사람은 끝을 모르는 척하지 않았다. 그럼에도 누군가와 함께 유한한 현재를 살아보기로 했다."
 }

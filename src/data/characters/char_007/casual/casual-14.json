@@ -1,0 +1,53 @@
+{
+  "id": "char_007_casual_14",
+  "kind": "casual",
+  "title": "창문에 비친 교복",
+  "minAffection": 40,
+  "maxAffection": 89,
+  "defaultPortrait": "main",
+  "completionAffection": 8,
+  "repeatable": false,
+  "placeIds": [
+    "library"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "밤 열람실의 창문에는 바깥보다 실내가 더 선명하게 비쳤다. 휘람이 유리 속 자기 교복을 한참 바라봤다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "저, 지금은 그냥 학생처럼 보입니까?",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "갑작스러운 질문에 {name}{이가 그렇다고 답하자 그의 어깨가 아주 조금 내려갔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "다행이네요. 요즘은 그게 제일 듣기 좋습니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "잠시 뒤 그는 창문에 비친 오래된 자료실 쪽을 보지 않고 책상 위 모의고사로 시선을 돌렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "내일 영어 단어 시험이 있거든요. 그쪽이 지금은 더 큰일입니다.",
+          "portrait": "main"
+        }
+      ]
+    }
+  ],
+  "closing": "과거보다 내일의 시험을 걱정하는 얼굴이 조금 더 자연스러워졌다."
+}

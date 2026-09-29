@@ -1,0 +1,53 @@
+{
+  "id": "char_007_casual_12",
+  "kind": "casual",
+  "title": "폐관 삼십 분 전",
+  "minAffection": 0,
+  "maxAffection": 39,
+  "defaultPortrait": "main",
+  "completionAffection": 8,
+  "repeatable": false,
+  "placeIds": [
+    "library"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "폐관까지 삼십 분 남았다는 안내가 나오자 휘람은 문제집과 역사책 사이에서 심각하게 고민했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "둘 중 하나만 끝낼 수 있겠군요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 내일 다시 오면 된다고 하자 그는 잠깐 멈췄다가 천천히 고개를 끄덕였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "...맞네요. 내일이 있으니까.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그는 역사책을 덮고 문제집을 가방에 넣었다. 사소한 선택인데도 표정은 이상하리만큼 조용했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "그 말, 아직 가끔 낯섭니다. 내일 다시 하면 된다는 말이요.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "끝내지 못한 일을 내일로 미루는 평범함을 휘람은 조금씩 배우고 있었다."
+}

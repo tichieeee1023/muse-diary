@@ -1,0 +1,53 @@
+{
+  "id": "char_010_casual_12",
+  "kind": "casual",
+  "title": "이번엔 어느 쪽입니까",
+  "minAffection": 45,
+  "maxAffection": 90,
+  "defaultPortrait": "main",
+  "completionAffection": 8,
+  "repeatable": false,
+  "placeIds": [
+    "old-street"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "골목이 두 갈래로 나뉘자 재하는 평소처럼 먼저 방향을 정하려다 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "어느 쪽으로 가시겠습니까?",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 의외라는 표정을 짓자 그는 짧게 숨을 내쉰다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "제가 정해야 할 이유는 없으니까요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "선택한 길이 조금 돌아가는 길이었지만 재하는 고치지 않았다. 대신 자연스럽게 나란히 걸었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "늦어도 괜찮다면, 이쪽도 나쁘지 않습니다.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "앞장서지 않는 선택이 재하에게는 생각보다 큰 변화였다."
+}

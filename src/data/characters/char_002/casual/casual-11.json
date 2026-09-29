@@ -1,0 +1,53 @@
+{
+  "id": "char_002_casual_11",
+  "kind": "casual",
+  "title": "잔의 각도",
+  "minAffection": 0,
+  "maxAffection": 45,
+  "defaultPortrait": "main",
+  "completionAffection": 7,
+  "repeatable": false,
+  "placeIds": [
+    "bar"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "바 테이블 끝에 앉은 주원은 주문보다 먼저 조명 아래 놓인 잔들의 간격을 보고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "저 두 잔, 간격이 다릅니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "바텐더가 웃으며 일부러 하나를 비뚤게 밀어두자 주원의 눈썹이 아주 조금 움직였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "사람을 시험하는 취미는 좋은 취향이 아닙니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "그는 결국 손을 뻗어 코스터와 잔을 나란히 맞췄다. 그러고는 아무 일도 없었다는 듯 {name}{을를} 본다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "왜 웃습니까. 정리된 쪽이 더 보기 좋잖아요.",
+          "portrait": "main"
+        }
+      ]
+    }
+  ],
+  "closing": "술보다 먼저 공간의 균형을 맞추는 사람이었다."
+}

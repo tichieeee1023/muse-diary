@@ -5,14 +5,17 @@
   "minAffection": 10,
   "maxAffection": 59,
   "defaultPortrait": "troubled",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
+  "placeIds": [
+    "cafe"
+  ],
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "예약 시간을 무시한 손님이 직원에게 무례하게 굴자 이겸의 표정이 아주 조금 굳었다."
+          "text": "카페에서 한 손님이 직원에게 무례하게 굴자 이겸의 표정이 아주 조금 굳었다."
         },
         {
           "type": "dialogue",

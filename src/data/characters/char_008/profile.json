@@ -15,6 +15,9 @@
     "troubled": "/assets/characters/char_008/troubled.webp",
     "hmm": "/assets/characters/char_008/hmm.webp",
     "endingCg": "/assets/characters/char_008/ending-cg.webp",
-    "endingDoll": "/assets/characters/char_008/ending-doll.webp"
+    "endingDoll": "/assets/characters/char_008/ending-doll.webp",
+    "glasses": "/assets/characters/char_008/glasses.webp",
+    "love": "/assets/characters/char_008/love.webp",
+    "loveSmile": "/assets/characters/char_008/love-smile.webp"
   }
 }

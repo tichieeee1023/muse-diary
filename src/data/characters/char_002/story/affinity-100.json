@@ -1,38 +1,41 @@
 {
   "id": "char_002_affinity_100",
   "kind": "story",
-  "times": ["밤"],
   "title": "비워둔 자리",
   "threshold": 100,
+  "purpose": "통제할 수 없는 사람을 통제하지 않고 사랑하는 주원이, 계획 밖의 미래를 의도적으로 남겨두는 방식으로 관계를 명확히 한다.",
   "defaultPortrait": "main",
   "completionAffection": 0,
-  "purpose": "통제할 수 없는 사람을 통제하지 않고 사랑하는 주원의 방식으로 관계를 명확히 한다",
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "새 팝업 오픈 전날 밤, 주원이 아직 조명이 켜진 쇼윈도 앞으로 {name}{을를} 불렀다."
+          "text": "새 팝업 오픈 전날 늦은 저녁, 주원이 아직 조명이 켜진 쇼윈도 앞으로 {name}{을를} 불렀다."
         },
         {
           "type": "narration",
-          "text": "완성된 공간 한가운데 이상할 만큼 비어 있는 자리가 있었다. 그의 작업치고는 눈에 띄는 빈틈이었다."
+          "text": "완성된 공간은 그의 작업답게 빈틈이 없었다. 단 하나, 중앙의 작은 영역만 이상할 정도로 비어 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "저기, 이상하죠?",
+          "text": "저기, 거슬리죠?",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "주원은 답을 알고 있으면서 묻는 얼굴이었다."
+          "text": "답을 알고 있으면서 묻는 얼굴이었다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
           "text": "일부러 비워둔 겁니다.",
           "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "주원에게 “일부러 만든 빈틈”은 거의 모순 같은 말이었다."
         }
       ]
     },
@@ -41,7 +44,7 @@
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "예전엔 빈 곳이 보이면 반드시 채워야 했습니다. 계획에 없는 게 들어오면 거슬렸고요.",
+          "text": "예전엔 빈 곳이 보이면 반드시 채웠습니다. 계획에 없는 게 들어오면 거슬렸고요.",
           "portrait": "main"
         },
         {
@@ -51,24 +54,58 @@
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "그런데 당신은 계속 계획 밖에 있더군요.",
+          "text": "당신은 처음부터 계속 계획 밖에 있었습니다.",
           "portrait": "main"
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "이상하게도 이제는 그게 싫지 않습니다.",
+          "text": "제가 정한 동선에서 벗어나고, 예상한 대답도 잘 안 하고, 이상한 곳에는 같이 들어가자고 하고.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "나열하는 내용만 들으면 불평인데 표정은 그렇지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "그런데 이제 그 변수를 제외할 생각이 없습니다.",
           "portrait": "troubled"
         }
       ],
       "choice": {
-        "id": "a100",
+        "id": "joowon_100_choice_1",
         "options": [
           {
             "id": "a",
+            "text": "“그거 고백 맞죠?”",
+            "affection": 8,
+            "memoryKey": "joowon_100_confession",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "맞습니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "이번에는 한 치도 피하지 않았다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "더 예쁘게 말해드릴 생각도 없습니다. 이게 제일 정확하니까.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "b",
             "text": "“그러면 앞으로도 계획에 없을게요.”",
-            "affection": 7,
-            "memoryKey": "a100_unplanned",
+            "affection": 9,
+            "memoryKey": "joowon_100_unplanned",
             "response": [
               {
                 "type": "narration",
@@ -83,55 +120,31 @@
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "…그래도 두겠습니다. 자리.",
-                "portrait": "smile"
-              }
-            ]
-          },
-          {
-            "id": "b",
-            "text": "“그거 고백치고 너무 주원 씨답다.”",
-            "affection": 6,
-            "memoryKey": "a100_confession_style",
-            "response": [
-              {
-                "type": "dialogue",
-                "speaker": "한주원",
-                "text": "고백 맞습니다.",
+                "text": "…그래도 그 정도 변수는 감수하죠.",
                 "portrait": "main"
-              },
-              {
-                "type": "narration",
-                "text": "이번에는 말 돌리지 않았다."
-              },
-              {
-                "type": "dialogue",
-                "speaker": "한주원",
-                "text": "다시 더 예쁘게 말할 생각은 없어요.",
-                "portrait": "troubled"
               }
             ]
           },
           {
             "id": "c",
-            "text": "“빈자리면 언젠가 바뀔 수도 있잖아요.”",
-            "affection": 6,
-            "memoryKey": "a100_change",
+            "text": "“나는 빈자리에 들어가는 물건이 아닌데요.”",
+            "affection": 9,
+            "memoryKey": "joowon_100_not_object",
             "response": [
+              {
+                "type": "narration",
+                "text": "주원의 눈이 잠깐 커졌다가 이내 웃음이 섞였다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "그게 좋다는 겁니다.",
+                "text": "그래서 비워둔 겁니다.",
                 "portrait": "main"
               },
               {
-                "type": "narration",
-                "text": "주원이 비어 있는 공간을 한번 바라봤다."
-              },
-              {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "앞으로 놓일 게 아직 정해지지 않았으니까.",
+                "text": "당신 자리를 제가 배치할 생각이 없다는 뜻이에요.",
                 "portrait": "smile"
               }
             ]
@@ -143,17 +156,130 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "주원은 쇼윈도 안으로 들어가 마지막 소품 하나의 각도를 바로잡았다. 그리고 이번에는 빈 공간에 손대지 않았다."
+          "text": "주원은 쇼윈도 안으로 들어가 마지막 소품 하나를 반듯하게 맞췄다. 그리고 나오려다 빈 공간 앞에서 멈췄다."
+        },
+        {
+          "type": "narration",
+          "text": "바닥 한쪽에 작은 오브제가 놓여 있었다. {name}{은는} 장난처럼 그것을 원래 계획과 조금 다른 각도로 돌려놓았다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "가죠. 여기서 더 만지면 또 과해집니다.",
+          "text": "…….",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "주원의 시선이 오브제와 {name} 사이를 오갔다. 고칠 거라고 생각한 순간, 그는 손을 주머니에 넣었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "일단 둬보죠.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "먼저 걸어가던 그가 두 걸음 뒤 멈춰 {name}{을를} 기다렸다."
+          "text": "그에게는 제법 큰 선언이었다."
+        }
+      ],
+      "choice": {
+        "id": "joowon_100_choice_2",
+        "options": [
+          {
+            "id": "a",
+            "text": "“마음에 안 들면 내일 바꿔도 돼요.”",
+            "affection": 8,
+            "memoryKey": "joowon_100_change_tomorrow",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "그럴 수도 있죠.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "주원이 빈 공간을 바라봤다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "바뀔 수 있다는 게 이제는 실패처럼 보이지 않습니다.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“진짜 안 고쳐요?”",
+            "affection": 8,
+            "memoryKey": "joowon_100_not_fix",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "계속 물으면 고치고 싶어질 것 같은데요.",
+                "portrait": "smile"
+              },
+              {
+                "type": "narration",
+                "text": "그가 {name}의 어깨 너머로 오브제를 한 번 더 봤지만 끝내 손대지 않았다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "오늘은 안 고칩니다.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“그럼 나도 주원 씨 계획에 의견 내도 돼요?”",
+            "affection": 9,
+            "memoryKey": "joowon_100_have_say",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "이미 충분히 내고 계십니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "주원이 아주 자연스럽게 덧붙였다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "앞으로도 그러세요. 듣겠습니다. 제 마음에 안 들어도.",
+                "portrait": "smile"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "밖으로 나온 주원이 휴대폰으로 내일 오픈 체크리스트를 확인했다. 빽빽한 항목 사이 마지막 줄 하나만 비어 있었다."
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가} 왜 비워뒀냐고 묻자 주원은 화면을 잠갔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "내일 생기는 일은 내일 적으려고요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "먼저 걸어가던 그가 두 걸음 뒤 멈췄다. 예전 같으면 상대가 따라오는 속도까지 계산했을 사람이 그대로 기다렸다."
         },
         {
           "type": "dialogue",
@@ -163,10 +289,26 @@
         },
         {
           "type": "narration",
-          "text": "완벽한 동선을 만들던 사람이 처음으로 누군가의 속도에 맞춰 서 있었다."
+          "text": "{name}{이가} 옆에 서자 그제야 다시 걸었다. 반걸음 앞도 뒤도 아닌 정확히 나란한 거리였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "미리 말씀드리는데, 연애한다고 제가 덜 까다로워지진 않습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "“알아요.”라는 대답에 주원이 만족한 듯 웃었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "좋네요. 설명할 일이 하나 줄었습니다.",
+          "portrait": "smile"
         }
       ]
     }
   ],
-  "closing": "한주원의 COMPLETE — 완벽한 배치보다, 함께 바뀔 수 있는 자리를 선택했다."
+  "closing": "한주원의 COMPLETE — 완벽한 배치보다, 서로의 선택으로 계속 바뀔 수 있는 자리를 남겼다."
 }

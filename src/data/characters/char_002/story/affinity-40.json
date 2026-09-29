@@ -3,19 +3,19 @@
   "kind": "story",
   "title": "분류된 방",
   "threshold": 40,
+  "purpose": "완벽하게 관리된 사회적 얼굴과 엉망인 생활 공간의 갭을 크게 보여주고, 실패와 미완성을 버리지 못하는 주원의 성향을 웃음 뒤에서 암시한다.",
   "defaultPortrait": "main",
-  "completionAffection": 2,
-  "purpose": "완벽한 사회적 얼굴과 엉망인 생활 공간의 갭을 보여주고, 실패한 것들을 버리지 못하는 성향을 암시한다",
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "주원이 두고 간 샘플 북을 돌려주러 간 날이었다. 현관문이 열리자 {name}{은는} 잠깐 주소를 잘못 찾아온 줄 알았다."
+          "text": "주원이 두고 간 샘플 북을 돌려주러 간 날이었다. 현관문이 열리자 {name}{은는} 주소를 한 번 확인했다."
         },
         {
           "type": "narration",
-          "text": "차콜과 실버로 빈틈없이 정돈된 사람의 집에는 배송 상자, 컬러칩, 옛 기획서가 기묘한 질서로 쌓여 있었다."
+          "text": "차콜과 실버로 빈틈없이 정돈된 사람의 집에는 배송 상자, 컬러칩, 옛 기획서, 비닐도 뜯지 않은 생활용품이 기묘한 층을 이루고 있었다."
         },
         {
           "type": "dialogue",
@@ -32,6 +32,16 @@
           "speaker": "한주원",
           "text": "정리 안 된 게 아니라 분류가 된 겁니다.",
           "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "냉장고를 열자 생수, 탄산수, 커피와 정체 모를 소스 하나뿐이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "냉장고는 닫으시죠.",
+          "portrait": "main"
         }
       ]
     },
@@ -39,27 +49,33 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "거실 한쪽에는 실패한 시안들이 연도별로 묶여 있었다. 버린 게 아니라 보관한 양이 훨씬 많아 보였다."
+          "text": "거실 한쪽에는 실패한 시안들이 연도와 프로젝트별로 묶여 있었다. 버렸다고 보기에는 지나치게 많은 양이었다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "버리면 끝난 것 같아서 싫습니다.",
-          "portrait": "hmm"
+          "text": "완성된 건 회사에 있습니다. 실패한 건 여기 있고요.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "주원은 별일 아니라는 듯 말했지만 시안 모서리를 맞추는 손은 꽤 느렸다."
+          "text": "그는 농담처럼 말했지만 파일 모서리를 맞추는 손은 유난히 느렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "버리면 없던 선택이 되는 것 같아서 싫습니다. 틀린 것도 제가 한 거니까.",
+          "portrait": "main"
         }
       ],
       "choice": {
-        "id": "a40",
+        "id": "joowon_40_choice",
         "options": [
           {
             "id": "a",
-            "text": "“실패한 것도 다 주원 씨 거니까요?”",
-            "affection": 7,
-            "memoryKey": "a40_accept_failures",
+            "text": "“실패한 것도 주원 씨 거니까 남겨두는 거네요.”",
+            "affection": 9,
+            "memoryKey": "joowon_40_failure_owned",
             "response": [
               {
                 "type": "narration",
@@ -68,40 +84,46 @@
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "…그런 식으로 말하는 사람은 처음이네요.",
+                "text": "…그렇게 말하는 사람은 처음이네요.",
                 "portrait": "troubled"
               },
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "보통은 미련이라고 하죠.",
+                "text": "보통은 미련이라고 합니다.",
                 "portrait": "main"
               }
             ]
           },
           {
             "id": "b",
-            "text": "“그래도 저 박스는 좀 버려도 되지 않아요?”",
-            "affection": 5,
-            "memoryKey": "a40_box_tease",
+            "text": "“그래도 저 택배 상자는 미련이 아니라 쓰레기 아닌가요?”",
+            "affection": 8,
+            "memoryKey": "joowon_40_boxes",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "그건 장기 분류입니다.",
+                "text": "장기 분류입니다.",
                 "portrait": "main"
               },
               {
                 "type": "narration",
-                "text": "진지한 얼굴이라 더 웃겼다. 주원은 {name}{이가} 웃자 뒤늦게 억울한 표정을 했다."
+                "text": "진지한 얼굴이라 더 웃겼다. {name}{이가} 웃자 주원이 억울한 듯 눈을 가늘게 떴다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "왜 웃습니까. 아직 분류 기준이 안 정해졌을 뿐입니다.",
+                "portrait": "troubled"
               }
             ]
           },
           {
             "id": "c",
-            "text": "“남의 공간에는 그렇게 엄격하면서.”",
-            "affection": 6,
-            "memoryKey": "a40_hypocrisy",
+            "text": "“남의 공간에는 그렇게 엄격하면서요.”",
+            "affection": 8,
+            "memoryKey": "joowon_40_hypocrisy",
             "response": [
               {
                 "type": "dialogue",
@@ -111,13 +133,13 @@
               },
               {
                 "type": "narration",
-                "text": "그는 잠시 집 안을 둘러봤다."
+                "text": "그는 자기 거실을 천천히 둘러봤다."
               },
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "…제 공간은 아무도 평가 안 하니까 방심했습니다.",
-                "portrait": "troubled"
+                "text": "…제 공간은 아무도 평가하지 않으니까 꽤 방심했군요. 인정합니다.",
+                "portrait": "main"
               }
             ]
           }
@@ -128,7 +150,7 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "돌아가기 전 주원은 현관의 상자 하나를 발끝으로 밀어 길을 만들었다."
+          "text": "돌아가기 전 주원은 현관 앞 상자 두 개를 옆으로 밀어 길을 만들었다. 하나를 치우자 또 하나가 나왔다."
         },
         {
           "type": "dialogue",
@@ -138,16 +160,30 @@
         },
         {
           "type": "narration",
-          "text": "'다음'이라는 말이 너무 자연스럽게 나왔다. 주원도 그 사실을 알아챈 듯 잠깐 멈췄다."
+          "text": "“다음?” 하고 되묻자 주원의 손이 멈췄다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "…샘플 북 돌려주러 또 올 일은 없겠지만.",
+          "text": "샘플 북 돌려주러 또 올 일은 없겠지만.",
           "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가} 냉장고를 힐끗 보자 주원이 한숨을 쉬었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "…식사는 하실 수 있게 해두겠습니다. 됐습니까?",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "말은 퉁명스러웠지만 다음 방문을 취소하지는 않았다. 문을 닫기 직전, 주원이 뒤늦게 상자 하나를 진짜로 접기 시작하는 모습이 보였다."
         }
       ]
     }
   ],
-  "closing": "완벽한 한주원의 뒤에는 실패와 미완성을 버리지 못하는 생활이 있었다."
+  "closing": "완벽한 한주원의 뒤에는 처참한 생활력과 버리지 못한 실패들이 있었다. 그리고 그 공간에 “다음”이 너무 자연스럽게 생겼다."
 }

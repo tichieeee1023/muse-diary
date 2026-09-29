@@ -15,6 +15,7 @@ export function RecordsPage({ onNavigate }: RecordsPageProps) {
   const recentMeetings = Object.entries(collection.lastMeetingByCharacterId)
     .sort(([, a], [, b]) => b.day - a.day)
     .slice(0, 4)
+  const seasonalRecords = Object.values(collection.seasonalEventRecords).sort((a, b) => b.day - a.day)
 
   return (
     <div className="page records-page">
@@ -46,6 +47,26 @@ export function RecordsPage({ onNavigate }: RecordsPageProps) {
           })}
         </div>
       </section>
+
+      {seasonalRecords.length > 0 && (
+        <section className="seasonal-record-section">
+          <div className="diary-section-title"><p className="eyebrow">SEASONAL MEMORIES</p><h2>계절의 기억</h2></div>
+          <div className="seasonal-record-list">
+            {seasonalRecords.map((record) => {
+              const companion = characters.find((character) => character.id === record.companionId)
+              const season = record.season ?? (record.eventId === 'summer-fireworks-night' ? 'SUMMER' : 'SPRING')
+              const seasonMark = season === 'SUMMER' ? '✦' : season === 'AUTUMN' ? '❧' : season === 'WINTER' ? '❄' : '✿'
+              return (
+                <article key={record.eventId} className={`seasonal-record-card season-${season.toLowerCase()}`}>
+                  <span className="seasonal-record-mark">{seasonMark}</span>
+                  <div><small>DAY {String(record.day).padStart(2, '0')} · {season}</small><strong>{record.title} · {companion?.name ?? 'UNKNOWN MUSE'}</strong><p>{record.souvenirNote}</p></div>
+                  <em>{record.souvenir}</em>
+                </article>
+              )
+            })}
+          </div>
+        </section>
+      )}
 
       <section className="recent-record-section">
         <div className="diary-section-title"><p className="eyebrow">RECENT PAGES</p><h2>최근의 만남</h2></div>

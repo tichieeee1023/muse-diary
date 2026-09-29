@@ -3,31 +3,37 @@
   "kind": "story",
   "title": "오늘의 선택",
   "threshold": 100,
-  "purpose": "졸업 후 현재의 자신으로 미래를 선택하게 한다. 로맨스는 또래다운 수줍음과 약속 중심으로 마무리한다.",
+  "purpose": "졸업이라는 현재의 이정표에서 휘람이 과거의 의무와 분리된 자신의 미래를 선택한다. 로맨스 역시 구원이나 보호가 아니라 서로의 선택을 존중하는 또래다운 약속으로 마무리한다.",
   "defaultPortrait": "smile",
-  "completionAffection": 3,
+  "completionAffection": 0,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "졸업식이 끝난 날, 휘람은 처음으로 교복이 아닌 사복 차림이었다."
+          "text": "졸업식이 끝난 뒤 휘람은 교문에서 한참 서 있었다. 교복 대신 단정한 사복을 입은 모습이 오히려 낯설었다."
         },
         {
           "type": "dialogue",
           "speaker": "김휘람",
-          "text": "이상하죠. 이 옷이 더 낯섭니다.",
+          "text": "이상하죠. 이 옷이 더 어색합니다.",
           "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "가방 안에는 오래된 검술 매듭이 들어 있었지만 손에 들고 있지는 않았다."
+          "text": "가방 지퍼 사이로 낡은 검술 매듭이 조금 보였다. 예전처럼 밖에 달아두지는 않았다."
         },
         {
           "type": "dialogue",
           "speaker": "김휘람",
-          "text": "버리는 건 아닙니다. 다만 매일 달고 다닐 필요는 없을 것 같아서요.",
+          "text": "버린 건 아닙니다. 과거를 없던 일로 만들고 싶진 않아요.",
           "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "다만 매일 제가 누구인지 증명하려고 달고 다닐 필요도 없을 것 같아서요.",
+          "portrait": "hmm"
         }
       ]
     },
@@ -35,67 +41,186 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "휘람은 잠깐 망설이다가 {name}{을를} 똑바로 봤다."
+          "text": "휘람은 졸업장을 가방에 넣고 휴대폰을 꺼냈다. 메모장 맨 위에는 예전에 함께 적었던 “가보고 싶은 곳” 목록이 남아 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "김휘람",
-          "text": "앞으로 뭘 할지는 아직 모르겠습니다. 그래도… 다음에 어디 갈지는 제가 정해보고 싶어요. 같이 가주실래요?",
+          "text": "첫 번째는 제가 정했습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "화면에는 가까운 바닷가 도시의 이름과 기차 시간이 적혀 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "누구를 지키러 가는 것도 아니고, 옛날 기억을 확인하러 가는 것도 아닙니다. 그냥 제가 가보고 싶어서요.",
           "portrait": "smile"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "그게 생각보다 기분이 좋네요."
         }
       ],
       "choice": {
-        "id": "aff_100_choice",
+        "id": "aff_100_choice_1",
         "options": [
           {
             "id": "a",
-            "text": "“휘람이 가고 싶은 데로.”",
-            "affection": 8,
+            "text": "“좋아요. 휘람이 고른 데로 가요.”",
+            "affection": 7,
+            "memoryKey": "hwiram_100_trip",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "김휘람",
-                "text": "그럼 진짜 멀리 갈 수도 있어요.",
+                "text": "진짜 멀리 골라도 이제 취소 못 합니다.",
                 "portrait": "smile"
               }
-            ],
-            "memoryKey": "hwiram_100_trip"
+            ]
           },
           {
             "id": "b",
-            "text": "“이번엔 네가 먼저 정해.”",
-            "affection": 8,
+            "text": "“첫 선택 축하해요.”",
+            "affection": 6,
+            "memoryKey": "hwiram_100_choice",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "김휘람",
-                "text": "네. 이번엔 제가 선택할게요.",
-                "portrait": "main"
+                "text": "첫 선택이라니 좀 거창하지만… 네. 감사합니다.",
+                "portrait": "troubled"
               }
-            ],
-            "memoryKey": "hwiram_100_choose"
+            ]
           },
           {
             "id": "c",
-            "text": "“일단 키오스크부터 정복할까?”",
-            "affection": 7,
+            "text": "“키오스크 정복도 일정에 넣고요.”",
+            "affection": 6,
+            "memoryKey": "hwiram_100_kiosk",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "김휘람",
-                "text": "…그건 여행보다 어렵습니다.",
+                "text": "…그건 바다보다 난도가 높습니다.",
                 "portrait": "troubled"
               },
               {
                 "type": "narration",
-                "text": "그리고 아주 또래답게 웃었다."
+                "text": "휘람이 결국 또래답게 웃었다."
               }
-            ],
-            "memoryKey": "hwiram_100_kiosk"
+            ]
           }
         ]
       }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "웃음이 잦아든 뒤 휘람이 갑자기 진지해졌다. 예전처럼 오래된 사람의 표정이 아니라, 무슨 말을 할지 망설이는 열여덟 살의 얼굴이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "하나 더 제가 정해도 됩니까?",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "앞으로도 {name} 씨를 만나고 싶어요. 제가 과거에 누구였기 때문이 아니라… 지금 제가 당신을 좋아해서요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "처음으로 과거의 기억이 아무 근거도 되지 않는 고백이었다."
+        }
+      ],
+      "choice": {
+        "id": "aff_100_choice_2",
+        "options": [
+          {
+            "id": "a",
+            "text": "“나도 지금의 휘람을 좋아해요.”",
+            "affection": 7,
+            "memoryKey": "hwiram_100_mutual",
+            "response": [
+              {
+                "type": "narration",
+                "text": "휘람의 눈이 크게 뜨였다가 천천히 휘었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "김휘람",
+                "text": "…그 말, 오래 기억하겠습니다. 아니, 오늘부터 새로 기억할게요.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“그럼 앞으로도 많이 만나자.”",
+            "affection": 7,
+            "memoryKey": "hwiram_100_future",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "김휘람",
+                "text": "네. 다음 약속은 제가 먼저 잡겠습니다.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“과거 말고 오늘부터 하나씩 만들어요.”",
+            "affection": 6,
+            "memoryKey": "hwiram_100_today",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "김휘람",
+                "text": "좋습니다. 오늘부터라면… 제가 고를 수 있으니까요.",
+                "portrait": "main"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "교문을 나서며 휘람은 가방 안의 매듭을 한 번 확인하고 지퍼를 닫았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "이건 가지고 갈 겁니다. 제 일부니까."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "대신 어디로 갈지는 이게 아니라 제가 정할게요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그리고 이번에는 {name}보다 반걸음 앞서거나 뒤에 서지 않았다. 나란히 걸었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "김휘람",
+          "text": "우선 밥부터 먹죠. 졸업생이니까 제가 고르겠습니다.",
+          "portrait": "smile"
+        }
+      ]
     }
   ],
-  "closing": "과거를 기억하는 아이는 처음으로 현재의 자신이 원하는 다음 장면을 골랐다."
+  "closing": "과거를 기억하는 아이는 과거에서 도망치지 않았다. 대신 현재의 자신이 원하는 미래를 하나씩 골랐다. 그 첫 목록에는 가고 싶은 도시와, 계속 만나고 싶은 사람이 함께 적혔다."
 }

@@ -1,46 +1,103 @@
 {
   "id": "char_008_affinity_60",
   "kind": "story",
-  "times": ["밤"],
+  "times": [
+    "밤"
+  ],
   "title": "미완성인 채로",
   "threshold": 60,
-  "purpose": "세현의 휴학과 수십 점의 미완성 작품, 그리고 가능성이 끝나는 순간에 대한 공포를 공개한다.",
+  "purpose": "세현의 휴학과 작업실에 쌓인 수십 점의 미완성 작품을 공개한다. 실패가 아니라 완성 뒤 가능성이 닫히는 것을 두려워한다는 핵심 결핍을 드러내고, 한 작품을 끝내보기 위한 첫 약속을 만든다.",
   "defaultPortrait": "hmm",
-  "completionAffection": 3,
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "비가 갑자기 쏟아진 저녁, 세현은 미술관 창고에서 가져갈 상자를 정리하다가 낡은 스케치북 하나를 떨어뜨렸다."
+          "text": "늦은 저녁, 세현에게서 짧은 연락이 왔다. “혹시 지금 시간 돼요?” 평소보다 물음표가 하나뿐이었다."
         },
         {
           "type": "narration",
-          "text": "펼쳐진 페이지에는 잘 그린 드로잉들이 가득했다. 문제는 거의 모든 그림이 마지막 몇 선을 남긴 채 멈춰 있다는 것이었다."
+          "text": "세현이 데려간 곳은 미술관이 아니라 학교 근처의 작은 작업실이었다. 문을 열자 벽을 향해 세워둔 캔버스가 먼저 보였다."
         },
         {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "…이거 진짜 일부러 본 거 아니죠?",
+          "text": "보기 전에 말할게요. 웃으면 진짜 문 닫습니다.",
           "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "{name}{이가} 고개를 끄덕이자 세현은 스케치북을 바로 닫지 못했다."
+          "text": "농담처럼 말했지만 손은 문고리를 놓지 못하고 있었다."
         },
         {
-          "type": "dialogue",
-          "speaker": "오세현",
-          "text": "저, 원래 미대 다녔어요. 휴학 중이고.",
-          "portrait": "main"
+          "type": "narration",
+          "text": "작업실에는 그림이 수십 점 있었다. 놀라운 건 대부분이 거의 끝나 있다는 점이었다. 마지막 몇 번의 붓질, 서명, 배경 한 구석만 남겨둔 채 전부 멈춰 있었다."
         }
-      ]
+      ],
+      "choice": {
+        "id": "aff_60_choice_1",
+        "options": [
+          {
+            "id": "a",
+            "text": "“안 웃어요. 그냥 볼게요.”",
+            "affection": 6,
+            "memoryKey": "sehyun_60_just_look",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "오세현",
+                "text": "그 “그냥”이 오늘은 좀 고맙네요.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“보고 싶지 않으면 지금 닫아도 돼요.”",
+            "affection": 6,
+            "memoryKey": "sehyun_60_control",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "오세현",
+                "text": "아뇨. 제가 불러놓고 또 닫으면… 진짜 평생 못 보여줄 것 같아서.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“세현 씨가 먼저 하나 골라줘요.”",
+            "affection": 7,
+            "memoryKey": "sehyun_60_choose",
+            "response": [
+              {
+                "type": "narration",
+                "text": "세현은 한참 망설이다 가장 구석의 작은 캔버스를 꺼냈다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "오세현",
+                "text": "그럼 이거. 제일 덜 미워하는 걸로.",
+                "portrait": "hmm"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "blocks": [
         {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "저 원래 미대 다녔어요. 지금은 휴학 중이고.",
+          "portrait": "main"
+        },
+        {
           "type": "narration",
-          "text": "그는 작업실에도 이런 그림이 수십 장 있다고 털어놓았다."
+          "text": "주변에서는 재능이 있다고 했다. 그래서 더 겁이 났다고 세현은 말했다."
         },
         {
           "type": "dialogue",
@@ -51,74 +108,134 @@
         {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "근데 완성했는데도 별로면… 그때는 “아직 가능성이 있다”는 말도 못 하잖아요.",
+          "text": "근데 완성했는데도 별로면… 그때는 가능성이라는 말도 못 하잖아요.",
           "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "그래서 끝내지 않는 쪽을 택했다. 가능성만은 계속 남아 있도록."
+          "text": "그래서 그는 늘 마지막 직전에 멈췄다. 아직 더 좋아질 수 있다는 상태로 작품을 보존하기 위해서."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "웃기죠. 가능성을 지키겠다고 아무것도 끝내지 않았어요."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "{name}{이가} 가장 가까운 캔버스를 보자 세현이 먼저 설명했다. 설명하지 않으면 견디기 힘든 사람처럼."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "저건 빛이 마음에 안 들고, 저건 인물이 너무 굳었고, 저쪽은 색이…"
         },
         {
           "type": "narration",
-          "text": "세현은 스케치북을 덮고 한참 손바닥만 바라봤다."
+          "text": "{name}{이가} 말을 끊자 세현이 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "왜요?"
+        },
+        {
+          "type": "narration",
+          "text": "완성되지 않은 이유 말고, 마음에 드는 부분을 하나만 말해보라고 했다."
         }
       ],
       "choice": {
-        "id": "aff_60_choice",
+        "id": "aff_60_choice_2",
         "options": [
           {
             "id": "a",
-            "text": "“미완성이어도 이미 세현 씨 그림이잖아요.”",
-            "affection": 6,
-            "memoryKey": "sehyun_60_already_yours",
+            "text": "“이 그림에서 좋아하는 곳 하나만 골라봐요.”",
+            "affection": 7,
+            "memoryKey": "sehyun_60_like_one",
             "response": [
+              {
+                "type": "narration",
+                "text": "세현은 오래 찾다가 작은 창가의 빛을 가리켰다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "오세현",
-                "text": "…그 말, 되게 얄밉네요. 도망갈 데가 없잖아.",
-                "portrait": "troubled"
+                "text": "…여긴 좋아해요. 사실 꽤 많이.",
+                "portrait": "smile"
               }
             ]
           },
           {
             "id": "b",
-            "text": "“완성했다고 가능성이 없어지는 건 아닌데.”",
-            "affection": 5,
-            "memoryKey": "sehyun_60_next",
+            "text": "“완성했다고 가능성이 없어지는 건 아니에요.”",
+            "affection": 6,
+            "memoryKey": "sehyun_60_possibility",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "오세현",
-                "text": "다음 그림이 있다는 뜻이죠?",
+                "text": "다음 그림이 생긴다는 뜻이죠?",
                 "portrait": "hmm"
               },
               {
                 "type": "narration",
-                "text": "세현은 처음 듣는 해석처럼 오래 생각했다."
+                "text": "그는 처음 듣는 해석처럼 오래 생각했다."
               }
             ]
           },
           {
             "id": "c",
-            "text": "“무서우면 같이 봐줄게요.”",
-            "affection": 5,
-            "memoryKey": "sehyun_60_together",
+            "text": "“무서우면 하나만 같이 끝내봐요.”",
+            "affection": 7,
+            "memoryKey": "sehyun_60_finish_one",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "오세현",
-                "text": "평가 안 하고요?",
-                "portrait": "troubled"
+                "text": "평가 안 하고요?"
               },
               {
                 "type": "narration",
-                "text": "“원하면.”이라는 대답에 그가 아주 작게 웃었다."
+                "text": "“원하면.”이라는 대답에 세현이 아주 작게 웃었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "오세현",
+                "text": "그럼… 하나만요. 진짜 하나만.",
+                "portrait": "smile"
               }
             ]
           }
         ]
       }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "돌아가기 전 세현은 구석에 있던 작은 캔버스를 책상 위에 올려두었다. 아직 손대지는 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "다음에 오면 이거부터 해볼게요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그리고 늘 벽을 향해 세워두던 그림을 처음으로 정면으로 돌려놓았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "지금은 미완성인 채로 있어도 되는데… 영원히 이대로 둘 필요는 없겠죠.",
+          "portrait": "hmm"
+        }
+      ]
     }
   ],
-  "closing": "그날 세현은 스케치북을 숨기지 않았다. 보여주지도 않았지만, 적어도 급히 가방 안으로 밀어 넣지는 않았다."
+  "closing": "세현의 작업실에는 여전히 미완성 작품이 가득했다. 그러나 그날 처음으로 한 작품이 벽이 아니라 방 안을 바라보게 놓였다."
 }

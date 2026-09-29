@@ -1,11 +1,14 @@
 {
   "id": "char_004_casual_10",
   "kind": "casual",
+  "times": [
+    "밤"
+  ],
   "title": "감정 없는 삼각김밥",
   "minAffection": 0,
   "maxAffection": 100,
   "defaultPortrait": "hmm",
-  "completionAffection": 5,
+  "completionAffection": 8,
   "repeatable": true,
   "placeIds": [
     "convenience"

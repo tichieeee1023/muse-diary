@@ -1,13 +1,18 @@
 {
   "id": "char_009_casual_01",
   "kind": "casual",
-  "times": ["낮"],
+  "times": [
+    "낮"
+  ],
   "title": "차는 뜨겁지 않게",
   "minAffection": 0,
   "maxAffection": 39,
   "defaultPortrait": "main",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
+  "placeIds": [
+    "cafe"
+  ],
   "sections": [
     {
       "blocks": [

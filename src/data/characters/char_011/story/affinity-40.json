@@ -3,95 +3,57 @@
   "kind": "story",
   "title": "웃기지 않는 사람",
   "threshold": 40,
-  "purpose": "주인공이 공연자가 아닌 유리안을 좋아할 수 있다는 감각을 쌓는다.",
-  "defaultPortrait": "troubled",
-  "completionAffection": 3,
+  "purpose": "상대를 즐겁게 해야 관계가 유지된다는 유리안의 습관을 흔들고, 무엇을 보여줄지가 아니라 자신이 무엇을 원하는지를 말하게 한다.",
+  "defaultPortrait": "main",
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
-        {
-          "type": "narration",
-          "text": "그날 유리안은 농담을 몇 번이나 하려다 멈췄다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "유리안",
-          "text": "제가 조용하면 사람들이 보통 “무슨 일 있어?”라고 하거든요.",
-          "portrait": "main"
-        },
-        {
-          "type": "narration",
-          "text": "그는 작은 별 스티커 하나를 손톱으로 만지작거렸다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "유리안",
-          "text": "아무 일 없어도 조용할 수 있는데. 그게 잘 안 믿기나 봐요.",
-          "portrait": "hmm"
-        }
+        {"type":"narration","text":"휴일 오후, 유리안이 먼저 만나자고 연락했다. 공연도 행사도 없는 날이었다."},
+        {"type":"dialogue","speaker":"유리안","text":"오늘 계획은 없습니다. 큰일이죠. 저는 원래 남의 시간을 채워주는 직업인데.","portrait":"smile"},
+        {"type":"narration","text":"그는 습관처럼 갈 만한 곳을 몇 군데 빠르게 읊었다. 전시, 팝업, 야시장, 새로 생긴 디저트 가게."},
+        {"type":"dialogue","speaker":"유리안","text":"어디가 제일 재밌으실 것 같아요?","portrait":"main"}
       ]
     },
     {
       "blocks": [
-        {
-          "type": "narration",
-          "text": "{name}{이가} 그냥 조용히 앉아 있자 유리안이 먼저 침묵을 깨지 않았다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "유리안",
-          "text": "…이상하게 안 불편하네요.",
-          "portrait": "smile"
-        }
+        {"type":"narration","text":"{name}{은는} 대답 대신 유리안에게 오늘 뭘 하고 싶은지 물었다."},
+        {"type":"dialogue","speaker":"유리안","text":"저요?","portrait":"troubled"},
+        {"type":"narration","text":"놀란 표정이 지나치게 솔직해서 오히려 웃음이 났다."},
+        {"type":"dialogue","speaker":"유리안","text":"그건 생각 안 해봤는데요. 보통은 상대가 좋아할 만한 걸 먼저 고르니까.","portrait":"hmm"}
       ],
       "choice": {
-        "id": "aff_40_choice",
+        "id": "yurian_40_choice_1",
         "options": [
-          {
-            "id": "a",
-            "text": "“말 안 해도 되니까.”",
-            "affection": 7,
-            "response": [
-              {
-                "type": "dialogue",
-                "speaker": "유리안",
-                "text": "그 말 기억해둘게요.",
-                "portrait": "main"
-              }
-            ],
-            "memoryKey": "yurian_40_silence"
-          },
-          {
-            "id": "b",
-            "text": "“오늘은 내가 얘기할까요?”",
-            "affection": 6,
-            "response": [
-              {
-                "type": "dialogue",
-                "speaker": "유리안",
-                "text": "좋아요. 듣는 역할 해볼게요.",
-                "portrait": "smile"
-              }
-            ],
-            "memoryKey": "yurian_40_listen"
-          },
-          {
-            "id": "c",
-            "text": "“무대 위보다 지금이 더 궁금해요.”",
-            "affection": 7,
-            "response": [
-              {
-                "type": "dialogue",
-                "speaker": "유리안",
-                "text": "그건… 조금 무섭고 좋네요.",
-                "portrait": "troubled"
-              }
-            ],
-            "memoryKey": "yurian_40_real"
-          }
+          {"id":"a","text":"“오늘은 유리안 취향대로 가요.”","affection":8,"memoryKey":"yurian_40_his_choice","response":[{"type":"dialogue","speaker":"유리안","text":"책임지셔야 합니다. 진짜 별거 없을 수도 있어요.","portrait":"troubled"}]},
+          {"id":"b","text":"“아무것도 안 해도 되는데요.”","affection":9,"memoryKey":"yurian_40_do_nothing","response":[{"type":"dialogue","speaker":"유리안","text":"아무것도 안 하는 걸 일정으로 잡는 겁니까?","portrait":"hmm"},{"type":"dialogue","speaker":"유리안","text":"…그거 좀 마음에 드네요.","portrait":"smile"}]},
+          {"id":"c","text":"“재미없으면 재미없는 대로 기억하면 되죠.”","affection":8,"memoryKey":"yurian_40_plain_memory","response":[{"type":"dialogue","speaker":"유리안","text":"당신은 자꾸 이상한 데서 기준을 낮춰주네요. …칭찬입니다, 아마도.","portrait":"smile"}]}
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {"type":"narration","text":"결국 유리안이 고른 건 화려한 곳이 아니라 오래된 문구점이었다."},
+        {"type":"narration","text":"그는 반짝이 펜과 싸구려 별 스티커를 한참 들여다보다가, 금박이 조금 삐뚤어진 스티커 한 장을 골랐다."},
+        {"type":"dialogue","speaker":"유리안","text":"이런 거 좋아합니다. 너무 잘 만든 건 재미없어요.","portrait":"smile"},
+        {"type":"dialogue","speaker":"유리안","text":"누가 직접 붙이고 망쳐도 되는 물건이 좋거든요.","portrait":"main"},
+        {"type":"narration","text":"그 말은 취향 이야기였지만 어쩐지 다른 뜻도 섞여 있었다."}
+      ]
+    },
+    {
+      "blocks": [
+        {"type":"narration","text":"가게를 나와 벤치에 앉자 유리안이 새로 산 별 스티커를 반으로 잘라 한쪽을 내밀었다."},
+        {"type":"dialogue","speaker":"유리안","text":"오늘은 제가 한 번도 웃기지 못했는데 괜찮았습니까?","portrait":"troubled"}
+      ],
+      "choice": {
+        "id": "yurian_40_choice_2",
+        "options": [
+          {"id":"a","text":"“데이트가 공연은 아니잖아요.”","affection":9,"memoryKey":"yurian_40_not_show","response":[{"type":"narration","text":"유리안이 눈을 크게 떴다."},{"type":"dialogue","speaker":"유리안","text":"데이트라고 하셨네요. 그 단어는 제가 더 당황하는데요.","portrait":"troubled"}]},
+          {"id":"b","text":"“나는 충분히 즐거웠어요.”","affection":8,"memoryKey":"yurian_40_enough","response":[{"type":"dialogue","speaker":"유리안","text":"아무것도 특별히 안 했는데도요?","portrait":"main"},{"type":"narration","text":"대답을 들은 뒤 그는 한동안 새 스티커만 바라봤다."}]},
+          {"id":"c","text":"“다음에도 유리안이 하고 싶은 걸 해요.”","affection":9,"memoryKey":"yurian_40_next_choice","response":[{"type":"dialogue","speaker":"유리안","text":"다음도 있는 걸로 말하시네요.","portrait":"troubled"},{"type":"dialogue","speaker":"유리안","text":"…좋습니다. 다음 것도 제가 고를게요.","portrait":"smile"}]}
         ]
       }
     }
   ],
-  "closing": "유리안에게 관심이 향하는 방식이 공연에서 사람으로 조금씩 이동했다."
+  "closing": "유리안은 누군가를 즐겁게 하지 않은 하루도 관계로 남을 수 있다는 걸 처음 경험했다."
 }

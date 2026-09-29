@@ -5,8 +5,11 @@
   "minAffection": 20,
   "maxAffection": 59,
   "defaultPortrait": "main",
-  "completionAffection": 5,
+  "completionAffection": 8,
   "repeatable": true,
+  "placeIds": [
+    "bookstore"
+  ],
   "sections": [
     {
       "blocks": [

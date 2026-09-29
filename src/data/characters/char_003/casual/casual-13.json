@@ -1,0 +1,53 @@
+{
+  "id": "char_003_casual_13",
+  "kind": "casual",
+  "title": "정확히 삼십 초",
+  "minAffection": 0,
+  "maxAffection": 55,
+  "defaultPortrait": "main",
+  "completionAffection": 7,
+  "repeatable": false,
+  "placeIds": [
+    "convenience"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "편의점 전자레인지 앞에서 해준이 도시락 뚜껑을 아주 조금 열어둔 채 시간을 보고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "삼십 초면 됩니다. 더 돌리면 밥이 굳어요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 기관사라 그런지 이런 것도 정확하다고 웃자 해준이 잠깐 시선을 피했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "시간을 지키는 게 직업이긴 하지만... 이건 그냥 몇 번 실패해봐서 압니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "전자레인지가 울리기 직전, 해준은 정확히 한 박자 먼저 문손잡이에 손을 올렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "이제 됐네요. 반은 드실래요?",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "정확한 시간보다 자연스럽게 건넨 반쪽이 더 오래 남았다."
+}

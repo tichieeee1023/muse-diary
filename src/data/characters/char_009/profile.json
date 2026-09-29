@@ -15,6 +15,10 @@
     "troubled": "/assets/characters/char_009/troubled.webp",
     "hmm": "/assets/characters/char_009/hmm.webp",
     "endingCg": "/assets/characters/char_009/ending-cg.webp",
-    "endingDoll": "/assets/characters/char_009/ending-doll.webp"
+    "endingDoll": "/assets/characters/char_009/ending-doll.webp",
+    "thinking": "/assets/characters/char_009/thinking.webp",
+    "angry": "/assets/characters/char_009/angry.webp",
+    "sorrowful": "/assets/characters/char_009/sorrowful.webp",
+    "serious": "/assets/characters/char_009/serious.webp"
   }
 }

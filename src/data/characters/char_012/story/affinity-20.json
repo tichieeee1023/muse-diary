@@ -3,30 +3,155 @@
   "kind": "story",
   "title": "처음이 아닌 기시감",
   "threshold": 20,
-  "purpose": "첫 만남의 이상한 익숙함을 반복적인 작은 기억 실수로 확장한다. 아직 시간 반복은 밝히지 않는다.",
+  "purpose": "이현의 정중한 선 긋기 사이로 오래된 연인의 생활형 반말과 습관이 자꾸 새어 나오게 해, 기시감 자체를 관계의 첫 떡밥으로 만든다.",
   "defaultPortrait": "hmm",
-  "completionAffection": 3,
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "이현은 {name}{이가} 가게 문을 열기 직전 이미 고개를 들고 있었다."
+          "text": "수리점 문을 열자 이현이 작업대에서 고개를 들었다. 마치 문손잡이가 돌아가기 전부터 누가 올지 알고 있었던 사람처럼."
         },
         {
           "type": "dialogue",
           "speaker": "진이현",
-          "text": "이번에는 제시간이네요.",
+          "text": "이번에는 안 늦었네.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "또 “이번”이라는 말을 썼다."
+          "text": "너무 자연스러운 반말이었다. 이현도 반 박자 늦게 자신이 한 말을 알아챘다."
         },
         {
           "type": "dialogue",
           "speaker": "진이현",
-          "text": "…습관입니다. 신경 쓰지 마십시오.",
+          "text": "……안 늦으셨네요. 죄송합니다. 말이 좀 잘못 나왔습니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "사과는 정중했지만, 이상하게도 방금의 한마디가 훨씬 이현다운 말처럼 들렸다."
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "작업대 옆에는 차 두 잔이 놓여 있었다. {name}{이가} 아직 아무 말도 하지 않았는데 이현은 한 잔을 자연스럽게 밀어줬다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "뜨거운 건 바로 안 드시잖—",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "……아니. 뜨거운 건 별로 안 좋아하실 것 같아서 조금 식혀뒀습니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "이현은 시선을 피하며 시계 뒷뚜껑을 닫았다. 처음 보는 사람의 취향을 추측한 얼굴은 아니었다."
+        }
+      ],
+      "choice": {
+        "id": "ihyeon_20_choice_1",
+        "options": [
+          {
+            "id": "a",
+            "text": "“방금, 원래부터 알고 있던 사람처럼 말했어요.”",
+            "affection": 9,
+            "memoryKey": "ihyeon_20_familiar_tone",
+            "response": [
+              {
+                "type": "narration",
+                "text": "이현의 손끝이 멈췄다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "그렇게 들렸습니까.",
+                "portrait": "hmm"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "……그럼 제가 생각한 것보다 티가 많이 나는 모양이네요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“반말해도 괜찮은데요.”",
+            "affection": 8,
+            "memoryKey": "ihyeon_20_banmal_ok",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "안 됩니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "대답은 의외로 단호했다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "지금의 당신과 저는 아직 그 정도로 가까운 사이가 아니니까요.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“그냥 편하게 말해요. 자꾸 고치는 게 더 수상해요.”",
+            "affection": 9,
+            "memoryKey": "ihyeon_20_stop_correcting",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "그건 좀 곤란하네요.",
+                "portrait": "smile"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "진이현",
+                "text": "편하게 말하면……제가 어디까지 편했는지 들킬 것 같아서.",
+                "portrait": "troubled"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "한동안 시계 초침 소리만 이어졌다. 이현은 지나치게 정중한 목소리로 고장 난 시계의 구조를 설명했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "이 부품은 오래될수록 손에 익습니다. 오래 만진 건 생각보다 몸이 먼저 기억하거든요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "말을 끝낸 뒤 이현이 아주 잠깐 {name}{을를} 바라봤다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "사람도……그런가 봅니다.",
           "portrait": "troubled"
         }
       ]
@@ -35,63 +160,26 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "작업대 한쪽에는 {name}{이가} 좋아할 법한 차가 이미 준비되어 있었다."
+          "text": "돌아가려는 순간, 이현이 무심코 의자를 조금 당겨 길을 비켜줬다. {name}{이가} 어느 쪽으로 돌아 나가는지 이미 여러 번 봐온 사람처럼 정확한 타이밍이었다."
         },
         {
           "type": "dialogue",
           "speaker": "진이현",
-          "text": "이상하다는 건 압니다. 설명하면 더 이상해집니다.",
-          "portrait": "hmm"
+          "text": "조심해서 가세요. 계단 마지막 칸이 조금 높습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "문이 닫히기 직전 아주 작은 목소리가 뒤따랐다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "……넘어지지 말고.",
+          "portrait": "troubled"
         }
-      ],
-      "choice": {
-        "id": "aff_20_choice",
-        "options": [
-          {
-            "id": "a",
-            "text": "“그럼 천천히 이상해져봐요.”",
-            "affection": 6,
-            "response": [
-              {
-                "type": "dialogue",
-                "speaker": "진이현",
-                "text": "그 표현은 처음 듣습니다. …좋네요.",
-                "portrait": "smile"
-              }
-            ],
-            "memoryKey": "ihyeon_20_slow"
-          },
-          {
-            "id": "b",
-            "text": "“내가 모르는 나를 아는 것 같아요.”",
-            "affection": 7,
-            "response": [
-              {
-                "type": "dialogue",
-                "speaker": "진이현",
-                "text": "…그 말이 가장 정확합니다.",
-                "portrait": "troubled"
-              }
-            ],
-            "memoryKey": "ihyeon_20_other_self"
-          },
-          {
-            "id": "c",
-            "text": "“지금 말 못 해도 괜찮아요.”",
-            "affection": 6,
-            "response": [
-              {
-                "type": "dialogue",
-                "speaker": "진이현",
-                "text": "고맙습니다. 기다리는 건 제가 더 익숙하지만.",
-                "portrait": "main"
-              }
-            ],
-            "memoryKey": "ihyeon_20_wait"
-          }
-        ]
-      }
+      ]
     }
   ],
-  "closing": "이현의 익숙함은 호감이 아니라 기억의 흔적처럼 보이기 시작했다."
+  "closing": "이현은 계속 처음 만난 사람처럼 선을 그었지만, 말과 몸은 자꾸 오래된 친밀함을 먼저 기억했다."
 }

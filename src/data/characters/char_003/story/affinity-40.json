@@ -1,109 +1,131 @@
 {
   "id": "char_003_affinity_40",
   "kind": "story",
-  "times": ["밤"],
   "title": "없는 승객",
   "threshold": 40,
-  "purpose": "해준이 특정 막차에서 존재하지 않는 승객을 본다는 비일상 징후를 처음 공유한다",
-  "defaultPortrait": "main",
-  "completionAffection": 3,
+  "purpose": "해준이 반복해서 목격하던 존재하지 않는 승객을 주인공과 함께 확인하며, 설명할 수 없는 일을 혼자 감당하려는 태도에 처음 균열이 생긴다.",
+  "defaultPortrait": "hmm",
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "늦은 밤, 해준이 운행을 마치고도 빈 승강장을 한동안 바라보고 있었다."
+          "text": "늦은 운행이 끝난 뒤, 해준은 빈 승강장 끝을 바라본 채 움직이지 않았다. 마지막 열차의 문은 이미 닫혔고 청소 인력까지 지나간 뒤였다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "방금 저 사람 보셨습니까?",
+          "text": "방금 회색 코트 입은 사람 보셨습니까?",
           "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "그가 가리킨 곳에는 아무도 없었다."
+          "text": "그가 가리킨 곳에는 아무도 없었다. 해준은 장난을 치는 얼굴이 아니었다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "회색 코트. 마지막 칸에서 내렸습니다.",
+          "text": "마지막 칸에서 내렸습니다. 매번 같은 문으로요.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "CCTV를 확인하러 간 직원은 그런 승객이 없었다고 했다. 해준은 아무 말 없이 화면을 두 번 더 돌려봤다."
+          "text": "‘매번.’ 처음이 아니라는 뜻이었다. 역무실에서 CCTV를 돌려봤지만 마지막 칸의 문은 열리고 닫혔을 뿐, 내리는 사람은 찍히지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "이번에도 없네요.",
+          "portrait": "troubled"
         }
       ]
     },
     {
-      "blocks": [],
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "해준은 화면을 세 번 되감았다. 피곤해서 잘못 봤다고 넘기기에는 얼굴이 너무 굳어 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "처음 봤을 때는 수면 부족이라고 생각했습니다. 두 번째도요. 세 번째부터는… 그냥 말을 안 했습니다.",
+          "portrait": "hmm"
+        }
+      ],
       "choice": {
-        "id": "aff_40_choice",
+        "id": "haejun_40_choice",
         "options": [
           {
             "id": "a",
-            "text": "“저는 못 봤어요.”",
-            "affection": 5,
-            "memoryKey": "a40_no",
+            "text": "“왜 아무한테도 말 안 했어요?”",
+            "affection": 8,
+            "memoryKey": "haejun_40_silence",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "그렇군요.",
+                "text": "운행하는 사람이 헛것을 본다고 하면 좋아할 사람은 없으니까요.",
                 "portrait": "main"
               },
               {
                 "type": "narration",
-                "text": "안도인지 실망인지 알 수 없는 표정이었다."
+                "text": "그는 담담하게 말했지만 마지막 단어가 아주 조금 느렸다."
               },
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "그럼 제가 피곤한 걸 수도 있겠습니다.",
-                "portrait": "hmm"
+                "text": "저도 제가 틀렸다고 생각하는 편이 편했습니다.",
+                "portrait": "troubled"
               }
             ]
           },
           {
             "id": "b",
-            "text": "“비슷한 사람을 본 것 같기도 해요.”",
-            "affection": 6,
-            "memoryKey": "a40_maybe",
+            "text": "“다음에 또 보이면 나한테도 알려줘요.”",
+            "affection": 9,
+            "memoryKey": "haejun_40_together",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "확실하지 않으면 그렇게 생각하지 마세요.",
+                "text": "굳이 겪을 필요는 없습니다.",
                 "portrait": "main"
               },
               {
                 "type": "narration",
-                "text": "해준은 오히려 {name}{이가} 겁먹는 쪽을 먼저 걱정했다."
+                "text": "그가 습관처럼 막으려다 말을 멈췄다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "…아니요. 알겠습니다. 혼자 판단하는 것보다는 낫겠네요.",
+                "portrait": "troubled"
               }
             ]
           },
           {
             "id": "c",
-            "text": "“무섭지 않아요?”",
-            "affection": 6,
-            "memoryKey": "a40_fear",
+            "text": "“무섭죠?”",
+            "affection": 8,
+            "memoryKey": "haejun_40_fear",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "무섭습니다.",
+                "text": "네. 무섭습니다.",
                 "portrait": "main"
               },
               {
                 "type": "narration",
-                "text": "의외로 솔직한 대답이었다."
+                "text": "예상보다 빠른 대답이었다."
               },
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "그래도 운행 중엔 확인해야 합니다. 사람이면 더 위험하니까요.",
-                "portrait": "main"
+                "text": "모르는 걸 무서워하지 않을 이유가 없죠. 그래도 확인은 해야 합니다.",
+                "portrait": "hmm"
               }
             ]
           }
@@ -114,24 +136,34 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "그날 이후 해준은 그 승객에 대해 먼저 이야기하지 않았다."
+          "text": "역을 나서기 직전, 플랫폼 반대편 전광판이 한 번 깜빡였다. 운행이 끝난 시간인데도 존재하지 않는 열차 번호가 잠깐 떠올랐다가 사라졌다."
         },
         {
           "type": "narration",
-          "text": "하지만 특정 시간대 막차가 들어올 때마다 마지막 칸을 확인하는 버릇이 생겼다."
+          "text": "해준도 그것을 봤다. 이번에는 둘 중 누구도 피곤해서 그런 것이라고 말하지 않았다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "혹시 오늘도 보이면, 먼저 말하지 말고 저한테 알려주세요.",
+          "text": "다음에 같은 게 보이면 먼저 다가가지 마세요.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "혼자 확인하려던 사람이 처음으로 이상한 일을 다른 사람과 나누기 시작했다."
+          "text": "{name}{이가} 똑같이 말해주자 해준이 아주 짧게 웃었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "네. 저도 혼자 가지 않겠습니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "확인해야 할 것이 하나 늘었고, 이상한 일을 함께 기억하는 사람도 하나 생겼다."
         }
       ]
     }
   ],
-  "closing": "없는 승객 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "없는 승객은 여전히 설명되지 않았다. 하지만 해준은 처음으로 ‘내가 잘못 봤겠지’라는 결론을 혼자 내리지 않았다."
 }

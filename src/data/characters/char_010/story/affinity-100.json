@@ -1,34 +1,37 @@
 {
   "id": "char_010_affinity_100",
   "kind": "story",
-  "times": ["밤"],
   "title": "이번에는 같이 갑시다",
   "threshold": 100,
-  "purpose": "주인공을 보호 대상이 아니라 동등한 동료이자 연인으로 인정하는 변화의 완성.",
-  "defaultPortrait": "smile",
-  "completionAffection": 3,
+  "purpose": "실제 비일상 사건에서 재하가 주인공에게 모든 정보를 제공하고 선택을 맡긴 뒤 동등한 파트너로 함께 움직이며, 사건 후 불꽃이 보이는 강변에서 사랑을 명확히 고백한다. 엔딩 CG와 직접 이어진다.",
+  "defaultPortrait": "main",
+  "completionAffection": 0,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "새로운 비일상 사건의 흔적이 발견된 밤. 재하는 예전처럼 먼저 길을 막지 않았다."
+          "text": "도시 외곽에서 비일상 흔적이 감지된 밤, 재하는 예전처럼 {name}의 앞을 막지 않았다. 대신 작은 메모지에 위치와 위험 요소, 빠져나올 수 있는 동선까지 적어 보여줬다."
         },
         {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "상황은 위험합니다. 그래서 선택을 먼저 묻겠습니다.",
+          "text": "상황은 위험합니다. 접촉하면 안 되는 흔적이 있고, 예상보다 강해질 가능성도 있습니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "설명을 끝낸 그는 입을 다물었다. 결정까지 대신하지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "가겠습니까.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "그는 필요한 정보를 전부 설명한 뒤 기다렸다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "권재하",
-          "text": "가겠다고 하시면 막지 않겠습니다.",
-          "portrait": "hmm"
+          "text": "짧은 질문이었지만 처음 만났을 때의 ‘관여하지 마십시오’와는 정반대였다."
         }
       ]
     },
@@ -36,67 +39,220 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "{name}{이가} 가겠다고 답하자 재하가 한 번 숨을 내쉬었다."
+          "text": "{name}{이가} 가겠다고 답하자 재하는 한 번 깊게 숨을 내쉬었다. 걱정하지 않는 얼굴은 아니었다. 다만 걱정을 이유로 선택을 바꾸려 하지 않았다."
         },
         {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "그럼 이번에는 같이 갑시다.",
+          "text": "알겠습니다. 그럼 이번에는 같이 갑시다.",
           "portrait": "smile"
         },
         {
           "type": "narration",
-          "text": "반걸음 앞이 아니라 정확히 옆에 섰다."
+          "text": "그는 반걸음 앞이 아니라 정확히 옆에 섰다."
         }
       ],
       "choice": {
-        "id": "aff_100_choice",
+        "id": "jaeha_100_choice_1",
         "options": [
           {
             "id": "a",
             "text": "“같이 가요.”",
-            "affection": 8,
+            "affection": 9,
+            "memoryKey": "jaeha_100_together",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "권재하",
                 "text": "네. 같이.",
                 "portrait": "smile"
+              },
+              {
+                "type": "narration",
+                "text": "짧은 대답인데도 이전보다 훨씬 부드러웠다."
               }
-            ],
-            "memoryKey": "jaeha_100_together"
+            ]
           },
           {
             "id": "b",
             "text": "“앞서가지 마요.”",
-            "affection": 8,
+            "affection": 9,
+            "memoryKey": "jaeha_100_side",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "권재하",
                 "text": "그러지 않겠습니다.",
                 "portrait": "main"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "옆에 있겠습니다.",
+                "portrait": "smile"
               }
-            ],
-            "memoryKey": "jaeha_100_side"
+            ]
           },
           {
             "id": "c",
             "text": "“끝나고 푸딩.”",
-            "affection": 7,
+            "affection": 8,
+            "memoryKey": "jaeha_100_pudding",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "권재하",
                 "text": "…두 개 사겠습니다.",
                 "portrait": "troubled"
+              },
+              {
+                "type": "narration",
+                "text": "그 말 덕분에 긴장이 조금 풀렸다."
               }
-            ],
-            "memoryKey": "jaeha_100_pudding"
+            ]
           }
         ]
       }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "사건은 길지 않았지만 위험했다. 재하는 필요할 때만 몸을 앞으로 내밀었고, {name}{에게}도 확인해야 할 방향을 맡겼다."
+        },
+        {
+          "type": "narration",
+          "text": "흔적이 사라진 뒤 그의 손등 흉터가 다시 밝게 빛났다. 통증이 올라온 듯 손이 잠깐 떨렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "끝났습니다. 이제 돌아가면 됩니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "늘 마지막까지 멀쩡한 척하던 사람이었다. 그런데 이번에는 {name}{이가} 손을 내밀자 거절하지 않았다."
+        }
+      ],
+      "choice": {
+        "id": "jaeha_100_choice_2",
+        "options": [
+          {
+            "id": "a",
+            "text": "그의 손을 잡는다.",
+            "affection": 9,
+            "memoryKey": "jaeha_100_hand",
+            "response": [
+              {
+                "type": "narration",
+                "text": "재하는 손을 빼지 않았다. 굳은 손가락이 천천히 {name}의 손을 감쌌다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "이번에는 제가 도움받겠습니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“오늘은 내가 재하 씨 지켜줄게요.”",
+            "affection": 8,
+            "memoryKey": "jaeha_100_protect_you",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "그 말은 여전히 조금 어색합니다.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "그래도 싫지는 않습니다.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“이제 진짜 끝났으니까 쉬어요.”",
+            "affection": 8,
+            "memoryKey": "jaeha_100_rest",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "네. 오늘은 지시를 따르겠습니다.",
+                "portrait": "smile"
+              },
+              {
+                "type": "narration",
+                "text": "재하식 농담이라는 걸 알아듣는 데 이제 오래 걸리지 않았다."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "돌아오는 길, 강변 쪽 하늘에서 갑자기 불꽃이 터졌다. 근처 행사에서 쏘아 올린 불꽃이었다. 두 사람은 잠시 옥상 난간 앞에 멈춰 섰다."
+        },
+        {
+          "type": "narration",
+          "text": "재하는 불꽃보다 먼저 주변을 확인했다. 그리고 아무 위험도 없다는 걸 확인한 뒤에야 {name} 쪽으로 몸을 돌렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "한 가지는 아직 잘 안 됩니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "당신이 위험하면 여전히 먼저 막고 싶습니다. 걱정도 많이 됩니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그는 잠깐 말을 멈췄다가, 이번에는 어떤 임무 보고보다 천천히 말을 골랐다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "하지만 보호 대상이라서 그런 건 아닙니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "좋아해서 그렇습니다. 같이 있고 싶고, 같이 돌아오고 싶어서요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "불꽃이 다시 터지는 순간 재하가 {name}{을를} 가까이 끌어안았다. 손등의 흉터가 머리칼 사이로 보였다. 이번에는 상처를 감추지도, 앞에 서서 시야를 가리지도 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "앞으로도 선택은 먼저 묻겠습니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "그래도 가능하면 제 옆을 선택해주셨으면 합니다.",
+          "portrait": "smile"
+        }
+      ]
     }
   ],
-  "closing": "지키는 사람은 처음으로 누군가를 자기 옆에 세웠다."
+  "closing": "재하는 지키는 사람과 지켜지는 사람으로 관계를 나누지 않았다. 불꽃 아래에서 그는 처음으로 함께 움직이고 함께 돌아올 사람을 자기 옆에 두었다."
 }

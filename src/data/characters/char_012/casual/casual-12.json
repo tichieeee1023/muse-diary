@@ -1,0 +1,53 @@
+{
+  "id": "char_012_casual_12",
+  "kind": "casual",
+  "title": "낯익은 그림",
+  "minAffection": 20,
+  "maxAffection": 70,
+  "defaultPortrait": "main",
+  "completionAffection": 8,
+  "repeatable": false,
+  "placeIds": [
+    "museum"
+  ],
+  "times": [
+    "낮"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "전시실 한가운데서 이현이 한 풍경화 앞에 오래 멈췄다. 처음 보는 작품이라는 설명을 읽고도 시선이 떨어지지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "이상하군요. 전에 본 적이 있는 것 같습니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 언제 봤느냐고 묻자 그는 대답하기 전에 평소보다 길게 침묵했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "...그게 기억나지 않습니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "그림 속에는 오래된 강변과 작은 시계탑이 있었다. 이현은 작품명보다 제작 연도를 먼저 확인했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "제가 착각한 거라면 그게 제일 편하겠습니다.",
+          "portrait": "main"
+        }
+      ]
+    }
+  ],
+  "closing": "처음 보는 그림이 오래된 기억처럼 이현을 붙잡았다."
+}

@@ -3,7 +3,8 @@ export type TimeOfDay = '낮' | '밤'
 export type Rarity = 'R' | 'SR' | 'SSR'
 export type CharacterCategory = 'reality' | 'unusual'
 
-export type PortraitExpression = 'main' | 'smile' | 'troubled' | 'hmm'
+export type BasePortraitExpression = 'main' | 'smile' | 'troubled' | 'hmm'
+export type PortraitExpression = BasePortraitExpression | 'shy' | 'sulking' | 'sly' | 'sad' | 'angry' | 'faintSmile' | 'genuineSmile' | 'dim' | 'eyesClosedSmile' | 'confident' | 'desolate' | 'love' | 'glasses' | 'loveSmile' | 'thinking' | 'busted' | 'interested' | 'exhausted' | 'loveShy' | 'deepLove' | 'blank' | 'tearful' | 'sorrowful' | 'serious' | 'eyesClosedSad'
 export type StoryEpisodeKind = 'first' | 'casual' | 'story'
 
 export interface StoryNarrationBlock {
@@ -42,6 +43,7 @@ export interface StoryEpisode {
   id: string
   kind: StoryEpisodeKind
   times?: TimeOfDay[]
+  weather?: Weather[]
   title: string
   threshold?: number
   purpose?: string
@@ -66,7 +68,7 @@ export interface CharacterRouteProfile {
   lateChange: string
   voiceNote: string
   specialFromFirstMeet: boolean
-  visuals: Record<PortraitExpression, string> & {
+  visuals: Record<BasePortraitExpression, string> & Partial<Record<PortraitExpression, string>> & {
     endingCg: string
     endingDoll: string
   }
@@ -92,6 +94,12 @@ export interface PlaceDefinition {
   weatherWeights: Record<Weather, number>
   nightOnly?: boolean
   locked?: boolean
+}
+
+export interface CharacterFirstEncounterRule {
+  placeId: string
+  times?: TimeOfDay[]
+  weather?: Weather[]
 }
 
 export interface CharacterSpawnRule {
@@ -130,6 +138,7 @@ export interface CharacterDefinition {
   secondRunHint: string
   symbol: 'bookmark' | 'layout' | 'train' | 'cake' | 'moon-broom' | 'wave' | 'sword-knot' | 'frame' | 'rune' | 'shield' | 'star' | 'clock'
   diaryFacts: DiaryFact[]
+  firstEncounterRule: CharacterFirstEncounterRule
   spawnRules: CharacterSpawnRule[]
 }
 
@@ -194,9 +203,22 @@ export interface GameProgress {
   ssrMissStreak: number
 }
 
+export type SeasonKey = 'SPRING' | 'SUMMER' | 'AUTUMN' | 'WINTER'
+
+export interface SeasonalEventRecord {
+  eventId: string
+  companionId: string
+  day: number
+  title: string
+  season?: SeasonKey
+  souvenir: string
+  souvenirNote: string
+}
+
 export interface CollectionProgress {
   discoveredCharacterIds: string[]
   lastEncounterCharacterId: string | null
+  recentEncounterCharacterIds: string[]
   affectionByCharacterId: Record<string, number>
   encounterCounts: Record<string, number>
   importantMemories: Record<string, string[]>
@@ -204,7 +226,9 @@ export interface CollectionProgress {
   secretReadCharacterIds: string[]
   seenEpisodeIdsByCharacterId: Record<string, string[]>
   completedStoryEpisodeIdsByCharacterId: Record<string, string[]>
+  recentCasualEpisodeIdsByCharacterId: Record<string, string[]>
   lastMeetingByCharacterId: Record<string, { episodeId: string; title: string; day: number; placeId: string; kind: StoryEpisodeKind }>
+  seasonalEventRecords: Record<string, SeasonalEventRecord>
 }
 
 export type FontFamilySetting = 'clear' | 'pretendard' | 'system'

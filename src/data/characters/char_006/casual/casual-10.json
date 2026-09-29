@@ -1,11 +1,14 @@
 {
   "id": "char_006_casual_10",
   "kind": "casual",
+  "times": [
+    "밤"
+  ],
   "title": "육지의 야식",
   "minAffection": 0,
   "maxAffection": 100,
   "defaultPortrait": "smile",
-  "completionAffection": 5,
+  "completionAffection": 8,
   "repeatable": true,
   "placeIds": [
     "night-market"

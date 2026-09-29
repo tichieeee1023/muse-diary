@@ -1,0 +1,53 @@
+{
+  "id": "char_002_casual_13",
+  "kind": "casual",
+  "title": "낮의 기준선",
+  "minAffection": 0,
+  "maxAffection": 45,
+  "defaultPortrait": "main",
+  "completionAffection": 7,
+  "repeatable": false,
+  "placeIds": [
+    "rooftop"
+  ],
+  "times": [
+    "낮"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "낮의 루프탑에서 주원은 난간 그림자가 바닥 타일을 가르는 선을 한참 보고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "이 시간대가 제일 솔직하네요. 조명이 없으니까 구조가 다 보여서.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 쉬러 와서도 일을 하느냐고 묻자 그는 손에 들고 있던 휴대전화를 주머니에 넣었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "지금부터는 안 하겠습니다. 지적받았으니까요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "말과 달리 몇 초 뒤 삐뚤어진 의자를 바로잡으려던 손이 허공에서 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "...이것도 일로 칩니까?",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "완벽주의자가 아무것도 바로잡지 않고 앉아 있는 짧은 휴식이 생겼다."
+}

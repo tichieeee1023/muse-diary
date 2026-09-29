@@ -1,0 +1,53 @@
+{
+  "id": "char_012_casual_11",
+  "kind": "casual",
+  "title": "막차 전광판",
+  "minAffection": 0,
+  "maxAffection": 45,
+  "defaultPortrait": "main",
+  "completionAffection": 7,
+  "repeatable": false,
+  "placeIds": [
+    "subway"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "막차 시간이 가까워진 승강장에서 전광판 숫자가 잠깐 한 분 전으로 돌아갔다가 다시 제자리로 왔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "보셨습니까?",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 고개를 끄덕이자 이현은 시계를 확인하고도 놀라지 않았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "가끔 저런 식으로 시간이 겹칩니다. 대개는 아무 일도 없습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그는 말끝을 흐리고 선로 쪽을 바라봤다. 마치 아무 일도 없었던 경우만 떠올리는 사람 같았다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "진이현",
+          "text": "오늘 막차는 놓치지 않는 편이 좋겠습니다.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "전광판의 한 분은 금세 사라졌지만 이현의 표정은 조금 늦게 돌아왔다."
+}

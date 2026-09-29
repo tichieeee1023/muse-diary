@@ -3,41 +3,45 @@
   "kind": "story",
   "title": "틀린 도면",
   "threshold": 60,
-  "defaultPortrait": "main",
-  "completionAffection": 2,
-  "purpose": "주원이 현실계 인물로서 공간의 이상을 최초로 구조적 오류로 감지하고, 통제할 수 없는 현상 앞에서 {name}{과와} 함께 움직인다",
+  "purpose": "주원이 현실계 인물로서 비정상적인 공간을 구조적 오류로 감지하고, 통제할 수 없는 상황에서 주인공과 판단을 나누는 법을 처음 선택한다.",
+  "defaultPortrait": "hmm",
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "쇼핑몰 폐점 직전, 주원에게서 짧은 연락이 왔다. '지금 3층이면 움직이지 마세요.' 이유는 없었다."
+          "text": "쇼핑몰 폐점 직전, 주원에게서 짧은 연락이 왔다. “지금 3층이면 움직이지 마세요.” 이유는 없었다."
         },
         {
           "type": "narration",
-          "text": "그가 직접 찾아왔을 때 손에는 건물 도면이 들려 있었다."
+          "text": "몇 분 뒤 직접 나타난 주원의 손에는 건물 도면과 레이저 거리 측정기가 들려 있었다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "이 복도, 원래 18미터입니다.",
-          "portrait": "hmm"
-        },
-        {
-          "type": "narration",
-          "text": "끝을 봐도 출구가 보이지 않았다. 걸어온 거리만 이미 그보다 길었다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "한주원",
-          "text": "도면이 틀렸다고 생각했는데… 아니네요.",
+          "text": "이 복도, 도면상 18미터입니다.",
           "portrait": "main"
         },
         {
+          "type": "narration",
+          "text": "끝을 봐도 출구가 보이지 않았다. 이미 걸어온 거리만 그보다 훨씬 길었다."
+        },
+        {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "틀린 건 지금 이 공간입니다.",
+          "text": "처음엔 도면이 틀렸다고 생각했습니다.",
           "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "주원이 멀리 반복되는 천장 조명을 노려봤다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "아니네요. 틀린 건 지금 이 공간입니다.",
+          "portrait": "main"
         }
       ]
     },
@@ -45,59 +49,63 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "주원은 공포보다 먼저 벽의 간격과 천장 조명을 셌다. 통제할 수 없는 상황을 숫자로 붙잡으려는 사람처럼 보였다."
+          "text": "주원은 공포보다 먼저 벽 패널의 간격, 스프링클러 수, 비상구 표지의 방향을 셌다. 통제할 수 없는 상황을 숫자로 고정하려는 사람 같았다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "제 뒤에 계세요. 같은 코너를 세 번 돌면 바로 말하고요.",
+          "text": "제 뒤에 계세요. 같은 매장을 두 번 보면 바로 말하고요.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "명령조였지만 손끝은 평소보다 차가웠다."
+          "text": "두 번째 코너를 돌자 조금 전 지나온 브랜드 매장이 다시 나타났다. 진열 마네킹의 팔 각도까지 똑같았다."
+        },
+        {
+          "type": "narration",
+          "text": "주원의 표정이 처음으로 굳었다."
         }
       ],
       "choice": {
-        "id": "a60",
+        "id": "joowon_60_choice_1",
         "options": [
           {
             "id": "a",
-            "text": "“혼자 다 판단하려고 하지 마요. 같이 볼게요.”",
-            "affection": 7,
-            "memoryKey": "a60_share_control",
+            "text": "“혼자 다 판단하지 말고 같이 봐요.”",
+            "affection": 9,
+            "memoryKey": "joowon_60_share_control",
             "response": [
               {
                 "type": "narration",
-                "text": "주원이 바로 대답하지 못했다."
+                "text": "주원이 곧바로 반박하려다 멈췄다."
               },
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "…알겠습니다. 이상한 게 보이면 먼저 말하세요.",
-                "portrait": "troubled"
+                "text": "…좋습니다. 저는 구조를 볼 테니, 당신은 반복되는 물건을 확인하세요.",
+                "portrait": "main"
               },
               {
                 "type": "narration",
-                "text": "처음으로 역할을 나눴다."
+                "text": "처음으로 그는 통제 대신 역할을 나눴다."
               }
             ]
           },
           {
             "id": "b",
             "text": "“무서워요?”",
-            "affection": 5,
-            "memoryKey": "a60_fear",
+            "affection": 7,
+            "memoryKey": "joowon_60_fear",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "기분은 나쁩니다.",
+                "text": "기분은 굉장히 나쁩니다.",
                 "portrait": "main"
               },
               {
                 "type": "narration",
-                "text": "주원다운 대답이었다. 잠시 뒤 그가 작게 덧붙였다."
+                "text": "주원다운 대답이었다. 잠시 뒤 목소리가 조금 낮아졌다."
               },
               {
                 "type": "dialogue",
@@ -109,19 +117,25 @@
           },
           {
             "id": "c",
-            "text": "“이런 것도 디자인 문제로 보여요?”",
-            "affection": 6,
-            "memoryKey": "a60_design_joke",
+            "text": "“이것도 동선 설계 문제로 보여요?”",
+            "affection": 8,
+            "memoryKey": "joowon_60_design",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "한주원",
-                "text": "최악의 동선 설계죠.",
+                "text": "최악의 설계죠.",
                 "portrait": "main"
               },
               {
                 "type": "narration",
-                "text": "이 상황에서도 그답게 대답했다. 아주 잠깐 둘 다 웃었다."
+                "text": "주원이 어이없다는 듯 웃었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "출구도 없고 고객을 같은 매장에 무한히 돌립니다. 담당자였으면 제가 잘랐어요.",
+                "portrait": "smile"
               }
             ]
           }
@@ -132,11 +146,120 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "두 사람은 조명의 반복 패턴을 기준으로 역방향을 찾아 결국 원래 복도로 빠져나왔다."
+          "text": "비상계단 문을 열었는데도 다시 같은 3층이 나왔다. 그제야 주원은 손에 들고 있던 도면을 접었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "이제 도면은 의미 없겠네요.",
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "정상적인 3층은 너무 평범해서 오히려 낯설었다."
+          "text": "늘 정답처럼 들고 다니던 기준을 스스로 내려놓는 데 몇 초가 걸렸다."
+        },
+        {
+          "type": "narration",
+          "text": "{name}{은는} 아까부터 특정 조명 하나만 미세하게 깜빡이는 걸 발견했다. 반복되는 복도에서 유일하게 달라지는 요소였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "좋습니다. 그걸 기준으로 갑시다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그는 이유를 따지기 전에 {name}의 관찰을 받아들였다."
+        }
+      ],
+      "choice": {
+        "id": "joowon_60_choice_2",
+        "options": [
+          {
+            "id": "a",
+            "text": "“내가 앞에 갈까요?”",
+            "affection": 8,
+            "memoryKey": "joowon_60_front",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "그건 안 됩니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "즉답한 주원이 잠깐 생각한 뒤 말을 고쳤다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "…옆으로 오세요. 그 정도가 타협선입니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“이번에는 내 판단 믿어줘요.”",
+            "affection": 9,
+            "memoryKey": "joowon_60_trust_me",
+            "response": [
+              {
+                "type": "narration",
+                "text": "주원이 {name}{을를} 몇 초 바라봤다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "이미 믿고 있습니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "안 그랬으면 도면을 접지도 않았죠.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“빠져나가면 커피 사요.”",
+            "affection": 8,
+            "memoryKey": "joowon_60_coffee",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "지금 협상합니까?",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "입꼬리가 아주 조금 올라갔다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "한주원",
+                "text": "좋습니다. 대신 제가 고릅니다. 살아 나가면.",
+                "portrait": "main"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "둘은 깜빡이는 조명과 진열 변화만 따라 역방향을 잡았다. 어느 순간 너무 평범한 안내 방송이 들리고, 눈앞에 원래의 에스컬레이터가 나타났다."
+        },
+        {
+          "type": "narration",
+          "text": "정상적인 3층은 지나치게 익숙해서 오히려 낯설었다."
         },
         {
           "type": "dialogue",
@@ -146,16 +269,30 @@
         },
         {
           "type": "narration",
-          "text": "평소 같으면 거기서 끝났을 말이었다."
+          "text": "평소라면 거기서 끝났을 말이었다. 주원은 두 걸음 걷다가 다시 돌아봤다."
         },
         {
           "type": "dialogue",
           "speaker": "한주원",
-          "text": "…그리고 뭔가 또 이상하면 혼자 들어가지 마세요. 저한테 먼저 연락하고.",
+          "text": "그리고 다음부터 이상한 곳에 혼자 들어가지 마세요.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가} “명령이에요?”라고 묻자 주원이 잠깐 미간을 찌푸렸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "한주원",
+          "text": "부탁입니다. 이 정도 표현이면 됩니까?",
           "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "모든 걸 혼자 정하던 사람이 처음으로 상대가 받아들일 수 있는 말의 형태를 고르고 있었다."
         }
       ]
     }
   ],
-  "closing": "주원은 설명할 수 없는 공간을 만났고, 처음으로 모든 변수를 혼자 통제하려 하지 않았다."
+  "closing": "틀린 공간에서 주원은 처음으로 정답을 내려놓았다. 대신 {name}의 관찰과 자신의 판단을 같은 선 위에 놓았다."
 }

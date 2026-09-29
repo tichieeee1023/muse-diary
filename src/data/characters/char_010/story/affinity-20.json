@@ -1,98 +1,157 @@
 {
   "id": "char_010_affinity_20",
   "kind": "story",
-  "times": ["밤"],
   "title": "관여하지 마십시오",
   "threshold": 20,
-  "purpose": "재하의 보호 본능이 상대 선택권을 침해하는 방식으로 작동함을 보여준다.",
-  "defaultPortrait": "hmm",
-  "completionAffection": 3,
+  "purpose": "재하의 보호 본능이 타인의 선택까지 대신 결정하는 방식으로 굳어 있음을 보여주고, 주인공이 처음으로 그 경계를 명확히 지적하면서 이후 관계의 규칙을 만든다.",
+  "defaultPortrait": "main",
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "야간 골목에서 수상한 흔적을 본 {name}{이가} 따라가려 하자 재하가 길을 막았다."
+          "text": "야간 상가 골목에서 검은 얼룩 같은 흔적이 벽을 따라 움직였다. {name}{이가} 가까이 보려는 순간 재하의 팔이 앞을 막았다."
         },
         {
           "type": "dialogue",
           "speaker": "권재하",
           "text": "관여하지 마십시오.",
-          "portrait": "hmm"
+          "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "설명도 없이 내린 결정이었다."
+          "text": "그는 상황 설명보다 먼저 {name}{을를} 출구 쪽으로 돌려세웠다. 목소리는 높지 않았지만 거절할 틈도 없었다."
         },
         {
           "type": "dialogue",
           "speaker": "권재하",
           "text": "위험합니다. 그걸로 충분합니다.",
-          "portrait": "main"
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "얼룩은 골목 안쪽으로 사라졌고 재하는 끝까지 시선을 떼지 않았다."
+        },
+        {
+          "type": "narration",
+          "text": "문제는 위험이 사라진 뒤에도 그가 아무 설명을 하지 않았다는 것이었다."
         }
       ]
     },
     {
       "blocks": [
         {
-          "type": "narration",
-          "text": "{name}{이가} 불쾌함을 드러내자 재하가 처음으로 조금 멈칫했다."
-        },
-        {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "…제가 결정할 일이 아니라고 생각하십니까.",
-          "portrait": "troubled"
+          "text": "화나셨습니까.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "묻는 말과 달리 재하는 이유를 이미 알고 있는 얼굴이었다."
         }
       ],
       "choice": {
-        "id": "aff_20_choice",
+        "id": "jaeha_20_choice",
         "options": [
           {
             "id": "a",
             "text": "“내 안전이어도 내 선택은 있어요.”",
-            "affection": 7,
+            "affection": 9,
+            "memoryKey": "jaeha_20_choice",
             "response": [
+              {
+                "type": "narration",
+                "text": "재하가 잠깐 침묵했다. 반박보다 생각이 먼저였다."
+              },
               {
                 "type": "dialogue",
                 "speaker": "권재하",
-                "text": "…맞습니다. 그건 제가 넘었습니다.",
+                "text": "…맞습니다. 제가 선을 넘었습니다.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "위험을 막는 것과 결정까지 대신하는 건 다르군요.",
                 "portrait": "main"
               }
-            ],
-            "memoryKey": "jaeha_20_choice"
+            ]
           },
           {
             "id": "b",
-            "text": "“설명하면 판단할게요.”",
-            "affection": 6,
+            "text": "“설명해주면 내가 판단할게요.”",
+            "affection": 8,
+            "memoryKey": "jaeha_20_explain",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "권재하",
-                "text": "설명할 수 있는 선까지는 하겠습니다.",
-                "portrait": "hmm"
+                "text": "전부 말씀드릴 수는 없습니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "그가 한 박자 뒤에 덧붙였다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "하지만 판단에 필요한 만큼은 설명하겠습니다. 다음부터는요.",
+                "portrait": "troubled"
               }
-            ],
-            "memoryKey": "jaeha_20_explain"
+            ]
           },
           {
             "id": "c",
-            "text": "“이번엔 따를게요. 다음엔 말해줘요.”",
-            "affection": 5,
+            "text": "“이번엔 따를게요. 대신 다음엔 먼저 말해줘요.”",
+            "affection": 7,
+            "memoryKey": "jaeha_20_next",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "권재하",
                 "text": "약속하겠습니다.",
                 "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "재하는 가볍게 넘기지 않았다. 정말 규칙 하나를 새로 정한 사람처럼 고개를 끄덕였다."
               }
-            ],
-            "memoryKey": "jaeha_20_next"
+            ]
           }
         ]
       }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "골목을 빠져나온 뒤 재하는 {name}{보다} 반걸음 앞서 걷다가 스스로 속도를 늦췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "아까 그건 일반인이 오래 가까이 있으면 좋지 않은 흔적입니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "약속한 설명이었다. 짧았지만 이전과 달랐다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "다음에 비슷한 걸 보면 먼저 저한테 말씀해주십시오. 그리고 제가 막더라도 이유를 묻으셔도 됩니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "‘관여하지 마십시오’라고 선을 그은 사람이 그 선에 작은 문 하나를 만들었다."
+        }
+      ]
     }
   ],
-  "closing": "재하는 처음으로 보호와 통제가 다를 수 있다는 지적을 받아들였다."
+  "closing": "재하는 처음으로 보호와 통제가 다를 수 있다는 지적을 받아들였다. 이후의 경계에는 설명과 선택이 들어가기 시작했다."
 }

@@ -1,98 +1,248 @@
 {
   "id": "char_010_affinity_60",
   "kind": "story",
-  "times": ["밤"],
   "title": "빛나는 상처",
   "threshold": 60,
-  "purpose": "비일상 조직과 연결된 과거를 암시하고 상처의 의미를 보여준다.",
+  "purpose": "재하의 흉터와 과거 조직의 존재를 본격적으로 공개하고, 과거의 경계가 현재까지 이어지는 이유와 함께 주인공에게 처음으로 도움을 허용한다.",
   "defaultPortrait": "hmm",
-  "completionAffection": 3,
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "밤이 깊어지자 재하 손등의 흉터가 선명하게 빛났다."
+          "text": "밤이 깊어질수록 재하의 손등에 난 오래된 흉터가 희미하게 빛났다. 일반적인 흉터라기엔 선이 너무 규칙적이었고, 피부 아래에서 미세한 빛이 맥박처럼 움직였다."
         },
         {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "이건 일반적인 상처가 아닙니다.",
+          "text": "더 숨겨도 의미가 없겠군요.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "그는 오래된 흉터를 가리지 않았다."
+          "text": "재하는 장갑을 벗었다. 손등에서 팔목까지 이어지는 상처가 그대로 드러났다."
         },
         {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "비일상 존재를 상대하던 조직에서 일했습니다. 보호와 회수가 제 일이었습니다.",
+          "text": "예전에 비일상 존재를 상대하는 조직에서 일했습니다. 제 역할은 경호와 회수였습니다.",
           "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "‘사냥’이라는 말은 쓰지 않았다. 하지만 일부러 피하고 있다는 게 더 분명했다."
         }
       ]
     },
     {
       "blocks": [
         {
-          "type": "narration",
-          "text": "조직 이야기를 하는 동안 재하의 손은 계속 굳어 있었다."
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "처음에는 위험한 존재에게서 사람을 보호하는 조직이었습니다.",
+          "portrait": "main"
         },
         {
           "type": "dialogue",
           "speaker": "권재하",
-          "text": "좋은 조직이었다고는 말하지 않겠습니다.",
+          "text": "나중에는 위험한 존재와 위험할 가능성이 있는 존재를 구분하지 않게 됐습니다.",
           "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "재하의 손이 자연스럽게 흉터 위를 덮었다. 상처를 감추려는 것보다 오래된 동작을 되풀이하는 느낌이었다."
         }
       ],
       "choice": {
-        "id": "aff_60_choice",
+        "id": "jaeha_60_choice_1",
         "options": [
           {
             "id": "a",
-            "text": "“그래서 그만둔 거예요?”",
-            "affection": 6,
+            "text": "“그래서 조직을 나온 거예요?”",
+            "affection": 8,
+            "memoryKey": "jaeha_60_quit",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "권재하",
-                "text": "네. 명령 하나를 거부했습니다.",
+                "text": "네. 정확히는 명령 하나를 거부한 뒤 돌아갈 수 없게 됐습니다.",
                 "portrait": "hmm"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "후회는 없습니다.",
+                "portrait": "main"
               }
-            ],
-            "memoryKey": "jaeha_60_quit"
+            ]
           },
           {
             "id": "b",
             "text": "“그 흉터도 그때 생긴 거고요?”",
-            "affection": 6,
+            "affection": 8,
+            "memoryKey": "jaeha_60_scar",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "권재하",
-                "text": "그렇습니다. 대가라고 생각하지는 않습니다.",
+                "text": "그렇습니다. 동료가 남긴 상처입니다.",
                 "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "담담한 말과 달리 손가락이 아주 조금 굳었다."
               }
-            ],
-            "memoryKey": "jaeha_60_scar"
+            ]
           },
           {
             "id": "c",
             "text": "“말해줘서 고마워요.”",
-            "affection": 7,
+            "affection": 9,
+            "memoryKey": "jaeha_60_thanks",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "권재하",
-                "text": "숨기는 편이 더 위험해졌으니까요. …그 이유만은 아닙니다.",
+                "text": "안전 때문에 알려드리는 겁니다.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "잠시 뒤 그가 시선을 내렸다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "…그 이유만은 아닙니다.",
                 "portrait": "troubled"
               }
-            ],
-            "memoryKey": "jaeha_60_thanks"
+            ]
           }
         ]
       }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "갑자기 흉터의 빛이 짙어졌다. 재하가 숨을 짧게 들이마셨다. 주변 어딘가에 비일상 흔적이 있다는 신호라고 했다."
+        },
+        {
+          "type": "narration",
+          "text": "그는 즉시 일어나려다 균형을 잃었다. 흉터가 반응할 때마다 통증도 따라오는 모양이었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "괜찮습니다. 익숙합니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "익숙하다는 말은 괜찮다는 뜻이 아니었다."
+        }
+      ],
+      "choice": {
+        "id": "jaeha_60_choice_2",
+        "options": [
+          {
+            "id": "a",
+            "text": "“익숙해도 아픈 건 아픈 거예요. 잠깐 앉아요.”",
+            "affection": 9,
+            "memoryKey": "jaeha_60_rest",
+            "response": [
+              {
+                "type": "narration",
+                "text": "재하는 바로 거절하려다 멈췄다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "…5분만 쉬겠습니다.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "narration",
+                "text": "누군가의 판단에 몸을 맡기는 데 생각보다 긴 시간이 걸렸다."
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“내가 주변 볼게요. 재하 씨는 상태 확인해요.”",
+            "affection": 9,
+            "memoryKey": "jaeha_60_help",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "위험하면 바로 물러나십시오.",
+                "portrait": "main"
+              },
+              {
+                "type": "narration",
+                "text": "명령처럼 시작했지만 이번에는 역할을 나누는 말이었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "…부탁하겠습니다.",
+                "portrait": "troubled"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "말없이 물을 건넨다.",
+            "affection": 8,
+            "memoryKey": "jaeha_60_water",
+            "response": [
+              {
+                "type": "narration",
+                "text": "재하는 물병을 받아 들고 한참 바라봤다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "이런 도움은 아직 익숙하지 않습니다.",
+                "portrait": "troubled"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "권재하",
+                "text": "그래도 받겠습니다.",
+                "portrait": "main"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "빛은 잠시 뒤 천천히 가라앉았다. 재하는 다시 장갑을 끼려다 멈추고, 그대로 손을 내려두었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "예전에는 상처를 보이면 약점이 하나 늘어난다고 배웠습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "권재하",
+          "text": "지금은 꼭 그렇지만은 않은 것 같습니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "그가 처음으로 흉터를 가리지 않은 채 {name} 옆에 오래 앉아 있었다."
+        }
+      ]
     }
   ],
-  "closing": "재하는 한때 훨씬 큰 위험을 다루던 사람이었다."
+  "closing": "재하의 상처는 경계의 흔적이었다. 그날 그는 처음으로 그 흔적을 숨기지 않고 누군가의 도움을 받아들였다."
 }

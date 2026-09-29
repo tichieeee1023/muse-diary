@@ -1,18 +1,24 @@
 {
   "id": "char_006_casual_08",
   "kind": "casual",
+  "times": [
+    "낮"
+  ],
   "title": "약속 장소",
   "minAffection": 70,
   "maxAffection": 100,
   "defaultPortrait": "smile",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
+  "placeIds": [
+    "mall"
+  ],
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "이번 약속 장소는 강변이 아니었다. 시온이 먼저 고른 작은 카페였다."
+          "text": "이번 약속 장소는 강변이 아니었다. 시온이 먼저 고른 쇼핑몰 안 작은 카페였다."
         },
         {
           "type": "dialogue",

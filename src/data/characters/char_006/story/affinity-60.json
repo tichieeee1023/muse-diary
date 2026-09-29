@@ -3,93 +3,250 @@
   "kind": "story",
   "title": "바람과 반대인 물결",
   "threshold": 60,
-  "purpose": "시온의 정체를 확실히 암시한다. 물이 그의 감정과 반응하는 장면을 보여준다.",
+  "purpose": "시온의 비인간적 정체를 명확히 드러내고, 정체 공개 자체보다 자신이 인간과 다른 시간을 살아왔다는 사실을 주인공에게 받아들이게 하는 전환점으로 만든다.",
   "defaultPortrait": "hmm",
-  "completionAffection": 3,
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "바람은 동쪽으로 불고 있는데, 시온 발치의 물결만 반대로 밀려왔다."
+          "text": "바람은 강 하류 쪽으로 불고 있는데 시온 발치의 물결만 반대 방향으로 밀려왔다. 한두 번의 우연이라고 보기엔 너무 오래 이어졌다."
         },
         {
           "type": "narration",
-          "text": "그가 손을 수면 가까이 내리자 물결이 손끝을 따라 둥글게 모였다."
+          "text": "시온은 손을 수면 가까이 내렸다. 물이 손끝을 따라 둥글게 모였다가, 마치 숨을 쉬듯 천천히 퍼졌다."
         },
         {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "…이건 설명하기 좀 어려운데.",
+          "text": "…이건 경험이 많아서 안다고 둘러대기엔 좀 그렇죠?",
           "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "웃음으로 넘길 줄 알았는데 그날은 그러지 않았다."
-        }
-      ]
-    },
-    {
-      "blocks": [
+          "text": "평소라면 웃고 넘어갔을 사람이 그날은 시선을 피했다."
+        },
         {
           "type": "dialogue",
           "speaker": "백시온",
-          "text": "저는 물에서 오래 살았습니다. 생각하시는 것보다 훨씬 오래.",
-          "portrait": "hmm"
-        },
-        {
-          "type": "narration",
-          "text": "사람처럼 말하고 사람처럼 살지만, 그 말의 주어가 사람은 아니라는 걸 알 수 있었다."
+          "text": "저도 언제까지 모른 척할 수 있을지는 궁금했어요.",
+          "portrait": "main"
         }
       ],
       "choice": {
-        "id": "aff_60_choice",
+        "id": "aff_60_choice_1",
         "options": [
           {
             "id": "a",
-            "text": "“그래도 지금은 백시온이잖아요.”",
-            "affection": 7,
-            "response": [
-              {
-                "type": "dialogue",
-                "speaker": "백시온",
-                "text": "그 말… 꽤 마음에 드네요.",
-                "portrait": "main"
-              }
-            ],
-            "memoryKey": "sion_60_now"
-          },
-          {
-            "id": "b",
-            "text": "“무서워해야 해요?”",
-            "affection": 5,
+            "text": "“무서워해야 하는 건 아니죠?”",
+            "affection": 6,
+            "memoryKey": "sion_60_fear",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "백시온",
                 "text": "제가 겁주려고 했으면 진작 물에 빠뜨렸죠.",
                 "portrait": "smile"
+              },
+              {
+                "type": "narration",
+                "text": "농담 뒤에 시온이 진지하게 덧붙였다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "해치고 싶지는 않아요. 특히 {name}은.",
+                "portrait": "main"
               }
-            ],
-            "memoryKey": "sion_60_fear"
+            ]
           },
           {
-            "id": "c",
-            "text": "“더 알고 싶어요.”",
-            "affection": 6,
+            "id": "b",
+            "text": "“그래서 물의 기분을 알았던 거예요?”",
+            "affection": 7,
+            "memoryKey": "sion_60_water",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "백시온",
-                "text": "천천히요. 오래된 얘기는 길거든요.",
+                "text": "네. 안다기보다… 같이 느끼는 쪽에 가까워요.",
                 "portrait": "hmm"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "물이 불편하면 저도 먼저 불편해져요.",
+                "portrait": "main"
               }
-            ],
-            "memoryKey": "sion_60_more"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“말하기 싫으면 천천히 해도 돼요.”",
+            "affection": 7,
+            "memoryKey": "sion_60_wait",
+            "response": [
+              {
+                "type": "narration",
+                "text": "시온이 잠깐 웃지 못했다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "그 말 들으니까 오히려 말하고 싶어지네요.",
+                "portrait": "troubled"
+              }
+            ]
           }
         ]
       }
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "저는 원래 물에 사는 쪽입니다. 지금 모습이 익숙해진 건 나중이고요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "그는 정확한 종족 이름도, 몇 살인지도 말하지 않았다. 대신 '오래'라는 표현을 여러 번 썼다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "사람들이 강 이름을 몇 번 바꾸는 동안에도 여기 있었습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "늘 젊어 보이던 얼굴과 가벼운 말투가 갑자기 시간과 맞지 않는 것처럼 느껴졌다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "그래도 지금은 백시온이에요. 그 이름으로 사는 게 제일 편합니다.",
+          "portrait": "main"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "시온이 물가에서 한 걸음 물러났다. 그에게는 아주 사소한 동작인데, 이상하게도 큰 결심처럼 보였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "정체를 말하면 대개 질문이 바뀌어요. 뭘 할 수 있는지, 얼마나 오래 사는지, 위험한지.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "그래서 그냥 재미있는 강사로 있는 게 편했습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "그는 {name}의 대답을 기다렸다."
+        }
+      ],
+      "choice": {
+        "id": "aff_60_choice_2",
+        "options": [
+          {
+            "id": "a",
+            "text": "“그래도 지금은 백시온이잖아요.”",
+            "affection": 8,
+            "memoryKey": "sion_60_now",
+            "response": [
+              {
+                "type": "narration",
+                "text": "시온의 눈이 천천히 휘었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "그 말… 꽤 마음에 드네요.",
+                "portrait": "smile"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "제가 듣고 싶었던 답인 것 같아요.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“궁금한 건 많지만, 먼저 시온 씨 얘기부터 들을래요.”",
+            "affection": 8,
+            "memoryKey": "sion_60_story",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "능력 말고 제 얘기요?",
+                "portrait": "troubled"
+              },
+              {
+                "type": "narration",
+                "text": "그가 조금 놀란 뒤 웃었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "그럼 길어요. 오래 살았거든요.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“달라진 건 없어요. 조금 더 알게 된 것뿐.”",
+            "affection": 7,
+            "memoryKey": "sion_60_same",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "사람들이 다 그렇게 말해주면 좋을 텐데.",
+                "portrait": "main"
+              },
+              {
+                "type": "dialogue",
+                "speaker": "백시온",
+                "text": "…아니, 한 명이면 충분한가.",
+                "portrait": "troubled"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "돌아가는 길, 시온은 평소처럼 강 쪽으로 먼저 걸어가지 않았다. {name}이 있는 보도 쪽으로 나란히 걸었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "백시온",
+          "text": "오늘은 물가까지 배웅 안 해도 됩니다.",
+          "portrait": "smile"
+        },
+        {
+          "type": "narration",
+          "text": "처음으로 그가 자기 영역에서 한 발 바깥으로 나온 날이었다."
+        }
+      ]
     }
   ],
-  "closing": "시온은 인간이 아니었다. 그런데 이상하게도 그 사실보다 그가 왜 계속 물가에만 머무는지가 더 궁금해졌다."
+  "closing": "시온이 인간이 아니라는 사실보다 더 중요한 것이 생겼다. 그는 처음으로 자신의 오래된 시간을 누군가에게 설명하기 시작했다."
 }

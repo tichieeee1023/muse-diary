@@ -1,97 +1,119 @@
 {
   "id": "char_003_affinity_20",
   "kind": "story",
-  "times": ["밤"],
   "title": "도착하면 연락 주세요",
   "threshold": 20,
-  "purpose": "해준의 반복되는 귀가 확인이 단순한 직업 습관이 아니라는 첫 단서를 준다",
+  "purpose": "해준의 귀가 확인이 단순한 직업 습관을 넘어 개인적인 관심으로 변하기 시작하고, 늘 남의 도착만 확인하던 그에게 주인공도 그의 귀가를 묻기 시작한다.",
   "defaultPortrait": "main",
-  "completionAffection": 3,
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "비가 늦게까지 이어진 밤, 역 입구에서 해준과 다시 마주쳤다. 퇴근한 그는 제복 재킷을 팔에 걸친 채 출구 밖을 한 번 확인했다."
+          "text": "운행이 끝난 늦은 시간, 역 밖에는 비가 가늘게 내리고 있었다. 제복 재킷을 팔에 건 해준은 출구 앞 전광판을 한 번 보고, {name}의 휴대폰 화면을 한 번 봤다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "이 시간엔 택시 잡기 어렵습니다.",
+          "text": "버스는 끊겼고, 택시는 지금 잡기 어렵습니다.",
           "portrait": "main"
         },
         {
           "type": "narration",
-          "text": "그는 {name}의 귀가 경로를 듣더니 환승 시간과 막차 시간을 머릿속으로 계산했다."
+          "text": "{name}{이가} 괜찮다고 말하자 해준은 대답 대신 환승 경로를 다시 계산했다. 익숙할 만큼 빠른 판단이었다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "집에 도착하면 연락 주세요.",
-          "portrait": "main"
+          "text": "괜찮은지는 도착하고 나서 판단하죠. 집에 들어가면 연락 주세요.",
+          "portrait": "hmm"
         },
         {
           "type": "narration",
-          "text": "말투는 업무적이었지만 이미 근무는 끝난 뒤였다."
+          "text": "근무는 이미 끝났는데도 말투만큼은 여전히 정확했다. 그런데 몇 걸음 뒤, 역 화단 쪽에서 작은 울음소리가 났다."
+        },
+        {
+          "type": "narration",
+          "text": "해준은 곧장 걸음을 멈추더니 가방에서 작은 사료 봉지를 꺼냈다. 회색 길고양이가 익숙하다는 듯 그의 신발 앞으로 다가왔다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "…얘는 비 맞으면 꼭 여기 있습니다.",
+          "portrait": "troubled"
         }
       ]
     },
     {
-      "blocks": [],
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "사람에게는 안전 수칙부터 말하던 사람이 고양이 앞에서는 목소리부터 낮아졌다. 손등으로 젖은 머리를 조심스럽게 쓸어주는 모습이 묘하게 낯설었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "문해준",
+          "text": "왜 그렇게 봅니까.",
+          "portrait": "troubled"
+        }
+      ],
       "choice": {
-        "id": "aff_20_choice",
+        "id": "haejun_20_choice",
         "options": [
           {
             "id": "a",
-            "text": "“매번 다 확인해요?”",
-            "affection": 6,
-            "memoryKey": "a20_everyone",
+            "text": "“사람한테도 그 정도로 부드럽게 말해봐요.”",
+            "affection": 8,
+            "memoryKey": "haejun_20_soft",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "아뇨.",
-                "portrait": "troubled"
+                "text": "사람은 설명하면 알아듣지 않습니까.",
+                "portrait": "main"
               },
               {
                 "type": "narration",
-                "text": "대답이 너무 빨라서 오히려 더 눈에 띄었다."
+                "text": "잠깐 뒤 해준이 고양이 쪽을 보며 덧붙였다."
               },
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "……필요하다고 생각되는 경우에만요.",
-                "portrait": "main"
+                "text": "…말하고 보니 저도 별로 설득력이 없네요.",
+                "portrait": "troubled"
               }
             ]
           },
           {
             "id": "b",
-            "text": "“걱정되면 해준 씨가 데려다줘요.”",
-            "affection": 5,
-            "memoryKey": "a20_walk",
+            "text": "“나도 비상용 간식 하나 챙겨줘요.”",
+            "affection": 9,
+            "memoryKey": "haejun_20_snack",
             "response": [
               {
+                "type": "dialogue",
+                "speaker": "문해준",
+                "text": "고양이 사료를요?",
+                "portrait": "hmm"
+              },
+              {
                 "type": "narration",
-                "text": "해준이 잠깐 말을 잃었다."
+                "text": "{name}{이가} 웃자 그제야 농담을 알아챘다."
               },
               {
                 "type": "dialogue",
                 "speaker": "문해준",
-                "text": "그건 일정 확인이 필요합니다.",
-                "portrait": "troubled"
-              },
-              {
-                "type": "narration",
-                "text": "거절치고는 이상하게 구체적이었다."
+                "text": "…다음에는 사람 먹는 걸로 챙기겠습니다.",
+                "portrait": "smile"
               }
             ]
           },
           {
             "id": "c",
-            "text": "“도착하면 꼭 연락할게요.”",
-            "affection": 6,
-            "memoryKey": "a20_promise",
+            "text": "“알겠어요. 도착하면 꼭 연락할게요.”",
+            "affection": 8,
+            "memoryKey": "haejun_20_arrive",
             "response": [
               {
                 "type": "dialogue",
@@ -101,7 +123,7 @@
               },
               {
                 "type": "narration",
-                "text": "그제야 어깨의 힘이 아주 조금 빠졌다."
+                "text": "그제야 해준의 어깨에서 힘이 조금 빠졌다."
               }
             ]
           }
@@ -112,20 +134,32 @@
       "blocks": [
         {
           "type": "narration",
-          "text": "집에 도착해 짧게 메시지를 보내자 답장은 거의 즉시 왔다."
+          "text": "집에 도착해 짧게 메시지를 보내자 답장은 거의 바로 왔다. ‘확인했습니다. 쉬세요.’ 늘 그렇듯 간단한 문장이었다."
+        },
+        {
+          "type": "narration",
+          "text": "그런데 오늘은 {name}{이} 먼저 메시지를 하나 더 보냈다. ‘해준 씨도 도착하면 알려줘요.’"
+        },
+        {
+          "type": "narration",
+          "text": "몇 분 동안 답이 없었다. 그러다 화면이 다시 켜졌다."
         },
         {
           "type": "dialogue",
           "speaker": "문해준",
-          "text": "확인했습니다. 쉬세요.",
-          "portrait": "main"
+          "text": "저도요?",
+          "portrait": "troubled"
         },
         {
           "type": "narration",
-          "text": "짧은 두 문장이었지만, 누군가가 도착을 기다리고 있었다는 사실은 생각보다 따뜻했다."
+          "text": "그리고 조금 뒤, 또 한 줄이 왔다. ‘알겠습니다. 도착하면 연락하겠습니다.’"
+        },
+        {
+          "type": "narration",
+          "text": "늘 누군가의 도착을 확인하던 사람에게 처음으로 돌아올 곳을 묻는 사람이 생겼다."
         }
       ]
     }
   ],
-  "closing": "도착하면 연락 주세요 — 중요한 관계 기록이 다이어리에 남았다."
+  "closing": "해준은 여전히 ‘도착하면 연락 주세요’라고 말했다. 다만 그날부터 그 문장은 아주 조금씩 서로에게 하는 말이 되었다."
 }

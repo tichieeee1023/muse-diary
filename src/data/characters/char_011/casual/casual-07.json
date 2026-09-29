@@ -5,14 +5,14 @@
   "minAffection": 60,
   "maxAffection": 99,
   "defaultPortrait": "main",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "유리안은 대기실 소파에 누워 천장만 보고 있었다."
+          "text": "유리안은 조용한 구석 자리에 기대 천장만 보고 있었다."
         },
         {
           "type": "dialogue",

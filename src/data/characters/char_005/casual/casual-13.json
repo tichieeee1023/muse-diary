@@ -1,0 +1,53 @@
+{
+  "id": "char_005_casual_13",
+  "kind": "casual",
+  "title": "바람에 남은 냄새",
+  "minAffection": 0,
+  "maxAffection": 50,
+  "defaultPortrait": "main",
+  "completionAffection": 7,
+  "repeatable": false,
+  "placeIds": [
+    "rooftop"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "루프탑 문을 열자 태겸이 난간 가까이 서서 바람의 방향을 확인하고 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "잠깐만 여기 계세요. 아래에서 이상한 냄새가 올라옵니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 아무 냄새도 못 느끼겠다고 하자 태겸은 잠시 뒤 고개를 저었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "됐습니다. 잔재는 아니네요. 누가 아래에서 고기를 태웠나 봅니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "잠깐의 긴장이 풀리자 그가 아주 작게 한숨을 쉬었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "이런 오해면 언제든 환영입니다.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "위험의 흔적을 찾던 밤이 평범한 탄 냄새로 끝났다."
+}

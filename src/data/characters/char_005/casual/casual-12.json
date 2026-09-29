@@ -1,0 +1,53 @@
+{
+  "id": "char_005_casual_12",
+  "kind": "casual",
+  "title": "주인 없는 물건",
+  "minAffection": 40,
+  "maxAffection": 90,
+  "defaultPortrait": "main",
+  "completionAffection": 8,
+  "repeatable": false,
+  "placeIds": [
+    "bar"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "바닥에 작은 금속 장식 하나가 떨어져 있었다. 태겸은 지나치지 않고 주워 바텐더에게 건넸다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "누가 찾으러 올 수도 있습니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가 별것 아닌 물건 같다고 하자 그가 손끝을 한 번 닦고 대답했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "별것 아닌지는 주인이 정하는 겁니다.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "그는 분실물 상자에 장식이 들어가는 것을 끝까지 확인했다. 지우는 일을 하는 사람치고 남은 것에 유난히 집착했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "없애는 건 쉽습니다. 그래서 더 조심해야 합니다.",
+          "portrait": "troubled"
+        }
+      ]
+    }
+  ],
+  "closing": "태겸에게 흔적은 크기보다 누군가와 연결되어 있는지가 중요했다."
+}

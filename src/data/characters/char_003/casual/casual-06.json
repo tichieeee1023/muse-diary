@@ -1,12 +1,14 @@
 {
   "id": "char_003_casual_06",
   "kind": "casual",
-  "times": ["밤"],
+  "times": [
+    "밤"
+  ],
   "title": "도착 문자",
   "minAffection": 40,
   "maxAffection": 89,
   "defaultPortrait": "main",
-  "completionAffection": 5,
+  "completionAffection": 8,
   "repeatable": false,
   "sections": [
     {

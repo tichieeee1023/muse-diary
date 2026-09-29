@@ -1,11 +1,14 @@
 {
   "id": "char_002_casual_09",
   "kind": "casual",
+  "times": [
+    "밤"
+  ],
   "title": "도시를 재는 사람",
   "minAffection": 0,
   "maxAffection": 100,
   "defaultPortrait": "hmm",
-  "completionAffection": 4,
+  "completionAffection": 7,
   "repeatable": true,
   "placeIds": [
     "rooftop"

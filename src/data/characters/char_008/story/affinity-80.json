@@ -3,19 +3,19 @@
   "kind": "story",
   "title": "세현 씨는 뭘 좋아해요?",
   "threshold": 80,
-  "purpose": "늘 타인의 취향을 묻던 세현이 자신의 취향과 욕망을 직접 말하도록 한다.",
+  "purpose": "늘 타인의 취향을 묻던 세현이 자신의 취향과 욕망을 구체적으로 말한다. 동시에 완성을 시도 중인 작품을 주인공에게 보여주며 관찰자에서 관계의 당사자로 이동한다.",
   "defaultPortrait": "main",
-  "completionAffection": 3,
+  "completionAffection": 4,
   "sections": [
     {
       "blocks": [
         {
           "type": "narration",
-          "text": "세현은 새 전시가 들어올 때마다 {name}에게 사진을 보내왔다. “이건 좋아할 것 같아요”, “이건 별로일 듯” 같은 짧은 말과 함께."
+          "text": "세현은 새 전시가 들어올 때마다 {name}에게 사진을 보내왔다. “이건 좋아할 듯”, “이건 취향 아닐 듯” 같은 짧은 평과 함께."
         },
         {
           "type": "narration",
-          "text": "그날도 비슷한 질문이 이어지다가 {name}{이가} 문득 말을 끊었다."
+          "text": "그날도 질문이 몇 개 이어지다가 {name}{이가} 말을 끊었다."
         },
         {
           "type": "dialogue",
@@ -25,101 +25,206 @@
         },
         {
           "type": "narration",
-          "text": "이번에는 반대 질문을 던졌다. “세현 씨는 뭘 좋아해요?”"
+          "text": "이번에는 반대로 물었다. “세현 씨는 뭘 좋아해요?”"
         },
         {
           "type": "narration",
-          "text": "세현이 입을 다물었다. 그 흔한 질문 하나가 예상 밖의 문제처럼 얼굴에 떠올랐다."
-        }
-      ]
-    },
-    {
-      "blocks": [
+          "text": "평범한 질문 하나에 세현이 입을 다물었다."
+        },
         {
           "type": "dialogue",
           "speaker": "오세현",
-          "text": "저는… 설명을 다 안 해주는 그림 좋아해요.",
+          "text": "저요? 지금 작품 말고… 그냥 저요?",
           "portrait": "hmm"
-        },
-        {
-          "type": "dialogue",
-          "speaker": "오세현",
-          "text": "좀 서툴러도 만든 사람이 끝까지 남아 있는 것도 좋고. 반듯한 것보다 이상한 구석 있는 것도요.",
-          "portrait": "main"
-        },
-        {
-          "type": "narration",
-          "text": "하나를 말하자 다음 것이 따라왔다. 좋아하는 색, 싫어하는 재료, 언젠가 그리고 싶은 장면."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "오세현",
-          "text": "이상하죠. 남들한텐 그렇게 잘 물어보면서 제가 뭘 좋아하는지는 말해본 적이 별로 없어요.",
-          "portrait": "troubled"
-        },
-        {
-          "type": "narration",
-          "text": "그리고 마지막에는 아주 작게 덧붙였다."
-        },
-        {
-          "type": "dialogue",
-          "speaker": "오세현",
-          "text": "요즘은… {name} 씨한테 보여주고 싶은 것도 생겼고요.",
-          "portrait": "smile"
         }
       ],
       "choice": {
-        "id": "aff_80_choice",
+        "id": "aff_80_choice_1",
         "options": [
           {
             "id": "a",
-            "text": "“보여줄 때까지 기다릴게요.”",
-            "affection": 6,
-            "memoryKey": "sehyun_80_wait_show",
+            "text": "“네. 세현 씨 취향이 궁금해요.”",
+            "affection": 7,
+            "memoryKey": "sehyun_80_taste",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "오세현",
-                "text": "이번엔 진짜 오래 안 걸리게 해볼게요.",
-                "portrait": "smile"
+                "text": "이거 생각보다 어렵네요. 맨날 제가 물어보기만 해서.",
+                "portrait": "troubled"
               }
             ]
           },
           {
             "id": "b",
-            "text": "“내가 좋아할지는 아직 모르는데요?”",
-            "affection": 5,
-            "memoryKey": "sehyun_80_honest",
+            "text": "“정답 말고 그냥 좋아하는 거요.”",
+            "affection": 6,
+            "memoryKey": "sehyun_80_no_right",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "오세현",
-                "text": "네. 그래서 보여주고 싶은 거예요. 진짜 반응이 궁금해서.",
+                "text": "정답 없이 말하기… 알겠습니다. 해볼게요.",
                 "portrait": "main"
               }
             ]
           },
           {
             "id": "c",
-            "text": "“세현 씨가 좋아하는 걸 더 말해줘요.”",
-            "affection": 5,
-            "memoryKey": "sehyun_80_more_self",
+            "text": "“하나만 말해도 돼요.”",
+            "affection": 6,
+            "memoryKey": "sehyun_80_one",
             "response": [
               {
                 "type": "dialogue",
                 "speaker": "오세현",
-                "text": "오늘 다 말하면 다음에 할 얘기 없잖아요.",
+                "text": "그러면 시작은 쉽겠네요. 하나부터.",
                 "portrait": "smile"
-              },
-              {
-                "type": "narration",
-                "text": "이번 장난은 화제를 피하기 위한 것이 아니었다."
               }
             ]
           }
         ]
       }
+    },
+    {
+      "blocks": [
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "설명을 다 안 해주는 그림 좋아해요. 보는 사람이 조금 헤매는 거.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "색은 탁한 파랑. 재료는 종이보다 캔버스. 너무 반듯한 것보다 만든 사람 손이 남은 거."
+        },
+        {
+          "type": "narration",
+          "text": "하나가 나오자 다음 것이 따라왔다. 좋아하는 계절, 싫어하는 향, 전시가 끝난 뒤 혼자 걷기 좋은 길."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "이상하죠. 남들한텐 그렇게 잘 물어보면서 제 건 말해본 적이 별로 없어요.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "세현은 잠깐 웃다가 덧붙였다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "요즘은 하나 더 생겼어요. 누군가한테 보여주고 싶은 거.",
+          "portrait": "main"
+        }
+      ]
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "세현은 작업실에서 찍은 사진 한 장을 보여줬다. 지난번 정면으로 돌려놓았던 작은 캔버스였다. 빈 곳이 거의 사라져 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "아직 서명은 안 했어요. 마지막에 또 도망가고 싶어질까 봐 일부러 사진부터 보냅니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "이제 당신 반응이 궁금한데… 예전이랑 조금 달라요. 좋다고 해주길 바라는 것보다, 그냥 진짜로 봐줬으면 좋겠어요.",
+          "portrait": "hmm"
+        }
+      ],
+      "choice": {
+        "id": "aff_80_choice_2",
+        "options": [
+          {
+            "id": "a",
+            "text": "“완성되면 제일 먼저 보여줘요.”",
+            "affection": 7,
+            "memoryKey": "sehyun_80_first_viewer",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "오세현",
+                "text": "네. 그 약속 때문에라도 끝내야겠네요.",
+                "portrait": "smile"
+              }
+            ]
+          },
+          {
+            "id": "b",
+            "text": "“내가 좋아할지는 아직 몰라요.”",
+            "affection": 6,
+            "memoryKey": "sehyun_80_honest",
+            "response": [
+              {
+                "type": "dialogue",
+                "speaker": "오세현",
+                "text": "알아요. 그래서 보여주고 싶은 거예요. 진짜 반응이 궁금해서.",
+                "portrait": "main"
+              }
+            ]
+          },
+          {
+            "id": "c",
+            "text": "“세현 씨가 좋아하는 그림이면 일단 궁금해요.”",
+            "affection": 6,
+            "memoryKey": "sehyun_80_self_value",
+            "response": [
+              {
+                "type": "narration",
+                "text": "세현이 잠깐 말을 잃었다."
+              },
+              {
+                "type": "dialogue",
+                "speaker": "오세현",
+                "text": "제 취향이 이유가 되는 건… 좀 좋네요.",
+                "portrait": "troubled"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "헤어지기 전 세현은 또 질문 하나를 하려다 멈췄다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "아니다. 오늘은 질문 너무 많이 했어요."
+        },
+        {
+          "type": "narration",
+          "text": "대신 자기 이야기를 하나 더 했다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "저 사실 매운 거 잘 못 먹어요. 근데 괜히 잘 먹는 척한 적 많습니다.",
+          "portrait": "troubled"
+        },
+        {
+          "type": "narration",
+          "text": "{name}{이가} 왜 그런 것까지 숨겼냐고 묻자 세현이 웃었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "오세현",
+          "text": "그러게요. 이제 하나씩 들키려고요.",
+          "portrait": "smile"
+        }
+      ]
     }
   ],
-  "closing": "관찰 기록의 중심이 바뀌었다. 이제 세현은 {name}{을를} 이해하려는 만큼, 자신도 이해받고 싶어 했다."
+  "closing": "세현은 {name}{을를} 이해하려는 만큼 자신도 보여주기 시작했다. 취향도, 서툰 부분도, 아직 끝나지 않은 그림도."
 }

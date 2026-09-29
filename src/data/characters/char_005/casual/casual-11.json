@@ -1,0 +1,53 @@
+{
+  "id": "char_005_casual_11",
+  "kind": "casual",
+  "title": "문이 보이는 자리",
+  "minAffection": 0,
+  "maxAffection": 45,
+  "defaultPortrait": "main",
+  "completionAffection": 7,
+  "repeatable": false,
+  "placeIds": [
+    "bar"
+  ],
+  "times": [
+    "밤"
+  ],
+  "sections": [
+    {
+      "blocks": [
+        {
+          "type": "narration",
+          "text": "태겸은 빈자리가 많은데도 출입문과 비상구가 모두 보이는 구석을 골랐다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "여기가 편합니다.",
+          "portrait": "main"
+        },
+        {
+          "type": "narration",
+          "text": "주문은 술이 아니라 탄산수였다. {name}{이가 야간 근무 때문이냐고 묻자 짧게 고개를 끄덕인다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "취하면 못 보는 게 생기니까요.",
+          "portrait": "hmm"
+        },
+        {
+          "type": "narration",
+          "text": "그 말 뒤로 그는 한동안 말없이 음악을 들었다. 경계하고 있는 것치고 어깨는 조금 풀려 있었다."
+        },
+        {
+          "type": "dialogue",
+          "speaker": "강태겸",
+          "text": "오늘은 별일 없을 것 같습니다. 그럼 됐습니다.",
+          "portrait": "smile"
+        }
+      ]
+    }
+  ],
+  "closing": "아무 일도 일어나지 않는 밤을 그는 꽤 소중하게 여기는 듯했다."
+}
