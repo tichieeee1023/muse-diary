@@ -7,6 +7,7 @@ import { HeartMeter } from '../components/HeartMeter'
 import { getAllCharacters } from '../engine/encounterEngine'
 import { hasCompletedFirstEncounter } from '../engine/storyEngine'
 import { playUiSound } from '../engine/soundEngine'
+import { withJosa } from '../engine/textFormatter'
 import { getSpringAffectionTier, getSpringBranch, springEvent } from '../data/seasonalEvents'
 import { useGameStore } from '../store/useGameStore'
 import type { CharacterDefinition } from '../types/game'
@@ -223,7 +224,7 @@ export function SpringEventPage({ onClose }: SpringEventPageProps) {
         <div className="spring-complete-copy">
           <p className="eyebrow">SPECIAL DAY RECORDED</p>
           <h1>{springEvent.title}</h1>
-          <strong>{companion.name}와 남긴 봄의 한 페이지</strong>
+          <strong>{withJosa(companion.name, '과/와')} 남긴 봄의 한 페이지</strong>
           <div className="spring-reward-row"><span>호감도</span><b>+{baseReward + choiceAffection}</b></div>
         </div>
       </section>

@@ -297,6 +297,7 @@ export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
             </div>
 
             {placeView === 'map' ? (
+              <>
               <div className={`city-map weather-map-${progress.weather}`}>
                 <div className="city-map-grid" aria-hidden="true" />
                 <div className="city-map-river" aria-hidden="true" />
@@ -320,10 +321,12 @@ export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
                     >
                       <span className="city-map-pin-icon"><PlaceIcon placeId={place.id} size={18} /></span>
                       <strong>{unlocked ? place.name : '???'}</strong>
-                      {signal && <em>{signal}</em>}
+                      {(signal === 'NEW EVENT' || signal === '낯선 기척') && <em className="city-map-signal">NEW</em>}
                     </button>
                   )
                 })}
+              </div>
+              <div className="city-map-meta">
                 <div className="city-map-legend" aria-label="지도 표시 안내">
                   <span><i className="is-available" />오늘 방문 가능</span>
                   <span><i className="is-event" />새 이벤트</span>
@@ -331,6 +334,7 @@ export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
                 </div>
                 <p className="city-map-note">밝게 표시된 장소가 오늘의 외출 후보예요.</p>
               </div>
+              </>
             ) : (
               <div className="place-list">
                 {todayPlaces.map((place, index) => {

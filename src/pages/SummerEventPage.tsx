@@ -7,6 +7,7 @@ import { HeartMeter } from '../components/HeartMeter'
 import { getAllCharacters } from '../engine/encounterEngine'
 import { hasCompletedFirstEncounter } from '../engine/storyEngine'
 import { playUiSound } from '../engine/soundEngine'
+import { withJosa } from '../engine/textFormatter'
 import { getSummerAffectionTier, getSummerBranch, summerEvent } from '../data/seasonalEvents'
 import { useGameStore } from '../store/useGameStore'
 import type { CharacterDefinition } from '../types/game'
@@ -223,7 +224,7 @@ export function SummerEventPage({ onClose }: SummerEventPageProps) {
         <div className="summer-complete-copy">
           <p className="eyebrow">SPECIAL DAY RECORDED</p>
           <h1>{summerEvent.title}</h1>
-          <strong>{companion.name}와 남긴 여름밤의 한 페이지</strong>
+          <strong>{withJosa(companion.name, '과/와')} 남긴 여름밤의 한 페이지</strong>
           <div className="summer-reward-row"><span>호감도</span><b>+{baseReward + choiceAffection}</b></div>
         </div>
       </section>

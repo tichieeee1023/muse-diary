@@ -10,6 +10,62 @@ function getContext() {
   return audioContext
 }
 
+export function unlockAudioContext() {
+  try {
+    const context = getContext()
+    if (context?.state === 'suspended') void context.resume()
+  } catch {
+    // 브라우저가 Web Audio를 막아도 게임 진행에는 영향을 주지 않습니다.
+  }
+}
+
+function isSilentTextCharacter(character: string) {
+  return /\s/.test(character) || /[.,!?…·~—–―'"“”‘’()[\]{}:;]/.test(character)
+}
+
+/**
+ * 짧은 레트로 비주얼노벨식 대사 블립. 외부 음원 파일을 사용하지 않고
+ * Web Audio API oscillator만으로 생성합니다.
+ */
+export function playTextBlip(character: string, enabled = true, index = 0) {
+  if (!enabled || !character || isSilentTextCharacter(character)) return
+
+  try {
+    const context = getContext()
+    if (!context) return
+    if (context.state === 'suspended') void context.resume()
+
+    const oscillator = context.createOscillator()
+    const gainNode = context.createGain()
+    const filter = context.createBiquadFilter()
+    const now = context.currentTime
+    const code = character.codePointAt(0) ?? 0
+    const variation = ((code + index) % 5) * 18
+    const startFrequency = 640 + variation
+    const duration = 0.032
+
+    oscillator.type = 'square'
+    oscillator.frequency.setValueAtTime(startFrequency, now)
+    oscillator.frequency.exponentialRampToValueAtTime(startFrequency * 1.18, now + duration)
+
+    filter.type = 'lowpass'
+    filter.frequency.setValueAtTime(1900, now)
+    filter.Q.setValueAtTime(0.7, now)
+
+    gainNode.gain.setValueAtTime(0.0001, now)
+    gainNode.gain.exponentialRampToValueAtTime(0.012, now + 0.004)
+    gainNode.gain.exponentialRampToValueAtTime(0.0001, now + duration)
+
+    oscillator.connect(filter)
+    filter.connect(gainNode)
+    gainNode.connect(context.destination)
+    oscillator.start(now)
+    oscillator.stop(now + duration + 0.008)
+  } catch {
+    // 사운드 재생 실패는 게임 진행에 영향을 주지 않습니다.
+  }
+}
+
 const presets: Record<UiSound, { frequency: number; duration: number; gain: number }> = {
   tap: { frequency: 320, duration: 0.045, gain: 0.025 },
   page: { frequency: 240, duration: 0.07, gain: 0.02 },

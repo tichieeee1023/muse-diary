@@ -4351,3 +4351,331 @@ h1, h2 { font-family:var(--font-ui); font-weight:800; letter-spacing:-.035em; }
 @media (prefers-reduced-motion: reduce) {
   .next-day-button { transition: none; }
 }
+
+
+/* STEP 7-B0: mobile QA — seasonal portrait sizing, story breathing room, and map collision fixes */
+
+/* Seasonal character cards use one compact, predictable portrait ratio across all four seasons. */
+:is(.spring-character-stage, .summer-character-stage, .autumn-character-stage, .winter-character-stage) {
+  min-height: 0;
+  grid-template-columns: 118px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+}
+:is(.spring-character-stage, .summer-character-stage, .autumn-character-stage, .winter-character-stage) > .character-portrait {
+  width: 118px;
+  min-height: 0;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  align-self: center;
+  border-radius: 14px;
+}
+:is(.spring-character-stage, .summer-character-stage, .autumn-character-stage, .winter-character-stage) > div:last-child {
+  padding: 0 8px 0 0;
+  align-self: center;
+}
+
+/* Completion cards are records, not giant banners: keep the portrait narrow and let copy breathe. */
+:is(.spring-complete-card, .summer-complete-card, .autumn-complete-card, .winter-complete-card) {
+  grid-template-columns: 128px minmax(0, 1fr);
+  min-height: 190px;
+  align-items: center;
+}
+:is(.spring-complete-portrait, .summer-complete-portrait, .autumn-complete-portrait, .winter-complete-portrait) {
+  width: 108px;
+  min-height: 0;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  align-self: center;
+  margin-left: 12px;
+  border-radius: 14px;
+}
+:is(.spring-complete-copy, .summer-complete-copy, .autumn-complete-copy, .winter-complete-copy) {
+  min-width: 0;
+  padding: 20px 18px;
+}
+:is(.spring-complete-copy, .summer-complete-copy, .autumn-complete-copy, .winter-complete-copy) h1 {
+  margin-bottom: 7px;
+  font-size: 24px;
+  line-height: 1.25;
+}
+:is(.spring-complete-copy, .summer-complete-copy, .autumn-complete-copy, .winter-complete-copy) > strong {
+  font-size: 12px;
+  line-height: 1.65;
+  word-break: keep-all;
+}
+
+/* Reading screens should not be covered by a sticky CTA. Continue only after reaching the section end. */
+.story-page {
+  padding-top: 18px;
+  padding-bottom: max(46px, env(safe-area-inset-bottom));
+}
+.story-sheet {
+  gap: 21px;
+  margin-bottom: 0;
+}
+.story-page-story .story-sheet { gap: 24px; }
+.story-choice-result {
+  gap: 22px;
+  padding-top: 21px;
+}
+.story-choice-result .affection-feedback { margin-bottom: 3px; }
+.story-dialogue-unit + .story-dialogue-unit { margin-top: 5px; }
+.story-next-button,
+.story-page-story .story-next-button {
+  position: static;
+  bottom: auto;
+  z-index: auto;
+  min-height: 58px;
+  margin-top: 26px;
+  margin-bottom: 8px;
+  box-shadow: 0 8px 20px rgba(61,39,31,.14);
+}
+
+/* The legend belongs below the map. It must never sit on top of lower pins. */
+.city-map {
+  min-height: 520px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+.city-map-meta {
+  display: grid;
+  gap: 8px;
+  margin: 10px 0 2px;
+}
+.city-map-legend {
+  position: static;
+  z-index: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  padding: 8px 10px;
+  border: 1px solid rgba(120,94,78,.14);
+  border-radius: 10px;
+  background: #fffaf5;
+  color: #75655c;
+  font-size: 9px;
+  font-weight: 700;
+  backdrop-filter: none;
+}
+.city-map-note {
+  position: static;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  margin: 0;
+  text-align: center;
+  color: #8a776c;
+  font-size: 11px;
+  line-height: 1.5;
+}
+/* On the map itself, full “NEW EVENT” pills are too wide. List view keeps the descriptive text. */
+.city-map-pin .city-map-signal {
+  position: absolute;
+  top: -4px;
+  left: calc(50% + 12px);
+  min-width: 25px;
+  padding: 2px 5px;
+  border: 1px solid rgba(126,51,56,.28);
+  border-radius: 999px;
+  background: #fff7f1;
+  color: #8a3038;
+  box-shadow: 0 3px 8px rgba(83,48,50,.10);
+  font-size: 7px;
+  line-height: 1.2;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+
+@media (max-width: 380px) {
+  :is(.spring-character-stage, .summer-character-stage, .autumn-character-stage, .winter-character-stage) {
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: 11px;
+    padding: 10px;
+  }
+  :is(.spring-character-stage, .summer-character-stage, .autumn-character-stage, .winter-character-stage) > .character-portrait {
+    width: 104px;
+  }
+  :is(.spring-complete-card, .summer-complete-card, .autumn-complete-card, .winter-complete-card) {
+    grid-template-columns: 112px minmax(0, 1fr);
+    min-height: 176px;
+  }
+  :is(.spring-complete-portrait, .summer-complete-portrait, .autumn-complete-portrait, .winter-complete-portrait) {
+    width: 94px;
+    margin-left: 9px;
+  }
+  :is(.spring-complete-copy, .summer-complete-copy, .autumn-complete-copy, .winter-complete-copy) {
+    padding: 17px 14px;
+  }
+  :is(.spring-complete-copy, .summer-complete-copy, .autumn-complete-copy, .winter-complete-copy) h1 {
+    font-size: 22px;
+  }
+  .city-map { min-height: 500px; }
+}
+
+/* STEP 7-B1: text-only prologue + Web Audio retro dialogue blips */
+.title-prologue {
+  position:relative;
+  isolation:isolate;
+  min-height:100vh;
+  overflow:hidden;
+  display:grid;
+  align-items:end;
+  padding:max(30px,env(safe-area-inset-top)) 22px max(30px,env(safe-area-inset-bottom));
+  color:#fff9ef;
+  background:#171314;
+  cursor:pointer;
+}
+.title-prologue-scene {
+  position:absolute;
+  z-index:-4;
+  inset:-2%;
+  background:
+    linear-gradient(180deg,rgba(10,8,9,.5),rgba(13,9,10,.9)),
+    url('/assets/backgrounds/old-street/clock-room-ihyeon.webp') center/cover;
+  filter:saturate(.58) brightness(.68);
+  transform:scale(1.025);
+  animation:prologue-breathe 11s ease-in-out infinite alternate;
+}
+.title-prologue-vignette {
+  position:absolute;
+  z-index:-2;
+  inset:0;
+  background:
+    radial-gradient(circle at 50% 42%,transparent 0 24%,rgba(12,8,9,.18) 58%,rgba(9,6,7,.68) 100%),
+    linear-gradient(180deg,rgba(14,10,11,.08),rgba(14,10,11,.22) 48%,rgba(14,10,11,.8));
+  pointer-events:none;
+}
+.title-prologue > .ambient-canvas { z-index:-1; opacity:.32; }
+.title-prologue-skip {
+  position:absolute;
+  z-index:4;
+  top:max(20px,env(safe-area-inset-top));
+  right:20px;
+  min-width:58px;
+  min-height:36px;
+  padding:0 11px;
+  border:1px solid rgba(255,247,235,.26);
+  border-radius:999px;
+  background:rgba(20,14,15,.38);
+  color:rgba(255,247,235,.7);
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.16em;
+  backdrop-filter:blur(8px);
+}
+.title-prologue-dialogue {
+  position:relative;
+  width:min(100%,520px);
+  min-height:188px;
+  margin:0 auto clamp(22px,8vh,72px);
+  padding:24px 23px 20px;
+  border:1px solid rgba(255,245,232,.28);
+  background:linear-gradient(145deg,rgba(33,23,25,.76),rgba(20,14,15,.88));
+  box-shadow:0 20px 60px rgba(0,0,0,.36);
+  backdrop-filter:blur(9px);
+}
+.title-prologue-dialogue::before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:22px;
+  width:50px;
+  height:1px;
+  background:#d5a881;
+}
+.title-prologue-speaker {
+  display:block;
+  margin-bottom:17px;
+  color:#dfb58f;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.24em;
+}
+.title-prologue-dialogue > p {
+  min-height:70px;
+  margin:0;
+  color:#fff9f0;
+  font-family:var(--font-novel);
+  font-size:clamp(18px,5vw,23px);
+  font-weight:650;
+  line-height:1.72;
+  letter-spacing:-.015em;
+  word-break:keep-all;
+}
+.title-prologue-dialogue > small {
+  display:block;
+  margin-top:16px;
+  color:rgba(255,245,232,.42);
+  font-size:7px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-align:right;
+}
+.title-prologue-cursor {
+  display:inline-block;
+  width:7px;
+  height:1.05em;
+  margin-left:3px;
+  vertical-align:-.13em;
+  background:rgba(222,177,137,.78);
+  animation:prologue-cursor .68s steps(1,end) infinite;
+}
+.title-prologue-finale {
+  display:grid;
+  gap:13px;
+  align-content:end;
+  min-height:142px;
+  animation:prologue-finale-in .8s ease both;
+}
+.title-prologue-finale > span {
+  color:rgba(255,245,232,.56);
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.2em;
+}
+.title-prologue-finale > strong {
+  color:#fff9ef;
+  font-family:Georgia,"Noto Serif KR",serif;
+  font-size:clamp(34px,10vw,50px);
+  font-weight:400;
+  line-height:.92;
+  letter-spacing:-.055em;
+}
+.title-prologue-finale > p {
+  margin:1px 0 9px;
+  color:rgba(255,245,232,.7);
+  font-family:var(--font-novel);
+  font-size:13px;
+}
+.title-prologue-finale > button {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:52px;
+  padding:0 16px;
+  border:1px solid rgba(255,245,232,.58);
+  background:rgba(255,249,240,.93);
+  color:#422c2d;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.05em;
+}
+.title-prologue-finale > button i { font-size:19px; font-style:normal; }
+@keyframes prologue-breathe { from { transform:scale(1.025); } to { transform:scale(1.055); } }
+@keyframes prologue-cursor { 0%,48% { opacity:1; } 49%,100% { opacity:.12; } }
+@keyframes prologue-finale-in { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+@media (max-width:380px) {
+  .title-prologue { padding-inline:16px; }
+  .title-prologue-dialogue { min-height:176px; padding:21px 19px 18px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .title-prologue-scene,.title-prologue-cursor,.title-prologue-finale { animation:none !important; }
+}
