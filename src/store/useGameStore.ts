@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { getPlace, getWeightedDailyPlaces, initialUnlockedPlaceIds } from '../data/locations'
-import type { CollectionProgress, DateRecord, FontFamilySetting, GameProgress, GameSettings, PlayerProfile, Rarity, SeasonKey, TextSizeSetting, TextSpeedSetting, Weather } from '../types/game'
+import { MAX_DAILY_DATE_SESSIONS, type CollectionProgress, type FontFamilySetting, type GameProgress, type GameSettings, type PlayerProfile, type Rarity, type SeasonKey, type TextSizeSetting, type TextSpeedSetting, type Weather } from '../types/game'
 
 const STORAGE_KEY = 'muse-diary-save-v13'
 const LEGACY_STORAGE_KEYS = ['muse-diary-save-v12','muse-diary-save-v11','muse-diary-save-v10','muse-diary-save-v9','muse-diary-save-v8','muse-diary-save-v7','muse-diary-save-v6', 'muse-diary-save-v5', 'muse-diary-save-v4', 'muse-diary-save-v3', 'muse-diary-save-v2', 'muse-diary-save-v1']
@@ -23,6 +23,7 @@ interface GameState extends PersistedState {
   activePlaceId: string | null
   setPlayerName: (name: string) => void
   nextDay: () => void
+  consumeDateSession: (characterId: string) => boolean
   enterPlace: (placeId: string) => void
   leavePlace: () => void
   completePlaceAction: (placeId: string, consumeAction?: boolean) => { unlockedBar: boolean }
@@ -30,8 +31,9 @@ interface GameState extends PersistedState {
   applyDialogueChoice: (characterId: string, affection: number, memoryKey?: string) => number
   completeEpisode: (characterId: string, episodeId: string, kind: 'first' | 'casual' | 'story', affectionGain: number, meeting?: { title: string; day: number; placeId: string }) => number
   completeCharacter: (characterId: string) => void
-  saveDateRecord: (record: DateRecord) => void
   markSecretRead: (characterId: string) => void
+  markLetterRead: (letterId: string) => void
+  completeAfterEndingDate: (characterId: string) => void
   resetCollectionOnly: () => void
   restartGame: () => void
   resetCharacter: (characterId: string) => void
@@ -39,6 +41,7 @@ interface GameState extends PersistedState {
   setFontFamily: (fontFamily: FontFamilySetting) => void
   setTextSize: (textSize: TextSizeSetting) => void
   setTextSpeed: (textSpeed: TextSpeedSetting) => void
+  resetSettings: () => void
   completeSeasonalEvent: (event: { eventId: string; companionId: string; title: string; season: SeasonKey; souvenir: string; souvenirNote: string; affectionGain: number; memoryKey?: string }) => number
 }
 
@@ -54,6 +57,7 @@ function createProgress(day = 1, weather = randomWeather()): GameProgress {
   return {
     day,
     actionsLeft: 3,
+    dateCharacterIdsToday: [],
     weather,
     dailyPlaceIds: getWeightedDailyPlaces(weather, initialUnlockedPlaceIds, dailyCount),
     placeVisits: {},
@@ -77,12 +81,24 @@ function createCollection(): CollectionProgress {
     recentCasualEpisodeIdsByCharacterId: {},
     lastMeetingByCharacterId: {},
     seasonalEventRecords: {},
-    dateRecords: [],
+    readLetterIds: [],
+    completedAfterEndingDateCharacterIds: [],
   }
 }
 
 function createSettings(): GameSettings {
-  return { soundEnabled: true, fontFamily: 'clear', textSize: 'medium', textSpeed: 'normal' }
+  return { soundEnabled: true, fontFamily: 'pretendard', textSize: 'large', textSpeed: 'normal' }
+}
+
+function normalizeSettings(settings?: Partial<GameSettings>): GameSettings {
+  const defaults = createSettings()
+  return {
+    ...defaults,
+    ...settings,
+    fontFamily: settings?.fontFamily === 'myeongjo' ? 'myeongjo' : 'pretendard',
+    textSize: settings?.textSize === 'normal' ? 'normal' : 'large',
+    textSpeed: settings?.textSpeed === 'instant' ? 'instant' : 'normal',
+  }
 }
 
 function normalizeProgress(progress?: Partial<GameProgress>): GameProgress {
@@ -97,6 +113,9 @@ function normalizeProgress(progress?: Partial<GameProgress>): GameProgress {
   return {
     day: progress?.day ?? 1,
     actionsLeft: Math.max(0, Math.min(3, progress?.actionsLeft ?? 3)),
+    dateCharacterIdsToday: Array.isArray(progress?.dateCharacterIdsToday)
+      ? [...new Set(progress.dateCharacterIdsToday)].slice(0, MAX_DAILY_DATE_SESSIONS)
+      : [],
     weather,
     dailyPlaceIds,
     placeVisits: progress?.placeVisits ?? {},
@@ -122,7 +141,10 @@ function normalizeCollection(collection?: Partial<CollectionProgress>): Collecti
     recentCasualEpisodeIdsByCharacterId: collection?.recentCasualEpisodeIdsByCharacterId ?? {},
     lastMeetingByCharacterId: collection?.lastMeetingByCharacterId ?? {},
     seasonalEventRecords: collection?.seasonalEventRecords ?? {},
-    dateRecords: Array.isArray(collection?.dateRecords) ? collection.dateRecords.slice(-50) : [],
+    readLetterIds: Array.isArray(collection?.readLetterIds) ? [...new Set(collection.readLetterIds)] : [],
+    completedAfterEndingDateCharacterIds: Array.isArray(collection?.completedAfterEndingDateCharacterIds)
+      ? [...new Set(collection.completedAfterEndingDateCharacterIds)]
+      : [],
   }
 }
 
@@ -137,7 +159,7 @@ function loadState(): PersistedState {
         player: parsed.player ?? null,
         progress: normalizeProgress(parsed.progress),
         collection: normalizeCollection(parsed.collection),
-        settings: { ...createSettings(), ...(parsed.settings ?? {}) },
+        settings: normalizeSettings(parsed.settings),
       }
     }
   } catch {
@@ -158,6 +180,7 @@ function makeNextDayProgress(current: GameProgress): GameProgress {
     ...current,
     day: current.day + 1,
     actionsLeft: 3,
+    dateCharacterIdsToday: [],
     weather,
     dailyPlaceIds: getWeightedDailyPlaces(weather, current.unlockedPlaceIds, dailyCount),
   }
@@ -192,6 +215,29 @@ export const useGameStore = create<GameState>((set) => ({
       persist(next)
       return { ...next, activePlaceId: null }
     }),
+
+  consumeDateSession: (characterId) => {
+    let consumed = false
+    set((state) => {
+      if (
+        state.progress.dateCharacterIdsToday.length >= MAX_DAILY_DATE_SESSIONS
+        || state.progress.dateCharacterIdsToday.includes(characterId)
+      ) return state
+      consumed = true
+      const next: PersistedState = {
+        player: state.player,
+        progress: {
+          ...state.progress,
+          dateCharacterIdsToday: [...state.progress.dateCharacterIdsToday, characterId],
+        },
+        collection: state.collection,
+        settings: state.settings,
+      }
+      persist(next)
+      return { ...next }
+    })
+    return consumed
+  },
 
   enterPlace: (placeId) =>
     set((state) => {
@@ -327,25 +373,37 @@ export const useGameStore = create<GameState>((set) => ({
       return { ...next }
     }),
 
-  saveDateRecord: (record) =>
-    set((state) => {
-      if (state.collection.dateRecords.some((item) => item.id === record.id)) return state
-      const dateRecords = [...state.collection.dateRecords, record].slice(-50)
-      const nextCollection: CollectionProgress = { ...state.collection, dateRecords }
-      const next: PersistedState = {
-        player: state.player,
-        progress: state.progress,
-        collection: nextCollection,
-        settings: state.settings,
-      }
-      persist(next)
-      return { ...next }
-    }),
-
   markSecretRead: (characterId) =>
     set((state) => {
       if (state.collection.secretReadCharacterIds.includes(characterId)) return state
       const nextCollection = { ...state.collection, secretReadCharacterIds: [...state.collection.secretReadCharacterIds, characterId] }
+      const next: PersistedState = { player: state.player, progress: state.progress, collection: nextCollection, settings: state.settings }
+      persist(next)
+      return { ...next }
+    }),
+
+  markLetterRead: (letterId) =>
+    set((state) => {
+      if (state.collection.readLetterIds.includes(letterId)) return state
+      const nextCollection = { ...state.collection, readLetterIds: [...state.collection.readLetterIds, letterId] }
+      const next: PersistedState = { player: state.player, progress: state.progress, collection: nextCollection, settings: state.settings }
+      persist(next)
+      return { ...next }
+    }),
+
+  completeAfterEndingDate: (characterId) =>
+    set((state) => {
+      if (state.collection.completedAfterEndingDateCharacterIds.includes(characterId)) return state
+      const memoryKey = `after-ending-date:${characterId}`
+      const currentMemories = state.collection.importantMemories[characterId] ?? []
+      const nextCollection: CollectionProgress = {
+        ...state.collection,
+        completedAfterEndingDateCharacterIds: [...state.collection.completedAfterEndingDateCharacterIds, characterId],
+        importantMemories: {
+          ...state.collection.importantMemories,
+          [characterId]: currentMemories.includes(memoryKey) ? currentMemories : [...currentMemories, memoryKey],
+        },
+      }
       const next: PersistedState = { player: state.player, progress: state.progress, collection: nextCollection, settings: state.settings }
       persist(next)
       return { ...next }
@@ -388,10 +446,11 @@ export const useGameStore = create<GameState>((set) => ({
       const completedStoryEpisodeIdsByCharacterId = { ...state.collection.completedStoryEpisodeIdsByCharacterId }
       const recentCasualEpisodeIdsByCharacterId = { ...state.collection.recentCasualEpisodeIdsByCharacterId }
       const lastMeetingByCharacterId = { ...state.collection.lastMeetingByCharacterId }
+      const readLetterIds = state.collection.readLetterIds.filter((id) => id !== `letter-${characterId}`)
+      const completedAfterEndingDateCharacterIds = state.collection.completedAfterEndingDateCharacterIds
       const seasonalEventRecords = Object.fromEntries(
         Object.entries(state.collection.seasonalEventRecords).filter(([, record]) => record.companionId !== characterId),
       )
-      const dateRecords = state.collection.dateRecords.filter((record) => record.characterId !== characterId)
       delete affectionByCharacterId[characterId]
       delete encounterCounts[characterId]
       delete importantMemories[characterId]
@@ -412,9 +471,10 @@ export const useGameStore = create<GameState>((set) => ({
         recentCasualEpisodeIdsByCharacterId,
         lastMeetingByCharacterId,
         seasonalEventRecords,
-        dateRecords,
         completedCharacterIds: without(state.collection.completedCharacterIds),
         secretReadCharacterIds: without(state.collection.secretReadCharacterIds),
+        readLetterIds,
+        completedAfterEndingDateCharacterIds: without(completedAfterEndingDateCharacterIds),
       }
       const next: PersistedState = { player: state.player, progress: state.progress, collection: nextCollection, settings: state.settings }
       persist(next)
@@ -496,6 +556,18 @@ export const useGameStore = create<GameState>((set) => ({
         progress: state.progress,
         collection: state.collection,
         settings: { ...state.settings, textSpeed },
+      }
+      persist(next)
+      return { ...next }
+    }),
+
+  resetSettings: () =>
+    set((state) => {
+      const next: PersistedState = {
+        player: state.player,
+        progress: state.progress,
+        collection: state.collection,
+        settings: createSettings(),
       }
       persist(next)
       return { ...next }

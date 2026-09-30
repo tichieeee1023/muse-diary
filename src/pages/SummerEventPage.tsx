@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { getSeasonalEventBackground } from '../data/backgroundAssets'
 import { CharacterPortrait } from '../components/CharacterPortrait'
+import { ThemeBgmController } from '../components/ThemeBgmController'
 import { getSeasonalPortraitExpression } from '../data/portraitExpressions'
 import { CharacterSD } from '../components/CharacterSD'
 import { HeartMeter } from '../components/HeartMeter'
@@ -89,12 +90,15 @@ export function SummerEventPage({ onClose }: SummerEventPageProps) {
   }
 
   const hero = (
-    <figure className="summer-event-hero">
-      <img src={getSeasonalEventBackground('SUMMER', step, companionId)} alt="여름 불꽃축제가 열린 강변" />
-      <AmbientCanvas effect="bokeh" density="medium" className="seasonal-ambient-soft" />
-      <AmbientCanvas effect="sparkle" density="low" className="seasonal-ambient" />
-      <figcaption><span>SUMMER SPECIAL DAY</span><strong>{summerEvent.title}</strong><small>{summerEvent.placeName}</small></figcaption>
-    </figure>
+    <>
+      <ThemeBgmController characterId={companion?.id} />
+      <figure className="summer-event-hero">
+        <img src={getSeasonalEventBackground('SUMMER', step, companionId)} alt="여름 불꽃축제가 열린 강변" />
+        <AmbientCanvas effect="bokeh" density="medium" className="seasonal-ambient-soft" />
+        <AmbientCanvas effect="sparkle" density="low" className="seasonal-ambient" />
+        <figcaption><span>SUMMER SPECIAL DAY</span><strong>{summerEvent.title}</strong><small>{summerEvent.placeName}</small></figcaption>
+      </figure>
+    </>
   )
 
   if (step === 'intro') {

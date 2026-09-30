@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { CharacterPortrait } from '../components/CharacterPortrait'
-import { CharacterSD } from '../components/CharacterSD'
 import { HeartMeter } from '../components/HeartMeter'
+import { ThemeBgmController } from '../components/ThemeBgmController'
 import {
   datePlaces,
   getDateTurnEvaluation,
@@ -11,6 +11,7 @@ import {
   getDateConditionalSpeechOptions,
   getDateConditionalTouchOptions,
   getDateRelationshipStage,
+  getDateRelationshipCopy,
   getDateTurnActionLog,
   getDateReturnTouch,
   getDateReactionPopSequence,
@@ -25,17 +26,22 @@ import {
   type DateReaction,
   type DateReactionPop,
 } from '../data/dateScenarios'
+import { getDateAfterglow } from '../data/dateAfterglow'
 import { getAllCharacters } from '../engine/encounterEngine'
+import { getCharacterRouteProfile } from '../data/characters/index'
 import { hasCompletedFirstEncounter } from '../engine/storyEngine'
+import { playUiSound } from '../engine/soundEngine'
 import { formatGameText } from '../engine/textFormatter'
 import { useGameStore } from '../store/useGameStore'
-import type { DateRecord, PortraitExpression } from '../types/game'
+import { MAX_DAILY_DATE_SESSIONS, type PortraitExpression } from '../types/game'
 
 interface DatePageProps {
   onClose: () => void
+  onStartDateSession: (characterId: string) => boolean
 }
 
 type DateStep = 'character' | 'place' | 'scene'
+type DateExitIntent = 'close' | 'place'
 type DistanceIntent = 'back' | 'stay' | 'forward'
 type DatePlayPhase = 'action' | 'result'
 type DateControlKey = 'say' | 'distance' | 'touch'
@@ -56,7 +62,7 @@ interface DateTurnLog {
   expressionSequence: PortraitExpression[]
 }
 
-const MAX_DATE_TURNS = 4
+const MAX_DATE_TURNS = 3
 
 const distanceOrder: DateDistanceState[] = ['space', 'normal', 'close']
 
@@ -108,22 +114,24 @@ function resolveTouchState(
 
 function getReactionPopTone(pop: DateReactionPop) {
   if (pop.includes('♡') || pop === '♥') return 'affection'
-  if (pop === '💢' || pop === '↯') return 'sharp'
-  if (pop === '💧' || pop === '💦' || pop === '///') return 'fluster'
+  if (pop === '↯') return 'sharp'
+  if (pop === '///') return 'fluster'
   if (pop.includes('!')) return 'surprise'
   if (pop === '♪' || pop === '♪♪' || pop === '✦' || pop === '✧' || pop === '☆') return 'bright'
   return 'quiet'
 }
 
 
-export function DatePage({ onClose }: DatePageProps) {
+export function DatePage({ onClose, onStartDateSession }: DatePageProps) {
   const player = useGameStore((state) => state.player)
   const progress = useGameStore((state) => state.progress)
   const collection = useGameStore((state) => state.collection)
-  const saveDateRecord = useGameStore((state) => state.saveDateRecord)
+  const soundEnabled = useGameStore((state) => state.settings.soundEnabled)
   const [step, setStep] = useState<DateStep>('character')
   const [characterId, setCharacterId] = useState<string | null>(null)
   const [placeId, setPlaceId] = useState<string | null>(null)
+  const [dateSessionCharacterId, setDateSessionCharacterId] = useState<string | null>(null)
+  const [exitIntent, setExitIntent] = useState<DateExitIntent | null>(null)
   const [distanceState, setDistanceState] = useState<DateDistanceState>('normal')
   const [distanceIntent, setDistanceIntent] = useState<DistanceIntent>('stay')
   const [speechIntent, setSpeechIntent] = useState<DateSpeechIntent>('quiet')
@@ -133,7 +141,6 @@ export function DatePage({ onClose }: DatePageProps) {
   const [touchState, setTouchState] = useState<DateTouchState>('none')
   const [returnTouchTriggered, setReturnTouchTriggered] = useState(false)
   const [discoveredWeaknesses, setDiscoveredWeaknesses] = useState<Set<string>>(() => new Set())
-  const [dateSaved, setDateSaved] = useState(false)
   const [isResolving, setIsResolving] = useState(false)
   const [playPhase, setPlayPhase] = useState<DatePlayPhase>('action')
   const [openControl, setOpenControl] = useState<DateControlKey | null>(null)
@@ -147,29 +154,55 @@ export function DatePage({ onClose }: DatePageProps) {
   useEffect(() => () => {
     expressionTimersRef.current.forEach((timer) => window.clearTimeout(timer))
   }, [])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    window.requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    })
+  }, [step])
+
   const eligibleCharacters = characters.filter((character) => {
     const affection = collection.affectionByCharacterId[character.id] ?? 0
     return hasCompletedFirstEncounter(character.id, collection) && affection >= 20
   })
+  const datesRemaining = Math.max(0, MAX_DAILY_DATE_SESSIONS - progress.dateCharacterIdsToday.length)
+
+  const character = characterId ? characters.find((item) => item.id === characterId) ?? null : null
+
+  useEffect(() => {
+    if (!character) return
+    const visuals = getCharacterRouteProfile(character.id)?.visuals ?? {}
+    Object.values(visuals).forEach((src) => {
+      if (!src || typeof src !== 'string') return
+      const image = new Image()
+      image.src = src
+    })
+  }, [character])
 
   if (!player) return null
 
-  const character = characterId ? characters.find((item) => item.id === characterId) ?? null : null
   const affection = character ? collection.affectionByCharacterId[character.id] ?? 0 : 0
   const completed = character ? collection.completedCharacterIds.includes(character.id) : false
   const profile = character ? getDateProfile(character.id) : null
   const place = placeId ? datePlaces.find((item) => item.id === placeId) ?? null : null
+  const dateAfterglow = character && place ? getDateAfterglow(character.id, place.id, dateHeart) : null
   const unlockedPlaces = character
     ? datePlaces.filter((item) => completed || affection >= item.minAffection)
     : []
   const ambientLine = place ? getDatePlaceAmbient(place.id, progress.day) : ''
   const isFavoritePlace = Boolean(place && profile && profile.favoritePlaceId === place.id)
+  const favoritePlace = profile
+    ? datePlaces.find((item) => item.id === profile.favoritePlaceId) ?? null
+    : null
+  const favoritePlaceUnlocked = Boolean(favoritePlace && (completed || affection >= favoritePlace.minAffection))
 
   const distanceIndex = distanceOrder.indexOf(distanceState)
   const canStepBack = distanceIndex > 0
   const canStepForward = distanceIndex < distanceOrder.length - 1
   const previewDistance = moveDistance(distanceState, distanceIntent)
   const relationshipStage = getDateRelationshipStage(affection, completed)
+  const relationshipCopy = character ? getDateRelationshipCopy(character.id, relationshipStage) : null
   const weaknessDiscovered = Boolean(character && discoveredWeaknesses.has(character.id))
   const conditionalChoiceContext = character ? {
     characterId: character.id,
@@ -215,15 +248,74 @@ export function DatePage({ onClose }: DatePageProps) {
     setIsResolving(false)
   }
 
-  const chooseCharacter = (id: string) => {
-    setCharacterId(id)
+  const resetSceneToPlace = () => {
     setPlaceId(null)
     setDistanceState('normal')
     setTurnLogs([])
     setDateHeart(1)
     setTouchState('none')
     setReturnTouchTriggered(false)
-    setDateSaved(false)
+    setDisplayExpression('main')
+    resetDateInteraction()
+    setStep('place')
+  }
+
+  const resetPlaceToCharacter = () => {
+    setCharacterId(null)
+    setPlaceId(null)
+    setDateSessionCharacterId(null)
+    setDistanceState('normal')
+    setTurnLogs([])
+    setDateHeart(1)
+    setTouchState('none')
+    setReturnTouchTriggered(false)
+    setDisplayExpression('main')
+    resetDateInteraction()
+    setStep('character')
+  }
+
+  const requestExit = (intent: DateExitIntent) => {
+    if (step === 'scene' && placeId) {
+      playUiSound('tap', soundEnabled)
+      setExitIntent(intent)
+      return
+    }
+    if (intent === 'place') {
+      playUiSound('back', soundEnabled)
+      resetSceneToPlace()
+      return
+    }
+    playUiSound('close', soundEnabled)
+    onClose()
+  }
+
+  const cancelExit = () => {
+    playUiSound('tap', soundEnabled)
+    setExitIntent(null)
+  }
+
+  const confirmExit = () => {
+    const intent = exitIntent
+    setExitIntent(null)
+    playUiSound('close', soundEnabled)
+    if (intent === 'place') {
+      resetSceneToPlace()
+      return
+    }
+    onClose()
+  }
+
+  const chooseCharacter = (id: string) => {
+    if (progress.dateCharacterIdsToday.includes(id)) return
+    playUiSound('select', soundEnabled)
+    setCharacterId(id)
+    setPlaceId(null)
+    setDateSessionCharacterId(null)
+    setDistanceState('normal')
+    setTurnLogs([])
+    setDateHeart(1)
+    setTouchState('none')
+    setReturnTouchTriggered(false)
     setDisplayExpression('main')
     resetDateInteraction()
     setStep('place')
@@ -231,15 +323,18 @@ export function DatePage({ onClose }: DatePageProps) {
 
   const choosePlace = (id: string) => {
     if (!character) return
+    const continuingCurrentSession = dateSessionCharacterId === character.id
+    if (!continuingCurrentSession && (datesRemaining <= 0 || !onStartDateSession(character.id))) return
+    playUiSound('select', soundEnabled)
     const selectedPlace = datePlaces.find((item) => item.id === id)
     const initialDistance = selectedPlace?.initialDistance ?? 'normal'
     setPlaceId(id)
+    setDateSessionCharacterId(character.id)
     setDistanceState(initialDistance)
     setTurnLogs([])
     setDateHeart(1)
     setTouchState('none')
     setReturnTouchTriggered(false)
-    setDateSaved(false)
     setDisplayExpression(getDateMoodExpression(character.id, 1))
     resetDateInteraction()
     setStep('scene')
@@ -256,6 +351,7 @@ export function DatePage({ onClose }: DatePageProps) {
       discoveredWeakness: discoveredWeaknesses.has(character.id),
     }, turnEvent?.touchKey)
     if (!nextTouchOptions.some((option) => option.id === touchIntent)) setTouchIntent('none')
+    playUiSound('select', soundEnabled)
     setDistanceIntent(intent)
   }
 
@@ -344,6 +440,15 @@ export function DatePage({ onClose }: DatePageProps) {
     }
 
     if (returnTouch) setReturnTouchTriggered(true)
+    if (effectiveHeartDelta > 0) {
+      playUiSound('heartbeat', soundEnabled)
+      if (typeof navigator !== 'undefined' && 'vibrate' in navigator) navigator.vibrate([18, 32, 18])
+    } else if (effectiveHeartDelta < 0) {
+      playUiSound('heart-loss', soundEnabled)
+      if (typeof navigator !== 'undefined' && 'vibrate' in navigator) navigator.vibrate(16)
+    } else {
+      playUiSound('tap', soundEnabled)
+    }
     setDateHeart(nextHeart)
     setDistanceState(nextDistance)
     setTouchState(nextTouchState)
@@ -356,6 +461,7 @@ export function DatePage({ onClose }: DatePageProps) {
   }
 
   const continueFromResult = () => {
+    playUiSound('page', soundEnabled)
     resetTurnInputs()
     setOpenControl(null)
     setPlayPhase('action')
@@ -364,80 +470,50 @@ export function DatePage({ onClose }: DatePageProps) {
     }, 30)
   }
 
-
-  const finishDate = () => {
-    if (!place || !character || dateSaved || turnLogs.length === 0) return
-
-    const record: DateRecord = {
-      id: `date-${progress.day}-${character.id}-${place.id}-${Date.now()}`,
-      day: progress.day,
-      createdAt: Date.now(),
-      characterId: character.id,
-      placeId: place.id,
-      finalHeart: dateHeart,
-      closing: place.closing,
-      turns: turnLogs.map((log, index) => ({
-        turn: index + 1,
-        distanceState: log.distanceState,
-        touchState: log.touchState,
-        lines: log.lines,
-        reactionLine: log.reaction?.line,
-        reactionNarration: log.reaction?.narration,
-        innerThought: log.innerThought ?? undefined,
-        heartDelta: log.heartDelta,
-        heartAfter: log.heartAfter,
-        isWeak: log.isWeak,
-        weakSpotLabel: log.weakSpotLabel ?? undefined,
-        weakDiscovery: log.weakDiscovery,
-        returnTouch: log.returnTouch ?? undefined,
-      })),
-    }
-
-    saveDateRecord(record)
-    setDateSaved(true)
-  }
-
   const back = () => {
     if (step === 'scene') {
-      setPlaceId(null)
-      setDistanceState('normal')
-      setTurnLogs([])
-      setDateHeart(1)
-      setTouchState('none')
-      setReturnTouchTriggered(false)
-      setDateSaved(false)
-      setDisplayExpression('main')
-      resetDateInteraction()
-      setStep('place')
+      requestExit('place')
       return
     }
     if (step === 'place') {
-      setCharacterId(null)
-      setPlaceId(null)
-      setDistanceState('normal')
-      setTurnLogs([])
-      setDateHeart(1)
-      setTouchState('none')
-      setReturnTouchTriggered(false)
-      setDateSaved(false)
-      setDisplayExpression('main')
-      resetDateInteraction()
-      setStep('character')
+      playUiSound('back', soundEnabled)
+      resetPlaceToCharacter()
       return
     }
-    onClose()
+    requestExit('close')
   }
 
   return (
     <div className="page date-page">
+      <ThemeBgmController characterId={character?.id} />
       <header className="date-page-header">
         <button type="button" className="date-back" onClick={back}>←</button>
         <div>
           <p className="eyebrow">DATE DIARY</p>
           <h1>{step === 'character' ? '오늘 누구와 데이트할까?' : character ? `${character.name}와의 데이트` : '데이트'}</h1>
         </div>
-        <button type="button" className="date-close" onClick={onClose}>닫기</button>
+        <button type="button" className="date-close" onClick={() => requestExit('close')} aria-label="데이트 닫기">×</button>
       </header>
+
+      <nav className="date-step-rail" aria-label="데이트 진행 단계">
+        {([
+          ['character', '사람'],
+          ['place', '장소'],
+          ['scene', '데이트'],
+        ] as Array<[DateStep, string]>).map(([stepId, label], index) => {
+          const stepIndex = ['character', 'place', 'scene'].indexOf(step)
+          return (
+            <span
+              key={stepId}
+              className={`${step === stepId ? 'is-active' : ''}${index < stepIndex ? ' is-done' : ''}`}
+              aria-current={step === stepId ? 'step' : undefined}
+            >
+              <i>{String(index + 1).padStart(2, '0')}</i>
+              {label}
+            </span>
+          )
+        })}
+      </nav>
 
       {step === 'character' && (
         <section className="date-select-panel">
@@ -445,20 +521,29 @@ export function DatePage({ onClose }: DatePageProps) {
             <span>♡ DATE MODE</span>
             <strong>같은 사람도, 어디에서 만나느냐에 따라 다른 기록이 됩니다.</strong>
             <p>호감도 20 이상부터 데이트할 수 있어요. 먼저 오늘 함께 나갈 사람을 골라주세요.</p>
+            <small className="date-session-counter">TODAY'S DATES · {progress.dateCharacterIdsToday.length} / {MAX_DAILY_DATE_SESSIONS}</small>
           </div>
 
-          {eligibleCharacters.length ? (
+          {datesRemaining <= 0 ? (
+            <div className="date-empty-state">
+              <b>오늘의 데이트는 모두 끝났어요.</b>
+              <p>새로운 데이트는 다음 날 다시 열립니다. 오늘의 장면은 여기서 천천히 마무리해 주세요.</p>
+            </div>
+          ) : eligibleCharacters.length ? (
             <div className="date-character-grid">
               {eligibleCharacters.map((item) => {
                 const itemAffection = collection.affectionByCharacterId[item.id] ?? 0
                 const itemProfile = getDateProfile(item.id)
+                const itemStage = getDateRelationshipStage(itemAffection, collection.completedCharacterIds.includes(item.id))
+                const itemRelationship = getDateRelationshipCopy(item.id, itemStage)
                 return (
-                  <button type="button" className="date-character-card" key={item.id} onClick={() => chooseCharacter(item.id)}>
-                    <CharacterSD characterId={item.id} name={item.name} symbol={item.symbol} decorative className="date-character-sd" />
+                  <button type="button" className={`date-character-card${progress.dateCharacterIdsToday.includes(item.id) ? ' is-used' : ''}`} key={item.id} onClick={() => chooseCharacter(item.id)} disabled={progress.dateCharacterIdsToday.includes(item.id)}>
+                    <CharacterPortrait characterId={item.id} name={item.name} symbol={item.symbol} expression="main" className="date-character-portrait" alt={`${item.name} 데이트 portrait`} />
                     <span>{item.occupation}</span>
                     <strong>{item.name}</strong>
                     <HeartMeter value={itemAffection} compact interactive={false} />
-                    <small>{itemProfile ? `좋아하는 장소 · ${datePlaces.find((p) => p.id === itemProfile.favoritePlaceId)?.name ?? '비밀'}` : '데이트 가능'}</small>
+                    <em className="date-character-relationship">{itemRelationship.label}</em>
+                    <small>{progress.dateCharacterIdsToday.includes(item.id) ? '오늘의 데이트 완료' : itemProfile ? `좋아하는 장소 · ${datePlaces.find((p) => p.id === itemProfile.favoritePlaceId)?.name ?? '비밀'}` : '데이트 가능'}</small>
                   </button>
                 )
               })}
@@ -475,11 +560,12 @@ export function DatePage({ onClose }: DatePageProps) {
       {step === 'place' && character && profile && (
         <section className="date-place-panel">
           <div className="date-partner-strip">
-            <CharacterSD characterId={character.id} name={character.name} symbol={character.symbol} decorative className="date-partner-sd" />
+            <CharacterPortrait characterId={character.id} name={character.name} symbol={character.symbol} expression="main" className="date-partner-portrait" alt={`${character.name} 데이트 portrait`} />
             <div>
               <span>DATE PARTNER</span>
               <strong>{character.name}</strong>
               <small>{completed ? 'ROUTE COMPLETE · 모든 장소 해금' : `HEART ${affection} · 현재 ${unlockedPlaces.length}곳 해금`}</small>
+              {relationshipCopy && <div className="date-relationship-copy"><span>RELATIONSHIP</span><strong>{relationshipCopy.label}</strong><small>{relationshipCopy.note}</small></div>}
             </div>
           </div>
 
@@ -487,6 +573,14 @@ export function DatePage({ onClose }: DatePageProps) {
             <span>PLACE</span>
             <strong>오늘의 장소를 고르세요.</strong>
             <p>장소는 데이트의 배경과 분위기, 그리고 그곳에서만 나오는 문장을 바꿉니다.</p>
+            <small className="date-session-counter">이번 데이트를 시작하면 오늘 {progress.dateCharacterIdsToday.length + 1} / {MAX_DAILY_DATE_SESSIONS}명이 됩니다.</small>
+            {favoritePlace && favoritePlaceUnlocked && (
+              <button type="button" className="date-quick-start" onClick={() => choosePlace(favoritePlace.id)}>
+                <span>QUICK DATE</span>
+                <strong>{favoritePlace.name}에서 바로 시작</strong>
+                <b aria-hidden="true">→</b>
+              </button>
+            )}
           </div>
 
           <div className="date-place-grid">
@@ -664,7 +758,7 @@ export function DatePage({ onClose }: DatePageProps) {
                             role="radio"
                             aria-checked={selected}
                             className={`${selected ? 'is-selected' : ''}${option.label.includes('✦') ? ' is-conditional' : ''}`}
-                            onClick={() => { setSpeechIntent(option.id); setOpenControl(null) }}
+                            onClick={() => { playUiSound('select', soundEnabled); setSpeechIntent(option.id); setOpenControl(null) }}
                           >
                             <i aria-hidden="true" />
                             <span><strong>{option.label}</strong><small>{option.hint}</small></span>
@@ -725,7 +819,7 @@ export function DatePage({ onClose }: DatePageProps) {
                             role="radio"
                             aria-checked={selected}
                             className={`${selected ? 'is-selected' : ''}${option.label.includes('✦') ? ' is-conditional' : ''}`}
-                            onClick={() => { setTouchIntent(option.id); setOpenControl(null) }}
+                            onClick={() => { playUiSound('select', soundEnabled); setTouchIntent(option.id); setOpenControl(null) }}
                           >
                             <i aria-hidden="true" />
                             <span><strong>{option.label}</strong><small>{option.hint}</small></span>
@@ -744,27 +838,57 @@ export function DatePage({ onClose }: DatePageProps) {
           )}
 
           {playPhase === 'action' && dateComplete && (
-            <section className={`date-finish-card${dateSaved ? ' is-saved' : ''}`}>
-              <span>{dateSaved ? 'DATE RECORD SAVED' : 'DATE COMPLETE'}</span>
-              <strong>{dateSaved ? '오늘의 데이트가 다이어리에 남았습니다.' : `${character.name}와의 오늘을 마무리할 시간.`}</strong>
+            <section className="date-finish-card">
+              <span>DATE COMPLETE</span>
+              <strong>{`${character.name}와의 오늘을 마무리할 시간.`}</strong>
               <p>{formatGameText(place.closing, player.name)}</p>
               <div className="date-finish-heart" aria-label={`최종 데이트 분위기 ${dateHeart} / 5`}>
                 {'♥'.repeat(dateHeart)}{'♡'.repeat(5 - dateHeart)}
               </div>
-              {!dateSaved ? (
-                <button type="button" className="date-finish-save" onClick={finishDate}>오늘을 다이어리에 기록한다</button>
-              ) : (
-                <small>기록 메뉴의 DATE MEMORIES에서 오늘의 전체 기록을 다시 읽을 수 있어요.</small>
+              {dateAfterglow && (
+                <div className={`date-afterglow-card is-${dateAfterglow.tone}`}>
+                  <span>AFTER DATE · {dateAfterglow.placeName}</span>
+                  <strong>{dateAfterglow.title}</strong>
+                  <p>“{dateAfterglow.line}”</p>
+                </div>
               )}
+              <button type="button" className="date-finish-save" onClick={() => { playUiSound('complete', soundEnabled); onClose() }}>데이트를 마무리한다</button>
+              <small>이번 데이트는 기록장에 저장하지 않고, 오늘의 장면으로만 남습니다.</small>
             </section>
           )}
 
           <div className="date-experience-actions">
-            <button type="button" onClick={() => { setPlaceId(null); setDateSaved(false); resetDateInteraction(); setStep('place') }}>
-              {dateSaved ? '다른 데이트를 고른다' : '장소를 다시 고른다'}
+            <button type="button" onClick={() => requestExit('place')}>
+              장소를 다시 고른다
             </button>
           </div>
         </section>
+      )}
+
+      {exitIntent && (
+        <div className="date-exit-backdrop" role="presentation" onClick={cancelExit}>
+          <section
+            className="date-exit-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="date-exit-title"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <span>PAUSE DATE</span>
+            <h2 id="date-exit-title">{exitIntent === 'place' ? '지금 장면을 나갈까요?' : '데이트를 나갈까요?'}</h2>
+            <p>
+              {exitIntent === 'place'
+                ? '현재 장면을 멈추고 장소 선택으로 돌아갑니다. 오늘 데이트 1회는 이미 사용된 상태예요.'
+                : '현재 데이트 장면은 저장되지 않습니다. 나가도 오늘 데이트 1회는 사용된 상태로 남아요.'}
+            </p>
+            <div>
+              <button type="button" onClick={cancelExit}>계속하기</button>
+              <button type="button" className="is-primary" onClick={confirmExit}>
+                {exitIntent === 'place' ? '장소 다시 고르기' : '데이트 나가기'}
+              </button>
+            </div>
+          </section>
+        </div>
       )}
     </div>
   )

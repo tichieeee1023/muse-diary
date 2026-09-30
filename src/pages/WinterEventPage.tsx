@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { getSeasonalEventBackground } from '../data/backgroundAssets'
 import { CharacterPortrait } from '../components/CharacterPortrait'
+import { ThemeBgmController } from '../components/ThemeBgmController'
 import { getSeasonalPortraitExpression } from '../data/portraitExpressions'
 import { CharacterSD } from '../components/CharacterSD'
 import { HeartMeter } from '../components/HeartMeter'
@@ -89,12 +90,15 @@ export function WinterEventPage({ onClose }: WinterEventPageProps) {
   }
 
   const hero = (
-    <figure className="winter-event-hero">
-      <img src={getSeasonalEventBackground('WINTER', step, companionId)} alt="눈 내리는 산림 편백 휴양관" />
-      <AmbientCanvas effect="snow" density="medium" className="seasonal-ambient" />
-      <AmbientCanvas effect="mist" density="low" className="seasonal-ambient-soft" />
-      <figcaption><span>WINTER SPECIAL DAY</span><strong>{winterEvent.title}</strong><small>{winterEvent.placeName}</small></figcaption>
-    </figure>
+    <>
+      <ThemeBgmController characterId={companion?.id} />
+      <figure className="winter-event-hero">
+        <img src={getSeasonalEventBackground('WINTER', step, companionId)} alt="눈 내리는 산림 편백 휴양관" />
+        <AmbientCanvas effect="snow" density="medium" className="seasonal-ambient" />
+        <AmbientCanvas effect="mist" density="low" className="seasonal-ambient-soft" />
+        <figcaption><span>WINTER SPECIAL DAY</span><strong>{winterEvent.title}</strong><small>{winterEvent.placeName}</small></figcaption>
+      </figure>
+    </>
   )
 
   if (step === 'intro') {

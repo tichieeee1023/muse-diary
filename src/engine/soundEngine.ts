@@ -1,11 +1,18 @@
+import type { CharacterThemeBgm } from '../data/themeBgm'
+
 export type UiSound =
   | 'tap'
+  | 'select'
+  | 'back'
+  | 'close'
   | 'page'
   | 'map'
   | 'travel'
   | 'message'
   | 'new'
   | 'heart'
+  | 'heartbeat'
+  | 'heart-loss'
   | 'day'
   | 'unlock'
   | 'special'
@@ -16,6 +23,8 @@ export type UiSound =
 
 let audioContext: AudioContext | null = null
 let noiseBuffer: AudioBuffer | null = null
+let themeTimer: number | null = null
+let activeThemeId: string | null = null
 
 function getContext() {
   if (typeof window === 'undefined' || !('AudioContext' in window || 'webkitAudioContext' in window)) return null
@@ -153,7 +162,7 @@ export function playTextBlip(character: string, enabled = true, index = 0) {
 
 /**
  * MUSE DIARY의 전 UI 효과음. 외부 파일 없이 Web Audio API로 합성합니다.
- * BGM이 없는 대신 행동마다 소리의 역할을 분리해 화면 전환의 리듬을 만듭니다.
+ * 짧은 UI 효과음과 캐릭터 테마 멜로디를 분리해 장면의 리듬을 만듭니다.
  */
 export function playUiSound(kind: UiSound, enabled = true) {
   if (!enabled) return
@@ -167,6 +176,20 @@ export function playUiSound(kind: UiSound, enabled = true) {
       case 'tap':
         tone(context, 390, 0.036, 0.016, 0, 'triangle', 315)
         noiseBurst(context, 0.018, 0.007, 'highpass', 2100)
+        break
+
+      case 'select':
+        tone(context, 470, 0.05, 0.014, 0, 'triangle', 540)
+        tone(context, 705, 0.055, 0.009, 0.045, 'sine')
+        break
+
+      case 'back':
+        tone(context, 410, 0.075, 0.012, 0, 'triangle', 295)
+        noiseBurst(context, 0.025, 0.004, 'highpass', 1600)
+        break
+
+      case 'close':
+        tone(context, 330, 0.09, 0.012, 0, 'sine', 235)
         break
 
       case 'map':
@@ -193,6 +216,16 @@ export function playUiSound(kind: UiSound, enabled = true) {
       case 'heart':
         tone(context, 520, 0.08, 0.017, 0, 'sine', 565)
         tone(context, 660, 0.11, 0.018, 0.07, 'triangle', 710)
+        break
+
+      case 'heartbeat':
+        tone(context, 118, 0.075, 0.024, 0, 'sine', 104)
+        tone(context, 94, 0.09, 0.018, 0.105, 'sine', 82)
+        break
+
+      case 'heart-loss':
+        tone(context, 250, 0.11, 0.012, 0, 'triangle', 170)
+        noiseBurst(context, 0.04, 0.004, 'bandpass', 420)
         break
 
       case 'new':
@@ -248,5 +281,50 @@ export function playUiSound(kind: UiSound, enabled = true) {
     }
   } catch {
     // 사운드 재생 실패는 게임 진행에 영향을 주지 않습니다.
+  }
+}
+
+export function stopThemeBgm() {
+  if (themeTimer !== null && typeof window !== 'undefined') {
+    window.clearInterval(themeTimer)
+  }
+  themeTimer = null
+  activeThemeId = null
+}
+
+/**
+ * 완성 루트에서 해금되는 짧은 캐릭터 테마를 반복 재생합니다.
+ * 현재는 외부 음원 대신 캐릭터별 음계 모티프를 합성해 사용합니다.
+ */
+export function playThemeBgm(theme: CharacterThemeBgm, enabled = true) {
+  if (!enabled) {
+    stopThemeBgm()
+    return
+  }
+
+  try {
+    const context = getContext()
+    if (!context || typeof window === 'undefined') return
+    if (context.state === 'suspended') void context.resume()
+
+    stopThemeBgm()
+    activeThemeId = theme.characterId
+    let noteIndex = 0
+    const beatMs = 60000 / Math.max(40, theme.bpm)
+
+    const playNote = () => {
+      if (activeThemeId !== theme.characterId) return
+      const frequency = theme.notes[noteIndex % theme.notes.length] ?? 440
+      tone(context, frequency, (beatMs / 1000) * 0.72, 0.012, 0, theme.waveform)
+      if (noteIndex % 4 === 0) {
+        tone(context, frequency / 2, (beatMs / 1000) * 0.52, 0.004, 0, 'sine')
+      }
+      noteIndex += 1
+    }
+
+    playNote()
+    themeTimer = window.setInterval(playNote, Math.max(180, beatMs))
+  } catch {
+    stopThemeBgm()
   }
 }

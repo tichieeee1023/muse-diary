@@ -28,10 +28,9 @@ const weatherMark = {
 interface HomePageProps {
   onNavigate: (section: MainSection) => void
   onStartSeasonalEvent: (eventId: string) => void
-  onStartDate: () => void
 }
 
-export function HomePage({ onNavigate, onStartSeasonalEvent, onStartDate }: HomePageProps) {
+export function HomePage({ onNavigate, onStartSeasonalEvent }: HomePageProps) {
   const player = useGameStore((state) => state.player)
   const progress = useGameStore((state) => state.progress)
   const nextDay = useGameStore((state) => state.nextDay)
@@ -198,47 +197,56 @@ export function HomePage({ onNavigate, onStartSeasonalEvent, onStartDate }: Home
         </div>
       </header>
 
-      <div className="day-opening-line" aria-hidden="true"><span>DAY {String(progress.day).padStart(2, '0')}</span><i /><span>{progress.weather}</span></div>
-
-      <figure className="studio-banner">
-        <img src={`/assets/backgrounds/studio/${timeOfDay === '밤' ? 'night' : 'day'}.webp`} alt="인형 디자이너의 작업실" />
-        <figcaption>
-          <span>MY WORKROOM</span>
-          <strong>{timeOfDay === '밤' ? '하루를 정리하는 작업실' : '오늘의 영감을 찾기 전'}</strong>
-        </figcaption>
-      </figure>
-
-      <section className="workroom-card">
-        <div className="workroom-meta">
-          <p className="workroom-caption">작업실 · {timeOfDay}</p>
-          <span>{player.occupation}</span>
-        </div>
-        <h2>{player.name}, 오늘은 어디로 가볼까?</h2>
-        <p>{weatherCopy[progress.weather][timeOfDay]}</p>
-        <div className="progress-line">
-          <span>오늘의 외출</span>
-          <strong>{'●'.repeat(progress.actionsLeft)}{'○'.repeat(3 - progress.actionsLeft)}</strong>
-        </div>
+      <section className="workroom-moment" aria-label="오늘의 작업실 모먼트">
+        <figure className="studio-banner workroom-moment-frame">
+          <img src={`/assets/backgrounds/studio/${timeOfDay === '밤' ? 'night' : 'day'}.webp`} alt="인형 디자이너의 작업실" />
+          <div className="workroom-moment-shade" aria-hidden="true" />
+          <div className="workroom-moment-topbar">
+            <span><i aria-hidden="true" /> WORKROOM MOMENT</span>
+            <strong>01 · OUTING</strong>
+          </div>
+          <div className="workroom-moment-copy">
+            <div className="workroom-moment-kicker">
+              <span>TODAY'S OUTING</span>
+              <small>{timeOfDay} · {player.occupation}</small>
+            </div>
+            <h2>{player.name}, <em>오늘은 어디로 가볼까?</em></h2>
+            <p>{weatherCopy[progress.weather][timeOfDay]}</p>
+            <div className="workroom-moment-footer">
+              <span>남은 외출</span>
+              <div className="workroom-progress-dots" aria-label={`남은 외출 ${progress.actionsLeft}회`}>
+                {[0, 1, 2].map((index) => <i key={index} className={index < progress.actionsLeft ? 'is-left' : ''} />)}
+              </div>
+              <strong>{progress.actionsLeft} / 3</strong>
+            </div>
+          </div>
+        </figure>
       </section>
 
       {dailyMessageCharacter && (
-        <section className={`workroom-message${dailyMessageCompleted ? ' is-complete' : ''}`} aria-label={`${dailyMessageCharacter.name}에게서 온 오늘의 메시지`}>
-          <CharacterSD
-            characterId={dailyMessageCharacter.id}
-            name={dailyMessageCharacter.name}
-            symbol={dailyMessageCharacter.symbol}
-            className="workroom-message-sd"
-            decorative
-          />
-          <div className="workroom-message-copy">
+        <details className={`home-message-fold${dailyMessageCompleted ? ' is-complete' : ''}`}>
+          <summary onClick={() => playUiSound('message', soundEnabled)}>
+            <CharacterSD
+              characterId={dailyMessageCharacter.id}
+              name={dailyMessageCharacter.name}
+              symbol={dailyMessageCharacter.symbol}
+              className="home-message-summary-sd"
+              decorative
+            />
+            <span>
+              <small>TODAY'S MESSAGE</small>
+              <strong>{dailyMessageCharacter.name}에게서 온 메시지</strong>
+            </span>
+            <b aria-hidden="true">＋</b>
+          </summary>
+          <div className="home-message-detail">
             <div className="workroom-message-meta">
-              <span>TODAY'S MESSAGE</span>
-              <small>{dailyMessageCompleted ? 'ROUTE COMPLETE' : `HEART ${dailyMessageAffection}`}</small>
+              <span>{dailyMessageCompleted ? 'ROUTE COMPLETE' : `HEART ${dailyMessageAffection}`}</span>
+              <small>오늘의 한마디</small>
             </div>
-            <strong>{dailyMessageCharacter.name}</strong>
             <p>“{dailyMessage}”</p>
           </div>
-        </section>
+        </details>
       )}
 
       {isSpringSpecialDay && (
@@ -301,18 +309,6 @@ export function HomePage({ onNavigate, onStartSeasonalEvent, onStartDate }: Home
         </section>
       )}
 
-      {seasonalEligibleCharacters.some((character) => (collection.affectionByCharacterId[character.id] ?? 0) >= 20) && (
-        <section className="date-home-card">
-          <div className="date-home-mark" aria-hidden="true">♡</div>
-          <div>
-            <p className="eyebrow">DATE DIARY</p>
-            <strong>오늘은 조금 더 가까이</strong>
-            <small>호감이 깊어진 사람과 데이트하고, 장소마다 다른 스킨십 반응을 만나보세요.</small>
-          </div>
-          <button type="button" onClick={onStartDate}>데이트 약속 <b>→</b></button>
-        </section>
-      )}
-
       <section className={`next-step-card${readyEvents.length > 0 ? ' has-ready-event' : ''}`}>
         <div className="next-step-icon" aria-hidden="true">{readyEvents.length > 0 ? '♥' : '✦'}</div>
         <div>
@@ -326,7 +322,7 @@ export function HomePage({ onNavigate, onStartSeasonalEvent, onStartDate }: Home
             </div>
           )}
         </div>
-        <button type="button" className="next-step-go" onClick={() => { playUiSound(recommendedPlace ? 'travel' : 'tap', soundEnabled); recommendedPlace ? enterPlace(recommendedPlace.id) : onNavigate('characters') }} disabled={!recommendedPlace || progress.actionsLeft <= 0}>
+        <button type="button" className="next-step-go" onClick={() => { playUiSound(recommendedPlace ? 'travel' : 'tap', soundEnabled); if (recommendedPlace) enterPlace(recommendedPlace.id); else onNavigate('characters') }} disabled={!recommendedPlace || progress.actionsLeft <= 0}>
           {recommendedPlace ? (readyEvents.length > 0 ? '이벤트 장소' : '장소 보기') : '도감 보기'}
         </button>
       </section>

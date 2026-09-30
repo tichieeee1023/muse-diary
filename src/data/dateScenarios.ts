@@ -104,6 +104,40 @@ export function getDateRelationshipStage(affection: number, completed: boolean):
   return 'opening'
 }
 
+export interface DateRelationshipCopy {
+  label: string
+  note: string
+}
+
+const relationshipStageLabels: Record<DateRelationshipStage, string> = {
+  opening: '조금 신경 쓰이는 사이',
+  close: '마음이 놓이는 사이',
+  deep: '서로의 마음이 흔들리는 사이',
+  complete: '이미 특별한 사이',
+}
+
+const relationshipNotesByCharacter: Record<string, Partial<Record<DateRelationshipStage, string>>> = {
+  char_001: { opening: '말보다 침묵이 먼저 편해지는 중', close: '같은 페이지를 오래 바라볼 수 있는 사람', deep: '기억하고 싶은 하루를 함께 고르는 중', complete: '당신의 날짜를 책갈피처럼 간직한다' },
+  char_002: { opening: '누가 먼저 웃는지 겨루는 중', close: '장난 뒤의 진심을 알아가는 중', deep: '계산보다 마음이 먼저 흔들리는 중', complete: '당신 앞에서는 계획을 잠시 내려놓는다' },
+  char_003: { opening: '조심스럽게 곁을 허락하는 중', close: '말하지 않아도 믿을 수 있는 사이', deep: '놓고 싶지 않은 손을 알게 된 사이', complete: '당신을 지키는 일이 자연스러워졌다' },
+  char_004: { opening: '웃음 뒤의 진짜 표정을 찾는 중', close: '장난을 주고받을수록 가까워지는 중', deep: '설렘을 숨기기 어려워지는 중', complete: '당신과 있으면 웃는 일이 먼저다' },
+  char_005: { opening: '침묵의 간격을 맞추는 중', close: '곁을 내어주는 일이 편해진 사이', deep: '무심한 말에도 오래 마음이 남는 중', complete: '당신에게만 긴장을 늦춘다' },
+  char_006: { opening: '같이 웃을 이유를 찾는 중', close: '좋아하는 것을 함께 나누는 사이', deep: '다음 약속을 먼저 기대하는 중', complete: '당신과라면 평범한 하루도 즐겁다' },
+  char_007: { opening: '곧은 마음을 숨기려는 중', close: '당황해도 곁을 지키는 사이', deep: '먼저 손을 내밀 용기를 배우는 중', complete: '당신에게만 솔직해지고 싶다' },
+  char_008: { opening: '서로를 관찰하는 일이 즐거운 중', close: '작은 반응까지 기억하는 사이', deep: '작품보다 당신을 오래 바라보는 중', complete: '당신은 가장 오래 보고 싶은 장면이다' },
+  char_009: { opening: '감정을 천천히 분석하는 중', close: '침묵의 의미를 공유하는 사이', deep: '이름 붙이지 않아도 아는 마음이 생긴 중', complete: '당신 앞에서는 평정을 내려놓는다' },
+  char_010: { opening: '안전한 거리를 확인하는 중', close: '당신을 안쪽으로 챙기는 사이', deep: '경계보다 곁을 선택하는 중', complete: '당신의 곁을 가장 먼저 지킨다' },
+  char_011: { opening: '능숙한 농담 뒤로 마음을 숨기는 중', close: '무대 밖의 표정을 보여주는 사이', deep: '당황한 순간까지 함께 웃는 중', complete: '당신 앞에서는 박수보다 진심을 원한다' },
+  char_012: { opening: '느린 시간을 함께 걷는 중', close: '기억하고 싶은 순간을 모으는 사이', deep: '돌아갈 시간을 잊고 싶은 중', complete: '당신과 있는 시간만은 오래 남는다' },
+}
+
+export function getDateRelationshipCopy(characterId: string, stage: DateRelationshipStage): DateRelationshipCopy {
+  return {
+    label: relationshipStageLabels[stage],
+    note: relationshipNotesByCharacter[characterId]?.[stage] ?? '서로의 마음을 조금씩 알아가는 중',
+  }
+}
+
 const reactionKeyToTurnTouch: Partial<Record<DateTouchKey, DateTurnTouchKey>> = {
   hand: 'hand',
   hair: 'hair',
@@ -549,22 +583,6 @@ export function getDatePlaceTurnEvent(placeId: string, turn: number) {
   return place?.turnEvents.find((event) => event.turn === turn) ?? null
 }
 
-const dateRecordTitles: Record<string, [string, string]> = {
-  'cafe-date': ['창가 자리의 오후', '작은 테이블 위의 거리'],
-  'bookstore-date': ['책장 사이의 조용한 시간', '책장 사이에 남은 손끝'],
-  'riverside-date': ['강바람과 나란한 발소리', '돌아갈 시간을 잊은 산책'],
-  'aquarium-date': ['푸른빛 아래의 침묵', '푸른빛 아래 놓지 않은 손'],
-  'museum-date': ['같은 작품 앞에 선 오후', '작품보다 오래 바라본 것'],
-  'night-date': ['늦은 밤의 귀갓길', '헤어질 골목 앞에서'],
-  'festival-date': ['축제의 불빛 사이에서', '불빛이 꺼진 뒤에도'],
-}
-
-export function getDateRecordTitle(placeId: string, finalHeart: number) {
-  const titles = dateRecordTitles[placeId]
-  if (!titles) return '오늘의 데이트 기록'
-  return finalHeart >= 4 ? titles[1] : titles[0]
-}
-
 const r = (line: string, narration: string, expression: PortraitExpression = 'shy'): DateReaction => ({ line, narration, expression })
 
 export const characterDateProfiles: Record<string, CharacterDateProfile> = {
@@ -905,7 +923,7 @@ export function getDateTurnEvaluation(
 
 
 
-export type DateReactionPop = '!' | '!!' | '!?' | '?' | '…' | '…?' | '♡' | '♥' | '♡♡' | '♪' | '♪♪' | '✦' | '✧' | '☆' | '💧' | '💦' | '💢' | '///' | '☁' | '↯' | '!♡'
+export type DateReactionPop = '!' | '!!' | '!?' | '?' | '…' | '…?' | '♡' | '♥' | '♡♡' | '♪' | '♪♪' | '✦' | '✧' | '☆' | '///' | '☁' | '↯' | '!♡'
 
 const dateReactionPopStyles: Record<string, {
   positive: DateReactionPop[][]
@@ -913,18 +931,18 @@ const dateReactionPopStyles: Record<string, {
   neutral: DateReactionPop[][]
   negative: DateReactionPop[][]
 }> = {
-  char_001: { positive: [['…', '♡'], ['✧', '♡']], weak: [['!', '…', '///'], ['!?', '💧']], neutral: [['…'], ['?']], negative: [['…?', '☁']] },
-  char_002: { positive: [['✦', '♡'], ['…', '!♡']], weak: [['!', '…', '💢'], ['!?', '///']], neutral: [['?'], ['…']], negative: [['?', '💢']] },
-  char_003: { positive: [['…', '♡'], ['!', '♡']], weak: [['!?', '💦', '///'], ['!!', '…']], neutral: [['…'], ['?']], negative: [['!', '…']] },
-  char_004: { positive: [['♪', '♡'], ['✦', '♪']], weak: [['!?', '💦', '💢'], ['!', '///']], neutral: [['♪'], ['?']], negative: [['…?', '💧']] },
-  char_005: { positive: [['…', '♡'], ['✧']], weak: [['!', '…'], ['!?', '💧']], neutral: [['…']], negative: [['…', '☁']] },
-  char_006: { positive: [['♪♪', '♡'], ['☆', '♪']], weak: [['!?', '💦', '♪'], ['!!', '♡']], neutral: [['♪'], ['?']], negative: [['?', '💧']] },
-  char_007: { positive: [['!', '♡'], ['✦', '♡']], weak: [['!?', '💦', '///'], ['!!', '💢']], neutral: [['?'], ['…']], negative: [['!', '☁']] },
-  char_008: { positive: [['♪', '♡'], ['✧', '♡']], weak: [['!?', '///', '💦'], ['!', '♡']], neutral: [['♪'], ['?']], negative: [['…?', '💧']] },
-  char_009: { positive: [['…', '♡'], ['✧']], weak: [['!', '…', '///'], ['!?', '💧']], neutral: [['…'], ['?']], negative: [['…', '☁']] },
-  char_010: { positive: [['…', '♡'], ['!', '♡']], weak: [['!', '…'], ['!?', '///']], neutral: [['…']], negative: [['!', '💢']] },
-  char_011: { positive: [['✦', '♪', '♡'], ['!♡', '✧']], weak: [['!?', '💦', '///'], ['!!', '♡♡']], neutral: [['♪'], ['?']], negative: [['?', '💧']] },
-  char_012: { positive: [['…', '♡'], ['✧', '♡']], weak: [['!', '…', '♡'], ['!?', '💧']], neutral: [['…'], ['…?']], negative: [['…', '☁']] },
+  char_001: { positive: [['…', '♡'], ['✧', '♡']], weak: [['!', '…', '///'], ['!?', '///']], neutral: [['…'], ['?']], negative: [['…?', '☁']] },
+  char_002: { positive: [['✦', '♡'], ['…', '!♡']], weak: [['!', '…', '↯'], ['!?', '///']], neutral: [['?'], ['…']], negative: [['?', '↯']] },
+  char_003: { positive: [['…', '♡'], ['!', '♡']], weak: [['!?', '///', '///'], ['!!', '…']], neutral: [['…'], ['?']], negative: [['!', '…']] },
+  char_004: { positive: [['♪', '♡'], ['✦', '♪']], weak: [['!?', '///', '↯'], ['!', '///']], neutral: [['♪'], ['?']], negative: [['…?', '///']] },
+  char_005: { positive: [['…', '♡'], ['✧']], weak: [['!', '…'], ['!?', '///']], neutral: [['…']], negative: [['…', '☁']] },
+  char_006: { positive: [['♪♪', '♡'], ['☆', '♪']], weak: [['!?', '///', '♪'], ['!!', '♡']], neutral: [['♪'], ['?']], negative: [['?', '///']] },
+  char_007: { positive: [['!', '♡'], ['✦', '♡']], weak: [['!?', '///', '///'], ['!!', '↯']], neutral: [['?'], ['…']], negative: [['!', '☁']] },
+  char_008: { positive: [['♪', '♡'], ['✧', '♡']], weak: [['!?', '///', '///'], ['!', '♡']], neutral: [['♪'], ['?']], negative: [['…?', '///']] },
+  char_009: { positive: [['…', '♡'], ['✧']], weak: [['!', '…', '///'], ['!?', '///']], neutral: [['…'], ['?']], negative: [['…', '☁']] },
+  char_010: { positive: [['…', '♡'], ['!', '♡']], weak: [['!', '…'], ['!?', '///']], neutral: [['…']], negative: [['!', '↯']] },
+  char_011: { positive: [['✦', '♪', '♡'], ['!♡', '✧']], weak: [['!?', '///', '///'], ['!!', '♡♡']], neutral: [['♪'], ['?']], negative: [['?', '///']] },
+  char_012: { positive: [['…', '♡'], ['✧', '♡']], weak: [['!', '…', '♡'], ['!?', '///']], neutral: [['…'], ['…?']], negative: [['…', '☁']] },
 }
 
 export function getDateReactionPopSequence(
@@ -990,7 +1008,7 @@ const dateExpressionFlows: Record<string, [PortraitExpression, PortraitExpressio
   char_008: ['main', 'smile', 'smile', 'troubled', 'shy', 'loveSmile'],
   char_009: ['main', 'main', 'thinking', 'troubled', 'shy', 'shy'],
   char_010: ['main', 'smile', 'love', 'busted', 'shy', 'love'],
-  char_011: ['main', 'interested', 'smile', 'loveShy', 'shy', 'deepLove'],
+  char_011: ['main', 'interested', 'smile', 'loveShy', 'shy', 'loveShy'],
   char_012: ['main', 'main', 'smile', 'troubled', 'shy', 'love'],
 }
 
@@ -1006,22 +1024,10 @@ export function getDateExpressionSequence(
   reactionExpression?: PortraitExpression,
 ): PortraitExpression[] {
   const flow = dateExpressionFlows[characterId] ?? dateExpressionFlows.char_001
-  const sequence: PortraitExpression[] = []
-  if (toHeart > fromHeart) {
-    for (let heart = fromHeart + 1; heart <= toHeart; heart += 1) {
-      const expression = flow[Math.max(0, Math.min(5, heart))]
-      if (expression && sequence[sequence.length - 1] !== expression) sequence.push(expression)
-    }
-  } else if (toHeart < fromHeart) {
-    if (reactionExpression && reactionExpression !== sequence[sequence.length - 1]) sequence.push(reactionExpression)
-    const expression = flow[Math.max(0, Math.min(5, toHeart))]
-    if (expression && sequence[sequence.length - 1] !== expression) sequence.push(expression)
-  } else if (reactionExpression) {
-    sequence.push(reactionExpression)
-    const settle = flow[Math.max(0, Math.min(5, toHeart))]
-    if (settle && settle !== reactionExpression) sequence.push(settle)
-  }
-  return sequence.length ? sequence : [flow[Math.max(0, Math.min(5, toHeart))] ?? 'main']
+  // A reaction is a single readable beat. Do not flash through several portraits
+  // in one result; the dialogue and the pop carry the rest of the emotion.
+  const target = reactionExpression ?? flow[Math.max(0, Math.min(5, toHeart))] ?? 'main'
+  return [target]
 }
 
 const returnTouchStateByCharacterId: Record<string, DateTouchState> = {

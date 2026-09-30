@@ -4,6 +4,7 @@ import { CharacterSD } from '../components/CharacterSD'
 import { HeartMeter } from '../components/HeartMeter'
 import { PlaceIcon } from '../components/PlaceIcon'
 import { SceneBanner } from '../components/SceneBanner'
+import { ThemeBgmController } from '../components/ThemeBgmController'
 import { getCharacterRouteProfile } from '../data/characters/index'
 import { getCharacterThemeLine, getReunionLine } from '../data/characterFlavor'
 import { getPlace } from '../data/locations'
@@ -195,6 +196,7 @@ export function LocationPage() {
     if (encounter.isNew && !revealAcknowledged) {
       return (
         <div className={`page discovery-page rarity-${character.rarity.toLowerCase()}`}>
+          <ThemeBgmController characterId={episode.kind === 'story' ? character.id : null} />
           <div className="rarity-reveal-backdrop" aria-hidden="true"><i /><i /><i /><i /><i /><i /><i /><i /></div>
           <div className="rarity-reveal-label" aria-hidden="true"><span>{character.rarity === 'SSR' ? 'SPECIAL SIGNAL' : character.rarity === 'SR' ? 'RARE SIGNAL' : 'FOUND SIGNAL'}</span><strong>{character.rarity === 'SSR' ? '✦ ✦ ✦' : character.rarity === 'SR' ? '✦ ✦' : '✦'}</strong></div>
           <div className={`discovery-seal rarity-seal-${character.rarity.toLowerCase()}`}>
@@ -222,6 +224,7 @@ export function LocationPage() {
     if (showEpisodeTitle) {
       return (
         <div className={`page episode-title-page rarity-${character.rarity.toLowerCase()}`}>
+          <ThemeBgmController characterId={episode.kind === 'story' ? character.id : null} />
           <div className="episode-title-rule"><span>{episode.kind === 'first' ? 'FIRST STORY' : 'AFFINITY STORY'}</span></div>
           <CharacterPortrait characterId={character.id} name={character.name} symbol={character.symbol} expression={episode.defaultPortrait} className="episode-title-portrait" />
           <section className="episode-title-sheet">
@@ -237,6 +240,7 @@ export function LocationPage() {
     if (showEnding && ending) {
       return (
         <div className={`page ending-page rarity-${character.rarity.toLowerCase()}`}>
+          <ThemeBgmController characterId={episode.kind === 'story' ? character.id : null} />
           <header className="ending-kicker">
             <span>ROUTE COMPLETE</span>
             <span className={`rarity-badge rarity-badge-${character.rarity.toLowerCase()}`}>{character.rarity}</span>
@@ -274,6 +278,7 @@ export function LocationPage() {
       const gained = Math.max(0, (collection.affectionByCharacterId[character.id] ?? affection) - encounter.affectionAtStart)
       return (
         <div className={`page encounter-close-page rarity-${character.rarity.toLowerCase()}`}>
+          <ThemeBgmController characterId={episode.kind === 'story' ? character.id : null} />
           <SceneBanner placeId={place.id} placeName={place.name} timeOfDay={encounter.visitTime} weather={progress.weather} routeId={route?.id} routeTitle={route?.title} characterId={character.id} episodeKind={episode.kind} />
           <section className="encounter-close-sheet">
             <p className="eyebrow">{episode.kind === 'story' ? 'AFFINITY EVENT COMPLETE' : 'MEETING RECORDED'}</p>
@@ -302,6 +307,7 @@ export function LocationPage() {
 
     return (
       <div className={`page story-page story-page-${episode.kind} rarity-${character.rarity.toLowerCase()}`} data-character={character.id}>
+        <ThemeBgmController characterId={episode.kind === 'story' ? character.id : null} />
         <header className="story-topbar">
           <div>
             <p className="eyebrow">{label}</p>

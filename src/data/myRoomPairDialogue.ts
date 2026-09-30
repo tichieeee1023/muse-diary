@@ -1171,3 +1171,12 @@ export function getMyRoomSpecialPairDialogue(firstId: string, secondId: string, 
   if (!variants?.length) return null
   return variants[Math.max(0, day - 1) % variants.length] ?? variants[0]
 }
+
+export function getMyRoomPairMood(day: number) {
+  const moods = [
+    { label: 'A LITTLE JEALOUS', title: '말하지 않은 질투', note: '서로 아무렇지 않은 척하지만, 시선이 자꾸 같은 곳에 머문다.' },
+    { label: 'SPECIAL COMBINATION', title: '둘만의 호흡', note: '당신이 없어도 통하는 말이 생겼다가, 결국 당신 이야기로 돌아온다.' },
+    { label: 'SHARED SECRET', title: '작업실에 남은 비밀', note: '두 사람 모두 먼저 돌아갈 생각은 없어 보인다.' },
+  ]
+  return moods[Math.max(0, day - 1) % moods.length] ?? moods[0]
+}

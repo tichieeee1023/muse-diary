@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { getSeasonalEventBackground } from '../data/backgroundAssets'
 import { CharacterPortrait } from '../components/CharacterPortrait'
+import { ThemeBgmController } from '../components/ThemeBgmController'
 import { getSeasonalPortraitExpression } from '../data/portraitExpressions'
 import { CharacterSD } from '../components/CharacterSD'
 import { HeartMeter } from '../components/HeartMeter'
@@ -89,12 +90,15 @@ export function SpringEventPage({ onClose }: SpringEventPageProps) {
   }
 
   const hero = (
-    <figure className="spring-event-hero">
-      <img src={getSeasonalEventBackground('SPRING', step, companionId)} alt="봄꽃 야간 개장이 열린 강변" />
-      <AmbientCanvas effect="petals" density="medium" className="seasonal-ambient" />
-      <AmbientCanvas effect="bokeh" density="low" className="seasonal-ambient-soft" />
-      <figcaption><span>SPRING SPECIAL DAY</span><strong>{springEvent.title}</strong><small>{springEvent.placeName}</small></figcaption>
-    </figure>
+    <>
+      <ThemeBgmController characterId={companion?.id} />
+      <figure className="spring-event-hero">
+        <img src={getSeasonalEventBackground('SPRING', step, companionId)} alt="봄꽃 야간 개장이 열린 강변" />
+        <AmbientCanvas effect="petals" density="medium" className="seasonal-ambient" />
+        <AmbientCanvas effect="bokeh" density="low" className="seasonal-ambient-soft" />
+        <figcaption><span>SPRING SPECIAL DAY</span><strong>{springEvent.title}</strong><small>{springEvent.placeName}</small></figcaption>
+      </figure>
+    </>
   )
 
   if (step === 'intro') {

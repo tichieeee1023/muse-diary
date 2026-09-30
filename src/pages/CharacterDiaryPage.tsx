@@ -82,11 +82,15 @@ export function CharacterDiaryPage({ onNavigate }: CharacterDiaryPageProps) {
           <button type="button" className="back-button" onClick={() => setSelectedId(null)} aria-label="인물 기록으로 돌아가기">←</button>
           <div>
             <p className="eyebrow">MUSE FILE</p>
-            <strong>{selected.rarity} · {getRelationshipLabel(affection)}</strong>
+            <strong>CHARACTER RECORD</strong>
           </div>
         </header>
 
         <section className="diary-profile-sheet" data-character={selected.id}>
+          <div className="diary-profile-moment-bar" aria-hidden="true">
+            <span><i /> PORTRAIT MOMENT</span>
+            <strong>REC · {selected.rarity}</strong>
+          </div>
           <CharacterPortrait characterId={selected.id} name={selected.name} symbol={selected.symbol} expression={affection >= 80 ? 'smile' : affection >= 40 ? 'hmm' : 'main'} className="diary-main-portrait" />
           <div className="diary-profile-top">
             <div className="diary-profile-identity">
@@ -120,7 +124,13 @@ export function CharacterDiaryPage({ onNavigate }: CharacterDiaryPageProps) {
           </dl>
         </section>
 
-        <section className="route-progress-card">
+        <nav className="diary-detail-nav" aria-label="인물 기록 바로가기">
+          <a href="#diary-route"><span>01</span>관계</a>
+          <a href="#diary-facts"><span>02</span>정보</a>
+          <a href="#diary-gallery"><span>03</span>갤러리</a>
+        </nav>
+
+        <section id="diary-route" className="route-progress-card">
           <div>
             <span>ROUTE PROGRESS</span>
             <strong>{routeProgress.completed} / {routeProgress.total} 중요 이벤트</strong>
@@ -131,7 +141,7 @@ export function CharacterDiaryPage({ onNavigate }: CharacterDiaryPageProps) {
           {!isCompleted && <p>자잘한 만남으로 호감도를 쌓으면 다음 중요 이벤트가 열립니다. 다음 기준: {routeProgress.nextThreshold}</p>}
         </section>
 
-        <section className="diary-facts-section">
+        <section id="diary-facts" className="diary-facts-section">
           <div className="diary-section-title">
             <p className="eyebrow">WHAT I KNOW</p>
             <h2>알게 된 것</h2>
@@ -149,7 +159,7 @@ export function CharacterDiaryPage({ onNavigate }: CharacterDiaryPageProps) {
           </div>
         </section>
 
-        <section className="visual-archive-section">
+        <section id="diary-gallery" className="visual-archive-section">
           <div className="diary-section-title">
             <p className="eyebrow">VISUAL ARCHIVE</p>
             <h2>일러스트 기록</h2>
@@ -219,7 +229,7 @@ export function CharacterDiaryPage({ onNavigate }: CharacterDiaryPageProps) {
       <header className="diary-page-header">
         <div>
           <p className="eyebrow">WORK DIARY · MUSES</p>
-          <h1>인물 기록</h1>
+          <h1>인물</h1>
         </div>
         <div className="diary-counter">
           <strong>{collection.discoveredCharacterIds.length}</strong>
@@ -227,20 +237,16 @@ export function CharacterDiaryPage({ onNavigate }: CharacterDiaryPageProps) {
         </div>
       </header>
 
-      <section className="diary-intro-note">
-        <p>작업을 위해 돌아다니며 만난 사람들. 이상하게 기억에 남는 얼굴부터 적어두었다.</p>
-        <small>공략 가능한 인물 {CURRENT_ROSTER}명 · 이 12명의 이야기를 끝까지 완성하는 것이 목표</small>
-        <div className="diary-summary" aria-label="수집 진행률">
-          <span><b>{discoveredCount}</b> 발견</span>
-          <span><b>{completedCount}</b> 완료</span>
-          <span><b>{unknownCount}</b> 미발견</span>
-        </div>
+      <section className="diary-summary diary-collection-summary" aria-label="인물 수집 진행률">
+        <span>발견<b>{discoveredCount} / {CURRENT_ROSTER}</b></span>
+        <span>완료<b>{completedCount} / {CURRENT_ROSTER}</b></span>
+        <span>미발견<b>{unknownCount}</b></span>
       </section>
 
       {secondRunHints && (
         <div className="second-run-note">
-          <span>NEW NOTES</span>
-          <strong>완성된 인연이 생겼다. 미발견 인물에 작은 단서가 보이기 시작한다.</strong>
+          <span>NEW</span>
+          <strong>미발견 인물에 단서가 생겼습니다.</strong>
         </div>
       )}
 

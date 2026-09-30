@@ -196,12 +196,15 @@ export interface CharacterEndingContent {
 export interface GameProgress {
   day: number
   actionsLeft: number
+  dateCharacterIdsToday: string[]
   weather: Weather
   dailyPlaceIds: string[]
   placeVisits: Record<string, number>
   unlockedPlaceIds: string[]
   ssrMissStreak: number
 }
+
+export const MAX_DAILY_DATE_SESSIONS = 2
 
 export type SeasonKey = 'SPRING' | 'SUMMER' | 'AUTUMN' | 'WINTER'
 
@@ -215,31 +218,11 @@ export interface SeasonalEventRecord {
   souvenirNote: string
 }
 
-export interface DateRecordTurn {
-  turn: number
-  distanceState: 'space' | 'normal' | 'close'
-  touchState: 'none' | 'holdingHands' | 'interlockedHands' | 'sleeveHeld' | 'shoulderContact'
-  lines: string[]
-  reactionLine?: string
-  reactionNarration?: string
-  innerThought?: string
-  heartDelta: number
-  heartAfter: number
-  isWeak: boolean
-  weakSpotLabel?: string
-  weakDiscovery: boolean
-  returnTouch?: string
-}
-
-export interface DateRecord {
-  id: string
-  day: number
-  createdAt: number
-  characterId: string
-  placeId: string
-  finalHeart: number
-  closing: string
-  turns: DateRecordTurn[]
+export interface DateAfterglow {
+  title: string
+  line: string
+  tone: 'quiet' | 'warm' | 'playful'
+  placeName: string
 }
 
 export interface CollectionProgress {
@@ -256,12 +239,13 @@ export interface CollectionProgress {
   recentCasualEpisodeIdsByCharacterId: Record<string, string[]>
   lastMeetingByCharacterId: Record<string, { episodeId: string; title: string; day: number; placeId: string; kind: StoryEpisodeKind }>
   seasonalEventRecords: Record<string, SeasonalEventRecord>
-  dateRecords: DateRecord[]
+  readLetterIds: string[]
+  completedAfterEndingDateCharacterIds: string[]
 }
 
-export type FontFamilySetting = 'clear' | 'pretendard' | 'system'
-export type TextSizeSetting = 'normal' | 'medium' | 'large'
-export type TextSpeedSetting = 'instant' | 'normal' | 'slow'
+export type FontFamilySetting = 'myeongjo' | 'pretendard'
+export type TextSizeSetting = 'normal' | 'large'
+export type TextSpeedSetting = 'instant' | 'normal'
 
 export interface GameSettings {
   soundEnabled: boolean

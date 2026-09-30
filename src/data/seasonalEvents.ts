@@ -1,5 +1,5 @@
 export const SPRING_EVENT_ID = 'spring-night-bloom'
-export const SPRING_EVENT_DAY = 10
+export const SPRING_EVENT_DAY = 7
 
 export type SpringAffectionTier = 'early' | 'close' | 'deep'
 
@@ -334,7 +334,7 @@ export function getSpringBranch(characterId: string) {
 }
 
 export const SUMMER_EVENT_ID = 'summer-fireworks-night'
-export const SUMMER_EVENT_DAY = 25
+export const SUMMER_EVENT_DAY = 14
 
 export type SummerAffectionTier = 'early' | 'close' | 'deep'
 
@@ -670,7 +670,7 @@ export function getSummerBranch(characterId: string) {
 
 
 export const AUTUMN_EVENT_ID = 'autumn-late-garden'
-export const AUTUMN_EVENT_DAY = 40
+export const AUTUMN_EVENT_DAY = 21
 
 export type AutumnAffectionTier = 'early' | 'close' | 'deep'
 
@@ -1044,7 +1044,7 @@ export function getAutumnBranch(characterId: string) {
 }
 
 export const WINTER_EVENT_ID = 'winter-hinoki-lodge'
-export const WINTER_EVENT_DAY = 55
+export const WINTER_EVENT_DAY = 28
 
 export type WinterAffectionTier = 'early' | 'close' | 'deep'
 

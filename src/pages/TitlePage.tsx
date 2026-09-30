@@ -25,9 +25,10 @@ const SEASON_META = {
 }
 
 function getSeason(day: number) {
-  if (day >= 55) return SEASON_META.WINTER
-  if (day >= 40) return SEASON_META.AUTUMN
-  if (day >= 25) return SEASON_META.SUMMER
+  const seasonDay = ((Math.max(1, day) - 1) % 28) + 1
+  if (seasonDay >= 22) return SEASON_META.WINTER
+  if (seasonDay >= 15) return SEASON_META.AUTUMN
+  if (seasonDay >= 8) return SEASON_META.SUMMER
   return SEASON_META.SPRING
 }
 
@@ -213,7 +214,15 @@ export function TitlePage({ onEnter }: TitlePageProps) {
       <div className="title-scene" aria-hidden="true" />
       <div className="title-grain" aria-hidden="true" />
       <div className="title-vignette" aria-hidden="true" />
+      <div className="title-frame" aria-hidden="true" />
+      <div className="title-orbit title-orbit-one" aria-hidden="true" />
+      <div className="title-orbit title-orbit-two" aria-hidden="true" />
       <AmbientCanvas effect={season.effect} density="low" />
+
+      <div className="title-utility" aria-hidden="true">
+        <span>STORY / 01</span>
+        <span>© MUSE DIARY</span>
+      </div>
 
       <header className="title-mark" aria-label="Muse Diary">
         <div className="title-season-line">
@@ -225,9 +234,11 @@ export function TitlePage({ onEnter }: TitlePageProps) {
         <h1>MUSE<br />DIARY</h1>
         <i />
         <small>MEMORIES WORTH KEEPING</small>
+        <div className="title-mark-caption">A romantic diary of small encounters</div>
       </header>
 
       <section className="title-diary-card">
+        <span className="title-card-stamp" aria-hidden="true">MD</span>
         <div className="title-diary-meta">
           <span>{player ? `DAY ${String(progress.day).padStart(2, '0')}` : 'NEW DIARY'}</span>
           <b>{player ? `${season.ko} · ${progress.weather}` : `${season.ko}의 첫 페이지`}</b>
@@ -263,6 +274,9 @@ export function TitlePage({ onEnter }: TitlePageProps) {
             <p>TAP TO OPEN THE FIRST PAGE</p>
           </>
         )}
+        <div className="title-footer-note" aria-hidden="true">
+          <i /> <span>OPEN A NEW PAGE</span> <i />
+        </div>
       </div>
     </div>
   )

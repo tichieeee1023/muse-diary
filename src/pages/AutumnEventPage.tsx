@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { getSeasonalEventBackground } from '../data/backgroundAssets'
 import { CharacterPortrait } from '../components/CharacterPortrait'
+import { ThemeBgmController } from '../components/ThemeBgmController'
 import { getSeasonalPortraitExpression } from '../data/portraitExpressions'
 import { CharacterSD } from '../components/CharacterSD'
 import { HeartMeter } from '../components/HeartMeter'
@@ -90,12 +91,15 @@ export function AutumnEventPage({ onClose }: AutumnEventPageProps) {
   }
 
   const hero = (
-    <figure className="autumn-event-hero">
-      <img src={getSeasonalEventBackground('AUTUMN', step, companionId)} alt="늦가을 특별 개방 중인 수변 정원" />
-      <AmbientCanvas effect="leaves" density="medium" className="seasonal-ambient" />
-      <AmbientCanvas effect="dust" density="low" className="seasonal-ambient-soft" />
-      <figcaption><span>AUTUMN SPECIAL DAY</span><strong>{autumnEvent.title}</strong><small>{autumnEvent.placeName}</small></figcaption>
-    </figure>
+    <>
+      <ThemeBgmController characterId={companion?.id} />
+      <figure className="autumn-event-hero">
+        <img src={getSeasonalEventBackground('AUTUMN', step, companionId)} alt="늦가을 특별 개방 중인 수변 정원" />
+        <AmbientCanvas effect="leaves" density="medium" className="seasonal-ambient" />
+        <AmbientCanvas effect="dust" density="low" className="seasonal-ambient-soft" />
+        <figcaption><span>AUTUMN SPECIAL DAY</span><strong>{autumnEvent.title}</strong><small>{autumnEvent.placeName}</small></figcaption>
+      </figure>
+    </>
   )
 
   if (step === 'intro') {
