@@ -1,0 +1,19 @@
+{
+  "name": "Muse Diary",
+  "short_name": "Muse Diary",
+  "description": "마음을 읽고 인형의 도시를 걷는 비주얼 노벨",
+  "lang": "ko-KR",
+  "start_url": ".",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7f1e6",
+  "theme_color": "#6d2633",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

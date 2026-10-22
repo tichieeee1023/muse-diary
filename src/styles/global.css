@@ -28,7 +28,7 @@ button, input { font: inherit; }
 button { -webkit-tap-highlight-color: transparent; }
 
 .app-stage {
-  min-height: 100vh;
+  min-height: 100vh; min-height: 100dvh;
   display: flex;
   justify-content: center;
   background: #d9d2c6;
@@ -36,7 +36,7 @@ button { -webkit-tap-highlight-color: transparent; }
 
 .game-shell {
   width: min(100%, 430px);
-  min-height: 100vh;
+  min-height: 100vh; min-height: 100dvh;
   background:
     linear-gradient(rgba(255,255,255,.28), rgba(255,255,255,.28)),
     var(--paper);
@@ -44,7 +44,7 @@ button { -webkit-tap-highlight-color: transparent; }
 }
 
 .page {
-  min-height: 100vh;
+  min-height: 100vh; min-height: 100dvh;
   padding: max(24px, env(safe-area-inset-top)) 20px calc(96px + env(safe-area-inset-bottom));
 }
 
@@ -2751,7 +2751,7 @@ body { font-size: 17px; }
 .post-route-visit strong { display:flex; align-items:center; gap:6px; font-size:17px; }
 .post-route-visit p { margin:0; color:var(--muted); font-size:13px; line-height:1.65; }
 
-.episode-title-page { display:flex; min-height:100vh; flex-direction:column; justify-content:center; gap:18px; }
+.episode-title-page { display:flex; min-height:100vh; min-height:100dvh; flex-direction:column; justify-content:center; gap:18px; }
 .episode-title-rule { display:flex; align-items:center; gap:10px; color:var(--wine); font-size:10px; font-weight:900; letter-spacing:.16em; }
 .episode-title-rule::before,.episode-title-rule::after { content:''; flex:1; height:1px; background:var(--line); }
 .episode-title-portrait { width:min(72%,260px); margin:0 auto; aspect-ratio:4/5; border-radius:18px; overflow:hidden; box-shadow:0 18px 45px rgba(45,30,28,.16); }
@@ -3206,7 +3206,7 @@ body { font-size: 17px; }
 @media (max-width:360px) { .next-step-card { grid-template-columns:auto minmax(0,1fr); } .next-step-go { grid-column:2; width:100%; } }
 
 /* STEP 21: title entry and rarity reveal direction */
-.title-page { position:relative; isolation:isolate; min-height:100vh; display:flex; flex-direction:column; justify-content:space-between; overflow:hidden; padding:max(34px,env(safe-area-inset-top)) 28px max(30px,env(safe-area-inset-bottom)); color:#fff8ed; background:#292021; }
+.title-page { position:relative; isolation:isolate; min-height:100vh; min-height:100dvh; display:flex; flex-direction:column; justify-content:space-between; overflow:hidden; padding:max(34px,env(safe-area-inset-top)) 28px max(30px,env(safe-area-inset-bottom)); color:#fff8ed; background:#292021; }
 .title-scene { position:absolute; z-index:-3; inset:0; background:linear-gradient(180deg,rgba(20,15,16,.3),rgba(25,17,18,.9)),url('/assets/backgrounds/studio/night.webp') center/cover; transform:scale(1.035); transition:transform 2.5s ease; }
 .title-grain { position:absolute; z-index:-2; inset:0; opacity:.19; background:repeating-linear-gradient(110deg,transparent 0 3px,rgba(255,249,238,.11) 4px,transparent 5px 9px); mix-blend-mode:soft-light; pointer-events:none; }
 .title-page.is-ready .title-scene { transform:scale(1); }
@@ -4530,7 +4530,7 @@ h1, h2 { font-family:var(--font-ui); font-weight:800; letter-spacing:-.035em; }
 .title-prologue {
   position:relative;
   isolation:isolate;
-  min-height:100vh;
+  min-height:100vh; min-height:100dvh;
   overflow:hidden;
   display:grid;
   align-items:end;
@@ -9164,4 +9164,241 @@ h1, h2 { font-family:var(--font-ui); font-weight:800; letter-spacing:-.035em; }
 }
 .diary-page:not(.diary-detail-page) .diary-card {
   align-self: stretch;
+}
+
+
+/* ======================================================================
+   DATE v3: character motion presets, idle breathing, touch feedback, SVG marks
+   ====================================================================== */
+
+/* -- Motion presets. calm = slow sway, bouncy = quick hop, stiff = barely moves.
+      Reaction amplitude is deliberately small: the stills are low-res (~409px on
+      some expressions), so we move/tilt instead of magnifying. -- */
+.date-camera-card[data-motion="calm"] {
+  --mo-dur: 1.2s; --mo-x: 1.8px; --mo-y: 1.6px; --mo-r: .32deg; --mo-s: .010;
+  --mo-ease: cubic-bezier(.25,.6,.25,1);
+  --idle-dur: 5.8s; --idle-s: .012;
+}
+.date-camera-card[data-motion="bouncy"] {
+  --mo-dur: .82s; --mo-x: 2.6px; --mo-y: 4.2px; --mo-r: .55deg; --mo-s: .016;
+  --mo-ease: cubic-bezier(.3,1.45,.5,1);
+  --idle-dur: 3.8s; --idle-s: .015;
+}
+.date-camera-card[data-motion="stiff"] {
+  --mo-dur: 1.05s; --mo-x: 1px; --mo-y: .8px; --mo-r: .12deg; --mo-s: .005;
+  --mo-ease: cubic-bezier(.4,0,.2,1);
+  --idle-dur: 7s; --idle-s: .006;
+}
+
+/* The portrait frame is overscanned by 2% on every side so tilts/shakes never reveal
+   the grey frame colour behind the illustration. */
+.date-camera-idle {
+  position: absolute;
+  inset: -2%;
+  transform-origin: 50% 100%;
+  animation: dateIdleBreath var(--idle-dur, 5.8s) ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes dateIdleBreath {
+  from { transform: scale(1); }
+  to { transform: scale(calc(1 + var(--idle-s, .012))); }
+}
+
+.date-camera-card[data-motion].is-resolving .date-camera-portrait { transform-origin: 50% 100%; }
+
+.date-camera-card[data-motion].is-resolving.is-reaction-positive .date-camera-portrait {
+  animation: dateMoPositive var(--mo-dur) var(--mo-ease) both;
+}
+.date-camera-card[data-motion].is-resolving.is-reaction-weak .date-camera-portrait {
+  animation: dateMoWeak calc(var(--mo-dur) * 1.05) ease-out both;
+}
+.date-camera-card[data-motion].is-resolving.is-reaction-negative .date-camera-portrait {
+  animation: dateMoNegative var(--mo-dur) var(--mo-ease) both;
+}
+.date-camera-card[data-motion].is-resolving.is-reaction-neutral .date-camera-portrait {
+  animation: dateMoNeutral var(--mo-dur) ease-in-out both;
+}
+/* stiff characters freeze or tremble instead of swaying */
+.date-camera-card[data-motion="stiff"].is-resolving.is-reaction-weak .date-camera-portrait {
+  animation: dateMoTremble .95s linear both;
+}
+.date-camera-card[data-motion="stiff"].is-resolving.is-reaction-negative .date-camera-portrait {
+  animation: dateMoFreeze 1.05s ease-out both;
+}
+
+/* every keyframe returns to identity, so nothing snaps when the animation ends */
+@keyframes dateMoPositive {
+  0%   { transform: translate3d(0,0,0) rotate(0) scale(1); }
+  30%  { transform: translate3d(0, calc(var(--mo-y) * -1), 0) rotate(calc(var(--mo-r) * -1)) scale(calc(1 + var(--mo-s))); }
+  58%  { transform: translate3d(calc(var(--mo-x) * .5), calc(var(--mo-y) * .35), 0) rotate(calc(var(--mo-r) * .6)) scale(calc(1 + var(--mo-s) * .5)); }
+  100% { transform: translate3d(0,0,0) rotate(0) scale(1); }
+}
+@keyframes dateMoWeak {
+  0%   { transform: translate3d(0,0,0) rotate(0) scale(1); }
+  14%  { transform: translate3d(calc(var(--mo-x) * -2), calc(var(--mo-y) * -.5), 0) rotate(calc(var(--mo-r) * -1.4)) scale(calc(1 + var(--mo-s) * 1.5)); }
+  28%  { transform: translate3d(calc(var(--mo-x) * 1.7), 0, 0) rotate(calc(var(--mo-r) * 1.1)) scale(calc(1 + var(--mo-s) * 1.3)); }
+  44%  { transform: translate3d(calc(var(--mo-x) * -1.1), calc(var(--mo-y) * .3), 0) rotate(calc(var(--mo-r) * -.6)) scale(calc(1 + var(--mo-s))); }
+  62%  { transform: translate3d(calc(var(--mo-x) * .5), 0, 0) rotate(calc(var(--mo-r) * .25)) scale(calc(1 + var(--mo-s) * .4)); }
+  100% { transform: translate3d(0,0,0) rotate(0) scale(1); }
+}
+/* A recoil must never shrink the image (scale < 1 pulls the top edge down and, together
+   with the bouncy overshoot easing, exposed the frame colour). It only drops and tilts. */
+@keyframes dateMoNegative {
+  0%   { transform: translate3d(0,0,0) rotate(0) scale(1); }
+  28%  { transform: translate3d(calc(var(--mo-x) * -.9), calc(var(--mo-y) * 1.05), 0) rotate(calc(var(--mo-r) * -.9)) scale(1); }
+  62%  { transform: translate3d(calc(var(--mo-x) * -.45), calc(var(--mo-y) * .55), 0) rotate(calc(var(--mo-r) * -.4)) scale(1); }
+  100% { transform: translate3d(0,0,0) rotate(0) scale(1); }
+}
+@keyframes dateMoNeutral {
+  0%, 100% { transform: translate3d(0,0,0) rotate(0) scale(1); }
+  40% { transform: translate3d(0, calc(var(--mo-y) * -.5), 0) rotate(calc(var(--mo-r) * .5)) scale(calc(1 + var(--mo-s) * .5)); }
+}
+@keyframes dateMoTremble {
+  0%, 100% { transform: translate3d(0,0,0); }
+  8%  { transform: translate3d(-1.2px,0,0); }
+  16% { transform: translate3d(1.2px,0,0); }
+  24% { transform: translate3d(-1px,.4px,0); }
+  32% { transform: translate3d(1px,0,0); }
+  42% { transform: translate3d(-.7px,0,0); }
+  52% { transform: translate3d(.7px,0,0); }
+  64% { transform: translate3d(-.35px,0,0); }
+  76% { transform: translate3d(0,0,0); }
+}
+@keyframes dateMoFreeze {
+  0%   { transform: translate3d(0,0,0) scale(1); }
+  10%  { transform: translate3d(0,.6px,0) scale(.994); }
+  72%  { transform: translate3d(0,.6px,0) scale(.994); }
+  100% { transform: translate3d(0,0,0) scale(1); }
+}
+
+/* -- Touch feedback: a ripple on the body part that was touched, fired at the
+      moment of input (before the character reacts). -- */
+.date-touch-fx {
+  position: absolute;
+  z-index: 7;
+  left: var(--fx-x, 50%);
+  top: var(--fx-y, 60%);
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  --fx-size: 78px;
+  --fx-ink: 255, 255, 255;
+  --fx-glow: 255, 178, 192;
+}
+.date-touch-fx::before,
+.date-touch-fx::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(.2);
+}
+.date-touch-fx::before {
+  width: var(--fx-size);
+  height: var(--fx-size);
+  border: 2px solid rgba(var(--fx-ink), .96);
+  /* the thin dark outer line keeps the ring readable on white clothing */
+  box-shadow: 0 0 0 1px rgba(90,58,60,.2), 0 0 14px rgba(var(--fx-glow), .6), inset 0 0 12px rgba(var(--fx-glow), .4);
+  animation: dateFxRing .56s cubic-bezier(.12,.7,.25,1) both;
+}
+.date-touch-fx::after {
+  width: calc(var(--fx-size) * .74);
+  height: calc(var(--fx-size) * .74);
+  background: radial-gradient(circle, rgba(var(--fx-ink), .88), rgba(var(--fx-glow), 0) 68%);
+  animation: dateFxFlash .44s ease-out both;
+}
+@keyframes dateFxRing {
+  0%   { opacity: 0; transform: translate(-50%, -50%) scale(.25); }
+  16%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.4); }
+}
+@keyframes dateFxFlash {
+  0%   { opacity: 0; transform: translate(-50%, -50%) scale(.4); }
+  24%  { opacity: 1; transform: translate(-50%, -50%) scale(.95); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.2); }
+}
+/* where each touch lands on the (bust-up) portrait */
+.date-touch-fx.is-hair     { --fx-x: 64%; --fx-y: 20%; --fx-size: 86px; }
+.date-touch-fx.is-cheek    { --fx-x: 60%; --fx-y: 58%; --fx-size: 70px; --fx-glow: 255, 150, 170; }
+.date-touch-fx.is-hand     { --fx-x: 50%; --fx-y: 91%; --fx-size: 98px; --fx-glow: 255, 224, 168; }
+.date-touch-fx.is-sleeve   { --fx-x: 15%; --fx-y: 88%; --fx-size: 70px; --fx-glow: 255, 224, 168; }
+.date-touch-fx.is-shoulder { --fx-x: 80%; --fx-y: 78%; --fx-size: 88px; --fx-glow: 255, 210, 190; }
+.date-touch-fx.is-tickle   { --fx-x: 82%; --fx-y: 90%; --fx-size: 74px; --fx-glow: 255, 196, 150; }
+.date-touch-fx.is-tickle::before { animation: dateFxTickle .72s ease-out both; }
+@keyframes dateFxTickle {
+  0%   { opacity: 0; transform: translate(-50%, -50%) scale(.25); }
+  12%  { opacity: 1; }
+  28%  { transform: translate(-50%, -50%) scale(.8); }
+  44%  { transform: translate(-50%, -50%) scale(.52); }
+  64%  { opacity: .9; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.3); }
+}
+/* an unwelcome touch: cooler, smaller, over quickly */
+.date-touch-fx.is-recoil { --fx-ink: 214, 224, 238; --fx-glow: 150, 166, 196; }
+.date-touch-fx.is-recoil::before { animation-duration: .4s; border-style: dashed; }
+.date-touch-fx.is-recoil::after { animation-duration: .3s; }
+/* an unexpectedly good one: warmer and bigger */
+.date-touch-fx.is-weak { --fx-glow: 255, 140, 170; }
+.date-touch-fx.is-weak::before { animation-duration: .7s; }
+
+/* -- SVG reaction marks: bare strokes + white sticker outline, no pill -- */
+.date-reaction-pops .date-reaction-pop {
+  display: block;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  line-height: 0;
+}
+.date-reaction-pop.is-affection { color: #b8475c; }
+.date-reaction-pop.is-fluster { color: #c4607a; }
+.date-reaction-pop.is-sharp { color: #b04a42; }
+.date-reaction-pop.is-bright { color: #c08a2e; }
+.date-reaction-pop.is-quiet { color: #6c6a78; }
+.date-reaction-pop.is-surprise { color: #b8643a; }
+.date-mark { display: block; height: 40px; width: auto; overflow: visible; }
+.date-mark .halo {
+  fill: none;
+  stroke: rgba(255,252,249,.96);
+  stroke-width: 6.4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.date-mark .halo .m-closed,
+.date-mark .halo .m-solid,
+.date-mark .halo .m-soft { fill: rgba(255,252,249,.96); }
+.date-mark .ink {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.3;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.date-mark .ink .m-solid { fill: currentColor; }
+.date-mark .ink .m-soft { fill: currentColor; fill-opacity: .2; }
+.date-mark-text { font-size: 19px; font-weight: 900; }
+/* small personality in the marks themselves */
+.date-reaction-pop.is-sharp .date-mark { animation: dateMarkShake .4s .22s 2 ease-in-out both; }
+.date-reaction-pop.is-fluster .date-mark { transform-origin: 50% 90%; animation: dateMarkWobble .9s .18s ease-in-out both; }
+.date-reaction-pop.is-affection .date-mark { transform-origin: 50% 60%; animation: dateMarkBeat .7s .22s ease-in-out both; }
+@keyframes dateMarkShake { 0%,100% { transform: translateX(0) rotate(0); } 25% { transform: translateX(-2px) rotate(-4deg); } 75% { transform: translateX(2px) rotate(4deg); } }
+@keyframes dateMarkWobble { 0%,100% { transform: rotate(0); } 25% { transform: rotate(-7deg); } 60% { transform: rotate(6deg); } 85% { transform: rotate(-2deg); } }
+@keyframes dateMarkBeat { 0%,100% { transform: scale(1); } 30% { transform: scale(1.18); } 55% { transform: scale(.96); } 75% { transform: scale(1.08); } }
+
+@media (max-width: 560px) {
+  .date-mark { height: 36px; }
+}
+
+/* -- reduced motion: no idle loop, no ripple, no per-mark animation -- */
+@media (prefers-reduced-motion: reduce) {
+  .date-camera-idle { animation: none !important; will-change: auto; }
+  .date-touch-fx { display: none; }
+  .date-reaction-pop .date-mark { animation: none !important; }
 }

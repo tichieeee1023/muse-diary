@@ -866,6 +866,7 @@ interface DateCharacterTurnPreference {
 export interface DateTurnEvaluation {
   heartDelta: -1 | 0 | 1 | 2
   isWeak: boolean
+  touchDisliked: boolean
   weakSpotLabel: string | null
   reaction: DateReaction | null
 }
@@ -892,7 +893,7 @@ export function getDateTurnEvaluation(
 ): DateTurnEvaluation {
   const profile = characterDateProfiles[characterId]
   if (!profile) {
-    return { heartDelta: 0, isWeak: false, weakSpotLabel: null, reaction: null }
+    return { heartDelta: 0, isWeak: false, touchDisliked: false, weakSpotLabel: null, reaction: null }
   }
 
   const preference = dateCharacterTurnPreferences[characterId]
@@ -916,6 +917,7 @@ export function getDateTurnEvaluation(
   return {
     heartDelta,
     isWeak,
+    touchDisliked: touchMiss,
     weakSpotLabel: isWeak ? profile.weakSpotLabel : null,
     reaction,
   }
@@ -923,7 +925,7 @@ export function getDateTurnEvaluation(
 
 
 
-export type DateReactionPop = '!' | '!!' | '!?' | '?' | '…' | '…?' | '♡' | '♥' | '♡♡' | '♪' | '♪♪' | '✦' | '✧' | '☆' | '///' | '☁' | '↯' | '!♡'
+export type DateReactionPop = '!' | '!!' | '!?' | '?' | '…' | '…?' | '♡' | '♥' | '♡♡' | '♪' | '♪♪' | '✦' | '✧' | '☆' | '💧' | '💦' | '💢' | '///' | '☁' | '↯' | '!♡'
 
 const dateReactionPopStyles: Record<string, {
   positive: DateReactionPop[][]
@@ -931,18 +933,18 @@ const dateReactionPopStyles: Record<string, {
   neutral: DateReactionPop[][]
   negative: DateReactionPop[][]
 }> = {
-  char_001: { positive: [['…', '♡'], ['✧', '♡']], weak: [['!', '…', '///'], ['!?', '///']], neutral: [['…'], ['?']], negative: [['…?', '☁']] },
-  char_002: { positive: [['✦', '♡'], ['…', '!♡']], weak: [['!', '…', '↯'], ['!?', '///']], neutral: [['?'], ['…']], negative: [['?', '↯']] },
-  char_003: { positive: [['…', '♡'], ['!', '♡']], weak: [['!?', '///', '///'], ['!!', '…']], neutral: [['…'], ['?']], negative: [['!', '…']] },
-  char_004: { positive: [['♪', '♡'], ['✦', '♪']], weak: [['!?', '///', '↯'], ['!', '///']], neutral: [['♪'], ['?']], negative: [['…?', '///']] },
-  char_005: { positive: [['…', '♡'], ['✧']], weak: [['!', '…'], ['!?', '///']], neutral: [['…']], negative: [['…', '☁']] },
-  char_006: { positive: [['♪♪', '♡'], ['☆', '♪']], weak: [['!?', '///', '♪'], ['!!', '♡']], neutral: [['♪'], ['?']], negative: [['?', '///']] },
-  char_007: { positive: [['!', '♡'], ['✦', '♡']], weak: [['!?', '///', '///'], ['!!', '↯']], neutral: [['?'], ['…']], negative: [['!', '☁']] },
-  char_008: { positive: [['♪', '♡'], ['✧', '♡']], weak: [['!?', '///', '///'], ['!', '♡']], neutral: [['♪'], ['?']], negative: [['…?', '///']] },
-  char_009: { positive: [['…', '♡'], ['✧']], weak: [['!', '…', '///'], ['!?', '///']], neutral: [['…'], ['?']], negative: [['…', '☁']] },
-  char_010: { positive: [['…', '♡'], ['!', '♡']], weak: [['!', '…'], ['!?', '///']], neutral: [['…']], negative: [['!', '↯']] },
-  char_011: { positive: [['✦', '♪', '♡'], ['!♡', '✧']], weak: [['!?', '///', '///'], ['!!', '♡♡']], neutral: [['♪'], ['?']], negative: [['?', '///']] },
-  char_012: { positive: [['…', '♡'], ['✧', '♡']], weak: [['!', '…', '♡'], ['!?', '///']], neutral: [['…'], ['…?']], negative: [['…', '☁']] },
+  char_001: { positive: [['…', '♡'], ['✧', '♡']], weak: [['!', '…', '///'], ['!?', '💧']], neutral: [['…'], ['?']], negative: [['…?', '☁']] },
+  char_002: { positive: [['✦', '♡'], ['…', '!♡']], weak: [['!', '…', '💢'], ['!?', '💧']], neutral: [['?'], ['…']], negative: [['?', '↯']] },
+  char_003: { positive: [['…', '♡'], ['!', '♡']], weak: [['!?', '💦', '///'], ['!!', '…']], neutral: [['…'], ['?']], negative: [['!', '…']] },
+  char_004: { positive: [['♪', '♡'], ['✦', '♪']], weak: [['!?', '💦', '💢'], ['!', '///']], neutral: [['♪'], ['?']], negative: [['…?', '///']] },
+  char_005: { positive: [['…', '♡'], ['✧']], weak: [['!', '…'], ['!?', '💧']], neutral: [['…']], negative: [['…', '☁']] },
+  char_006: { positive: [['♪♪', '♡'], ['☆', '♪']], weak: [['!?', '💦', '♪'], ['!!', '♡']], neutral: [['♪'], ['?']], negative: [['?', '///']] },
+  char_007: { positive: [['!', '♡'], ['✦', '♡']], weak: [['!?', '💦', '///'], ['!!', '💢']], neutral: [['?'], ['…']], negative: [['!', '☁']] },
+  char_008: { positive: [['♪', '♡'], ['✧', '♡']], weak: [['!?', '💦', '///'], ['!', '♡']], neutral: [['♪'], ['?']], negative: [['…?', '///']] },
+  char_009: { positive: [['…', '♡'], ['✧']], weak: [['!', '…', '///'], ['!?', '💧']], neutral: [['…'], ['?']], negative: [['…', '☁']] },
+  char_010: { positive: [['…', '♡'], ['!', '♡']], weak: [['!', '…'], ['!?', '💧']], neutral: [['…']], negative: [['!', '💢']] },
+  char_011: { positive: [['✦', '♪', '♡'], ['!♡', '✧']], weak: [['!?', '💦', '///'], ['!!', '♡♡']], neutral: [['♪'], ['?']], negative: [['?', '///']] },
+  char_012: { positive: [['…', '♡'], ['✧', '♡']], weak: [['!', '…', '♡'], ['!?', '💧']], neutral: [['…'], ['…?']], negative: [['…', '☁']] },
 }
 
 export function getDateReactionPopSequence(
@@ -1017,17 +1019,16 @@ export function getDateMoodExpression(characterId: string, heart: number): Portr
   return flow[Math.max(0, Math.min(5, heart))] ?? 'main'
 }
 
-export function getDateExpressionSequence(
-  characterId: string,
-  fromHeart: number,
-  toHeart: number,
-  reactionExpression?: PortraitExpression,
-): PortraitExpression[] {
-  const flow = dateExpressionFlows[characterId] ?? dateExpressionFlows.char_001
-  // A reaction is a single readable beat. Do not flash through several portraits
-  // in one result; the dialogue and the pop carry the rest of the emotion.
-  const target = reactionExpression ?? flow[Math.max(0, Math.min(5, toHeart))] ?? 'main'
-  return [target]
+export type DateMotion = 'calm' | 'bouncy' | 'stiff'
+
+const dateMotionByCharacter: Record<string, DateMotion> = {
+  char_001: 'calm', char_002: 'stiff', char_003: 'stiff', char_004: 'bouncy',
+  char_005: 'calm', char_006: 'bouncy', char_007: 'stiff', char_008: 'bouncy',
+  char_009: 'stiff', char_010: 'stiff', char_011: 'bouncy', char_012: 'calm',
+}
+
+export function getDateMotion(characterId: string): DateMotion {
+  return dateMotionByCharacter[characterId] ?? 'calm'
 }
 
 const returnTouchStateByCharacterId: Record<string, DateTouchState> = {

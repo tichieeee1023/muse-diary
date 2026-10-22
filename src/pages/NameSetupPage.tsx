@@ -61,7 +61,6 @@ export function NameSetupPage() {
         <p>하루에 세 번, 마음이 이끄는 장소로 걸어가 보세요. 만남은 기록이 되고, 기록은 다음 장을 엽니다.</p>
       </aside>
 
-      <p className="tiny-note">이름은 이후 설정에서 변경할 수 있도록 추가할 예정입니다.</p>
     </div>
   )
 }

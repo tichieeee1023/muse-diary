@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { CharacterPortrait } from '../components/CharacterPortrait'
+import { ReactionMark } from '../components/ReactionMark'
 import { HeartMeter } from '../components/HeartMeter'
 import { ThemeBgmController } from '../components/ThemeBgmController'
 import {
@@ -17,8 +18,8 @@ import {
   getDateReactionPopSequence,
   getDateInnerThought,
   getDateMoodExpression,
-  getDateExpressionSequence,
   getDateTouchStateLabel,
+  getDateMotion,
   type DateDistanceState,
   type DateSpeechIntent,
   type DateTurnTouchKey,
@@ -59,7 +60,8 @@ interface DateTurnLog {
   touchState: DateTouchState
   reactionPops: DateReactionPop[]
   innerThought: string | null
-  expressionSequence: PortraitExpression[]
+  touchId: DateTurnTouchKey
+  touchDisliked: boolean
 }
 
 const MAX_DATE_TURNS = 3
@@ -114,8 +116,8 @@ function resolveTouchState(
 
 function getReactionPopTone(pop: DateReactionPop) {
   if (pop.includes('♡') || pop === '♥') return 'affection'
-  if (pop === '↯') return 'sharp'
-  if (pop === '///') return 'fluster'
+  if (pop === '💢' || pop === '↯') return 'sharp'
+  if (pop === '💧' || pop === '💦' || pop === '///') return 'fluster'
   if (pop.includes('!')) return 'surprise'
   if (pop === '♪' || pop === '♪♪' || pop === '✦' || pop === '✧' || pop === '☆') return 'bright'
   return 'quiet'
@@ -146,14 +148,9 @@ export function DatePage({ onClose, onStartDateSession }: DatePageProps) {
   const [openControl, setOpenControl] = useState<DateControlKey | null>(null)
   const [displayExpression, setDisplayExpression] = useState<PortraitExpression>('main')
   const stageRef = useRef<HTMLDivElement | null>(null)
-  const expressionTimersRef = useRef<number[]>([])
 
   const characters = useMemo(() => getAllCharacters(), [])
 
-
-  useEffect(() => () => {
-    expressionTimersRef.current.forEach((timer) => window.clearTimeout(timer))
-  }, [])
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -395,19 +392,7 @@ export function DatePage({ onClose, onStartDateSession }: DatePageProps) {
     const turnNumber = turnLogs.length + 1
     const reactionPops = getDateReactionPopSequence(character.id, effectiveHeartDelta, evaluation.isWeak, turnNumber)
     const innerThought = getDateInnerThought(character.id, effectiveHeartDelta, evaluation.isWeak, turnNumber)
-    const expressionSequence = getDateExpressionSequence(
-      character.id,
-      dateHeart,
-      nextHeart,
-      evaluation.reaction?.expression,
-    )
-
-    expressionTimersRef.current.forEach((timer) => window.clearTimeout(timer))
-    expressionTimersRef.current = []
-    expressionSequence.forEach((expression, index) => {
-      const timer = window.setTimeout(() => setDisplayExpression(expression), 170 + index * 270)
-      expressionTimersRef.current.push(timer)
-    })
+    setDisplayExpression(evaluation.reaction?.expression ?? getDateMoodExpression(character.id, nextHeart))
 
     setIsResolving(true)
 
@@ -426,7 +411,8 @@ export function DatePage({ onClose, onStartDateSession }: DatePageProps) {
         touchState: nextTouchState,
         reactionPops,
         innerThought,
-        expressionSequence,
+        touchId: selectedTouch.id,
+        touchDisliked: evaluation.touchDisliked,
       },
     ])
 
@@ -642,7 +628,7 @@ export function DatePage({ onClose, onStartDateSession }: DatePageProps) {
             )}
           </section>
 
-          <div ref={stageRef} className={`date-camera-card is-${playPhase} is-reaction-${reactionMotion}${latestLog?.returnTouch ? ' has-return-touch' : ''}${isResolving ? ' is-resolving' : ''}`}>
+          <div ref={stageRef} data-motion={getDateMotion(character.id)} className={`date-camera-card is-${playPhase} is-reaction-${reactionMotion}${latestLog?.returnTouch ? ' has-return-touch' : ''}${isResolving ? ' is-resolving' : ''}`}>
             <div className="date-camera-topbar">
               <span className="date-rec"><i aria-hidden="true" /> REC</span>
               <strong>MOMENT {String(displayTurn).padStart(2, '0')}</strong>
@@ -650,13 +636,15 @@ export function DatePage({ onClose, onStartDateSession }: DatePageProps) {
             </div>
 
             <div className="date-camera-view">
-              <CharacterPortrait
-                characterId={character.id}
-                name={character.name}
-                symbol={character.symbol}
-                expression={displayExpression}
-                className="date-camera-portrait"
-              />
+              <div className="date-camera-idle">
+                <CharacterPortrait
+                  characterId={character.id}
+                  name={character.name}
+                  symbol={character.symbol}
+                  expression={displayExpression}
+                  className="date-camera-portrait"
+                />
+              </div>
               <div className={`date-camera-mood is-${moodDirection}`} key={`mood-${turnLogs.length}-${dateHeart}`}>
                 <span>DATE MOOD</span>
                 <div aria-label={`데이트 분위기 ${dateHeart} / 5`}>
@@ -677,6 +665,14 @@ export function DatePage({ onClose, onStartDateSession }: DatePageProps) {
                 )}
               </div>
 
+              {playPhase === 'result' && latestLog && latestLog.touchId !== 'none' && (
+                <span
+                  key={`fx-${turnLogs.length}`}
+                  className={`date-touch-fx is-${latestLog.touchId}${latestLog.touchDisliked ? ' is-recoil' : ''}${latestLog.isWeak ? ' is-weak' : ''}`}
+                  aria-hidden="true"
+                />
+              )}
+
               {playPhase === 'result' && latestLog && (
                 <div className="date-reaction-pops" aria-hidden="true">
                   {latestLog.reactionPops.map((pop, index) => (
@@ -684,7 +680,7 @@ export function DatePage({ onClose, onStartDateSession }: DatePageProps) {
                       key={`${turnLogs.length}-${pop}-${index}`}
                       className={`date-reaction-pop is-${getReactionPopTone(pop)} pos-${index % 3}`}
                       style={{ animationDelay: `${index * 0.22}s` }}
-                    >{pop}</span>
+                    ><ReactionMark pop={pop} /></span>
                   ))}
                 </div>
               )}

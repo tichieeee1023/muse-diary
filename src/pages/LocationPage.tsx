@@ -31,12 +31,6 @@ interface EncounterViewState {
 
 const rarityCopy = { R: 'RARE', SR: 'SUPER RARE', SSR: 'SPECIAL' } as const
 
-function choiceTone(affection: number) {
-  if (affection >= 3) return '마음을 열어 다가가기'
-  if (affection >= 1) return '조심스럽게 공감하기'
-  return '담담하게 지켜보기'
-}
-
 function episodeLabel(episode: StoryEpisode, completedStory: number) {
   if (episode.kind === 'first') return 'FIRST ENCOUNTER'
   if (episode.kind === 'casual') return 'DAILY MOMENT'
@@ -349,7 +343,7 @@ export function LocationPage() {
                 {section.choice.options.map((option, index) => (
                   <button key={option.id} type="button" className="choice-button story-choice-button" onClick={() => handleChoice(option)}>
                     <span className="choice-number">0{index + 1}</span>
-                    <span className="choice-copy"><small>{choiceTone(option.affection)}</small><strong>{formatGameText(option.text, player.name)}</strong></span>
+                    <span className="choice-copy"><strong>{formatGameText(option.text, player.name)}</strong></span>
                   </button>
                 ))}
               </div>
